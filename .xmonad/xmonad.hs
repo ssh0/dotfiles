@@ -75,6 +75,7 @@ main = do
     xmonad $ defaultConfig
        { borderWidth        = borderwidth
        , terminal           = "urxvt"
+       , focusFollowsMouse  = False
        , normalBorderColor  = "#212121"
        , focusedBorderColor = colorWhite
        , startupHook        = myStartupHook

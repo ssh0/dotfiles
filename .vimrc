@@ -25,6 +25,9 @@ NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'alpaca-tc/alpaca_powertabline'
+NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
+NeoBundle 'Lokaltog/powerline-fontpatcher'
 NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
 " NeoBundle 'klen/python-mode'
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {
@@ -105,8 +108,8 @@ highlight Statement ctermfg=3 ctermbg=None
 nnoremap <Down> gj
 nnoremap <Up>   gk
 nnoremap h <Left>zv
-nnoremap j gj
-nnoremap k gk
+" nnoremap j gj
+" nnoremap k gk
 nnoremap l <Right>zv
 
 """ markdown {{{

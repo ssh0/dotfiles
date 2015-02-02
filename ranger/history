@@ -34,7 +34,6 @@ find summa
 rename Final Fantasy X - Complete Soundtrack.mp4
 rename 02_幸腹グラフィティ　ふたしなめ.mp4
 rename 03_幸腹グラフィティ　さんしなめ.mp4
-delete
 rename index.rst
 
 find h
@@ -48,3 +47,4 @@ find so
 find img
 open_with 2
 find ir
+delete

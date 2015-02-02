@@ -332,7 +332,7 @@ function buttonExit() {
         .css('opacity', '0.4')
         .click(
             function(){
-                revealMode('simple', 'zoom');
+//                revealMode('simple', 'zoom');
             }
         );
     $('.reveal').after(exit_button);
