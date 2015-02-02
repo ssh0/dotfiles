@@ -1,0 +1,91 @@
+!-------------------------------------------------------------------------------
+! Xft settings
+!-------------------------------------------------------------------------------
+Xft.dpi:                    96
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
+
+!-------------------------------------------------------------------------------
+! URxvt settings
+!-------------------------------------------------------------------------------
+URxvt*.depth:               32
+URxvt.geometry:             90x30
+URxvt*.transparent:         false
+URxvt*fading:               false
+! URxvt.urgentOnBell:         true
+URxvt*visualBell:           false
+URxvt*loginShell:           true
+URxvt.saveLines:            2000
+URxvt.internalBorder:       5
+URxvt.lineSpace:            0
+
+! Fonts
+URxvt.allow_bold:           true
+URxvt*font: xft:Inconsolata-Medium:size=10:antialias=true
+
+! Fix font space
+URxvt*letterSpace: 0
+
+! Scrollbar
+URxvt.scrollStyle:          rxvt
+URxvt.scrollBar:            false
+URxvt.scrollBar_right:      true
+
+! Cursor
+URxvt.cursorBlink:          true
+URxvt.cursorUnderline:      false
+
+! Pointer
+URxvt.pointerBlank:         true
+
+! iso 14755 disable
+URxvt*iso14755: false
+
+! Color
+! urxvt*shading: 10
+! URxvt*inheritPixmap: false
+
+! Satori
+vim: set ft=xdefaults:
+URxvt*background:   #09090d
+URxvt*foreground:   #939496
+
+URxvt*cursorColor:  #839496
+
+URxvt*colorBD:      #838383
+URxvt*colorUL:      #838383
+
+!black
+URxvt*color0:       #353540
+URxvt*color8:       #545466
+
+!red
+URxvt*color1:       #8c5760
+URxvt*color9:       #b26f7a
+
+!green
+URxvt*color2:       #7b8c58
+URxvt*color10:      #9db270
+
+!yellow
+URxvt*color3:       #8c6e43
+URxvt*color11:      #b28c55
+
+!blue
+URxvt*color4:       #58698c
+URxvt*color12:      #7086b2
+
+!magenta
+URxvt*color5:       #7b5e7d
+URxvt*color13:      #9c77b2
+
+!cyan
+URxvt*color6:       #66808c
+URxvt*color14:      #82a2b2
+
+!white
+URxvt*color7:       #8c8b8b
+URxvt*color15:      #b8b8c8
+

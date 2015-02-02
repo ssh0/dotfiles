@@ -1,0 +1,34 @@
+xscreensaver.splash: false
+
+!font settings
+xscreensaver.Dialog.headingFont:        -*-dejavu sans-bold-r-*--12-*-*-*-*-*-*-*
+xscreensaver.Dialog.bodyFont:           -*-dejavu sans-bold-r-*--12-*-*-*-*-*-*-*
+xscreensaver.Dialog.labelFont:          -*-dejavu sans-bold-r-*--12-*-*-*-*-*-*-*
+xscreensaver.Dialog.unameFont:          -*-dejavu sans-bold-r-*--12-*-*-*-*-*-*-*
+xscreensaver.Dialog.buttonFont:         -*-dejavu sans-bold-r-*--12-*-*-*-*-*-*-*
+xscreensaver.Dialog.dateFont:           -*-dejavu sans-bold-r-*--12-*-*-*-*-*-*-*
+xscreensaver.passwd.passwdFont:         -*-dejavu sans-bold-r-*--12-*-*-*-*-*-*-*
+
+!general dialog box (affects main hostname, username, password text)
+xscreensaver.Dialog.foreground:         #b8b8c8
+xscreensaver.Dialog.background:         #000000
+xscreensaver.Dialog.topShadowColor:     #000000
+xscreensaver.Dialog.bottomShadowColor:  #000000
+xscreensaver.Dialog.Button.foreground:  #353540
+xscreensaver.Dialog.Button.background:  #b8b8b8
+
+!username/password input box and date text colour
+xscreensaver.Dialog.text.foreground:    #353540
+xscreensaver.Dialog.text.background:    #b8b8c8
+xscreensaver.Dialog.internalBorderWidth:24
+xscreensaver.Dialog.borderWidth:        0
+xscreensaver.Dialog.shadowThickness:    0
+
+!timeout bar (background is actually determined by Dialog.text.background)
+xscreensaver.passwd.thermometer.foreground:  #a5d6a7
+xscreensaver.passwd.thermometer.background:  #000000
+xscreensaver.passwd.thermometer.width:       10
+
+!datestamp format--see the strftime(3) manual page for details
+xscreensaver.dateFormat:   %a %b %d, %Y
+

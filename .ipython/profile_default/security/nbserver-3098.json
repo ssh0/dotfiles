@@ -1,0 +1,9 @@
+{
+  "secure": false, 
+  "url": "http://localhost:8888/", 
+  "hostname": "localhost", 
+  "pid": 3098, 
+  "base_url": "/", 
+  "notebook_dir": "/home/shotaro", 
+  "port": 8888
+}

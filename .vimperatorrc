@@ -1,0 +1,16 @@
+"3.8.2 (created: 2014/02/13 23:52:43)
+
+source! /home/shotaro/.vimperatorrc.local
+
+" vim: set ft=vimperator:
+set complete=l
+set titlestring=
+set focuscontent=true
+set activate=addons,downloads,extoptions,help,homepage,quickmark,paste
+hi Hint font-family: Arial; font-size: 10px; color: white; background-color: #353540; text-transform:uppercase; z-index: 10000; white-space: nowrap; padding: 1px 1px 1px 1px;
+hi HintElem background-color:#e4efff; color:;
+hi HintActive background-color:#cedef8; color:;
+set gui=none
+set hintchars=ifjkasdhguonmerwc
+noremap v :set<Space>gui=nonavigation,notabs<CR>
+noremap V :set<space>gui=navigation,tabs<CR>
