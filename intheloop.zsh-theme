@@ -13,10 +13,10 @@ PROMPT='%{$fg_bold[black]%}%{$bg[blue]%} %5c %{$reset_color%}$(git_prompt_info)$
 
 # RPROMPT='${return_status}%{$reset_color%}'
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[blue]%}%{$bg[grey]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}%{$fg[grey]%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[grey]%} %{$fg_bold[yellow]%}⚡"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[grey]%}"
-ZSH_THEME_GIT_PROMPT_BEHIND_REMOTE="%{$fg_bold[magenta]%}↓"
-ZSH_THEME_GIT_PROMPT_AHEAD_REMOTE="%{$fg_bold[magenta]%}↑"
-ZSH_THEME_GIT_PROMPT_DIVERGED_REMOTE="%{$fg_bold[magenta]%}↕"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[blue]%}%{$bg[grey]%} "
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}%{$fg[grey]%} %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$bg[grey]%}%{$fg_bold[yellow]%}⚡"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[grey]%} "
+ZSH_THEME_GIT_PROMPT_BEHIND_REMOTE="%{$bg[grey]%} %{$fg_bold[magenta]%}↓"
+ZSH_THEME_GIT_PROMPT_AHEAD_REMOTE="%{$bg[grey]%} %{$fg_bold[magenta]%}↑"
+ZSH_THEME_GIT_PROMPT_DIVERGED_REMOTE="%{$bg[grey]%} %{$fg_bold[magenta]%}↕"
