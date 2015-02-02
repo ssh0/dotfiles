@@ -5,10 +5,8 @@ dotfiles
 
 * compton
     * compton.conf
+* intheloop.zsh-theme
 * .ipython
-    * extensions
-        * live_reveal
-            * custom.js
     * nbextensions
     * profile\_default
         * ipython_config.py
@@ -35,17 +33,6 @@ dotfiles
             * custom
                 * custom.css
                 * custom.js
-    * README
-    * template
-        * output_toggle.tpl
-* .oh-my-zsh
-    * lib
-        * aliases.zsh
-        * history.zsh
-        * theme-and-appearance.zsh
-            * zsh_reload.plugin.zsh
-    * themes
-        * intheloop.zsh-theme
 * .profile
 * ranger
     * bookmarks
