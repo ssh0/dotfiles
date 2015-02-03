@@ -200,6 +200,7 @@ wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws,t]
                 , ppHidden          = xmobarColor  colorGrayAlt  colorNormalbg
                 , ppHiddenNoWindows = xmobarColor  colorfg       colorNormalbg
                 , ppTitle           = xmobarColor  colorWhite    colorNormalbg
+                , ppOutput          = putStrLn
                 , ppWsSep           = ""
                 , ppSep             = " : "
                 }
