@@ -1,7 +1,3 @@
-open_with gedit
-rename [Lyric Video] Perfume 「Hold Your Hand」.mp4
-rename [MV] Perfume 「Cling Cling」.mp4
-rename [MV] Perfume 「FAKE IT」.mp4
 rename [MV] Perfume 「I still love U」.mp4
 rename [MV] Perfume 「Magic of Love」.mp4
 rename [MV] Perfume 「Sweet Refrain」.mp4
@@ -35,16 +31,20 @@ rename Final Fantasy X - Complete Soundtrack.mp4
 rename 02_幸腹グラフィティ　ふたしなめ.mp4
 rename 03_幸腹グラフィティ　さんしなめ.mp4
 rename index.rst
-
 find h
 q
 delete 
 shell o
 find lat
-find wo
 shell ot
-find so
 find img
 open_with 2
 find ir
 delete
+find wo
+find so
+sh
+open_with display
+
+find bl
+open_with display -size 1280x1024

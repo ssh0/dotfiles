@@ -97,6 +97,7 @@ set colorcolumn=80
 " set hilight color
 " To show current color scheme by
 " ':so $VIMRUNTIME/syntax/hitest.vim'
+highlight NonText ctermfg=0 guifg=Bg
 highlight Normal ctermbg=None
 highlight LineNr ctermbg=0 ctermfg=8
 highlight ColorColumn ctermbg=0

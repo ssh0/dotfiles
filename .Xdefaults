@@ -11,7 +11,7 @@ Xft.hintstyle:              hintslight
 ! URxvt settings
 !-------------------------------------------------------------------------------
 URxvt*.depth:               32
-URxvt.geometry:             90x30
+URxvt.geometry:             85x31
 URxvt*.transparent:         false
 URxvt*fading:               false
 ! URxvt.urgentOnBell:         true
@@ -24,7 +24,7 @@ URxvt.intensityStyles:      false
 
 ! Fonts
 URxvt.allow_bold:           true
-URxvt*font:                 xft:Inconsolata for Powerline:size=10:antialias=true
+URxvt*font:                 xft:Inconsolata for Powerline:size=8:antialias=true
 
 ! Fix font space
 URxvt*letterSpace:          0

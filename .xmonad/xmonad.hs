@@ -182,6 +182,7 @@ myManageHookFloat = composeAll
             [ className =? "Gimp"             --> doFloat,
               className =? "mplayer2"         --> doFloat,
               className =? "Tk"               --> doFloat,
+              className =? "Display.im6"      --> doFloat,
               className =? "Shutter"          --> doFloat,
               className =? "Websearch.py"     --> doFloat,
               className =? "Plugin-container" --> doFloat,
