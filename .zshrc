@@ -5,8 +5,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time thatrch oh-my-zsh is loaded.
-ZSH_THEME="intheloop"
-
+ZSH_THEME="agnoster"
+# intheloop
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -81,9 +81,9 @@ export LANG=en_US.UTF-8
 export no_proxy=localhost,127.0.0.0/8
 export all_proxy=
 export ALL_PROXY=
-export http_proxy="http://www-proxy.waseda.jp:8080"
-export HTTP_PROXY="http://www-proxy.waseda.jp:8080"
-export https_proxy="http://www-proxy.waseda.jp:8080"
-export HTTPS_PROXY="http://www-proxy.waseda.jp:8080"
-export ftp_proxy="ftp://www-proxy.waseda.jp:8080"
-export FTP_PROXY="ftp://www-proxy.waseda.jp:8080"
+export http_proxy=
+export HTTP_PROXY=
+export https_proxy=
+export HTTPS_PROXY=
+export ftp_proxy=
+export FTP_PROXY=
