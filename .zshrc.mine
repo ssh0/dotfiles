@@ -22,7 +22,6 @@ alias -s {png,jpg,bmp,PNG,JPG,BMP}='eog'
 alias g='git'
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
-
 autoload -U add-zsh-hook 2>/dev/null || return
 
 #
