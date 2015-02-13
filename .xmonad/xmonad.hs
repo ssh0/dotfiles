@@ -155,7 +155,7 @@ main = do
 
 -- Handle Window behaveior
 myLayout = (spacing 3  $ ResizableTall 1 (1/100) (1/2) [])
-             |||  (spacing 3 $ ThreeCol 1 (1/100) (3/7))
+             |||  (spacing 3 $ ThreeColMid 1 (1/100) (3/7))
              |||  (spacing 3 $ ResizableTall 2 (1/100) (1/2) [])
 --             |||  Mag.magnifiercz 1.1 (spacing 6 $ GridRatio (4/3))
 
