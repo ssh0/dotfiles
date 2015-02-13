@@ -165,3 +165,5 @@ endfunction
 command! -bar RangerChooser call RangeChooser()
 nnoremap <Space>r :<C-U>RangerChooser<CR>
 
+autocmd BufNewFile *.py 0r $HOME/Templates/Python.py
+autocmd BufNewFile *.sh 0r $HOME/Templates/shell_script.sh

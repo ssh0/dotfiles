@@ -52,6 +52,7 @@ gdb
 ranger
 mplayer
 man
+cmus
 EOF
 
 export __timetrack_threshold

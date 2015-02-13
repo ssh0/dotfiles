@@ -39,7 +39,7 @@ import XMonad.Util.Run
 
 import Graphics.X11.ExtraTypes.XF86
 
-myWorkspaces = ["  main  ", "  browser  ", "  media  ", "  work  ", "  tray  "]
+myWorkspaces = ["  main  ", "  browser  ", "  float  ", "  work  ", "  tray  "]
 modm = mod4Mask
 
 -- Color Setting
@@ -86,7 +86,7 @@ main = do
         -- any time Full mode, avoid xmobar area
        , layoutHook         = toggleLayouts (noBorders Full) $
                               avoidStruts $
-                              onWorkspace "  media  " simplestFloat $
+                              onWorkspace "  float  " simplestFloat $
                               myLayout
         -- xmobar setting
        , logHook            = myLogHook wsbar
@@ -117,6 +117,7 @@ main = do
        , ((modm                , xK_k      ), windows W.focusUp)
        , ((modm .|. shiftMask  , xK_j      ), windows W.swapDown)
        , ((modm .|. shiftMask  , xK_k      ), windows W.swapUp)
+       , ((modm .|. shiftMask  , xK_m      ), windows W.shiftMaster)
        , ((modm                , xK_w      ), nextScreen) ]
 
        `additionalKeys`
@@ -154,8 +155,9 @@ main = do
 
 -- Handle Window behaveior
 myLayout = (spacing 3  $ ResizableTall 1 (1/100) (1/2) [])
-             |||  (spacing 16 $ ResizableTall 2 (1/100) (1/2) [])
-             |||  Mag.magnifiercz 1.1 (spacing 15 $ GridRatio (4/3))
+             |||  (spacing 3 $ ThreeCol 1 (1/100) (3/7))
+             |||  (spacing 3 $ ResizableTall 2 (1/100) (1/2) [])
+--             |||  Mag.magnifiercz 1.1 (spacing 6 $ GridRatio (4/3))
 
 -- Start up (at xmonad beggining), like "wallpaper" or so on
 myStartupHook = do
@@ -164,7 +166,7 @@ myStartupHook = do
         spawn "gnome-sound-applet"
         spawn "xscreensaver -no-splash"
         spawn "/home/shotaro/.dropbox-dist/dropboxd"
-        spawn "feh --bg-fill /media/shotaro/STOCK/Pictures/wallpapers/14-88.png"
+        spawn "feh --bg-fill '/media/shotaro/STOCK/Pictures/wallpapers/Ultimate Material Lollipop Collection - 225.jpg'"
         spawn "bash /home/shotaro/bin/toggle_compton.sh"
         -- spawn "compton -b --config /home/shotaro/.config/compton/compton.conf"
 
@@ -172,7 +174,6 @@ myStartupHook = do
 myManageHookShift = composeAll
             -- if you want to know className, type "$ xprop|grep CLASS" on shell
             [ className =? "Firefox"       --> mydoShift "  browser  "
-            , className =? "mplayer2"      --> mydoShift "  media  "
             , className =? "Google-chrome" --> mydoShift "  work  "
             ]
              where mydoShift = doF . liftM2 (.) W.greedyView W.shift

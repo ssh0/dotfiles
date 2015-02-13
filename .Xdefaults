@@ -12,7 +12,7 @@ Xft.hintstyle:              hintslight
 !-------------------------------------------------------------------------------
 ! For showing img in ranger with w3mimgdisplay, disable this
 ! URxvt*.depth:               32
-URxvt.geometry:             85x31
+URxvt.geometry:             90x40
 URxvt*.transparent:         false
 URxvt*fading:               false
 ! URxvt.urgentOnBell:         true
