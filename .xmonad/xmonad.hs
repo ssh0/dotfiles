@@ -144,7 +144,8 @@ main = do
         -- Brightness Keys
        , ((0                       , 0x1008FF02), spawn "xbacklight + 10 -time 100 -steps 5")
        , ((0                       , 0x1008FF03), spawn "xbacklight - 10 -time 100 -steps 5")
-       , ((0                       , 0xff61    ), spawn "shutter")
+       , ((0                       , 0xff61    ), spawn "sh /home/shotaro/bin/screenshot.sh")
+       , ((shiftMask               , 0xff61    ), spawn "sh /home/shotaro/bin/screenshot_select.sh")
        , ((modm     .|. controlMask, xK_h      ), spawn "sh /home/shotaro/bin/xte-left.sh")
        , ((modm     .|. controlMask, xK_l      ), spawn "sh /home/shotaro/bin/xte-right.sh")
        , ((modm     .|. controlMask, xK_j      ), spawn "sh /home/shotaro/bin/xte-down.sh")
@@ -154,9 +155,9 @@ main = do
        ]
 
 -- Handle Window behaveior
-myLayout = (spacing 3  $ ResizableTall 1 (1/100) (1/2) [])
-             |||  (spacing 3 $ ThreeColMid 1 (1/100) (3/7))
-             |||  (spacing 3 $ ResizableTall 2 (1/100) (1/2) [])
+myLayout = (spacing 6  $ ResizableTall 1 (1/100) (1/2) [])
+             |||  (spacing 6 $ ThreeColMid 1 (1/100) (3/7))
+             |||  (spacing 6 $ ResizableTall 2 (1/100) (1/2) [])
 --             |||  Mag.magnifiercz 1.1 (spacing 6 $ GridRatio (4/3))
 
 -- Start up (at xmonad beggining), like "wallpaper" or so on
