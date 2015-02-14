@@ -21,7 +21,7 @@ class Default(ColorScheme):
             if context.empty or context.error:
                 bg = white
             if context.border:
-                fg = default
+                fg = 247
             if context.media:
                 if context.image:
                     fg = yellow
@@ -112,5 +112,4 @@ class Default(ColorScheme):
                     fg = self.progress_bar_color
                 else:
                     bg = self.progress_bar_color
-
         return fg, bg, attr

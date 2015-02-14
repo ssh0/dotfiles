@@ -61,7 +61,7 @@ prompt_end() {
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment white default "%(!.%{$bg[yellow]%}.)$USER"
+    prompt_segment 241 default "%(!.%{$bg[yellow]%}.)$USER"
   fi
 }
 
@@ -108,7 +108,7 @@ prompt_hg() {
     if $(hg prompt >/dev/null 2>&1); then
       if [[ $(hg prompt "{status|unknown}") = "?" ]]; then
         # if files are not added
-        prompt_segment red white
+        prompt_segment red 236
         st='±'
       elif [[ -n $(hg prompt "{status|modified}") ]]; then
         # if any modification
@@ -161,7 +161,7 @@ prompt_status() {
   [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
 
-  [[ -n "$symbols" ]] && prompt_segment white default "$symbols"
+  [[ -n "$symbols" ]] && prompt_segment 241 default "$symbols"
 }
 
 ## Main prompt

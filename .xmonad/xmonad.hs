@@ -155,9 +155,9 @@ main = do
        ]
 
 -- Handle Window behaveior
-myLayout = (spacing 6  $ ResizableTall 1 (1/100) (1/2) [])
-             |||  (spacing 6 $ ThreeColMid 1 (1/100) (3/7))
-             |||  (spacing 6 $ ResizableTall 2 (1/100) (1/2) [])
+myLayout = (spacing 3 $ ResizableTall 1 (1/100) (1/2) [])
+             |||  (spacing 3 $ ThreeColMid 1 (1/100) (3/7))
+             |||  (spacing 3 $ ResizableTall 2 (1/100) (1/2) [])
 --             |||  Mag.magnifiercz 1.1 (spacing 6 $ GridRatio (4/3))
 
 -- Start up (at xmonad beggining), like "wallpaper" or so on
@@ -167,7 +167,7 @@ myStartupHook = do
         spawn "gnome-sound-applet"
         spawn "xscreensaver -no-splash"
         spawn "/home/shotaro/.dropbox-dist/dropboxd"
-        spawn "feh --bg-fill '/media/shotaro/STOCK/Pictures/wallpapers/Ultimate Material Lollipop Collection - 225.jpg'"
+        spawn "feh --bg-fill '/home/shotaro/Downloads/20 Free Modern Backgrounds/20 Low-Poly Backgrounds/Low-Poly Backgrounds (2).JPG'"
         spawn "bash /home/shotaro/bin/toggle_compton.sh"
         -- spawn "compton -b --config /home/shotaro/.config/compton/compton.conf"
 

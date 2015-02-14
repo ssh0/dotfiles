@@ -1,4 +1,4 @@
-!-------------------------------------------------------------------------------
+
 ! Xft settings
 !-------------------------------------------------------------------------------
 Xft.dpi:                    96
@@ -22,6 +22,7 @@ URxvt.saveLines:            10000
 URxvt.internalBorder:       0
 URxvt.lineSpace:            0
 URxvt.intensityStyles:      false
+URxvt.perl-ext-common:      default,tabbed
 
 ! Fonts
 URxvt.allow_bold:           true
@@ -91,3 +92,7 @@ URxvt*color14:              #80cbc4
 URxvt*color7:               #757575
 URxvt*color15:              #bdbdbd
 
+URxvt.tabbed.tabbar-fg:     15
+URxvt.tabbed.tabbar-bg:     236
+URxvt.tabbed.tab-fg:        255
+URxvt.tabbed.tab-bg:        241
