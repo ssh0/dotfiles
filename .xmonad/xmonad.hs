@@ -53,7 +53,7 @@ colorNormalbg  = "#424a54"
 colorfg        = "#9fa8b1"
 
 -- Border width
-borderwidth = 3
+borderwidth = 0
 
 -- Define keys to remove
 keysToRemove x =
