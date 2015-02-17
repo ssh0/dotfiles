@@ -22,7 +22,7 @@ URxvt.saveLines:            10000
 URxvt.internalBorder:       0
 URxvt.lineSpace:            0
 URxvt.intensityStyles:      false
-URxvt.perl-ext-common:      default,tabbed
+URxvt.perl-ext-common:      selection,tabbed
 
 ! Fonts
 URxvt.allow_bold:           true
@@ -93,6 +93,6 @@ URxvt*color7:               #757575
 URxvt*color15:              #bdbdbd
 
 URxvt.tabbed.tabbar-fg:     15
-URxvt.tabbed.tabbar-bg:     236
+URxvt.tabbed.tabbar-bg:     0
 URxvt.tabbed.tab-fg:        255
 URxvt.tabbed.tab-bg:        241

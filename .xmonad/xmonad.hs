@@ -53,7 +53,7 @@ colorNormalbg  = "#424a54"
 colorfg        = "#9fa8b1"
 
 -- Border width
-borderwidth = 0
+borderwidth = 3
 
 -- Define keys to remove
 keysToRemove x =
@@ -138,6 +138,7 @@ main = do
        , ((modm                    , xK_c      ), kill) -- %! Close the focused window
        , ((modm                    , xK_p      ), spawn "exe=`dmenu_run -b -nb '#009688' -nf '#ffffff' -sb '#ffffff' -sf '#000000'` && exec $exe")
        , ((mod1Mask .|. controlMask, xK_f      ), spawn "python /home/shotaro/Workspace/python/web_search/websearch.py")
+       , ((0                       , 0x1008ff14), spawn "sh /home/shotaro/bin/cplay.sh")
        , ((0                       , 0x1008ff13), spawn "amixer -D pulse set Master 1%+ && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga")
        , ((0                       , 0x1008ff11), spawn "amixer -D pulse set Master 1%- && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga")
        , ((0                       , 0x1008ff12), spawn "amixer -D pulse set Master toggle")
@@ -156,7 +157,7 @@ main = do
 
 -- Handle Window behaveior
 myLayout = (spacing 3 $ ResizableTall 1 (1/100) (1/2) [])
-             |||  (spacing 3 $ ThreeColMid 1 (1/100) (3/7))
+             |||  (spacing 3 $ ThreeCol 1 (1/100) (16/35))
              |||  (spacing 3 $ ResizableTall 2 (1/100) (1/2) [])
 --             |||  Mag.magnifiercz 1.1 (spacing 6 $ GridRatio (4/3))
 

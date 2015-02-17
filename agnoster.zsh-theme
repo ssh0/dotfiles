@@ -139,7 +139,7 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment black default '%5c'
+  prompt_segment 238 default '%~'
 }
 
 # Virtualenv: current working virtualenv
@@ -179,3 +179,4 @@ build_prompt() {
 PROMPT='
 %{%f%b%k%}$(build_prompt) 
 %{$fg_bold[green]%}: %{$reset_color%}'
+
