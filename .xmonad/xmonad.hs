@@ -43,13 +43,13 @@ myWorkspaces = ["  main  ", "  browser  ", "  float  ", "  work  ", "  tray  "]
 modm = mod4Mask
 
 -- Color Setting
-colorBlue      = "#2196f3"
-colorGreen     = "#4caf50"
-colorRed       = "#e91e63"
+colorBlue      = "#90caf9"
+colorGreen     = "#a5d6a7"
+colorRed       = "#ef9a9a"
 colorGray      = "#9e9e9e"
 colorWhite     = "#ffffff"
-colorGrayAlt   = "#b2dfdb"
-colorNormalbg  = "#424a54"
+colorGrayAlt   = "#eceff1"
+colorNormalbg  = "#212121"
 colorfg        = "#9fa8b1"
 
 -- Border width
@@ -156,9 +156,9 @@ main = do
        ]
 
 -- Handle Window behaveior
-myLayout = (spacing 3 $ ResizableTall 1 (1/100) (1/2) [])
-             |||  (spacing 3 $ ThreeCol 1 (1/100) (16/35))
-             |||  (spacing 3 $ ResizableTall 2 (1/100) (1/2) [])
+myLayout = (spacing 16 $ ResizableTall 1 (1/100) (1/2) [])
+             |||  (spacing 16 $ ThreeCol 1 (1/100) (16/35))
+             |||  (spacing 16 $ ResizableTall 2 (1/100) (1/2) [])
 --             |||  Mag.magnifiercz 1.1 (spacing 6 $ GridRatio (4/3))
 
 -- Start up (at xmonad beggining), like "wallpaper" or so on
@@ -197,12 +197,12 @@ myLogHook h = dynamicLogWithPP $ wsPP { ppOutput = hPutStrLn h }
 myWsBar = "xmobar /home/shotaro/.xmonad/xmobarrc"
 
 wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws,t]
-                , ppCurrent         = xmobarColor  colorWhite    colorNormalbg
-                , ppUrgent          = xmobarColor  colorGrayAlt  colorNormalbg
-                , ppVisible         = xmobarColor  colorGrayAlt  colorNormalbg
-                , ppHidden          = xmobarColor  colorGrayAlt  colorNormalbg
+                , ppCurrent         = xmobarColor  colorGreen    colorNormalbg
+                , ppUrgent          = xmobarColor  colorWhite    colorNormalbg
+                , ppVisible         = xmobarColor  colorWhite    colorNormalbg
+                , ppHidden          = xmobarColor  colorWhite    colorNormalbg
                 , ppHiddenNoWindows = xmobarColor  colorfg       colorNormalbg
-                , ppTitle           = xmobarColor  colorWhite    colorNormalbg
+                , ppTitle           = xmobarColor  colorGreen    colorNormalbg
                 , ppOutput          = putStrLn
                 , ppWsSep           = ""
                 , ppSep             = " : "
