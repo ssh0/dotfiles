@@ -1,0 +1,11 @@
+set max_res 360
+set order views
+set search_music false
+set ddir /media/shotaro/STOCK/Videos
+set columns user:14 date views rating category:8
+set show_video false
+set window_pos top-left
+set show_mplayer_keys false
+set window_pos top-right
+set show_status true
+set notifier notify-send
