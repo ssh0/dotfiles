@@ -29,6 +29,11 @@ NeoBundle 'alpaca-tc/alpaca_powertabline'
 NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 NeoBundle 'Lokaltog/powerline-fontpatcher'
 NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
+NeoBundle 'lambdalisue/vim-gista', {
+    \ 'depends': [
+    \   'Shougo/unite.vim',
+    \   'tyru/open-browser.vim',
+    \]}
 " NeoBundle 'klen/python-mode'
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {
     \ "autoload": {"insert": 1, "filetype": ["python", "python3", "djangohtml"]}}
@@ -112,6 +117,10 @@ nnoremap h <Left>zv
 " nnoremap j gj
 " nnoremap k gk
 nnoremap l <Right>zv
+
+" Gista
+let g:gista#github_user = 'ssh0'
+let g:gista#update_on_write = 1
 
 """ markdown {{{
 set syntax=markdown

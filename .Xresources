@@ -32,3 +32,4 @@ xscreensaver.passwd.thermometer.width:       10
 !datestamp format--see the strftime(3) manual page for details
 xscreensaver.dateFormat:   %a %b %d, %Y
 
+XTerm.VT100.faseSize: 8
