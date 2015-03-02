@@ -177,6 +177,6 @@ build_prompt() {
 }
 
 PROMPT='
-%{%f%b%k%}$(build_prompt) 
+%{%f%b%k%}$(build_prompt)%{$reset_color%}
 %{$fg_bold[green]%}: %{$reset_color%}'
 
