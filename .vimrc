@@ -29,6 +29,7 @@ NeoBundle 'alpaca-tc/alpaca_powertabline'
 NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 NeoBundle 'Lokaltog/powerline-fontpatcher'
 NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
+NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'lambdalisue/vim-gista', {
     \ 'depends': [
     \   'Shougo/unite.vim',
@@ -92,11 +93,14 @@ if &t_Co > 2 || has('gui_running')
     syntax on
 endif
 
+" バックアップファイルを作成しない
 set nowritebackup
 set nobackup
 set noswapfile
 
+" 無名クリップボードを使う(他のアプリケーションと連動)
 set clipboard=unnamed,autoselect
+" 80文字で折り返すようにする(PEP8)
 set colorcolumn=80
 
 " set hilight color
@@ -112,12 +116,18 @@ highlight CursorLineNr ctermbg=6 ctermfg=0
 highlight MatchParen ctermbg=7
 highlight Statement ctermfg=3 ctermbg=None
 
+" Key Bindings
+" jjでエスケープ
+inoremap <silent> jj <ESC>
+" gj, gkの代わりに矢印キーでなら行内を動けるように
 nnoremap <Down> gj
 nnoremap <Up>   gk
+" 行頭から前の行の最後に移動
 nnoremap h <Left>zv
+" 行末から次の行の洗湯に移動
+nnoremap l <Right>zv
 " nnoremap j gj
 " nnoremap k gk
-nnoremap l <Right>zv
 
 " Gista
 let g:gista#github_user = 'ssh0'
@@ -127,6 +137,7 @@ let g:gista#update_on_write = 1
 set syntax=markdown
 autocmd BufRead,BufNewFile *.mkd set filetype=markdown
 autocmd BufRead,BufNewFile *.md set filetype=markdown
+
 " Disable folding
 let g:vim_markdown_folding_disabled=1
 " Need: kannokanno/previm
@@ -173,7 +184,9 @@ function! RangeChooser()
     redraw!
 endfunction
 command! -bar RangerChooser call RangeChooser()
+" スペース + rでrangerを起動
 nnoremap <Space>r :<C-U>RangerChooser<CR>
 
+" Load Template file
 autocmd BufNewFile *.py 0r $HOME/Templates/Python.py
 autocmd BufNewFile *.sh 0r $HOME/Templates/shell_script.sh
