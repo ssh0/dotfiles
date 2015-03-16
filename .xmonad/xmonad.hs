@@ -136,7 +136,7 @@ main = do
        , ((mod1Mask .|. controlMask, xK_t      ), spawn "bash /home/shotaro/bin/toggle_compton.sh")
        , ((modm                    , xK_Return ), spawn "urxvt")
        , ((modm                    , xK_c      ), kill) -- %! Close the focused window
-       , ((modm                    , xK_p      ), spawn "exe=`dmenu_run -b -nb '#009688' -nf '#ffffff' -sb '#ffffff' -sf '#000000'` && exec $exe")
+       , ((modm                    , xK_p      ), spawn "exe=`dmenu_run -b -p '#' -nb '#009688' -nf '#ffffff' -sb '#ffffff' -sf '#000000'` && exec $exe")
        , ((mod1Mask .|. controlMask, xK_f      ), spawn "python /home/shotaro/Workspace/python/web_search/websearch.py")
        , ((0                       , 0x1008ff14), spawn "sh /home/shotaro/bin/cplay.sh")
        , ((0                       , 0x1008ff13), spawn "amixer -D pulse set Master 1%+ && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga")
