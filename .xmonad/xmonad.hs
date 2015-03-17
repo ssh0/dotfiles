@@ -39,7 +39,7 @@ import XMonad.Util.Run
 
 import Graphics.X11.ExtraTypes.XF86
 
-myWorkspaces = ["  main  ", "  browser  ", "  float  ", "  work  ", "  tray  "]
+myWorkspaces = [" main  ", " browser  ", " float  ", " work  ", " tray  "]
 modm = mod4Mask
 
 -- Color Setting
@@ -86,7 +86,7 @@ main = do
         -- any time Full mode, avoid xmobar area
        , layoutHook         = toggleLayouts (noBorders Full) $
                               avoidStruts $
-                              onWorkspace "  float  " simplestFloat $
+                              onWorkspace " float  " simplestFloat $
                               myLayout
         -- xmobar setting
        , logHook            = myLogHook wsbar
@@ -175,8 +175,8 @@ myStartupHook = do
 -- some window must created there
 myManageHookShift = composeAll
             -- if you want to know className, type "$ xprop|grep CLASS" on shell
-            [ className =? "Firefox"       --> mydoShift "  browser  "
-            , className =? "Google-chrome" --> mydoShift "  work  "
+            [ className =? "Firefox"       --> mydoShift " browser  "
+            , className =? "Google-chrome" --> mydoShift " work  "
             ]
              where mydoShift = doF . liftM2 (.) W.greedyView W.shift
 
@@ -205,7 +205,7 @@ wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws,t]
                 , ppTitle           = xmobarColor  colorGreen    colorNormalbg
                 , ppOutput          = putStrLn
                 , ppWsSep           = ""
-                , ppSep             = " : "
+                , ppSep             = " :  "
                 }
 
 -- Right click is used for resizing window
