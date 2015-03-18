@@ -39,7 +39,7 @@ import XMonad.Util.Run
 
 import Graphics.X11.ExtraTypes.XF86
 
-myWorkspaces = [" main  ", " browser  ", " float  ", " work  ", " tray  "]
+myWorkspaces = ["  main  ", "  browser  ", "  float  ", "  work  ", "  tray  "]
 modm = mod4Mask
 
 -- Color Setting
@@ -53,7 +53,7 @@ colorNormalbg  = "#212121"
 colorfg        = "#9fa8b1"
 
 -- Border width
-borderwidth = 0
+borderwidth = 3
 
 -- Define keys to remove
 keysToRemove x =
@@ -86,7 +86,7 @@ main = do
         -- any time Full mode, avoid xmobar area
        , layoutHook         = toggleLayouts (noBorders Full) $
                               avoidStruts $
-                              onWorkspace " float  " simplestFloat $
+                              onWorkspace "  float  " simplestFloat $
                               myLayout
         -- xmobar setting
        , logHook            = myLogHook wsbar
@@ -156,9 +156,9 @@ main = do
        ]
 
 -- Handle Window behaveior
-myLayout = (spacing 16 $ ResizableTall 1 (1/100) (1/2) [])
-             |||  (spacing 16 $ ThreeCol 1 (1/100) (16/35))
-             |||  (spacing 16 $ ResizableTall 2 (1/100) (1/2) [])
+myLayout = ResizableTall 1 (1/100) (1/2) []
+             |||  ThreeCol 1 (1/100) (16/35)
+             |||  ResizableTall 2 (1/100) (1/2) []
 --             |||  Mag.magnifiercz 1.1 (spacing 6 $ GridRatio (4/3))
 
 -- Start up (at xmonad beggining), like "wallpaper" or so on
@@ -175,8 +175,8 @@ myStartupHook = do
 -- some window must created there
 myManageHookShift = composeAll
             -- if you want to know className, type "$ xprop|grep CLASS" on shell
-            [ className =? "Firefox"       --> mydoShift " browser  "
-            , className =? "Google-chrome" --> mydoShift " work  "
+            [ className =? "Firefox"       --> mydoShift "  browser  "
+            , className =? "Google-chrome" --> mydoShift "  work  "
             ]
              where mydoShift = doF . liftM2 (.) W.greedyView W.shift
 
@@ -185,6 +185,7 @@ myManageHookFloat = composeAll
             [ className =? "Gimp"             --> doFloat,
               className =? "mplayer2"         --> doFloat,
               className =? "Tk"               --> doFloat,
+              className =? "feh"              --> doFloat,
               className =? "Display.im6"      --> doFloat,
               className =? "Shutter"          --> doFloat,
               className =? "Websearch.py"     --> doFloat,
