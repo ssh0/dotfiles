@@ -53,7 +53,7 @@ colorNormalbg  = "#212121"
 colorfg        = "#9fa8b1"
 
 -- Border width
-borderwidth = 3
+borderwidth = 0
 
 -- Define keys to remove
 keysToRemove x =
@@ -156,9 +156,9 @@ main = do
        ]
 
 -- Handle Window behaveior
-myLayout = ResizableTall 1 (1/100) (1/2) []
-             |||  ThreeCol 1 (1/100) (16/35)
-             |||  ResizableTall 2 (1/100) (1/2) []
+myLayout = (spacing 3 $ ResizableTall 1 (1/100) (1/2) [])
+             |||  (spacing 3 $ ThreeCol 1 (1/100) (16/35))
+             |||  (spacing 3 $ ResizableTall 2 (1/100) (1/2) [])
 --             |||  Mag.magnifiercz 1.1 (spacing 6 $ GridRatio (4/3))
 
 -- Start up (at xmonad beggining), like "wallpaper" or so on

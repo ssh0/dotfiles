@@ -7,14 +7,14 @@ Config { font = "xft:TakaoGothic:size=10"
        , overrideRedirect = False
        , border = NoBorder
        , borderColor = "#26a69a"
-       , commands = [ Run Network "wlan0" [ "-t"       , "<icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/net_down_03.xbm/><rx>  <icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/net_up_03.xbm/><tx>   "
+       , commands = [ Run Network "wlan0" [ "-t"       , "wlan0: <icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/net_down_03.xbm/><rx>  <icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/net_up_03.xbm/><tx>   "
                                           , "-L"       , "40"
                                           , "-H"       , "200"
                                           , "-m"       , "3"
                                           , "--normal" , "#ffffff"
                                           , "--high"   , "#a5d6a7"
                                           ] 10
-                    , Run Network "usb0"  [ "-t"       , "<icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/net_down_03.xbm/><rx>  <icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/net_up_03.xbm/><tx>   "
+                    , Run Network "ra0"   [ "-t"       , "ra0: <icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/net_down_03.xbm/><rx>  <icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/net_up_03.xbm/><tx>   "
                                           , "-L"       , "40"
                                           , "-H"       , "200"
                                           , "-m"       , "3"
@@ -52,6 +52,6 @@ Config { font = "xft:TakaoGothic:size=10"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% }{ %multicpu%%memory%%wlan0%%battery%<fc=#fff59d>%date%</fc>   "
+       , template = " %StdinReader% }{ %multicpu%%memory%%wlan0%%ra0%%battery%<fc=#fff59d>%date%</fc>   "
        }
 
