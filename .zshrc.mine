@@ -53,6 +53,7 @@ ranger
 mplayer
 man
 cmus
+takenotes.sh
 EOF
 
 export __timetrack_threshold
