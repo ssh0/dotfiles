@@ -29,12 +29,13 @@ NeoBundle 'alpaca-tc/alpaca_powertabline'
 NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 NeoBundle 'Lokaltog/powerline-fontpatcher'
 NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
-NeoBundle 'davidhalter/jedi-vim'
+" NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'lambdalisue/vim-gista', {
     \ 'depends': [
     \   'Shougo/unite.vim',
     \   'tyru/open-browser.vim',
     \]}
+NeoBundle 'suan/vim-instant-markdown'
 " NeoBundle 'klen/python-mode'
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {
     \ "autoload": {"insert": 1, "filetype": ["python", "python3", "djangohtml"]}}
