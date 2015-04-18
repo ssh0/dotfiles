@@ -150,6 +150,10 @@ let g:quickrun_config['markdown'] = {
     \ 'outputter': 'browser',
     \ 'args': '--mathjax'
     \ }
+
+" vim-instant-markdown / g:instant_markdown_autostart
+let g:instant_markdown_autostart = 0
+
 " }}}
 
 " Add ranger as a file chooser in vim

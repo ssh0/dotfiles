@@ -89,7 +89,7 @@ URxvt*color6:               #80deea
 URxvt*color14:              #80cbc4
 
 !white
-URxvt*color7:               #eaeaea
+URxvt*color7:               #aaaaaa
 URxvt*color15:              #bdbdbd
 
 URxvt.tabbed.tabbar-fg:     15
