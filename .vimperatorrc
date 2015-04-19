@@ -3,6 +3,9 @@
 source! /home/shotaro/.vimperatorrc.local
 
 " vim: set ft=vimperator:
+
+colorscheme darkness
+
 set complete=l
 set titlestring=
 set focuscontent=true
@@ -13,7 +16,6 @@ hi HintActive background-color:#cedef8; color:;
 set gui=none
 set hintchars=ifjkasdhguonmerwc
 
-colorscheme darkness
 
 let smooth_scroll_duration=300
 noremap v :set<Space>gui=nonavigation,notabs<CR>
