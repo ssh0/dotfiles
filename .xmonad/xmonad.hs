@@ -133,25 +133,27 @@ main = do
 
        `additionalKeys`
        [ ((mod1Mask .|. controlMask, xK_l      ), spawn "xscreensaver-command -lock")
-       , ((mod1Mask .|. controlMask, xK_t      ), spawn "bash /home/shotaro/bin/toggle_compton.sh")
+       , ((mod1Mask .|. controlMask, xK_t      ), spawn "bash $HOME/bin/toggle_compton.sh")
        , ((modm                    , xK_Return ), spawn "urxvt")
        , ((modm                    , xK_c      ), kill) -- %! Close the focused window
        , ((modm                    , xK_p      ), spawn "exe=`dmenu_run -b -p '#' -nb '#009688' -nf '#ffffff' -sb '#ffffff' -sf '#000000'` && exec $exe")
-       , ((mod1Mask .|. controlMask, xK_f      ), spawn "python /home/shotaro/Workspace/python/web_search/websearch.py")
-       , ((0                       , 0x1008ff14), spawn "sh /home/shotaro/bin/cplay.sh")
+       , ((mod1Mask .|. controlMask, xK_f      ), spawn "python $HOME/Workspace/python/web_search/websearch.py")
+       , ((0                       , 0x1008ff14), spawn "sh $HOME/bin/cplay.sh")
        , ((0                       , 0x1008ff13), spawn "amixer -D pulse set Master 1%+ && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga")
        , ((0                       , 0x1008ff11), spawn "amixer -D pulse set Master 1%- && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga")
        , ((0                       , 0x1008ff12), spawn "amixer -D pulse set Master toggle")
         -- Brightness Keys
        , ((0                       , 0x1008FF02), spawn "xbacklight + 10 -time 100 -steps 5")
        , ((0                       , 0x1008FF03), spawn "xbacklight - 10 -time 100 -steps 5")
-       , ((0                       , 0xff61    ), spawn "sh /home/shotaro/bin/screenshot.sh")
-       , ((shiftMask               , 0xff61    ), spawn "sh /home/shotaro/bin/screenshot_select.sh")
-       , ((modm     .|. controlMask, xK_h      ), spawn "sh /home/shotaro/bin/xte-left.sh")
-       , ((modm     .|. controlMask, xK_l      ), spawn "sh /home/shotaro/bin/xte-right.sh")
-       , ((modm     .|. controlMask, xK_j      ), spawn "sh /home/shotaro/bin/xte-down.sh")
-       , ((modm     .|. controlMask, xK_k      ), spawn "sh /home/shotaro/bin/xte-up.sh")
-       , ((modm     .|. controlMask, xK_Return ), spawn "sh /home/shotaro/bin/xte-click.sh")
+       , ((0                       , 0xff61    ), spawn "sh $HOME/bin/screenshot.sh")
+       , ((shiftMask               , 0xff61    ), spawn "sh $HOME/bin/screenshot_select.sh")
+       , ((modm     .|. controlMask, xK_h      ), spawn "sh $HOME/bin/xte-left.sh")
+       , ((modm     .|. controlMask, xK_l      ), spawn "sh $HOME/bin/xte-right.sh")
+       , ((modm     .|. controlMask, xK_j      ), spawn "sh $HOME/bin/xte-down.sh")
+       , ((modm     .|. controlMask, xK_k      ), spawn "sh $HOME/bin/xte-up.sh")
+       , ((modm     .|. controlMask, xK_Return ), spawn "sh $HOME/bin/xte-click.sh")
+       , ((mod1Mask                , xk_c      ), spawn "sh $HOME/bin/clipboard_copy.sh")
+       , ((mod1Mask                , xk_p      ), spawn "sh $HOME/bin/clipboard_paste.sh")
 
        ]
 
@@ -167,10 +169,10 @@ myStartupHook = do
         spawn "nm-applet"
         spawn "gnome-sound-applet"
         spawn "xscreensaver -no-splash"
-        spawn "/home/shotaro/.dropbox-dist/dropboxd"
-        spawn "feh --bg-fill '/home/shotaro/Downloads/20 Free Modern Backgrounds/20 Low-Poly Backgrounds/Low-Poly Backgrounds (2).JPG'"
-        spawn "bash /home/shotaro/bin/toggle_compton.sh"
-        -- spawn "compton -b --config /home/shotaro/.config/compton/compton.conf"
+        spawn "$HOME/.dropbox-dist/dropboxd"
+        spawn "feh --bg-fill '$HOME/Downloads/20 Free Modern Backgrounds/20 Low-Poly Backgrounds/Low-Poly Backgrounds (2).JPG'"
+        spawn "bash $HOME/bin/toggle_compton.sh"
+        -- spawn "compton -b --config $HOME/.config/compton/compton.conf"
 
 -- some window must created there
 myManageHookShift = composeAll
@@ -195,7 +197,7 @@ myManageHookFloat = composeAll
 
 myLogHook h = dynamicLogWithPP $ wsPP { ppOutput = hPutStrLn h }
 
-myWsBar = "xmobar /home/shotaro/.xmonad/xmobarrc"
+myWsBar = "xmobar $HOME/.xmonad/xmobarrc"
 
 wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws,t]
                 , ppCurrent         = xmobarColor  colorGreen    colorNormalbg
