@@ -153,7 +153,7 @@ main = do
        , ((modm     .|. controlMask, xK_k      ), spawn "sh $HOME/bin/xte-up.sh")
        , ((modm     .|. controlMask, xK_Return ), spawn "sh $HOME/bin/xte-click.sh")
        , ((mod1Mask                , xK_c      ), spawn "sh $HOME/bin/clipboard_copy.sh")
-       , ((mod1Mask                , xK_p      ), spawn "sh $HOME/bin/clipboard_paste.sh")
+       , ((mod1Mask                , xK_v      ), spawn "sh $HOME/bin/clipboard_paste.sh")
 
        ]
 
