@@ -51,7 +51,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 source $HOME/.zshrc.mine
-export PATH="/home/shotaro/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/shotaro/bin/FDK/Tools/linux"
+export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/shotaro/bin/FDK/Tools/linux"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
