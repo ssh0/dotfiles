@@ -24,6 +24,9 @@ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 autoload -U add-zsh-hook 2>/dev/null || return
 
+alias fgr='sh $HOME/bin/fgr.sh'
+
+
 #
 # Notification of local host command
 # ----------------------------------
