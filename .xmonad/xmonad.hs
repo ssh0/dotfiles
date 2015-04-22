@@ -179,6 +179,7 @@ myManageHookShift = composeAll
             -- if you want to know className, type "$ xprop|grep CLASS" on shell
             [ className =? "Firefox"       --> mydoShift " 2 "
             , className =? "Google-chrome" --> mydoShift " 4 "
+            , className =? "mplayer2"      --> doShift   " 3 "
             ]
              where mydoShift = doF . liftM2 (.) W.greedyView W.shift
 
