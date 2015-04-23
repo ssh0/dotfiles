@@ -33,6 +33,7 @@ import XMonad.Layout.Spacing           -- this makes smart space around windows
 import XMonad.Layout.Tabbed
 import XMonad.Layout.ThreeColumns      -- for many windows
 import XMonad.Layout.ToggleLayouts     -- Full window at any time
+import XMonad.Layout.TwoPane           -- split horizontally, show two windows
 import XMonad.Util.EZConfig            -- removeKeys, additionalKeys
 import XMonad.Util.Run(spawnPipe)      -- spawnPipe, hPutStrLn
 import XMonad.Util.Run
@@ -159,6 +160,7 @@ main = do
 
 -- Handle Window behaveior
 myLayout = (spacing 3 $ ResizableTall 1 (1/100) (1/2) [])
+             |||  (spacing 3 $ TwoPane (1/100) (4/7) [])
              |||  (spacing 3 $ ThreeCol 1 (1/100) (16/35))
              |||  (spacing 3 $ ResizableTall 2 (1/100) (1/2) [])
 --             |||  Mag.magnifiercz 1.1 (spacing 6 $ GridRatio (4/3))
