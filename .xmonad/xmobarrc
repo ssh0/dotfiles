@@ -14,7 +14,7 @@ Config { font = "xft:TakaoGothic:size=10"
                                           , "--normal" , "#ffffff"
                                           , "--high"   , "#a5d6a7"
                                           ] 10
-                    , Run Network "ra0"   [ "-t"       , "ra0: <icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/net_down_03.xbm/><rx>  <icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/net_up_03.xbm/><tx>   "
+                    , Run Network "usb0"   [ "-t"       , "usb0: <icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/net_down_03.xbm/><rx>  <icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/net_up_03.xbm/><tx>   "
                                           , "-L"       , "40"
                                           , "-H"       , "200"
                                           , "-m"       , "3"
@@ -52,6 +52,6 @@ Config { font = "xft:TakaoGothic:size=10"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% }{ %multicpu%%memory%%wlan0%%ra0%%battery%<fc=#fff59d>%date%</fc>   "
+       , template = " %StdinReader% }{ %multicpu%%memory%%wlan0%%usb0%%battery%<fc=#fff59d>%date%</fc>   "
        }
 
