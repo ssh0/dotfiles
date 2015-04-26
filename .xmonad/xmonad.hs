@@ -33,7 +33,7 @@ import XMonad.Layout.Spacing           -- this makes smart space around windows
 import XMonad.Layout.Tabbed
 import XMonad.Layout.ThreeColumns      -- for many windows
 import XMonad.Layout.ToggleLayouts     -- Full window at any time
-import XMonad.Layout.TwoPane           -- split horizontally, show two windows
+import XMonad.Layout.TwoPane
 import XMonad.Util.EZConfig            -- removeKeys, additionalKeys
 import XMonad.Util.Run(spawnPipe)      -- spawnPipe, hPutStrLn
 import XMonad.Util.Run
@@ -139,15 +139,16 @@ main = do
        , ((modm                    , xK_c      ), kill) -- %! Close the focused window
        , ((modm                    , xK_p      ), spawn "exe=`dmenu_run -b -p '#' -nb '#009688' -nf '#ffffff' -sb '#ffffff' -sf '#000000'` && exec $exe")
        , ((mod1Mask .|. controlMask, xK_f      ), spawn "python $HOME/Workspace/python/web_search/websearch.py")
-       , ((0                       , 0x1008ff14), spawn "sh $HOME/bin/cplay.sh")
+       , ((0                       , 0x1008ff18), spawn "sh $HOME/bin/cplay.sh")
        , ((0                       , 0x1008ff13), spawn "amixer -D pulse set Master 1%+ && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga")
        , ((0                       , 0x1008ff11), spawn "amixer -D pulse set Master 1%- && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga")
        , ((0                       , 0x1008ff12), spawn "amixer -D pulse set Master toggle")
         -- Brightness Keys
-       , ((0                       , 0x1008FF02), spawn "xbacklight + 10 -time 100 -steps 5")
-       , ((0                       , 0x1008FF03), spawn "xbacklight - 10 -time 100 -steps 5")
+       , ((0                       , 0x1008FF02), spawn "xbacklight + 1 -time 100 -steps 1")
+       , ((0                       , 0x1008FF03), spawn "xbacklight - 1 -time 100 -steps 1")
        , ((0                       , 0xff61    ), spawn "sh $HOME/bin/screenshot.sh")
        , ((shiftMask               , 0xff61    ), spawn "sh $HOME/bin/screenshot_select.sh")
+       , ((0                       , 0x1008ff1d), spawn "ipython qtconsole --matplotlib=inline")
        , ((modm     .|. controlMask, xK_h      ), spawn "sh $HOME/bin/xte-left.sh")
        , ((modm     .|. controlMask, xK_l      ), spawn "sh $HOME/bin/xte-right.sh")
        , ((modm     .|. controlMask, xK_j      ), spawn "sh $HOME/bin/xte-down.sh")
@@ -159,10 +160,10 @@ main = do
        ]
 
 -- Handle Window behaveior
-myLayout = (spacing 3 $ ResizableTall 1 (1/100) (1/2) [])
-             |||  (spacing 3 $ TwoPane (1/100) (4/7) )
+myLayout = (spacing 16 $ ResizableTall 1 (1/100) (4/7) [])
+             ||| (spacing 16 $ TwoPane (1/100) (4/7))
              |||  (spacing 3 $ ThreeCol 1 (1/100) (16/35))
-             |||  (spacing 3 $ ResizableTall 2 (1/100) (1/2) [])
+             |||  (spacing 16 $ ResizableTall 2 (1/100) (1/2) [])
 --             |||  Mag.magnifiercz 1.1 (spacing 6 $ GridRatio (4/3))
 
 -- Start up (at xmonad beggining), like "wallpaper" or so on
@@ -172,7 +173,7 @@ myStartupHook = do
         spawn "gnome-sound-applet"
         spawn "xscreensaver -no-splash"
         spawn "$HOME/.dropbox-dist/dropboxd"
-        spawn "feh --bg-fill '$HOME/Downloads/20 Free Modern Backgrounds/20 Low-Poly Backgrounds/Low-Poly Backgrounds (2).JPG'"
+        spawn "feh --bg-fill '/media/shotaro/STOCK/Pictures/20 Free Modern Backgrounds/20 Low-Poly Backgrounds/Low-Poly Backgrounds (2).JPG'"
         spawn "bash $HOME/bin/toggle_compton.sh"
         -- spawn "compton -b --config $HOME/.config/compton/compton.conf"
 
@@ -181,15 +182,14 @@ myManageHookShift = composeAll
             -- if you want to know className, type "$ xprop|grep CLASS" on shell
             [ className =? "Firefox"       --> mydoShift " 2 "
             , className =? "Google-chrome" --> mydoShift " 4 "
-            , className =? "mplayer2"      --> doShift   " 3 "
             ]
              where mydoShift = doF . liftM2 (.) W.greedyView W.shift
 
 -- new window will created in Float mode
 myManageHookFloat = composeAll
             [ className =? "Gimp"             --> doFloat,
+              -- className =? "mplayer2"         --> doFloat,
               className =? "Tk"               --> doFloat,
-              className =? "feh"              --> doFloat,
               className =? "Display.im6"      --> doFloat,
               className =? "Shutter"          --> doFloat,
               className =? "Websearch.py"     --> doFloat,
@@ -210,7 +210,7 @@ wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws,t]
                 , ppTitle           = xmobarColor  colorGreen    colorNormalbg
                 , ppOutput          = putStrLn
                 , ppWsSep           = ""
-                , ppSep             = " :  "
+                , ppSep             = " : "
                 }
 
 -- Right click is used for resizing window
