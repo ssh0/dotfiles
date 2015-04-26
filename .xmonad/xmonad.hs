@@ -160,13 +160,8 @@ main = do
        ]
 
 -- Handle Window behaveior
-<<<<<<< HEAD
 myLayout = (spacing 16 $ ResizableTall 1 (1/100) (4/7) [])
-             ||| (spacing 16 $ TwoPane (1/100) (4/7))
-=======
-myLayout = (spacing 3 $ ResizableTall 1 (1/100) (1/2) [])
-             |||  (spacing 16 $ TwoPane (1/100) (4/7) )
->>>>>>> f7b041fd06f00cdd6b1cb08ea749766130838ff1
+             |||  (spacing 16 $ TwoPane (1/100) (4/7))
              |||  (spacing 3 $ ThreeCol 1 (1/100) (16/35))
              |||  (spacing 16 $ ResizableTall 2 (1/100) (1/2) [])
 --             |||  Mag.magnifiercz 1.1 (spacing 6 $ GridRatio (4/3))
@@ -195,11 +190,8 @@ myManageHookFloat = composeAll
             [ className =? "Gimp"             --> doFloat,
               className =? "mplayer2"         --> doFloat,
               className =? "Tk"               --> doFloat,
-<<<<<<< HEAD
-=======
               className =? "feh"              --> doFloat,
               className =? "mplayer2"         --> doFloat,
->>>>>>> f7b041fd06f00cdd6b1cb08ea749766130838ff1
               className =? "Display.im6"      --> doFloat,
               className =? "Shutter"          --> doFloat,
               className =? "Websearch.py"     --> doFloat,
