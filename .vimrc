@@ -21,6 +21,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Refer to |:NeoBundle-examples|.
 " Note: Yout don't set neobundle setting in .gvimrc!
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
@@ -29,7 +30,7 @@ NeoBundle 'alpaca-tc/alpaca_powertabline'
 NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 NeoBundle 'Lokaltog/powerline-fontpatcher'
 NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
-" NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'lambdalisue/vim-gista', {
     \ 'depends': [
     \   'Shougo/unite.vim',
@@ -130,6 +131,11 @@ nnoremap l <Right>zv
 " nnoremap j gj
 " nnoremap k gk
 
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
 " Gista
 let g:gista#github_user = 'ssh0'
 let g:gista#update_on_write = 1
@@ -138,6 +144,10 @@ let g:gista#update_on_write = 1
 set syntax=markdown
 autocmd BufRead,BufNewFile *.mkd set filetype=markdown
 autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+" Disable instant markdown autostart
+let g:instant_markdown_autostart = 0
+" You can manually activate by cmd `:InstantMarkdownPreview`
 
 " Disable folding
 let g:vim_markdown_folding_disabled=1
@@ -151,17 +161,26 @@ let g:quickrun_config['markdown'] = {
     \ 'args': '--mathjax'
     \ }
 
-" vim-instant-markdown / g:instant_markdown_autostart
-let g:instant_markdown_autostart = 0
-
 " }}}
+
+
+" LaTeX Quickrun
+let g:quickrun_config.tex = {'command' : 'mkpdf'}
+
+
+
+" for open-browser plugin
+let g:netrw_nogx = 1 " disable netrw's gx mapping.
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
 
 " Add ranger as a file chooser in vim
 "
 " If you add this code to the .vimrc, ranger can be started using the command
-" ":RagerChooser" or the keybinding "<leader>r".  Once you select one or more
+" ":RangerChooser" or the keybinding "<leader>r".  Once you select one or more
 " files, press enter and ranger will quit again and vim will open the selected
 " files.
+"
 
 function! RangeChooser()
     let temp = tempname()
@@ -195,3 +214,5 @@ nnoremap <Space>r :<C-U>RangerChooser<CR>
 " Load Template file
 autocmd BufNewFile *.py 0r $HOME/Templates/Python.py
 autocmd BufNewFile *.sh 0r $HOME/Templates/shell_script.sh
+autocmd BufNewFile *.md 0r $HOME/Templates/markdown.mkd
+autocmd BufNewFile *.mkd 0r $HOME/Templates/markdown.mkd
