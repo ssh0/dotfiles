@@ -19,7 +19,7 @@ screenshot-template=~/Desktop/mpv-screenshot%n
 # disable retarded VSFilter compatibility
 ass-force-style=Kerning=yes
 sub-text-font="TakaoPGothic"
-sub-text-font-size=10
+sub-text-font-size=30
 
 ################################################################################
 # On Screen Display

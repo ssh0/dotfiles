@@ -1,7 +1,7 @@
 
 # Folder hooks
 folder-hook 'account.com.gmail.藤本將太郎' 'source ~/.mutt/account.com.gmail.藤本將太郎'
-# folder-hook 'account.com.yahoo.藤本將太郎' 'source ~/.mutt/account.com.yahoo.藤本將太郎'
+folder-hook 'account.com.waseda.藤本將太郎' 'source ~/.mutt/account.com.waseda.藤本將太郎'
 # folder-hook 'account.com.live.藤本將太郎' 'source ~/.mutt/account.com.live.藤本將太郎'
 # folder-hook 'account.com.hotmail.藤本將太郎' 'source ~/.mutt/account.com.hotmail.藤本將太郎'
 
@@ -11,7 +11,7 @@ source ~/.mutt/account.com.gmail.藤本將太郎
 # Macros for switching accounts
 
 macro index <F12> '<sync-mailbox><enter-command>source ~/.mutt/account.com.gmail.藤本將太郎<enter><change-folder>!<enter>'
-# macro index <F11> '<sync-mailbox><enter-command>source ~/.mutt/account.com.yahoo.藤本將太郎<enter><change-folder>!<enter>'
+macro index <F11> '<sync-mailbox><enter-command>source ~/.mutt/account.com.waseda.藤本將太郎<enter><change-folder>!<enter>'
 # macro index <F10> '<sync-mailbox><enter-command>source ~/.mutt/account.com.live.藤本將太郎<enter><change-folder>!<enter>'
 # macro index <F9> '<sync-mailbox><enter-command>source ~/.mutt/account.com.hotmail.藤本將太郎<enter><change-folder>!<enter>'
 
