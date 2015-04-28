@@ -189,6 +189,7 @@ myManageHookShift = composeAll
 myManageHookFloat = composeAll
             [ className =? "Gimp"             --> doFloat,
               className =? "mplayer2"         --> doFloat,
+              className =? "mpv"              --> doFloat,
               className =? "Tk"               --> doFloat,
               className =? "feh"              --> doFloat,
               className =? "mplayer2"         --> doFloat,
