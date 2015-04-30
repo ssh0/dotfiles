@@ -18,7 +18,7 @@ set hintchars=ifjkasdhguonmerwc
 
 
 let smooth_scroll_duration=300
-noremap v :set<Space>gui=nonavigation,notabs<CR>
-noremap V :set<space>gui=nonavigation,tabs<CR>
+noremap v :set<Space>gui=nonavigation,tabs<CR>
+noremap V :set<space>gui=navigation,tabs<CR>
 noremap j 3j
 noremap k 3k
