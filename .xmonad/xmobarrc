@@ -7,21 +7,21 @@ Config { font = "xft:TakaoGothic:size=10"
        , overrideRedirect = False
        , border = NoBorder
        , borderColor = "#26a69a"
-       , commands = [ Run Network "wlan0" [ "-t"       , "wlan0: <icon=$HOME/.icons/sm4tik-icon-pack/xbm/net_down_03.xbm/><rx>  <icon=$HOME/.icons/sm4tik-icon-pack/xbm/net_up_03.xbm/><tx>   "
+       , commands = [ Run Network "wlan0" [ "-t"       , "wlan0: <icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/net_down_03.xbm/><rx>  <icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/net_up_03.xbm/><tx>   "
                                           , "-L"       , "40"
                                           , "-H"       , "200"
                                           , "-m"       , "3"
                                           , "--normal" , "#ffffff"
                                           , "--high"   , "#a5d6a7"
                                           ] 10
-                    , Run Network "usb0"   [ "-t"       , "usb0: <icon=$HOME/.icons/sm4tik-icon-pack/xbm/net_down_03.xbm/><rx>  <icon=$HOME/.icons/sm4tik-icon-pack/xbm/net_up_03.xbm/><tx>   "
+                    , Run Network "usb0"   [ "-t"       , "usb0: <icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/net_down_03.xbm/><rx>  <icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/net_up_03.xbm/><tx>   "
                                           , "-L"       , "40"
                                           , "-H"       , "200"
                                           , "-m"       , "3"
                                           , "--normal" , "#ffffff"
                                           , "--high"   , "#a5d6a7"
                                           ] 10
-                    , Run MultiCpu        [ "-t"       , "<icon=$HOME/.icons/sm4tik-icon-pack/xbm/cpu.xbm/> <total0>.<total1>.<total2>.<total3>   "
+                    , Run MultiCpu        [ "-t"       , "<icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/cpu.xbm/> <total0>.<total1>.<total2>.<total3>   "
                                           , "-L"       , "40"
                                           , "-H"       , "85"
                                           , "-m"       , "2"
@@ -29,7 +29,7 @@ Config { font = "xft:TakaoGothic:size=10"
                                           , "--high"   , "#f44336"
                                           ] 10
 
-                    , Run Memory          [ "-t"       , "<icon=$HOME/.icons/sm4tik-icon-pack/xbm/mem.xbm/> <usedratio>%   "
+                    , Run Memory          [ "-t"       , "<icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/mem.xbm/> <usedratio>%   "
                                           , "-L"       , "40"
                                           , "-H"       , "90"
                                           , "-m"       , "2"
@@ -37,7 +37,7 @@ Config { font = "xft:TakaoGothic:size=10"
                                           , "--high"   , "#f44336"
                                           ] 10
                     , Run BatteryP        ["CMB1"]
-                                          [ "-t"       , "<icon=$HOME/.icons/sm4tik-icon-pack/xbm/bat_full_02.xbm/> <acstatus>   "
+                                          [ "-t"       , "<icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/bat_full_02.xbm/> <acstatus>   "
                                           , "-L"       , "20"
                                           , "-H"       , "80"
                                           , "--low"    , "#f443c6"
