@@ -173,7 +173,7 @@ myStartupHook = do
         spawn "gnome-sound-applet"
         spawn "xscreensaver -no-splash"
         spawn "$HOME/.dropbox-dist/dropboxd"
-        spawn "feh --bg-fill '/media/shotaro/STOCK/Pictures/20 Free Modern Backgrounds/20 Low-Poly Backgrounds/Low-Poly Backgrounds (2).JPG'"
+        spawn "feh --bg-fill '/media/shotaro/STOCK/Pictures/20 Free Modern Backgrounds/20 Low-Poly Backgrounds/Low-Poly Backgrounds (1).JPG'"
         spawn "bash $HOME/bin/toggle_compton.sh"
         -- spawn "compton -b --config $HOME/.config/compton/compton.conf"
 
