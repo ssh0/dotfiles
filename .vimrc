@@ -25,6 +25,7 @@ NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'tyru/caw.vim.git'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'alpaca-tc/alpaca_powertabline'
 NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
@@ -136,6 +137,11 @@ inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
+" comment out / off
+nmap <Leader>c <Plug>(caw:i:toggle)
+vmap <Leader>c <Plug>(caw:i:toggle)
+
+
 " Gista
 let g:gista#github_user = 'ssh0'
 let g:gista#update_on_write = 1
@@ -166,8 +172,6 @@ let g:quickrun_config['markdown'] = {
 
 " LaTeX Quickrun
 let g:quickrun_config.tex = {'command' : 'mkpdf'}
-
-
 
 " for open-browser plugin
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
@@ -208,8 +212,8 @@ function! RangeChooser()
     redraw!
 endfunction
 command! -bar RangerChooser call RangeChooser()
-" スペース + rでrangerを起動
-nnoremap <Space>r :<C-U>RangerChooser<CR>
+" \ + rでrangerを起動
+nnoremap <Leader>r :<C-U>RangerChooser<CR>
 
 " Load Template file
 autocmd BufNewFile *.py 0r $HOME/Templates/Python.py
