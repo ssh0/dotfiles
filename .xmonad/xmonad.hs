@@ -168,13 +168,13 @@ myLayout = (spacing 16 $ ResizableTall 1 (1/100) (4/7) [])
 
 -- Start up (at xmonad beggining), like "wallpaper" or so on
 myStartupHook = do
-        -- spawn "gnome-settings-daemon"
+        spawn "gnome-settings-daemon"
         -- spawn "nm-applet"
         -- spawn "gnome-sound-applet"
-        spawn "xrandr --output eDP1 --off --output HDMI1 --auto"
+        -- spawn "xrandr --output eDP1 --off --output HDMI1 --auto"
         spawn "xscreensaver -no-splash"
         spawn "$HOME/.dropbox-dist/dropboxd"
-        spawn "nmcli nm enable true"
+        -- spawn "nmcli nm enable true"
         spawn "feh --bg-fill '/home/shotaro/Downloads/20 Free Modern Backgrounds/20 Low-Poly Backgrounds/Low-Poly Backgrounds (1).JPG'"
         spawn "bash $HOME/bin/toggle_compton.sh"
         -- spawn "compton -b --config $HOME/.config/compton/compton.conf"
