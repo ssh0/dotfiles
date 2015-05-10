@@ -136,6 +136,7 @@ main = do
        [ ((mod1Mask .|. controlMask, xK_l      ), spawn "xscreensaver-command -lock")
        , ((mod1Mask .|. controlMask, xK_t      ), spawn "bash $HOME/bin/toggle_compton.sh")
        , ((modm                    , xK_Return ), spawn "urxvt")
+       , ((modm .|. shiftMask      , xK_Return ), spawn "sh $HOME/bin/urxvt_float.sh")
        , ((modm                    , xK_c      ), kill) -- %! Close the focused window
        , ((modm                    , xK_p      ), spawn "exe=`dmenu_run -b -p '#' -nb '#009688' -nf '#ffffff' -sb '#ffffff' -sf '#000000'` && exec $exe")
        , ((mod1Mask .|. controlMask, xK_f      ), spawn "python $HOME/Workspace/python/web_search/websearch.py")
@@ -194,10 +195,10 @@ myManageHookFloat = composeAll
               className =? "mpv"              --> doFloat,
               className =? "Tk"               --> doFloat,
               className =? "feh"              --> doFloat,
-              className =? "mplayer2"         --> doFloat,
               className =? "Display.im6"      --> doFloat,
               className =? "Shutter"          --> doFloat,
               className =? "Websearch.py"     --> doFloat,
+              title     =? "urxvt_float"      --> doFloat,
               className =? "Plugin-container" --> doFloat,
               title     =? "Speedbar"         --> doFloat]
 
