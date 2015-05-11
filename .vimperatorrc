@@ -18,6 +18,9 @@ set editor='/usr/bin/vim'
 " activate
 set activate=addons,downloads,extoptions,help,homepage,quickmark,paste
 
+" set colorscheme
+colorscheme darkness
+
 " Hint font, font-size, and colors
 hi Hint font-family: Arial; font-size: 10px; color: white; background-color: #353540; text-transform:uppercase; z-index: 10000; white-space: nowrap; padding: 1px 1px 1px 1px;
 
