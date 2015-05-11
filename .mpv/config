@@ -8,7 +8,7 @@
 use-filedir-conf=yes
 
 # default value of 320kB is quite low, especially on slow media
-# cache=4000
+cache=320
 
 # save screenshots on the desktop
 screenshot-template=~/Desktop/mpv-screenshot%n

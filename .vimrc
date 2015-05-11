@@ -22,7 +22,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Note: Yout don't set neobundle setting in .gvimrc!
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'plasticboy/vim-markdown'
+" NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'tyru/caw.vim.git'
@@ -37,7 +37,7 @@ NeoBundle 'lambdalisue/vim-gista', {
     \   'Shougo/unite.vim',
     \   'tyru/open-browser.vim',
     \]}
-NeoBundle 'suan/vim-instant-markdown'
+" NeoBundle 'suan/vim-instant-markdown'
 " NeoBundle 'klen/python-mode'
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {
     \ "autoload": {"insert": 1, "filetype": ["python", "python3", "djangohtml"]}}
@@ -102,7 +102,7 @@ set nobackup
 set noswapfile
 
 " 無名クリップボードを使う(他のアプリケーションと連動)
-set clipboard=unnamed,autoselect
+set clipboard+=unnamed,unnamedplus,autoselect
 " 80文字で折り返すようにする(PEP8)
 set colorcolumn=80
 
@@ -156,7 +156,7 @@ let g:instant_markdown_autostart = 0
 " You can manually activate by cmd `:InstantMarkdownPreview`
 
 " Disable folding
-let g:vim_markdown_folding_disabled=1
+" let g:vim_markdown_folding_disabled=1
 " Need: kannokanno/previm
 " nnoremap <silent> <C-p> :PrevimOpen<CR>
 "
