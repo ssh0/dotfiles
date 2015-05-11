@@ -1,24 +1,45 @@
 "3.8.2 (created: 2014/02/13 23:52:43)
 
-source! /home/shotaro/.vimperatorrc.local
 
 " vim: set ft=vimperator:
 
-colorscheme darkness
-
+" completion for history only
 set complete=l
+
+" clean titlestring
 set titlestring=
-set focuscontent=true
+
+" Don't focus input box when opening new tab
+set focuscontent
+
+" set default editor for vim
+set editor='/usr/bin/vim'
+
+" activate
 set activate=addons,downloads,extoptions,help,homepage,quickmark,paste
+
+" Hint font, font-size, and colors
 hi Hint font-family: Arial; font-size: 10px; color: white; background-color: #353540; text-transform:uppercase; z-index: 10000; white-space: nowrap; padding: 1px 1px 1px 1px;
+
+" Setting for status line font-size
 hi HintElem background-color:#e4efff; color:;
 hi HintActive background-color:#cedef8; color:;
+
+" No GUI
 set gui=nonavigation,tabs
+
+" Set hintcharacter for easily reachable keys
 set hintchars=ifjkasdhguonmerwc
 
-
-let smooth_scroll_duration=300
+" set v and v key for showing tab
 noremap v :set<Space>gui=nonavigation,tabs<CR>
 noremap V :set<space>gui=navigation,tabs<CR>
+
+" scroll more than one line using the j and k keys
 noremap j 3j
 noremap k 3k
+
+" yank the title by "Y"
+nnoremap Y :js util.copyToClipboard(buffer.title, true)<CR>
+
+source! $HOME/.vimperatorrc.local
