@@ -157,6 +157,7 @@ main = do
        , ((modm     .|. controlMask, xK_Return ), spawn "sh $HOME/bin/xte-click.sh")
        , ((mod1Mask                , xK_c      ), spawn "sh $HOME/bin/clipboard_copy.sh")
        , ((mod1Mask                , xK_v      ), spawn "sh $HOME/bin/clipboard_paste.sh")
+       , ((controlMask             , xK_Escape ), spawn "sh $HOME/bin/touchpad_toggle.sh")
 
        ]
 
