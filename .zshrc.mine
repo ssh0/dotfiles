@@ -53,6 +53,10 @@ function r() {
     fi
 }
 
+# zsh-bd
+# Quickly go back to aspecific parent directory instead of typing cd ../../../
+# [Tarrasch/zsh-bd](https://github.com/Tarrasch/zsh-bd)
+source $HOME/.oh-my-zsh/custom/plugins/bd/bd.zsh
 
 #
 # Notification of local host command
