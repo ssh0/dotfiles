@@ -140,6 +140,7 @@ set pumheight=10
 highlight VertSplit term=None cterm=None ctermfg=250 ctermbg=250
 highlight NonText ctermfg=0 guifg=Bg
 highlight Normal ctermbg=None
+highlight Folded ctermbg=8 ctermfg=0
 highlight LineNr ctermbg=0 ctermfg=8
 highlight ColorColumn ctermbg=0
 highlight CursorLine cterm=None
