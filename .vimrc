@@ -32,6 +32,10 @@ NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 NeoBundle 'Lokaltog/powerline-fontpatcher'
 NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
 NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'ujihisa/neco-look', {
+    \ 'depends': [
+    \   'Shougo/neocomplcache.vim',
+    \]}
 NeoBundle 'lambdalisue/vim-gista', {
     \ 'depends': [
     \   'Shougo/unite.vim',
@@ -63,7 +67,7 @@ endif
 "カーソルキーで行末／行頭の移動可能に設定
 set whichwrap=b,s,[,],<,>
 
-"タブを設定
+"Tab幅を設定
 set tabstop=4
 set shiftwidth=0
 set expandtab
@@ -91,6 +95,10 @@ set showcmd
 set list
 set listchars=tab:^\ ,trail:~
 
+" 対応する括弧を表示
+set showmatch
+set matchtime=1
+
 " ハイライトを有効にする
 if &t_Co > 2 || has('gui_running')
     syntax on
@@ -105,6 +113,8 @@ set noswapfile
 set clipboard+=unnamed,unnamedplus,autoselect
 " 80文字で折り返すようにする(PEP8)
 set colorcolumn=80
+" 補完メニューの高さを指定する
+set pumheight=10
 
 " set hilight color
 " To show current color scheme by
@@ -129,10 +139,13 @@ nnoremap <Up>   gk
 nnoremap h <Left>zv
 " 行末から次の行の洗湯に移動
 nnoremap l <Right>zv
-" nnoremap j gj
-" nnoremap k gk
-" craeate new tab with ranger
+" 行末までヤンク
+nnoremap Y y$
+" craeate new tab
 nnoremap <silent> <C-t> :tabnew<CR>
+" num increment :help CTRL-A, :help CTRL-X
+nnoremap + <C-a>
+nnoremap - <C-x>
 
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
@@ -171,6 +184,8 @@ let g:quickrun_config['markdown'] = {
 
 " }}}
 
+" jedi completeplt
+let g:jedi#auto_vim_configuration = 0
 
 " LaTeX Quickrun
 let g:quickrun_config.tex = {'command' : 'mkpdf'}
@@ -187,7 +202,6 @@ vmap gx <Plug>(openbrowser-smart-search)
 " files, press enter and ranger will quit again and vim will open the selected
 " files.
 "
-
 function! RangeChooser()
     let temp = tempname()
     " The option "--choosefiles" was added in ranger 1.5.1. Use the next line
