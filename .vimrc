@@ -87,7 +87,7 @@ set smartindent
 " 入力されているテキストの最大幅
 set textwidth=0
 
-" cursor line を表示
+" cursor line をハイライト
 set cursorline
 
 "タイトルを表示
@@ -113,6 +113,9 @@ if &t_Co > 2 || has('gui_running')
     syntax on
 endif
 
+" 検索結果のハイライト
+set hlsearch
+
 " folding
 set fdm=marker
 " zf(def) zd(delete) zo(open) zc(close)
@@ -131,9 +134,12 @@ set colorcolumn=80
 " 補完メニューの高さを指定する
 set pumheight=10
 
+" スクロール送りを開始する前後の行数を指定
+set scrolloff=5
+
 "}}}
 
-" set hilight color
+" set highlight color
 "{{{
 " To show current color scheme by
 " ':so $VIMRUNTIME/syntax/hitest.vim'
@@ -141,6 +147,7 @@ highlight VertSplit term=None cterm=None ctermfg=250 ctermbg=250
 highlight NonText ctermfg=0 guifg=Bg
 highlight Normal ctermbg=None
 highlight Folded ctermbg=8 ctermfg=0
+highlight Search ctermfg=0 guifg=0
 highlight LineNr ctermbg=0 ctermfg=8
 highlight ColorColumn ctermbg=0
 highlight CursorLine cterm=None
@@ -183,6 +190,10 @@ inoremap <C-l> <Right>
 " comment out / off
 nmap <Leader>c <Plug>(caw:i:toggle)
 vmap <Leader>c <Plug>(caw:i:toggle)
+
+" ハイライトの取り消し ESC2回押し
+nnoremap <ESC><ESC> :nohlsearch<CR>
+
 "}}}
 
 " Plugin option settings
