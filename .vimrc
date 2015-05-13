@@ -1,3 +1,5 @@
+" Initial Setting
+"{{{
 " Note: Skip initialization for vim-tiny or vim-small.
 if !1 | finish | endif
 
@@ -9,7 +11,10 @@ if has('vim_starting')
     " Required:
     set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
+"}}}
 
+" Plugin Manager NeoBundle
+"{{{
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 
@@ -46,15 +51,18 @@ NeoBundle 'lambdalisue/vim-gista', {
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {
     \ "autoload": {"insert": 1, "filetype": ["python", "python3", "djangohtml"]}}
 
-
 call neobundle#end()
-
-" Required:
-filetype plugin indent on
 
 " If there are uninstalled bundles dfound on startup,
 " this will conveiently prompt you to install them.
 NeoBundleCheck
+"}}}
+
+" Required:
+filetype plugin indent on
+
+" Set Options
+"{{{
 
 " 行番号を表示
 set number
@@ -79,6 +87,7 @@ set smartindent
 " 入力されているテキストの最大幅
 set textwidth=0
 
+" cursor line を表示
 set cursorline
 
 "タイトルを表示
@@ -104,6 +113,10 @@ if &t_Co > 2 || has('gui_running')
     syntax on
 endif
 
+" folding
+set fdm=marker
+" zf(def) zd(delete) zo(open) zc(close)
+
 " バックアップファイルを作成しない
 set nowritebackup
 set nobackup
@@ -111,12 +124,17 @@ set noswapfile
 
 " 無名クリップボードを使う(他のアプリケーションと連動)
 set clipboard+=unnamed,unnamedplus,autoselect
+
 " 80文字で折り返すようにする(PEP8)
 set colorcolumn=80
+
 " 補完メニューの高さを指定する
 set pumheight=10
 
+"}}}
+
 " set hilight color
+"{{{
 " To show current color scheme by
 " ':so $VIMRUNTIME/syntax/hitest.vim'
 highlight VertSplit term=None cterm=None ctermfg=250 ctermbg=250
@@ -128,25 +146,34 @@ highlight CursorLine cterm=None
 highlight CursorLineNr ctermbg=6 ctermfg=0
 highlight MatchParen ctermbg=7
 highlight Statement ctermfg=3 ctermbg=None
+"}}}
 
 " Key Bindings
+"{{{
 " jjでエスケープ
 inoremap <silent> jj <ESC>
+
 " gj, gkの代わりに矢印キーでなら行内を動けるように
 nnoremap <Down> gj
 nnoremap <Up>   gk
+
 " 行頭から前の行の最後に移動
 nnoremap h <Left>zv
-" 行末から次の行の洗湯に移動
+
+" 行末から次の行の先頭に移動
 nnoremap l <Right>zv
+
 " 行末までヤンク
 nnoremap Y y$
+
 " craeate new tab
 nnoremap <silent> <C-t> :tabnew<CR>
+
 " num increment :help CTRL-A, :help CTRL-X
 nnoremap + <C-a>
 nnoremap - <C-x>
 
+" 入力モードで矢印キーでカーソル移動
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
@@ -155,7 +182,10 @@ inoremap <C-l> <Right>
 " comment out / off
 nmap <Leader>c <Plug>(caw:i:toggle)
 vmap <Leader>c <Plug>(caw:i:toggle)
+"}}}
 
+" Plugin option settings
+"{{{
 
 " Gista
 let g:gista#github_user = 'ssh0'
@@ -170,8 +200,8 @@ autocmd BufRead,BufNewFile *.md set filetype=markdown
 let g:instant_markdown_autostart = 0
 " You can manually activate by cmd `:InstantMarkdownPreview`
 
-" Disable folding
-" let g:vim_markdown_folding_disabled=1
+" folding
+let g:vim_markdown_folding_disabled=0
 " Need: kannokanno/previm
 " nnoremap <silent> <C-p> :PrevimOpen<CR>
 "
@@ -194,8 +224,10 @@ let g:quickrun_config.tex = {'command' : 'mkpdf'}
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
+"}}}
 
 " Add ranger as a file chooser in vim
+"{{{
 "
 " If you add this code to the .vimrc, ranger can be started using the command
 " ":RangerChooser" or the keybinding "<leader>r".  Once you select one or more
@@ -203,6 +235,7 @@ vmap gx <Plug>(openbrowser-smart-search)
 " files.
 "
 function! RangeChooser()
+    "{{{
     let temp = tempname()
     " The option "--choosefiles" was added in ranger 1.5.1. Use the next line
     " with ranger 1.4.2 through 1.5.0 instead.
@@ -226,13 +259,17 @@ function! RangeChooser()
         exec 'argadd ' . fnameescape(name)
     endfor
     redraw!
+    "}}}
 endfunction
 command! -bar RangerChooser call RangeChooser()
 " Space + rでrangerを起動
 nnoremap <Space>r :<C-U>RangerChooser<CR>
+"}}}
 
 " Load Template file
+"{{{
 autocmd BufNewFile *.py 0r $HOME/Templates/Python.py
 autocmd BufNewFile *.sh 0r $HOME/Templates/shell_script.sh
 autocmd BufNewFile *.md 0r $HOME/Templates/markdown.mkd
 autocmd BufNewFile *.mkd 0r $HOME/Templates/markdown.mkd
+"}}}
