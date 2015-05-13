@@ -131,6 +131,8 @@ nnoremap h <Left>zv
 nnoremap l <Right>zv
 " nnoremap j gj
 " nnoremap k gk
+" craeate new tab with ranger
+nnoremap <silent> <C-t> :tabnew<CR>
 
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
