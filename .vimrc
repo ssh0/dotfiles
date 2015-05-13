@@ -214,8 +214,8 @@ function! RangeChooser()
     redraw!
 endfunction
 command! -bar RangerChooser call RangeChooser()
-" \ + rでrangerを起動
-nnoremap <Leader>r :<C-U>RangerChooser<CR>
+" Space + rでrangerを起動
+nnoremap <Space>r :<C-U>RangerChooser<CR>
 
 " Load Template file
 autocmd BufNewFile *.py 0r $HOME/Templates/Python.py
