@@ -1,3 +1,6 @@
+# Aliases
+# {{{
+
 # mplayer alias
 alias mplayer='mplayer -msgcolor'
 
@@ -23,12 +26,15 @@ alias -s {png,jpg,bmp,PNG,JPG,BMP}='eog'
 # git alias to "g"
 alias g='git'
 
+# }}}
+
 # PATH to /usr/local/lib
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 autoload -U add-zsh-hook 2>/dev/null || return
 
 # peco-history alias to Ctrl + r
+# {{{
 function peco-select-history() {
     typeset tac
     if which tac > /dev/null; then
@@ -42,9 +48,11 @@ function peco-select-history() {
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
+# }}}
 
 # Start new ranger instance only if it's not running in current shell
 # https://wiki.archlinux.org/index.php/Ranger#Start_new_ranger_instance_only_if_it.27s_not_running_in_current_shell
+# {{{
 function r() {
     if [ -z "$RANGER_LEVEL" ]; then
         ranger $@
@@ -52,14 +60,15 @@ function r() {
         exit
     fi
 }
+# }}}
 
 # zsh-bd
 # Quickly go back to aspecific parent directory instead of typing cd ../../../
 # [Tarrasch/zsh-bd](https://github.com/Tarrasch/zsh-bd)
 source $HOME/.oh-my-zsh/custom/plugins/bd/bd.zsh
 
-#
 # Notification of local host command
+# {{{
 # ----------------------------------
 #
 # Automatic notification via growlnotify / notify-send
@@ -162,3 +171,5 @@ if which growlnotify >/dev/null 2>&1 ||
     add-zsh-hook preexec __my_preexec_start_timetrack
     add-zsh-hook precmd __my_preexec_end_timetrack
 fi
+
+# }}}
