@@ -139,7 +139,7 @@ set scrolloff=5
 
 "}}}
 
-" set highlight color
+" set highlight
 "{{{
 " To show current color scheme by
 " ':so $VIMRUNTIME/syntax/hitest.vim'
@@ -154,6 +154,8 @@ highlight CursorLine cterm=None
 highlight CursorLineNr ctermbg=6 ctermfg=0
 highlight MatchParen ctermbg=7
 highlight Statement ctermfg=3 ctermbg=None
+
+autocmd! FileType markdown hi! def link markdownItalic Normal
 "}}}
 
 " Key Bindings
