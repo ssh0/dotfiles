@@ -117,8 +117,7 @@ endif
 set hlsearch
 
 " folding
-set fdm=marker
-" zf(def) zd(delete) zo(open) zc(close)
+set fdm=marker " zf(def) zd(delete) zo(open) zc(close)
 
 " バックアップファイルを作成しない
 set nowritebackup
