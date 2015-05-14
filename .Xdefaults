@@ -93,7 +93,7 @@ URxvt*color14:              #80cbc4
 URxvt*color7:               #aaaaaa
 URxvt*color15:              #bdbdbd
 
-URxvt.tabbed.tabbar-fg:     15
-URxvt.tabbed.tabbar-bg:     0
-URxvt.tabbed.tab-fg:        255
-URxvt.tabbed.tab-bg:        241
+! URxvt.tabbed.tabbar-fg:     15
+! URxvt.tabbed.tabbar-bg:     0
+! URxvt.tabbed.tab-fg:        255
+! URxvt.tabbed.tab-bg:        241
