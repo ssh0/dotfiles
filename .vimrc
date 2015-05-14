@@ -1,5 +1,5 @@
 " Initial Setting
-"{{{
+"{{{ --------------------------------------------------------------------------
 " Note: Skip initialization for vim-tiny or vim-small.
 if !1 | finish | endif
 
@@ -11,10 +11,10 @@ if has('vim_starting')
     " Required:
     set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-"}}}
+"}}} --------------------------------------------------------------------------
 
 " Plugin Manager NeoBundle
-"{{{
+"{{{ --------------------------------------------------------------------------
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 
@@ -27,7 +27,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Note: Yout don't set neobundle setting in .gvimrc!
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
-" NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'tyru/caw.vim.git'
@@ -46,8 +46,8 @@ NeoBundle 'lambdalisue/vim-gista', {
     \   'Shougo/unite.vim',
     \   'tyru/open-browser.vim',
     \]}
-" NeoBundle 'suan/vim-instant-markdown'
-" NeoBundle 'klen/python-mode'
+NeoBundle 'suan/vim-instant-markdown'
+NeoBundle 'klen/python-mode'
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {
     \ "autoload": {"insert": 1, "filetype": ["python", "python3", "djangohtml"]}}
 
@@ -56,13 +56,13 @@ call neobundle#end()
 " If there are uninstalled bundles dfound on startup,
 " this will conveiently prompt you to install them.
 NeoBundleCheck
-"}}}
+"}}} --------------------------------------------------------------------------
 
 " Required:
 filetype plugin indent on
 
 " Set Options
-"{{{
+"{{{ --------------------------------------------------------------------------
 
 " 行番号を表示
 set number
@@ -137,10 +137,10 @@ set pumheight=10
 " スクロール送りを開始する前後の行数を指定
 set scrolloff=5
 
-"}}}
+"}}} --------------------------------------------------------------------------
 
 " set highlight
-"{{{
+"{{{ --------------------------------------------------------------------------
 " To show current color scheme by
 " ':so $VIMRUNTIME/syntax/hitest.vim'
 highlight VertSplit term=None cterm=None ctermfg=250 ctermbg=250
@@ -156,10 +156,10 @@ highlight MatchParen ctermbg=7
 highlight Statement ctermfg=3 ctermbg=None
 
 autocmd! FileType markdown hi! def link markdownItalic Normal
-"}}}
+"}}} --------------------------------------------------------------------------
 
 " Key Bindings
-"{{{
+"{{{ --------------------------------------------------------------------------
 " jjでエスケープ
 inoremap <silent> jj <ESC>
 
@@ -196,16 +196,16 @@ vmap <Leader>c <Plug>(caw:i:toggle)
 " ハイライトの取り消し ESC2回押し
 nnoremap <ESC><ESC> :nohlsearch<CR>
 
-"}}}
+"}}} --------------------------------------------------------------------------
 
 " Plugin option settings
-"{{{
+"{{{ --------------------------------------------------------------------------
 
 " Gista
 let g:gista#github_user = 'ssh0'
 let g:gista#update_on_write = 1
 
-""" markdown {{{
+""" markdown {{{ --------------------------------------------------------------
 set syntax=markdown
 autocmd BufRead,BufNewFile *.mkd set filetype=markdown
 autocmd BufRead,BufNewFile *.md set filetype=markdown
@@ -226,7 +226,7 @@ let g:quickrun_config['markdown'] = {
     \ 'args': '--mathjax'
     \ }
 
-" }}}
+"}}} --------------------------------------------------------------------------
 
 " jedi completeplt
 let g:jedi#auto_vim_configuration = 0
@@ -238,10 +238,10 @@ let g:quickrun_config.tex = {'command' : 'mkpdf'}
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
-"}}}
+"}}} --------------------------------------------------------------------------
 
 " Add ranger as a file chooser in vim
-"{{{
+"{{{ --------------------------------------------------------------------------
 "
 " If you add this code to the .vimrc, ranger can be started using the command
 " ":RangerChooser" or the keybinding "<leader>r".  Once you select one or more
@@ -249,7 +249,7 @@ vmap gx <Plug>(openbrowser-smart-search)
 " files.
 "
 function! RangeChooser()
-    "{{{
+    "{{{ ----------------------------------------------------------------------
     let temp = tempname()
     " The option "--choosefiles" was added in ranger 1.5.1. Use the next line
     " with ranger 1.4.2 through 1.5.0 instead.
@@ -273,17 +273,17 @@ function! RangeChooser()
         exec 'argadd ' . fnameescape(name)
     endfor
     redraw!
-    "}}}
+    "}}} ----------------------------------------------------------------------
 endfunction
 command! -bar RangerChooser call RangeChooser()
 " Space + rでrangerを起動
 nnoremap <Space>r :<C-U>RangerChooser<CR>
-"}}}
+"}}} --------------------------------------------------------------------------
 
 " Load Template file
-"{{{
+"{{{ --------------------------------------------------------------------------
 autocmd BufNewFile *.py 0r $HOME/Templates/Python.py
 autocmd BufNewFile *.sh 0r $HOME/Templates/shell_script.sh
 autocmd BufNewFile *.md 0r $HOME/Templates/markdown.mkd
 autocmd BufNewFile *.mkd 0r $HOME/Templates/markdown.mkd
-"}}}
+"}}} --------------------------------------------------------------------------
