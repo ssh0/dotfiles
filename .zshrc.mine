@@ -156,7 +156,8 @@ function __my_preexec_end_timetrack() {
                 ;;
             "notify-send" )
                 notify-send "ZSH timetracker" "$message" \
-                -i /usr/share/icons/gnome/scalable/status/dialog-information-symbolic.svg
+                    -i /usr/share/icons/gnome/scalable/status/dialog-information-symbolic.svg
+                paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
                 ;;
         esac
     fi
