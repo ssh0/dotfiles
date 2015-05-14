@@ -67,8 +67,7 @@ function r() {
 # [Tarrasch/zsh-bd](https://github.com/Tarrasch/zsh-bd)
 source $HOME/.oh-my-zsh/custom/plugins/bd/bd.zsh
 
-# Notification of local host command
-# {{{
+# Notification of local host command {{{
 # ----------------------------------
 #
 # Automatic notification via growlnotify / notify-send
@@ -156,7 +155,8 @@ function __my_preexec_end_timetrack() {
                 echo "$message" | growlnotify -n "ZSH timetracker" --appIcon Terminal
                 ;;
             "notify-send" )
-                notify-send "ZSH timetracker" "$message"
+                notify-send "ZSH timetracker" "$message" \
+                -i /usr/share/icons/gnome/scalable/status/dialog-information-symbolic.svg
                 ;;
         esac
     fi
