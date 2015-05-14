@@ -146,7 +146,7 @@ set scrolloff=5
 highlight VertSplit term=None cterm=None ctermfg=250 ctermbg=250
 highlight NonText ctermfg=0 guifg=Bg
 highlight Normal ctermbg=None
-highlight Folded ctermbg=8 ctermfg=0
+highlight Folded ctermbg=0 ctermfg=3
 highlight Search ctermfg=0 guifg=0
 highlight LineNr ctermbg=0 ctermfg=8
 highlight ColorColumn ctermbg=0
