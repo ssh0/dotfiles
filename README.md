@@ -2,61 +2,38 @@
 my dotfiles
 
 dotfiles
+.
+├── agnoster.zsh-theme
+├── aliases.zsh
+├── cmus
+│   ├── autosave
+│   ├── cache
+│   ├── command-history
+│   ├── lib.pl
+│   ├── playlist.pl
+│   ├── search-history
+│   ├── socket
+│   └── status_display_program.sh
+├── compton
+│   └── compton.conf
+├── history.zsh
+├── intheloop.zsh-theme
+├── mps-youtube
+│   └── input_history
+├── mutt
+│   └── muttrc
+├── ranger
+│   ├── colorschemes
+│   │   ├── default.pyo
+│   │   ├── __init__.py
+│   │   ├── __init__.pyo
+│   │   ├── mycolor.py
+│   │   └── mycolor.pyo
+│   ├── commands.py
+│   ├── rc.conf
+│   ├── rifle.conf
+│   └── scope.sh
+├── README.md
+└── tudurc
 
-* compton
-    * compton.conf
-* intheloop.zsh-theme
-* .ipython
-    * nbextensions
-    * profile\_default
-        * ipython_config.py
-        * ipython_kernel_config.py
-        * ipython_nbconvert_config.py
-        * ipython_notebook_config.py
-        * ipython_qtconsole_config.py
-        * static
-            * custom
-                * custom.css
-                * custom.js
-    * profile\_julia
-        * ipython_config.py
-        * ipython_kernel_config.py
-        * ipython_nbconvert_config.py
-        * ipython_notebook_config.py
-        * ipython_qtconsole_config.py
-    * profile\_slide
-        * ipython_config.py
-        * ipython_nbconvert_config.py
-        * ipython_notebook_config.py
-        * ipython_qtconsole_config.py
-        * static
-            * custom
-                * custom.css
-                * custom.js
-* .profile
-* ranger
-    * bookmarks
-    * commands.py
-    * commands.pyo
-    * history
-    * rc.conf
-    * rifle.conf
-    * scope.sh
-    * tagged
-* README.md
-* .vimperatorrc
-* .Xdefaults
-* .Xdefaults.material
-* .Xdefaults.satori
-* .Xmodmap
-* .xmonad
-    * xmobarrc
-    * xmonad.errors
-    * xmonad.hi
-    * xmonad.hs
-    * xmonad.o
-    * xmonad-x86\_64-linux
-* .Xresources
-* .xscreensaver
-* .zshrc
-* .zshrc.mine
+6 directories, 26 files
