@@ -215,7 +215,7 @@ let g:instant_markdown_autostart = 0
 " You can manually activate by cmd `:InstantMarkdownPreview`
 
 " folding
-let g:vim_markdown_folding_disabled=0
+let g:vim_markdown_folding_disabled=1
 " Need: kannokanno/previm
 " nnoremap <silent> <C-p> :PrevimOpen<CR>
 "
