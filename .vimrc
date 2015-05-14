@@ -56,8 +56,8 @@ call neobundle#end()
 NeoBundleCheck
 "}}}
 
-" Required:
-filetype plugin indent on
+" Required:"{{{
+filetype plugin indent on"}}}
 
 " Set Options"{{{
 
@@ -115,6 +115,7 @@ set hlsearch
 
 " folding
 set fdm=marker " zf(def) zd(delete) zo(open) zc(close)
+set foldcolumn=1
 
 " バックアップファイルを作成しない
 set nowritebackup
@@ -141,10 +142,11 @@ set scrolloff=5
 highlight VertSplit term=None cterm=None ctermfg=250 ctermbg=250
 highlight NonText ctermfg=0 guifg=Bg
 highlight Normal ctermbg=None
-highlight Folded ctermbg=0 ctermfg=3
+highlight Folded ctermbg=237 ctermfg=7
+highlight FoldColumn ctermbg=233 ctermfg=7
 highlight Search ctermfg=0 guifg=0
-highlight LineNr ctermbg=0 ctermfg=8
-highlight ColorColumn ctermbg=0
+highlight LineNr ctermbg=233 ctermfg=244
+highlight ColorColumn ctermbg=233
 highlight CursorLine cterm=None
 highlight CursorLineNr ctermbg=6 ctermfg=0
 highlight MatchParen ctermbg=7
