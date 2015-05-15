@@ -134,6 +134,9 @@ set pumheight=10
 " スクロール送りを開始する前後の行数を指定
 set scrolloff=5
 
+" Vimdiffで毎回左右分割する
+set diffopt=vertical
+
 "}}}
 
 " Set highlight"{{{
