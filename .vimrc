@@ -146,9 +146,9 @@ highlight VertSplit term=None cterm=None ctermfg=250 ctermbg=250
 highlight NonText ctermfg=0 guifg=Bg
 highlight Normal ctermbg=None
 highlight Folded ctermbg=237 ctermfg=7
-highlight FoldColumn ctermbg=233 ctermfg=7
+highlight FoldColumn ctermbg=None ctermfg=7
 highlight Search ctermfg=0 guifg=0
-highlight LineNr ctermbg=233 ctermfg=244
+highlight LineNr ctermbg=None ctermfg=256
 highlight ColorColumn ctermbg=233
 highlight CursorLine cterm=None
 highlight CursorLineNr ctermbg=6 ctermfg=0
