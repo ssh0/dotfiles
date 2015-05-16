@@ -73,8 +73,8 @@ endif
 set whichwrap=b,s,[,],<,>
 
 "Tab幅を設定
-set tabstop=4
-set shiftwidth=0
+set softtabstop=4
+set shiftwidth=4
 set expandtab
 
 "自動的にインデントする
