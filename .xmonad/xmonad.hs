@@ -78,7 +78,7 @@ main = do
        , terminal           = "urxvt"
        , focusFollowsMouse  = True
        , normalBorderColor  = "#212121"
-       , focusedBorderColor = colorWhite
+       , focusedBorderColor = colorGreen
        , startupHook        = myStartupHook
        , manageHook         = placeHook myPlacement <+>
                               myManageHookShift <+>
