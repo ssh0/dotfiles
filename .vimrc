@@ -123,7 +123,7 @@ set nobackup
 set noswapfile
 
 " 無名クリップボードを使う(他のアプリケーションと連動)
-set clipboard+=unnamed,unnamedplus,autoselect
+set clipboard=unnamedplus,autoselect
 
 " 80文字で折り返すようにする(PEP8)
 set colorcolumn=80
