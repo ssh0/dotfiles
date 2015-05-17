@@ -142,18 +142,22 @@ set diffopt=vertical
 " Set highlight"{{{
 " To show current color scheme by
 " ':so $VIMRUNTIME/syntax/hitest.vim'
-highlight VertSplit term=None cterm=None ctermfg=250 ctermbg=250
-highlight NonText ctermfg=0 guifg=Bg
-highlight Normal ctermbg=None
-highlight Folded ctermbg=237 ctermfg=12
-highlight FoldColumn ctermbg=None ctermfg=12
-highlight Search ctermfg=0 guifg=0
-highlight LineNr ctermbg=None ctermfg=256
 highlight ColorColumn ctermbg=233
+highlight CursorColumn ctermbg=0
 highlight CursorLine cterm=None
 highlight CursorLineNr ctermbg=15 ctermfg=16
-highlight MatchParen ctermbg=7
+highlight Error ctermfg=0 ctermbg=1 guifg=White guibg=Red
+highlight ErrorMsg ctermfg=0 ctermbg=1 guifg=White guibg=Red
+highlight FoldColumn ctermbg=None ctermfg=12
+highlight Folded ctermbg=237 ctermfg=12
+highlight LineNr ctermbg=None ctermfg=256
+highlight MatchParen term=None ctermfg=None ctermbg=239
+highlight NonText ctermfg=0 guifg=Bg
+highlight Normal ctermbg=None
+highlight Search ctermfg=0 guifg=0
 highlight Statement ctermfg=3 ctermbg=None
+highlight VertSplit term=None cterm=None ctermfg=250 ctermbg=250
+highlight Visual ctermbg=0
 
 autocmd! FileType markdown hi! def link markdownItalic Normal
 "}}}
