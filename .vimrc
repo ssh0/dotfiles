@@ -199,6 +199,9 @@ vmap <Leader>c <Plug>(caw:i:toggle)
 " ハイライトの取り消し ESC2回押し
 nnoremap <ESC><ESC> :nohlsearch<CR>
 
+" デフォルトで新しいタブでファイルを開く
+nnoremap gf <C-w>gf
+
 "}}}
 
 " Plugin option settings"{{{
