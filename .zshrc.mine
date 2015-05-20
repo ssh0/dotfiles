@@ -32,7 +32,7 @@ alias g='git'
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 # LANGUAGE
-export LANG=en
+export LC_TIME=en_US
 
 autoload -U add-zsh-hook 2>/dev/null || return
 
