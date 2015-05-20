@@ -163,10 +163,10 @@ main = do
        ]
 
 -- Handle Window behaveior
-myLayout = (spacing 2 $ ResizableTall 1 (1/100) (4/7) [])
-             |||  (spacing 2 $ TwoPane (1/100) (4/7))
+myLayout = (spacing 16 $ ResizableTall 1 (1/100) (4/7) [])
+             |||  (spacing 16 $ TwoPane (1/100) (4/7))
              |||  (spacing 3 $ ThreeCol 1 (1/100) (16/35))
-             |||  (spacing 2 $ ResizableTall 2 (1/100) (1/2) [])
+             |||  (spacing 16 $ ResizableTall 2 (1/100) (1/2) [])
 --             |||  Mag.magnifiercz 1.1 (spacing 6 $ GridRatio (4/3))
 
 -- Start up (at xmonad beggining), like "wallpaper" or so on
