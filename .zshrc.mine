@@ -31,6 +31,9 @@ alias g='git'
 # PATH to /usr/local/lib
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
+# LANGUAGE
+export LANG=en
+
 autoload -U add-zsh-hook 2>/dev/null || return
 
 # peco-history alias to Ctrl + r
