@@ -1,0 +1,89 @@
+#-------- Alias {{{
+#------------------------------------------------------
+
+# git alias to "g"
+alias g='git'
+
+# mplayer alias
+alias mplayer='mplayer -msgcolor'
+# }}}
+
+#-------- extract images# {{{
+#------------------------------------------------------
+function extract() {
+    case $1 in
+        *.tar.gz|*.tgz) tar xzvf $1;;
+        *.tar.xz) tar Jxvf $1;;
+        *.zip) unzip $1;;
+        *.lzh) lha e $1;;
+        *.tar.bz2|*.tbz) tar xjvf $1;;
+        *.tar.Z) tar zxvf $1;;
+        *.gz) gzip -d $1;;
+        *.bz2) bzip2 -dc $1;;
+        *.Z) uncompress $1;;
+        *.tar) tar xvf $1;;
+        *.arj) unarj $1;;
+    esac
+}
+alias -s {qz,tgz,zip,lzh,bz2,tbz,Z,tar,arj,xz}=extract
+alias -s {png,jpg,bmp,PNG,JPG,BMP}='eog'
+# }}}
+# -------- peco-history alias {{{
+#------------------------------------------------------
+function peco-select-history() {
+    typeset tac
+    if which tac > /dev/null; then
+        tac=tac
+    else
+        tac='tail -r'
+    fi
+    BUFFER=$(fc -l -n 1 | eval $tac | peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle redisplay
+}
+zle -N peco-select-history
+# }}}
+#-------- Start new ranger instance only if it's not running in current shell {{{
+#------------------------------------------------------
+# https://wiki.archlinux.org/index.php/Ranger#Start_new_ranger_instance_only_if_it.27s_not_running_in_current_shell
+function r() {
+    if [ -z "$RANGER_LEVEL" ]; then
+        ranger $@
+    else
+        exit
+    fi
+}
+# }}}
+#-------- zsh-bd {{{
+#------------------------------------------------------
+# Quickly go back to aspecific parent directory instead of typing cd ../../../
+# [Tarrasch/zsh-bd](https://github.com/Tarrasch/zsh-bd)
+
+source $HOME/.oh-my-zsh/custom/plugins/bd/bd.zsh
+
+# }}}
+
+#-------- Configurations {{{
+#------------------------------------------------------
+cfg-aliases() { $EDITOR ~/.aliases.mine ;}
+cfg-compton() { $EDITOR ~/.config/compton.conf }
+cfg-mpd() { $EDITOR ~/.mpd/mpd.conf ;}
+cfg-mplayer() { $EDITOR ~/.mplayer/config ;}
+cfg-ranger() { $EDITOR ~/.config/ranger/rc.conf ;}
+cfg-ranger-rifle() { $EDITOR ~/.config/ranger/rifle.conf ;} # edit open_with extensions
+cfg-ranger-commands() { $EDITOR ~/.config/ranger/commands.py ;} # scripts
+cfg-vimrc() { $EDITOR ~/.vimrc ;}
+cfg-xdefaults() { $EDITOR ~/.Xdefaults ;}
+# cfg-xinitrc() { $EDITOR ~/.xinitrc ;}
+cfg-xmodmap() { $EDITOR ~/.Xmodmap ;}
+cfg-xmonad() { $EDITOR ~/.xmonad/xmonad.hs ;}
+cfg-xresources() { $EDITOR ~/.Xresources ;}
+cfg-zshrc() { $EDITOR ~/.zshrc.mine ;}
+#}}}
+#-------- Configurations Reload {{{
+#------------------------------------------------------
+rld-xdefaults() { xrdb ~/.Xdefaults ;}
+rld-xmodmap() { xmodmap ~/.Xmodmap ;}
+rld-xresources() { xrdb -load ~/.Xresources ;}
+rld-zshrc() { source ~/.zshrc ;}
+# }}}
