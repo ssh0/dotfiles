@@ -86,7 +86,7 @@ main = do
        , normalBorderColor  = "#212121"
        , focusedBorderColor = colorGreen
        , startupHook        = myStartupHook
-       , manageHook         = placeHook fixed (0.5, 0.5) <+>
+       , manageHook         = placeHook (fixed (0.5, 0.5)) <+>
                               myManageHookShift <+>
                               myManageHookFloat <+>
                               manageDocks
