@@ -67,7 +67,7 @@ source $HOME/.oh-my-zsh/custom/plugins/bd/bd.zsh
 #------------------------------------------------------
 cfg-aliases() { $EDITOR ~/.aliases.mine ;}
 cfg-compton() { $EDITOR ~/.config/compton.conf }
-cfg-mpd() { $EDITOR ~/.mpd/mpd.conf ;}
+cfg-mpv() { $EDITOR ~/.mpv/config ;}
 cfg-mplayer() { $EDITOR ~/.mplayer/config ;}
 cfg-ranger() { $EDITOR ~/.config/ranger/rc.conf ;}
 cfg-ranger-rifle() { $EDITOR ~/.config/ranger/rifle.conf ;} # edit open_with extensions
