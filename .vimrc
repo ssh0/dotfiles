@@ -202,6 +202,8 @@ nnoremap <ESC><ESC> :nohlsearch<CR>
 " デフォルトで新しいタブでファイルを開く
 nnoremap gf <C-w>gf
 
+" File browsing
+nnoremap <Space>r :vsp<CR>:e .<CR>
 "}}}
 
 " Plugin option settings"{{{
@@ -279,7 +281,7 @@ function! RangeChooser() "{{{
 endfunction "}}}
 command! -bar RangerChooser call RangeChooser()
 " Space + rでrangerを起動
-nnoremap <Space>r :<C-U>RangerChooser<CR>
+" nnoremap <Space>r :<C-U>RangerChooser<CR>
 "}}}
 
 " Load Template file"{{{

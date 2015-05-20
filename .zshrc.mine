@@ -1,75 +1,19 @@
-# Aliases
-# {{{
-
-# mplayer alias
-alias mplayer='mplayer -msgcolor'
-
-# extract images
-function extract() {
-    case $1 in
-        *.tar.gz|*.tgz) tar xzvf $1;;
-        *.tar.xz) tar Jxvf $1;;
-        *.zip) unzip $1;;
-        *.lzh) lha e $1;;
-        *.tar.bz2|*.tbz) tar xjvf $1;;
-        *.tar.Z) tar zxvf $1;;
-        *.gz) gzip -d $1;;
-        *.bz2) bzip2 -dc $1;;
-        *.Z) uncompress $1;;
-        *.tar) tar xvf $1;;
-        *.arj) unarj $1;;
-    esac
-}
-alias -s {qz,tgz,zip,lzh,bz2,tbz,Z,tar,arj,xz}=extract
-alias -s {png,jpg,bmp,PNG,JPG,BMP}='eog'
-
-# git alias to "g"
-alias g='git'
-
-# }}}
+# Load my aliases
+source $HOME/.aliases.mine
 
 # PATH to /usr/local/lib
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 # LANGUAGE
-export LC_TIME=en_US
-export LC_ALL=C
+export LC_TIME=en_US.UTF-8
+
+# EDITOR
+export EDITOR=/usr/bin/vim
 
 autoload -U add-zsh-hook 2>/dev/null || return
 
-# peco-history alias to Ctrl + r
-# {{{
-function peco-select-history() {
-    typeset tac
-    if which tac > /dev/null; then
-        tac=tac
-    else
-        tac='tail -r'
-    fi
-    BUFFER=$(fc -l -n 1 | eval $tac | peco --query "$LBUFFER")
-    CURSOR=$#BUFFER
-    zle redisplay
-}
-zle -N peco-select-history
+# Keybinding
 bindkey '^r' peco-select-history
-# }}}
-
-# Start new ranger instance only if it's not running in current shell
-# https://wiki.archlinux.org/index.php/Ranger#Start_new_ranger_instance_only_if_it.27s_not_running_in_current_shell
-# {{{
-function r() {
-    if [ -z "$RANGER_LEVEL" ]; then
-        ranger $@
-    else
-        exit
-    fi
-}
-# }}}
-
-# zsh-bd
-# Quickly go back to aspecific parent directory instead of typing cd ../../../
-# [Tarrasch/zsh-bd](https://github.com/Tarrasch/zsh-bd)
-source $HOME/.oh-my-zsh/custom/plugins/bd/bd.zsh
 
 # Notification of local host command {{{
 # ----------------------------------

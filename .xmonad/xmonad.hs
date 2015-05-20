@@ -1,3 +1,4 @@
+-- Import modules {{{
 import qualified Data.Map as M
 
 import XMonad
@@ -39,7 +40,9 @@ import XMonad.Util.Run(spawnPipe)      -- spawnPipe, hPutStrLn
 import XMonad.Util.Run
 
 import Graphics.X11.ExtraTypes.XF86
+-- }}}
 
+-- local variables {{{
 myWorkspaces = [" 1 ", " 2 ", " 3 ", " 4 ", " 5 "]
 modm = mod4Mask
 
@@ -55,8 +58,9 @@ colorfg        = "#9fa8b1"
 
 -- Border width
 borderwidth = 3
+-- }}}
 
--- Define keys to remove
+-- Define keys to remove {{{
 keysToRemove x =
     [
         -- Unused gmrun binding
@@ -65,10 +69,12 @@ keysToRemove x =
         , (modm .|. shiftMask, xK_c)
         , (modm .|. shiftMask, xK_Return)
     ]
-
--- Delete the keys combinations we want to remove.
+-- }}}
+-- Delete the keys combinations we want to remove. {{{
 strippedKeys x = foldr M.delete (keys defaultConfig x) (keysToRemove x)
+-- }}}
 
+-- main
 main :: IO ()
 
 main = do
@@ -80,7 +86,7 @@ main = do
        , normalBorderColor  = "#212121"
        , focusedBorderColor = colorGreen
        , startupHook        = myStartupHook
-       , manageHook         = placeHook myPlacement <+>
+       , manageHook         = placeHook fixed (0.5, 0.5) <+>
                               myManageHookShift <+>
                               myManageHookFloat <+>
                               manageDocks
@@ -97,6 +103,8 @@ main = do
        , mouseBindings      = newMouse
        }
 
+       -- Keymap: window operations {{{
+       ---------------------------------------------------
        `additionalKeys`
        [ ((modm                , xK_h      ), sendMessage Shrink)
        , ((modm                , xK_l      ), sendMessage Expand)
@@ -120,7 +128,9 @@ main = do
        , ((modm .|. shiftMask  , xK_k      ), windows W.swapUp)
        , ((modm .|. shiftMask  , xK_m      ), windows W.shiftMaster)
        , ((modm                , xK_w      ), nextScreen) ]
-
+       -- }}}
+       -- Keymap: moving workspace by number {{{
+       ---------------------------------------------------
        `additionalKeys`
        [ ((modm .|. m, k), windows $ f i)
          | (i, k) <- zip myWorkspaces
@@ -131,7 +141,9 @@ main = do
                      ]
          , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]
        ]
-
+       -- }}}
+       -- Keymap: custom commands {{{
+       ---------------------------------------------------
        `additionalKeys`
        [ ((mod1Mask .|. controlMask, xK_l      ), spawn "xscreensaver-command -lock")
        , ((mod1Mask .|. controlMask, xK_t      ), spawn "bash $HOME/bin/toggle_compton.sh")
@@ -161,15 +173,18 @@ main = do
        , ((controlMask             , xK_Escape ), spawn "sh $HOME/bin/touchpad_toggle.sh")
 
        ]
+       -- }}}
 
--- Handle Window behaveior
-myLayout = (spacing 16 $ ResizableTall 1 (1/100) (4/7) [])
-             |||  (spacing 16 $ TwoPane (1/100) (4/7))
+-- myLayout          -- Handle Window behaveior {{{
+---------------------------------------------------
+myLayout = (spacing 8 $ ResizableTall 1 (1/100) (4/7) [])
+             |||  (spacing 8 $ TwoPane (1/100) (4/7))
              |||  (spacing 3 $ ThreeCol 1 (1/100) (16/35))
-             |||  (spacing 16 $ ResizableTall 2 (1/100) (1/2) [])
+             |||  (spacing 8 $ ResizableTall 2 (1/100) (1/2) [])
 --             |||  Mag.magnifiercz 1.1 (spacing 6 $ GridRatio (4/3))
-
--- Start up (at xmonad beggining), like "wallpaper" or so on
+-- }}}
+-- myStartupHook     -- Start up (at xmonad beggining), like "wallpaper" or so on {{{
+---------------------------------------------------
 myStartupHook = do
         spawn "gnome-settings-daemon"
         spawn "nm-applet"
@@ -181,18 +196,20 @@ myStartupHook = do
         spawn "feh --bg-fill '/home/shotaro/Downloads/20 Free Modern Backgrounds/20 Low-Poly Backgrounds/Low-Poly Backgrounds (1).JPG'"
         spawn "bash $HOME/bin/toggle_compton.sh"
         -- spawn "compton -b --config $HOME/.config/compton/compton.conf"
-
--- some window must created there
+-- }}}
+-- myManageHookShift -- some window must created there {{{
+---------------------------------------------------
 myManageHookShift = composeAll
             -- if you want to know className, type "$ xprop|grep CLASS" on shell
             [ className =? "Firefox"       --> mydoShift " 2 "
             , className =? "Google-chrome" --> mydoShift " 4 "
             ]
              where mydoShift = doF . liftM2 (.) W.greedyView W.shift
-
--- new window will created in Float mode
+-- }}}
+-- myManageHookFloat -- new window will created in Float mode {{{
+---------------------------------------------------
 myManageHookFloat = composeAll
-            [ className =? "Gimp"             --> doFloat,
+        [ className =? "Gimp"             --> doFloat,
               className =? "mplayer2"         --> doFloat,
               className =? "mpv"              --> doFloat,
               className =? "Tk"               --> doFloat,
@@ -203,10 +220,13 @@ myManageHookFloat = composeAll
               title     =? "urxvt_float"      --> doFloat,
               className =? "Plugin-container" --> doFloat,
               title     =? "Speedbar"         --> doFloat]
-
-
+-- }}}
+-- myLogHook         -- loghock settings {{{
+---------------------------------------------------
 myLogHook h = dynamicLogWithPP $ wsPP { ppOutput = hPutStrLn h }
-
+-- }}}
+-- myWsBar           -- xmobar setting {{{
+---------------------------------------------------
 myWsBar = "xmobar $HOME/.xmonad/xmobarrc"
 
 wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws,t]
@@ -220,9 +240,9 @@ wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws,t]
                 , ppWsSep           = ""
                 , ppSep             = " : "
                 }
-
--- Right click is used for resizing window
+-- }}}
+-- newMouse          -- Right click is used for resizing window {{{
+---------------------------------------------------
 myMouse x = [ ((modm, button3), (\w -> focus w >> Flex.mouseResizeWindow w)) ]
 newMouse x = M.union (mouseBindings defaultConfig x) (M.fromList (myMouse x))
-
-myPlacement = fixed (0.5, 0.5)
+-- }}}
