@@ -55,7 +55,6 @@ call neobundle#end()
 " this will conveiently prompt you to install them.
 NeoBundleCheck
 "}}}
-
 " Required:"{{{
 filetype plugin indent on"}}}
 
@@ -138,7 +137,6 @@ set scrolloff=5
 set diffopt=vertical
 
 "}}}
-
 " Set highlight"{{{
 " To show current color scheme by
 " ':so $VIMRUNTIME/syntax/hitest.vim'
@@ -161,7 +159,6 @@ highlight Visual ctermbg=0
 
 autocmd! FileType markdown hi! def link markdownItalic Normal
 "}}}
-
 " Key Bindings"{{{
 " jjでエスケープ
 inoremap <silent> jj <ESC>
@@ -201,6 +198,7 @@ nnoremap <ESC><ESC> :nohlsearch<CR>
 
 " デフォルトで新しいタブでファイルを開く
 nnoremap gf <C-w>gf
+nnoremap gF <C-w>gF
 
 " File browsing
 nnoremap <Space>r :vsp<CR>:e .<CR>
@@ -246,7 +244,6 @@ let g:netrw_nogx = 1 " disable netrw's gx mapping.
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 "}}}
-
 " Add ranger as a file chooser in vim"{{{
 "
 " If you add this code to the .vimrc, ranger can be started using the command
@@ -283,7 +280,6 @@ command! -bar RangerChooser call RangeChooser()
 " Space + rでrangerを起動
 " nnoremap <Space>r :<C-U>RangerChooser<CR>
 "}}}
-
 " Load Template file"{{{
 autocmd BufNewFile *.py 0r $HOME/Templates/Python.py
 autocmd BufNewFile *.sh 0r $HOME/Templates/shell_script.sh
