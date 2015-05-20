@@ -25,8 +25,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Note: Yout don't set neobundle setting in .gvimrc!
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'kannokanno/previm'
+" NeoBundle 'plasticboy/vim-markdown'
+" NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'tyru/caw.vim.git'
 NeoBundle 'thinca/vim-quickrun'
@@ -45,7 +45,7 @@ NeoBundle 'lambdalisue/vim-gista', {
     \   'tyru/open-browser.vim',
     \]}
 NeoBundle 'suan/vim-instant-markdown'
-NeoBundle 'klen/python-mode'
+" NeoBundle 'klen/python-mode'
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {
     \ "autoload": {"insert": 1, "filetype": ["python", "python3", "djangohtml"]}}
 
