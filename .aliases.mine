@@ -67,6 +67,7 @@ source $HOME/.oh-my-zsh/custom/plugins/bd/bd.zsh
 #------------------------------------------------------
 cfg-aliases() { $EDITOR ~/.aliases.mine ;}
 cfg-compton() { $EDITOR ~/.config/compton.conf }
+cfg-latexmkrc() { $EDITOR ~/.latexmkrc }
 cfg-mpv() { $EDITOR ~/.mpv/config ;}
 cfg-mplayer() { $EDITOR ~/.mplayer/config ;}
 cfg-ranger() { $EDITOR ~/.config/ranger/rc.conf ;}
