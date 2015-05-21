@@ -1,5 +1,5 @@
 " QuickRun and view compile result quickly
-nnoremap <F5> :QuickRun<CR><C-w><C-w>G
+nnoremap <F5> :QuickRun<CR>
 
 " set some useful macros
 let @d='a\mathrm{}idl'

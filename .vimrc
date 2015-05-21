@@ -238,7 +238,12 @@ let g:quickrun_config['markdown'] = {
 let g:jedi#auto_vim_configuration = 0
 
 " LaTeX Quickrun
-let g:quickrun_config.tex = {'command' : 'latexmk'}
+let g:quickrun_config['tex'] = {
+    \ 'command' : 'latexmk',
+    \ 'outputter' : 'error',
+    \ 'outputter/error/error' : 'quickfix',
+    \ 'cmdopt': '-pdfdvi'
+    \ }
 
 " vimlatex オフに
 let g:latex_latexmk_enables = 0
