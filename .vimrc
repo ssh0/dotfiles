@@ -33,7 +33,8 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'alpaca-tc/alpaca_powertabline'
 NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 NeoBundle 'Lokaltog/powerline-fontpatcher'
-NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
+" NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
+NeoBundle 'lervag/vimtex'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'ujihisa/neco-look', {
     \ 'depends': [
@@ -237,7 +238,17 @@ let g:quickrun_config['markdown'] = {
 let g:jedi#auto_vim_configuration = 0
 
 " LaTeX Quickrun
-let g:quickrun_config.tex = {'command' : 'mkpdf'}
+let g:quickrun_config.tex = {'command' : 'latexmk'}
+
+" vimlatex オフに
+let g:latex_latexmk_enables = 0
+let g:latex_latexmk_options = '-pdfdvi'
+" 自動コンパイルはオフに
+let g:latex_latexmk_continuous = 0
+let g:latex_latexmk_background = 0
+let g:latex_view_method = 'general'
+let g:latex_view_general_viewer = 'mupdf'
+
 
 " for open-browser plugin
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
