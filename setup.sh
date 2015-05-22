@@ -1,4 +1,5 @@
 #!/bin/sh
+# written by Shotaro Fujimoto (https://github.com/ssh0)
 # read link configuration from ./setup_config_link
 
 dotdir=`cd $(dirname $0); pwd`
