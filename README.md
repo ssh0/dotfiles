@@ -1,6 +1,15 @@
 # dotfiles
 my dotfiles
 
+You can create the symbolic links by
+
+```bash
+./setup.sh
+```
+
+and this script replace existing files interactively.
+
+
 dotfiles  
 .  
 ├── agnoster.zsh-theme  
@@ -13,20 +22,20 @@ dotfiles
 │   ├── playlist.pl  
 │   ├── search-history  
 │   ├── socket  
-│   └── status_display_program.sh  
+│   └── status\_display\_program.sh  
 ├── compton  
 │   └── compton.conf  
 ├── history.zsh  
 ├── intheloop.zsh-theme  
 ├── mps-youtube  
-│   └── input_history  
+│   └── input\_history  
 ├── mutt  
 │   └── muttrc  
 ├── ranger  
 │   ├── colorschemes  
 │   │   ├── default.pyo  
-│   │   ├── __init__.py  
-│   │   ├── __init__.pyo  
+│   │   ├── \_\_init\_\_.py  
+│   │   ├── \_\_init\_\_.pyo  
 │   │   ├── mycolor.py  
 │   │   └── mycolor.pyo  
 │   ├── commands.py  
