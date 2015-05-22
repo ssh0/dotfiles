@@ -1,0 +1,48 @@
+#!/bin/sh <- this is for easy writing with editor.
+# This file is config file for setup.sh
+# You can comment out by adding "#" at the beginning of the line.
+# And an empty line is ignored by setup.sh.
+#
+# Format:
+# <dotfile>,<linkto>
+#
+# the script automatically add directory information to the file path.
+# So, you should write like below
+#     .vimrc,.vimrc
+
+
+# vim
+.vimrc,.vimrc
+tex_quickrun.vim,.vim/ftplugin/tex_quickrun.vim
+
+# zshrc
+.zshrc,.zshrc
+.zshrc.mine,.zshrc.mine
+.aliases.mine,.aliases.mine
+agnoster.zsh-theme,.oh-my-zsh/themes/agnoster.zsh-theme
+history.zsh,.oh-my-zsh/lib/history.zsh
+
+# ranger
+ranger/colorschemes/mycolor.py,.config/ranger/colorschemes/mycolor.py
+ranger/rc.conf,.config/ranger/rc.conf
+ranger/rifle.conf,.config/ranger/rifle.conf
+ranger/scope.sh,.config/ranger/scope.sh
+ranger/commands.py,.config/ranger/commands.py
+
+compton/compton.conf,.config/compton/compton.conf
+
+.latexmkrc,.latexmkrc
+
+.Xdefaults,.Xdefaults
+.Xresources,.Xresources
+.Xmodmap,.Xmodmap
+.xscreensaver,.xscreensaver
+.profile,.profile
+.tudurc,.tudurc
+.notify-osd,.notify-osd
+.vimperatorrc,.vimperatorrc
+.mpv,.mpv
+cmus,.cmus
+mutt/muttrc,.mutt/muttrc
+.xmonad/xmonad.hs,.xmonad/xmonad.hs
+.xmonad/xmobarrc,.xmonad/xmobarrc
