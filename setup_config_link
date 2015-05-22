@@ -29,6 +29,11 @@ ranger/rifle.conf,.config/ranger/rifle.conf
 ranger/scope.sh,.config/ranger/scope.sh
 ranger/commands.py,.config/ranger/commands.py
 
+# ipython
+ipython/nbextensions/livereveal/main.css,.ipython/nbextensions/livereveal/main.css
+ipython/profile_default/static/custom/custom.css,.ipython/profile_default/static/custom/custom.css
+ipython/profile_slide/static/custom/custom.css,.ipython/profile_slide/static/custom/custom.css
+
 compton/compton.conf,.config/compton/compton.conf
 
 .latexmkrc,.latexmkrc
