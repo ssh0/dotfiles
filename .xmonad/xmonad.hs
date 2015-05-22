@@ -150,6 +150,7 @@ main = do
        , ((modm                    , xK_Return ), spawn "urxvt")
        , ((modm .|. shiftMask      , xK_Return ), spawn "sh $HOME/bin/urxvt_float.sh")
        , ((modm                    , xK_c      ), kill) -- %! Close the focused window
+       , ((modm                    , xK_e      ), spawn "python $HOME/Workspace/python/transparent.py")
        , ((modm                    , xK_p      ), spawn "exe=`dmenu_run -b -p '#' -nb '#009688' -nf '#ffffff' -sb '#ffffff' -sf '#000000'` && exec $exe")
        , ((mod1Mask .|. controlMask, xK_f      ), spawn "python $HOME/Workspace/python/web_search/websearch.py")
        , ((0                       , 0x1008ff18), spawn "sh $HOME/bin/cplay.sh")
