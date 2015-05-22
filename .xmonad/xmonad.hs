@@ -17,7 +17,7 @@ import XMonad.Hooks.FadeWindows
 import XMonad.Hooks.ManageDocks        -- avoid xmobar area
 import XMonad.Hooks.Place
 import XMonad.Layout
-import XMonad.Layout.DecorationMadness
+-- import XMonad.Layout.DecorationMadness
 import XMonad.Layout.DragPane          -- see only two window
 import XMonad.Layout.Gaps
 import XMonad.Layout.Grid
@@ -25,7 +25,7 @@ import XMonad.Layout.IM
 import qualified XMonad.Layout.Magnifier as Mag -- this makes window bigger
 import XMonad.Layout.MultiToggle
 import XMonad.Layout.MultiToggle.Instances
-import XMonad.Layout.Named
+-- import XMonad.Layout.Named
 import XMonad.Layout.NoBorders         -- In Full mode, border is no use
 import XMonad.Layout.PerWorkspace      -- Configure layouts on a per-workspace
 import XMonad.Layout.ResizableTile     -- Resizable Horizontal border
