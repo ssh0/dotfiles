@@ -1,9 +1,0 @@
-{
-  "secure": false, 
-  "url": "http://localhost:8888/", 
-  "hostname": "localhost", 
-  "pid": 2969, 
-  "base_url": "/", 
-  "notebook_dir": "/home/shotaro/Workspace/sotsuron/sotsuron", 
-  "port": 8888
-}
