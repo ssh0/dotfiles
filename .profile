@@ -20,3 +20,6 @@
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+
+# use urxvtd
+urxvtd -q -f -o
