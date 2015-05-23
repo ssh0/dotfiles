@@ -161,6 +161,11 @@ highlight Visual ctermbg=0
 autocmd! FileType markdown hi! def link markdownItalic Normal
 "}}}
 " Key Bindings"{{{
+
+" <Space>をmapleaderに
+let mapleader = "\<Space>"
+let localleader = "\<Space>"
+
 " jjでエスケープ
 inoremap <silent> jj <ESC>
 
@@ -202,7 +207,8 @@ nnoremap gf <C-w>gf
 nnoremap gF <C-w>gF
 
 " File browsing
-nnoremap <Space>r :vsp<CR>:e .<CR>
+" nnoremap <Space>r :vsp<CR>:e .<CR>
+nnoremap <Leader>r :vsp<CR>:e .<CR>
 "}}}
 
 " Plugin option settings"{{{
