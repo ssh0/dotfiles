@@ -49,11 +49,14 @@ compton/compton.conf,.config/compton/compton.conf
 .tudurc,.tudurc
 .notify-osd,.notify-osd
 .vimperatorrc,.vimperatorrc
-.mpv,.mpv
-cmus,.cmus
+# .mpv,.mpv
+# cmus,.cmus
 mutt/muttrc,.mutt/muttrc
 .xmonad/xmonad.hs,.xmonad/xmonad.hs
 .xmonad/xmobarrc,.xmonad/xmobarrc
 markdown_quickrun.vim,.vim/ftplugin/markdown_quickrun.vim
 # markdown template
 markdown.mkd,Templates/markdown.mkd
+
+# Tex template
+Tex.tex,Templates/Tex.tex
