@@ -25,15 +25,12 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Note: Yout don't set neobundle setting in .gvimrc!
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
-" NeoBundle 'plasticboy/vim-markdown'
-" NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'tyru/caw.vim.git'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'alpaca-tc/alpaca_powertabline'
 NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 NeoBundle 'Lokaltog/powerline-fontpatcher'
-" NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
 NeoBundle 'lervag/vimtex'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'ujihisa/neco-look', {
@@ -45,8 +42,6 @@ NeoBundle 'lambdalisue/vim-gista', {
     \   'Shougo/unite.vim',
     \   'tyru/open-browser.vim',
     \]}
-" NeoBundle 'suan/vim-instant-markdown'
-" NeoBundle 'klen/python-mode'
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {
     \ "autoload": {"insert": 1, "filetype": ["python", "python3", "djangohtml"]}}
 
@@ -222,14 +217,9 @@ set syntax=markdown
 autocmd BufRead,BufNewFile *.mkd set filetype=markdown
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 
-" Disable instant markdown autostart
-let g:instant_markdown_autostart = 0
-" You can manually activate by cmd `:InstantMarkdownPreview`
-
 " folding
 let g:vim_markdown_folding_disabled=1
 " Need: kannokanno/previm
-" nnoremap <silent> <C-p> :PrevimOpen<CR>
 "
 " Need: vim-quickrun open-browser.vim, pandoc
 let g:quickrun_config = {}
