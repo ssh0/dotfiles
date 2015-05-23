@@ -45,7 +45,7 @@ NeoBundle 'lambdalisue/vim-gista', {
     \   'Shougo/unite.vim',
     \   'tyru/open-browser.vim',
     \]}
-NeoBundle 'suan/vim-instant-markdown'
+" NeoBundle 'suan/vim-instant-markdown'
 " NeoBundle 'klen/python-mode'
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {
     \ "autoload": {"insert": 1, "filetype": ["python", "python3", "djangohtml"]}}
@@ -234,8 +234,8 @@ let g:vim_markdown_folding_disabled=1
 " Need: vim-quickrun open-browser.vim, pandoc
 let g:quickrun_config = {}
 let g:quickrun_config['markdown'] = {
-    \ 'outputter': 'browser',
-    \ 'args': '--mathjax'
+    \ 'command' : 'mkdpreview',
+    \ 'outputter': 'messanger',
     \ }
 
 "}}}
