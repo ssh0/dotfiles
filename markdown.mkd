@@ -1,0 +1,39 @@
+<!-- Headers {{{ -->
+<!-- Set encoding to unicode -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!-- Load mathjax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+<!-- MathJax configuration -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    // Center justify equations in code and markdown cells. Elsewhere
+    // we use CSS to left justify single line equations in code cells.
+    displayAlign: 'center',
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}},
+        linebreaks: { automatic: true }
+    }
+});
+</script>
+<!-- End of mathjax configuration -->
+<link rel="stylesheet" href="../styles/github-markdown-css/github-markdown.css"/>
+<style>
+    .markdown-body {
+        min-width: 200px;
+        max-width: 790px;
+        margin: 0 auto;
+        padding: 30px;
+    }
+</style>
+<!-- }}} -->
+
+<!-- Body from here -->
+<article class="markdown-body">
+
+</article>
