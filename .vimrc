@@ -133,6 +133,23 @@ set scrolloff=5
 set diffopt=vertical
 
 "}}}
+" Indent"{{{
+autocmd FileType sh         setlocal sw=2 sts=2 ts=2 et
+autocmd FileType apache     setlocal sw=4 sts=4 ts=4 et
+autocmd FileType css        setlocal sw=4 sts=4 ts=4 noet
+autocmd FileType diff       setlocal sw=4 sts=4 ts=4 noet
+autocmd FileType html       setlocal sw=4 sts=4 ts=4 noet
+autocmd FileType java       setlocal sw=4 sts=4 ts=4 et
+autocmd FileType javascript setlocal sw=4 sts=4 ts=4 noet
+autocmd FileType ruby       setlocal sw=2 sts=2 ts=2 et
+autocmd FileType eruby      setlocal sw=2 sts=2 ts=2 et
+autocmd FileType sql        setlocal sw=4 sts=4 ts=4 et
+autocmd FileType vim        setlocal sw=2 sts=2 ts=2 et
+autocmd FileType xml        setlocal sw=4 sts=4 ts=4 noet
+autocmd FileType yaml       setlocal sw=2 sts=2 ts=2 et
+autocmd FileType zsh        setlocal sw=2 sts=2 ts=2 et
+autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
+"}}}
 " Set highlight"{{{
 " To show current color scheme by
 " ':so $VIMRUNTIME/syntax/hitest.vim'
@@ -225,7 +242,8 @@ let g:vim_markdown_folding_disabled=1
 let g:quickrun_config = {}
 let g:quickrun_config['markdown'] = {
     \ 'command' : 'mkdpreview',
-    \ 'outputter': 'messanger',
+    \ 'outputter' : 'message',
+    \ 'cmdopt': '-q',
     \ }
 
 "}}}
@@ -236,7 +254,7 @@ let g:jedi#auto_vim_configuration = 0
 " LaTeX Quickrun
 let g:quickrun_config['tex'] = {
     \ 'command' : 'latexmk',
-    \ 'outputter' : 'error',
+    \ 'outputter' : 'message',
     \ 'outputter/error/error' : 'quickfix',
     \ 'cmdopt': '-pdfdvi'
     \ }
