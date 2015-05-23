@@ -55,3 +55,4 @@ mutt/muttrc,.mutt/muttrc
 .xmonad/xmonad.hs,.xmonad/xmonad.hs
 .xmonad/xmobarrc,.xmonad/xmobarrc
 markdown_quickrun.vim,.vim/ftplugin/markdown_quickrun.vim
+markdown.mkd,Templates/markdown.mkd
