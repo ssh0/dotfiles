@@ -60,7 +60,7 @@ compton/compton.conf,.config/compton/compton.conf
 
 # [ipython](http://ipython.org/):
 # IPython provides a rich architecture for interactive computing with:
-#     Powerful interactive shells (terminal and Qt-based).
+#     - Powerful interactive shells (terminal and Qt-based).
 #     - A browser-based notebook with support for code, rich text, mathematical
 #       expressions, inline plots and other rich media.
 #     - Support for interactive data visualization and use of GUI toolkits.
