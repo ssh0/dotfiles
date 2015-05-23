@@ -14,7 +14,7 @@ Xft.hintstyle:              hintslight
 ! URxvt*.depth:               32
 URxvt.geometry:             90x40
 URxvt*.transparent:         false
-URxvt*fading:               false
+URxvt*fading:               true
 ! URxvt.urgentOnBell:         true
 URxvt*visualBell:           false
 URxvt*loginShell:           true
