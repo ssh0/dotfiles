@@ -10,26 +10,62 @@
 # So, you should write like below
 #     .vimrc,.vimrc
 
+# ~/.Xmodmap:
+# xmodmap is a utility for modifying keymaps and pointing button mappings in Xorg.
+.Xmodmap,.Xmodmap
 
-# vim
+# ~/.Xdefaults
+.Xdefaults,.Xdefaults
+
+# ~/.Xresources:
+# Xresources is a user-level configuration dotfile
+# https://wiki.archlinux.org/index.php/X_resources#XScreenSaver_resources
+.Xresources,.Xresources
+
+# ~/.xscreensaver:
+# XScreenSaver Preferences File
+.xscreensaver,.xscreensaver
+
+# ~/.profile:
+# executed by the command interpreter for login shells.
+.profile,.profile
+
+# [vim](http://www.vim.org/):
+# Vim is an advanced text editor that seeks to provide the power of the de-facto
+# Unix editor 'Vi', with a more complete feature set.
 .vimrc,.vimrc
 tex_quickrun.vim,.vim/ftplugin/tex_quickrun.vim
+markdown_quickrun.vim,.vim/ftplugin/markdown_quickrun.vim
 
-# zshrc
+# [zsh](http://zsh.sourceforge.net/):
+# Zsh is a shell designed for interactive use, although it is also a powerful
+# scripting language.
 .zshrc,.zshrc
 .zshrc.mine,.zshrc.mine
 .aliases.mine,.aliases.mine
 agnoster.zsh-theme,.oh-my-zsh/themes/agnoster.zsh-theme
 history.zsh,.oh-my-zsh/lib/history.zsh
 
-# ranger
+# [ranger](http://ranger.nongnu.org/):
+# ranger is a file manager with VI key bindings.
 ranger/colorschemes/mycolor.py,.config/ranger/colorschemes/mycolor.py
 ranger/rc.conf,.config/ranger/rc.conf
 ranger/rifle.conf,.config/ranger/rifle.conf
 ranger/scope.sh,.config/ranger/scope.sh
 ranger/commands.py,.config/ranger/commands.py
 
-# ipython
+# [compton](https://github.com/chjj/compton):
+# Compton is a compositor for X, and a fork of xcompmgr-dana.
+compton/compton.conf,.config/compton/compton.conf
+
+# [ipython](http://ipython.org/):
+# IPython provides a rich architecture for interactive computing with:
+#     Powerful interactive shells (terminal and Qt-based).
+#     - A browser-based notebook with support for code, rich text, mathematical
+#       expressions, inline plots and other rich media.
+#     - Support for interactive data visualization and use of GUI toolkits.
+#     - Flexible, embeddable interpreters to load into your own projects.
+#     - Easy to use, high performance tools for parallel computing.
 ipython/nbextensions/livereveal/main.css,.ipython/nbextensions/livereveal/main.css
 ipython/profile_default/static/custom/custom.css,.ipython/profile_default/static/custom/custom.css
 ipython/profile_slide/static/custom/custom.css,.ipython/profile_slide/static/custom/custom.css
@@ -37,24 +73,47 @@ ipython/nbextensions/livereveal/main.css,ipython/nbextensions/livereveal/main.cs
 ipython/profile_default/static/custom/custom.css,ipython/profile_default/static/custom/custom.css
 ipython/profile_slide/static/custom/custom.css,ipython/profile_slide/static/custom/custom.css
 
-compton/compton.conf,.config/compton/compton.conf
+# [tudu](http://cli-apps.org/content/show.php/TuDu?content=129325):
+# TuDu is a comand line interface to manage hierarchical todos. Each task has a
+# title, a long text description, a deadline (tudu warns you when the date is
+# close), and a scheduled date. There are categories and priorities.
+tudurc,.tudurc
 
+# [latexmk](http://www.ctan.org/pkg/latexmk/):
+# Latexmk completely automates the process of generating a LaTeX document.
 .latexmkrc,.latexmkrc
 
-.Xdefaults,.Xdefaults
-.Xresources,.Xresources
-.Xmodmap,.Xmodmap
-.xscreensaver,.xscreensaver
-.profile,.profile
-.tudurc,.tudurc
+# [notify-osd](https://wiki.ubuntu.com/NotifyOSD):
+# Canonical's on-screen-display notification agent, implementing the
+# freedesktop.org Desktop Notifications Specification with semi-transparent
+# click-through bubbles.
 .notify-osd,.notify-osd
+
+# [vimperator](https://addons.mozilla.org/ja/firefox/addon/vimperator/):
+# Make Firefox look and behave like Vim
 .vimperatorrc,.vimperatorrc
-# .mpv,.mpv
-# cmus,.cmus
+
+# [mpv](http://mpv.io/):
+# mpv is a fork of mplayer2 and MPlayer. It shares some features with the former
+# projects while introducing many more.
+.mpv,.mpv
+
+# [cmus](https://cmus.github.io/):
+# cmus is a small, fast and powerful console music player for Unix-like
+# operating systems.
+cmus,.cmus
+
+# [mutt](http://www.mutt.org/):
+# E-Mail Client
 mutt/muttrc,.mutt/muttrc
+
+# [xmonad](http://xmonad.org/):
+# xmonad is a dynamically tiling X11 window manager that is written and
+# configured in Haskell. In a normal WM, you spend half your time aligning and
+# searching for windows. xmonad makes work easier, by automating this.
 .xmonad/xmonad.hs,.xmonad/xmonad.hs
 .xmonad/xmobarrc,.xmonad/xmobarrc
-markdown_quickrun.vim,.vim/ftplugin/markdown_quickrun.vim
+
 # markdown template
 markdown.mkd,Templates/markdown.mkd
 
