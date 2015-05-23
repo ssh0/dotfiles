@@ -1,6 +1,9 @@
 #-------- Alias {{{
 #------------------------------------------------------
 
+# urxvt -> urxvtc
+alias urxvt='urxvtc'
+
 # git alias to "g"
 alias g='git'
 

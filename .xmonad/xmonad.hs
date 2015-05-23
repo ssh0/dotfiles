@@ -81,7 +81,7 @@ main = do
     wsbar <- spawnPipe myWsBar
     xmonad $ defaultConfig
        { borderWidth        = borderwidth
-       , terminal           = "urxvt"
+       , terminal           = "urxvtc"
        , focusFollowsMouse  = True
        , normalBorderColor  = "#212121"
        , focusedBorderColor = colorGreen
@@ -147,7 +147,7 @@ main = do
        `additionalKeys`
        [ ((mod1Mask .|. controlMask, xK_l      ), spawn "xscreensaver-command -lock")
        , ((mod1Mask .|. controlMask, xK_t      ), spawn "bash $HOME/bin/toggle_compton.sh")
-       , ((modm                    , xK_Return ), spawn "urxvt")
+       , ((modm                    , xK_Return ), spawn "urxvtc")
        , ((modm .|. shiftMask      , xK_Return ), spawn "sh $HOME/bin/urxvt_float.sh")
        , ((modm                    , xK_c      ), kill) -- %! Close the focused window
        , ((modm                    , xK_e      ), spawn "python $HOME/Workspace/python/transparent.py")
