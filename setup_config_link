@@ -33,6 +33,9 @@ ranger/commands.py,.config/ranger/commands.py
 ipython/nbextensions/livereveal/main.css,.ipython/nbextensions/livereveal/main.css
 ipython/profile_default/static/custom/custom.css,.ipython/profile_default/static/custom/custom.css
 ipython/profile_slide/static/custom/custom.css,.ipython/profile_slide/static/custom/custom.css
+ipython/nbextensions/livereveal/main.css,ipython/nbextensions/livereveal/main.css
+ipython/profile_default/static/custom/custom.css,ipython/profile_default/static/custom/custom.css
+ipython/profile_slide/static/custom/custom.css,ipython/profile_slide/static/custom/custom.css
 
 compton/compton.conf,.config/compton/compton.conf
 
