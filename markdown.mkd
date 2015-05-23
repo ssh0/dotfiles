@@ -22,7 +22,7 @@ MathJax.Hub.Config({
 });
 </script>
 <!-- End of mathjax configuration -->
-<link rel="stylesheet" href="../styles/github-markdown-css/github-markdown.css"/>
+<link rel="stylesheet" href="/home/shotaro/Workspace/blog/styles/github-markdown-css/github-markdown.css"/>
 <style>
     .markdown-body {
         min-width: 200px;
