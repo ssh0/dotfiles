@@ -1,0 +1,48 @@
+%
+\documentclass{jsarticle}
+
+% For code
+% \usepackage{moreverb}
+
+% rendeing with dvipdfmx
+\usepackage[dvipdfmx]{graphicx, hyperref}
+
+% floating image
+\usepackage{float}
+
+% ams series
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{ascmac}
+
+% 日本語での栞の文字化けを防ぐ
+\usepackage{atbegshi}
+\ifnum 42146=\euc"A4A2 \AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}\else
+\AtBeginShipoutFirst{\special{pdf:tounicode 90ms-RKSJ-UCS2}}\fi
+
+% 改ページの許可
+\allowdisplaybreaks[1]
+
+% definition, theorem
+\theoremstyle{definition}
+\newtheorem{theorem}{定理}
+\newtheorem*{theorem*}{定理}
+\newtheorem{definition}[theorem]{定義}
+\newtheorem*{definition*}{定義}
+
+% "\vector{a}" でベクトル
+\def\vector#1{\mbox{\boldmath $#1$}}
+
+% bib reference
+%\bibliographystyle{junsrt}
+
+
+\title{Title}
+\author{山崎研究室M1 藤本將太郎}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\end{document}
