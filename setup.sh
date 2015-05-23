@@ -17,26 +17,36 @@ cecho() {
     echo "\033[${color}m$@\033[m"
 }
 
+info() {
+    # verbose confirmation
+    echo ""
+    echo "${1} -> ${2}"
+}
+
 for l in $(grep -Ev '^#' setup_config_link | grep -Ev '^$'); do
     dotfile="${dotdir}/$(echo "$l" | awk 'BEGIN {FS=","; }  { print $1; }')"
     orig="${home}/$(echo "$l" | awk 'BEGIN {FS=","; }  { print $2; }')"
 
-    # verbose confirmation
-    echo ""
-    echo "${dotfile} -> ${orig}"
+    if [ ! -e "${dotfile}" ]; then
+        echo ""
+        cecho $red "dotfile '${dotfile}' doesn't exist."
+        sed -i.bak "$l" setup_config_link
+        continue
+    fi
 
     # if dir is not exist: mkdir
     origdir=`dirname "${orig}"`
     if [ ! -e "${origdir}" ] || [ -f "${origdir}" ]; then
+        info ${dotfile} ${orig}
         flag=false
         cecho $red "'${origdir}' doesn't exist."
         while true; do
             echo "Do you want to mkdir '${origdir}'? (y/n):"
             read yn
             case $yn in
-                [Yy] ) mkdir -p "${origdir}"; break;;
-                [Nn] ) flag=true; break;;
-                   * ) echo "Please answer y or n.";;
+                [Yy] ) mkdir -p "${origdir}"; break ;;
+                [Nn] ) flag=true; break ;;
+                   * ) echo "Please answer y or n." ;;
             esac
         done
         if $flag; then
@@ -47,14 +57,14 @@ for l in $(grep -Ev '^#' setup_config_link | grep -Ev '^$'); do
     # if file already exists: open interaction menu
     if [ -e "${orig}" ]; then
         if [ -L "${orig}" ]; then
-            cecho $cyan "symbolic link already exists."
             continue
         else
+            info ${dotfile} ${orig}
             cecho $yellow "file or directory already exists."
         fi
         flag=true
         while $flag; do
-            echo "(d):show diff, (f):overwrite, (b):make backup, (s):skip"
+            echo "(d):show diff, (f):overwrite, (b):make backup, (n):do nothing"
             read line
             case $line in
                 [Dd] ) diff -u "${dotfile}" "${orig}"
@@ -66,12 +76,12 @@ for l in $(grep -Ev '^#' setup_config_link | grep -Ev '^$'); do
                         fi
                         ln -sv "${dotfile}" "${orig}"
                         flag=false
-                        break;;
+                        break ;;
                 [Bb] ) ln -sbv --suffix '.orig' "${dotfile}" "${orig}"
                         flag=false
-                        break;;
-                [Ss] ) flag=false; break;;
-                * ) echo "Please answer with d, f or b.";;
+                        break ;;
+                [Nn] ) flag=false; break ;;
+                * ) echo "Please answer with d, f, b or n." ;;
             esac
         done
     else
