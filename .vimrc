@@ -161,6 +161,16 @@ highlight Error ctermfg=0 ctermbg=1 guifg=White guibg=Red
 highlight ErrorMsg ctermfg=0 ctermbg=1 guifg=White guibg=Red
 highlight FoldColumn ctermbg=None ctermfg=12
 highlight Folded ctermbg=237 ctermfg=12
+highlight Pmenu ctermfg=0 ctermbg=7 guibg=Grey
+highlight PmenuSel ctermfg=0 ctermbg=225 guibg=LightMagenta
+highlight DiffAdd term=bold ctermfg=0 ctermbg=81 guibg=LightBlue
+highlight DiffChange term=bold ctermfg=0 ctermbg=225 guibg=LightMagenta
+highlight DiffDelete term=bold ctermfg=0 ctermbg=159 gui=bold guifg=Blue guibg=LightCyan
+highlight DiffText term=reverse ctermfg=0 cterm=bold ctermfg=0 ctermbg=9 gui=bold guibg=Red
+highlight SpellBad term=reverse ctermfg=0 ctermbg=224 gui=undercurl guisp=Red
+highlight SpellCap term=reverse ctermfg=0 ctermbg=81 gui=undercurl guisp=Blue
+highlight SpellRare term=reverse ctermfg=0 ctermbg=225 gui=undercurl guisp=Magenta
+highlight SpellLocal term=underline ctermfg=0 ctermbg=14 gui=undercurl guisp=DarkCyan
 highlight LineNr ctermbg=None ctermfg=256
 highlight MatchParen term=None ctermfg=None ctermbg=239
 highlight NonText ctermfg=0 guifg=Bg
