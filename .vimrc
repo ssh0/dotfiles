@@ -258,9 +258,10 @@ nnoremap <Leader>r :vsp<CR>:e .<CR>
 let g:gista#github_user = 'ssh0'
 let g:gista#update_on_write = 1
 
-" Template
-let g:template_basedir = '/home/shotaro/Template'
-let g:template_free_pattern = 'template'
+""" markdown
+set syntax=markdown
+autocmd BufRead,BufNewFile *.mkd set filetype=markdown
+autocmd BufRead,BufNewFile *.md set filetype=markdown
 
 " <%= %> の中身をvimで評価して展開する: >
   autocmd User plugin-template-loaded
@@ -273,11 +274,6 @@ let g:template_free_pattern = 'template'
   \    if search('<+CURSOR+>')
   \  |   execute 'normal! "_da>'
   \  | endif
-
-""" markdown
-set syntax=markdown
-autocmd BufRead,BufNewFile *.mkd set filetype=markdown
-autocmd BufRead,BufNewFile *.md set filetype=markdown
 
 " jedi completeplt
 let g:jedi#auto_vim_configuration = 0
