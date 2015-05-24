@@ -4,12 +4,13 @@ my dotfiles
 You can create the symbolic links by
 
 ```bash
-./dotrm && ./setup.sh
+$ ./dotrm && ./setup.sh
 ```
 
 and this script replace existing files interactively.
 
-```bash
+```
+dotfiles
 .
 ├── cmus
 │   ├── autosave
@@ -19,7 +20,7 @@ and this script replace existing files interactively.
 │   ├── playlist.pl
 │   ├── search-history
 │   ├── socket
-│   └── status\_display\_program.sh
+│   └── status_display_program.sh
 ├── compton
 │   └── compton.conf
 ├── dotrm
@@ -27,11 +28,11 @@ and this script replace existing files interactively.
 │   ├── nbextensions
 │   │   └── livereveal
 │   │       └── main.css
-│   ├── profile\_default
+│   ├── profile_default
 │   │   └── static
 │   │       └── custom
 │   │           └── custom.css
-│   └── profile\_slide
+│   └── profile_slide
 │       └── static
 │           └── custom
 │               └── custom.css
@@ -45,13 +46,13 @@ and this script replace existing files interactively.
 │   ├── rifle.conf
 │   └── scope.sh
 ├── README.md
-├── setup\_config\_link
+├── setup_config_link
 ├── setup.sh
 ├── tudurc
 ├── vimfiles
 │   ├── ftplugin
-│   │   ├── markdown\_quickrun.vim
-│   │   └── tex\_quickrun.vim
+│   │   ├── markdown_quickrun.vim
+│   │   └── tex_quickrun.vim
 │   ├── template
 │   │   ├── template.md
 │   │   ├── template.mkd
