@@ -117,11 +117,11 @@ mutt/muttrc,.mutt/muttrc
 # template files
 # --------------------------------------
 # markdown template
-template.md,Templates/template.md
-template.mkd,Templates/template.mkd
+template.md,.vim/template/template.md
+template.mkd,.vim/template/template.mkd
 # Tex template
-template.tex,Templates/template.tex
+template.tex,.vim/template/template.tex
 # Python template
-template.py,Templates/template.py
+template.py,.vim/template/template.py
 # Shell script template
-template.sh,Templates/template.sh
+template.sh,.vim/template/template.sh
