@@ -6,7 +6,7 @@ set altformat_trackwin= %f%= %d
 set auto_reshuffle=true
 set buffer_seconds=10
 set color_cmdline_attr=default
-set color_cmdline_bg=black
+set color_cmdline_bg=default
 set color_cmdline_fg=default
 set color_cur_sel_attr=default
 set color_error=red
