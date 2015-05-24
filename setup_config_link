@@ -111,7 +111,8 @@ tudurc,.tudurc
 # [cmus](https://cmus.github.io/):
 # cmus is a small, fast and powerful console music player for Unix-like
 # operating systems.
-cmus,.cmus
+cmus/autosave,.cmus/autosave
+cmus/status_display_program.sh,.cmus/status_display_program.sh
 
 # [mutt](http://www.mutt.org/):
 # E-Mail Client
