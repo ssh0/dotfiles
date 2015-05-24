@@ -1,2 +1,3 @@
 " QuickRun and view compile result quickly
-nnoremap <F5> :QuickRun<CR>
+nnoremap <silent> <F5> :QuickRun<CR>
+vnoremap <silent> <F5> :QuickRun<CR>
