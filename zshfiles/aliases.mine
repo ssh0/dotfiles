@@ -18,6 +18,14 @@ alias g='git'
 
 # mplayer alias
 alias mplayer='mplayer -msgcolor'
+
+# colordiff
+if [[ -x `which colordiff` ]]; then
+  alias diff='colordiff -u'
+else
+  alias diff='diff -u'
+fi
+
 # }}}
 
 #-------- extract images# {{{

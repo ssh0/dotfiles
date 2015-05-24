@@ -46,7 +46,7 @@ for l in $(grep -Ev '^#' setup_config_link | grep -Ev '^$'); do
             case $yn in
                 [Yy] ) mkdir -p "${origdir}"; break ;;
                 [Nn] ) flag=true; break ;;
-                   * ) echo "Please answer y or n." ;;
+                   * ) echo "Please answer with y or n." ;;
             esac
         done
         if $flag; then
@@ -74,7 +74,7 @@ for l in $(grep -Ev '^#' setup_config_link | grep -Ev '^$'); do
                         else
                             rm "${orig}"
                         fi
-                        echo "'${orig}' is the symlink of '${dotfile}'"
+                        echo "'${orig}' is now the symlink of '${dotfile}'"
                         ln -s "${dotfile}" "${orig}"
                         flag=false
                         break ;;
@@ -87,7 +87,7 @@ for l in $(grep -Ev '^#' setup_config_link | grep -Ev '^$'); do
         done
     else
     # otherwise make symbolic file normally
-        echo "'${orig}' is the symlink of '${dotfile}'"
+        echo "'${orig}' is now the symlink of '${dotfile}'"
         ln -s "${dotfile}" "${orig}"
     fi
 done
