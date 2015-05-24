@@ -33,18 +33,27 @@
 # [vim](http://www.vim.org/):
 # Vim is an advanced text editor that seeks to provide the power of the de-facto
 # Unix editor 'Vi', with a more complete feature set.
-.vimrc,.vimrc
-tex_quickrun.vim,.vim/ftplugin/tex_quickrun.vim
-markdown_quickrun.vim,.vim/ftplugin/markdown_quickrun.vim
+vimfiles/vimrc,.vimrc
+vimfiles/ftplugin/tex_quickrun.vim,.vim/ftplugin/tex_quickrun.vim
+vimfiles/ftplugin/markdown_quickrun.vim,.vim/ftplugin/markdown_quickrun.vim
+# markdown template
+vimfiles/template/template.md,.vim/template/template.md
+vimfiles/template/template.mkd,.vim/template/template.mkd
+# Tex template
+vimfiles/template/template.tex,.vim/template/template.tex
+# Python template
+vimfiles/template/template.py,.vim/template/template.py
+# Shell script template
+vimfiles/template/template.sh,.vim/template/template.sh
 
 # [zsh](http://zsh.sourceforge.net/):
 # Zsh is a shell designed for interactive use, although it is also a powerful
 # scripting language.
-.zshrc,.zshrc
-.zshrc.mine,.zshrc.mine
-.aliases.mine,.aliases.mine
-agnoster.zsh-theme,.oh-my-zsh/themes/agnoster.zsh-theme
-history.zsh,.oh-my-zsh/lib/history.zsh
+zshfiles/zshrc,.zshrc
+zshfiles/zshrc.mine,.zshrc.mine
+zshfiles/aliases.mine,.aliases.mine
+zshfiles/themes/agnoster.zsh-theme,.oh-my-zsh/themes/agnoster.zsh-theme
+zshfiles/history.zsh,.oh-my-zsh/lib/history.zsh
 
 # [ranger](http://ranger.nongnu.org/):
 # ranger is a file manager with VI key bindings.
@@ -114,14 +123,3 @@ mutt/muttrc,.mutt/muttrc
 .xmonad/xmonad.hs,.xmonad/xmonad.hs
 .xmonad/xmobarrc,.xmonad/xmobarrc
 
-# template files
-# --------------------------------------
-# markdown template
-template.md,.vim/template/template.md
-template.mkd,.vim/template/template.mkd
-# Tex template
-template.tex,.vim/template/template.tex
-# Python template
-template.py,.vim/template/template.py
-# Shell script template
-template.sh,.vim/template/template.sh
