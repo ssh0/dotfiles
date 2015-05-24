@@ -23,27 +23,46 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.
 " Note: Yout don't set neobundle setting in .gvimrc!
+
+" Basic, unite and vimfiler
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
+
+" open-browser
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'tyru/caw.vim.git'
+
+" vim-quickrun
 NeoBundle 'thinca/vim-quickrun'
+
+" vim-template
+NeoBundle 'thinca/vim-template'
+
+" powerline settings
 NeoBundle 'alpaca-tc/alpaca_powertabline'
 NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 NeoBundle 'Lokaltog/powerline-fontpatcher'
+
+" for LaTeX
 NeoBundle 'lervag/vimtex'
+
+" for Python
 NeoBundle 'davidhalter/jedi-vim'
+NeoBundleLazy 'hynek/vim-python-pep8-indent', {
+    \ "autoload": {"insert": 1, "filetype": ["python", "python3", "djangohtml"]}}
+
+" autocomplete
 NeoBundle 'ujihisa/neco-look', {
     \ 'depends': [
     \   'Shougo/neocomplcache.vim',
     \]}
+
+" easily sent a gista
 NeoBundle 'lambdalisue/vim-gista', {
     \ 'depends': [
     \   'Shougo/unite.vim',
     \   'tyru/open-browser.vim',
     \]}
-NeoBundleLazy 'hynek/vim-python-pep8-indent', {
-    \ "autoload": {"insert": 1, "filetype": ["python", "python3", "djangohtml"]}}
 
 call neobundle#end()
 
@@ -239,35 +258,29 @@ nnoremap <Leader>r :vsp<CR>:e .<CR>
 let g:gista#github_user = 'ssh0'
 let g:gista#update_on_write = 1
 
-""" markdown {{{
+" Template
+let g:template_basedir = '/home/shotaro/Template'
+let g:template_free_pattern = 'template'
+
+" <%= %> の中身をvimで評価して展開する: >
+  autocmd User plugin-template-loaded
+  \ silent %s/<%=\(.\{-}\)%>/\=eval(submatch(1))/ge
+" < テンプレートに以下のように書いておくと日付に展開されます。 >
+" <%= strftime('%Y-%m-%d') %>
+
+" <+CURSOR+> にカーソルを移動する: >
+  autocmd User plugin-template-loaded
+  \    if search('<+CURSOR+>')
+  \  |   execute 'normal! "_da>'
+  \  | endif
+
+""" markdown
 set syntax=markdown
 autocmd BufRead,BufNewFile *.mkd set filetype=markdown
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 
-" folding
-let g:vim_markdown_folding_disabled=1
-" Need: kannokanno/previm
-"
-" Need: vim-quickrun open-browser.vim, pandoc
-let g:quickrun_config = {}
-let g:quickrun_config['markdown'] = {
-    \ 'command' : 'mkdpreview',
-    \ 'outputter' : 'message',
-    \ 'cmdopt': '-q',
-    \ }
-
-"}}}
-
 " jedi completeplt
 let g:jedi#auto_vim_configuration = 0
-
-" LaTeX Quickrun
-let g:quickrun_config['tex'] = {
-    \ 'command' : 'latexmk',
-    \ 'outputter' : 'message',
-    \ 'outputter/error/error' : 'quickfix',
-    \ 'cmdopt': '-pdfdvi'
-    \ }
 
 " vimlatex オフに
 let g:latex_latexmk_enables = 0
@@ -278,11 +291,31 @@ let g:latex_latexmk_background = 0
 let g:latex_view_method = 'general'
 let g:latex_view_general_viewer = 'mupdf'
 
-
 " for open-browser plugin
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
+"}}}
+" QuickRun {{{
+let g:quickrun_config = {}
+
+" Need: vim-quickrun open-browser.vim, pandoc
+let g:quickrun_config['markdown'] = {
+    \ 'outputter' : 'browser',
+    \ 'command' : 'pandoc',
+    \ 'cmdopt' : '-f markdown -t html -c "/home/shotaro/Workspace/blog/styles/bootstrap-md.css" -s --mathjax --highlight-style=pygments',
+    \ 'exec': '%c %o %s',
+    \ }
+
+" LaTeX Quickrun
+let g:quickrun_config['tex'] = {
+    \ 'command' : 'latexmk',
+    \ 'outputter' : 'message',
+    \ 'outputter/error/error' : 'quickfix',
+    \ 'cmdopt': '-pdfdvi'
+    \ }
+
+"
 "}}}
 " Add ranger as a file chooser in vim"{{{
 "
@@ -320,9 +353,9 @@ command! -bar RangerChooser call RangeChooser()
 " Space + rでrangerを起動
 " nnoremap <Space>r :<C-U>RangerChooser<CR>
 "}}}
-" Load Template file"{{{
-autocmd BufNewFile *.py 0r $HOME/Templates/Python.py
-autocmd BufNewFile *.sh 0r $HOME/Templates/shell_script.sh
-autocmd BufNewFile *.md 0r $HOME/Templates/markdown.mkd
-autocmd BufNewFile *.mkd 0r $HOME/Templates/markdown.mkd
-"}}}
+" " Load Template file"{{{
+" autocmd BufNewFile *.py 0r $HOME/Templates/Python.py
+" autocmd BufNewFile *.sh 0r $HOME/Templates/shell_script.sh
+" autocmd BufNewFile *.md 0r $HOME/Templates/markdown.mkd
+" autocmd BufNewFile *.mkd 0r $HOME/Templates/markdown.mkd
+" "}}}

@@ -114,14 +114,14 @@ mutt/muttrc,.mutt/muttrc
 .xmonad/xmonad.hs,.xmonad/xmonad.hs
 .xmonad/xmobarrc,.xmonad/xmobarrc
 
+# template files
+# --------------------------------------
 # markdown template
-markdown.mkd,Templates/markdown.mkd
-
+template.md,Templates/template.md
+template.mkd,Templates/template.mkd
 # Tex template
-Tex.tex,Templates/Tex.tex
-
+template.tex,Templates/template.tex
 # Python template
-Python.py,Templates/Python.py
-
+template.py,Templates/template.py
 # Shell script template
-shell_script.sh,Templates/shell_script.sh
+template.sh,Templates/template.sh

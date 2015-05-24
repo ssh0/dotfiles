@@ -2,8 +2,9 @@
 # -*- coding:utf-8 -*-
 #
 # written by Shotaro Fujimoto
-#
+# <%= strftime('%Y-%m-%d') %>
 
+<+CURSOR+>
 def main():
     pass
 
