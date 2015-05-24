@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+usage() {
+  echo "Remove the symbolic link written in config file."
+  echo "after that, you may run setup.sh in dotfiles."
+  echo "Usage: dotrm [OPTION]"
+  echo ""
+  echo "OPTION:"
+  echo "  -h: Show this message."
+  exit 1
+}
+
+message=""
+configfile="$HOME/dotfiles/setup_config_link"
+
+if [ "$1" = "-h" ]; then
+  usage
+fi
+
+if [ ! $# = 1 ];then
+  exit 1
+fi
+
+for l in $(grep -Ev '^#' "${configfile}" | grep -Ev '^$'); do
+  orig="$HOME/$(echo "$l" | awk 'BEGIN {FS=","; }  { print $2; }')"
+  if [ -e "${orig}" ] && [ -L "${orig}" ]; then
+    echo "rm ${orig}@"
+    rm ${orig}
+  fi
+done
