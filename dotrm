@@ -10,15 +10,10 @@ usage() {
   exit 1
 }
 
-message=""
 configfile="$HOME/dotfiles/setup_config_link"
 
 if [ "$1" = "-h" ]; then
   usage
-fi
-
-if [ ! $# = 1 ];then
-  exit 1
 fi
 
 for l in $(grep -Ev '^#' "${configfile}" | grep -Ev '^$'); do

@@ -74,7 +74,8 @@ for l in $(grep -Ev '^#' setup_config_link | grep -Ev '^$'); do
                         else
                             rm "${orig}"
                         fi
-                        ln -sv "${dotfile}" "${orig}"
+                        echo "'${orig}' is the symlink of '${dotfile}'"
+                        ln -s "${dotfile}" "${orig}"
                         flag=false
                         break ;;
                 [Bb] ) ln -sbv --suffix '.orig' "${dotfile}" "${orig}"
@@ -86,6 +87,7 @@ for l in $(grep -Ev '^#' setup_config_link | grep -Ev '^$'); do
         done
     else
     # otherwise make symbolic file normally
-        ln -siv "${dotfile}" "${orig}"
+        echo "'${orig}' is the symlink of '${dotfile}'"
+        ln -s "${dotfile}" "${orig}"
     fi
 done
