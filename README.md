@@ -4,16 +4,13 @@ my dotfiles
 You can create the symbolic links by
 
 ```bash
-./setup.sh
+./dotrm && ./setup.sh
 ```
 
 and this script replace existing files interactively.
 
-```
-dotfiles
+```bash
 .
-├── agnoster.zsh-theme
-├── aliases.zsh
 ├── cmus
 │   ├── autosave
 │   ├── cache
@@ -22,24 +19,22 @@ dotfiles
 │   ├── playlist.pl
 │   ├── search-history
 │   ├── socket
-│   └── status_display_program.sh
+│   └── status\_display\_program.sh
 ├── compton
 │   └── compton.conf
-├── history.zsh
+├── dotrm
 ├── ipython
 │   ├── nbextensions
 │   │   └── livereveal
 │   │       └── main.css
-│   ├── profile_default
+│   ├── profile\_default
 │   │   └── static
 │   │       └── custom
 │   │           └── custom.css
-│   └── profile_slide
+│   └── profile\_slide
 │       └── static
 │           └── custom
 │               └── custom.css
-├── markdown.mkd
-├── markdown_quickrun.vim
 ├── mutt
 │   └── muttrc
 ├── ranger
@@ -50,11 +45,28 @@ dotfiles
 │   ├── rifle.conf
 │   └── scope.sh
 ├── README.md
-├── setup_config_link
+├── setup\_config\_link
 ├── setup.sh
-├── tex_quickrun.vim
-├── Tex.tex
-└── tudurc
+├── tudurc
+├── vimfiles
+│   ├── ftplugin
+│   │   ├── markdown\_quickrun.vim
+│   │   └── tex\_quickrun.vim
+│   ├── template
+│   │   ├── template.md
+│   │   ├── template.mkd
+│   │   ├── template.py
+│   │   ├── template.sh
+│   │   └── template.tex
+│   └── vimrc
+└── zshfiles
+    ├── aliases.mine
+    ├── aliases.zsh
+    ├── history.zsh
+    ├── themes
+    │   └── agnoster.zsh-theme
+    ├── zshrc
+    └── zshrc.mine
 
-14 directories, 29 files
+19 directories, 37 files
 ```
