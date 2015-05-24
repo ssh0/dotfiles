@@ -52,6 +52,7 @@ vimfiles/template/template.sh,.vim/template/template.sh
 zshfiles/zshrc,.zshrc
 zshfiles/zshrc.mine,.zshrc.mine
 zshfiles/aliases.mine,.aliases.mine
+zshfiles/aliases.zsh,.oh-my-zsh/lib/aliases.zsh
 zshfiles/themes/agnoster.zsh-theme,.oh-my-zsh/themes/agnoster.zsh-theme
 zshfiles/history.zsh,.oh-my-zsh/lib/history.zsh
 
