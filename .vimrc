@@ -3,12 +3,12 @@
 if !1 | finish | endif
 
 if has('vim_starting')
-    if &compatible
-        set nocompatible
-    endif
+  if &compatible
+    set nocompatible
+  endif
 
-    " Required:
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
+  " Required:
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 "}}}
 
@@ -49,20 +49,20 @@ NeoBundle 'lervag/vimtex'
 " for Python
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {
-    \ "autoload": {"insert": 1, "filetype": ["python", "python3", "djangohtml"]}}
+      \ "autoload": {"insert": 1, "filetype": ["python", "python3", "djangohtml"]}}
 
 " autocomplete
 NeoBundle 'ujihisa/neco-look', {
-    \ 'depends': [
-    \   'Shougo/neocomplcache.vim',
-    \]}
+      \ 'depends': [
+      \   'Shougo/neocomplcache.vim',
+      \]}
 
 " easily sent a gista
 NeoBundle 'lambdalisue/vim-gista', {
-    \ 'depends': [
-    \   'Shougo/unite.vim',
-    \   'tyru/open-browser.vim',
-    \]}
+      \ 'depends': [
+      \   'Shougo/unite.vim',
+      \   'tyru/open-browser.vim',
+      \]}
 
 call neobundle#end()
 
@@ -80,7 +80,7 @@ set number
 
 " マウスを有効にする
 if has('mouse')
-    set mouse=a
+  set mouse=a
 endif
 
 "カーソルキーで行末／行頭の移動可能に設定
@@ -121,7 +121,7 @@ set matchtime=1
 
 " ハイライトを有効にする
 if &t_Co > 2 || has('gui_running')
-    syntax on
+  syntax on
 endif
 
 " 検索結果のハイライト
@@ -249,7 +249,7 @@ nnoremap gF <C-w>gF
 
 " File browsing
 " nnoremap <Space>r :vsp<CR>:e .<CR>
-nnoremap <Leader>r :vsp<CR>:e .<CR>
+nnoremap <Leader>e :vsp<CR>:e .<CR>
 "}}}
 
 " Plugin option settings"{{{
@@ -264,13 +264,13 @@ autocmd BufRead,BufNewFile *.mkd set filetype=markdown
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 
 " <%= %> の中身をvimで評価して展開する: >
-  autocmd User plugin-template-loaded
+autocmd User plugin-template-loaded
   \ silent %s/<%=\(.\{-}\)%>/\=eval(submatch(1))/ge
 " < テンプレートに以下のように書いておくと日付に展開されます。 >
 " <%= strftime('%Y-%m-%d') %>
 
 " <+CURSOR+> にカーソルを移動する: >
-  autocmd User plugin-template-loaded
+autocmd User plugin-template-loaded
   \    if search('<+CURSOR+>')
   \  |   execute 'normal! "_da>'
   \  | endif
@@ -291,67 +291,28 @@ let g:latex_view_general_viewer = 'mupdf'
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
-"}}}
+
 " QuickRun {{{
 let g:quickrun_config = {}
+let g:quickrun_no_default_key_mapping = 0
 
 " Need: vim-quickrun open-browser.vim, pandoc
 let g:quickrun_config['markdown'] = {
-    \ 'outputter' : 'browser',
-    \ 'command' : 'pandoc',
-    \ 'cmdopt' : '-f markdown -t html -c "/home/shotaro/Workspace/blog/styles/bootstrap-md.css" -s --mathjax --highlight-style=pygments',
-    \ 'exec': '%c %o %s',
-    \ }
+  \ 'outputter' : 'browser',
+  \ 'command' : 'pandoc',
+  \ 'cmdopt' : '-f markdown -t html -c "/home/shotaro/Workspace/blog/styles/bootstrap-md.css" -s --mathjax --highlight-style=pygments',
+  \ 'exec': '%c %o %s',
+  \ }
+  
 
 " LaTeX Quickrun
 let g:quickrun_config['tex'] = {
-    \ 'command' : 'latexmk',
-    \ 'outputter' : 'message',
-    \ 'outputter/error/error' : 'quickfix',
-    \ 'cmdopt': '-pdfdvi'
-    \ }
-
-"
+  \ 'command' : 'latexmk',
+  \ 'outputter' : 'error',
+  \ 'outputter/error/success' : 'message',
+  \ 'outputter/error/error' : 'quickfix',
+  \ 'cmdopt': '-pdfdvi',
+  \ 'exec': '%c %o %s',
+  \ }
 "}}}
-" Add ranger as a file chooser in vim"{{{
-"
-" If you add this code to the .vimrc, ranger can be started using the command
-" ":RangerChooser" or the keybinding "<leader>r".  Once you select one or more
-" files, press enter and ranger will quit again and vim will open the selected
-" files.
-"
-function! RangeChooser() "{{{
-    let temp = tempname()
-    " The option "--choosefiles" was added in ranger 1.5.1. Use the next line
-    " with ranger 1.4.2 through 1.5.0 instead.
-    "exec 'silent !ranger --choosefile=' . shellescape(temp)
-    exec 'silent !ranger --choosefiles=' . shellescape(temp)
-    if !filereadable(temp)
-        redraw!
-        " Nothing to read.
-        return
-    endif
-    let names = readfile(temp)
-    if empty(names)
-        redraw!
-        " Nothing to open.
-        return
-    endif
-    " Edit the first item.
-    exec 'edit ' . fnameescape(names[0])
-    " Add any remaning items to the arg list/buffer list.
-    for name in names[1:]
-        exec 'argadd ' . fnameescape(name)
-    endfor
-    redraw!
-endfunction "}}}
-command! -bar RangerChooser call RangeChooser()
-" Space + rでrangerを起動
-" nnoremap <Space>r :<C-U>RangerChooser<CR>
 "}}}
-" " Load Template file"{{{
-" autocmd BufNewFile *.py 0r $HOME/Templates/Python.py
-" autocmd BufNewFile *.sh 0r $HOME/Templates/shell_script.sh
-" autocmd BufNewFile *.md 0r $HOME/Templates/markdown.mkd
-" autocmd BufNewFile *.mkd 0r $HOME/Templates/markdown.mkd
-" "}}}
