@@ -119,3 +119,9 @@ markdown.mkd,Templates/markdown.mkd
 
 # Tex template
 Tex.tex,Templates/Tex.tex
+
+# Python template
+Python.py,Templates/Python.py
+
+# Shell script template
+shell_script.sh,Templates/shell_script.sh
