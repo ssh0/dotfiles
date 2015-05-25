@@ -73,6 +73,47 @@ NeoBundleCheck
 " Required:"{{{
 filetype plugin indent on"}}}
 
+" FileType"{{{
+
+" markdown
+set syntax=markdown
+autocmd BufRead,BufNewFile *.mkd set filetype=markdown
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+"}}}
+" Plugin option settings"{{{
+
+" Gista
+let g:gista#github_user = 'ssh0'
+let g:gista#update_on_write = 1
+
+" template
+" <%= %> の中身をvimで評価して展開する:
+autocmd User plugin-template-loaded
+  \ silent %s/<%=\(.\{-}\)%>/\=eval(submatch(1))/ge
+" テンプレートに以下のように書いておくと日付に展開されます。
+" <%= strftime('%Y-%m-%d') %>
+
+" <+CURSOR+> にカーソルを移動する
+autocmd User plugin-template-loaded
+  \    if search('<+CURSOR+>')
+  \  |   execute 'normal! "_da>'
+  \  | endif
+
+" jedi completeplt
+let g:jedi#auto_vim_configuration = 0
+
+" for open-browser plugin
+let g:netrw_nogx = 1 " disable netrw's gx mapping.
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
+
+" QuickRun {{{
+let g:quickrun_config = {}
+let g:quickrun_no_default_key_mapping = 0
+
+"}}}
+"}}}
+
 " Set Options"{{{
 
 " 行番号を表示
@@ -150,6 +191,9 @@ set scrolloff=5
 
 " Vimdiffで毎回左右分割する
 set diffopt=vertical
+
+" ESCの反応を素早くする
+set timeout timeoutlen=1000 ttimeoutlen=75
 
 "}}}
 " Indent"{{{
@@ -247,72 +291,14 @@ nnoremap <ESC><ESC> :nohlsearch<CR>
 nnoremap gf <C-w>gf
 nnoremap gF <C-w>gF
 
+" 複数のタグジャンプをデフォルトでみる
+nnoremap <C-]> g<C-]>
+
 " File browsing
 " nnoremap <Space>r :vsp<CR>:e .<CR>
 nnoremap <Leader>e :vsp<CR>:e .<CR>
-"}}}
 
-" Plugin option settings"{{{
+" TeXMath : 指定した領域のテキスト(主に数式)をpandocで変換して表示
+vnoremap <Leader>$ :QuickRun texmath<CR>
 
-" Gista
-let g:gista#github_user = 'ssh0'
-let g:gista#update_on_write = 1
-
-""" markdown
-set syntax=markdown
-autocmd BufRead,BufNewFile *.mkd set filetype=markdown
-autocmd BufRead,BufNewFile *.md set filetype=markdown
-
-" <%= %> の中身をvimで評価して展開する: >
-autocmd User plugin-template-loaded
-  \ silent %s/<%=\(.\{-}\)%>/\=eval(submatch(1))/ge
-" < テンプレートに以下のように書いておくと日付に展開されます。 >
-" <%= strftime('%Y-%m-%d') %>
-
-" <+CURSOR+> にカーソルを移動する: >
-autocmd User plugin-template-loaded
-  \    if search('<+CURSOR+>')
-  \  |   execute 'normal! "_da>'
-  \  | endif
-
-" jedi completeplt
-let g:jedi#auto_vim_configuration = 0
-
-" vimlatex オフに
-let g:latex_latexmk_enables = 0
-let g:latex_latexmk_options = '-pdfdvi'
-" 自動コンパイルはオフに
-let g:latex_latexmk_continuous = 0
-let g:latex_latexmk_background = 0
-let g:latex_view_method = 'general'
-let g:latex_view_general_viewer = 'mupdf'
-
-" for open-browser plugin
-let g:netrw_nogx = 1 " disable netrw's gx mapping.
-nmap gx <Plug>(openbrowser-smart-search)
-vmap gx <Plug>(openbrowser-smart-search)
-
-" QuickRun {{{
-let g:quickrun_config = {}
-let g:quickrun_no_default_key_mapping = 0
-
-" Need: vim-quickrun open-browser.vim, pandoc
-let g:quickrun_config['markdown'] = {
-  \ 'outputter' : 'browser',
-  \ 'command' : 'pandoc',
-  \ 'cmdopt' : '-f markdown -t html -c "/home/shotaro/Workspace/blog/styles/bootstrap-md.css" -s --mathjax --highlight-style=pygments',
-  \ 'exec': '%c %o %s',
-  \ }
-  
-
-" LaTeX Quickrun
-let g:quickrun_config['tex'] = {
-  \ 'command' : 'latexmk',
-  \ 'outputter' : 'error',
-  \ 'outputter/error/success' : 'message',
-  \ 'outputter/error/error' : 'quickfix',
-  \ 'cmdopt': '-pdfdvi',
-  \ 'exec': '%c %o %s',
-  \ }
-"}}}
 "}}}
