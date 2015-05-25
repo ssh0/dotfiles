@@ -2,4 +2,5 @@
 $latex = 'platex -kanji=utf-8 %S';
 $dvipdf = 'dvipdfmx %S';
 $bibtex = 'pbibtex %B';
-$pdf_mode= 3; # use dvipdf
+$pdf_mode = 3; # use dvipdf
+$pdf_previewer = "start mupdf %O %S"
