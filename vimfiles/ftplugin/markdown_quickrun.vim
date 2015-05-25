@@ -28,7 +28,8 @@ let g:quickrun_config['markdown'] = {
 \}
 
 
-
 " QuickRun and view compile result quickly
 nnoremap <F5> :QuickRun markdown/normal<CR>
 vnoremap <F5> :QuickRun markdown/visual<CR>
+
+autocmd BufWritePost *.md QuickRun markdown/normal

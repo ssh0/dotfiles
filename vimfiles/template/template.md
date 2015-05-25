@@ -1,4 +1,5 @@
 % <+CURSOR+>
-% 藤本 將太郎
-% <%= strftime('%Y-%m-%d') %>
+<div align="right">
+<p><%= strftime('%Y-%m-%d') %></p>
+</div>
 
