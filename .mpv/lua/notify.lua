@@ -278,7 +278,7 @@ function notify_current_track()
 		end
 	end
 
-	command = ("notify-send -a mpv %s -- %s %s"):format(params, summary, body)
+	command = ("notify-send -a mpv %s %s -i /usr/share/icons/gnome/scalable/actions/media-playback-start-symbolic.svg"):format(summary, body)
 	print_debug("command: " .. command)
 	os.execute(command)
 
