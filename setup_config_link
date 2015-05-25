@@ -79,9 +79,6 @@ compton/compton.conf,.config/compton/compton.conf
 ipython/nbextensions/livereveal/main.css,.ipython/nbextensions/livereveal/main.css
 ipython/profile_default/static/custom/custom.css,.ipython/profile_default/static/custom/custom.css
 ipython/profile_slide/static/custom/custom.css,.ipython/profile_slide/static/custom/custom.css
-ipython/nbextensions/livereveal/main.css,ipython/nbextensions/livereveal/main.css
-ipython/profile_default/static/custom/custom.css,ipython/profile_default/static/custom/custom.css
-ipython/profile_slide/static/custom/custom.css,ipython/profile_slide/static/custom/custom.css
 
 # [tudu](http://cli-apps.org/content/show.php/TuDu?content=129325):
 # TuDu is a comand line interface to manage hierarchical todos. Each task has a
