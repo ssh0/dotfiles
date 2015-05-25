@@ -53,6 +53,7 @@ zshfiles/zshrc,.zshrc
 zshfiles/zshrc.mine,.zshrc.mine
 zshfiles/aliases.mine,.aliases.mine
 zshfiles/aliases.zsh,.oh-my-zsh/lib/aliases.zsh
+zshfiles/plugins/bd.zsh,.oh-my-zsh/custom/plugins/bd/bd.sh
 zshfiles/themes/agnoster.zsh-theme,.oh-my-zsh/themes/agnoster.zsh-theme
 zshfiles/history.zsh,.oh-my-zsh/lib/history.zsh
 
@@ -111,7 +112,6 @@ tudurc,.tudurc
 # [cmus](https://cmus.github.io/):
 # cmus is a small, fast and powerful console music player for Unix-like
 # operating systems.
-cmus/autosave,.cmus/autosave
 cmus/status_display_program.sh,.cmus/status_display_program.sh
 
 # [mutt](http://www.mutt.org/):

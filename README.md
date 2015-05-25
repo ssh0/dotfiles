@@ -14,12 +14,6 @@ dotfiles
 .
 ├── cmus
 │   ├── autosave
-│   ├── cache
-│   ├── command-history
-│   ├── lib.pl
-│   ├── playlist.pl
-│   ├── search-history
-│   ├── socket
 │   └── status_display_program.sh
 ├── compton
 │   └── compton.conf
@@ -36,8 +30,13 @@ dotfiles
 │       └── static
 │           └── custom
 │               └── custom.css
+├── .latexmkrc
+├── .mpv
+│   └── config
 ├── mutt
 │   └── muttrc
+├── .notify-osd
+├── .profile
 ├── ranger
 │   ├── colorschemes
 │   │   └── mycolor.py
@@ -60,14 +59,28 @@ dotfiles
 │   │   ├── template.sh
 │   │   └── template.tex
 │   └── vimrc
+├── .vimperatorrc
+├── .Xdefaults
+├── .Xdefaults.material
+├── .Xdefaults.satori
+├── .Xmodmap
+├── .xmonad
+│   ├── xmobarrc
+│   ├── xmonad.errors
+│   ├── xmonad.hi
+│   └── xmonad.hs
+├── .Xresources
+├── .xscreensaver
 └── zshfiles
     ├── aliases.mine
     ├── aliases.zsh
     ├── history.zsh
+    ├── plugins
+    │   └── bd.zsh
     ├── themes
     │   └── agnoster.zsh-theme
     ├── zshrc
     └── zshrc.mine
 
-19 directories, 37 files
+294 directories, 1363 files
 ```
