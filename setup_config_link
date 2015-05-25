@@ -53,7 +53,6 @@ zshfiles/zshrc,.zshrc
 zshfiles/zshrc.mine,.zshrc.mine
 zshfiles/aliases.mine,.aliases.mine
 zshfiles/aliases.zsh,.oh-my-zsh/lib/aliases.zsh
-zshfiles/plugins/bd.zsh,.oh-my-zsh/custom/plugins/bd/bd.sh
 zshfiles/themes/agnoster.zsh-theme,.oh-my-zsh/themes/agnoster.zsh-theme
 zshfiles/history.zsh,.oh-my-zsh/lib/history.zsh
 
@@ -107,7 +106,9 @@ tudurc,.tudurc
 # [mpv](http://mpv.io/):
 # mpv is a fork of mplayer2 and MPlayer. It shares some features with the former
 # projects while introducing many more.
-.mpv,.mpv
+.mpv/config,.mpv/config
+.mpv/lua/notify.lua,.mpv/scripts/notify.lua
+
 
 # [cmus](https://cmus.github.io/):
 # cmus is a small, fast and powerful console music player for Unix-like
