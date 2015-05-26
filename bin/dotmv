@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+usage() {
+  echo "Move the file to dotfiles dir, make the link, and edit setup config"
+  echo "Usage: $0 [OPTION] file"
+  echo ""
+  echo "OPTION:"
+  echo "  -m: Add your message for setup configuration file."
+  echo "  -h: Show this message."
+  exit 1
+}
+
+message=""
+
+# option handling
+while getopts m:h OPT
+do
+  case $OPT in
+    "m" ) message="${OPTARG}";;
+    "h" ) usage ;;
+  esac
+done
+
+shift $((OPTIND-1))
+if [ ! $# = 1 ];then
+  usage
+  exit 1
+fi
+
+name=`basename $1`
+orig="`cd $(dirname $1); pwd`/$name"
+dot="$HOME/dotfiles/$name"
+
+# mv from original path to dotfiles dir
+mv "$orig" "$dot"
+
+# link to orig path from dotfiles
+ln -s "$dot" "$orig"
+
+# TODO: crop $HOME string automatically. (Now it is done manually, so you
+# should replace the below command by your name.)
+orig="$(echo $orig | sed -e 's/\/home\/shotaro\///')"
+
+# add the cofigration to the config file.
+echo "" >> "$HOME/dotfiles/setup_config_link"
+if [ ! "${message}" = "" ]; then
+  echo "# ${message}" >> "$HOME/dotfiles/setup_config_link"
+fi
+echo "${name},${orig}" >> "$HOME/dotfiles/setup_config_link"

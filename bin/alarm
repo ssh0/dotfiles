@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+
+usage() {
+    echo "Alart after given minutes."
+    echo "Usage: $0 n(min)"
+    echo ""
+    echo "In n, you can set n minutes"
+    exit 1
+}
+
+while getopts h OPT
+do
+    case $OPT in
+        "h") usage ;;
+         * ) usage ;;
+    esac
+done
+
+if [ $# -ne 1 ]; then
+    echo "Only 1 argument is needed: (given $#)."
+    usage
+elif echo $1 | egrep -q '^[0-9]+$'; then
+    echo "Start: `date +"%H:%M:%S"`"
+    echo "Alart after $1 minutes after..."
+    sleep ${1}m
+    notify-send "Time! [$1 min]" "by $0"\
+        -t 6000 \
+        -i /usr/share/icons/gnome/scalable/status/alarm-symbolic.svg
+    paplay /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga
+else
+    echo "Set numerical number."
+    usage
+fi

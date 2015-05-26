@@ -1,0 +1,63 @@
+#!/bin/sh
+#
+
+template='/home/shotaro/Workspace/blog/styles/stylesheet.css'
+# template='/home/shotaro/Workspace/blog/styles/bootstrap-md.css'
+# template='http://szk-engineering.com/markdown.css'
+header='/home/shotaro/Workspace/blog/html/header.html'
+footer='/home/shotaro/Workspace/blog/html/footer.html'
+
+usage() {
+    echo "Simply render markdown by pandoc."
+    echo "Usage: $0 [OPTION]"
+    echo ""
+    echo "OPTION:"
+    echo "  -s: Save html file in the source file dir."
+    echo "  -o: Set the name of html file. ($0 -o bar.html foo.md)"
+    echo "  -p: Preview HTML file in firefox."
+    echo "  -h: Show this message."
+    exit 1
+}
+save=false
+output=""
+preview=false
+
+while getopts so:ph OPT
+do
+  case $OPT in
+    "s" ) save=true ;;
+    "o" ) save=true; output="${OPTARG}" ;;
+    "p" ) preview=true ;;
+    "h" ) usage ;;
+  esac
+done
+
+shift $((OPTIND-1))
+
+if [ -f "$1" ]; then
+  dir="`cd $(dirname "$1"); pwd`"
+  name=${1%.*}
+else
+  dir="$(pwd)"
+  name="/tmp/$(cat /dev/urandom | tr -cd 'a-f0-9' | head -c 32)"
+fi
+
+if $save; then
+  if [ "${output}" = "" ]; then
+    output="${name}.html"
+  fi
+  pandoc -f markdown -S -t html5 -c "${template}" -B "${header}" -A "${footer}" \
+    -s --mathjax -o "${output}" $@
+else
+  if [ ! -e "${name}.html" ];then
+    exit 0
+  else
+    output="${name}.html"
+    pandoc -f markdown -S -t html5 -c "${template}" -B "${header}" -A "${footer}" \
+      -s --mathjax -o "${output}" $@
+  fi
+fi
+
+if $preview; then
+  firefox --new-tab "file://${output}"
+fi
