@@ -43,6 +43,12 @@ NeoBundle 'alpaca-tc/alpaca_powertabline'
 NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 NeoBundle 'Lokaltog/powerline-fontpatcher'
 
+" for markdown
+NeoBundle 'plasticboy/vim-markdown', {
+      \ 'depends': [
+      \   'godlygeek/tabular',
+      \]}
+
 " for LaTeX
 NeoBundle 'lervag/vimtex'
 
@@ -112,6 +118,15 @@ let g:quickrun_config = {}
 let g:quickrun_no_default_key_mapping = 0
 
 "}}}
+
+" vim-markdown
+" Disable folding
+let g:vim_markdown_folding_disabled = 1
+" Disable Default Key Mapping
+let g:vim_markdown_no_default_key_mappings = 1
+" LaTeX math
+let g:vim_markdown_math = 1
+
 "}}}
 
 " Set Options"{{{
@@ -193,7 +208,7 @@ set scrolloff=5
 set diffopt=vertical
 
 " ESCの反応を素早くする
-set timeout timeoutlen=1000 ttimeoutlen=75
+set timeout timeoutlen=500 ttimeoutlen=75
 
 "}}}
 " Indent"{{{

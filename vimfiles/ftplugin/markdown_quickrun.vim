@@ -4,8 +4,8 @@ let g:quickrun_config = {
 \   'outputter' : 'error',
 \   'outputter/error/error' : 'message',
 \   'command' : 'mkdpreview',
-\   'srcfile': expand("%"),
-\   'cmdopt' : '-s',
+\   'srcfile' : expand("%"),
+\   'cmdopt' : '',
 \   'exec': '%c %o %s',
 \   },
 \
@@ -22,7 +22,6 @@ let g:quickrun_config['markdown'] = {
 \ 'outputter' : 'error',
 \ 'outputter/error/error' : 'message',
 \ 'command' : 'mkdpreview',
-\ 'srcfile': expand("%"),
 \ 'cmdopt' : '-s -p',
 \ 'exec': '%c %o %s',
 \}
@@ -32,4 +31,4 @@ let g:quickrun_config['markdown'] = {
 nnoremap <F5> :QuickRun markdown/normal<CR>
 vnoremap <F5> :QuickRun markdown/visual<CR>
 
-autocmd BufWritePost *.md QuickRun markdown/normal
+autocmd BufWritePost,FileWritePost *.md QuickRun markdown/normal
