@@ -26,7 +26,7 @@ URxvt.perl-ext-common:      selection
 
 ! Fonts
 URxvt.allow_bold:           true
-URxvt*font:                 xft:Inconsolata for Powerline:size=10.5:antialias=true
+URxvt*font:                 xft:Inconsolata for Powerline:size=12:antialias=true
 ! URxvt*font:                 xft:Inconsolata for Powerline:size=9:antialias=false
 
 ! Fix font space
