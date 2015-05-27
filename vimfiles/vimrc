@@ -131,8 +131,8 @@ let g:vim_markdown_math = 1
 
 " Set Options"{{{
 
-" 行番号を表示
-set number
+" 行番号を表示しない
+set nonumber
 
 " マウスを有効にする
 if has('mouse')
@@ -268,6 +268,9 @@ let localleader = "\<Space>"
 
 " jjでエスケープ
 inoremap <silent> jj <ESC>
+
+" <Space> + l で行表示をトグル
+nnoremap <Leader>l :set number!<CR>
 
 " gj, gkの代わりに矢印キーでなら行内を動けるように
 nnoremap <Down> gj
