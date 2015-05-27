@@ -67,3 +67,5 @@ nnoremap <silent><F5> :QuickRun<CR>
 let @d='a\mathrm{}idl'
 let @f='a\frac{}{}hh'
 let @b='f(i\leftl%i\righthhhhh'
+
+autocmd BufWritePost,FileWritePost *.tex QuickRun tex
