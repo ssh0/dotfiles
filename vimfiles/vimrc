@@ -304,7 +304,8 @@ nnoremap <ESC><ESC> :nohlsearch<CR>
 
 " デフォルトで新しいタブでファイルを開く
 nnoremap gf <C-w>gf
-nnoremap gF <C-w>gF
+" ファイルが存在しない時には新たに作成する
+nnoremap gF :tabedit <C-r><C-f><CR>
 
 " 複数のタグジャンプをデフォルトでみる
 nnoremap <C-]> g<C-]>
