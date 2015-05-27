@@ -10,7 +10,7 @@ usage() {
   exit 1
 }
 
-configfile="$HOME/dotfiles/setup_config_link"
+configfile="setup_config_link"
 
 if [ "$1" = "-h" ]; then
   usage
@@ -18,7 +18,8 @@ fi
 
 for l in $(grep -Ev '^#' "${configfile}" | grep -Ev '^$'); do
   orig="$HOME/$(echo "$l" | awk 'BEGIN {FS=","; }  { print $2; }')"
-  if [ -e "${orig}" ] && [ -L "${orig}" ]; then
+  echo "${orig}"
+  if [ -L "${orig}" ]; then
     echo "rm ${orig}@"
     rm ${orig}
   fi
