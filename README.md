@@ -12,8 +12,65 @@ and this script replace existing files interactively.
 ```
 dotfiles
 .
+├── bin
+│   ├── alarm
+│   ├── autopep8_wrap.sh
+│   ├── autosetup.sh
+│   ├── cachecleener
+│   ├── cinii.sh
+│   ├── clipboard_copy.sh
+│   ├── clipboard_paste.sh
+│   ├── cplay.sh
+│   ├── dlmega.sh
+│   ├── dotmv
+│   ├── eztransration.sh
+│   ├── firefox-search.sh
+│   ├── getsunrise.sh
+│   ├── git-check.sh
+│   ├── googleTTS.sh
+│   ├── gpsin.sh
+│   ├── import.sh
+│   ├── kakeibo.sh
+│   ├── latextorst.sh
+│   ├── makescreenshot_for_presentation_all.sh
+│   ├── makescreenshot_for_presentation.sh
+│   ├── mkdpreview
+│   ├── mkpdf.sh
+│   ├── mplayer_term_wrapper.sh
+│   ├── navi1.sh
+│   ├── navi.sh
+│   ├── parsrj.sh
+│   ├── parsrx.sh
+│   ├── pdftoxbb.sh
+│   ├── presenmode.sh
+│   ├── presenstart.sh
+│   ├── presentation.sh
+│   ├── proxy_toggle.sh
+│   ├── psWatchMail.sh
+│   ├── radiko_rec.sh
+│   ├── radiru.sh
+│   ├── readlog.sh
+│   ├── screenshot_select.sh
+│   ├── screenshot.sh
+│   ├── takenote
+│   ├── talk.sh
+│   ├── tmp_git_repoauto.sh
+│   ├── todo.sh
+│   ├── toggle_compton.sh
+│   ├── toggle_xcompmgr.sh
+│   ├── touchpad_toggle.sh
+│   ├── unescj.sh
+│   ├── urxvt_float.sh
+│   ├── wallpaperchanger.sh
+│   ├── wmatomp3_converter.sh
+│   ├── xte-click.sh
+│   ├── xte-down.sh
+│   ├── xte-left.sh
+│   ├── xte-right.sh
+│   └── xte-up.sh
 ├── cmus
 │   ├── autosave
+│   ├── cmus_desktop_notify.py
 │   └── status_display_program.sh
 ├── compton
 │   └── compton.conf
@@ -32,7 +89,9 @@ dotfiles
 │               └── custom.css
 ├── .latexmkrc
 ├── .mpv
-│   └── config
+│   ├── config
+│   └── lua
+│       └── notify.lua
 ├── mutt
 │   └── muttrc
 ├── .notify-osd
@@ -82,5 +141,5 @@ dotfiles
     ├── zshrc
     └── zshrc.mine
 
-294 directories, 1363 files
+297 directories, 1553 files
 ```
