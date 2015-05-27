@@ -76,7 +76,6 @@ bin/gpsin.sh,bin/gpsin.sh
 bin/import.sh,bin/import.sh
 bin/kakeibo.sh,bin/kakeibo.sh
 bin/latextorst.sh,bin/latextorst.sh
-bin/LICENSE,bin/LICENSE
 bin/makescreenshot_for_presentation_all.sh,bin/makescreenshot_for_presentation_all.sh
 bin/makescreenshot_for_presentation.sh,bin/makescreenshot_for_presentation.sh
 bin/mkdpreview,bin/mkdpreview
@@ -95,7 +94,6 @@ bin/psWatchMail.sh,bin/psWatchMail.sh
 bin/radiko_rec.sh,bin/radiko_rec.sh
 bin/radiru.sh,bin/radiru.sh
 bin/readlog.sh,bin/readlog.sh
-bin/README.md,bin/README.md
 bin/screenshot_select.sh,bin/screenshot_select.sh
 bin/screenshot.sh,bin/screenshot.sh
 bin/takenote,bin/takenote

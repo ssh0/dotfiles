@@ -88,6 +88,6 @@ for l in $(grep -Ev '^#' setup_config_link | grep -Ev '^$'); do
     else
     # otherwise make symbolic file normally
         echo "'${orig}' is now the symlink of '${dotfile}'"
-        ln -s "${dotfile}" "${orig}"
+        ln -is "${dotfile}" "${orig}"
     fi
 done
