@@ -7,5 +7,4 @@ $pdf_update_method = 2;
 $pdf_previewer = "start mupdf %O %S";
 $max_repeat       = 5;
 # Prevent latexmk from removing PDF after typeset.
-# This enables Skim to chase the update in PDF automatically.
 $pvc_view_file_via_temporary = 0;
