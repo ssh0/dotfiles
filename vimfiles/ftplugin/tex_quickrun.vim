@@ -7,11 +7,14 @@ let g:quickrun_config['tex'] = {
 \ 'srcfile' : expand("%"),
 \ 'cmdopt': '-pdfdvi',
 \ 'hook/sweep/files' : [
-\                      '%S:p:r.out',
-\                      '%S:p:r.fdb_latexmk',
-\                      '%S:p:r.log',
 \                      '%S:p:r.aux',
-\                      '%S:p:r.dvi'
+\                      '%S:p:r.bbl',
+\                      '%S:p:r.blg',
+\                      '%S:p:r.dvi',
+\                      '%S:p:r.fdb_latexmk',
+\                      '%S:p:r.fls',
+\                      '%S:p:r.log',
+\                      '%S:p:r.out'
 \                      ],
 \ 'exec': '%c %o %a %s',
 \}
@@ -33,13 +36,14 @@ let g:quickrun_config.tmptex = {
 \   'hook/eval/template' : '\documentclass{jsarticle}'
 \                         .'\usepackage[dvipdfmx]{graphicx, hyperref}'
 \                         .'\usepackage{float}'
-\                         .'\usepackage{amsmath,amssymb,amsthm,ascmac}'
+\                         .'\usepackage{amsmath,amssymb,amsthm,ascmac,mathrsfs}'
 \                         .'\allowdisplaybreaks[1]'
 \                         .'\theoremstyle{definition}'
 \                         .'\newtheorem{theorem}{定理}'
 \                         .'\newtheorem*{theorem*}{定理}'
 \                         .'\newtheorem{definition}[theorem]{定義}'
 \                         .'\newtheorem*{definition*}{定義}'
+\                         .'\renewcommand\vector[1]{\mbox{\boldmath{\$#1\$}}}'
 \                         .'\begin{document}'
 \                         .'%s'
 \                         .'\end{document}',
