@@ -34,6 +34,7 @@
 # Vim is an advanced text editor that seeks to provide the power of the de-facto
 # Unix editor 'Vi', with a more complete feature set.
 vimfiles/vimrc,.vimrc
+vimfiles/ftplugin/bib_quickrun.vim,.vim/ftplugin/bib_quickrun.vim
 vimfiles/ftplugin/tex_quickrun.vim,.vim/ftplugin/tex_quickrun.vim
 vimfiles/ftplugin/markdown_quickrun.vim,.vim/ftplugin/markdown_quickrun.vim
 # markdown template
@@ -60,6 +61,7 @@ zshfiles/history.zsh,.oh-my-zsh/lib/history.zsh
 bin/alarm,bin/alarm
 bin/autopep8_wrap.sh,bin/autopep8_wrap.sh
 bin/autosetup.sh,bin/autosetup.sh
+bin/bib2html_wrapper.sh,bin/bib2html_wrapper.sh
 bin/cachecleener,bin/cachecleener
 bin/cinii.sh,bin/cinii.sh
 bin/clipboard_copy.sh,bin/clipboard_copy.sh
@@ -180,4 +182,5 @@ mutt/muttrc,.mutt/muttrc
 # searching for windows. xmonad makes work easier, by automating this.
 .xmonad/xmonad.hs,.xmonad/xmonad.hs
 .xmonad/xmobarrc,.xmonad/xmobarrc
+
 
