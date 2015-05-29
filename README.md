@@ -3,7 +3,11 @@ my dotfiles
 
 You can create the symbolic links by
 
+## Install
+
 ```bash
+$ git clone https://github.com/ssh0/dotfiles.git -o ~/.dotfiles
+$ cd ~/.dotfiles
 $ ./dotrm && ./setup.sh
 ```
 
@@ -11,11 +15,13 @@ and this script replace existing files interactively.
 
 ```
 dotfiles
+
 .
 ├── bin
 │   ├── alarm
 │   ├── autopep8_wrap.sh
 │   ├── autosetup.sh
+│   ├── bib2html_wrapper.sh
 │   ├── cachecleener
 │   ├── cinii.sh
 │   ├── clipboard_copy.sh
@@ -109,6 +115,7 @@ dotfiles
 ├── tudurc
 ├── vimfiles
 │   ├── ftplugin
+│   │   ├── bib_quickrun.vim
 │   │   ├── markdown_quickrun.vim
 │   │   └── tex_quickrun.vim
 │   ├── template
@@ -141,5 +148,5 @@ dotfiles
     ├── zshrc
     └── zshrc.mine
 
-297 directories, 1553 files
+297 directories, 1690 files
 ```
