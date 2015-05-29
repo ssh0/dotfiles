@@ -34,11 +34,11 @@ for l in $(grep -Ev '^#' setup_config_link | grep -Ev '^$'); do
 
   # if dir is not exist: mkdir
   origdir=$(dirname "${orig}")
-  if [ ! -e "${origdir}" ] || [ -f "${origdir}" ]; then
+  if [ ! -d "${origdir}" ]; then
     info "${dotfile}" "${orig}"
     flag=false
     cecho $red "'${origdir}' doesn't exist."
-    echo "Do you want to mkdir '${origdir}'? (y/n):"
+    echo "[message] mkdir '${origdir}'? (y/n):"
     while read yn; do
       case $yn in
         [Yy] ) mkdir -p "${origdir}"; break ;;
@@ -69,7 +69,7 @@ for l in $(grep -Ev '^#' setup_config_link | grep -Ev '^$'); do
                   else
                     rm "${orig}"
                   fi
-                  echo "'${orig}' is now the symlink of '${dotfile}'"
+                  echo "'${orig}' -> '${dotfile}'"
                   ln -s "${dotfile}" "${orig}"
                   break ;;
           [Bb] ) ln -sbv --suffix '.orig' "${dotfile}" "${orig}"
@@ -81,7 +81,7 @@ for l in $(grep -Ev '^#' setup_config_link | grep -Ev '^$'); do
     fi
   else
     # otherwise make symbolic file normally
-    echo "'${orig}' is now the symlink of '${dotfile}'"
-    ln -is "${dotfile}" "${orig}"
+    echo "'${orig}' -> '${dotfile}'"
+    ln -si "${dotfile}" "${orig}"
   fi
 done
