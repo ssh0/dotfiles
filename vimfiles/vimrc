@@ -169,7 +169,7 @@ set showcmd
 
 "Tab、行末の半角スペースを明示的に表示する
 set list
-set listchars=tab:^\ ,trail:~
+set listchars=tab:^\ ,trail:~,eol:↲
 
 " 対応する括弧を表示
 set showmatch
