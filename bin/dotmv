@@ -29,7 +29,7 @@ fi
 
 name=`basename $1`
 orig="`cd $(dirname $1); pwd`/$name"
-dot="$HOME/dotfiles/$name"
+dot="$HOME/.dotfiles/$name"
 
 # mv from original path to dotfiles dir
 mv "$orig" "$dot"
@@ -42,8 +42,8 @@ ln -s "$dot" "$orig"
 orig="$(echo $orig | sed -e 's/\/home\/shotaro\///')"
 
 # add the cofigration to the config file.
-echo "" >> "$HOME/dotfiles/setup_config_link"
+echo "" >> "$HOME/.dotfiles/setup_config_link"
 if [ ! "${message}" = "" ]; then
-  echo "# ${message}" >> "$HOME/dotfiles/setup_config_link"
+  echo "# ${message}" >> "$HOME/.dotfiles/setup_config_link"
 fi
-echo "${name},${orig}" >> "$HOME/dotfiles/setup_config_link"
+echo "${name},${orig}" >> "$HOME/.dotfiles/setup_config_link"
