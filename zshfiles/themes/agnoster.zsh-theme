@@ -102,6 +102,13 @@ prompt_git() {
   fi
 }
 
+prompt_ranger() {
+  if [[ -n ${RANGER_LEVEL} ]]; then
+    prompt_segment 236 blue "®"
+  fi
+}
+
+
 prompt_hg() {
   local rev status
   if $(hg id >/dev/null 2>&1); then
@@ -172,6 +179,7 @@ build_prompt() {
   prompt_context
   prompt_dir
   prompt_git
+  prompt_ranger
   prompt_hg
   prompt_end
 }
