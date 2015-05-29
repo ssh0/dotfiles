@@ -182,5 +182,3 @@ mutt/muttrc,.mutt/muttrc
 # searching for windows. xmonad makes work easier, by automating this.
 .xmonad/xmonad.hs,.xmonad/xmonad.hs
 .xmonad/xmobarrc,.xmonad/xmobarrc
-
-
