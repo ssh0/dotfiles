@@ -1,8 +1,10 @@
 #!/bin/sh
 #
+set -e
+
 usage() {
   echo "Move the file to dotfiles dir, make the link, and edit setup config"
-  echo "Usage: $0 [OPTION] file"
+  echo "Usage: $0 [OPTION] SOURCE DEST(must be set into dotfiles)"
   echo ""
   echo "OPTION:"
   echo "  -m: Add your message for setup configuration file."
@@ -10,7 +12,18 @@ usage() {
   exit 1
 }
 
+# TODO: crop $HOME string automatically. (Now it is done manually, so you
+# should replace the below command by your name.)
+home_pattern='s/\/home\/shotaro\///'
+dotfile_pattern='s/\/home\/shotaro\/\.dotfiles\///'
+
+# set dotfiles config file
+dotfiles_config_file="$HOME/.dotfiles/setup_config_link"
+
+# default message
 message=""
+
+trap 'usage' 1 2 3 15
 
 # option handling
 while getopts m:h OPT
@@ -21,29 +34,35 @@ do
   esac
 done
 
+# two arguments must be taken
 shift $((OPTIND-1))
-if [ ! $# = 1 ];then
+if [ ! $# = 2 ];then
   usage
   exit 1
 fi
 
-name=`basename $1`
-orig="`cd $(dirname $1); pwd`/$name"
-dot="$HOME/.dotfiles/$name"
+name="$(basename $1)"
+orig="$(cd $(dirname $1); pwd)"/"${name}"
+dot="$2"
+
+original="$(echo "$orig" | sed -e "${home_pattern}")"
+dotfile="$(echo "$dot" | sed -e "${dotfile_pattern}")"
 
 # mv from original path to dotfiles dir
-mv "$orig" "$dot"
+dotdir="$(dirname "${dot}")"
+if [ ! -e "${dotdir}" ]; then
+  mkdir -p "${dotdir}"
+fi
+mv -i "$orig" "$dot"
 
 # link to orig path from dotfiles
-ln -s "$dot" "$orig"
-
-# TODO: crop $HOME string automatically. (Now it is done manually, so you
-# should replace the below command by your name.)
-orig="$(echo $orig | sed -e 's/\/home\/shotaro\///')"
+ln -siv "$dot" "$orig"
 
 # add the cofigration to the config file.
-echo "" >> "$HOME/.dotfiles/setup_config_link"
 if [ ! "${message}" = "" ]; then
-  echo "# ${message}" >> "$HOME/.dotfiles/setup_config_link"
+  echo "# ${message}" >> "${dotfiles_config_file}"
 fi
-echo "${name},${orig}" >> "$HOME/.dotfiles/setup_config_link"
+echo "${dotfile},${original}" >> "${dotfiles_config_file}"
+
+# Open config file
+vim + "${dotfiles_config_file}"
