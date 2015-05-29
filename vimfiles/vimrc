@@ -85,6 +85,9 @@ filetype plugin indent on"}}}
 set syntax=markdown
 autocmd BufRead,BufNewFile *.mkd set filetype=markdown
 autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+" bib file
+autocmd BufRead,BufNewFile *.bib set filetype=bib
 "}}}
 " Plugin option settings"{{{
 
