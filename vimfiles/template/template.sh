@@ -1,4 +1,5 @@
 #!/bin/sh
-# <%= strftime('%Y-%m-%d') %>
+# written by Shotaro Fujimoto (https://github.com/ssh0)
+# first edited: <%= strftime('%Y-%m-%d') %>
 
 <+CURSOR+>
