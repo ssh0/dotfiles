@@ -1,13 +1,13 @@
 #!/bin/sh
 #
 show_usage() {
-    echo "Usage: $0 [-d dir] [-o filename] [-l] [-h]"
-    echo "  -d dir     : set saving directory for specific directory"
-    echo "  -o filename: set the text file's name"
-    echo "  -g program : open with altenative program"
-    echo "  -l         : only do 'ls dir'"
-    echo "  -h         : show this message"
-    exit 1
+  echo "Usage: $0 [-d dir] [-o filename] [-l] [-h]"
+  echo "  -d dir     : set saving directory for specific directory"
+  echo "  -o filename: set the text file's name"
+  echo "  -g program : open with altenative program"
+  echo "  -l         : only do 'ls dir'"
+  echo "  -h         : show this message"
+  exit 1
 }
 
 
@@ -19,21 +19,21 @@ ranger=false
 rootdir=$HOME/Workspace/blog
 
 check_dir() {
-    if [ ! -e $1 ]; then
-        echo "There is no directory named: $1"
-        exit 1
-    fi
+  if [ ! -e $1 ]; then
+    echo "There is no directory named: $1"
+    exit 1
+  fi
 }
 
 while getopts d:o:g:lrh OPT
 do
   case $OPT in
     "d" ) get_dir=true
-          dir="$OPTARG" ;;
+      dir="$OPTARG" ;;
     "o" ) get_name=true
-          name="$OPTARG" ;;
+      name="$OPTARG" ;;
     "g" ) alternative=true
-          editor="$OPTARG" ;;
+      editor="$OPTARG" ;;
     "l" ) show_list=true ;;
     "r" ) ranger=true ;;
     "h" ) show_usage ;;
@@ -43,47 +43,48 @@ done
 
 # 保存するディレクトリを設定
 if ! $get_dir; then
-    check_dir $rootdir
-    daydir=`date +%Y-%m-%d`
-    dir=$rootdir/$daydir
+  check_dir $rootdir
+  daydir=`date +%Y-%m-%d`
+  dir=$rootdir/$daydir
 fi
 
 # only show existing file in the dir
 if $show_list; then
-    check_dir $dir
-    ls $dir
-    exit 0
+  check_dir $dir
+  ls $dir
+  exit 0
 fi
 
 # open the folder with ranger
 if $ranger; then
-    echo "Moving to $dir ..."
-    if [ ! -e $dir ]; then
-        echo "Today's directory has not be created."
-        echo "Open ROOT directory..."
-        sleep 0.5
-        ranger $rootdir
-    else
-        ranger $dir
-    fi
-    exit 0
+  echo "Moving to $dir ..."
+  if [ ! -e $dir ]; then
+    clear
+    echo "Today's directory has not be created."
+    echo "Open ROOT directory..."
+    sleep 0.5
+    ranger $rootdir
+  else
+    ranger $dir
+  fi
+  exit 0
 fi
 
 # ファイル名を設定
 if ! $get_name; then
-    if [ ! -e $dir ]; then
-        mkdir $dir
-        i=1
-    else
-        i=`expr $(ls $dir | sed -n 's/note_\([0-9]\{2\}\).md/\1/p' | tail -n 1) + 1`
-    fi
-    name=$(printf note_%02d.md $i)
+  if [ ! -e $dir ]; then
+    mkdir $dir
+    i=1
+  else
+    i=`expr $(ls $dir | sed -n 's/note_\([0-9]\{2\}\).md/\1/p' | tail -n 1) + 1`
+  fi
+  name=$(printf note_%02d.md $i)
 fi
 
 if $alternative; then
-    $editor $dir/$name
+  $editor $dir/$name
 else
-    vim $dir/$name
+  vim $dir/$name
 fi
 
 exit 0
