@@ -105,6 +105,7 @@ dotfiles
 ├── ranger
 │   ├── colorschemes
 │   │   └── mycolor.py
+│   ├── commands_full.py
 │   ├── commands.py
 │   ├── rc.conf
 │   ├── rifle.conf
@@ -112,6 +113,7 @@ dotfiles
 ├── README.md
 ├── setup_config_link
 ├── setup.sh
+├── tmux.conf
 ├── tudurc
 ├── vimfiles
 │   ├── ftplugin
@@ -148,5 +150,5 @@ dotfiles
     ├── zshrc
     └── zshrc.mine
 
-297 directories, 1690 files
+297 directories, 1740 files
 ```
