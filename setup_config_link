@@ -47,6 +47,9 @@ vimfiles/template/template.py,.vim/template/template.py
 # Shell script template
 vimfiles/template/template.sh,.vim/template/template.sh
 
+# [tmux](http://tmux.sourceforge.net/)
+tmux.conf,.tmux.conf
+
 # [zsh](http://zsh.sourceforge.net/):
 # Zsh is a shell designed for interactive use, although it is also a powerful
 # scripting language.
@@ -123,6 +126,7 @@ ranger/rc.conf,.config/ranger/rc.conf
 ranger/rifle.conf,.config/ranger/rifle.conf
 ranger/scope.sh,.config/ranger/scope.sh
 ranger/commands.py,.config/ranger/commands.py
+ranger/commands_full.py,.config/ranger/commands_full.py
 
 # [compton](https://github.com/chjj/compton):
 # Compton is a compositor for X, and a fork of xcompmgr-dana.
