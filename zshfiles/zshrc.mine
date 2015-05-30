@@ -38,6 +38,7 @@ read -r -d '' __timetrack_ignore_progs <<EOF
 less
 emacs vi vim
 ssh mosh telnet nc netcat
+tmux
 gdb
 ranger r
 mplayer
