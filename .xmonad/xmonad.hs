@@ -57,7 +57,7 @@ colorNormalbg  = "#212121"
 colorfg        = "#9fa8b1"
 
 -- Border width
-borderwidth = 3
+borderwidth = 0
 -- }}}
 
 -- Define keys to remove {{{
