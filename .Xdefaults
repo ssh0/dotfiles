@@ -53,7 +53,7 @@ URxvt*iso14755:             false
 
 ! material 200
 vim:                        set ft=xdefaults:
-URxvt*background:           #212121
+URxvt*background:           #1c1c1c
 URxvt*foreground:           #eceff1
 
 URxvt*cursorColor:          #a5d6a7
