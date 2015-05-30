@@ -184,7 +184,6 @@ build_prompt() {
   prompt_end
 }
 
-PROMPT='
-%{%f%b%k%}$(build_prompt)%{$reset_color%}
+PROMPT='%{%f%b%k%}$(build_prompt)%{$reset_color%}
 %{$fg_bold[green]%}: %{$reset_color%}'
 

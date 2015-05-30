@@ -129,7 +129,7 @@ bd () {
 }
 _bd () {
   # Get parents (in reverse order)
-  local num=${#${(ps:/:)${PWD}}}
+  local num=${#${(ps:/:)${PWD}} }
   local i
   for i in {$((num+1))..2}
   do
@@ -151,10 +151,11 @@ cfg-mplayer() { $EDITOR ~/.mplayer/config ;}
 cfg-ranger() { $EDITOR ~/.config/ranger/rc.conf ;}
 cfg-ranger-rifle() { $EDITOR ~/.config/ranger/rifle.conf ;} # edit open_with extensions
 cfg-ranger-commands() { $EDITOR ~/.config/ranger/commands.py ;} # scripts
+cfg-tmux() { $EDITOR ~/.tmux.conf ;}
 cfg-vimrc() { $EDITOR ~/.vimrc ;}
 cfg-xdefaults() { $EDITOR ~/.Xdefaults ;}
 # cfg-xinitrc() { $EDITOR ~/.xinitrc ;}
-cfg-xmodmap() { $EDITOR ~/.Xmodmap ;}
+cfg-Xmodmap() { $EDITOR ~/.Xmodmap ;}
 cfg-xmonad() { $EDITOR ~/.xmonad/xmonad.hs ;}
 cfg-xresources() { $EDITOR ~/.Xresources ;}
 cfg-zshrc() { $EDITOR ~/.zshrc.mine ;}
