@@ -61,7 +61,7 @@ prompt_end() {
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment 241 default "%(!.%{$bg[yellow]%}.)$USER"
+    prompt_segment 241 default "%(!.%{$bg[yellow]%}.)"
   fi
 }
 
@@ -176,7 +176,7 @@ build_prompt() {
   RETVAL=$?
   prompt_status
   prompt_virtualenv
-  prompt_context
+  # prompt_context
   prompt_dir
   prompt_git
   prompt_ranger
@@ -184,6 +184,7 @@ build_prompt() {
   prompt_end
 }
 
-PROMPT='%{%f%b%k%}$(build_prompt)%{$reset_color%}
+PROMPT='
+%{%f%b%k%}$(build_prompt)%{$reset_color%}
 %{$fg_bold[green]%}: %{$reset_color%}'
 
