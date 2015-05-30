@@ -1,4 +1,4 @@
-#!/bin/sh <- this is for easy writing with editor.
+# vim: ft=cfg
 # This file is config file for setup.sh
 # You can comment out by adding "#" at the beginning of the line.
 # And an empty line is ignored by setup.sh.
