@@ -234,7 +234,7 @@ autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
 " Set highlight"{{{
 " To show current color scheme by
 " ':so $VIMRUNTIME/syntax/hitest.vim'
-highlight SpecialKey ctermbg=235 ctermfg=15
+highlight SpecialKey ctermbg=None ctermfg=0
 highlight ColorColumn ctermbg=233
 highlight CursorColumn ctermbg=0
 highlight CursorLine cterm=None
