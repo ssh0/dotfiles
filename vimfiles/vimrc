@@ -238,6 +238,7 @@ highlight SpecialKey ctermbg=None ctermfg=0
 highlight ColorColumn ctermbg=233
 highlight CursorColumn ctermbg=0
 highlight CursorLine cterm=None
+highlight LineNr ctermbg=None ctermfg=8
 highlight CursorLineNr ctermbg=15 ctermfg=16
 highlight Error ctermfg=0 ctermbg=1 guifg=White guibg=Red
 highlight ErrorMsg ctermfg=0 ctermbg=1 guifg=White guibg=Red
@@ -253,7 +254,6 @@ highlight SpellBad term=reverse ctermfg=0 ctermbg=224 gui=undercurl guisp=Red
 highlight SpellCap term=reverse ctermfg=0 ctermbg=81 gui=undercurl guisp=Blue
 highlight SpellRare term=reverse ctermfg=0 ctermbg=225 gui=undercurl guisp=Magenta
 highlight SpellLocal term=underline ctermfg=0 ctermbg=14 gui=undercurl guisp=DarkCyan
-highlight LineNr ctermbg=None ctermfg=256
 highlight MatchParen term=None ctermfg=None ctermbg=239
 highlight NonText ctermfg=0 guifg=Bg
 highlight Normal ctermbg=None
