@@ -112,7 +112,7 @@ main = do
        , ((modm .|. shiftMask  , xK_f      ), withFocused (keysMoveWindow (-borderwidth, -borderwidth)))
        , ((modm                , xK_z      ), sendMessage MirrorShrink)
        , ((modm                , xK_a      ), sendMessage MirrorExpand)
-       , ((modm                , xK_x      ), kill) -- %! Close the focused window
+       , ((modm                , xK_c      ), kill) -- %! Close the focused window
        , ((modm                , xK_Right  ), nextWS ) -- go to next workspace
        , ((modm                , xK_Left   ), prevWS ) -- go to prev workspace
        , ((modm .|. shiftMask  , xK_Right  ), shiftToNext)
