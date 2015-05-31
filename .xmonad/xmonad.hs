@@ -112,6 +112,7 @@ main = do
        , ((modm .|. shiftMask  , xK_f      ), withFocused (keysMoveWindow (-borderwidth, -borderwidth)))
        , ((modm                , xK_z      ), sendMessage MirrorShrink)
        , ((modm                , xK_a      ), sendMessage MirrorExpand)
+       , ((modm                , xK_x      ), kill) -- %! Close the focused window
        , ((modm                , xK_Right  ), nextWS ) -- go to next workspace
        , ((modm                , xK_Left   ), prevWS ) -- go to prev workspace
        , ((modm .|. shiftMask  , xK_Right  ), shiftToNext)
@@ -149,7 +150,6 @@ main = do
        , ((mod1Mask .|. controlMask, xK_t      ), spawn "bash $HOME/bin/toggle_compton.sh")
        , ((modm                    , xK_Return ), spawn "urxvtc")
        , ((modm .|. shiftMask      , xK_Return ), spawn "sh $HOME/bin/urxvt_float.sh")
-       , ((modm                    , xK_c      ), kill) -- %! Close the focused window
        , ((modm                    , xK_e      ), spawn "python $HOME/Workspace/python/transparent.py")
        , ((modm                    , xK_p      ), spawn "exe=`dmenu_run -b -p '#' -nb '#009688' -nf '#ffffff' -sb '#ffffff' -sf '#000000'` && exec $exe")
        , ((mod1Mask .|. controlMask, xK_f      ), spawn "python $HOME/Workspace/python/web_search/websearch.py")
