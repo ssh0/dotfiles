@@ -59,6 +59,7 @@ zshfiles/aliases.mine,.aliases.mine
 zshfiles/aliases.zsh,.oh-my-zsh/lib/aliases.zsh
 zshfiles/themes/agnoster.zsh-theme,.oh-my-zsh/themes/agnoster.zsh-theme
 zshfiles/history.zsh,.oh-my-zsh/lib/history.zsh
+zshfiles/plugins/tmux/tmux.plugin.zsh,.oh-my-zsh/plugins/tmux/tmux.plugin.zsh
 
 # bin
 bin/alarm,bin/alarm
@@ -186,3 +187,4 @@ mutt/muttrc,.mutt/muttrc
 # searching for windows. xmonad makes work easier, by automating this.
 .xmonad/xmonad.hs,.xmonad/xmonad.hs
 .xmonad/xmobarrc,.xmonad/xmobarrc
+
