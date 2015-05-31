@@ -163,7 +163,7 @@ prompt_status() {
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
   [[ -n ${RANGER_LEVEL} ]] && symbols+="%{%F{blue}%}®"
 
-  [[ -n "$symbols" ]] && prompt_segment 241 default "$symbols"
+  [[ -n "$symbols" ]] && prompt_segment 236 default "$symbols"
 }
 
 # Init:
