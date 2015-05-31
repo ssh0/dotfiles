@@ -102,13 +102,6 @@ prompt_git() {
   fi
 }
 
-prompt_ranger() {
-  if [[ -n ${RANGER_LEVEL} ]]; then
-    prompt_segment 236 blue "®"
-  fi
-}
-
-
 prompt_hg() {
   local rev status
   if $(hg id >/dev/null 2>&1); then
@@ -161,25 +154,32 @@ prompt_virtualenv() {
 # - was there an error
 # - am I root
 # - are there background jobs?
+# - am I in ranger subshell?
 prompt_status() {
   local symbols
   symbols=()
   [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
   [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
+  [[ -n ${RANGER_LEVEL} ]] && symbols+="%{%F{blue}%}®"
 
   [[ -n "$symbols" ]] && prompt_segment 241 default "$symbols"
+}
+
+# Init:
+prompt_init() {
+  echo -n "%{%F{238}%K{$CURRENT_BG}%}▒▓"
 }
 
 ## Main prompt
 build_prompt() {
   RETVAL=$?
-  prompt_status
+  prompt_init
   prompt_virtualenv
   # prompt_context
   prompt_dir
   prompt_git
-  prompt_ranger
+  prompt_status
   prompt_hg
   prompt_end
 }
