@@ -100,6 +100,7 @@ bin/psWatchMail.sh,bin/psWatchMail.sh
 bin/radiko_rec.sh,bin/radiko_rec.sh
 bin/radiru.sh,bin/radiru.sh
 bin/readlog.sh,bin/readlog.sh
+bin/ris2bib,bin/ris2bib
 bin/screenshot_select.sh,bin/screenshot_select.sh
 bin/screenshot.sh,bin/screenshot.sh
 bin/takenote,bin/takenote
