@@ -321,7 +321,7 @@ nnoremap <C-]> g<C-]>
 vnoremap <Leader>$ :QuickRun texmath<CR>
 
 "}}}
-" RangeChooser
+" RangeChooser"{{{
 " Compatible with ranger 1.4.2 through 1.7.*
 "
 " Add ranger as a file chooser in vim
@@ -358,3 +358,4 @@ function! RangeChooser()
 endfunction
 command! -bar RangerChooser call RangeChooser()
 nnoremap <leader>e :<C-U>RangerChooser<CR>
+"}}}
