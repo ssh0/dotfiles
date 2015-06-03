@@ -155,9 +155,9 @@ main = do
        , ((mod1Mask .|. controlMask, xK_f      ), spawn "python $HOME/Workspace/python/web_search/websearch.py")
        , ((0                       , 0x1008ff18), spawn "sh $HOME/bin/cplay.sh")
        , ((0                       , 0x1008ff14), spawn "sh $HOME/bin/cplay.sh")
-       , ((0                       , 0x1008ff13), spawn "amixer -D pulse set Master 1%+ && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga")
-       , ((0                       , 0x1008ff11), spawn "amixer -D pulse set Master 1%- && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga")
-       , ((0                       , 0x1008ff12), spawn "amixer -D pulse set Master toggle")
+       , ((0                       , 0x1008ff13), spawn "bash $HOME/bin/sound_volume_change_wrapper.sh +")
+       , ((0                       , 0x1008ff11), spawn "bash $HOME/bin/sound_volume_change_wrapper.sh -")
+       , ((0                       , 0x1008ff12), spawn "bash $HOME/bin/sound_volume_change_wrapper.sh m")
         -- Brightness Keys
        , ((0                       , 0x1008FF02), spawn "xbacklight + 1 -time 100 -steps 1")
        , ((0                       , 0x1008FF03), spawn "xbacklight - 1 -time 100 -steps 1")
