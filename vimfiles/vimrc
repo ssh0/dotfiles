@@ -211,7 +211,7 @@ set scrolloff=5
 set diffopt=vertical
 
 " ESCの反応を素早くする
-set timeout timeoutlen=500 ttimeoutlen=75
+set timeout timeoutlen=200 ttimeoutlen=75
 
 "}}}
 " Indent"{{{
@@ -316,9 +316,6 @@ nnoremap gF :tabedit <C-r><C-f><CR>
 
 " 複数のタグジャンプをデフォルトでみる
 nnoremap <C-]> g<C-]>
-
-" TeXMath : 指定した領域のテキスト(主に数式)をpandocで変換して表示
-vnoremap <Leader>$ :QuickRun texmath<CR>
 
 "}}}
 " RangeChooser"{{{
