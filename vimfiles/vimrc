@@ -1,9 +1,9 @@
-"          _
-"  _______| |__  _ __ ___
-" |_  / __| '_ \| '__/ __|
-"  / /\__ \ | | | | | (__
-" /___|___/_| |_|_|  \___|
-" 
+"        _
+" __   _(_)_ __ ___  _ __ ___
+" \ \ / / | '_ ` _ \| '__/ __|
+"  \ V /| | | | | | | | | (__
+"   \_/ |_|_| |_| |_|_|  \___|
+"
 " written by Shotaro Fujimoto (https://github.com/ssh0)
 
 
@@ -161,8 +161,8 @@ let g:vim_markdown_math = 1
 
 " Set Options"{{{
 
-" 行番号を表示しない
-set nonumber
+" 行番号を表示
+set number
 
 " マウスを有効にする
 if has('mouse')
@@ -185,7 +185,7 @@ set smartindent
 set textwidth=0
 
 " cursor line をハイライト
-set cursorline
+" set cursorline
 
 "タイトルを表示
 set title
