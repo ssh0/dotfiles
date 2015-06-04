@@ -124,8 +124,8 @@ let g:quickrun_no_default_key_mapping = 0
 "}}}
 
 " vim-markdown
-" Disable folding
-let g:vim_markdown_folding_disabled = 1
+" Unset Disable folding
+let g:vim_markdown_folding_disabled = 0
 " Disable Default Key Mapping
 let g:vim_markdown_no_default_key_mappings = 1
 " LaTeX math

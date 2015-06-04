@@ -26,6 +26,13 @@ let g:quickrun_config['markdown'] = {
 \ 'exec': '%c %o %s',
 \}
 
+let g:quickrun_config['mkd'] = {
+\ 'outputter' : 'error',
+\ 'outputter/error/error' : 'message',
+\ 'command' : 'mkdpreview',
+\ 'cmdopt' : '-s -p',
+\ 'exec': '%c %o %s',
+\}
 
 " QuickRun and view compile result quickly
 nnoremap <silent> <F5> :QuickRun<CR>
