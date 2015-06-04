@@ -44,10 +44,11 @@ NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 NeoBundle 'Lokaltog/powerline-fontpatcher'
 
 " for markdown
-NeoBundle 'plasticboy/vim-markdown', {
+NeoBundle 'rcmdnk/vim-markdown', {
       \ 'depends': [
       \   'godlygeek/tabular',
       \]}
+NeoBundle 'joker1007/vim-markdown-quote-syntax'
 
 " for LaTeX
 NeoBundle 'lervag/vimtex'
@@ -83,8 +84,8 @@ filetype plugin indent on"}}}
 
 " markdown
 set syntax=markdown
-autocmd BufRead,BufNewFile *.mkd set filetype=markdown
-autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead,BufNewFile *.{mkd,md} set filetype=markdown
+autocmd BufRead,BufNewFile *.{txt,text} set filetype=markdown
 
 " bib file
 autocmd BufRead,BufNewFile *.bib set filetype=bib
