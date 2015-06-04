@@ -115,7 +115,6 @@ let g:vimfiler_as_default_explorer = 1
 let g:unite_source_mark_marks =
 \   "abcdefghijklmnopqrstuvwxyz"
 \ . "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-\ . "0123456789.'`^<>[]{}()\""
 " key bind: `` or ''
 
 " Gista
