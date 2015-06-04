@@ -75,6 +75,8 @@ export LANG=en_US.UTF-8
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 #
+
+# zshprofile
 if (which zprof > /dev/null) ;then
   zprof | less
 fi
