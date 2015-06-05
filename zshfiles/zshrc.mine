@@ -1,5 +1,5 @@
 # Load my aliases
-source $HOME/.aliases.mine
+source $HOME/.aliases.mine.zsh
 
 # PATH to /usr/local/lib
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
