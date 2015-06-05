@@ -18,7 +18,6 @@ fi
 
 for l in $(grep -Ev '^#' "${configfile}" | grep -Ev '^$'); do
   orig="$HOME/$(echo "$l" | awk 'BEGIN {FS=","; }  { print $2; }')"
-  echo "${orig}"
   if [ -L "${orig}" ]; then
     echo "rm ${orig}@"
     rm ${orig}
