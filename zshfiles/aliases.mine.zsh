@@ -1,3 +1,12 @@
+# vim: set filetype=zsh
+#        _ _
+#   __ _| (_) __ _ ___  ___  ___
+#  / _` | | |/ _` / __|/ _ \/ __|
+# | (_| | | | (_| \__ \  __/\__ \
+#  \__,_|_|_|\__,_|___/\___||___/
+#
+# written by Shotaro Fujimoto (https://github.com/ssh0)
+
 #-------- Alias {{{
 #------------------------------------------------------
 
@@ -26,6 +35,28 @@ else
   alias diff='diff -u'
 fi
 
+# mkdocs
+_mkdocs() {
+    _arguments \
+    {build}'[Build the MkDocs documentation]' \
+    {gh-deploy}'[Deply your documentation to GitHub Pages]' \
+    {json}'[Build the MkDocs documentation to JSON files...]' \
+    {new}'[Create a new MkDocs project]' \
+    {serve}'[Run the builtin development server]'
+}
+compdef _mkdocs mkdocs
+
+#Enable verbose output
+#Show the version and exit.
+#Show this message and exit.
+#
+#
+#
+#
+#
+#
+#
+#
 # }}}
 
 #-------- extract images {{{
