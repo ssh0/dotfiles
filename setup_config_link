@@ -1,4 +1,4 @@
-# vim: ft=cfg
+# vim: ft=conf
 # This file is config file for setup.sh
 # You can comment out by adding "#" at the beginning of the line.
 # And an empty line is ignored by setup.sh.
@@ -104,7 +104,7 @@ bin/ris2bib,bin/ris2bib
 bin/screenshot_select.sh,bin/screenshot_select.sh
 bin/screenshot.sh,bin/screenshot.sh
 bin/sound_volume_change_wrapper.sh,bin/sound_volume_change_wrapper.sh
-bin/takenote,bin/takenote
+# bin/takenote,bin/takenote
 bin/talk.sh,bin/talk.sh
 bin/tmp_git_repoauto.sh,bin/tmp_git_repoauto.sh
 bin/todo.sh,bin/todo.sh
