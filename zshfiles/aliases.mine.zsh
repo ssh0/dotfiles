@@ -36,27 +36,15 @@ else
 fi
 
 # mkdocs
-_mkdocs() {
-    _arguments \
-    {build}'[Build the MkDocs documentation]' \
-    {gh-deploy}'[Deply your documentation to GitHub Pages]' \
-    {json}'[Build the MkDocs documentation to JSON files...]' \
-    {new}'[Create a new MkDocs project]' \
-    {serve}'[Run the builtin development server]'
-}
 compdef _mkdocs mkdocs
+function _mkdocs() {
+  local -a cmds
+  if (( CURRENT == 2 ));then
+    cmds=('build' 'gh-deploy' 'json' 'new' 'serve')
+    _describe -t commands "subcommand" cmds
+  fi
+}
 
-#Enable verbose output
-#Show the version and exit.
-#Show this message and exit.
-#
-#
-#
-#
-#
-#
-#
-#
 # }}}
 
 #-------- extract images {{{
@@ -78,6 +66,119 @@ function extract() {
 }
 alias -s {qz,tgz,zip,lzh,bz2,tbz,Z,tar,arj,xz}=extract
 alias -s {png,jpg,bmp,PNG,JPG,BMP}='eog'
+# }}}
+#-------- takenote {{{
+#
+function takenote() {
+  show_usage() {
+    echo "Usage: $0 [-d dir] [-o filename] [-g editor] [-l] [-h]"
+    echo "  -d dir     : set saving directory for specific directory"
+    echo "  -o filename: set the text file's name"
+    echo "  -g editor  : open with altenative program"
+    echo "  -l         : only do 'ls dir'"
+    echo "  -r         : cd to TODAY folder, or it doesn't exist, to ROOT dir."
+    echo "  -h         : show this message"
+    return 1
+  }
+
+
+  get_dir=false
+  get_name=false
+  alternative=false
+  show_list=false
+  ranger=false
+  rootdir=$HOME/Workspace/blog
+
+  check_dir() {
+    if [ ! -e $1 ]; then
+      echo "There is no directory named: $1"
+      return 1
+    fi
+  }
+
+  while getopts d:o:g:lrh OPT
+  do
+    case $OPT in
+      "d" ) get_dir=true
+        dir="$OPTARG" ;;
+      "o" ) get_name=true
+        name="$OPTARG" ;;
+      "g" ) alternative=true
+        editor="$OPTARG" ;;
+      "l" ) show_list=true ;;
+      "r" ) ranger=true ;;
+      "h" ) show_usage ;;
+        * ) show_usage ;;
+    esac
+  done
+
+  # 保存するディレクトリを設定
+  if ! $get_dir; then
+    check_dir $rootdir
+    daydir=`date +%Y-%m-%d`
+    dir=$rootdir/$daydir
+  fi
+
+  # only show existing file in the dir
+  if $show_list; then
+    check_dir $dir
+    list=$(ls $dir)
+    echo $list
+    return 0
+  fi
+
+  # open the folder with ranger
+  if $ranger; then
+    echo "Moving to $dir ..."
+    if [ ! -e $dir ]; then
+      clear
+      echo "Today's directory has not be created."
+      echo "Open ROOT directory..."
+      sleep 0.5
+      ranger $rootdir
+    else
+      ranger $dir
+    fi
+    return 0
+  fi
+
+  # ファイル名を設定
+  if ! $get_name; then
+    if [ ! -e $dir ]; then
+      mkdir $dir
+      i=1
+    else
+      i=`expr $(ls $dir | sed -n 's/note_\([0-9]\{2\}\).md/\1/p' | tail -n 1) + 1`
+    fi
+    name=$(printf note_%02d.md $i)
+  fi
+
+  if $alternative; then
+    $editor $dir/$name
+  else
+    cwd=$(pwd)
+    cd $dir
+    vim $dir/$name
+    cd $cwd
+  fi
+
+  return 0
+}
+
+
+_takenote() {
+  typeset -A opt_args
+  _arguments -s -S \
+    "(-l -r -h)-d+[Directory]::_files -/" \
+    "(-l -r -h)-o+[Output]::" \
+    "(-l -r -h)-g+[Alternative editor]::(leafpad nano gedit)" \
+    "(-d -o -g -r -h)-l[List files]" \
+    "(-d -o -g -l -h)-r[cd to TODAY dir]" \
+    "(-d -o -g -l -r)-h[Show help]" \
+    && return 0
+}
+
+compdef _takenote takenote
 # }}}
 # -------- peco-history alias {{{
 #------------------------------------------------------
@@ -201,7 +302,7 @@ compctl -V directories -K _bd bd
 
 #-------- Configurations {{{
 #------------------------------------------------------
-cfg-aliases() { $EDITOR ~/.aliases.mine ;}
+cfg-aliases() { $EDITOR ~/.aliases.mine.zsh ;}
 cfg-compton() { $EDITOR ~/.config/compton/compton.conf ;}
 cfg-dotfiles() { $EDITOR ~/.dotfiles/setup_config_link ;}
 cfg-latexmkrc() { $EDITOR ~/.latexmkrc }
