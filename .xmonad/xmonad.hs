@@ -43,7 +43,7 @@ import Graphics.X11.ExtraTypes.XF86
 -- }}}
 
 -- local variables {{{
-myWorkspaces = [" 1 ", " 2 ", " 3 ", " 4 ", " 5 "]
+myWorkspaces = ["1", "2", "3", "4", "5"]
 modm = mod4Mask
 
 -- Color Setting
@@ -93,7 +93,7 @@ main = do
         -- any time Full mode, avoid xmobar area
        , layoutHook         = toggleLayouts (noBorders Full) $
                               avoidStruts $
-                              onWorkspace " 3 " simplestFloat $
+                              onWorkspace "3" simplestFloat $
                               myLayout
         -- xmobar setting
        , logHook            = myLogHook wsbar
@@ -202,8 +202,8 @@ myStartupHook = do
 ---------------------------------------------------
 myManageHookShift = composeAll
             -- if you want to know className, type "$ xprop|grep CLASS" on shell
-            [ className =? "Firefox"       --> mydoShift " 2 "
-            , className =? "Google-chrome" --> mydoShift " 4 "
+            [ className =? "Firefox"       --> mydoShift "2"
+            , className =? "Google-chrome" --> mydoShift "4"
             ]
              where mydoShift = doF . liftM2 (.) W.greedyView W.shift
 -- }}}
@@ -231,11 +231,11 @@ myLogHook h = dynamicLogWithPP $ wsPP { ppOutput = hPutStrLn h }
 myWsBar = "xmobar $HOME/.xmonad/xmobarrc"
 
 wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws,t]
-                , ppCurrent         = xmobarColor  colorGreen    colorNormalbg
-                , ppUrgent          = xmobarColor  colorWhite    colorNormalbg
-                , ppVisible         = xmobarColor  colorWhite    colorNormalbg
-                , ppHidden          = xmobarColor  colorWhite    colorNormalbg
-                , ppHiddenNoWindows = xmobarColor  colorfg       colorNormalbg
+                , ppCurrent         = xmobarColor  colorGreen    colorNormalbg . wrap "[" "]"
+                , ppUrgent          = xmobarColor  colorWhite    colorNormalbg . wrap " " " "
+                , ppVisible         = xmobarColor  colorWhite    colorNormalbg . wrap " " " "
+                , ppHidden          = xmobarColor  colorWhite    colorNormalbg . wrap " " " "
+                , ppHiddenNoWindows = xmobarColor  colorfg       colorNormalbg . wrap " " " "
                 , ppTitle           = xmobarColor  colorGreen    colorNormalbg
                 , ppOutput          = putStrLn
                 , ppWsSep           = ""
