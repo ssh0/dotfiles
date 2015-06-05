@@ -115,6 +115,7 @@ let g:vimfiler_as_default_explorer = 1
 let g:unite_source_mark_marks =
 \   "abcdefghijklmnopqrstuvwxyz"
 \ . "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+\ . "0123456789.'`^<>[]{}()\""
 " key bind: `` or ''
 
 " Gista
@@ -163,6 +164,9 @@ let g:vim_markdown_math = 1
 " 行番号を表示
 set number
 
+" Don't redraw screen during macros
+set lazyredraw
+
 " マウスを有効にする
 if has('mouse')
   set mouse=a
@@ -178,7 +182,7 @@ set expandtab
 
 "自動的にインデントする
 set autoindent
-set smartindent
+" set smartindent
 
 " 入力されているテキストの最大幅
 set textwidth=0
@@ -214,6 +218,9 @@ endif
 
 " 検索結果のハイライト
 set hlsearch
+
+" Show matches while typing
+set incsearch
 
 " folding
 set fdm=marker " zf(def) zd(delete) zo(open) zc(close)
@@ -310,7 +317,7 @@ nnoremap '' :Unite mark<CR>
 " <Space> + l で行表示をトグル
 nnoremap <Leader>l :set number!<CR>
 
-" gj, gkの代わりに矢印キーでなら行内を動けるように
+" 矢印キーでなら行内を動けるように
 nnoremap <Down> gj
 nnoremap <Up>   gk
 
@@ -341,15 +348,15 @@ nnoremap <silent> <Leader>e :VimFilerBufferDir -buffer-name=explorer -split
 \ -simple -winwidth=35 -toggle -no-quit<CR>
 
 " comment out / off
-nnoremap <Leader>c <Plug>(caw:i:toggle)
-vnoremap <Leader>c <Plug>(caw:i:toggle)
+nmap <Leader>c <Plug>(caw:i:toggle)
+vmap <Leader>c <Plug>(caw:i:toggle)
 
 " ハイライトの取り消し ESC2回押し
 nnoremap <ESC><ESC> :nohlsearch<CR>
 
 " デフォルトで新しいタブでファイルを開く
 nnoremap gf <C-w>gf
-" ファイルが存在しない時には新たに作成する
+" ファイルを新たに作成してタブで開く
 nnoremap gF :tabedit <C-r><C-f><CR>
 
 " 複数のタグジャンプをデフォルトでみる
