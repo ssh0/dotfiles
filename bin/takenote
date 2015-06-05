@@ -1,11 +1,12 @@
 #!/bin/sh
 #
 show_usage() {
-  echo "Usage: $0 [-d dir] [-o filename] [-l] [-h]"
+  echo "Usage: $0 [-d dir] [-o filename] [-g editor] [-l] [-h]"
   echo "  -d dir     : set saving directory for specific directory"
   echo "  -o filename: set the text file's name"
-  echo "  -g program : open with altenative program"
+  echo "  -g editor  : open with altenative program"
   echo "  -l         : only do 'ls dir'"
+  echo "  -r         : cd to TODAY folder, or it doesn't exist, to ROOT dir."
   echo "  -h         : show this message"
   exit 1
 }
