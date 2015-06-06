@@ -21,8 +21,7 @@ takenote() {
 
   check_dir() {
     if [ ! -e $1 ]; then
-      echo "There is no directory named: $1"
-      return 0
+      return 1
     fi
   }
 
@@ -51,9 +50,10 @@ takenote() {
 
   # only show existing file in the dir
   if $show_list; then
-    check_dir $dir
-    list=$(ls $dir)
-    echo $list
+    if check_dir $dir; then
+      list=$(ls $dir)
+      echo $list
+    fi
     return 0
   fi
 
