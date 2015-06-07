@@ -271,18 +271,18 @@ autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
 " To show current color scheme by
 " ':so $VIMRUNTIME/syntax/hitest.vim'
 highlight ColorColumn ctermbg=233
-highlight CursorColumn ctermbg=0
+highlight CursorColumn ctermbg=235
 highlight CursorLine cterm=None
-highlight CursorLineNr ctermbg=15 ctermfg=16
+highlight CursorLineNr ctermbg=234 ctermfg=236
 highlight DiffAdd term=bold ctermfg=0 ctermbg=81 guibg=LightBlue
 highlight DiffChange term=bold ctermfg=0 ctermbg=225 guibg=LightMagenta
 highlight DiffDelete term=bold ctermfg=0 ctermbg=159 gui=bold guifg=Blue guibg=LightCyan
 highlight DiffText term=reverse ctermfg=0 cterm=bold ctermfg=0 ctermbg=9 gui=bold guibg=Red
 highlight Error ctermfg=0 ctermbg=1 guifg=White guibg=Red
 highlight ErrorMsg ctermfg=0 ctermbg=1 guifg=White guibg=Red
-highlight FoldColumn ctermbg=236 ctermfg=12
-highlight Folded ctermbg=236 ctermfg=12
-highlight LineNr ctermbg=236 ctermfg=8
+highlight FoldColumn ctermbg=235 ctermfg=74
+highlight Folded ctermbg=235 ctermfg=74
+highlight LineNr ctermbg=235 ctermfg=242
 highlight MatchParen term=None ctermfg=None ctermbg=239
 highlight NonText ctermfg=0 guifg=Bg
 highlight Normal ctermbg=None
