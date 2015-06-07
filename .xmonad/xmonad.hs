@@ -214,6 +214,7 @@ myManageHookFloat = composeAll
               className =? "mplayer2"         --> doFloat,
               className =? "mpv"              --> doFloat,
               className =? "Tk"               --> doFloat,
+              className =? "Screenkey"        --> doFloat,
               className =? "feh"              --> doFloat,
               className =? "Display.im6"      --> doFloat,
               className =? "Shutter"          --> doFloat,
