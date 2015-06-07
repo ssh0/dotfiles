@@ -1,6 +1,6 @@
 -- -*- mode:haskell -*-
 Config { font = "xft:TakaoGothic:size=9"
-       , bgColor = "#212121"
+       , bgColor = "#1c1c1c"
        , fgColor = "#757575"
        , position = TopSize C 100 12
        , lowerOnStart = False
