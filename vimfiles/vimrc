@@ -43,6 +43,9 @@ NeoBundle 'tacroe/unite-mark'
 " vim-signature
 NeoBundle 'kshenoy/vim-signature'
 
+" Folding
+NeoBundle 'LeafCage/foldCC'
+
 " open-browser
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'tyru/caw.vim.git'
@@ -157,6 +160,9 @@ let g:vim_markdown_no_default_key_mappings = 1
 " LaTeX math
 let g:vim_markdown_math = 1
 
+" Folding
+set foldtext=FoldCCtext()
+
 "}}}
 
 " Set Options"{{{
@@ -225,6 +231,7 @@ set incsearch
 " folding
 set fdm=marker " zf(def) zd(delete) zo(open) zc(close)
 set foldcolumn=1
+set fillchars=vert:\|
 
 " バックアップファイルを作成しない
 set nowritebackup
