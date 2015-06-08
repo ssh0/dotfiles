@@ -96,7 +96,8 @@ call neobundle#end()
 NeoBundleCheck
 "}}}
 " Required:"{{{
-filetype plugin indent on"}}}
+filetype plugin indent on
+"}}}
 
 " FileType"{{{
 
