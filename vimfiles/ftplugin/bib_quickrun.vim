@@ -5,7 +5,7 @@ let g:quickrun_config.bib = {
 \ 'outputter' : 'error',
 \ 'outputter/error/success' : 'null',
 \ 'outputter/error/error' : 'quickfix',
-\ 'cmdopt': '-o '. expand('%S:p:r.html'),
+\ 'cmdopt': '-o '. expand('%:p:r'),
 \ 'exec': '%c %o %a %s',
 \}
 
