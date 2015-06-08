@@ -5,7 +5,7 @@ let g:quickrun_config = {
 \   'outputter/error/error' : 'message',
 \   'command' : 'mkdpreview',
 \   'srcfile' : expand("%"),
-\   'cmdopt' : '',
+\   'cmdopt' : '-s',
 \   'exec': '%c %o %s',
 \   },
 \
