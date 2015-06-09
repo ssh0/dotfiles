@@ -153,6 +153,7 @@ main = do
        , ((modm                    , xK_e      ), spawn "python $HOME/Workspace/python/transparent.py")
        , ((modm                    , xK_p      ), spawn "exe=`dmenu_run -b -p '#' -nb '#009688' -nf '#ffffff' -sb '#ffffff' -sf '#000000'` && exec $exe")
        , ((mod1Mask .|. controlMask, xK_f      ), spawn "python $HOME/Workspace/python/web_search/websearch.py")
+       , ((mod1Mask .|. controlMask, xK_s      ), spawn "python $HOME/Workspace/python/web_search/hlsearch.py")
        , ((0                       , 0x1008ff18), spawn "sh $HOME/bin/cplay.sh")
        , ((0                       , 0x1008ff14), spawn "sh $HOME/bin/cplay.sh")
        , ((0                       , 0x1008ff13), spawn "bash $HOME/bin/sound_volume_change_wrapper.sh +")
