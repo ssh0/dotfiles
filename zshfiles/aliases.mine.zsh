@@ -288,6 +288,7 @@ cfg-ranger() { $EDITOR ~/.config/ranger/rc.conf ;}
 cfg-ranger-rifle() { $EDITOR ~/.config/ranger/rifle.conf ;} # edit open_with extensions
 cfg-ranger-commands() { $EDITOR ~/.config/ranger/commands.py ;} # scripts
 cfg-tmux() { $EDITOR ~/.tmux.conf ;}
+cfg-tmuxinator() { $EDITOR ~/.tmuxinator/ ;}
 cfg-vimrc() { $EDITOR ~/.vimrc ;}
 cfg-xdefaults() { $EDITOR ~/.Xdefaults ;}
 # cfg-xinitrc() { $EDITOR ~/.xinitrc ;}
