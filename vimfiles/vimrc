@@ -370,4 +370,12 @@ nnoremap gF :tabedit <C-r><C-f><CR>
 " 複数のタグジャンプをデフォルトでみる
 nnoremap <C-]> g<C-]>
 
+" 日本語入力がオンのままでもインサートモードに移行できるように
+nnoremap あ a
+nnoremap い i
+nnoremap う u
+nnoremap お o
+nnoremap っd dd
+nnoremap っy yy
+nnoremap っp pp
 "}}}
