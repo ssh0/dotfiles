@@ -50,6 +50,9 @@ vimfiles/template/template.sh,.vim/template/template.sh
 # [tmux](http://tmux.sourceforge.net/)# {{{
 tmux.conf,.tmux.conf
 # }}}
+# [tmuxinator](https://github.com/tmuxinator/tmuxinator)# {{{
+tmuxinator/dev.yml,.tmuxinator/dev.yml
+## }}}
 # [zsh](http://zsh.sourceforge.net/):# {{{
 # Zsh is a shell designed for interactive use, although it is also a powerful
 # scripting language.
