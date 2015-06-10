@@ -33,6 +33,12 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Refer to |:NeoBundle-examples|.
 " Note: Yout don't set neobundle setting in .gvimrc!
 
+" Surround
+NeoBundle 'surround.vim'
+
+" Commentary
+NeoBundle 'tpope/vim-commentary'
+
 " Basic, unite and vimfiler
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
@@ -48,7 +54,7 @@ NeoBundle 'LeafCage/foldCC'
 
 " open-browser
 NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'tyru/caw.vim.git'
+" NeoBundle 'tyru/caw.vim.git'
 
 " vim-quickrun
 NeoBundle 'thinca/vim-quickrun'
@@ -255,7 +261,7 @@ set scrolloff=5
 set diffopt=vertical
 
 " ESCの反応を素早くする
-set timeout timeoutlen=200 ttimeoutlen=75
+set timeout timeoutlen=400 ttimeoutlen=75
 
 "}}}
 " Indent"{{{
@@ -322,8 +328,11 @@ inoremap <silent> jj <ESC>
 nnoremap `` :Unite mark<CR>
 nnoremap '' :Unite mark<CR>
 
-" <Space> + l で行表示をトグル
-nnoremap <Leader>l :set number!<CR>
+" <Space> + L で行表示をトグル
+nnoremap <Leader>L :set number!<CR>
+
+" <Space> + l で相対行表示
+nnoremap <Leader>l :setlocal relativenumber!<CR>
 
 " 矢印キーでなら行内を動けるように
 nnoremap <Down> gj
@@ -354,10 +363,6 @@ inoremap <C-l> <Right>
 " vimfiler
 nnoremap <silent> <Leader>e :VimFilerBufferDir -buffer-name=explorer -split
 \ -simple -winwidth=35 -toggle -no-quit<CR>
-
-" comment out / off
-nmap <Leader>c <Plug>(caw:i:toggle)
-vmap <Leader>c <Plug>(caw:i:toggle)
 
 " ハイライトの取り消し ESC2回押し
 nnoremap <ESC><ESC> :nohlsearch<CR>
