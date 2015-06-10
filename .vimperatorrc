@@ -41,8 +41,8 @@ noremap V :set<space>gui=navigation,tabs<CR>
 noremap <F11> :set<Space>gui=nonavigation,notabs<CR>
 
 " scroll more than one line using the j and k keys
-noremap j 3j
-noremap k 3k
+" noremap j 3j
+" noremap k 3k
 
 " yank the title by "Y"
 nnoremap Y :js util.copyToClipboard(buffer.title, true)<CR>
