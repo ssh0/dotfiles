@@ -54,7 +54,6 @@ NeoBundle 'LeafCage/foldCC'
 
 " open-browser
 NeoBundle 'tyru/open-browser.vim'
-" NeoBundle 'tyru/caw.vim.git'
 
 " vim-quickrun
 NeoBundle 'thinca/vim-quickrun'
@@ -169,6 +168,12 @@ let g:vim_markdown_math = 1
 
 " Folding
 set foldtext=FoldCCtext()
+
+" Signature
+" Highlight signs of marks dynamically based upon state indicated by
+" vim-gitgutter or vim-signify
+let g:SignatureMartTextHLDynamic = 1
+
 
 "}}}
 
@@ -285,18 +290,18 @@ autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
 " To show current color scheme by
 " ':so $VIMRUNTIME/syntax/hitest.vim'
 highlight ColorColumn ctermbg=233
-highlight CursorColumn ctermbg=235
+highlight CursorColumn ctermbg=None
 highlight CursorLine cterm=None
-highlight CursorLineNr ctermbg=234 ctermfg=236
+highlight CursorLineNr cterm=reverse ctermbg=235 ctermfg=248
 highlight DiffAdd term=bold ctermfg=0 ctermbg=81 guibg=LightBlue
 highlight DiffChange term=bold ctermfg=0 ctermbg=225 guibg=LightMagenta
 highlight DiffDelete term=bold ctermfg=0 ctermbg=159 gui=bold guifg=Blue guibg=LightCyan
 highlight DiffText term=reverse ctermfg=0 cterm=bold ctermfg=0 ctermbg=9 gui=bold guibg=Red
 highlight Error ctermfg=0 ctermbg=1 guifg=White guibg=Red
 highlight ErrorMsg ctermfg=0 ctermbg=1 guifg=White guibg=Red
-highlight FoldColumn ctermbg=235 ctermfg=74
+highlight FoldColumn ctermbg=None ctermfg=74
 highlight Folded ctermbg=235 ctermfg=74
-highlight LineNr ctermbg=235 ctermfg=242
+highlight LineNr ctermbg=None ctermfg=242
 highlight MatchParen term=None ctermfg=None ctermbg=239
 highlight NonText ctermfg=0 guifg=Bg
 highlight Normal ctermbg=None
@@ -325,14 +330,14 @@ let localleader = "\<Space>"
 inoremap <silent> jj <ESC>
 
 " unite-mark
-nnoremap `` :Unite mark<CR>
-nnoremap '' :Unite mark<CR>
-
-" <Space> + L で行表示をトグル
-nnoremap <Leader>L :set number!<CR>
+nnoremap <silent> `` :Unite mark<CR>
+nnoremap <silent> '' :Unite mark<CR>
 
 " <Space> + l で相対行表示
-nnoremap <Leader>l :setlocal relativenumber!<CR>
+nnoremap <silent> <Leader>l :setlocal relativenumber!<CR>
+
+" <Space> + L で行表示をトグル
+nnoremap <silent> <Leader>L :set number!<CR>
 
 " 矢印キーでなら行内を動けるように
 nnoremap <Down> gj
