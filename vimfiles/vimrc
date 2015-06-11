@@ -388,4 +388,5 @@ nnoremap お o
 nnoremap っd dd
 nnoremap っy yy
 nnoremap っp pp
+nnoremap <silent> っj <ESC>
 "}}}
