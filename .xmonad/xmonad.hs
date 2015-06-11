@@ -10,6 +10,7 @@ import System.IO                       -- for xmobar
 import XMonad.Actions.WindowGo
 import XMonad.Actions.FloatKeys
 import XMonad.Actions.CycleWS
+import XMonad.Actions.UpdatePointer
 import qualified XMonad.Actions.FlexibleResize as Flex  -- Resize floating windows from any corner
 import XMonad.Hooks.DynamicLog         -- for xmobar
 import XMonad.Hooks.EwmhDesktops
@@ -112,7 +113,7 @@ main = do
        , ((modm .|. shiftMask  , xK_f      ), withFocused (keysMoveWindow (-borderwidth, -borderwidth)))
        , ((modm                , xK_z      ), sendMessage MirrorShrink)
        , ((modm                , xK_a      ), sendMessage MirrorExpand)
-       , ((modm                , xK_x      ), kill) -- %! Close the focused window
+       , ((modm                , xK_c      ), kill) -- %! Close the focused window
        , ((modm                , xK_Right  ), nextWS ) -- go to next workspace
        , ((modm                , xK_Left   ), prevWS ) -- go to prev workspace
        , ((modm .|. shiftMask  , xK_Right  ), shiftToNext)
@@ -170,8 +171,6 @@ main = do
        , ((modm     .|. controlMask, xK_j      ), spawn "sh $HOME/bin/xte-down.sh")
        , ((modm     .|. controlMask, xK_k      ), spawn "sh $HOME/bin/xte-up.sh")
        , ((modm     .|. controlMask, xK_Return ), spawn "sh $HOME/bin/xte-click.sh")
-       , ((mod1Mask                , xK_c      ), spawn "sh $HOME/bin/clipboard_copy.sh")
-       , ((mod1Mask                , xK_v      ), spawn "sh $HOME/bin/clipboard_paste.sh")
        , ((controlMask             , xK_Escape ), spawn "sh $HOME/bin/touchpad_toggle.sh")
 
        ]
