@@ -63,8 +63,9 @@ vnoremap <silent><buffer> <F5> :QuickRun -mode v -type tmptex<CR>
 nnoremap <silent><F5> :QuickRun<CR>
 
 " set some useful macros
+" in command mode, ^r + macrokey
 let @d='a\mathrm{}idl'
-let @f='a\frac{}{}hh'
+" let @f='a\frac{}{}hh'
 let @b='f(i\leftl%i\righthhhhh'
-
+let @f='i\frac{f/xi}{f i}'
 autocmd BufWritePost,FileWritePost *.tex QuickRun tex
