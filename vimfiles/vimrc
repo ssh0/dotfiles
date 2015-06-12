@@ -107,9 +107,7 @@ filetype plugin indent on
 " FileType"{{{
 
 " markdown
-set syntax=markdown
 autocmd BufRead,BufNewFile *.{mkd,md} set filetype=markdown
-autocmd BufRead,BufNewFile *.{txt,text} set filetype=markdown
 
 " bib file
 autocmd BufRead,BufNewFile *.bib set filetype=bib
