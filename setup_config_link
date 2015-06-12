@@ -78,6 +78,7 @@ bin/cplay.sh,bin/cplay.sh
 bin/dlmega.sh,bin/dlmega.sh
 bin/dotmv,bin/dotmv
 bin/eztransration.sh,bin/eztransration.sh
+bin/feh_browser.sh,bin/feh_browser.sh
 bin/firefox-search.sh,bin/firefox-search.sh
 bin/getsunrise.sh,bin/getsunrise.sh
 bin/git-check.sh,bin/git-check.sh
