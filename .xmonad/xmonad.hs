@@ -69,15 +69,13 @@ keysToRemove x =
         -- Unused close window binding
         , (modm .|. shiftMask, xK_c)
         , (modm .|. shiftMask, xK_Return)
-        , (modm              , xK_h)
-        , (modm              , xK_l)
     ]
 -- }}}
 -- Delete the keys combinations we want to remove. {{{
 strippedKeys x = foldr M.delete (keys defaultConfig x) (keysToRemove x)
 -- }}}
 
--- main
+-- main-- {{{
 main :: IO ()
 
 main = do
@@ -105,14 +103,14 @@ main = do
        , modMask            = modm
        , mouseBindings      = newMouse
        }
-
+-- }}}
        -- Keymap: window operations {{{
        ---------------------------------------------------
        `additionalKeys`
-       [ ((modm .|. shiftMask  , xK_h      ), sendMessage Shrink)
-       , ((modm .|. shiftMask  , xK_l      ), sendMessage Expand)
-       , ((modm .|. shiftMask  , xK_z      ), sendMessage MirrorShrink)
-       , ((modm .|. shiftMask  , xK_a      ), sendMessage MirrorExpand)
+       [ ((modm                , xK_h      ), sendMessage Shrink)
+       , ((modm                , xK_l      ), sendMessage Expand)
+       , ((modm                , xK_z      ), sendMessage MirrorShrink)
+       , ((modm                , xK_a      ), sendMessage MirrorExpand)
        , ((modm                , xK_c      ), kill) -- %! Close the focused window
        , ((modm                , xK_f      ), sendMessage ToggleLayout)
        , ((modm .|. shiftMask  , xK_f      ), withFocused (keysMoveWindow (-borderwidth, -borderwidth)))
