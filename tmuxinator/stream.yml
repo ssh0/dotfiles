@@ -28,6 +28,5 @@ root: ~/
 # post: tmux -CC attach -t stream
 
 windows:
-  - 0:
-  - twitter: rainbowstream
+  - twitter: rainbowstream -iot
   - htop: htop
