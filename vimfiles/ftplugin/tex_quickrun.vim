@@ -68,4 +68,3 @@ let @d='a\mathrm{}idl'
 " let @f='a\frac{}{}hh'
 let @b='f(i\leftl%i\righthhhhh'
 let @f='i\frac{f/xi}{f i}'
-autocmd BufWritePost,FileWritePost *.tex QuickRun tex

@@ -111,6 +111,15 @@ autocmd BufRead,BufNewFile *.{mkd,md} set filetype=markdown
 
 " bib file
 autocmd BufRead,BufNewFile *.bib set filetype=bib
+autocmd Filetype bib let &formatprg="bibclean"
+
+" python
+autocmd Filetype python let &formatprg="autopep8 -"
+
+" html
+let pandoc_pipeline = "pandoc --from=html --to=markdown"
+let pandoc_pipeline .= " | pandoc --from=markdown --to=html"
+autocmd Filetype html let &formatprg=pandoc_pipeline
 "}}}
 " Plugin option settings"{{{
 
