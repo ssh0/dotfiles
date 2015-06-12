@@ -69,6 +69,8 @@ keysToRemove x =
         -- Unused close window binding
         , (modm .|. shiftMask, xK_c)
         , (modm .|. shiftMask, xK_Return)
+        , (modm              , xK_h)
+        , (modm              , xK_l)
     ]
 -- }}}
 -- Delete the keys combinations we want to remove. {{{
@@ -107,21 +109,17 @@ main = do
        -- Keymap: window operations {{{
        ---------------------------------------------------
        `additionalKeys`
-       [ ((modm                , xK_h      ), sendMessage Shrink)
-       , ((modm                , xK_l      ), sendMessage Expand)
+       [ ((modm .|. shiftMask  , xK_h      ), sendMessage Shrink)
+       , ((modm .|. shiftMask  , xK_l      ), sendMessage Expand)
+       , ((modm .|. shiftMask  , xK_z      ), sendMessage MirrorShrink)
+       , ((modm .|. shiftMask  , xK_a      ), sendMessage MirrorExpand)
+       , ((modm                , xK_c      ), kill) -- %! Close the focused window
        , ((modm                , xK_f      ), sendMessage ToggleLayout)
        , ((modm .|. shiftMask  , xK_f      ), withFocused (keysMoveWindow (-borderwidth, -borderwidth)))
-       , ((modm                , xK_z      ), sendMessage MirrorShrink)
-       , ((modm                , xK_a      ), sendMessage MirrorExpand)
-       , ((modm                , xK_c      ), kill) -- %! Close the focused window
        , ((modm                , xK_Right  ), nextWS ) -- go to next workspace
        , ((modm                , xK_Left   ), prevWS ) -- go to prev workspace
        , ((modm .|. shiftMask  , xK_Right  ), shiftToNext)
        , ((modm .|. shiftMask  , xK_Left   ), shiftToPrev)
-       , ((modm .|. controlMask, xK_Right  ), withFocused (keysMoveWindow (30, 0)))
-       , ((modm .|. controlMask, xK_Left   ), withFocused (keysMoveWindow (-30, 0)))
-       , ((modm .|. controlMask, xK_Up     ), withFocused (keysMoveWindow (0, -30)))
-       , ((modm .|. controlMask, xK_Down   ), withFocused (keysMoveWindow (0, 30)))
        , ((modm                , xK_comma  ), sendMessage Mag.MagnifyLess) -- smaller window
        , ((modm                , xK_period ), sendMessage Mag.MagnifyMore) -- bigger window
        , ((modm                , xK_j      ), windows W.focusDown)
@@ -129,7 +127,8 @@ main = do
        , ((modm .|. shiftMask  , xK_j      ), windows W.swapDown)
        , ((modm .|. shiftMask  , xK_k      ), windows W.swapUp)
        , ((modm .|. shiftMask  , xK_m      ), windows W.shiftMaster)
-       , ((modm                , xK_w      ), nextScreen) ]
+       , ((modm                , xK_w      ), nextScreen)
+       ]
        -- }}}
        -- Keymap: moving workspace by number {{{
        ---------------------------------------------------
@@ -172,7 +171,6 @@ main = do
        , ((modm     .|. controlMask, xK_k      ), spawn "sh $HOME/bin/xte-up.sh")
        , ((modm     .|. controlMask, xK_Return ), spawn "sh $HOME/bin/xte-click.sh")
        , ((controlMask             , xK_Escape ), spawn "sh $HOME/bin/touchpad_toggle.sh")
-
        ]
        -- }}}
 
