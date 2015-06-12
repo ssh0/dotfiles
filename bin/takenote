@@ -16,11 +16,12 @@ takenote() {
   get_name=false
   alternative=false
   show_list=false
+  filercmd=ranger
   ranger=false
   rootdir=$HOME/Workspace/blog
 
   check_dir() {
-    if [ ! -e $1 ]; then
+    if [ ! -e "$1" ]; then
       return 1
     fi
   }
@@ -43,56 +44,55 @@ takenote() {
 
   # 保存するディレクトリを設定
   if ! $get_dir; then
-    check_dir $rootdir
-    daydir=`date +%Y-%m-%d`
+    check_dir "$rootdir"
+    daydir=$(date +%Y-%m-%d)
     dir=$rootdir/$daydir
   fi
 
   # only show existing file in the dir
   if $show_list; then
-    if check_dir $dir; then
-      list=$(ls $dir)
-      echo $list
+    if check_dir "$dir"; then
+      list=$(ls "$dir")
+      echo "$list"
     fi
     return 0
   fi
 
-  # open the folder with ranger
   if $ranger; then
     echo "Moving to $dir ..."
-    if [ ! -e $dir ]; then
+    if [ ! -e "$dir" ]; then
       clear
       echo "Today's directory has not been created."
       echo "Open ROOT directory..."
       sleep 0.5
-      ranger $rootdir
+      "$filercmd" "$rootdir"
     else
-      ranger $dir
+      "$filercmd" "$dir"
     fi
     return 0
   fi
 
   # ファイル名を設定
   if ! $get_name; then
-    if [ ! -e $dir ]; then
-      mkdir $dir
+    if [ ! -e "$dir" ]; then
+      mkdir "$dir"
       i=1
     else
-      i=`expr $(ls $dir | sed -n 's/note_\([0-9]\{2\}\).md/\1/p' | tail -n 1) + 1`
+      i=$(( $(ls "$dir" | sed -n 's/note_\([0-9]\{2\}\).md/\1/p' | tail -n 1) + 1 ))
     fi
-    name=$(printf note_%02d.md $i)
+    name="$(printf note_%02d.md "$i")"
   fi
 
   if $alternative; then
-    $editor $dir/$name
+    $editor "$dir"/"$name"
   else
     cwd=$(pwd)
-    cd $dir
-    vim $dir/$name
-    cd $cwd
+    cd "$dir"
+    vim "$dir"/"$name"
+    cd "$cwd"
   fi
 
   return 0
 }
 
-takenote $@
+takenote "$@"
