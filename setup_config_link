@@ -52,6 +52,7 @@ tmux.conf,.tmux.conf
 # }}}
 # [tmuxinator](https://github.com/tmuxinator/tmuxinator)# {{{
 tmuxinator/dev.yml,.tmuxinator/dev.yml
+tmuxinator/stream.yml,.tmuxinator/stream.yml
 ## }}}
 # [zsh](http://zsh.sourceforge.net/):# {{{
 # Zsh is a shell designed for interactive use, although it is also a powerful
