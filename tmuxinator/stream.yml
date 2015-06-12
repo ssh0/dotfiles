@@ -1,6 +1,6 @@
-# ~/.tmuxinator/dev.yml
+# ~/.tmuxinator/stream.yml
 
-name: dev
+name: stream
 root: ~/
 
 # Optional tmux socket
@@ -25,8 +25,9 @@ root: ~/
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t dev
+# post: tmux -CC attach -t stream
 
 windows:
-  - vim: takenote -r
-  - ipytohn: cd ~/Workspace; ipython notebook --no-browser
+  - 0:
+  - twitter: rainbowstream
+  - htop: htop
