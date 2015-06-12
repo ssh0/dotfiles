@@ -9,7 +9,7 @@ footer='/home/shotaro/Workspace/blog/html/footer.html'
 
 usage() {
     echo "Simply render markdown by pandoc."
-    echo "Usage: $0 [OPTION]"
+    echo "Usage: mkdpreview [OPTION]"
     echo ""
     echo "OPTION:"
     echo "  -s: Save html file in the source file dir."
@@ -42,18 +42,14 @@ fi
 
 if $save; then
   if [ "${output}" = "" ]; then
-    output="${name}.html"
+    if [ -d html ];then
+      output="html/${name}.html"
+    else
+      output="${name}.html"
+    fi
   fi
   pandoc -f markdown -S -t html5 -c "${template}" -B "${header}" -A "${footer}" \
     -s --mathjax -o "${output}" "$@"
-else
-  if [ ! -e "${name}.html" ];then
-    exit 0
-  else
-    output="${name}.html"
-    pandoc -f markdown -S -t html5 -c "${template}" -B "${header}" -A "${footer}" \
-      -s --mathjax -o "${output}" "$@"
-  fi
 fi
 
 if $preview; then
