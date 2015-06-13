@@ -372,4 +372,8 @@ nnoremap っd dd
 nnoremap っy yy
 nnoremap っp pp
 inoremap <silent> っっj <ESC>
+
+" source current opening file
+map <Leader>sop :source %<CR>
+
 "}}}
