@@ -5,7 +5,7 @@ let g:quickrun_config = {
 \   'outputter/error/error' : 'message',
 \   'command' : 'mkdpreview',
 \   'srcfile' : expand("%"),
-\   'cmdopt' : '-s',
+\   'cmdopt' : '-u',
 \   'exec': '%c %o %s',
 \   },
 \
@@ -35,7 +35,7 @@ let g:quickrun_config['mkd'] = {
 \}
 
 " QuickRun and view compile result quickly
-nnoremap <silent> <F5> :QuickRun<CR>
-vnoremap <silent> <F5> :QuickRun<CR>
+nnoremap <silent> <F5> :QuickRun -type markdown<CR>
+vnoremap <silent> <F5> :QuickRun -type markdown/visual<CR>
 
 autocmd BufWritePost,FileWritePost *.md QuickRun -type markdown/normal
