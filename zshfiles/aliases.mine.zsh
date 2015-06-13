@@ -115,6 +115,9 @@ __youtube_dl() {
         _arguments '*: :(srt ass vtt)'
       elif [[ ${prev} =~ "-o|--output" ]]; then
         _arguments "*: :(\
+          '%(title)s.%(ext)s' \
+          '%(autonumber)s - %(title)s.%(ext)s' \
+          '%(extractor)s/%(title)s.%(ext)s' \
           '${ddir}/%(title)s.%(ext)s' \
           '${ddir}/%(autonumber)s - %(title)s.%(ext)s' \
           '${ddir}/%(extractor)s/%(title)s.%(ext)s' \
