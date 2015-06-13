@@ -120,8 +120,8 @@ autocmd Filetype bib let &formatprg="bibclean"
 autocmd Filetype python let &formatprg="autopep8 -"
 
 " html
-let pandoc_pipeline = "pandoc --from=html --to=markdown"
-let pandoc_pipeline .= " | pandoc --from=markdown --to=html"
+let pandoc_pipeline  = "pandoc --from    = html --to     = markdown"
+let pandoc_pipeline .= " | pandoc --from = markdown --to = html"
 autocmd Filetype html let &formatprg=pandoc_pipeline
 "}}}
 " Plugin option settings"{{{
