@@ -13,19 +13,22 @@ usage() {
     echo ""
     echo "OPTION:"
     echo "  -s: Save html file in the source file dir."
-    echo "  -o: Set the name of html file. ($0 -o bar.html foo.md)"
+    echo "  -u: Update (the same name's) html file in the source file dir."
+    echo "  -o: Set the name of html file. \`mkdpreview -o bar.html foo.md\`"
     echo "  -p: Preview HTML file in firefox."
     echo "  -h: Show this message."
     exit 1
 }
 save=false
+update=false
 output=""
 preview=false
 
-while getopts so:ph OPT
+while getopts suo:ph OPT
 do
   case $OPT in
     "s" ) save=true ;;
+    "u" ) save=true; update=true ;;
     "o" ) save=true; output="${OPTARG}" ;;
     "p" ) preview=true ;;
     "h" ) usage ;;
@@ -40,16 +43,22 @@ else
   name="/tmp/$(tr -cd 'a-f0-9' < /dev/urandom | head -c 32)"
 fi
 
+if [ "${output}" = "" ]; then
+  output="${name}.html"
+fi
+
 if $save; then
-  if [ "${output}" = "" ]; then
-    if [ -d html ];then
-      output="html/${name}.html"
+  if $update; then
+    if [ -f "${output}" ];then
+      pandoc -f markdown -S -t html5 -c "${template}" -B "${header}" -A \
+        "${footer}" -s --mathjax -o "${output}" "$@"
     else
-      output="${name}.html"
+      exit 0
     fi
+  else
+    pandoc -f markdown -S -t html5 -c "${template}" -B "${header}" -A \
+      "${footer}" -s --mathjax -o "${output}" "$@"
   fi
-  pandoc -f markdown -S -t html5 -c "${template}" -B "${header}" -A "${footer}" \
-    -s --mathjax -o "${output}" "$@"
 fi
 
 if $preview; then
