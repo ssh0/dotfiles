@@ -33,6 +33,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Refer to |:NeoBundle-examples|.
 " Note: Yout don't set neobundle setting in .gvimrc!
 
+" color schemes
+NeoBundle 'ssh0/easy-reading.vim'
+
 " Surround
 NeoBundle 'surround.vim'
 
@@ -184,6 +187,13 @@ let g:SignatureMartTextHLDynamic = 1
 
 "}}}
 
+" Color scheme"{{{
+" To show current color scheme by
+" ':so $VIMRUNTIME/syntax/hitest.vim'
+colorscheme easy-reading
+
+autocmd! FileType markdown hi! def link markdownItalic Normal
+"}}}
 " Set Options"{{{
 
 " 行番号を表示
@@ -247,7 +257,7 @@ set hlsearch
 " Show matches while typing
 set incsearch
 
-" folding
+" " folding
 set fdm=marker " zf(def) zd(delete) zo(open) zc(close)
 set foldcolumn=1
 set fillchars=vert:\|
@@ -275,7 +285,7 @@ set diffopt=vertical
 " ESCの反応を素早くする
 set timeout timeoutlen=400 ttimeoutlen=75
 
-"}}}
+" "}}}
 " Indent"{{{
 autocmd FileType sh         setlocal sw=2 sts=2 ts=2 et
 autocmd FileType apache     setlocal sw=4 sts=4 ts=4 et
@@ -292,40 +302,6 @@ autocmd FileType xml        setlocal sw=4 sts=4 ts=4 noet
 autocmd FileType yaml       setlocal sw=2 sts=2 ts=2 et
 autocmd FileType zsh        setlocal sw=2 sts=2 ts=2 et
 autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
-"}}}
-" Set highlight"{{{
-" To show current color scheme by
-" ':so $VIMRUNTIME/syntax/hitest.vim'
-highlight ColorColumn ctermbg=233
-highlight CursorColumn ctermbg=None
-highlight CursorLine cterm=None
-highlight CursorLineNr cterm=reverse ctermbg=235 ctermfg=248
-highlight DiffAdd term=bold ctermfg=0 ctermbg=81 guibg=LightBlue
-highlight DiffChange term=bold ctermfg=0 ctermbg=225 guibg=LightMagenta
-highlight DiffDelete term=bold ctermfg=0 ctermbg=159 gui=bold guifg=Blue guibg=LightCyan
-highlight DiffText term=reverse ctermfg=0 cterm=bold ctermfg=0 ctermbg=9 gui=bold guibg=Red
-highlight Error ctermfg=0 ctermbg=1 guifg=White guibg=Red
-highlight ErrorMsg ctermfg=0 ctermbg=1 guifg=White guibg=Red
-highlight FoldColumn ctermbg=None ctermfg=74
-highlight Folded ctermbg=235 ctermfg=74
-highlight LineNr ctermbg=None ctermfg=242
-highlight MatchParen term=None ctermfg=None ctermbg=239
-highlight NonText ctermfg=0 guifg=Bg
-highlight Normal ctermbg=None
-highlight Pmenu ctermfg=0 ctermbg=7 guibg=Grey
-highlight PmenuSel ctermfg=0 ctermbg=225 guibg=LightMagenta
-highlight Search ctermfg=0 guifg=0
-highlight SignColumn ctermfg=8 ctermbg=None
-highlight SpecialKey ctermbg=None ctermfg=0
-highlight SpellBad term=reverse ctermfg=0 ctermbg=224 gui=undercurl guisp=Red
-highlight SpellCap term=reverse ctermfg=0 ctermbg=81 gui=undercurl guisp=Blue
-highlight SpellLocal term=underline ctermfg=0 ctermbg=14 gui=undercurl guisp=DarkCyan
-highlight SpellRare term=reverse ctermfg=0 ctermbg=225 gui=undercurl guisp=Magenta
-highlight Statement ctermfg=3 ctermbg=None
-highlight VertSplit term=None cterm=None ctermfg=250 ctermbg=250
-highlight Visual ctermbg=0
-
-autocmd! FileType markdown hi! def link markdownItalic Normal
 "}}}
 " Key Bindings"{{{
 
