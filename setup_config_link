@@ -51,6 +51,7 @@ vimfiles/template/template.sh,.vim/template/template.sh
 tmux.conf,.tmux.conf
 # }}}
 # [tmuxinator](https://github.com/tmuxinator/tmuxinator)# {{{
+tmuxinator/clean.yml,.tmuxinator/clean.yml
 tmuxinator/dev.yml,.tmuxinator/dev.yml
 tmuxinator/stream.yml,.tmuxinator/stream.yml
 ## }}}
