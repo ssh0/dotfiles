@@ -222,9 +222,6 @@ set autoindent
 " 入力されているテキストの最大幅
 set textwidth=0
 
-" cursor line をハイライト
-" set cursorline
-
 "タイトルを表示
 set title
 
@@ -232,10 +229,10 @@ set title
 set cmdheight=1
 set laststatus=2
 
-" modeline: ファイルごとにoptionを指定する
+" modeline: ファイルごとのoptionを使用する
 set modeline
 
-"コマンドをステータス行に表示
+"コマンドをステータス行に表示しない
 set noshowcmd
 
 "Tab、行末の半角スペース、行の終わりを明示的に表示する
