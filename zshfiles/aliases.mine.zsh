@@ -156,7 +156,7 @@ __youtube_dl() {
 compdef __youtube_dl youtube-dl
 
 ## }}}
-# tmuxinator
+# tmuxinator {{{
 #
 
 _tmuxinator() {
@@ -200,7 +200,7 @@ _tmuxinator() {
 }
 
 compdef _tmuxinator mux
-
+# }}}
 # peco-history alias {{{
 #------------------------------------------------------
 function peco-select-history() {
