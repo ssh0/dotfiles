@@ -236,7 +236,7 @@ set laststatus=2
 set modeline
 
 "コマンドをステータス行に表示
-set showcmd
+set noshowcmd
 
 "Tab、行末の半角スペース、行の終わりを明示的に表示する
 set list
