@@ -13,7 +13,7 @@ let g:quickrun_config = {
 \   'outputter' : 'error',
 \   'outputter/error/error' : 'message',
 \   'command' : 'mkdpreview',
-\   'cmdopt' : '-p',
+\   'cmdopt' : '-s -p',
 \   'exec': '%c %o %s',
 \   },
 \}
