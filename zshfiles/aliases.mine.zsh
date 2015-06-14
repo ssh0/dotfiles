@@ -339,10 +339,10 @@ cfg-tmux() { $EDITOR ~/.tmux.conf ;}
 cfg-tmuxinator() { $EDITOR ~/.tmuxinator/ ;}
 cfg-vimrc() { $EDITOR ~/.vimrc ;}
 cfg-xdefaults() { $EDITOR ~/.Xdefaults ;}
-# cfg-xinitrc() { $EDITOR ~/.xinitrc ;}
 cfg-Xmodmap() { $EDITOR ~/.Xmodmap ;}
 cfg-xmonad() { $EDITOR ~/.xmonad/xmonad.hs ;}
 cfg-xresources() { $EDITOR ~/.Xresources ;}
+cfg-websearch() { $EDITOR ~/Workspace/python/web_search/websearch/config.py ;}
 cfg-zshrc() { $EDITOR ~/.zshrc.mine ;}
 #}}}
 # Configurations Reload {{{
