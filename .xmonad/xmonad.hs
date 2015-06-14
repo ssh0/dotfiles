@@ -187,9 +187,9 @@ myStartupHook = do
         spawn "nm-applet"
         spawn "xscreensaver -no-splash"
         spawn "$HOME/.dropbox-dist/dropboxd"
-        spawn "feh --bg-fill '/home/shotaro/Downloads/20 Free Modern Backgrounds/20 Low-Poly Backgrounds/Low-Poly Backgrounds (1).JPG'"
-        spawn "bash $HOME/bin/toggle_compton.sh"
         spawn "bash $HOME/bin/start_urxvtd.sh"
+        spawn "bash $HOME/bin/wallpaper.sh"
+        spawn "bash $HOME/bin/toggle_compton.sh"
 -- }}}
 -- myManageHookShift -- some window must created there {{{
 ---------------------------------------------------
