@@ -10,6 +10,9 @@ export LC_TIME=en_US.UTF-8
 # EDITOR
 export EDITOR=/usr/bin/vim
 
+# TERMCMD
+export TERMCMD=urxvtc
+
 autoload -U add-zsh-hook 2>/dev/null || return
 
 # Keybinding
