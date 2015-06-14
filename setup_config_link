@@ -119,6 +119,7 @@ bin/toggle_xcompmgr.sh,bin/toggle_xcompmgr.sh
 bin/touchpad_toggle.sh,bin/touchpad_toggle.sh
 bin/unescj.sh,bin/unescj.sh
 bin/urxvt_float.sh,bin/urxvt_float.sh
+bin/wallpaper.sh,bin/wallpaper.sh
 bin/wallpaperchanger.sh,bin/wallpaperchanger.sh
 bin/wmatomp3_converter.sh,bin/wmatomp3_converter.sh
 bin/xte-click.sh,bin/xte-click.sh
