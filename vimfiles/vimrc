@@ -33,8 +33,11 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Refer to |:NeoBundle-examples|.
 " Note: Yout don't set neobundle setting in .gvimrc!
 
-" color schemes
+" colorscheme
 NeoBundle 'ssh0/easy-reading.vim'
+" It's my color theme.
+" Project directory:
+" ($HOME/Workspace/5/easy-reading.vim/colors/easy-reading.vim)
 
 " Surround
 NeoBundle 'surround.vim'
@@ -132,11 +135,6 @@ autocmd Filetype html let &formatprg=pandoc_pipeline
 " VimFiler
 " vim use vimfiler as file manager instead of netry.
 let g:vimfiler_as_default_explorer = 1
-
-" ctrlp.vim
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
 
 " unite-mark
 let g:unite_source_mark_marks =
@@ -249,11 +247,6 @@ set listchars=tab:▸\ ,trail:~,eol:↲
 " 対応する括弧を表示
 set showmatch
 set matchtime=1
-
-" ハイライトを有効にする
-if &t_Co > 2 || has('gui_running')
-  syntax on
-endif
 
 " 検索結果のハイライト
 set hlsearch
@@ -379,5 +372,19 @@ inoremap <silent> っっj <ESC>
 
 " source current opening file
 map <Leader>sop :source %<CR>
+
+" CtrlP
+nnoremap <Leader>om :CtrlPMixed<CR>
+nnoremap <Leader>oo :CtrlPMRUFiles<CR>
+" Onece CtrlP is open:
+" * Press `<F5>` to purge the cache for the current directory to get new files, remove deleted files and apply new ignore options.
+" * Press `<c-f>` and `<c-b>` to cycle between modes.
+" * Press `<c-d>` to switch to filename only search instead of full path.
+" * Press `<c-r>` to switch to regexp mode.
+" * Use `<c-j>`, `<c-k>` or the arrow keys to navigate the result list.
+" * Use `<c-t>` or `<c-v>`, `<c-x>` to open the selected entry in a new tab or in a new split.
+" * Use `<c-n>`, `<c-p>` to select the next/previous string in the prompt's history.
+" * Use `<c-y>` to create a new file and its parent directories.
+" * Use `<c-z>` to mark/unmark multiple files and `<c-o>` to open them.
 
 "}}}
