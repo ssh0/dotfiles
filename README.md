@@ -1,154 +1,59 @@
-# dotfiles
-my dotfiles
+dotfiles
+========
+
+My dotfiles
+
+- XMonad
+- tmux
+- zsh
+- vim
+- ranger
+- some user script
+
+Screenshots
+-----------
+
+![xmonad.jpg](./screenshots/xmonad.jpg)
+
+![tmux.jpg](./screenshots/tmux.jpg)
+
+![vim.jpg](./screenshots/vim.jpg)
 
 You can create the symbolic links by
 
-## Install
+Install
+-------
+
+Clone this repository in your computer.
 
 ```bash
 $ git clone https://github.com/ssh0/dotfiles.git -o ~/.dotfiles
+```
+
+And run:
+
+```bash
 $ cd ~/.dotfiles
 $ ./dotrm && ./setup.sh
 ```
 
 and this script replace existing files interactively.
 
-```
-dotfiles
+- dotrm:  
+  remove symbolic link which is written in `setup_config_link`
 
-.
-├── bin
-│   ├── alarm
-│   ├── autopep8_wrap.sh
-│   ├── autosetup.sh
-│   ├── bib2html_wrapper.sh
-│   ├── cachecleener
-│   ├── cinii.sh
-│   ├── clipboard_copy.sh
-│   ├── clipboard_paste.sh
-│   ├── cplay.sh
-│   ├── dlmega.sh
-│   ├── dotmv
-│   ├── eztransration.sh
-│   ├── firefox-search.sh
-│   ├── getsunrise.sh
-│   ├── git-check.sh
-│   ├── googleTTS.sh
-│   ├── gpsin.sh
-│   ├── import.sh
-│   ├── kakeibo.sh
-│   ├── latextorst.sh
-│   ├── makescreenshot_for_presentation_all.sh
-│   ├── makescreenshot_for_presentation.sh
-│   ├── mkdpreview
-│   ├── mkpdf.sh
-│   ├── mplayer_term_wrapper.sh
-│   ├── navi1.sh
-│   ├── navi.sh
-│   ├── parsrj.sh
-│   ├── parsrx.sh
-│   ├── pdftoxbb.sh
-│   ├── presenmode.sh
-│   ├── presenstart.sh
-│   ├── presentation.sh
-│   ├── proxy_toggle.sh
-│   ├── psWatchMail.sh
-│   ├── radiko_rec.sh
-│   ├── radiru.sh
-│   ├── readlog.sh
-│   ├── screenshot_select.sh
-│   ├── screenshot.sh
-│   ├── takenote
-│   ├── talk.sh
-│   ├── tmp_git_repoauto.sh
-│   ├── todo.sh
-│   ├── toggle_compton.sh
-│   ├── toggle_xcompmgr.sh
-│   ├── touchpad_toggle.sh
-│   ├── unescj.sh
-│   ├── urxvt_float.sh
-│   ├── wallpaperchanger.sh
-│   ├── wmatomp3_converter.sh
-│   ├── xte-click.sh
-│   ├── xte-down.sh
-│   ├── xte-left.sh
-│   ├── xte-right.sh
-│   └── xte-up.sh
-├── cmus
-│   ├── autosave
-│   ├── cmus_desktop_notify.py
-│   └── status_display_program.sh
-├── compton
-│   └── compton.conf
-├── dotrm
-├── ipython
-│   ├── nbextensions
-│   │   └── livereveal
-│   │       └── main.css
-│   ├── profile_default
-│   │   └── static
-│   │       └── custom
-│   │           └── custom.css
-│   └── profile_slide
-│       └── static
-│           └── custom
-│               └── custom.css
-├── .latexmkrc
-├── .mpv
-│   ├── config
-│   └── lua
-│       └── notify.lua
-├── mutt
-│   └── muttrc
-├── .notify-osd
-├── .profile
-├── ranger
-│   ├── colorschemes
-│   │   └── mycolor.py
-│   ├── commands_full.py
-│   ├── commands.py
-│   ├── rc.conf
-│   ├── rifle.conf
-│   └── scope.sh
-├── README.md
-├── setup_config_link
-├── setup.sh
-├── tmux.conf
-├── tudurc
-├── vimfiles
-│   ├── ftplugin
-│   │   ├── bib_quickrun.vim
-│   │   ├── markdown_quickrun.vim
-│   │   └── tex_quickrun.vim
-│   ├── template
-│   │   ├── template.md
-│   │   ├── template.mkd
-│   │   ├── template.py
-│   │   ├── template.sh
-│   │   └── template.tex
-│   └── vimrc
-├── .vimperatorrc
-├── .Xdefaults
-├── .Xdefaults.material
-├── .Xdefaults.satori
-├── .Xmodmap
-├── .xmonad
-│   ├── xmobarrc
-│   ├── xmonad.errors
-│   ├── xmonad.hi
-│   └── xmonad.hs
-├── .Xresources
-├── .xscreensaver
-└── zshfiles
-    ├── aliases.mine
-    ├── aliases.zsh
-    ├── history.zsh
-    ├── plugins
-    │   └── bd.zsh
-    ├── themes
-    │   └── agnoster.zsh-theme
-    ├── zshrc
-    └── zshrc.mine
+- setup.sh:  
+  set symbolic link which is written in `setup_config_link`
+  (if you have your file already, you can choose the operation
+  interactively: "show diff", "overwrite", "make backup" or "do nothing")
 
-297 directories, 1740 files
+You can add new link by:
+
+```bash
+$ dotmv some_file ~/.dotfiles/path/to/file
 ```
+
+Then, the script automatically move the file `some_file` to
+`~/.dotfiles/path/to/file` and make symbolic link to the original
+direction. After that, the script launch Vim and you can edit your link
+setting (file name is `setup_config_link`) manually.
