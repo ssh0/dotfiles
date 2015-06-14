@@ -5,9 +5,11 @@
 "   \_/ |_|_| |_| |_|_|  \___|
 "
 " written by Shotaro Fujimoto (https://github.com/ssh0)
+"
+" -----------------------------------------------------------------------------
+" Initial Setting:                                                          {{{
+" -----------------------------------------------------------------------------
 
-
-" Initial Setting"{{{
 " Note: Skip initialization for vim-tiny or vim-small.
 if !1 | finish | endif
 
@@ -19,9 +21,11 @@ if has('vim_starting')
   " Required:
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-"}}}
 
-" Plugin Manager NeoBundle"{{{
+" --------------------------------------------------------------------------}}}
+" Plugin Manager NeoBundle:                                                 {{{
+" -----------------------------------------------------------------------------
+
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 
@@ -108,12 +112,16 @@ call neobundle#end()
 " If there are uninstalled bundles dfound on startup,
 " this will conveiently prompt you to install them.
 NeoBundleCheck
-"}}}
-" Required:"{{{
-filetype plugin indent on
-"}}}
 
-" FileType"{{{
+" --------------------------------------------------------------------------}}}
+" Required:                                                                 {{{
+" -----------------------------------------------------------------------------
+
+filetype plugin indent on
+
+" --------------------------------------------------------------------------}}}
+" FileType:                                                                 {{{
+" -----------------------------------------------------------------------------
 
 " markdown
 autocmd BufRead,BufNewFile *.{mkd,md} set filetype=markdown
@@ -129,8 +137,10 @@ autocmd Filetype python let &formatprg="autopep8 -"
 let pandoc_pipeline  = "pandoc --from    = html --to     = markdown"
 let pandoc_pipeline .= " | pandoc --from = markdown --to = html"
 autocmd Filetype html let &formatprg=pandoc_pipeline
-"}}}
-" Plugin option settings"{{{
+
+" --------------------------------------------------------------------------}}}
+" Plugin option settings:                                                   {{{
+" -----------------------------------------------------------------------------
 
 " VimFiler
 " vim use vimfiler as file manager instead of netry.
@@ -169,10 +179,12 @@ nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
 " QuickRun {{{
+" -----------------------------------------------------------------------------
+"
 let g:quickrun_config = {}
 let g:quickrun_no_default_key_mapping = 0
 
-"}}}
+" --------------------------------------------------------------------------}}}
 
 " vim-markdown
 " Unset Disable folding
@@ -190,19 +202,22 @@ set foldtext=FoldCCtext()
 " vim-gitgutter or vim-signify
 let g:SignatureMartTextHLDynamic = 1
 
-"}}}
+" --------------------------------------------------------------------------}}}
+" Color scheme:                                                             {{{
+" -----------------------------------------------------------------------------
 
-" Color scheme"{{{
 " To show current color scheme by
 " ':so $VIMRUNTIME/syntax/hitest.vim'
 colorscheme easy-reading
 
 autocmd! FileType markdown hi! def link markdownItalic Normal
-"}}}
-" Set Options"{{{
 
-" 行番号を表示
-set number
+" --------------------------------------------------------------------------}}}
+" Set Options:                                                              {{{
+" -----------------------------------------------------------------------------
+
+" 行番号は表示しない
+set nonumber
 
 " Don't redraw screen during macros
 set lazyredraw
@@ -242,7 +257,10 @@ set noshowcmd
 
 "Tab、行末の半角スペース、行の終わりを明示的に表示する
 set list
-set listchars=tab:▸\ ,trail:~,eol:↲
+set listchars=tab:▸\ ,trail:~
+
+" showbreaks
+set showbreak=↪
 
 " 対応する括弧を表示
 set showmatch
@@ -282,8 +300,10 @@ set diffopt=vertical
 " ESCの反応を素早くする
 set timeout timeoutlen=400 ttimeoutlen=75
 
-" "}}}
-" Indent"{{{
+" --------------------------------------------------------------------------}}}
+" Indent:                                                                   {{{
+" -----------------------------------------------------------------------------
+
 autocmd FileType sh         setlocal sw=2 sts=2 ts=2 et
 autocmd FileType apache     setlocal sw=4 sts=4 ts=4 et
 autocmd FileType css        setlocal sw=4 sts=4 ts=4 noet
@@ -299,8 +319,10 @@ autocmd FileType xml        setlocal sw=4 sts=4 ts=4 noet
 autocmd FileType yaml       setlocal sw=2 sts=2 ts=2 et
 autocmd FileType zsh        setlocal sw=2 sts=2 ts=2 et
 autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
-"}}}
-" Key Bindings"{{{
+
+" --------------------------------------------------------------------------}}}
+" Key Bindings:                                                             {{{
+" -----------------------------------------------------------------------------
 
 " <Space>をmapleaderに
 let mapleader = "\<Space>"
@@ -313,11 +335,8 @@ inoremap <silent> jj <ESC>
 nnoremap <silent> `` :Unite mark<CR>
 nnoremap <silent> '' :Unite mark<CR>
 
-" <Space> + l で相対行表示
-nnoremap <silent> <Leader>l :setlocal relativenumber!<CR>
-
-" <Space> + L で行表示をトグル
-nnoremap <silent> <Leader>L :set number!<CR>
+" <Space> + l で相対行表示のトグル
+nnoremap <silent> <Leader>l :setlocal relativenumber! number!<CR>
 
 " 矢印キーでなら行内を動けるように
 nnoremap <Down> gj
@@ -387,4 +406,4 @@ nnoremap <Leader>oo :CtrlPMRUFiles<CR>
 " * Use `<c-y>` to create a new file and its parent directories.
 " * Use `<c-z>` to mark/unmark multiple files and `<c-o>` to open them.
 
-"}}}
+" --------------------------------------------------------------------------}}}
