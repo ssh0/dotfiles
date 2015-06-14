@@ -46,6 +46,9 @@ NeoBundle 'tpope/vim-commentary'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
 
+" ctrlp.vim
+NeoBundle 'kien/ctrlp.vim'
+
 " unite-mark
 NeoBundle 'tacroe/unite-mark'
 
@@ -130,6 +133,11 @@ autocmd Filetype html let &formatprg=pandoc_pipeline
 " vim use vimfiler as file manager instead of netry.
 let g:vimfiler_as_default_explorer = 1
 
+" ctrlp.vim
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+
 " unite-mark
 let g:unite_source_mark_marks =
 \   "abcdefghijklmnopqrstuvwxyz"
@@ -183,7 +191,6 @@ set foldtext=FoldCCtext()
 " Highlight signs of marks dynamically based upon state indicated by
 " vim-gitgutter or vim-signify
 let g:SignatureMartTextHLDynamic = 1
-
 
 "}}}
 
