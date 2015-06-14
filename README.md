@@ -19,12 +19,10 @@ Screenshots
 
 ![vim.jpg](./screenshots/vim.jpg)
 
-You can create the symbolic links by
-
 Install
 -------
 
-Clone this repository in your computer.
+Clone this repository in your computer:
 
 ```bash
 $ git clone https://github.com/ssh0/dotfiles.git -o ~/.dotfiles
@@ -39,10 +37,10 @@ $ ./dotrm && ./setup.sh
 
 and this script replace existing files interactively.
 
-- dotrm:  
+- [dotrm](./dotrm):  
   remove symbolic link which is written in `setup_config_link`
 
-- setup.sh:  
+- [setup.sh](./setup.sh):  
   set symbolic link which is written in `setup_config_link`
   (if you have your file already, you can choose the operation
   interactively: "show diff", "overwrite", "make backup" or "do nothing")
