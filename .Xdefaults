@@ -1,28 +1,27 @@
-
-! Xft settings
+vim:                        set ft=xdefaults:
+! Xft settings {{{
 !-------------------------------------------------------------------------------
 Xft.dpi:                    96
 Xft.antialias:              true
-Xft.rgba:                   rgba
+Xft.rgba:                   rgb
 Xft.hinting:                true
 Xft.hintstyle:              hintslight
-
-!-------------------------------------------------------------------------------
-! URxvt settings
+! }}}
+! URxvt settings {{{
 !-------------------------------------------------------------------------------
 ! For showing img in ranger with w3mimgdisplay, disable this
 ! URxvt*.depth:               32
-URxvt.geometry:             90x30
+URxvt.geometry:             90x35
 URxvt*.transparent:         false
 URxvt*fading:               true
 ! URxvt.urgentOnBell:         true
 URxvt*visualBell:           false
 URxvt*loginShell:           true
-URxvt.saveLines:            10000
+URxvt.saveLines:            2000
 URxvt.internalBorder:       0
 URxvt.lineSpace:            0
 URxvt.intensityStyles:      false
-! URxvt.perl-ext-common:      selection
+URxvt.perl-ext-common:      selection
 
 ! Fonts
 URxvt.allow_bold:           true
@@ -47,53 +46,40 @@ URxvt.pointerBlank:         true
 ! iso 14755 disable
 URxvt*iso14755:             false
 
-! Color
 ! urxvt*shading: 10
 ! URxvt*inheritPixmap: false
 
-! material 200
-vim:                        set ft=xdefaults:
+! }}}
+! Color {{{
+!-------------------------------------------------------------------------------
 URxvt*background:           #1c1c1c
 URxvt*foreground:           #eceff1
 
 URxvt*cursorColor:          #a5d6a7
-
 URxvt*colorBD:              #bdbdbd
 URxvt*colorUL:              #bdbdbd
-
 !black
 URxvt*color0:               #404040
 URxvt*color8:               #9e9e9e
-
 !red
 URxvt*color1:               #ef9a9a
 URxvt*color9:               #f48fb1
-
 !green
 URxvt*color2:               #a5d6a7
 URxvt*color10:              #c5e1a5
-
 !yellow
 URxvt*color3:               #fff59d
 URxvt*color11:              #ffe082
-
 !blue
 URxvt*color4:               #90caf9
 URxvt*color12:              #81d4fa
-
 !magenta
 URxvt*color5:               #ce93d8
 URxvt*color13:              #b39ddb
-
 !cyan
 URxvt*color6:               #80deea
 URxvt*color14:              #80cbc4
-
 !white
 URxvt*color7:               #bdbdbd
 URxvt*color15:              #aaaaaa
-
-! URxvt.tabbed.tabbar-fg:     15
-! URxvt.tabbed.tabbar-bg:     0
-! URxvt.tabbed.tab-fg:        255
-! URxvt.tabbed.tab-bg:        241
+! }}}
