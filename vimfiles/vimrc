@@ -358,6 +358,11 @@ nnoremap <silent> <Leader>l :setlocal relativenumber! number!<CR>
 nnoremap <Down> gj
 nnoremap <Up>   gk
 
+" H -> 0
+nnoremap H 0
+" L -> $
+nnoremap L $
+
 " 行頭から前の行の最後に移動
 nnoremap h <Left>zv
 
