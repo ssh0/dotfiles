@@ -134,9 +134,9 @@ autocmd Filetype bib let &formatprg="bibclean"
 autocmd Filetype python let &formatprg="autopep8 -"
 
 " html
-let pandoc_pipeline  = "pandoc --from    = html --to     = markdown"
-let pandoc_pipeline .= " | pandoc --from = markdown --to = html"
-autocmd Filetype html let &formatprg=pandoc_pipeline
+let html_to_html  = "pandoc --from=html --to=markdown"
+let html_to_html .= " | pandoc --from=markdown --to=html"
+autocmd Filetype html let &formatprg=html_to_html
 
 " --------------------------------------------------------------------------}}}
 " Plugin option settings:                                                   {{{
@@ -321,6 +321,22 @@ autocmd FileType zsh        setlocal sw=2 sts=2 ts=2 et
 autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
 
 " --------------------------------------------------------------------------}}}
+" My function:                                                              {{{
+" -----------------------------------------------------------------------------
+
+function! Markdown_h1()
+  normal! VypVr=
+endfunction
+
+function! Markdown_h2()
+  normal! VypVr-
+endfunction
+
+function! Markdown_h3()
+  normal! I### 
+endfunction
+
+" --------------------------------------------------------------------------}}}
 " Key Bindings:                                                             {{{
 " -----------------------------------------------------------------------------
 
@@ -358,7 +374,7 @@ nnoremap <silent> <C-t> :tabnew<CR>
 nnoremap + <C-a>
 nnoremap - <C-x>
 
-" 入力モードで矢印キーでカーソル移動
+" 入力モードでカーソル移動
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
@@ -379,15 +395,21 @@ nnoremap gF :tabedit <C-r><C-f><CR>
 " 複数のタグジャンプをデフォルトでみる
 nnoremap <C-]> g<C-]>
 
-" 日本語入力がオンのままでもインサートモードに移行できるように
+" 日本語入力がオンのままでもインサートモードに移行できるように(Enterキーは必要)
 nnoremap あ a
 nnoremap い i
 nnoremap う u
 nnoremap お o
 nnoremap っd dd
 nnoremap っy yy
-nnoremap っp pp
-inoremap <silent> っっj <ESC>
+
+" ""の中身を変更する
+nnoremap し” ci"
+" ''の中身を変更する
+nnoremap し’ ci'
+
+" 日本語入力で”っj”と入力してもEnterキーで確定させればインサートモードを抜ける
+inoremap <silent> っj <ESC>
 
 " source current opening file
 map <Leader>sop :source %<CR>
@@ -405,5 +427,10 @@ nnoremap <Leader>oo :CtrlPMRUFiles<CR>
 " * Use `<c-n>`, `<c-p>` to select the next/previous string in the prompt's history.
 " * Use `<c-y>` to create a new file and its parent directories.
 " * Use `<c-z>` to mark/unmark multiple files and `<c-o>` to open them.
+
+" myfunctions
+nnoremap <Leader>h1 :call Markdown_h1()<CR>
+nnoremap <Leader>h2 :call Markdown_h2()<CR>
+nnoremap <Leader>h3 :call Markdown_h3()<CR>
 
 " --------------------------------------------------------------------------}}}

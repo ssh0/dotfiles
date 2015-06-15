@@ -15,6 +15,12 @@ export TERMCMD=urxvtc
 
 autoload -U add-zsh-hook 2>/dev/null || return
 
+# edit command line in vim:
+# by pressing: ^xe
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+
 # Keybinding
 bindkey '^r' peco-select-history
 

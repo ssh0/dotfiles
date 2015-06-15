@@ -1,4 +1,15 @@
--- Import modules {{{
+-------------------------------------------------------------------------------
+--                  __  ____  __                       _                     --
+--                  \ \/ /  \/  | ___  _ __   __ _  __| |                    --
+--                   \  /| |\/| |/ _ \| '_ \ / _` |/ _` |                    --
+--                   /  \| |  | | (_) | | | | (_| | (_| |                    --
+--                  /_/\_\_|  |_|\___/|_| |_|\__,_|\__,_|                    --
+--                                                                           --
+------------------------------------------------------------------------------- 
+--          written by Shotaro Fujimoto (https://github.com/ssh0)            --
+-------------------------------------------------------------------------------
+-- Import modules                                                           {{{
+-------------------------------------------------------------------------------
 import qualified Data.Map as M
 
 import XMonad
@@ -11,7 +22,8 @@ import XMonad.Actions.WindowGo
 import XMonad.Actions.FloatKeys
 import XMonad.Actions.CycleWS
 import XMonad.Actions.UpdatePointer
-import qualified XMonad.Actions.FlexibleResize as Flex  -- Resize floating windows from any corner
+-- Resize floating windows from any corner
+import qualified XMonad.Actions.FlexibleResize as Flex
 import XMonad.Hooks.DynamicLog         -- for xmobar
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.FadeWindows
@@ -23,7 +35,8 @@ import XMonad.Layout.DragPane          -- see only two window
 import XMonad.Layout.Gaps
 import XMonad.Layout.Grid
 import XMonad.Layout.IM
-import qualified XMonad.Layout.Magnifier as Mag -- this makes window bigger
+-- this makes window bigger
+import qualified XMonad.Layout.Magnifier as Mag
 import XMonad.Layout.MultiToggle
 import XMonad.Layout.MultiToggle.Instances
 -- import XMonad.Layout.Named
@@ -41,9 +54,10 @@ import XMonad.Util.Run(spawnPipe)      -- spawnPipe, hPutStrLn
 import XMonad.Util.Run
 
 import Graphics.X11.ExtraTypes.XF86
--- }}}
+--------------------------------------------------------------------------- }}}
+-- local variables                                                          {{{
+-------------------------------------------------------------------------------
 
--- local variables {{{
 myWorkspaces = ["1", "2", "3", "4", "5"]
 modm = mod4Mask
 
@@ -59,9 +73,11 @@ colorfg        = "#9fa8b1"
 
 -- Border width
 borderwidth = 0
--- }}}
 
--- Define keys to remove {{{
+--------------------------------------------------------------------------- }}}
+-- Define keys to remove                                                    {{{
+-------------------------------------------------------------------------------
+
 keysToRemove x =
     [
         -- Unused gmrun binding
@@ -70,12 +86,17 @@ keysToRemove x =
         , (modm .|. shiftMask, xK_c)
         , (modm .|. shiftMask, xK_Return)
     ]
--- }}}
--- Delete the keys combinations we want to remove. {{{
-strippedKeys x = foldr M.delete (keys defaultConfig x) (keysToRemove x)
--- }}}
 
--- main-- {{{
+--------------------------------------------------------------------------- }}}
+-- Delete the keys combinations we want to remove.                          {{{
+-------------------------------------------------------------------------------
+
+strippedKeys x = foldr M.delete (keys defaultConfig x) (keysToRemove x)
+
+--------------------------------------------------------------------------- }}}
+-- main                                                                     {{{
+-------------------------------------------------------------------------------
+
 main :: IO ()
 
 main = do
@@ -103,9 +124,11 @@ main = do
        , modMask            = modm
        , mouseBindings      = newMouse
        }
--- }}}
-       -- Keymap: window operations {{{
-       ---------------------------------------------------
+
+       -------------------------------------------------------------------- }}}
+       -- Keymap: window operations                                         {{{
+       ------------------------------------------------------------------------
+
        `additionalKeys`
        [ ((modm                , xK_h      ), sendMessage Shrink)
        , ((modm                , xK_l      ), sendMessage Expand)
@@ -127,9 +150,11 @@ main = do
        , ((modm .|. shiftMask  , xK_m      ), windows W.shiftMaster)
        , ((modm                , xK_w      ), nextScreen)
        ]
-       -- }}}
-       -- Keymap: moving workspace by number {{{
-       ---------------------------------------------------
+
+       -------------------------------------------------------------------- }}}
+       -- Keymap: moving workspace by number                                {{{
+       ------------------------------------------------------------------------
+
        `additionalKeys`
        [ ((modm .|. m, k), windows $ f i)
          | (i, k) <- zip myWorkspaces
@@ -140,9 +165,11 @@ main = do
                      ]
          , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]
        ]
-       -- }}}
-       -- Keymap: custom commands {{{
-       ---------------------------------------------------
+
+       -------------------------------------------------------------------- }}}
+       -- Keymap: custom commands                                           {{{
+       ------------------------------------------------------------------------
+
        `additionalKeys`
        [ ((mod1Mask .|. controlMask, xK_l      ), spawn "xscreensaver-command -lock")
        , ((mod1Mask .|. controlMask, xK_t      ), spawn "bash $HOME/bin/toggle_compton.sh")
@@ -170,38 +197,45 @@ main = do
        , ((modm     .|. controlMask, xK_Return ), spawn "sh $HOME/bin/xte-click.sh")
        , ((controlMask             , xK_Escape ), spawn "sh $HOME/bin/touchpad_toggle.sh")
        ]
-       -- }}}
 
--- myLayout          -- Handle Window behaveior {{{
----------------------------------------------------
+--------------------------------------------------------------------------- }}}
+-- myLayout:          Handle Window behaveior                               {{{
+-------------------------------------------------------------------------------
+
 myLayout = (spacing 8 $ ResizableTall 1 (1/100) (4/7) [])
              |||  (spacing 8 $ TwoPane (1/100) (4/7))
              |||  (spacing 3 $ ThreeColMid 1 (1/100) (16/35))
              |||  (spacing 8 $ ResizableTall 2 (1/100) (1/2) [])
 --             |||  Mag.magnifiercz 1.1 (spacing 6 $ GridRatio (4/3))
--- }}}
--- myStartupHook     -- Start up (at xmonad beggining), like "wallpaper" or so on {{{
----------------------------------------------------
+
+--------------------------------------------------------------------------- }}}
+-- myStartupHook:     Start up applications                                 {{{
+-------------------------------------------------------------------------------
+
 myStartupHook = do
         spawn "gnome-settings-daemon"
         spawn "nm-applet"
         spawn "xscreensaver -no-splash"
         spawn "$HOME/.dropbox-dist/dropboxd"
         spawn "bash $HOME/bin/start_urxvtd.sh"
-        spawn "bash $HOME/bin/wallpaper.sh"
+        spawn "bash $HOME/.fehbg"
         spawn "bash $HOME/bin/toggle_compton.sh"
--- }}}
--- myManageHookShift -- some window must created there {{{
----------------------------------------------------
+
+--------------------------------------------------------------------------- }}}
+-- myManageHookShift: some window must created there                        {{{
+-------------------------------------------------------------------------------
+
 myManageHookShift = composeAll
             -- if you want to know className, type "$ xprop|grep CLASS" on shell
             [ className =? "Firefox"       --> mydoShift "2"
             , className =? "Google-chrome" --> mydoShift "4"
             ]
              where mydoShift = doF . liftM2 (.) W.greedyView W.shift
--- }}}
--- myManageHookFloat -- new window will created in Float mode {{{
----------------------------------------------------
+
+--------------------------------------------------------------------------- }}}
+-- myManageHookFloat: new window will created in Float mode                 {{{
+-------------------------------------------------------------------------------
+
 myManageHookFloat = composeAll
         [ className =? "Gimp"             --> doFloat,
               className =? "mplayer2"         --> doFloat,
@@ -215,13 +249,17 @@ myManageHookFloat = composeAll
               title     =? "urxvt_float"      --> doFloat,
               className =? "Plugin-container" --> doFloat,
               title     =? "Speedbar"         --> doFloat]
--- }}}
--- myLogHook         -- loghock settings {{{
----------------------------------------------------
+
+--------------------------------------------------------------------------- }}}
+-- myLogHook:         loghock settings                                      {{{
+-------------------------------------------------------------------------------
+
 myLogHook h = dynamicLogWithPP $ wsPP { ppOutput = hPutStrLn h }
--- }}}
--- myWsBar           -- xmobar setting {{{
----------------------------------------------------
+
+--------------------------------------------------------------------------- }}}
+-- myWsBar:           xmobar setting                                        {{{
+-------------------------------------------------------------------------------
+
 myWsBar = "xmobar $HOME/.xmonad/xmobarrc"
 
 wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws,t]
@@ -235,9 +273,12 @@ wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws,t]
                 , ppWsSep           = ""
                 , ppSep             = " : "
                 }
--- }}}
--- newMouse          -- Right click is used for resizing window {{{
----------------------------------------------------
+
+--------------------------------------------------------------------------- }}}
+-- newMouse:          Right click is used for resizing window               {{{
+-------------------------------------------------------------------------------
+
 myMouse x = [ ((modm, button3), (\w -> focus w >> Flex.mouseResizeWindow w)) ]
 newMouse x = M.union (mouseBindings defaultConfig x) (M.fromList (myMouse x))
--- }}}
+
+--------------------------------------------------------------------------- }}}
