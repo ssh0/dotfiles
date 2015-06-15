@@ -374,7 +374,7 @@ nnoremap <silent> <C-t> :tabnew<CR>
 nnoremap + <C-a>
 nnoremap - <C-x>
 
-" 入力モードで矢印キーでカーソル移動
+" 入力モードでカーソル移動
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
@@ -402,7 +402,11 @@ nnoremap う u
 nnoremap お o
 nnoremap っd dd
 nnoremap っy yy
-nnoremap っp pp
+
+" ""の中身を変更する
+nnoremap し” ci"
+" ''の中身を変更する
+nnoremap し’ ci'
 
 " 日本語入力で”っj”と入力してもEnterキーで確定させればインサートモードを抜ける
 inoremap <silent> っj <ESC>
