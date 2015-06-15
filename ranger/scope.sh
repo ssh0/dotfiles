@@ -46,12 +46,12 @@ highlight() { command highlight "$@"; test $? = 0 -o $? = 141; }
 
 case "$extension" in
     # Archive extensions:
-    7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|\
-    rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)
-        try als "$path" && { dump | trim; exit 0; }
-        try acat "$path" && { dump | trim; exit 3; }
-        try bsdtar -lf "$path" && { dump | trim; exit 0; }
-        exit 1;;
+    # 7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|\
+    # rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)
+    #     try als "$path" && { dump | trim; exit 0; }
+    #     try acat "$path" && { dump | trim; exit 3; }
+    #     try bsdtar -lf "$path" && { dump | trim; exit 0; }
+    #     exit 1;;
     rar)
         try unrar -p- lt "$path" && { dump | trim; exit 0; } || exit 1;;
     # PDF documents:
@@ -75,7 +75,7 @@ case "$mimetype" in
         try highlight --out-format=ansi "$path" && { dump | trim; exit 5; } || exit 2;;
     # Ascii-previews of images:
     image/*)
-        img2txt --gamma=0.7 --width="$width" --format=ansi "$path" && exit 4 || exit 1;;
+        img2txt --gamma=0.6 --width="$width" --format=ansi --font-width=5 --font-height=10 "$path" && exit 4 || exit 1;;
     # Image preview for videos, disabled by default:
     video/*)
         ffmpegthumbnailer -i "$path" -o "$cached" -s 0 && exit 6 || exit 1;;
