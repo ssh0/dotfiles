@@ -61,7 +61,7 @@ prompt_end() {
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment 241 default "%(!.%{$bg[yellow]%}.)"
+    prompt_segment 238 default "%(!.%{$bg[yellow]%}.)"
   fi
 }
 
@@ -74,9 +74,9 @@ prompt_git() {
     dirty=$(parse_git_dirty)
     ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git show-ref --head -s --abbrev |head -n1 2> /dev/null)"
     if [[ -n $dirty ]]; then
-      prompt_segment 236 yellow
+      prompt_segment 235 yellow
     else
-      prompt_segment 236 blue
+      prompt_segment 235 blue
     fi
 
     if [[ -e "${repo_path}/BISECT_LOG" ]]; then
@@ -108,15 +108,15 @@ prompt_hg() {
     if $(hg prompt >/dev/null 2>&1); then
       if [[ $(hg prompt "{status|unknown}") = "?" ]]; then
         # if files are not added
-        prompt_segment red 236
+        prompt_segment red 235
         st='±'
       elif [[ -n $(hg prompt "{status|modified}") ]]; then
         # if any modification
-        prompt_segment yellow 236
+        prompt_segment yellow 235
         st='±'
       else
         # if working copy is clean
-        prompt_segment blue 236
+        prompt_segment blue 235
       fi
       echo -n $(hg prompt "☿ {rev}@{branch}") $st
     else
@@ -124,13 +124,13 @@ prompt_hg() {
       rev=$(hg id -n 2>/dev/null | sed 's/[^-0-9]//g')
       branch=$(hg id -b 2>/dev/null)
       if `hg st | grep -q "^\?"`; then
-        prompt_segment red 236
+        prompt_segment red 235
         st='±'
       elif `hg st | grep -q "^(M|A)"`; then
-        prompt_segment yellow 236
+        prompt_segment yellow 235
         st='±'
       else
-        prompt_segment blue 236
+        prompt_segment blue 235
       fi
       echo -n "☿ $rev@$branch" $st
     fi
@@ -139,7 +139,7 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment 238 default '%~'
+  prompt_segment 237 default '%~'
 }
 
 # Virtualenv: current working virtualenv
@@ -163,12 +163,12 @@ prompt_status() {
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
   [[ -n ${RANGER_LEVEL} ]] && symbols+="%{%F{blue}%}®"
 
-  [[ -n "$symbols" ]] && prompt_segment 236 default "$symbols"
+  [[ -n "$symbols" ]] && prompt_segment 235 default "$symbols"
 }
 
 # Init:
 prompt_init() {
-  echo -n "%{%F{238}%K{$CURRENT_BG}%}▒▓"
+  echo -n "%{%F{237}%K{$CURRENT_BG}%}▒▓"
 }
 
 ## Main prompt
