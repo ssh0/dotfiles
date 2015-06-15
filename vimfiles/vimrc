@@ -134,9 +134,9 @@ autocmd Filetype bib let &formatprg="bibclean"
 autocmd Filetype python let &formatprg="autopep8 -"
 
 " html
-let pandoc_pipeline  = "pandoc --from    = html --to     = markdown"
-let pandoc_pipeline .= " | pandoc --from = markdown --to = html"
-autocmd Filetype html let &formatprg=pandoc_pipeline
+let html_to_html  = "pandoc --from=html --to=markdown"
+let html_to_html .= " | pandoc --from=markdown --to=html"
+autocmd Filetype html let &formatprg=html_to_html
 
 " --------------------------------------------------------------------------}}}
 " Plugin option settings:                                                   {{{
@@ -395,7 +395,7 @@ nnoremap gF :tabedit <C-r><C-f><CR>
 " 複数のタグジャンプをデフォルトでみる
 nnoremap <C-]> g<C-]>
 
-" 日本語入力がオンのままでもインサートモードに移行できるように
+" 日本語入力がオンのままでもインサートモードに移行できるように(Enterキーは必要)
 nnoremap あ a
 nnoremap い i
 nnoremap う u
@@ -403,7 +403,9 @@ nnoremap お o
 nnoremap っd dd
 nnoremap っy yy
 nnoremap っp pp
-inoremap <silent> っっj <ESC>
+
+" 日本語入力で”っj”と入力してもEnterキーで確定させればインサートモードを抜ける
+inoremap <silent> っj <ESC>
 
 " source current opening file
 map <Leader>sop :source %<CR>
