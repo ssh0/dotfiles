@@ -321,6 +321,22 @@ autocmd FileType zsh        setlocal sw=2 sts=2 ts=2 et
 autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
 
 " --------------------------------------------------------------------------}}}
+" My function:                                                              {{{
+" -----------------------------------------------------------------------------
+
+function! Markdown_h1()
+  normal! VypVr=
+endfunction
+
+function! Markdown_h2()
+  normal! VypVr-
+endfunction
+
+function! Markdown_h3()
+  normal! I### 
+endfunction
+
+" --------------------------------------------------------------------------}}}
 " Key Bindings:                                                             {{{
 " -----------------------------------------------------------------------------
 
@@ -405,5 +421,10 @@ nnoremap <Leader>oo :CtrlPMRUFiles<CR>
 " * Use `<c-n>`, `<c-p>` to select the next/previous string in the prompt's history.
 " * Use `<c-y>` to create a new file and its parent directories.
 " * Use `<c-z>` to mark/unmark multiple files and `<c-o>` to open them.
+
+" myfunctions
+nnoremap <Leader>h1 :call Markdown_h1()<CR>
+nnoremap <Leader>h2 :call Markdown_h2()<CR>
+nnoremap <Leader>h3 :call Markdown_h3()<CR>
 
 " --------------------------------------------------------------------------}}}
