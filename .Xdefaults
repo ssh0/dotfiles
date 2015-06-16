@@ -54,7 +54,7 @@ URxvt*iso14755:        false
 !------------------------------------------------------------------------------
 
 URxvt*background:  #1c1c1c
-URxvt*foreground:  #eceff1
+URxvt*foreground:  #dadada
 
 URxvt*cursorColor: #ffffff
 URxvt*colorBD:     #bdbdbd
