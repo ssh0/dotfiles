@@ -32,12 +32,12 @@ And run:
 
 ```bash
 $ cd ~/.dotfiles
-$ ./dotrm && ./setup.sh
+$ ./dotclean && ./setup.sh
 ```
 
 and this script replace existing files interactively.
 
-- [dotrm](./dotrm):  
+- [dotclean](./dotclean):  
   remove symbolic link which is written in `setup_config_link`
 
 - [setup.sh](./setup.sh):  
