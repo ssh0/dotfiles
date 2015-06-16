@@ -124,6 +124,7 @@ bin/start_urxvtd.sh,bin/start_urxvtd.sh
 bin/takenote,bin/takenote
 bin/talk.sh,bin/talk.sh
 bin/tmp_git_repoauto.sh,bin/tmp_git_repoauto.sh
+bin/tmux-vim-select-pane,bin/tmux-vim-select-pane
 bin/todo.sh,bin/todo.sh
 bin/toggle_compton.sh,bin/toggle_compton.sh
 bin/toggle_xcompmgr.sh,bin/toggle_xcompmgr.sh
