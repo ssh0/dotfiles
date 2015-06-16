@@ -418,6 +418,7 @@ nnoremap っy yy
 nnoremap し” ci"
 " ''の中身を変更する
 nnoremap し’ ci'
+nnoremap せ ce
 
 " 日本語入力で”っj”と入力してもEnterキーで確定させればインサートモードを抜ける
 inoremap <silent> っj <ESC>
