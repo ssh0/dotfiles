@@ -3,7 +3,7 @@
 usage() {
   echo "Remove the symbolic link written in config file."
   echo "after that, you may run setup.sh in dotfiles."
-  echo "Usage: dotrm [OPTION]"
+  echo "Usage: dotclean [OPTION]"
   echo ""
   echo "OPTION:"
   echo "  -h: Show this message."
