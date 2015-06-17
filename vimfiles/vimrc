@@ -22,6 +22,10 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
+" <Space>をmapleaderに
+let mapleader = "\<Space>"
+let localleader = "\<Space>"
+
 " --------------------------------------------------------------------------}}}
 " Plugin Manager NeoBundle:                                                 {{{
 " -----------------------------------------------------------------------------
@@ -37,11 +41,12 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Refer to |:NeoBundle-examples|.
 " Note: Yout don't set neobundle setting in .gvimrc!
 
-" colorscheme
+" colorscheme                                                               {{{
 NeoBundle 'ssh0/easy-reading.vim'
 " It's my color theme.
 " Project directory:
 " ($HOME/Workspace/5/easy-reading.vim/colors/easy-reading.vim)
+"                                                                           }}}
 
 " Surround
 NeoBundle 'surround.vim'
@@ -124,6 +129,12 @@ autocmd User plugin-template-loaded
   \  |   execute 'normal! "_da>'
   \  | endif
 "                                                                           }}}
+" accelerated_jk                                                            {{{
+NeoBundle 'rhysd/accelerated-jk'
+let g:accelerated_jk_acceleration_table = [10,5,3]
+nmap j <Plug>(accelerated_jk_gj)
+nmap k <Plug>(accelerated_jk_gk)
+"                                                                           }}}
 
 " powerline settings
 " alpaca_powertabline                                                       {{{
@@ -149,7 +160,7 @@ let g:alpaca_powertabline_colors = {
 NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 NeoBundle 'Lokaltog/powerline-fontpatcher'
 
-" for marldown
+" for markdown
 " vim-markdown                                                              {{{
 NeoBundle 'rcmdnk/vim-markdown', {
       \ 'depends': [
@@ -201,11 +212,10 @@ call neobundle#end()
 " this will conveiently prompt you to install them.
 NeoBundleCheck
 
-" --------------------------------------------------------------------------}}}
-" Required:                                                                 {{{
-" -----------------------------------------------------------------------------
-
+" Required:
 filetype plugin indent on
+
+colorscheme easy-reading
 
 " --------------------------------------------------------------------------}}}
 " Autocmd:                                                                  {{{
@@ -213,6 +223,7 @@ filetype plugin indent on
 
 " markdown
 autocmd BufRead,BufNewFile *.{mkd,md} set filetype=markdown
+autocmd! FileType markdown hi! def link markdownItalic Normal
 
 " bib file
 autocmd BufRead,BufNewFile *.bib set filetype=bib
@@ -225,16 +236,6 @@ autocmd Filetype python let &formatprg="autopep8 -"
 let html_to_html  = "pandoc --from=html --to=markdown"
 let html_to_html .= " | pandoc --from=markdown --to=html"
 autocmd Filetype html let &formatprg=html_to_html
-
-" --------------------------------------------------------------------------}}}
-" Color scheme:                                                             {{{
-" -----------------------------------------------------------------------------
-
-" To show current color scheme by
-" ':so $VIMRUNTIME/syntax/hitest.vim'
-colorscheme easy-reading
-
-autocmd! FileType markdown hi! def link markdownItalic Normal
 
 " --------------------------------------------------------------------------}}}
 " Set Options:                                                              {{{
@@ -364,10 +365,6 @@ endfunction
 " Key Bindings:                                                             {{{
 " -----------------------------------------------------------------------------
 
-" <Space>をmapleaderに
-let mapleader = "\<Space>"
-let localleader = "\<Space>"
-
 " jjでエスケープ
 inoremap <silent> jj <ESC>
 
@@ -440,11 +437,11 @@ nnoremap せ ce
 inoremap <silent> っj <ESC>
 
 " 引用符、括弧の設定
-inoremap { {}<Left>
-inoremap [ []<Left>
-inoremap ( ()<Left>
-inoremap " ""<Left>
-inoremap ' ''<Left>
+inoremap {} {}<Left>
+inoremap [] []<Left>
+inoremap () ()<Left>
+inoremap "" ""<Left>
+inoremap '' ''<Left>
 inoremap <> <><Left>
 
 " source current opening file
