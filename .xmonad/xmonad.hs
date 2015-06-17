@@ -22,8 +22,7 @@ import XMonad.Actions.WindowGo
 import XMonad.Actions.FloatKeys
 import XMonad.Actions.CycleWS
 import XMonad.Actions.UpdatePointer
--- Resize floating windows from any corner
-import qualified XMonad.Actions.FlexibleResize as Flex
+import qualified XMonad.Actions.FlexibleResize as Flex -- Resize floating windows from any corner
 import XMonad.Hooks.DynamicLog         -- for xmobar
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.FadeWindows
@@ -35,8 +34,7 @@ import XMonad.Layout.DragPane          -- see only two window
 import XMonad.Layout.Gaps
 import XMonad.Layout.Grid
 import XMonad.Layout.IM
--- this makes window bigger
-import qualified XMonad.Layout.Magnifier as Mag
+import qualified XMonad.Layout.Magnifier as Mag  -- this makes window bigger
 import XMonad.Layout.MultiToggle
 import XMonad.Layout.MultiToggle.Instances
 -- import XMonad.Layout.Named
@@ -54,6 +52,7 @@ import XMonad.Util.Run(spawnPipe)      -- spawnPipe, hPutStrLn
 import XMonad.Util.Run
 
 import Graphics.X11.ExtraTypes.XF86
+
 --------------------------------------------------------------------------- }}}
 -- local variables                                                          {{{
 -------------------------------------------------------------------------------
@@ -74,6 +73,13 @@ colorfg        = "#9fa8b1"
 -- Border width
 borderwidth = 0
 
+-- gapwidth
+gapWidth = 2
+gapWidthU = 10
+gapWidthD = 10
+gapWidthL = 10
+gapWidthR = 10
+
 --------------------------------------------------------------------------- }}}
 -- Define keys to remove                                                    {{{
 -------------------------------------------------------------------------------
@@ -87,10 +93,7 @@ keysToRemove x =
         , (modm .|. shiftMask, xK_Return)
     ]
 
---------------------------------------------------------------------------- }}}
--- Delete the keys combinations we want to remove.                          {{{
--------------------------------------------------------------------------------
-
+-- Delete the keys combinations we want to remove.
 strippedKeys x = foldr M.delete (keys defaultConfig x) (keysToRemove x)
 
 --------------------------------------------------------------------------- }}}
@@ -202,10 +205,11 @@ main = do
 -- myLayout:          Handle Window behaveior                               {{{
 -------------------------------------------------------------------------------
 
-myLayout = (spacing 8 $ ResizableTall 1 (1/100) (4/7) [])
-             |||  (spacing 8 $ TwoPane (1/100) (4/7))
-             |||  (spacing 3 $ ThreeColMid 1 (1/100) (16/35))
-             |||  (spacing 8 $ ResizableTall 2 (1/100) (1/2) [])
+myLayout = spacing gapWidth $ gaps [(U,gapWidth + gapWidthU),(D,gapWidth + gapWidthD),(L,gapWidth + gapWidthL),(R,gapWidth + gapWidthR)] $
+                 (ResizableTall 1 (1/100) (4/7) [])
+             ||| (TwoPane (1/100) (4/7))
+             ||| (ThreeColMid 1 (1/100) (16/35))
+             ||| (ResizableTall 2 (1/100) (1/2) [])
 --             |||  Mag.magnifiercz 1.1 (spacing 6 $ GridRatio (4/3))
 
 --------------------------------------------------------------------------- }}}
