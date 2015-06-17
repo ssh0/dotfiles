@@ -42,7 +42,7 @@ bindkey '^r' peco-select-history
 #  * Parameters: \1
 #
 
-__timetrack_threshold=30 # seconds
+__timetrack_threshold=300 # seconds
 read -r -d '' __timetrack_ignore_progs <<EOF
 less
 emacs vi vim
