@@ -51,61 +51,149 @@ NeoBundle 'tpope/vim-commentary'
 
 " Basic, unite and vimfiler
 NeoBundle 'Shougo/unite.vim'
+
+" vimfiler                                                                  {{{
 NeoBundle 'Shougo/vimfiler.vim'
-
-" ctrlp.vim
+" vim use vimfiler as file manager instead of netry.
+let g:vimfiler_as_default_explorer = 1
+nnoremap <silent> <Leader>e :VimFilerBufferDir -buffer-name=explorer -split
+\ -simple -winwidth=35 -toggle -no-quit<CR>
+"                                                                           }}}
+" ctrlp.vim                                                                 {{{
 NeoBundle 'kien/ctrlp.vim'
-
-" unite-mark
+nnoremap <Leader>om :CtrlPMixed<CR>
+nnoremap <Leader>oo :CtrlPMRUFiles<CR>
+" Onece CtrlP is open:
+" * Press `<F5>` to purge the cache for the current directory to get new  
+"   files, remove deleted files and apply new ignore options.
+" * Press `<c-f>` and `<c-b>` to cycle between modes.
+" * Press `<c-d>` to switch to filename only search instead of full path.
+" * Press `<c-r>` to switch to regexp mode.
+" * Use `<c-j>`, `<c-k>` or the arrow keys to navigate the result list.
+" * Use `<c-t>` or `<c-v>`, `<c-x>` to open the selected entry in a new  
+"   tab or in a new split.
+" * Use `<c-n>`, `<c-p>` to select the next/previous string in the  
+"   prompt's history.
+" * Use `<c-y>` to create a new file and its parent directories.
+" * Use `<c-z>` to mark/unmark multiple files and `<c-o>` to open them.
+"                                                                           }}}
+" unite-mark                                                                {{{
 NeoBundle 'tacroe/unite-mark'
-
-" vim-signature
+let g:unite_source_mark_marks =
+\   "abcdefghijklmnopqrstuvwxyz"
+\ . "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+\ . "0123456789.'`^<>[]{}()\""
+" key bind: `` or ''
+nnoremap <silent> `` :Unite mark<CR>
+nnoremap <silent> '' :Unite mark<CR>
+"                                                                           }}}
+" vim-signature                                                             {{{
 NeoBundle 'kshenoy/vim-signature'
-
-" Folding
+" Signature
+" Highlight signs of marks dynamically based upon state indicated by
+" vim-gitgutter or vim-signify
+let g:SignatureMartTextHLDynamic = 1
+"                                                                           }}}
+" Folding                                                                   {{{
 NeoBundle 'LeafCage/foldCC'
-
-" open-browser
+set foldtext=FoldCCtext()
+"                                                                           }}}
+" open-browser                                                              {{{
 NeoBundle 'tyru/open-browser.vim'
-
-" vim-quickrun
+" for open-browser plugin
+let g:netrw_nogx = 1 " disable netrw's gx mapping.
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
+"                                                                           }}}
+" vim-quickrun                                                              {{{
 NeoBundle 'thinca/vim-quickrun'
-
-" vim-template
+let g:quickrun_config = {}
+let g:quickrun_no_default_key_mapping = 0
+"                                                                           }}}
+" vim-template                                                              {{{
 NeoBundle 'thinca/vim-template'
+" <%= %> の中身をvimで評価して展開する:
+autocmd User plugin-template-loaded
+  \ silent %s/<%=\(.\{-}\)%>/\=eval(submatch(1))/ge
+" テンプレートに以下のように書いておくと日付に展開されます。
+" <%= strftime('%Y-%m-%d') %>
+
+" <+CURSOR+> にカーソルを移動する
+autocmd User plugin-template-loaded
+  \    if search('<+CURSOR+>')
+  \  |   execute 'normal! "_da>'
+  \  | endif
+"                                                                           }}}
 
 " powerline settings
+" alpaca_powertabline                                                       {{{
 NeoBundle 'alpaca-tc/alpaca_powertabline'
+
+let g:alpaca_powertabline_sep1 = '█ '
+let g:alpaca_powertabline_sep2 = ':'
+let g:alpaca_powertabline_colors = {
+                \   "base" : {
+                \     "bg" : 240,
+                \     "fg" : 255,
+                \   },
+                \   "sel" : {
+                \     "bg": 240,
+                \     "fg": 231,
+                \   },
+                \   "passive": {
+                \     "bg": 234,
+                \     "fg": 245,
+                \   },
+                \ }
+"                                                                           }}}
 NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 NeoBundle 'Lokaltog/powerline-fontpatcher'
 
-" for markdown
+" for marldown
+" vim-markdown                                                              {{{
 NeoBundle 'rcmdnk/vim-markdown', {
       \ 'depends': [
       \   'godlygeek/tabular',
       \]}
+" Unset Disable folding
+let g:vim_markdown_folding_disabled = 1
+" Disable Default Key Mapping
+let g:vim_markdown_no_default_key_mappings = 1
+" LaTeX math
+let g:vim_markdown_math = 1
+"                                                                           }}}
 NeoBundle 'joker1007/vim-markdown-quote-syntax'
 
 " for LaTeX
 NeoBundle 'lervag/vimtex'
 
 " for Python
+" jedi-vim                                                                  {{{
 NeoBundle 'davidhalter/jedi-vim'
+" jedi completeplt
+let g:jedi#auto_vim_configuration = 0
+"                                                                           }}}
+" vim-python-pep8-indent                                                    {{{
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {
       \ "autoload": {"insert": 1, "filetype": ["python", "python3", "djangohtml"]}}
+"                                                                           }}}
 
-" autocomplete
+" autocomplete                                                              {{{
 NeoBundle 'ujihisa/neco-look', {
       \ 'depends': [
       \   'Shougo/neocomplcache.vim',
       \]}
-
+"                                                                           }}}
+" Gista                                                                     {{{
 " easily sent a gista
 NeoBundle 'lambdalisue/vim-gista', {
       \ 'depends': [
       \   'Shougo/unite.vim',
       \   'tyru/open-browser.vim',
       \]}
+let g:gista#github_user = 'ssh0'
+let g:gista#update_on_write = 1
+"                                                                           }}}
 
 call neobundle#end()
 
@@ -120,7 +208,7 @@ NeoBundleCheck
 filetype plugin indent on
 
 " --------------------------------------------------------------------------}}}
-" FileType:                                                                 {{{
+" Autocmd:                                                                  {{{
 " -----------------------------------------------------------------------------
 
 " markdown
@@ -137,70 +225,6 @@ autocmd Filetype python let &formatprg="autopep8 -"
 let html_to_html  = "pandoc --from=html --to=markdown"
 let html_to_html .= " | pandoc --from=markdown --to=html"
 autocmd Filetype html let &formatprg=html_to_html
-
-" --------------------------------------------------------------------------}}}
-" Plugin option settings:                                                   {{{
-" -----------------------------------------------------------------------------
-
-" VimFiler
-" vim use vimfiler as file manager instead of netry.
-let g:vimfiler_as_default_explorer = 1
-
-" unite-mark
-let g:unite_source_mark_marks =
-\   "abcdefghijklmnopqrstuvwxyz"
-\ . "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-\ . "0123456789.'`^<>[]{}()\""
-" key bind: `` or ''
-
-" Gista
-let g:gista#github_user = 'ssh0'
-let g:gista#update_on_write = 1
-
-" template
-" <%= %> の中身をvimで評価して展開する:
-autocmd User plugin-template-loaded
-  \ silent %s/<%=\(.\{-}\)%>/\=eval(submatch(1))/ge
-" テンプレートに以下のように書いておくと日付に展開されます。
-" <%= strftime('%Y-%m-%d') %>
-
-" <+CURSOR+> にカーソルを移動する
-autocmd User plugin-template-loaded
-  \    if search('<+CURSOR+>')
-  \  |   execute 'normal! "_da>'
-  \  | endif
-
-" jedi completeplt
-let g:jedi#auto_vim_configuration = 0
-
-" for open-browser plugin
-let g:netrw_nogx = 1 " disable netrw's gx mapping.
-nmap gx <Plug>(openbrowser-smart-search)
-vmap gx <Plug>(openbrowser-smart-search)
-
-" QuickRun {{{
-" -----------------------------------------------------------------------------
-"
-let g:quickrun_config = {}
-let g:quickrun_no_default_key_mapping = 0
-
-" --------------------------------------------------------------------------}}}
-
-" vim-markdown
-" Unset Disable folding
-let g:vim_markdown_folding_disabled = 1
-" Disable Default Key Mapping
-let g:vim_markdown_no_default_key_mappings = 1
-" LaTeX math
-let g:vim_markdown_math = 1
-
-" Folding
-set foldtext=FoldCCtext()
-
-" Signature
-" Highlight signs of marks dynamically based upon state indicated by
-" vim-gitgutter or vim-signify
-let g:SignatureMartTextHLDynamic = 1
 
 " --------------------------------------------------------------------------}}}
 " Color scheme:                                                             {{{
@@ -347,10 +371,6 @@ let localleader = "\<Space>"
 " jjでエスケープ
 inoremap <silent> jj <ESC>
 
-" unite-mark
-nnoremap <silent> `` :Unite mark<CR>
-nnoremap <silent> '' :Unite mark<CR>
-
 " <Space> + l で相対行表示のトグル
 nnoremap <silent> <Leader>l :setlocal relativenumber! number!<CR>
 
@@ -391,10 +411,6 @@ nnoremap <silent> <C-j> :wincmd j<CR>
 nnoremap <silent> <C-k> :wincmd k<CR>
 nnoremap <silent> <C-l> :wincmd l<CR>
 
-" vimfiler
-nnoremap <silent> <Leader>e :VimFilerBufferDir -buffer-name=explorer -split
-\ -simple -winwidth=35 -toggle -no-quit<CR>
-
 " ハイライトの取り消し ESC2回押し
 nnoremap <ESC><ESC> :nohlsearch<CR>
 
@@ -433,20 +449,6 @@ inoremap <> <><Left>
 
 " source current opening file
 map <Leader>sop :source %<CR>
-
-" CtrlP
-nnoremap <Leader>om :CtrlPMixed<CR>
-nnoremap <Leader>oo :CtrlPMRUFiles<CR>
-" Onece CtrlP is open:
-" * Press `<F5>` to purge the cache for the current directory to get new files, remove deleted files and apply new ignore options.
-" * Press `<c-f>` and `<c-b>` to cycle between modes.
-" * Press `<c-d>` to switch to filename only search instead of full path.
-" * Press `<c-r>` to switch to regexp mode.
-" * Use `<c-j>`, `<c-k>` or the arrow keys to navigate the result list.
-" * Use `<c-t>` or `<c-v>`, `<c-x>` to open the selected entry in a new tab or in a new split.
-" * Use `<c-n>`, `<c-p>` to select the next/previous string in the prompt's history.
-" * Use `<c-y>` to create a new file and its parent directories.
-" * Use `<c-z>` to mark/unmark multiple files and `<c-o>` to open them.
 
 " myfunctions
 nnoremap <Leader>h1 :call Markdown_h1()<CR>
