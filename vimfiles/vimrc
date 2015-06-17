@@ -443,6 +443,9 @@ inoremap () ()<Left>
 inoremap "" ""<Left>
 inoremap '' ''<Left>
 inoremap <> <><Left>
+inoremap $$ $$<Left>
+inoremap 「」 「」<Left>
+inoremap 『』 『』<Left>
 
 " source current opening file
 map <Leader>sop :source %<CR>
