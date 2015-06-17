@@ -423,6 +423,14 @@ nnoremap せ ce
 " 日本語入力で”っj”と入力してもEnterキーで確定させればインサートモードを抜ける
 inoremap <silent> っj <ESC>
 
+" 引用符、括弧の設定
+inoremap { {}<Left>
+inoremap [ []<Left>
+inoremap ( ()<Left>
+inoremap " ""<Left>
+inoremap ' ''<Left>
+inoremap <> <><Left>
+
 " source current opening file
 map <Leader>sop :source %<CR>
 
