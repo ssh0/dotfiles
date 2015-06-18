@@ -72,10 +72,18 @@ let g:vimfiler_as_default_explorer = 1
 nnoremap <silent> <Leader>e :VimFilerBufferDir -buffer-name=explorer -split
 \ -simple -winwidth=35 -toggle -no-quit<CR>
 "                                                                           }}}
+" ag                                                                        {{{
+NeoBundle 'rking/ag.vim'
+"                                                                           }}}
 " ctrlp.vim                                                                 {{{
 NeoBundle 'kien/ctrlp.vim'
+if executable('ag')
+  let g:ctrlp_use_caching=0
+  let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
+endif
+nnoremap <Leader>oo :CtrlP<CR>
 nnoremap <Leader>om :CtrlPMixed<CR>
-nnoremap <Leader>oo :CtrlPMRUFiles<CR>
+nnoremap <Leader>or :CtrlPMRUFiles<CR>
 " Onece CtrlP is open:
 " * Press `<F5>` to purge the cache for the current directory to get new  
 "   files, remove deleted files and apply new ignore options.
