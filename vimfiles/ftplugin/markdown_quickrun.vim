@@ -38,4 +38,8 @@ let g:quickrun_config['mkd'] = {
 nnoremap <silent> <F5> :QuickRun -type markdown<CR>
 vnoremap <silent> <F5> :QuickRun -type markdown/visual<CR>
 
-autocmd BufWritePost,FileWritePost *.md QuickRun -type markdown/normal
+augroup markdown_pandoc
+  autocmd!
+  autocmd BufWritePost,FileWritePost *.md :QuickRun -type markdown/normal
+augroup END
+
