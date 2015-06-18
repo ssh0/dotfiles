@@ -122,6 +122,11 @@ vmap gx <Plug>(openbrowser-smart-search)
 NeoBundle 'thinca/vim-quickrun'
 let g:quickrun_config = {}
 let g:quickrun_no_default_key_mapping = 0
+
+" QuickRun and view compile result quickly
+nnoremap <silent> <F5> :QuickRun -type markdown<CR>
+vnoremap <silent> <F5> :QuickRun -type markdown/visual<CR>
+
 "                                                                           }}}
 " vim-template                                                              {{{
 NeoBundle 'thinca/vim-template'
@@ -287,7 +292,7 @@ set list
 set listchars=tab:▸\ ,trail:~
 
 " showbreaks
-set showbreak=↪
+set showbreak=\ ↪
 
 " 対応する括弧を表示
 set showmatch
@@ -446,11 +451,9 @@ inoremap "" ""<Left>
 inoremap '' ''<Left>
 inoremap <> <><Left>
 inoremap $$ $$<Left>
-inoremap 「」 「」<Left>
-inoremap 『』 『』<Left>
 
-" source current opening file
-map <Leader>sop :source %<CR>
+" source vimrc
+map <Leader>so :source ~/.vimrc<CR>
 
 " myfunctions
 nnoremap <Leader>h1 :call Markdown_h1()<CR>
