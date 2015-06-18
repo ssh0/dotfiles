@@ -54,9 +54,17 @@ NeoBundle 'surround.vim'
 " Commentary
 NeoBundle 'tpope/vim-commentary'
 
-" Basic, unite and vimfiler
+" unite.vim                                                                 {{{
 NeoBundle 'Shougo/unite.vim'
-
+let g:unite_enable_start_insert=1
+let g:unite_source_history_yank_enable =1
+let g:unite_source_file_mru_limit = 200
+nnoremap <silent> <Leader>uy :<C-u>Unite history/yank<CR>
+nnoremap <silent> <Leader>ub :<C-u>Unite buffer<CR>
+nnoremap <silent> <Leader>uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> <Leader>ur :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> <Leader>uu :<C-u>Unite file_mru buffer<CR>
+"                                                                           }}}
 " vimfiler                                                                  {{{
 NeoBundle 'Shougo/vimfiler.vim'
 " vim use vimfiler as file manager instead of netry.
@@ -128,12 +136,6 @@ autocmd User plugin-template-loaded
   \    if search('<+CURSOR+>')
   \  |   execute 'normal! "_da>'
   \  | endif
-"                                                                           }}}
-" accelerated_jk                                                            {{{
-NeoBundle 'rhysd/accelerated-jk'
-let g:accelerated_jk_acceleration_table = [10,5,3]
-nmap j <Plug>(accelerated_jk_gj)
-nmap k <Plug>(accelerated_jk_gk)
 "                                                                           }}}
 
 " powerline settings
