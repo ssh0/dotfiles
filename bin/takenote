@@ -1,9 +1,10 @@
 #!/bin/sh
-#
+# written by Shotaro Fujimoto (https://github.com/ssh0)
+# first edited: 2015-06-20
 
 takenote() {
   show_usage() {
-    echo "Usage: takenote [-d dir] [-o filename] [-g editor] [-l] [-h]"
+    echo "Usage: takenote [-d dir] [-o filename] [-g editor] [-l] [-r] [-h]"
     echo "  -d dir     : set saving directory for specific directory"
     echo "  -o filename: set the text file's name"
     echo "  -g editor  : open with altenative program"
@@ -12,16 +13,17 @@ takenote() {
     echo "  -h         : show this message"
   }
 
-  get_dir=false
-  get_name=false
-  alternative=false
-  show_list=false
-  filercmd=ranger
-  ranger=false
-  rootdir=$HOME/Workspace/blog
+  local get_dir=false
+  local get_name=false
+  local alternative=false
+  local show_list=false
+  local filercmd=ranger
+  local filer=false
+  local rootdir=$HOME/Workspace/blog
 
   check_dir() {
     if [ ! -e "$1" ]; then
+      echo "Directory '$1' doesn't exist."
       return 1
     fi
   }
@@ -30,26 +32,31 @@ takenote() {
   do
     case $OPT in
       "d" ) get_dir=true
-        dir="$OPTARG" ;;
+            dir="$OPTARG" ;;
       "o" ) get_name=true
-        name="$OPTARG" ;;
+            name="$OPTARG" ;;
       "g" ) alternative=true
-        editor="$OPTARG" ;;
+            editor="$OPTARG" ;;
       "l" ) show_list=true ;;
-      "r" ) ranger=true ;;
-      "h" ) show_usage ; return 0 ;;
-        * ) show_usage ; return 0 ;;
+      "r" ) filer=true ;;
+      "h" ) show_usage;
+            return 0 ;;
+        * ) show_usage;
+            return 0 ;;
     esac
   done
 
-  # 保存するディレクトリを設定
+  # set the saving directory
   if ! $get_dir; then
-    check_dir "$rootdir"
-    daydir=$(date +%Y-%m-%d)
-    dir=$rootdir/$daydir
+    if check_dir "$rootdir";then
+      daydir=$(date +%Y-%m-%d)
+      dir=$rootdir/$daydir
+    else
+      return 1
+    fi
   fi
 
-  # only show existing file in the dir
+  # only show existing file in the directory
   if $show_list; then
     if check_dir "$dir"; then
       list=$(ls "$dir")
@@ -58,13 +65,11 @@ takenote() {
     return 0
   fi
 
-  if $ranger; then
-    echo "Moving to $dir ..."
+  # move to today's directory by the user defined filer
+  if $filer; then
     if [ ! -e "$dir" ]; then
-      clear
-      echo "Today's directory has not been created."
-      echo "Open ROOT directory..."
-      sleep 0.5
+      echo "Today's directory has not been created yet."
+      echo "Open root directory '$rootdir' ..."
       "$filercmd" "$rootdir"
     else
       "$filercmd" "$dir"
@@ -72,7 +77,7 @@ takenote() {
     return 0
   fi
 
-  # ファイル名を設定
+  # set the filename
   if ! $get_name; then
     if [ ! -e "$dir" ]; then
       mkdir "$dir"
@@ -88,7 +93,7 @@ takenote() {
   else
     cwd=$(pwd)
     cd "$dir"
-    vim "$dir"/"$name"
+    "$EDITOR" "$dir"/"$name"
     cd "$cwd"
   fi
 
