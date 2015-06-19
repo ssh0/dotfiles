@@ -355,6 +355,7 @@ cfg-ranger-rifle() { $EDITOR ~/.config/ranger/rifle.conf ;} # edit open_with ext
 cfg-ranger-commands() { $EDITOR ~/.config/ranger/commands.py ;} # scripts
 cfg-tmux() { $EDITOR ~/.tmux.conf ;}
 cfg-tmuxinator() { $EDITOR ~/.tmuxinator/ ;}
+cfg-turses() { $EDITOR ~/.turses/config ;}
 cfg-vimrc() { $EDITOR ~/.vimrc ;}
 cfg-xdefaults() { $EDITOR ~/.Xdefaults ;}
 cfg-Xmodmap() { $EDITOR ~/.Xmodmap ;}
