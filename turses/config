@@ -59,16 +59,16 @@ redraw = ctrl l
 
 [colors]
 active_tab = black
-active_tab_bg = dark blue
+active_tab_bg = dark green
 visible_tab = yellow
 visible_tab_bg = dark blue
-inactive_tab = dark blue
+inactive_tab = dark green
 inactive_tab_bg = 
-header = light blue
+header = dark blue
 header_bg = 
-body = white
+body = 
 body_bg = 
-focus = light red
+focus = dark red
 focus_bg = 
 line = black
 line_bg = 
@@ -80,11 +80,11 @@ favorited = yellow
 favorited_bg = 
 highlight = dark red
 highlight_bg = 
-highlight_nick = light red
+highlight_nick = dark red
 highlight_nick_bg = 
 attag = yellow
 attag_bg = 
-hashtag = light red
+hashtag = dark red
 hashtag_bg = 
 url = dark magenta
 url_bg = 
@@ -92,22 +92,22 @@ error = black
 error_bg = dark red
 info = black
 info_bg = dark blue
-editor = white
-editor_bg = dark blue
+editor = 
+editor_bg = black
 
 [styles]
 statuses_in_user_info = 3
-tab_template = {timeline_name} [{unread}]
+tab_template =  {unread} {timeline_name}
 url_format = display
 box_around_status = True
-status_divider = False
-reply_indicator = @
+status_divider = True
+reply_indicator = ✉
 editor_horizontal_align = center
 status_divider_char = ─
 dm_template =  {sender_screen_name} => {recipient_screen_name} - {time} 
 status_bar = True
-retweet_indicator = RT
-header_template =  {username}{retweeted}{retweeter} - {time}{reply}{retweet_count} 
+retweet_indicator = RT:
+header_template =  @{username}{retweeted}{retweeter} - {time}{reply} ₪:{retweet_count} 
 editor_vertical_align = bottom
 
 [debug]

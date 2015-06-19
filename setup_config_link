@@ -205,6 +205,7 @@ mutt/muttrc,.mutt/muttrc
 # [turses](https://github.com/dialelo/turses):                              {{{
 # A Twitter client for the console.
 turses/config,.turses/config
+turses/sessions,.turses/sessions
 #                                                                           }}}
 # [xmonad](http://xmonad.org/):                                             {{{
 # xmonad is a dynamically tiling X11 window manager that is written
