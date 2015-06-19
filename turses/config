@@ -96,10 +96,10 @@ editor =
 editor_bg = black
 
 [styles]
-statuses_in_user_info = 3
+statuses_in_user_info = 5
 tab_template =  {unread} {timeline_name}
 url_format = display
-box_around_status = True
+box_around_status = False
 status_divider = True
 reply_indicator = ✉
 editor_horizontal_align = center
@@ -107,7 +107,7 @@ status_divider_char = ─
 dm_template =  {sender_screen_name} => {recipient_screen_name} - {time} 
 status_bar = True
 retweet_indicator = RT:
-header_template =  @{username}{retweeted}{retweeter} - {time}{reply} ₪:{retweet_count} 
+header_template =  @{username}{retweeted}{retweeter} - {time}{reply} {retweet_count} 
 editor_vertical_align = bottom
 
 [debug]
