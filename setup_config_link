@@ -129,6 +129,7 @@ bin/todo.sh,bin/todo.sh
 bin/toggle_compton.sh,bin/toggle_compton.sh
 bin/toggle_xcompmgr.sh,bin/toggle_xcompmgr.sh
 bin/touchpad_toggle.sh,bin/touchpad_toggle.sh
+bin/trackpoint_toggle.sh,bin/trackpoint_toggle.sh
 bin/unescj.sh,bin/unescj.sh
 bin/urxvt_float.sh,bin/urxvt_float.sh
 bin/wallpaper.sh,bin/wallpaper.sh
