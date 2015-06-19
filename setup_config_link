@@ -202,6 +202,10 @@ cmus/status_display_program.sh,.cmus/status_display_program.sh
 # E-Mail Client
 mutt/muttrc,.mutt/muttrc
 #                                                                           }}}
+# [turses](https://github.com/dialelo/turses):                              {{{
+# A Twitter client for the console.
+turses/config,.turses/config
+#                                                                           }}}
 # [xmonad](http://xmonad.org/):                                             {{{
 # xmonad is a dynamically tiling X11 window manager that is written
 # and configured in Haskell. In a normal WM, you spend half your time
