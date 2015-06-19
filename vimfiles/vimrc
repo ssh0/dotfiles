@@ -78,7 +78,6 @@ NeoBundle 'rking/ag.vim'
 " ctrlp.vim                                                                 {{{
 NeoBundle 'kien/ctrlp.vim'
 if executable('ag')
-  let g:ctrlp_use_caching=0
   let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
 endif
 nnoremap <Leader>oo :CtrlP<CR>
@@ -236,21 +235,35 @@ colorscheme easy-reading
 " Autocmd:                                                                  {{{
 " -----------------------------------------------------------------------------
 
-" markdown
-autocmd BufRead,BufNewFile *.{mkd,md} set filetype=markdown
-autocmd! FileType markdown hi! def link markdownItalic Normal
+" set title for currently viewing
+" [tmux tabs with name of file open in vim - Stack Overflow]
+" http://stackoverflow.com/questions/15123477/tmux-tabs-with-name-of-file-open-in-vim
+augroup titlesettings
+  autocmd!
+  autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
+  autocmd VimLeave * call system("tmux rename-window zsh")
+  autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
+augroup END
 
-" bib file
-autocmd BufRead,BufNewFile *.bib set filetype=bib
-autocmd Filetype bib let &formatprg="bibclean"
+augroup filetype
+  autocmd!
+  " markdown
+  autocmd BufRead,BufNewFile *.{mkd,md} set filetype=markdown
+  autocmd! FileType markdown hi! def link markdownItalic Normal
+  autocmd FileType markdown set commentstring=<\!--\ %s\ -->
+  " bib file
+  autocmd BufRead,BufNewFile *.bib set filetype=bib
+  autocmd Filetype bib let &formatprg="bibclean"
+  " python
+  autocmd Filetype python let &formatprg="autopep8 -"
+  " html
+  let html_to_html  = "pandoc --from=html --to=markdown"
+  let html_to_html .= " | pandoc --from=markdown --to=html"
+  autocmd Filetype html let &formatprg=html_to_html
+augroup END
 
-" python
-autocmd Filetype python let &formatprg="autopep8 -"
 
-" html
-let html_to_html  = "pandoc --from=html --to=markdown"
-let html_to_html .= " | pandoc --from=markdown --to=html"
-autocmd Filetype html let &formatprg=html_to_html
+
 
 " --------------------------------------------------------------------------}}}
 " Set Options:                                                              {{{
