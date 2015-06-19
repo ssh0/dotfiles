@@ -193,12 +193,8 @@ main = do
        , ((0                       , 0xff61    ), spawn "sh $HOME/bin/screenshot.sh")
        , ((shiftMask               , 0xff61    ), spawn "sh $HOME/bin/screenshot_select.sh")
        , ((0                       , 0x1008ff1d), spawn "ipython qtconsole --matplotlib=inline")
-       , ((modm     .|. controlMask, xK_h      ), spawn "sh $HOME/bin/xte-left.sh")
-       , ((modm     .|. controlMask, xK_l      ), spawn "sh $HOME/bin/xte-right.sh")
-       , ((modm     .|. controlMask, xK_j      ), spawn "sh $HOME/bin/xte-down.sh")
-       , ((modm     .|. controlMask, xK_k      ), spawn "sh $HOME/bin/xte-up.sh")
-       , ((modm     .|. controlMask, xK_Return ), spawn "sh $HOME/bin/xte-click.sh")
-       , ((controlMask             , xK_Escape ), spawn "sh $HOME/bin/touchpad_toggle.sh")
+       , ((controlMask             , xK_Escape ), spawn "bash $HOME/bin/touchpad_toggle.sh")
+       , ((mod1Mask                , xK_Escape ), spawn "bash $HOME/bin/trackpoint_toggle.sh")
        ]
 
 --------------------------------------------------------------------------- }}}
