@@ -82,7 +82,7 @@ _takenote() {
   typeset -A opt_args
   _arguments -s -S \
     "(-l -r -h)-d[set saving directory for specific directory.]: :_files -/" \
-    "(-l -r -h)-o[set the text file's name.]: :( `takenote -l` )" \
+    "(-l -r -h)-o[set the text file's name.]: :( `takenote -l | sed -n 's/\(.*\.md\)/\1/p'` )" \
     "(-l -r -h)-g[open with alternative program (default: vim).]: :(leafpad nano gedit)" \
     "(-d -o -g -r -h)-l[only do \`ls dir\`.]: :" \
     "(-d -o -g -l -h)-r[cd to TODAY dir, or it doesn't exist, to ROOT dir.]: :" \
