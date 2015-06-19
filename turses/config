@@ -1,5 +1,5 @@
 [twitter]
-update_frequency = 30
+update_frequency = 90
 use_https = False
 
 [bindings]
