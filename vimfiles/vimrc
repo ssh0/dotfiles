@@ -197,8 +197,9 @@ NeoBundle 'lervag/vimtex'
 " for Python
 " jedi-vim                                                                  {{{
 NeoBundle 'davidhalter/jedi-vim'
-" jedi completeplt
-let g:jedi#auto_vim_configuration = 0
+" jedi complete
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
 "                                                                           }}}
 " vim-python-pep8-indent                                                    {{{
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {
@@ -211,6 +212,10 @@ NeoBundle 'ujihisa/neco-look', {
       \   'Shougo/neocomplcache.vim',
       \]}
 "                                                                           }}}
+
+" supertab
+NeoBundle 'ervandew/supertab'
+
 " Gista                                                                     {{{
 " easily sent a gista
 NeoBundle 'lambdalisue/vim-gista', {
@@ -258,6 +263,7 @@ augroup filetype
   autocmd Filetype bib let &formatprg="bibclean"
   " python
   autocmd Filetype python let &formatprg="autopep8 -"
+  autocmd FileType python setlocal completeopt-=preview
   " html
   let html_to_html  = "pandoc --from=html --to=markdown"
   let html_to_html .= " | pandoc --from=markdown --to=html"
@@ -292,7 +298,12 @@ set expandtab
 
 "自動的にインデントする
 set autoindent
-" set smartindent
+
+" " wild menu
+" set wildmode=longest:full,full
+" set wildmenu
+
+" set complete+=k
 
 " 入力されているテキストの最大幅
 set textwidth=0
@@ -434,9 +445,6 @@ nnoremap H 0
 " L -> $
 nnoremap L $
 
-" use Tab key for autocompletion
-inoremap <TAB> <C-r>=Smart_TabComplete()<CR>
-
 " move from line head to line end
 nnoremap h <Left>zv
 
@@ -504,7 +512,5 @@ map <Leader>so :source ~/.vimrc<CR>
 nnoremap <Leader>h1 :call Markdown_h1()<CR>
 nnoremap <Leader>h2 :call Markdown_h2()<CR>
 nnoremap <Leader>h3 :call Markdown_h3()<CR>
-
-inoremap <Tab> <C-r>=Smart_TabComplete()<CR>
 
 " --------------------------------------------------------------------------}}}
