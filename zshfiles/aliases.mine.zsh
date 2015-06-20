@@ -20,9 +20,6 @@ alias apt-upg='sudo apt-get upgrade'
 # apt install
 alias apt-ins='sudo apt-get install'
 
-# urxvt -> urxvtc
-alias urxvt='urxvtc'
-
 # git alias to "g"
 alias g='git'
 
