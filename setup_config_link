@@ -208,7 +208,7 @@ turses/config,.turses/config
 turses/sessions,.turses/sessions
 #                                                                           }}}
 # [pyradio](https://github.com/coderholic/pyradio)                          {{{
-/home/shotaro/pyradio/stations.csv,.pyradio/stations.csv
+pyradio/stations.csv,.pyradio/stations.csv
 #                                                                           }}}
 # [xmonad](http://xmonad.org/):                                             {{{
 # xmonad is a dynamically tiling X11 window manager that is written
