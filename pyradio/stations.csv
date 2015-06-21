@@ -1,7 +1,6 @@
-# Find lots more stations at http://www.iheard.com
-#PulsRadio, http://dir.xiph.org/listen/869745/listen.m3u
-#I Love Radio (www.iloveradio.de), http://dir.xiph.org/listen/1924251/listen.m3u
-#ElectricFM.com - America's Real Dance!, http://dir.xiph.org/listen/1400755/listen.m3u
+PulsRadio, http://dir.xiph.org/listen/869745/listen.m3u
+I Love Radio (www.iloveradio.de), http://dir.xiph.org/listen/1924251/listen.m3u
+ElectricFM.com - America's Real Dance!, http://dir.xiph.org/listen/1400755/listen.m3u
 Big B Radio - JPOP, http://50.7.173.162:8089/listen.pls
 Touhou Radio [touhouradio.com], http://37.59.41.178:8000/listen.pls
 J-Jams, http://72.46.136.154:7161/listen.pls
@@ -44,4 +43,4 @@ SomaFM: PopTron! (Pop), http://somafm.com/poptron.pls
 Virgin Radio (Pop), http://www.smgradio.com/core/audio/mp3/live.pls?service=vrbb
 Monkey Radio Groove, http://groove.monkeyradio.org/
 The Chill Lounge (Smooth Jazz), http://208.79.238.78:9046/listen.pls
-
+#Find lots more stations at http://www.iheard.com
