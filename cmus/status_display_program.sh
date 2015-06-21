@@ -1,4 +1,4 @@
 #!/bin/sh
 #
 
-python ./cmus_desktop_notify.py "$*" &
+./cmus_desktop_notify.py "$*" &
