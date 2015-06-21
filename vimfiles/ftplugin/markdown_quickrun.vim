@@ -34,6 +34,10 @@ let g:quickrun_config['mkd'] = {
 \ 'exec': '%c %o %s',
 \}
 
+" QuickRun and view compile result quickly
+nnoremap <silent> <F5> :QuickRun -type markdown<CR>
+vnoremap <silent> <F5> :QuickRun -type markdown/visual<CR>
+
 augroup markdown_pandoc
   autocmd!
   autocmd BufWritePost,FileWritePost *.md :QuickRun -type markdown/update
