@@ -27,6 +27,7 @@ import XMonad.Hooks.DynamicLog         -- for xmobar
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.FadeWindows
 import XMonad.Hooks.ManageDocks        -- avoid xmobar area
+import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.Place
 import XMonad.Layout
 -- import XMonad.Layout.DecorationMadness
@@ -111,8 +112,7 @@ main = do
        , normalBorderColor  = "#212121"
        , focusedBorderColor = colorGreen
        , startupHook        = myStartupHook
-       , manageHook         = placeHook (fixed (0.5, 0.5)) <+>
-                              myManageHookShift <+>
+       , manageHook         = myManageHookShift <+>
                               myManageHookFloat <+>
                               manageDocks
         -- any time Full mode, avoid xmobar area
@@ -238,17 +238,18 @@ myManageHookShift = composeAll
 
 myManageHookFloat = composeAll
         [ className =? "Gimp"             --> doFloat,
-              className =? "mplayer2"         --> doFloat,
-              className =? "mpv"              --> doFloat,
+              className =? "mplayer2"         --> doCenterFloat,
+              className =? "mpv"              --> doCenterFloat,
               className =? "Tk"               --> doFloat,
-              className =? "Screenkey"        --> doFloat,
-              className =? "feh"              --> doFloat,
-              className =? "Display.im6"      --> doFloat,
-              className =? "Shutter"          --> doFloat,
-              className =? "Websearch.py"     --> doFloat,
-              title     =? "urxvt_float"      --> doFloat,
-              className =? "Plugin-container" --> doFloat,
-              title     =? "Speedbar"         --> doFloat]
+              className =? "Screenkey"        --> (doRectFloat $ W.RationalRect 0.7 0.9 0.3 0.1),
+              className =? "feh"              --> doCenterFloat,
+              className =? "Display.im6"      --> doCenterFloat,
+              className =? "Shutter"          --> doCenterFloat,
+              className =? "Thunar"           --> doCenterFloat,
+              className =? "Websearch.py"     --> doCenterFloat,
+              title     =? "urxvt_float"      --> doCenterFloat,
+              className =? "Plugin-container" --> doCenterFloat,
+              title     =? "Speedbar"         --> doCenterFloat]
 
 --------------------------------------------------------------------------- }}}
 -- myLogHook:         loghock settings                                      {{{
