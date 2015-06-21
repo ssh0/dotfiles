@@ -35,7 +35,7 @@ for l in $(grep -Ev '^#' setup_config_link | grep -Ev '^$'); do
   # if dir is not exist: mkdir
   origdir=$(dirname "${orig}")
   if [ ! -d "${origdir}" ]; then
-    info "${dotfile}" "${orig}"
+    info "${orig}" "${dotfile}"
     flag=false
     cecho $red "'${origdir}' doesn't exist."
     echo "[message] mkdir '${origdir}'? (y/n):"
@@ -56,24 +56,24 @@ for l in $(grep -Ev '^#' setup_config_link | grep -Ev '^$'); do
     if [ -L "${orig}" ]; then
       continue
     else
-      info "${dotfile}" "${orig}"
+      info "${orig}" "${dotfile}"
       cecho $yellow "file or directory already exists."
       while true; do
         echo "(d):show diff, (f):overwrite, (b):make backup, (n):do nothing"
         read line
         case $line in
-          [Dd] ) diff -u "${dotfile}" "${orig}"
-            echo "" ;;
+          [Dd] ) echo "diff -u '${dotfile}' '${orig}'"
+                  diff -u "${dotfile}" "${orig}"
+                  echo "" ;;
           [Ff] ) if [ -d "${orig}" ]; then
                     rm -r "${orig}"
                   else
                     rm "${orig}"
                   fi
-                  echo "'${orig}' -> '${dotfile}'"
-                  ln -s "${dotfile}" "${orig}"
+                  ln -sv "${dotfile}" "${orig}"
                   break ;;
-          [Bb] ) ln -sbv --suffix '.orig' "${dotfile}" "${orig}"
-            break ;;
+          [Bb] ) ln -sbv --suffix '.bak' "${dotfile}" "${orig}"
+                  break ;;
           [Nn] ) break ;;
           # ? ) echo "Please answer with d, f, b or n." ;;
         esac
@@ -81,7 +81,6 @@ for l in $(grep -Ev '^#' setup_config_link | grep -Ev '^$'); do
     fi
   else
     # otherwise make symbolic file normally
-    echo "'${orig}' -> '${dotfile}'"
-    ln -si "${dotfile}" "${orig}"
+    ln -sv "${dotfile}" "${orig}"
   fi
 done
