@@ -48,6 +48,8 @@ import XMonad.Layout.Tabbed
 import XMonad.Layout.ThreeColumns      -- for many windows
 import XMonad.Layout.ToggleLayouts     -- Full window at any time
 import XMonad.Layout.TwoPane
+import XMonad.Prompt
+import XMonad.Prompt.Window            -- pops up a prompt with window names
 import XMonad.Util.EZConfig            -- removeKeys, additionalKeys
 import XMonad.Util.Run(spawnPipe)      -- spawnPipe, hPutStrLn
 import XMonad.Util.Run
@@ -151,6 +153,8 @@ main = do
        , ((modm .|. shiftMask  , xK_j      ), windows W.swapDown)
        , ((modm .|. shiftMask  , xK_k      ), windows W.swapUp)
        , ((modm .|. shiftMask  , xK_m      ), windows W.shiftMaster)
+       , ((modm                , xK_g      ), windowPromptGoto defaultXPConfig)
+       , ((modm                , xK_b      ), windowPromptBring defaultXPConfig)
        , ((modm                , xK_w      ), nextScreen)
        ]
 
