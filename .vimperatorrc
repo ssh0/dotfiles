@@ -13,7 +13,7 @@ set titlestring=
 set focuscontent
 
 " set default editor for vim
-set editor='/usr/bin/vim'
+set editor='urxvt -title "urxvt_float" -name "urxvt_float" -e vim'
 
 " activate
 set activate=addons,downloads,extoptions,help,homepage,quickmark,paste
@@ -29,7 +29,7 @@ hi HintElem background-color:#e4efff; color:;
 hi HintActive background-color:#cedef8; color:;
 
 " No GUI
-set gui=nonavigation,tabs
+set gui=nonavigation,notabs
 
 " Set hintcharacter for easily reachable keys
 set hintchars=ifjkasdhguonmerwc
