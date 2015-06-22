@@ -96,7 +96,7 @@ editor =
 editor_bg = black
 
 [styles]
-statuses_in_user_info = 5
+statuses_in_user_info = 3
 tab_template =  {unread} {timeline_name}
 url_format = display
 box_around_status = False
