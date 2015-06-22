@@ -38,13 +38,20 @@ done
 shift $((OPTIND-1))
 
 if [ -f "$1" ]; then
-  name=${1%.*}
+  dir=$(dirname "$1")
+  namewithext=$(basename "$1")
+  name=${namewithext%.*}
 else
+  dir=""
   name="/tmp/$(tr -cd 'a-f0-9' < /dev/urandom | head -c 32)"
 fi
 
 if [ "${output}" = "" ]; then
-  output="${name}.html"
+  if [ -d "${dir}/html" ]; then
+    output="${dir}/html/${name}.html"
+  else
+    output="${dir}/${name}.html"
+  fi
 fi
 
 if $save; then
