@@ -291,7 +291,7 @@ myXPConfig = defaultXPConfig
                 , promptBorderWidth = 1
                 , bgHLight          = colorGreen
                 , fgHLight          = colorNormalbg
-                , position          = Top
+                , position          = Bottom
                 }
 
 --------------------------------------------------------------------------- }}}
