@@ -251,7 +251,7 @@ myManageHookFloat = composeAll
               className =? "Shutter"          --> doCenterFloat,
               className =? "Thunar"           --> doCenterFloat,
               className =? "Websearch.py"     --> doCenterFloat,
-              title     =? "urxvt_float"      --> doSideFloat SC,
+              title     =? "urxvt_float"      --> doCenterFloat,
               className =? "Plugin-container" --> doCenterFloat,
               title     =? "Speedbar"         --> doCenterFloat]
 
