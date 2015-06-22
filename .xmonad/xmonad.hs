@@ -153,8 +153,8 @@ main = do
        , ((modm .|. shiftMask  , xK_j      ), windows W.swapDown)
        , ((modm .|. shiftMask  , xK_k      ), windows W.swapUp)
        , ((modm .|. shiftMask  , xK_m      ), windows W.shiftMaster)
-       , ((modm                , xK_g      ), windowPromptGoto defaultXPConfig)
-       , ((modm                , xK_b      ), windowPromptBring defaultXPConfig)
+       , ((modm                , xK_g      ), windowPromptGoto myXPConfig)
+       , ((modm                , xK_b      ), windowPromptBring myXPConfig)
        , ((modm                , xK_w      ), nextScreen)
        ]
 
@@ -277,6 +277,21 @@ wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws,t]
                 , ppOutput          = putStrLn
                 , ppWsSep           = ""
                 , ppSep             = " : "
+                }
+
+--------------------------------------------------------------------------- }}}
+-- myXPConfig:        XPConfig                                            {{{
+
+myXPConfig = defaultXPConfig
+                { font              = "xft:TakaoGothic:size=12:antialias=true"
+                , fgColor           = colorfg
+                , bgColor           = colorNormalbg
+                , borderColor       = colorNormalbg
+                , height            = 20
+                , promptBorderWidth = 1
+                , bgHLight          = colorGreen
+                , fgHLight          = colorNormalbg
+                , position          = Top
                 }
 
 --------------------------------------------------------------------------- }}}
