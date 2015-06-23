@@ -80,8 +80,8 @@ borderwidth = 0
 gapWidth = 6
 gapWidthU = 16
 gapWidthD = 16
-gapWidthL = 12
-gapWidthR = 12
+gapWidthL = 13
+gapWidthR = 13
 
 --------------------------------------------------------------------------- }}}
 -- Define keys to remove                                                    {{{
