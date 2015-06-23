@@ -140,6 +140,7 @@ bin/xte-down.sh,bin/xte-down.sh
 bin/xte-left.sh,bin/xte-left.sh
 bin/xte-right.sh,bin/xte-right.sh
 bin/xte-up.sh,bin/xte-up.sh
+bin/youtube-dl_listwrap,bin/youtube-dl_listwrap
 #                                                                           }}}
 # [ranger](http://ranger.nongnu.org/):                                      {{{
 # ranger is a file manager with VI key bindings.
