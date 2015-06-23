@@ -243,7 +243,7 @@ colorscheme easy-reading
 augroup titlesettings
   autocmd!
   autocmd BufEnter * call system("tmux rename-window " . "'[vim] " . expand("%:t") . "'")
-  autocmd VimLeave * call system("tmux rename-window zsh")
+  " autocmd VimLeave * call system("tmux rename-window zsh")
   autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
 augroup END
 
@@ -481,10 +481,11 @@ nnoremap gF :tabedit <C-r><C-f><CR>
 " multi tab jamp
 nnoremap <C-]> g<C-]>
 
-" 日本語入力がオンのままでもインサートモードに移行できるように(Enterキーは必要)
+" for Japanese IME mode"{{{
 nnoremap あ a
 nnoremap い i
 nnoremap う u
+nnoremap え e
 nnoremap お o
 nnoremap っd dd
 nnoremap っy yy
@@ -492,6 +493,9 @@ nnoremap し” ci"
 nnoremap し’ ci'
 nnoremap せ ce
 inoremap <silent> っj <ESC>
+
+nnoremap っz zz
+"}}}
 
 " quote and bracket
 inoremap {} {}<Left>
