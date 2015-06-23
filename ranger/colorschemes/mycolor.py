@@ -19,7 +19,9 @@ class Default(ColorScheme):
             else:
                 attr = normal
             if context.empty or context.error:
-                bg = white
+                bg = red
+            if context.empty:
+                fg = black
             if context.border:
                 fg = 245
             if context.media:
