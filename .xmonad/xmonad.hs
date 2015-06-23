@@ -77,11 +77,11 @@ colorfg        = "#9fa8b1"
 borderwidth = 0
 
 -- gapwidth
-gapWidth = 2
-gapWidthU = 10
-gapWidthD = 10
-gapWidthL = 10
-gapWidthR = 10
+gapWidth = 6
+gapWidthU = 20
+gapWidthD = 20
+gapWidthL = 20
+gapWidthR = 20
 
 --------------------------------------------------------------------------- }}}
 -- Define keys to remove                                                    {{{
