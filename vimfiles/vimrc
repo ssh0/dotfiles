@@ -272,8 +272,9 @@ augroup END
 " Set Options:                                                              {{{
 " -----------------------------------------------------------------------------
 
-" 行番号は表示しない
-set nonumber
+" 行番号
+set number
+set relativenumber
 
 " Don't redraw screen during macros
 set lazyredraw
