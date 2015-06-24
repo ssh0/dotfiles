@@ -13,7 +13,7 @@ set titlestring=
 set focuscontent
 
 " set default editor for vim
-set editor='urxvt -g 90x25 -title "urxvt_float" -name "urxvt_float" -e vim'
+set editor='urxvt -g 90x15 -title "urxvt_float" -name "urxvt_float" -e vim'
 
 " activate
 set activate=addons,downloads,extoptions,help,homepage,quickmark,paste
