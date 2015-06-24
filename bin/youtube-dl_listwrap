@@ -35,12 +35,14 @@ if [ $# = 0 ];then
 fi
 
 if ${save}; then
-  title=$(youtube-dl -q -e "$1")
+  title=$(youtube-dl -i -q -e "$1")
   if [ ! -f "${listfile}" ]; then
     touch "${listfile}"
   fi
-  echo "# $title" >> "${listfile}"
+  for t in "$title"; do
+    echo "# $t" >> "${listfile}"
+  done
   echo "$1" >> "${listfile}"
 fi
 
-youtube-dl -o "%(title)s.%(ext)s" "$@"
+youtube-dl -i -o "%(title)s.%(ext)s" "$@"
