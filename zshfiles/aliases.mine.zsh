@@ -171,6 +171,86 @@ compdef __youtube_dl youtube-dl
 compdef __youtube_dl youtube-dl_listwrap
 
 #---------------------------------------------------------------------------}}}
+# recordmydesktop ceompletion                                               {{{
+#------------------------------------------------------------------------------
+
+_recordmydesktop() {
+  local curcontext="$curcontext" diropts prev numopts
+  typeset -A opt_args
+  numopts="-x|-y|--channels|--freq|--buffer-size|--ring-buffer-size|--delay"
+  ddir="/media/shotaro/STOCK/Videos/mycast"
+
+  prev=$words[CURRENT-1]
+  if [[ ${prev} =~ ${numopts} ]]; then
+    _arguments "*: :"
+  elif [[ ${prev} == "-o" ]]; then
+    _path_files -W ddir
+  elif [[ ${prev} == "--rescue" ]]; then
+    _path_files
+  elif [[ ${prev} == "--workdir" ]]; then
+    _path_files -/
+  elif [[ ${prev} == "--width" ]]; then
+    _arguments "*: :(1920 1680 1440 1280 1152 1024 800 720 640)"
+  elif [[ ${prev} == "--height" ]]; then
+    _arguments "*: :(1080 1050 1024 960 900 864 768 600 576 480)"
+  elif [[ ${prev} == "--dummy-cursor" ]]; then
+    _arguments "*: :(black white)"
+  elif [[ ${prev} == "--fps" ]]; then
+    _arguments "*: :(60 30 10)"
+  elif [[ ${prev} == "--v_quality" ]]; then
+    _arguments "*: :(0 63)"
+  elif [[ ${prev} == "--v_bitrate" ]]; then
+    _arguments "*: :(45000 2000000)"
+  elif [[ ${prev} == "--s_quality" ]]; then
+    _arguments "*: :(-1 0 5 10)"
+  elif [[ ${prev} == "--pause-shortcut" ]]; then
+    _arguments "*: :'Control+Mod1+p'"
+  elif [[ ${prev} == "--stop-shortcut" ]]; then
+    _arguments "*: :'Control+Mod1+s'"
+  else
+    _arguments -s -S\
+      '(--help)--help[Print help summary and exit.]: :' \
+      '(--version)--version[Print program version and exit.]: :' \
+      '(--print-config)--print-config[Print info about options selected during compilation and exit.]' \
+      '(--windowid)--windowid[id of window to be recorded.]' \
+      '(--display)--display[Display to connect to.]' \
+      '(-x)-x[Offset in x direction.]' \
+      '(-y)-y[Offset in y direction.]' \
+      '(--width)--width[Width of recorded window.]' \
+      '(--height)--height[Height of recorded window.]' \
+      '(--dummy-cursor)--dummy-cursor[Draw a dummy cursor, instead of the normal one.Value of color can be \"black\" or \"white\".]' \
+      '(--no-cursor)--no-cursor[Disable drawing of the cursor.]' \
+      '(--no-shared)--no-shared[Disable usage of MIT-shared memory extension (Not Recommended).]' \
+      '(--full-shots)--full-shots[Take full screenshot at every frame(Not recomended!).]' \
+      '(--follow-mouse)--follow-mouse[When this option is enabled, the capture area follows the mouse cursor.]' \
+      '(--quick-subsampling)--quick-subsampling[Do subsampling of the chroma planes by discarding extra pixels.]' \
+      '(--fps)--fps[A positive number denoting desired framerate.]' \
+      '(--channels)--channels[A positive number denoting desired sound channels in recording.]' \
+      '(--freq)--freq[A positive number denoting desired sound frequency.]' \
+      '(--buffer-size)--buffer-size[A positive number denoting the desired sound buffer size(in frames, when using ALSA or OSS).]' \
+      '(--ring-buffer-size)--ring-buffer-size[A float number denoting the desired ring buffer size (in seconds,when using JACK only).]' \
+      '(--device)--device[Sound device(default hw:0,0 or /dev/dsp, depending on whether ALSA or OSS is used).]' \
+      '(--use-jack)--use-jack[Record audio from the specified list of space-separated jack ports.]' \
+      '(--no-sound)--no-sound[Do not record sound.]' \
+      '(--on-the-fly-encoding)--on-the-fly-encoding[Encode the audio-video data, while recording.]' \
+      '(--v_quality)--v_quality[A number from 0 to 63 for desired encoded video quality(default 63).]' \
+      '(--v_bitrate)--v_bitrate[A number from 45000 to 2000000 for desired encoded video bitrate(default 45000).]' \
+      '(--s_quality)--s_quality[Desired audio quality(-1 to 10).]' \
+      '(--rescue)--rescue[Encode cache data from a previous session, into an Ogg/Theora+Vorbis file.]' \
+      '(--no-wm-check)--no-wm-check[When a 3d compositing window manager is detected the program will function as if the --full-shots option has been specified.]' \
+      '(--no-frame)--no-frame[If you do not wish the frame to appear, use this option.]' \
+      '(--pause-shortcut)--pause-shortcut[Shortcut that will be used for pausing or unpausing the recording. Default is Control+Mod1+p (Mod1 usually corresponds to left Alt).]' \
+      '(--stop-shortcut)--stop-shortcut[Shortcut that will be used to stop the recording. Default is Control+Mod1+s.]' \
+      '(--compress-cache)--compress-cache[Image data are cached with a light compression.]' \
+      '(--workdir)--workdir[Location where a temporary directory will be created to hold project files(default /tmp).]' \
+      '(--delay)--delay[Number of secs(default),minutes or hours before capture starts(number can be float).]' \
+      '(--overwrite)--overwrite[If there is already a file with the same name, delete it.]'
+  fi
+}
+
+compdef _recordmydesktop recordmydesktop
+
+#---------------------------------------------------------------------------}}}
 # tmuxinator                                                                {{{
 #------------------------------------------------------------------------------
 
