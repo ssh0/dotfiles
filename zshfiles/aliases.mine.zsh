@@ -126,7 +126,7 @@ __youtube_dl() {
         _arguments "*: :(\
           '%(title)s.%(ext)s' \
           '%(autonumber)s - %(title)s.%(ext)s' \
-          '%(extractor)s/%(title)s.%(ext)s' \
+          '%(playlist_title)s/%(title)s.%(ext)s' \
           '${ddir}/%(title)s.%(ext)s' \
           '${ddir}/%(autonumber)s - %(title)s.%(ext)s' \
           '${ddir}/%(extractor)s/%(title)s.%(ext)s' \
@@ -166,6 +166,9 @@ __youtube_dl() {
 }
 
 compdef __youtube_dl youtube-dl
+
+# custom wrapper
+compdef __youtube_dl youtube-dl_listwrap
 
 #---------------------------------------------------------------------------}}}
 # tmuxinator                                                                {{{
