@@ -6,7 +6,6 @@
 #  \__,_|_|_|\__,_|___/\___||___/
 #
 # written by Shotaro Fujimoto (https://github.com/ssh0)
-#
 #------------------------------------------------------------------------------
 # Alias                                                                     {{{
 #------------------------------------------------------------------------------
@@ -436,6 +435,7 @@ cfg-ranger-commands() { $EDITOR ~/.config/ranger/commands.py ;} # scripts
 cfg-tmux() { $EDITOR ~/.tmux.conf ;}
 cfg-tmuxinator() { $EDITOR ~/.tmuxinator/ ;}
 cfg-turses() { $EDITOR ~/.turses/config ;}
+cfg-vimcolor() { $EDITOR ~/.vim/bundle/easy-reading.vim/colors/easy-reading.vim ;}
 cfg-vimrc() { $EDITOR ~/.vimrc ;}
 cfg-xdefaults() { $EDITOR ~/.Xdefaults ;}
 cfg-Xmodmap() { $EDITOR ~/.Xmodmap ;}

@@ -8,7 +8,7 @@
 #                                                                             #
 ###############################################################################
 # written by Shotaro Fujimoto (https://github.com/ssh0)
-# -----------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 # This file is config file for setup.sh
 # You can comment out by adding "#" at the beginning of the line.
 # And an empty line is ignored by setup.sh.
@@ -19,7 +19,7 @@
 # the script automatically add directory information to the file path.
 # So, you should write like below
 #     .vimrc,.vimrc
-# -----------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 # ~/.Xmodmap:                                                               {{{
 # xmodmap is a utility for modifying keymaps and pointing button
 # mappings in Xorg.
