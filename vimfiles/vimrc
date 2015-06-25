@@ -21,7 +21,7 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-" <Space>をmapleaderに
+" use <Space> for mapleader
 let mapleader = "\<Space>"
 let localleader = "\<Space>"
 
@@ -44,7 +44,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'ssh0/easy-reading.vim'
 " It's my color theme.
 " Project directory:
-" ($HOME/Workspace/5/easy-reading.vim/colors/easy-reading.vim)
+" ($HOME/.vim/bundle/easy-reading.vim/colors/easy-reading.vim)
 "                                                                           }}}
 
 " Surround
@@ -112,6 +112,7 @@ NeoBundle 'kshenoy/vim-signature'
 " Highlight signs of marks dynamically based upon state indicated by
 " vim-gitgutter or vim-signify
 let g:SignatureMartTextHLDynamic = 1
+let g:SignatureMarkTextHL = "'SignColumn'"
 "                                                                           }}}
 " Folding                                                                   {{{
 NeoBundle 'LeafCage/foldCC'
@@ -132,13 +133,13 @@ let g:quickrun_no_default_key_mapping = 0
 "                                                                           }}}
 " vim-template                                                              {{{
 NeoBundle 'thinca/vim-template'
-" <%= %> の中身をvimで評価して展開する:
+" inside <%= %> is estimated by vim and expanded automatically
 autocmd User plugin-template-loaded
   \ silent %s/<%=\(.\{-}\)%>/\=eval(submatch(1))/ge
-" テンプレートに以下のように書いておくと日付に展開されます。
+" if you write like below, the string is expanded to date.
 " <%= strftime('%Y-%m-%d') %>
 
-" <+CURSOR+> にカーソルを移動する
+" move the cursor to <+CURSOR+>
 autocmd User plugin-template-loaded
   \    if search('<+CURSOR+>')
   \  |   execute 'normal! "_da>'
@@ -273,63 +274,57 @@ augroup END
 " Set Options:                                                              {{{
 " -----------------------------------------------------------------------------
 
-" 行番号
+" number line
 set number
 set relativenumber
+set numberwidth=3
 
 " Don't redraw screen during macros
 set lazyredraw
 
-" マウスを有効にする
+" use mouse
 if has('mouse')
   set mouse=a
 endif
 
-"カーソルキーで行末／行頭の移動可能に設定
 set whichwrap=b,s,[,],<,>
 
-"Tab幅を設定
+" Default tab width
 set softtabstop=4
 set shiftwidth=4
 set expandtab
 
-"自動的にインデントする
+" autoindent
 set autoindent
 
-" " wild menu
-" set wildmode=longest:full,full
-" set wildmenu
-
-" set complete+=k
-
-" 入力されているテキストの最大幅
+" Maximum width of text that is being inserted.
 set textwidth=0
 
-"タイトルを表示
+" show title
 set title
 
-"コマンドラインの高さ (gvimはgvimrcで指定)
+" height of commandline
 set cmdheight=1
 set laststatus=2
 
 " modeline: ファイルごとのoptionを使用する
 set modeline
 
-"コマンドをステータス行に表示しない
+" don't show command in status line
 set noshowcmd
 
-"Tab、行末の半角スペース、行の終わりを明示的に表示する
+" Show Tab and Space at end of the line
 set list
 set listchars=tab:▸\ ,trail:~
 
 " showbreaks
 set showbreak=\ ↪
 
-" 対応する括弧を表示
+" highlight mathched parenthesis
 set showmatch
 set matchtime=1
 
-" 検索結果のハイライト
+" highlighted search index
 set hlsearch
 
 " Show matches while typing
@@ -340,27 +335,27 @@ set fdm=marker " zf(def) zd(delete) zo(open) zc(close)
 set foldcolumn=1
 set fillchars=vert:\|
 
-" バックアップファイルを作成しない
+" don't use backup or swap files
 set nowritebackup
 set nobackup
 set noswapfile
 
-" 無名クリップボードを使う(他のアプリケーションと連動)
+" use unnamed register (for outer programs)
 set clipboard=unnamedplus,autoselect
 
-" 80文字で折り返すようにする(PEP8)
+" wrapped by 80 characters(PEP8)
 set colorcolumn=80
 
-" 補完メニューの高さを指定する
+" set completion popup's height
 set pumheight=10
 
-" スクロール送りを開始する前後の行数を指定
+" Minimal number of screen lines to keep above and below the cursor.
 set scrolloff=0
 
-" Vimdiffで毎回左右分割する
+" always split vertically when using vimdiff
 set diffopt=vertical
 
-" ESCの反応を素早くする
+" less timeoutlen
 set timeout timeoutlen=400 ttimeoutlen=75
 
 " --------------------------------------------------------------------------}}}
@@ -397,30 +392,6 @@ endfunction
 
 function! Markdown_h3()
   normal! I### 
-endfunction
-
-" Smart tab completion
-" http://vim.wikia.com/wiki/Smart_mapping_for_tab_completion
-function! Smart_TabComplete()
-  let line = getline('.')                    " current line
-
-  let substr = strpart(line, -1, col('.')+1) " from the start of the current
-                                             " line to one character right
-                                             " of the cursor
-  let substr = matchstr(substr, "[^ \t]*$")  " word till cursor
-  if (strlen(substr)==0)                     " nothing to match on empty string
-    return "\<tab>"
-  endif
-  let has_period = match(substr, '\.') != -1 " position of period, if any
-  let has_slash = match(substr, '\/') != -1  " position of slash, if any
-  if (!has_period && !has_slash)
-    return "\<C-X>\<C-P>"                    " existing text matching
-  elseif ( has_slash )
-    return "\<C-X>\<C-F>"                    " file matching
-  else
-    " return "\<C-X>\<C-O>"                    " plugin matching
-    return "\<C-P>"                          " default completion
-  endif
 endfunction
 
 " --------------------------------------------------------------------------}}}
