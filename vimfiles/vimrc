@@ -1,13 +1,15 @@
-"        _
-" __   _(_)_ __ ___  _ __ ___
-" \ \ / / | '_ ` _ \| '__/ __|
-"  \ V /| | | | | | | | | (__
-"   \_/ |_|_| |_| |_|_|  \___|
-"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                _                                            "
+"                         __   _(_)_ __ ___  _ __ ___                         "
+"                         \ \ / / | '_ ` _ \| '__/ __|                        "
+"                          \ V /| | | | | | | | | (__                         "
+"                           \_/ |_|_| |_| |_|_|  \___|                        "
+"                                                                             "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " written by Shotaro Fujimoto (https://github.com/ssh0)
-" -----------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " Initial Setting:                                                          {{{
-" -----------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 
 " Note: Skip initialization for vim-tiny or vim-small.
 if !1 | finish | endif
@@ -25,9 +27,9 @@ endif
 let mapleader = "\<Space>"
 let localleader = "\<Space>"
 
-" --------------------------------------------------------------------------}}}
+"---------------------------------------------------------------------------}}}
 " Plugin Manager NeoBundle:                                                 {{{
-" -----------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
@@ -38,9 +40,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.
-" Note: Yout don't set neobundle setting in .gvimrc!
+" Note: You don't set neobundle setting in .gvimrc!
 
-" colorscheme                                                               {{{
+" color scheme                                                               {{{
 NeoBundle 'ssh0/easy-reading.vim'
 " It's my color theme.
 " Project directory:
@@ -82,7 +84,7 @@ endif
 nnoremap <Leader>oo :CtrlP<CR>
 nnoremap <Leader>om :CtrlPMixed<CR>
 nnoremap <Leader>or :CtrlPMRUFiles<CR>
-" Onece CtrlP is open:
+" Once CtrlP is open:
 " * Press `<F5>` to purge the cache for the current directory to get new  
 "   files, remove deleted files and apply new ignore options.
 " * Press `<c-f>` and `<c-b>` to cycle between modes.
@@ -234,9 +236,9 @@ filetype plugin indent on
 
 colorscheme easy-reading
 
-" --------------------------------------------------------------------------}}}
+"---------------------------------------------------------------------------}}}
 " Autocmd:                                                                  {{{
-" -----------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 
 " set title for currently viewing
 " [tmux tabs with name of file open in vim - Stack Overflow]
@@ -270,9 +272,9 @@ augroup END
 
 
 
-" --------------------------------------------------------------------------}}}
+"---------------------------------------------------------------------------}}}
 " Set Options:                                                              {{{
-" -----------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 
 " number line
 set number
@@ -307,7 +309,7 @@ set title
 set cmdheight=1
 set laststatus=2
 
-" modeline: ファイルごとのoptionを使用する
+" modeline:
 set modeline
 
 " don't show command in status line
@@ -332,7 +334,7 @@ set incsearch
 
 " " folding
 set fdm=marker " zf(def) zd(delete) zo(open) zc(close)
-set foldcolumn=1
+set foldcolumn=0
 set fillchars=vert:\|
 
 " don't use backup or swap files
@@ -358,9 +360,9 @@ set diffopt=vertical
 " less timeoutlen
 set timeout timeoutlen=400 ttimeoutlen=75
 
-" --------------------------------------------------------------------------}}}
+"---------------------------------------------------------------------------}}}
 " Indent:                                                                   {{{
-" -----------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 
 autocmd FileType sh         setlocal sw=2 sts=2 ts=2 et
 autocmd FileType apache     setlocal sw=4 sts=4 ts=4 et
@@ -378,9 +380,9 @@ autocmd FileType yaml       setlocal sw=2 sts=2 ts=2 et
 autocmd FileType zsh        setlocal sw=2 sts=2 ts=2 et
 autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
 
-" --------------------------------------------------------------------------}}}
+"---------------------------------------------------------------------------}}}
 " My function:                                                              {{{
-" -----------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 
 function! Markdown_h1()
   normal! VypVr=
@@ -394,9 +396,9 @@ function! Markdown_h3()
   normal! I### 
 endfunction
 
-" --------------------------------------------------------------------------}}}
+"---------------------------------------------------------------------------}}}
 " Key Bindings:                                                             {{{
-" -----------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 
 " Escape by jj
 inoremap <silent> jj <ESC>
@@ -406,7 +408,7 @@ nnoremap <silent> <Leader>l :setlocal relativenumber! number!<CR>
 
 " move in wrapped line by arrow key
 nnoremap <Down> gj
-nnoremap <Up>   gk
+nnoremap <Up> gk
 
 " H -> 0
 nnoremap H 0
@@ -435,7 +437,7 @@ inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 " for typo
-inoremap <C-;> <Right>
+inoremap <C-\;> <Right>
 
 " move between windows by easy key mapping
 nnoremap <silent> <C-h> :wincmd h<CR>
@@ -487,4 +489,4 @@ nnoremap <Leader>h1 :call Markdown_h1()<CR>
 nnoremap <Leader>h2 :call Markdown_h2()<CR>
 nnoremap <Leader>h3 :call Markdown_h3()<CR>
 
-" --------------------------------------------------------------------------}}}
+"---------------------------------------------------------------------------}}}
