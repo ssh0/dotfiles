@@ -174,7 +174,7 @@ prompt_init() {
 ## Main prompt
 build_prompt() {
   RETVAL=$?
-  prompt_init
+  # prompt_init
   prompt_virtualenv
   # prompt_context
   prompt_dir
@@ -187,3 +187,4 @@ PROMPT='
 %{%f%b%k%}$(build_prompt)%{$reset_color%}
 %{$fg_bold[green]%}: %{$reset_color%}'
 
+RPROMPT=''
