@@ -1,10 +1,11 @@
 " LaTeX Quickrun
 let g:quickrun_config['tex'] = {
-\ 'command' : 'latexmk',
+\ 'command' : 'latexmk_wrapper',
 \ 'outputter' : 'error',
 \ 'outputter/error/success' : 'null',
 \ 'outputter/error/error' : 'quickfix',
-\ 'srcfile' : expand("%"),
+\ 'srcfile' : expand("%s"),
+\ 'args' : expand("%:p:h:gs?\\\\?/?"),
 \ 'hook/sweep/files' : [
 \                      '%S:p:r.aux',
 \                      '%S:p:r.bbl',
@@ -13,9 +14,17 @@ let g:quickrun_config['tex'] = {
 \                      '%S:p:r.fdb_latexmk',
 \                      '%S:p:r.fls',
 \                      '%S:p:r.log',
-\                      '%S:p:r.out'
+\                      '%S:p:r.out',
+\                      '%a/main.aux',
+\                      '%a/main.bbl',
+\                      '%a/main.blg',
+\                      '%a/main.dvi',
+\                      '%a/main.fdb_latexmk',
+\                      '%a/main.fls',
+\                      '%a/main.log',
+\                      '%a/main.out'
 \                      ],
-\ 'exec': '%c %o %a %s',
+\ 'exec': '%c %s',
 \}
 
 " 部分的に選択してコンパイル
@@ -60,7 +69,7 @@ let g:quickrun_config.tmptex = {
 vnoremap <silent><buffer> <F5> :QuickRun -mode v -type tmptex<CR>
 
 " QuickRun and view compile result quickly (but don't preview pdf file)
-nnoremap <silent><F5> :QuickRun<CR>
+nnoremap <silent><F5> :QuickRun -type tex<CR>
 
 " set some useful macros
 " in command mode, ^r + macrokey
