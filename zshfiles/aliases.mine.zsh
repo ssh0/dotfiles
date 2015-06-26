@@ -170,7 +170,7 @@ compdef __youtube_dl youtube-dl
 compdef __youtube_dl youtube-dl_listwrap
 
 #---------------------------------------------------------------------------}}}
-# recordmydesktop ceompletion                                               {{{
+# recordmydesktop completion                                               {{{
 #------------------------------------------------------------------------------
 
 _recordmydesktop() {
@@ -248,6 +248,90 @@ _recordmydesktop() {
 }
 
 compdef _recordmydesktop recordmydesktop
+
+#---------------------------------------------------------------------------}}}
+# pandoc completion                                                         {{{
+#------------------------------------------------------------------------------
+# by https://gist.github.com/sky-y/3334048
+
+_pandoc() {
+  typeset -A opt_args
+  local context state line
+
+  _arguments -s -S \
+    '(-f+ --from=+)'{-r+,--read=+}'[Specify input format.]:FORMAT:(native json markdown textile rst html docbook latex)'\
+    '(-r+,--read=+)'{-f+,--from=+}'[Specify input format.]:FORMAT:(native json markdown textile rst html docbook latex)'\
+    '(-t+ --to=+)'{-w+,--write=+}'[Specify output format.]:FORMAT:(native json plain markdown rst html html5 latex beamer context man mediawiki textile org texinfo docbook opendocument odt docx epub asciidoc slidy slideous dzslides s5 rtf)'\
+    '(-w+ --write=+)'{-t+,--to=+}'[Specify output format.]:FORMAT:(native json plain markdown rst html html5 latex beamer context man mediawiki textile org texinfo docbook opendocument odt docx epub asciidoc slidy slideous dzslides s5 rtf)'\
+    {-o+,--output=+}'[Write output to FILE instead of stdout.]:FILE:_files'\
+      '--data-dir=+[Specify the user data directory to search for pandoc data files.]:DIRECTORY:_files -/'\
+      {-v,--version}'[Print version.]'\
+        {-h,--help}'[Show usage message.]'\
+          '--strict[Use strict markdown syntax,with no pandoc extensions or variants.]'\
+          {-R,--parse-raw}'[Parse untranslatable HTML codes and LaTeX environments as raw HTML or LaTeX,instead of ignoring them. ]'\
+            {-S,--smart}'[Produce typographically correct output.]'\
+              '--old-dashes[Selects the pandoc <= 1.8.2.1 behavior for parsing smart dashes.]'\
+              '--base-header-level=+[pecify the base level for headers (defaults to 1)]:NUMBER:'\
+              '--indented-code-classes=+[Specify classes to use for indented code blocks.]:CLASSES:'\
+              '--normalize[Normalize the document after reading.]'\
+              {-p,--preserve-tabs}'[Preserve tabs instead of converting them to spaces (the default).]'\
+                '--tab-stop=+[Specify the number of spaces per tab (default is 4).]:NUMBER:'\
+                {-s,--standalone}'[Produce output with an appropriate header and footer.]'\
+                  '--template=+[Use FILE as a custom template for the generated document.]:FILE:_files'\
+                  {-V+,--variable=+}'[Set the template variable KEY to the value VAL when rendering the document in standalone mode.]:KEY[=VAL]:'\
+                    {-D+,--print-default-template=+}'[Print the default template for an output FORMAT.]:FORMAT:(native json plain markdown rst html html5 latex beamer context man mediawiki textile org texinfo docbook opendocument odt docx epub asciidoc slidy slideous dzslides s5 rtf)'\
+                      '--no-wrap[Disable text wrapping in output. By default,text is wrapped appropriately for the output format.]'\
+                      '--columns=+[Specify length of lines in characters (for text wrapping).]:NUMBER:'\
+                      {--toc,--table-of-contents}'[Include an automatically generated table of contents in the output document. ]'\
+                        '--no-highlight[Disables syntax highlighting for code blocks and inlines,even when a language attribute is given.]'\
+                        '--highlight-style[Specifies the coloring style to be used in highlighted source code.]:STYLE:(pygments kate monochrome espresso zenburn haddock tango)'\
+                        {-H,--include-in-header}'[Include contents of FILE, verbatim, at the end of the header.]:FILE:_files'\
+                          {-B,--include-before-body}'[Include contents of FILE, verbatim, at the beginning of the document body.]:FILE:_files'\
+                            {-A,--include-after-body}'[Include contents of FILE, verbatim, at the end of the document body.]:FILE:'\
+                              '--self-contained[Produce a standalone HTML file with no external dependencies.]'\
+                              '--offline[Deprecated synonym for --self-contained.]'\
+                              {-5,--html5}'[Produce HTML5 instead of HTML4. ]'\
+                                '--ascii[Use only ascii characters in output.]'\
+                                '--reference-links[Use reference-style links, rather than inline links, in writing markdown or reStructuredText. ]'\
+                                '--atx-headers[Use ATX style headers in markdown output. ]'\
+                                '--chapters[Treat top-level headers as chapters in LaTeX, ConTeXt, and DocBook output.]'\
+                                {-N,--number-sections}'[Number section headings in LaTeX, ConTeXt, or HTML output.]'\
+                                  '--no-tex-ligatures[Do not convert quotation marks,apostrophes,and dashes to the TeX ligatures when writing LaTeX or 100  6862  100  6862    0     0  31764      0 --:--:-- --:--:-- --:--:-- 31916
+  ConTeXt. ]'\
+    '--listings[Use listings package for LaTeX code blocks]'\
+    {-i,--incremental}'[Make list items in slide shows display incrementally (one by one). ]'\
+      '--slide-level=+[Specifies that headers with the specified level create slides (for beamer,s5,slidy,slideous,dzslides). ]:NUMBER:'\
+      '--section-divs[Wrap sections in <div> tags (or <section> tags in HTML5),and attach identifiers to the enclosing <div> (or <section>) rather than the header itself. ]'\
+      '--email-obfuscation=+[Specify a method for obfuscating mailto: links in HTML documents.]:METHOD:(none javascript references)'\
+      '--id-prefix=+[Specify a prefix to be added to all automatically generated identifiers in HTML output. ]:STRING:'\
+      {-T,--title-prefix=+}'[Specify STRING as a prefix at the beginning of the title that appears in the HTML header.]:STRING:'\
+        {-c,--css}'[Link to a CSS style sheet.]:URL:'\
+          '--reference-odt=+[Use the specified file as a style reference in producing an ODT. ]:FILE:_files'\
+          '--reference-docx=+[Use the specified file as a style reference in producing an DOCX. ]:FILE:_files'\
+          '--epub-stylesheet=+[Use the specified CSS file to style the EPUB. If no stylesheet is specified,pandoc will look for a file epub.]:FILE:_files'\
+          '--epub-cover-image=+[Use the specified image as the EPUB cover. ]:FILE:_files'\
+          '--epub-metadata=+[Look in the specified XML file for metadata for the EPUB. ]:FILE:_files:'\
+          '--epub-embed-font=+[Embed the specified font in the EPUB. ]:FILE:_files'\
+          '--bibliography=+[Specify bibliography database to be used in resolving citations.]:FILE:_files'\
+          '--csl=+[Specify CSL style to be used in formatting citations and the bibliography. ]:FILE:_files'\
+          '--citation-abbreviations=+[Specify a file containing abbreviations for journal titles and other bibliographic fields.]:FILE:_files'\
+          '--natbib[Use natbib for citations in LaTeX output.]'\
+          '--biblatex[Use biblatex for citations in LaTeX output.]'\
+          {-m+,--latexmathml=+}'[Use the LaTeXMathML script to display embedded TeX math in HTML output. ]:URL:'\
+            '--mathml=+[Convert TeX math to MathML (in docbook as well as html and html5).]:URL:'\
+            '--jsmath=+[Use jsMath to display embedded TeX math in HTML output.]:URL:'\
+            '--mathjax=+[Use MathJax to display embedded TeX math in HTML output.]'\
+            '--gladtex[Enclose TeX math in <eq> tags in HTML output.]'\
+            '--mimetex=+[Render TeX math using the mimeTeX CGI script.]:URL:'\
+            '--webtex=+[Render TeX formulas using an external script that converts TeX formulas to images.]:URL:'\
+            '--dump-args[Print information about command-line arguments to stdout,then exit.]'\
+            '--ignore-args[Ignore command-line arguments.]'\
+            && return 0
+
+  return 1
+}
+
+compdef _pandoc pandoc
 
 #---------------------------------------------------------------------------}}}
 # tmuxinator                                                                {{{
