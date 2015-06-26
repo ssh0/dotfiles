@@ -105,6 +105,7 @@ bin/mkpdf.sh,bin/mkpdf.sh
 bin/mplayer_term_wrapper.sh,bin/mplayer_term_wrapper.sh
 bin/navi1.sh,bin/navi1.sh
 bin/navi.sh,bin/navi.sh
+bin/pandoc_latexwrapper.sh,bin/pandoc_latexwrapper.sh
 bin/parsrj.sh,bin/parsrj.sh
 bin/parsrx.sh,bin/parsrx.sh
 bin/pdftoxbb.sh,bin/pdftoxbb.sh
