@@ -259,6 +259,8 @@ augroup filetype
   autocmd BufRead,BufNewFile *.{mkd,md} set filetype=markdown
   autocmd! FileType markdown hi! def link markdownItalic Normal
   autocmd FileType markdown set commentstring=<\!--\ %s\ -->
+  " tex file (I always use latex)
+  autocmd BufRead,BufNewFile *.tex set filetype=tex
   " bib file
   autocmd BufRead,BufNewFile *.bib set filetype=bib
   autocmd Filetype bib let &formatprg="bibclean"
@@ -361,6 +363,9 @@ set diffopt=vertical
 
 " less timeoutlen
 set timeout timeoutlen=400 ttimeoutlen=75
+
+" disable the conceal function
+let g:tex_conceal=''
 
 "---------------------------------------------------------------------------}}}
 " Indent:                                                                   {{{
@@ -469,6 +474,7 @@ nnoremap っy yy
 nnoremap し” ci"
 nnoremap し’ ci'
 nnoremap せ ce
+nnoremap で de
 inoremap <silent> っj <ESC>
 
 nnoremap っz zz
