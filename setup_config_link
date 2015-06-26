@@ -97,6 +97,7 @@ bin/googleTTS.sh,bin/googleTTS.sh
 bin/gpsin.sh,bin/gpsin.sh
 bin/import.sh,bin/import.sh
 bin/kakeibo.sh,bin/kakeibo.sh
+bin/latexmk_wrapper,bin/latexmk_wrapper
 bin/latextorst.sh,bin/latextorst.sh
 bin/makescreenshot_for_presentation_all.sh,bin/makescreenshot_for_presentation_all.sh
 bin/makescreenshot_for_presentation.sh,bin/makescreenshot_for_presentation.sh

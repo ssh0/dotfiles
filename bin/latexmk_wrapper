@@ -1,0 +1,16 @@
+#!/bin/sh
+# written by Shotaro Fujimoto (https://github.com/ssh0)
+# first edited: 2015-06-26
+
+dir="$(cd "$(dirname $1)"; pwd)"
+name="$(basename $1)"
+
+if [ -f "$dir/$1" ]; then
+  if [ -f "$dir/main.tex" ]; then
+    latexmk main.tex
+  else
+    latexmk "$1"
+  fi
+fi
+
+
