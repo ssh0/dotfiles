@@ -1,0 +1,89 @@
+%
+\documentclass{jsarticle}
+
+% For code
+\usepackage{moreverb}
+
+% rendeing with dvipdfmx
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[unicode=true]{hyperref}
+% floating image
+\usepackage{float}
+
+% ams series
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{ascmac}
+
+% 日本語での栞の文字化けを防ぐ
+\usepackage{atbegshi}
+\ifnum 42146=\euc"A4A2 \AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}\else
+\AtBeginShipoutFirst{\special{pdf:tounicode 90ms-RKSJ-UCS2}}\fi
+
+% 改ページの許可
+\allowdisplaybreaks[1]
+
+% definition, theorem
+\theoremstyle{definition}
+\newtheorem{theorem}{定理}
+\newtheorem*{theorem*}{定理}
+\newtheorem{definition}[theorem]{定義}
+\newtheorem*{definition*}{定義}
+
+% "\vector{a}" でベクトル
+\def\vector#1{\mbox{\boldmath \(#1\)}}
+
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={$author-meta$},
+            pdftitle={$title-meta$},
+            colorlinks=true,
+            citecolor=$if(citecolor)$$citecolor$$else$blue$endif$,
+            urlcolor=$if(urlcolor)$$urlcolor$$else$blue$endif$,
+            linkcolor=$if(linkcolor)$$linkcolor$$else$magenta$endif$,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+$if(links-as-notes)$
+% Make links footnotes instead of hotlinks:
+\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+$endif$
+
+% bib reference
+%\bibliographystyle{junsrt}
+
+
+
+$if(title)$
+\title{$title$}
+$endif$
+$if(subtitle)$
+\subtitle{$subtitle$}
+$endif$
+\author{$for(author)$$author$$sep$ \and $endfor$}
+\date{$date$}
+
+\begin{document}
+$if(title)$
+\maketitle
+$endif$
+
+$for(include-before)$
+$include-before$
+
+$endfor$
+$if(toc)$
+{
+\hypersetup{linkcolor=black}
+\setcounter{tocdepth}{$toc-depth$}
+\tableofcontents
+}
+$endif$
+$body$
+
+$for(include-after)$
+$include-after$
+
+$endfor$
+
+\end{document}
