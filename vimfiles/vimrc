@@ -191,12 +191,14 @@ NeoBundle 'joker1007/vim-markdown-quote-syntax'
 
 " for LaTeX
 NeoBundle 'lervag/vimtex'
+let g:vimtex_fold_envs = 0
+let g:vimtex_view_general_viewer = 'mupdf'
 
 " for Python
 " jedi-vim                                                                  {{{
 NeoBundle 'davidhalter/jedi-vim'
 " jedi complete
-let g:jedi#popup_on_dot = 0
+let g:jedi#popup_on_dot = 1
 let g:jedi#popup_select_first = 0
 "                                                                           }}}
 " vim-python-pep8-indent                                                    {{{

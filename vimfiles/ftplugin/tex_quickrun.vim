@@ -42,7 +42,7 @@ let g:quickrun_config.tmptex = {
 \                         .'\newtheorem*{theorem*}{定理}'
 \                         .'\newtheorem{definition}[theorem]{定義}'
 \                         .'\newtheorem*{definition*}{定義}'
-\                         .'\renewcommand\vector[1]{\mbox{\boldmath{\$#1\$}}}'
+\                         .'\renewcommand\vector[1]{\mbox{\boldmath{\(#1\)}}}'
 \                         .'\begin{document}'
 \                         .'%s'
 \                         .'\end{document}',
