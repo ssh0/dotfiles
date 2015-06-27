@@ -125,6 +125,7 @@ bin/sound_volume_change_wrapper.sh,bin/sound_volume_change_wrapper.sh
 bin/start_urxvtd.sh,bin/start_urxvtd.sh
 bin/takenote,bin/takenote
 bin/talk.sh,bin/talk.sh
+bin/terminal-colors,bin/terminal-colors
 bin/tmp_git_repoauto.sh,bin/tmp_git_repoauto.sh
 bin/tmux-vim-select-pane,bin/tmux-vim-select-pane
 bin/todo.sh,bin/todo.sh
