@@ -289,6 +289,7 @@ myXPConfig = defaultXPConfig
                 , borderColor       = colorNormalbg
                 , height            = 20
                 , promptBorderWidth = 1
+                , autoComplete      = Just 500000
                 , bgHLight          = colorGreen
                 , fgHLight          = colorNormalbg
                 , position          = Bottom
