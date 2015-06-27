@@ -33,9 +33,9 @@ if ! $get_name; then
         mkdir $dir
         i=1
     else
-        i=`expr $(ls $dir | sed -n 's/screen_\([0-9]\{3\}\).jpg/\1/p' | tail -n 1) + 1`
+        i=`expr $(ls $dir | sed -n 's/screen_\([0-9]\{3\}\).png/\1/p' | tail -n 1) + 1`
     fi
-    name=$(printf screen_%03d.jpg $i)
+    name=$(printf screen_%03d.png $i)
 fi #}}}
 
 import -quality 0 $dir/$name
