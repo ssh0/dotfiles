@@ -1,7 +1,45 @@
-"3.8.2 (created: 2014/02/13 23:52:43)
+" vim: set ft=vim:
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"             _                                _                              "
+"      __   _(_)_ __ ___  _ __   ___ _ __ __ _| |_ ___  _ __ _ __ ___         "
+"      \ \ / / | '_ ` _ \| '_ \ / _ \ '__/ _` | __/ _ \| '__| '__/ __|        "
+"       \ V /| | | | | | | |_) |  __/ | | (_| | || (_) | |  | | | (__         "
+"        \_/ |_|_| |_| |_| .__/ \___|_|  \__,_|\__\___/|_|  |_|  \___|        "
+"                        |_|                                                  "
+"                                                                             "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" written by Shotaro Fujimoto (https://github.com/ssh0)
+"------------------------------------------------------------------------------
+" vimppm (install and update the plugins)                                   {{{
+"------------------------------------------------------------------------------
+" see documentation @ https://github.com/cd01/vimppm
 
+source ~/.vimperator/vimppm/vimppm/plugin/vimppm.js
 
-" vim: set ft=vimperator:
+vimppm "vimpr/vimperator-plugins"
+
+"---------------------------------------------------------------------------}}}
+" plugin_loader.js (source plugins)                                         {{{
+"------------------------------------------------------------------------------
+" https://github.com/vimpr/vimperator-plugins/blob/master/plugin_loader.js
+
+" set the root dir for loading plugins(you can set multiple directories)
+let g:plugin_loader_roots = "~/.vimperator/vimppm/vimperator-plugins"
+
+" specify the plugin you use (you can omit '.js')
+let g:plugin_loader_plugins = "copy,PDF.js,nicontroller"
+
+"---------------------------------------------------------------------------}}}
+" Settings for plugins                                                      {{{
+"------------------------------------------------------------------------------
+
+" _smooziee
+" let g:smooziee_scroll_amount="300"
+" let g:smooziee_scroll_interval="10"
+
+"---------------------------------------------------------------------------}}}
+" Set options                                                               {{{
+"------------------------------------------------------------------------------
 
 " completion for history only
 set complete=l
@@ -18,22 +56,31 @@ set editor='urxvt -g 90x15 -title "urxvt_float" -name "urxvt_float" -e vim'
 " activate
 set activate=addons,downloads,extoptions,help,homepage,quickmark,paste
 
-" set colorscheme
-colorscheme darkness
-
-" Hint font, font-size, and colors
-hi Hint font-family: Arial; font-size: 10px; color: white; background-color: #353540; text-transform:uppercase; z-index: 10000; white-space: nowrap; padding: 1px 1px 1px 1px;
-
-" Setting for status line font-size
-hi HintElem background-color:#e4efff; color:;
-hi HintActive background-color:#cedef8; color:;
-
 " No GUI
 set gui=nonavigation,notabs
 
 " Set hintcharacter for easily reachable keys
 set hintchars=ifjkasdhguonmerwc
 
+"---------------------------------------------------------------------------}}}
+" Color settings                                                            {{{
+"------------------------------------------------------------------------------
+
+" set colorscheme
+colorscheme darkness
+
+" Hint font, font-size, and colors
+hi Hint font-family: Arial; font-size: 16px; font-weight: bold; text-shadow: -1px -1px 2px black, 1px -1px 2px black, -1px 1px 2px black, 1px 1px 2px black; color: #00d700;
+
+" Setting for status line font-size
+hi HintElem background-color:#e4efff; color:;
+hi HintActive background-color:#cedef8; color:;
+
+"---------------------------------------------------------------------------}}}
+" Key bindings                                                              {{{
+"------------------------------------------------------------------------------
+
+" completion for history only
 " set v and v key for showing tab
 noremap v :set<Space>gui=nonavigation,tabs<CR>
 noremap V :set<space>gui=navigation,tabs<CR>
@@ -47,4 +94,10 @@ noremap <F11> :set<Space>gui=nonavigation,notabs<CR>
 " yank the title by "Y"
 nnoremap Y :js util.copyToClipboard(buffer.title, true)<CR>
 
+"---------------------------------------------------------------------------}}}
+" set local settings                                                        {{{
+"------------------------------------------------------------------------------
+
 source! $HOME/.vimperatorrc.local
+
+"---------------------------------------------------------------------------}}}
