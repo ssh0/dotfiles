@@ -2,13 +2,11 @@ vim:                        set ft=xdefaults:
 !------------------------------------------------------------------------------
 ! Xft settings                                                              {{{
 !------------------------------------------------------------------------------
-
-Xft.dpi:       96
-Xft.antialias: true
-Xft.rgba:      rgb
-Xft.hinting:   true
-Xft.hintstyle: hintslight
-
+Xft.dpi:                    96
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
 !---------------------------------------------------------------------------}}}
 ! URxvt settings                                                            {{{
 !------------------------------------------------------------------------------
@@ -52,36 +50,40 @@ URxvt*iso14755:        false
 !---------------------------------------------------------------------------}}}
 ! Color                                                                     {{{
 !------------------------------------------------------------------------------
+! special
+*.foreground:   #dadada
+*.background:   #1c1c1c
+*.cursorColor:  #00d700
 
-URxvt*background:  #1c1c1c
-URxvt*foreground:  #dadada
+! black
+*.color0:       #353535
+*.color8:       #9e9e9e
 
-URxvt*cursorColor: #00d700
-URxvt*colorBD:     #bdbdbd
-URxvt*colorUL:     #bdbdbd
-!black
-URxvt*color0:      #1c1c1c
-URxvt*color8:      #9e9e9e
-!red
-URxvt*color1:      #ef9a9a
-URxvt*color9:      #f48fb1
-!green
-URxvt*color2:      #a5d6a7
-URxvt*color10:     #c5e1a5
-!yellow
-URxvt*color3:      #fff59d
-URxvt*color11:     #ffe082
-!blue
-URxvt*color4:      #90caf9
-URxvt*color12:     #81d4fa
-!magenta
-URxvt*color5:      #ce93d8
-URxvt*color13:     #b39ddb
-!cyan
-URxvt*color6:      #80deea
-URxvt*color14:     #80cbc4
-!white
-URxvt*color7:      #bdbdbd
-URxvt*color15:     #aaaaaa
+! red
+*.color1:       #ef9a9a
+*.color9:       #f489ad
 
+! green
+*.color2:       #a5d6a7
+*.color10:      #b9e18b
+
+! yellow
+*.color3:       #ece391
+*.color11:      #e8cc76
+
+! blue
+*.color4:       #9fc7e8
+*.color12:      #71badc
+
+! magenta
+*.color5:       #e0b1e8
+*.color13:      #ab90db
+
+! cyan
+*.color6:       #a2e2ea
+*.color14:      #71d7cd
+
+! white
+*.color7:       #bdbdbd
+*.color15:      #aaaaaa
 !---------------------------------------------------------------------------}}}
