@@ -520,6 +520,7 @@ cfg-tmux() { $EDITOR ~/.tmux.conf ;}
 cfg-tmuxinator() { $EDITOR ~/.tmuxinator/ ;}
 cfg-turses() { $EDITOR ~/.turses/config ;}
 cfg-vimcolor() { $EDITOR ~/.vim/bundle/easy-reading.vim/colors/easy-reading.vim ;}
+cfg-vimperatorrc() { $EDITOR ~/.vimperatorrc ;}
 cfg-vimrc() { $EDITOR ~/.vimrc ;}
 cfg-xdefaults() { $EDITOR ~/.Xdefaults ;}
 cfg-Xmodmap() { $EDITOR ~/.Xmodmap ;}
