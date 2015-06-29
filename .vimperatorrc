@@ -14,9 +14,19 @@
 "------------------------------------------------------------------------------
 " see documentation @ https://github.com/cd01/vimppm
 
+" If you use vimppm for the first time, you should run below command before
+" restarting firefox or setting this file.
+"
+" ```sh
+" mkdir -p ~/.vimperator/vimppm; cd ~/.vimperator/vimppm
+" git clone https://github.com/cd01/vimppm.git
+" ```
+"
 source ~/.vimperator/vimppm/vimppm/plugin/vimppm.js
 
-vimppm "vimpr/vimperator-plugins"
+vimppm "copy.js"
+vimppm "PDF.js.js"
+vimppm "nicontroller.js"
 
 "---------------------------------------------------------------------------}}}
 " plugin_loader.js (source plugins)                                         {{{
@@ -24,10 +34,10 @@ vimppm "vimpr/vimperator-plugins"
 " https://github.com/vimpr/vimperator-plugins/blob/master/plugin_loader.js
 
 " set the root dir for loading plugins(you can set multiple directories)
-let g:plugin_loader_roots = "~/.vimperator/vimppm/vimperator-plugins"
+" let g:plugin_loader_roots = "~/.vimperator/vimppm/vimperator-plugins"
 
 " specify the plugin you use (you can omit '.js')
-let g:plugin_loader_plugins = "copy,PDF.js,nicontroller"
+" let g:plugin_loader_plugins = "copy,PDF.js,nicontroller"
 
 "---------------------------------------------------------------------------}}}
 " Settings for plugins                                                      {{{
