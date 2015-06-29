@@ -29,25 +29,6 @@ vimppm "PDF.js.js"
 vimppm "nicontroller.js"
 
 "---------------------------------------------------------------------------}}}
-" plugin_loader.js (source plugins)                                         {{{
-"------------------------------------------------------------------------------
-" https://github.com/vimpr/vimperator-plugins/blob/master/plugin_loader.js
-
-" set the root dir for loading plugins(you can set multiple directories)
-" let g:plugin_loader_roots = "~/.vimperator/vimppm/vimperator-plugins"
-
-" specify the plugin you use (you can omit '.js')
-" let g:plugin_loader_plugins = "copy,PDF.js,nicontroller"
-
-"---------------------------------------------------------------------------}}}
-" Settings for plugins                                                      {{{
-"------------------------------------------------------------------------------
-
-" _smooziee
-" let g:smooziee_scroll_amount="300"
-" let g:smooziee_scroll_interval="10"
-
-"---------------------------------------------------------------------------}}}
 " Set options                                                               {{{
 "------------------------------------------------------------------------------
 
