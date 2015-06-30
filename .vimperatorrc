@@ -54,14 +54,14 @@ set gui=nonavigation,notabs
 set hintchars=ifjkasdhguonmerwc
 
 "---------------------------------------------------------------------------}}}
-" Color settings                                                            {{{
+" Appearance                                                                {{{
 "------------------------------------------------------------------------------
 
 " set colorscheme
 colorscheme darkness
 
 " Hint font, font-size, and colors
-hi Hint font-family: Arial; font-size: 16px; font-weight: bold; text-shadow: -1px -1px 2px black, 1px -1px 2px black, -1px 1px 2px black, 1px 1px 2px black; color: #00d700;
+hi Hint font-family: Inconsolata; font-size: 16px; font-weight: bold; background-color: #1c1c1c; color: #fefefe; padding: 0px 5px;
 
 " Setting for status line font-size
 hi HintElem background-color:#e4efff; color:;
