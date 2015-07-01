@@ -5,26 +5,7 @@ let g:quickrun_config['tex'] = {
 \ 'outputter/error/success' : 'null',
 \ 'outputter/error/error' : 'quickfix',
 \ 'srcfile' : expand("%s"),
-\ 'args' : expand("%:p:h:gs?\\\\?/?"),
-\ 'hook/sweep/files' : [
-\                      '%S:p:r.aux',
-\                      '%S:p:r.bbl',
-\                      '%S:p:r.blg',
-\                      '%S:p:r.dvi',
-\                      '%S:p:r.fdb_latexmk',
-\                      '%S:p:r.fls',
-\                      '%S:p:r.log',
-\                      '%S:p:r.out',
-\                      '%a/main.aux',
-\                      '%a/main.bbl',
-\                      '%a/main.blg',
-\                      '%a/main.dvi',
-\                      '%a/main.fdb_latexmk',
-\                      '%a/main.fls',
-\                      '%a/main.log',
-\                      '%a/main.out'
-\                      ],
-\ 'exec': '%c %s',
+\ 'exec': '%c %s %a %o',
 \}
 
 " 部分的に選択してコンパイル
@@ -57,12 +38,13 @@ let g:quickrun_config.tmptex = {
 \                         .'\end{document}',
 \
 \   'hook/sweep/files' : [
-\                        '%a/tmptex.latex',
-\                        '%a/tmptex.out',
-\                        '%a/tmptex.fdb_latexmk',
-\                        '%a/tmptex.log',
 \                        '%a/tmptex.aux',
-\                        '%a/tmptex.dvi'
+\                        '%a/tmptex.dvi',
+\                        '%a/tmptex.fdb_latexmk',
+\                        '%a/tmptex.fls',
+\                        '%a/tmptex.latex',
+\                        '%a/tmptex.log',
+\                        '%a/tmptex.out',
 \                        ],
 \}
 
