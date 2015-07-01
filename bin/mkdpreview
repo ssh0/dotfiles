@@ -6,6 +6,7 @@ template='/home/shotaro/Workspace/blog/styles/stylesheet.css'
 # template='http://szk-engineering.com/markdown.css'
 header='/home/shotaro/Workspace/blog/html/header.html'
 footer='/home/shotaro/Workspace/blog/html/footer.html'
+sourcedir='source'
 
 usage() {
     echo "Simply render markdown by pandoc."
@@ -38,7 +39,12 @@ done
 shift $((OPTIND-1))
 
 if [ -f "$1" ]; then
-  dir=$(dirname "$1")
+  dir="$(cd "$(dirname $1)"; pwd)"
+  currentdir="$(basename $dir)"
+  dir_up="$(dirname $dir)"
+  if [ $currentdir = $sourcedir ]; then
+    dir="${dir_up}"
+  fi
   namewithext=$(basename "$1")
   name=${namewithext%.*}
 else

@@ -2,15 +2,56 @@
 # written by Shotaro Fujimoto (https://github.com/ssh0)
 # first edited: 2015-06-26
 
+# If there is a file named below in the same directory,
+# this script automatically detect that the file is root tex file,
+# and compile this file even if you choose different one.
+rootfile='main.tex'
+
+# If the choosed file is in $sourcedir, default outputdir is setted to one
+# level upper directory.
+sourcedir='source'
+
 dir="$(cd "$(dirname $1)"; pwd)"
 name="$(basename $1)"
 
-if [ -f "$dir/$1" ]; then
-  if [ -f "$dir/main.tex" ]; then
-    latexmk main.tex
+if [ ! -f "$dir/$name" ]; then
+  echo "$dir/$name doesn't exist."
+  exit 1
+fi
+
+currentdir="$(basename $dir)"
+dir_up="$(dirname $dir)"
+
+if [ ${currentdir} = $sourcedir ]; then
+  echo "This file is in '$sourcedir', so search '$rootfile' recursively."
+  outdir="${dir_up}"
+  if [ -f "${dir_up}"/"$rootfile" ]; then
+    echo "There is '$rootfile' in the above directory,"
+    echo "so this script compiles this root file."
+    texfile="${dir_up}"/"$rootfile"
+  elif [ -f "$dir"/"$rootfile" ]; then
+    echo "There is '$rootfile' in the same directory,"
+    echo "so this script compiles this root file."
+    texfile="$dir"/"$rootfile"
   else
-    latexmk "$1"
+    echo "There is not '$rootfile' in the same directory,"
+    echo "so this script compiles the choosed file."
+    texfile="$dir"/"$name"
+  fi
+else
+  outdir="$dir"
+  if [ -f "$dir"/"$rootfile" ]; then
+    echo "There is '$rootfile' in the same directory,"
+    echo "so this script compiles this root file."
+    texfile="$dir"/"$rootfile"
+  else
+    echo "There is not '$rootfile' in the same directory,"
+    echo "so this script compiles the choosed file."
+    texfile="$dir"/"$name"
   fi
 fi
 
-
+echo "Run latexmk..."
+echo "============"
+echo ""
+latexmk -pdfdvi -output-directory=$outdir $texfile

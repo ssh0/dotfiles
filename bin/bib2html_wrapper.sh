@@ -5,10 +5,20 @@
 style='junsrt'
 bibtex_command='pbibtex'
 css="$HOME/Workspace/blog/styles/bootstrap-md.css"
+# If the choosed file is in $sourcedir, default outputdir is setted to one
+# level upper directory.
+sourcedir='source'
 
-dir=$(dirname "$1")
+dir="$(cd "$(dirname $1)"; pwd)"
 namewithext=$(basename "$1")
 name=${namewithext%.*}
+
+currentdir="$(basename $dir)"
+dir_up="$(dirname $dir)"
+
+if [ ${currentdir} = $sourcedir ]; then
+  dir="${dir_up}"
+fi
 
 if [ -d "${dir}/html" ]; then
   output="${dir}/html/${name}"
