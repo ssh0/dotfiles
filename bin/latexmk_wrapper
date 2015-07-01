@@ -11,6 +11,23 @@ rootfile='main.tex'
 # level upper directory.
 sourcedir='source'
 
+message() {
+  echo "There is$1 '$rootfile' in the directory '$2',"
+  echo "so this script compiles this file."
+  echo ""
+}
+
+search_rootfile() {
+if [ -f "$1"/"$rootfile" ]; then
+  texfile="$1"/"$rootfile"
+  message "" "$1"
+  return 0
+else
+  texfile="$1"/"$name"
+  return 1
+fi
+}
+
 dir="$(cd "$(dirname $1)"; pwd)"
 name="$(basename $1)"
 
@@ -25,33 +42,14 @@ dir_up="$(dirname $dir)"
 if [ ${currentdir} = $sourcedir ]; then
   echo "This file is in '$sourcedir', so search '$rootfile' recursively."
   outdir="${dir_up}"
-  if [ -f "${dir_up}"/"$rootfile" ]; then
-    echo "There is '$rootfile' in the above directory,"
-    echo "so this script compiles this root file."
-    texfile="${dir_up}"/"$rootfile"
-  elif [ -f "$dir"/"$rootfile" ]; then
-    echo "There is '$rootfile' in the same directory,"
-    echo "so this script compiles this root file."
-    texfile="$dir"/"$rootfile"
-  else
-    echo "There is not '$rootfile' in the same directory,"
-    echo "so this script compiles the choosed file."
-    texfile="$dir"/"$name"
-  fi
+  search_rootfile ${dir_up} || search_rootfile $dir || message " not" "$dir"
 else
   outdir="$dir"
-  if [ -f "$dir"/"$rootfile" ]; then
-    echo "There is '$rootfile' in the same directory,"
-    echo "so this script compiles this root file."
-    texfile="$dir"/"$rootfile"
-  else
-    echo "There is not '$rootfile' in the same directory,"
-    echo "so this script compiles the choosed file."
-    texfile="$dir"/"$name"
-  fi
+  search_rootfile $dir || message " not" "$dir"
 fi
 
 echo "Run latexmk..."
-echo "============"
+echo "=============="
 echo ""
-latexmk -pdfdvi -output-directory=$outdir $texfile
+shift 1
+latexmk -pdfdvi -output-directory=$outdir "$@" $texfile
