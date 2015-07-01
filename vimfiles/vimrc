@@ -55,6 +55,9 @@ NeoBundle 'surround.vim'
 " Commentary
 NeoBundle 'tpope/vim-commentary'
 
+" complementary pairs of mappings
+NeoBundle 'tpope/vim-unimpaired'
+
 " unite.vim                                                                 {{{
 NeoBundle 'Shougo/unite.vim'
 let g:unite_enable_start_insert=1
