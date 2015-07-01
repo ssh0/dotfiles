@@ -69,10 +69,10 @@ let g:quickrun_config.tmptex = {
 vnoremap <silent><buffer> <F5> :QuickRun -mode v -type tmptex<CR>
 
 " QuickRun and view compile result quickly (but don't preview pdf file)
-nnoremap <silent><F5> :QuickRun -type tex<CR>
+nnoremap <silent><F5> :QuickRun<CR>
 
 " set some useful macros
-" in command mode, ^r + macrokey
+" you can add the keystroke by '^r + register' in insert mode.
 let @d='a\mathrm{}idl'
 " let @f='a\frac{}{}hh'
 let @b='f(i\leftl%i\righthhhhh'
