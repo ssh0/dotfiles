@@ -139,9 +139,15 @@ main = do
        , ((modm                , xK_l      ), sendMessage Expand)
        , ((modm                , xK_z      ), sendMessage MirrorShrink)
        , ((modm                , xK_a      ), sendMessage MirrorExpand)
-       , ((modm                , xK_c      ), kill) -- %! Close the focused window
+       , ((modm                , xK_c      ), kill) -- Close the focused window
        , ((modm                , xK_f      ), sendMessage ToggleLayout)
        , ((modm .|. shiftMask  , xK_f      ), withFocused (keysMoveWindow (-borderwidth, -borderwidth)))
+       , ((modm .|. controlMask, xK_Right  ), withFocused (keysMoveWindow (6,0)))
+       , ((modm .|. controlMask, xK_Left   ), withFocused (keysMoveWindow (-6,0)))
+       , ((modm .|. controlMask, xK_Up     ), withFocused (keysMoveWindow (0,-6)))
+       , ((modm .|. controlMask, xK_Down   ), withFocused (keysMoveWindow (0,6)))
+       , ((modm                , xK_s      ), withFocused (keysResizeWindow (-12, -12) (0.5, 0.5))) -- shrink window
+       , ((modm                , xK_i      ), withFocused (keysResizeWindow (12, 12) (0.5, 0.5))) -- increase window
        , ((modm                , xK_Right  ), nextWS ) -- go to next workspace
        , ((modm                , xK_Left   ), prevWS ) -- go to prev workspace
        , ((modm .|. shiftMask  , xK_Right  ), shiftToNext)
