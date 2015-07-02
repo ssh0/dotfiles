@@ -58,12 +58,12 @@ set hintchars=ifjkasdhguonmerwc
 "------------------------------------------------------------------------------
 
 " set colorscheme
+" [vimpr/vimperator-colors](https://github.com/vimpr/vimperator-colors)
+"     git clone https://github.com/vimpr/vimperator-colors.git ~/.vimperator/colors
 colorscheme darkness
 
 " Hint font, font-size, and colors
-hi Hint font-family: Ubuntu Mono; font-size: 14px; font-weight: bold; background-color: #1c1c1c; color: #fefefe; padding: 0px 5px;
-
-" Setting for status line font-size
+hi Hint font-family: Droid Sans Mono; font-size: 14px; font-weight: regular; background-color: #1c1c1c; color: #fefefe; padding: 2px 2px;
 hi HintElem background-color:#e4efff; color:;
 hi HintActive background-color:#cedef8; color:;
 
@@ -101,6 +101,9 @@ cnoremap <C-p> <S-Tab>
 " move cursor in command mode
 cnoremap <C-h> <Left>
 cnoremap <C-l> <Right>
+
+" :source ~/.vimperatorrc
+nnoremap <C-r> :source<Space>~/.vimperatorrc<CR>
 
 "---------------------------------------------------------------------------}}}
 " set local settings                                                        {{{

@@ -195,6 +195,7 @@ pandoc/templates/mytemplate.latex,.pandoc/templates/mytemplate.latex
 # [vimperator](https://addons.mozilla.org/ja/firefox/addon/vimperator/):    {{{
 # Make Firefox look and behave like Vim
 .vimperatorrc,.vimperatorrc
+vimperator/colors/darkness.vimp,.vimperator/colors/darkness.vimp
 #                                                                           }}}
 # [mpv](http://mpv.io/):                                                    {{{
 # mpv is a fork of mplayer2 and MPlayer. It shares some features with
