@@ -63,7 +63,7 @@ set hintchars=ifjkasdhguonmerwc
 colorscheme darkness
 
 " Hint font, font-size, and colors
-hi Hint font-family: Droid Sans Mono; font-size: 12px; font-weight: bold; background-color: #1c1c1c; color: #fefefe; padding: 2px 2px;
+hi Hint font-family: "Droid Sans Mono"; font-size: 12px; font-weight: bold; background-color: #1c1c1c; color: #fefefe; padding: 2px 2px;
 hi HintElem background-color:#e4efff; color:;
 hi HintActive background-color:#cedef8; color:;
 
