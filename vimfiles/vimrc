@@ -138,17 +138,6 @@ let g:quickrun_no_default_key_mapping = 0
 "                                                                           }}}
 " vim-template                                                              {{{
 NeoBundle 'thinca/vim-template'
-" inside <%= %> is estimated by vim and expanded automatically
-autocmd User plugin-template-loaded
-  \ silent %s/<%=\(.\{-}\)%>/\=eval(submatch(1))/ge
-" if you write like below, the string is expanded to date.
-" <%= strftime('%Y-%m-%d') %>
-
-" move the cursor to <+CURSOR+>
-autocmd User plugin-template-loaded
-  \    if search('<+CURSOR+>')
-  \  |   execute 'normal! "_da>'
-  \  | endif
 "                                                                           }}}
 " vim-submode
 NeoBundle 'kana/vim-submode'
@@ -407,6 +396,22 @@ augroup filetype
   let html_to_html  = "pandoc --from=html --to=markdown"
   let html_to_html .= " | pandoc --from=markdown --to=html"
   autocmd Filetype html let &formatprg=html_to_html
+augroup END
+
+" vim-template
+augroup template
+  autocmd!
+  " inside <%= %> is estimated by vim and expanded automatically
+  autocmd User plugin-template-loaded
+        \ silent %s/<%=\(.\{-}\)%>/\=eval(submatch(1))/ge
+  " if you write like below, the string is expanded to date.
+  " <%= strftime('%Y-%m-%d') %>
+
+  " move the cursor to <+CURSOR+>
+  autocmd User plugin-template-loaded
+        \    if search('<+CURSOR+>')
+        \  |   execute 'normal! "_da>'
+        \  | endif
 augroup END
 
 "---------------------------------------------------------------------------}}}
