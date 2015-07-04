@@ -247,19 +247,22 @@ myManageHookShift = composeAll
 -------------------------------------------------------------------------------
 
 myManageHookFloat = composeAll
-        [ className =? "Gimp"             --> doFloat,
-              className =? "mplayer2"         --> doCenterFloat,
-              className =? "mpv"              --> doCenterFloat,
-              className =? "Tk"               --> doFloat,
-              className =? "Screenkey"        --> (doRectFloat $ W.RationalRect 0.7 0.9 0.3 0.1),
-              className =? "feh"              --> doCenterFloat,
-              className =? "Display.im6"      --> doCenterFloat,
-              className =? "Shutter"          --> doCenterFloat,
-              className =? "Thunar"           --> doCenterFloat,
-              className =? "Websearch.py"     --> (doRectFloat $ W.RationalRect 0.45 0.4 0.1 0.01),
-              title     =? "urxvt_float"      --> doCenterFloat,
-              className =? "Plugin-container" --> doCenterFloat,
-              title     =? "Speedbar"         --> doCenterFloat]
+    [ className =? "Gimp"             --> doFloat
+    , className =? "mplayer2"         --> doCenterFloat
+    , className =? "mpv"              --> doCenterFloat
+    , className =? "Tk"               --> doFloat
+    , className =? "Screenkey"        --> (doRectFloat $ W.RationalRect 0.7 0.9 0.3 0.1)
+    , className =? "feh"              --> doCenterFloat
+    , className =? "Display.im6"      --> doCenterFloat
+    , className =? "Shutter"          --> doCenterFloat
+    , className =? "Thunar"           --> doCenterFloat
+    , className =? "Websearch.py"     --> (doRectFloat $ W.RationalRect 0.45 0.4 0.1 0.01)
+    , title     =? "urxvt_float"      --> doCenterFloat
+    , className =? "Plugin-container" --> doCenterFloat
+
+    , title     =? "Speedbar"         --> doCenterFloat
+    , stringProperty "WM_NAME" =? "tmptex.pdf - 1/1 (96 dpi)" --> (doRectFloat $ W.RationalRect 0.3 0.2 0.4 0.6)
+    ]
 
 --------------------------------------------------------------------------- }}}
 -- myLogHook:         loghock settings                                      {{{
