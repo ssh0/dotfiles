@@ -1,4 +1,4 @@
-# vim: set filetype=zsh
+# vim: set ft=zsh
 #        _ _
 #   __ _| (_) __ _ ___  ___  ___
 #  / _` | | |/ _` / __|/ _ \/ __|
