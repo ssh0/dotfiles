@@ -50,6 +50,9 @@ set activate=addons,downloads,extoptions,help,homepage,quickmark,paste
 " No GUI
 set gui=nonavigation,notabs
 
+" no scrollbar
+set noscrollbars
+
 " Set hintcharacter for easily reachable keys
 set hintchars=ifjkasdhguonmerwc
 
