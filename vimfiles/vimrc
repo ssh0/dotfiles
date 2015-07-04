@@ -42,22 +42,22 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
 
-" color scheme                                                               {{{
+" easy-reading.vim                                                          {{{
 NeoBundle 'ssh0/easy-reading.vim'
 " It's my vim's whole color theme.
 " Project directory:
 " ($HOME/.vim/bundle/easy-reading.vim/colors/easy-reading.vim)
 "                                                                           }}}
-
-" Surround
+" surround.vim                                                              {{{
 NeoBundle 'surround.vim'
-
-" Commentary
+"                                                                           }}}
+" vim-commentary                                                            {{{
 NeoBundle 'tpope/vim-commentary'
-
+"                                                                           }}}
+" vim-unimpaired                                                            {{{
 " complementary pairs of mappings
 NeoBundle 'tpope/vim-unimpaired'
-
+"                                                                           }}}
 " unite.vim                                                                 {{{
 NeoBundle 'Shougo/unite.vim'
 let g:unite_enable_start_insert=1
@@ -134,38 +134,27 @@ vmap gx <Plug>(openbrowser-smart-search)
 NeoBundle 'thinca/vim-quickrun'
 let g:quickrun_config = {}
 let g:quickrun_no_default_key_mapping = 0
-
 "                                                                           }}}
 " vim-template                                                              {{{
 NeoBundle 'thinca/vim-template'
-"                                                                           }}}
-" vim-submode
-NeoBundle 'kana/vim-submode'
+augroup template
+  autocmd!
+  " inside <%= %> is estimated by vim and expanded automatically
+  autocmd User plugin-template-loaded
+        \ silent %s/<%=\(.\{-}\)%>/\=eval(submatch(1))/ge
+  " if you write like below, the string is expanded to date.
+  " <%= strftime('%Y-%m-%d') %>
 
-" powerline settings
-" alpaca_powertabline                                                       {{{
-" NeoBundle 'alpaca-tc/alpaca_powertabline'
-
-" let g:alpaca_powertabline_sep1 = '█ '
-" let g:alpaca_powertabline_sep2 = ':'
-" let g:alpaca_powertabline_colors = {
-"                 \   "base" : {
-"                 \     "bg" : 240,
-"                 \     "fg" : 255,
-"                 \   },
-"                 \   "sel" : {
-"                 \     "bg": 240,
-"                 \     "fg": 231,
-"                 \   },
-"                 \   "passive": {
-"                 \     "bg": 234,
-"                 \     "fg": 245,
-"                 \   },
-"                 \ }
+  " move the cursor to <+CURSOR+>
+  autocmd User plugin-template-loaded
+        \    if search('<+CURSOR+>')
+        \  |   execute 'normal! "_da>'
+        \  | endif
+augroup END
 "                                                                           }}}
-" NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
+" powerline-fontpatcher                                                     {{{
 NeoBundle 'Lokaltog/powerline-fontpatcher'
-
+"                                                                           }}}
 " lightline.vim                                                             {{{
 NeoBundle 'itchyny/lightline.vim'
 " my color scheme for lightline
@@ -298,8 +287,6 @@ let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
 
 "                                                                           }}}
-
-" for markdown
 " vim-markdown                                                              {{{
 NeoBundle 'rcmdnk/vim-markdown', {
       \ 'depends': [
@@ -312,15 +299,16 @@ let g:vim_markdown_no_default_key_mappings = 1
 " LaTeX math
 let g:vim_markdown_math = 1
 "                                                                           }}}
+" vim-markdown-quote-syntax                                                 {{{
 NeoBundle 'joker1007/vim-markdown-quote-syntax'
-
-" for LaTeX
+"                                                                           }}}
+" vimtex                                                                    {{{
 NeoBundle 'lervag/vimtex'
 let g:vimtex_fold_envs = 0
 let g:vimtex_view_general_viewer = 'mupdf'
-
-" for Python
+"                                                                           }}}
 " jedi-vim                                                                  {{{
+" for python
 NeoBundle 'davidhalter/jedi-vim'
 " jedi complete
 let g:jedi#popup_on_dot = 1
@@ -330,18 +318,16 @@ let g:jedi#popup_select_first = 0
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {
       \ "autoload": {"insert": 1, "filetype": ["python", "python3", "djangohtml"]}}
 "                                                                           }}}
-
-" autocomplete                                                              {{{
+" neco-look                                                                 {{{
 NeoBundle 'ujihisa/neco-look', {
       \ 'depends': [
       \   'Shougo/neocomplcache.vim',
       \]}
 "                                                                           }}}
-
-" supertab
+" supertab                                                                  {{{
 NeoBundle 'ervandew/supertab'
-
-" Gista                                                                     {{{
+"                                                                           }}}
+" vim-gista                                                                 {{{
 " easily sent a gista
 NeoBundle 'lambdalisue/vim-gista', {
       \ 'depends': [
@@ -360,7 +346,6 @@ NeoBundleCheck
 
 " Required:
 filetype plugin indent on
-
 colorscheme easy-reading
 
 "---------------------------------------------------------------------------}}}
@@ -396,22 +381,6 @@ augroup filetype
   let html_to_html  = "pandoc --from=html --to=markdown"
   let html_to_html .= " | pandoc --from=markdown --to=html"
   autocmd Filetype html let &formatprg=html_to_html
-augroup END
-
-" vim-template
-augroup template
-  autocmd!
-  " inside <%= %> is estimated by vim and expanded automatically
-  autocmd User plugin-template-loaded
-        \ silent %s/<%=\(.\{-}\)%>/\=eval(submatch(1))/ge
-  " if you write like below, the string is expanded to date.
-  " <%= strftime('%Y-%m-%d') %>
-
-  " move the cursor to <+CURSOR+>
-  autocmd User plugin-template-loaded
-        \    if search('<+CURSOR+>')
-        \  |   execute 'normal! "_da>'
-        \  | endif
 augroup END
 
 "---------------------------------------------------------------------------}}}
