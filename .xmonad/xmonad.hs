@@ -64,7 +64,7 @@ myWorkspaces = ["1", "2", "3", "4", "5"]
 modm = mod4Mask
 
 -- Color Setting
-colorBlue      = "#90caf9"
+colorBlue      = "#9fc7e8"
 colorGreen     = "#a5d6a7"
 colorRed       = "#ef9a9a"
 colorGray      = "#9e9e9e"
@@ -111,8 +111,8 @@ main = do
        { borderWidth        = borderwidth
        , terminal           = "urxvtc"
        , focusFollowsMouse  = True
-       , normalBorderColor  = "#212121"
-       , focusedBorderColor = colorGreen
+       , normalBorderColor  = colorNormalbg
+       , focusedBorderColor = colorWhite
        , startupHook        = myStartupHook
        , manageHook         = myManageHookShift <+>
                               myManageHookFloat <+>
@@ -302,8 +302,8 @@ myXPConfig = defaultXPConfig
                 , borderColor       = colorNormalbg
                 , height            = 20
                 , promptBorderWidth = 1
-                , autoComplete      = Just 500000
-                , bgHLight          = colorGreen
+                , autoComplete      = Just 100000
+                , bgHLight          = colorWhite
                 , fgHLight          = colorNormalbg
                 , position          = Bottom
                 }
