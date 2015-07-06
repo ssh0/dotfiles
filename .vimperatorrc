@@ -105,6 +105,10 @@ cnoremap <C-p> <S-Tab>
 cnoremap <C-h> <Left>
 cnoremap <C-l> <Right>
 
+" cursor move
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
 " :source ~/.vimperatorrc
 nnoremap <C-r> :source<Space>~/.vimperatorrc<CR>
 
