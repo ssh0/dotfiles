@@ -52,4 +52,5 @@ echo "Run latexmk..."
 echo "=============="
 echo ""
 shift 1
-latexmk -pdfdvi -output-directory=$outdir "$@" $texfile
+latexmk -pdfdvi -output-directory=$outdir "$@" $texfile \
+&& latexmk -output-directory=$outdir -c $texfile
