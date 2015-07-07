@@ -395,6 +395,9 @@ set numberwidth=3
 " Don't redraw screen during macros
 set lazyredraw
 
+set history=1000
+set viminfo='1000,<200,f50,c,h
+
 " use mouse
 if has('mouse')
   set mouse=a
