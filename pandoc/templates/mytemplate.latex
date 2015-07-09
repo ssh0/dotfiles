@@ -6,7 +6,14 @@
 
 % rendeing with dvipdfmx
 \usepackage[dvipdfmx]{graphicx}
-\usepackage[unicode=true]{hyperref}
+
+% 日本語での栞の文字化けを防ぐ
+\usepackage{atbegshi}
+\ifnum 42146=\euc"A4A2 \AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}\else
+\AtBeginShipoutFirst{\special{pdf:tounicode 90ms-RKSJ-UCS2}}\fi
+
+\usepackage[dvipdfmx]{hyperref}
+
 % floating image
 \usepackage{float}
 
@@ -15,11 +22,6 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{ascmac}
-
-% 日本語での栞の文字化けを防ぐ
-\usepackage{atbegshi}
-\ifnum 42146=\euc"A4A2 \AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}\else
-\AtBeginShipoutFirst{\special{pdf:tounicode 90ms-RKSJ-UCS2}}\fi
 
 % 改ページの許可
 \allowdisplaybreaks[1]
