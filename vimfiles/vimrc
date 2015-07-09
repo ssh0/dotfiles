@@ -194,7 +194,7 @@ function! MyModified()
 endfunction
 
 function! MyReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'RO' : ''
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '' : ''
 endfunction
 
 function! MyFilename()
@@ -211,13 +211,10 @@ function! MyFilename()
 endfunction
 
 function! MyFugitive()
-  try
-    if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
-      let _ = fugitive#head()
-      return strlen(_) ? ' '._ : ''
-    endif
-  catch
-  endtry
+  if exists('*fugitive#head')
+    let _ = fugitive#head()
+    return strlen(_) ? ''._ : ''
+  endif
   return ''
 endfunction
 
