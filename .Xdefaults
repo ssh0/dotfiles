@@ -52,7 +52,7 @@ URxvt*iso14755:        false
 ! Color                                                                     {{{
 !------------------------------------------------------------------------------
 
-*.foreground:  #dadada
+*.foreground:  #c6c6c6
 *.background:  #1c1c1c
 *.cursorColor: #00d700
 
