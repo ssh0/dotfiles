@@ -5,7 +5,7 @@
 --                   /  \| |  | | (_) | | | | (_| | (_| |                    --
 --                  /_/\_\_|  |_|\___/|_| |_|\__,_|\__,_|                    --
 --                                                                           --
-------------------------------------------------------------------------------- 
+-------------------------------------------------------------------------------
 --          written by Shotaro Fujimoto (https://github.com/ssh0)            --
 -------------------------------------------------------------------------------
 -- Import modules                                                           {{{
@@ -146,12 +146,12 @@ main = do
        , ((modm .|. controlMask, xK_Left   ), withFocused (keysMoveWindow (-6,0)))
        , ((modm .|. controlMask, xK_Up     ), withFocused (keysMoveWindow (0,-6)))
        , ((modm .|. controlMask, xK_Down   ), withFocused (keysMoveWindow (0,6)))
-       , ((modm                , xK_s      ), withFocused (keysResizeWindow (-12, -12) (0.5, 0.5))) -- shrink window
-       , ((modm                , xK_i      ), withFocused (keysResizeWindow (12, 12) (0.5, 0.5))) -- increase window
-       , ((modm .|. controlMask, xK_l      ), withFocused (keysResizeWindow (6, 0) (0, 0)))
-       , ((modm .|. controlMask, xK_h      ), withFocused (keysResizeWindow (-6, 0) (0, 0)))
-       , ((modm .|. controlMask, xK_a      ), withFocused (keysResizeWindow (0, -6) (0, 0)))
-       , ((modm .|. controlMask, xK_z      ), withFocused (keysResizeWindow (0, 6) (0, 0)))
+       , ((modm                , xK_s      ), withFocused (keysResizeWindow (-12,-12) (0.5,0.5))) -- shrink window
+       , ((modm                , xK_i      ), withFocused (keysResizeWindow (12,12) (0.5,0.5))) -- increase window
+       , ((modm .|. controlMask, xK_l      ), withFocused (keysResizeWindow (6,0) (0,0)))
+       , ((modm .|. controlMask, xK_h      ), withFocused (keysResizeWindow (-6,0) (0,0)))
+       , ((modm .|. controlMask, xK_a      ), withFocused (keysResizeWindow (0,-6) (0,0)))
+       , ((modm .|. controlMask, xK_z      ), withFocused (keysResizeWindow (0,6) (0,0)))
        , ((modm                , xK_Right  ), nextWS ) -- go to next workspace
        , ((modm                , xK_Left   ), prevWS ) -- go to prev workspace
        , ((modm .|. shiftMask  , xK_Right  ), shiftToNext)
