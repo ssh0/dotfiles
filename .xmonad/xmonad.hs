@@ -70,18 +70,22 @@ colorRed       = "#ef9a9a"
 colorGray      = "#9e9e9e"
 colorWhite     = "#ffffff"
 colorGrayAlt   = "#eceff1"
-colorNormalbg  = "#212121"
+colorNormalbg  = "#1c1c1c"
 colorfg        = "#9fa8b1"
 
 -- Border width
-borderwidth = 0
+borderwidth = 3
 
 -- gapwidth
 gapWidth = 6
 gapWidthU = 17
 gapWidthD = 17
-gapWidthL = 13
-gapWidthR = 13
+gapWidthL = 10
+gapWidthR = 10
+-- gapWidthU = 17
+-- gapWidthD = 17
+-- gapWidthL = 13
+-- gapWidthR = 13
 
 --------------------------------------------------------------------------- }}}
 -- Define keys to remove                                                    {{{
