@@ -31,7 +31,7 @@ Config { font = "xft:TakaoGothic:size=9"
                                           , "--high"   , "#f44336"
                                           ] 10
                     , Run BatteryP        ["CMB1"]
-                                          [ "-t"       , "<icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/bat_full_02.xbm/> <acstatus>"
+                                          [ "-t"       , "<icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/bat_full_02.xbm/> <acstatus>  "
                                           , "-L"       , "20"
                                           , "-H"       , "80"
                                           , "--low"    , "#f44336"
@@ -46,6 +46,6 @@ Config { font = "xft:TakaoGothic:size=9"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% }<fc=#ffffff>%date%</fc>{ %multicpu%%memory%%wlan0%%battery% "
+       , template = " %StdinReader% }<fc=#ffffff>%date%</fc>{ %multicpu%%memory%%wlan0%%battery%  "
        }
 

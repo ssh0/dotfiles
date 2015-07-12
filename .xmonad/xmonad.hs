@@ -78,8 +78,8 @@ borderwidth = 3
 
 -- gapwidth
 gapWidth = 6
-gapWidthU = 17
-gapWidthD = 17
+gapWidthU = 21
+gapWidthD = 21
 gapWidthL = 10
 gapWidthR = 10
 -- gapWidthU = 17
