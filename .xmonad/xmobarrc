@@ -3,7 +3,7 @@ Config { font = "xft:TakaoGothic:size=9"
        , bgColor = "#1c1c1c"
        , fgColor = "#757575"
        -- , position = TopSize C 100 12 --26
-       ,position = Static { xpos = 22 , ypos = 28, width = 1888, height = 28 }
+       ,position = Static { xpos = 22 , ypos = 0, width = 1888, height = 28 }
        , lowerOnStart = False
        , overrideRedirect = False
        , border = NoBorder
@@ -46,6 +46,6 @@ Config { font = "xft:TakaoGothic:size=9"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% }<fc=#ffffff>%date%</fc>{ %multicpu%%memory%%wlan0%%battery%  "
+       , template = " %StdinReader% }<fc=#ffffff>%date%</fc>{ %multicpu%%memory%%wlan0%%battery% "
        }
 
