@@ -70,18 +70,22 @@ colorRed       = "#ef9a9a"
 colorGray      = "#9e9e9e"
 colorWhite     = "#ffffff"
 colorGrayAlt   = "#eceff1"
-colorNormalbg  = "#212121"
+colorNormalbg  = "#1c1c1c"
 colorfg        = "#9fa8b1"
 
 -- Border width
-borderwidth = 0
+borderwidth = 3
 
 -- gapwidth
 gapWidth = 6
-gapWidthU = 17
-gapWidthD = 17
-gapWidthL = 13
-gapWidthR = 13
+gapWidthU = 21
+gapWidthD = 21
+gapWidthL = 10
+gapWidthR = 10
+-- gapWidthU = 17
+-- gapWidthD = 17
+-- gapWidthL = 13
+-- gapWidthR = 13
 
 --------------------------------------------------------------------------- }}}
 -- Define keys to remove                                                    {{{
@@ -280,13 +284,13 @@ myLogHook h = dynamicLogWithPP $ wsPP { ppOutput = hPutStrLn h }
 
 myWsBar = "xmobar $HOME/.xmonad/xmobarrc"
 
-wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws,t]
-                , ppCurrent         = xmobarColor  colorGreen    colorNormalbg . wrap "[" "]"
-                , ppUrgent          = xmobarColor  colorWhite    colorNormalbg . wrap " " " "
-                , ppVisible         = xmobarColor  colorWhite    colorNormalbg . wrap " " " "
-                , ppHidden          = xmobarColor  colorWhite    colorNormalbg . wrap " " " "
-                , ppHiddenNoWindows = xmobarColor  colorfg       colorNormalbg . wrap " " " "
-                , ppTitle           = xmobarColor  colorGreen    colorNormalbg
+wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws]
+                , ppCurrent         = xmobarColor colorGreen colorNormalbg . \s -> "● "
+                , ppUrgent          = xmobarColor colorfg    colorNormalbg . \s -> "● "
+                , ppVisible         = xmobarColor colorfg    colorNormalbg . \s -> "● "
+                , ppHidden          = xmobarColor colorfg    colorNormalbg . \s -> "● "
+                , ppHiddenNoWindows = xmobarColor colorfg    colorNormalbg . \s -> "○ "
+                , ppTitle           = xmobarColor colorGreen colorNormalbg
                 , ppOutput          = putStrLn
                 , ppWsSep           = ""
                 , ppSep             = " : "

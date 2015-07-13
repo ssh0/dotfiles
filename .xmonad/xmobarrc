@@ -2,7 +2,8 @@
 Config { font = "xft:TakaoGothic:size=9"
        , bgColor = "#1c1c1c"
        , fgColor = "#757575"
-       , position = TopSize C 100 12
+       -- , position = TopSize C 100 12 --26
+       ,position = Static { xpos = 22 , ypos = 0, width = 1876, height = 28 }
        , lowerOnStart = False
        , overrideRedirect = False
        , border = NoBorder
@@ -30,10 +31,10 @@ Config { font = "xft:TakaoGothic:size=9"
                                           , "--high"   , "#f44336"
                                           ] 10
                     , Run BatteryP        ["CMB1"]
-                                          [ "-t"       , "<icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/bat_full_02.xbm/> <acstatus>   "
+                                          [ "-t"       , "<icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/bat_full_02.xbm/> <acstatus>  "
                                           , "-L"       , "20"
                                           , "-H"       , "80"
-                                          , "--low"    , "#f443c6"
+                                          , "--low"    , "#f44336"
                                           , "--normal" , "#ffffff"
                                           , "--"
                                                 , "-o" , "<left>% (<timeleft>)"
@@ -45,6 +46,6 @@ Config { font = "xft:TakaoGothic:size=9"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% }{ %multicpu%%memory%%wlan0%%battery%<fc=#fff59d>%date%</fc>   "
+       , template = " %StdinReader% }<fc=#ffffff>%date%</fc>{ %multicpu%%memory%%wlan0%%battery% "
        }
 
