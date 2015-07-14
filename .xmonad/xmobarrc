@@ -3,7 +3,7 @@ Config { font = "xft:TakaoGothic:size=9"
        , bgColor = "#1c1c1c"
        , fgColor = "#757575"
        -- , position = TopSize C 100 12 --26
-       ,position = Static { xpos = 22 , ypos = 0, width = 1876, height = 24 }
+       ,position = Static { xpos = 22 , ypos = 0, width = 1876, height = 18 }
        , lowerOnStart = False
        , overrideRedirect = False
        , border = NoBorder
