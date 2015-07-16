@@ -111,7 +111,7 @@ main :: IO ()
 
 main = do
     wsbar <- spawnPipe myWsBar
-    xmonad $ defaultConfig
+    xmonad $ ewmh defaultConfig
        { borderWidth        = borderwidth
        , terminal           = "urxvtc"
        , focusFollowsMouse  = True
