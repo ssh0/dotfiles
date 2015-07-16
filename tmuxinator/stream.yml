@@ -28,5 +28,5 @@ root: ~/
 # post: tmux -CC attach -t stream
 
 windows:
-  - twitter: turses
+  - ranger: r ~
   - htop: htop
