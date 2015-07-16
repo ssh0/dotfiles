@@ -22,6 +22,9 @@ alias apt-ins='sudo apt-get install'
 # git alias to "g"
 alias g='git'
 
+# I often type ":q" to exit terminal
+alias :q='exit'
+
 # mplayer alias
 alias mplayer='mplayer -msgcolor'
 
