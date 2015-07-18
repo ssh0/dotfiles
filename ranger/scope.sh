@@ -78,7 +78,7 @@ case "$mimetype" in
         img2txt --gamma=0.6 --width="$width" --format=ansi --font-width=5 --font-height=10 "$path" && exit 4 || exit 1;;
     # Image preview for videos, disabled by default:
     video/*)
-        ffmpegthumbnailer -i "$path" -o "$cached" -s 0 && exit 6 || exit 1;;
+        ffmpegthumbnailer -i "$path" -o "$cached" -s 0 -t 20 && exit 6 || exit 1;;
     # Display information about media files:
     video/* | audio/*)
         exiftool "$path" && exit 5
