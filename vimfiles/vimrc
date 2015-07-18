@@ -309,7 +309,7 @@ let g:vimtex_view_general_viewer = 'mupdf'
 NeoBundle 'davidhalter/jedi-vim'
 " jedi complete
 let g:jedi#popup_on_dot = 1
-let g:jedi#popup_select_first = 0
+let g:jedi#popup_select_first = 1
 "                                                                           }}}
 " vim-python-pep8-indent                                                    {{{
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {
