@@ -1,0 +1,120 @@
+\documentclass[a4paper, dvipdfmx, mathserif]{beamer}
+% 印刷時には[]内に”handout”を追記する。
+\usepackage{moreverb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{txfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{ascmac}
+\usepackage{caption}
+
+\bibliographystyle{junsrt}
+
+\usetheme{default}
+% Hannover, boxes, default
+\usecolortheme{orchid}
+\usefonttheme{default} %{professionalfonts}
+\useinnertheme{rectangles} % rounded rectangles
+%%%%%%%%%%%%%%%% フレーム外側のテーマの選択(省略可)
+%%\useoutertheme{default}
+\useoutertheme{infolines}
+%% \useoutertheme{miniframes}
+%% \useoutertheme{smoothbars}
+% \useoutertheme{sidebar}
+%% \useoutertheme{split}
+%% \useoutertheme{shadow}
+%% \useoutertheme{tree}
+%% \useoutertheme{smoothtree}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{frametitle}[default][center]
+\setbeamertemplate{caption}[numbered]
+
+\setbeamerfont{title}{size=\huge,series=\bfseries}
+\setbeamerfont{subtitle}{size=\small,series=\bfseries}
+\setbeamerfont{frametitle}{size=\large,series=\bfseries}
+
+% \setbeamerfont{title}{size=\large}
+% \setbeamerfont{frametitle}{size=\large}
+
+% PDFのしおりが文字化けしないようにする
+\usepackage{atbegshi}
+\ifnum 42146=\euc"A4A2 \AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}\else
+\AtBeginShipoutFirst{\special{pdf:tounicode 90ms-RKSJ-UCS2}}\fi
+
+\usepackage{hyperref}
+
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
+
+\newenvironment<>{varblock}[2][\textwidth]{%
+\setlength{\textwidth}{#1}
+\begin{actionenv}#3%
+\def\insertblocktitle{#2}%
+\par%
+\usebeamertemplate{block begin}}
+{\par%
+\usebeamertemplate{block end}%
+\end{actionenv}}
+
+% "\vector{a}" でベクトル
+\def\vector#1{\mbox{\boldmath \(#1\)}}
+
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={$author-meta$},
+            pdftitle={$title-meta$},
+            colorlinks=true,
+            citecolor=$if(citecolor)$$citecolor$$else$blue$endif$,
+            urlcolor=$if(urlcolor)$$urlcolor$$else$blue$endif$,
+            linkcolor=$if(linkcolor)$$linkcolor$$else$magenta$endif$,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+$if(links-as-notes)$
+% Make links footnotes instead of hotlinks:
+\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+$endif$
+
+$if(title)$
+\title[$title$]{$title$}
+$endif$
+$if(subtitle)$
+\subtitle{$subtitle$}
+$endif$
+\author[藤本將太郎]{}
+\institute{山崎研 M1 藤本將太郎}
+$if(date)$
+\date{$date$}
+$endif$
+
+\begin{document}
+
+\begin{frame}[plain]
+    \titlepage
+\end{frame}
+
+$if(toc)$
+{
+\hypersetup{linkcolor=black}
+\setcounter{tocdepth}{$toc-depth$}
+\begin{frame}[plain]
+    \frametitle{Outline}
+    \tableofcontents
+\end{frame}
+}
+$endif$
+$body$
+
+% \section{参考文献}
+% \begin{frame}
+%     \frametitle{参考文献}
+% \beamertemplatetextbibitems
+% \bibliography{reference}
+% \end{frame}
+
+\end{document}
