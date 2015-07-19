@@ -79,6 +79,7 @@ zshfiles/plugins/tmux/tmux.plugin.zsh,.oh-my-zsh/plugins/tmux/tmux.plugin.zsh
 #                                                                           }}}
 # bin                                                                       {{{
 bin/alarm,bin/alarm
+bin/allmp4tomp3.sh,bin/allmp4tomp3.sh
 bin/autopep8_wrap.sh,bin/autopep8_wrap.sh
 bin/autosetup.sh,bin/autosetup.sh
 bin/bib2html_wrapper.sh,bin/bib2html_wrapper.sh
