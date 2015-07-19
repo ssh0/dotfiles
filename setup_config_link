@@ -184,6 +184,7 @@ tudurc,.tudurc
 # [pandoc](http://pandoc.org/):                                             {{{ 
 # If you need to convert files from one markup format into another, pandoc is
 # your swiss-army knife.
+pandoc/templates/mytemplate.beamer,.pandoc/templates/mytemplate.beamer
 pandoc/templates/mytemplate.latex,.pandoc/templates/mytemplate.latex
 #                                                                           }}}
 # [notify-osd](https://wiki.ubuntu.com/NotifyOSD):                          {{{
