@@ -1,5 +1,6 @@
 " markdown
 let g:quickrun_config = {
+\ 'runner' : 'vimproc',
 \ 'markdown/update' : {
 \   'outputter' : 'error',
 \   'outputter/error/error' : 'message',
@@ -19,14 +20,7 @@ let g:quickrun_config = {
 \}
 
 let g:quickrun_config['markdown'] = {
-\ 'outputter' : 'error',
-\ 'outputter/error/error' : 'message',
-\ 'command' : 'mkdpreview',
-\ 'cmdopt' : '-s -p',
-\ 'exec': '%c %o %s',
-\}
-
-let g:quickrun_config['mkd'] = {
+\ 'runner' : 'vimproc',
 \ 'outputter' : 'error',
 \ 'outputter/error/error' : 'message',
 \ 'command' : 'mkdpreview',
