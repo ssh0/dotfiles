@@ -264,6 +264,7 @@ myManageHookFloat = composeAll
     , className =? "Display.im6"      --> doCenterFloat
     , className =? "Shutter"          --> doCenterFloat
     , className =? "Thunar"           --> doCenterFloat
+    , className =? "Nautilus"         --> doCenterFloat
     , className =? "Websearch.py"     --> (doRectFloat $ W.RationalRect 0.45 0.4 0.1 0.01)
     , title     =? "urxvt_float"      --> doCenterFloat
     , className =? "Plugin-container" --> doCenterFloat
@@ -284,7 +285,7 @@ myLogHook h = dynamicLogWithPP $ wsPP { ppOutput = hPutStrLn h }
 
 myWsBar = "xmobar $HOME/.xmonad/xmobarrc"
 
-wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws]
+wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws,t]
                 , ppCurrent         = xmobarColor colorGreen colorNormalbg . \s -> " ● "
                 , ppUrgent          = xmobarColor colorfg    colorNormalbg . \s -> " ● "
                 , ppVisible         = xmobarColor colorfg    colorNormalbg . \s -> " ● "
