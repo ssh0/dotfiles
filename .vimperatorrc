@@ -24,9 +24,12 @@
 "
 source ~/.vimperator/vimppm/vimppm/plugin/vimppm.js
 
+vimppm "appendAnchor.js"
 vimppm "copy.js"
 vimppm "PDF.js.js"
 vimppm "nicontroller.js"
+
+let g:auto_append_anchor = "true"
 
 "---------------------------------------------------------------------------}}}
 " Set options                                                               {{{
