@@ -46,6 +46,6 @@ Config { font = "xft:TakaoGothic:size=9"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% }<fc=#ffffff>%date%</fc>{ %multicpu%%memory%%wlan0%%battery% "
+       , template = " %StdinReader% }{ %multicpu%%memory%%wlan0%%battery%<fc=#ffffff>%date%</fc> "
        }
 

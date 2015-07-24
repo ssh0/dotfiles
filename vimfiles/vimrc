@@ -130,6 +130,8 @@ let g:netrw_nogx = 1 " disable netrw's gx mapping.
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 "                                                                           }}}
+" vimproc
+NeoBundle 'Shougo/vimproc'
 " vim-quickrun                                                              {{{
 NeoBundle 'thinca/vim-quickrun'
 let g:quickrun_config = {}
