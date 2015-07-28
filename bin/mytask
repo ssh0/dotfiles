@@ -5,6 +5,10 @@
 mytaskroot=$HOME/.mytask
 taskset="$mytaskroot"/taskset
 
+if [ ! -d "$taskset" ]; then
+  mkdir -p "$taskset"
+fi
+
 usage() {
   cat <<EOF
 mytask is the scirpt to start my current tasks easily.
