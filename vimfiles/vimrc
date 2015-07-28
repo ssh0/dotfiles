@@ -201,7 +201,7 @@ endfunction
 
 function! MyFilename()
   let fname = expand('%:t')
-  return winwidth(0) > 70 ? (
+  return winwidth(0) > 40 ? (
         \ fname == 'ControlP' ? g:lightline.ctrlp_item :
         \ fname == '__Tagbar__' ? g:lightline.fname :
         \ fname =~ '__Gundo\|NERD_tree' ? '' :
@@ -244,7 +244,7 @@ function! MyMode()
         \ &ft == 'unite' ? 'Unite' :
         \ &ft == 'vimfiler' ? 'VimFiler' :
         \ &ft == 'vimshell' ? 'VimShell' :
-        \ winwidth(0) > 60 ? lightline#mode() : ''
+        \ winwidth(0) > 30 ? lightline#mode() : ''
 endfunction
 
 function! CtrlPMark()
