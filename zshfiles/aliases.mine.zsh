@@ -92,6 +92,39 @@ _takenote() {
 compdef _takenote takenote
 
 #---------------------------------------------------------------------------}}}
+# mytask completion                                                       {{{
+#------------------------------------------------------------------------------
+
+_mytask() {
+  _arguments -C \
+    '1: :->cmds' \
+    '2:: :->args' && ret=0
+
+  case $state in
+    cmds)
+      _values "mytask command" \
+          "start[Execute the taskset.]" \
+          "add[Add new taskset.]" \
+          "remove[Remove a taskset.]" \
+          "list[List all existing taskset.]"
+      ret=0
+      ;;
+    args)
+      case $line[1] in
+        start|remove)
+          _values 'configs' $(mytask list)
+          ret=0
+          ;;
+      esac
+      ;;
+  esac
+
+  return ret
+}
+
+compdef _mytask mytask
+
+#---------------------------------------------------------------------------}}}
 # youtube-dl completion                                                     {{{
 #------------------------------------------------------------------------------
 #

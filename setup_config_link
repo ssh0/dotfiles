@@ -106,6 +106,7 @@ bin/makescreenshot_for_presentation.sh,bin/makescreenshot_for_presentation.sh
 bin/mkdpreview,bin/mkdpreview
 bin/mkpdf.sh,bin/mkpdf.sh
 bin/mplayer_term_wrapper.sh,bin/mplayer_term_wrapper.sh
+bin/mytask,bin/mytask
 bin/navi1.sh,bin/navi1.sh
 bin/navi.sh,bin/navi.sh
 bin/pandoc_beamerwrapper.sh,bin/pandoc_beamerwrapper.sh

@@ -1,0 +1,123 @@
+#!/bin/sh
+# written by Shotaro Fujimoto (https://github.com/ssh0)
+# first edited: 2015-07-28
+
+mytaskroot=$HOME/.mytask
+taskset="$mytaskroot"/taskset
+
+usage() {
+  cat <<EOF
+mytask is the scirpt to start my current tasks easily.
+
+Usage:
+  $ mytask [option] [start|add|remove|list] [cmdoption]
+
+Option:
+  -h       Show this help message.
+
+Command:
+  start    Execute the taskset.
+  add      Add new taskset.
+  remove   Remove a taskset.
+  list     List all existing taskset.
+EOF
+  exit 1
+}
+
+startmytask() {
+  taskname="$1"
+  if [ -f "$taskset/$taskname" ]; then
+    bash "$taskset/$taskname"
+  else
+    echo "$taskname doesn't exist."
+    usage
+  fi
+}
+
+settaskname() {
+  if [ ! "$taskname" = "" ]; then
+    return 0
+  fi
+  echo -n "Set the task name: "
+
+  while read line; do
+    if [ "$line" = "" ]; then
+      echo "You must set the task name."
+      echo -n "Set the task name: "
+    else
+      taskname="$line"
+      break
+    fi
+  done
+}
+
+addmytask() {
+
+  taskname=""
+
+  if [ -f "$1" ]; then
+    taskname=$1
+  fi
+
+  while getopts o: OPT
+  do
+    case $OPT in
+      "o" ) taskname="${OPTARG}" ;;
+    esac
+  done
+  shift $((OPTIND-1))
+
+  settaskname "$taskname"
+
+  if [ "$1" = '' ]; then
+    $EDITOR "$taskset/$taskname"
+  elif [ -e "$1" ]; then
+    cp "$1" "$taskset/$taskname"
+  else
+    echo "$@" > "$taskset/$taskname"
+  fi
+  echo "$taskname added."
+}
+
+removemytask() {
+  rm "$taskset/$1"
+  echo "removed $taskset/$1"
+}
+
+listmytask() {
+  ls "$taskset"
+}
+
+# option handling
+while getopts h OPT
+do
+  case $OPT in
+    "h" ) usage ;;
+  esac
+done
+
+# two arguments must be taken
+shift $((OPTIND-1))
+if [ ! $# > 0 ];then
+  usage
+fi
+
+case $1 in
+  start)
+    shift 1
+    startmytask "$@" ;;
+  add)
+    shift 1
+    addmytask "$@" ;;
+  remove)
+    shift 1
+    removemytask "$@" ;;
+  list)
+    shift 1
+    listmytask "$@" ;;
+  *)
+    echo "$1 is not defined for subcommand."
+    usage ;;
+esac
+
+exit 0
