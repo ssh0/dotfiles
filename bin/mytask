@@ -2,7 +2,9 @@
 # written by Shotaro Fujimoto (https://github.com/ssh0)
 # first edited: 2015-07-28
 
-mytaskroot=$HOME/.mytask
+# mytaskroot=$HOME/.mytask
+# taskset="$mytaskroot"/taskset
+mytaskroot=$HOME/Workspace/.mytask
 taskset="$mytaskroot"/taskset
 
 if [ ! -d "$taskset" ]; then
@@ -43,16 +45,14 @@ settaskname() {
     return 0
   fi
   echo -n "Set the task name: "
+  read line
 
-  while read line; do
-    if [ "$line" = "" ]; then
-      echo "You must set the task name."
-      echo -n "Set the task name: "
-    else
-      taskname="$line"
-      break
-    fi
+  while [ "$line" = "" ]; do
+    echo "You must set the task name."
+    echo -n "Set the task name: "
+    read line
   done
+  taskname="$line"
 }
 
 addmytask() {
@@ -102,7 +102,7 @@ done
 
 # two arguments must be taken
 shift $((OPTIND-1))
-if [ ! $# > 0 ];then
+if [ $# = 0 ];then
   usage
 fi
 
@@ -123,5 +123,3 @@ case $1 in
     echo "$1 is not defined for subcommand."
     usage ;;
 esac
-
-exit 0
