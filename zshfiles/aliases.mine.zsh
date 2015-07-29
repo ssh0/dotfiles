@@ -115,6 +115,10 @@ _mytask() {
           _values 'configs' $(mytask list)
           ret=0
           ;;
+        add)
+          _path_files
+          ret=0
+          ;;
       esac
       ;;
   esac
