@@ -467,7 +467,7 @@ set colorcolumn=80
 set pumheight=10
 
 " Minimal number of screen lines to keep above and below the cursor.
-set scrolloff=0
+set scrolloff=999
 
 " always split vertically when using vimdiff
 set diffopt=vertical
