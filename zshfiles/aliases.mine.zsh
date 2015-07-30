@@ -105,13 +105,14 @@ _mytask() {
       _values "mytask command" \
           "start[Execute the taskset.]" \
           "add[Add new taskset.]" \
+          "edit[Edit the existing taskset.]" \
           "remove[Remove a taskset.]" \
           "list[List all existing taskset.]"
       ret=0
       ;;
     args)
       case $line[1] in
-        start|remove)
+        start|edit|remove)
           _values 'configs' $(mytask list)
           ret=0
           ;;

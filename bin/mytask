@@ -24,6 +24,7 @@ Option:
 Command:
   start    Execute the taskset.
   add      Add new taskset.
+  edit     Edit the existing taskset.
   remove   Remove a taskset.
   list     List all existing taskset.
 EOF
@@ -83,8 +84,20 @@ addmytask() {
   echo "$taskname added."
 }
 
+iftaskexist() {
+  if [ -f "$taskset/$1" ]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+editmytask() {
+  iftaskexist "$1" && $EDITOR "$taskset/$1"
+}
+
 removemytask() {
-  rm "$taskset/$1"
+  iftaskexist "$1" && rm "$taskset/$1"
   echo "removed $taskset/$1"
 }
 
@@ -113,6 +126,9 @@ case $1 in
   add)
     shift 1
     addmytask "$@" ;;
+  edit)
+    shift 1
+    editmytask "$@" ;;
   remove)
     shift 1
     removemytask "$@" ;;
