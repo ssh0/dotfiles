@@ -270,6 +270,7 @@ myManageHookFloat = composeAll
     , className =? "Plugin-container" --> doCenterFloat
 
     , title     =? "Speedbar"         --> doCenterFloat
+    , stringProperty "WM_NAME" =? "LINE" --> doFloat
     , stringProperty "WM_NAME" =? "tmptex.pdf - 1/1 (96 dpi)" --> (doRectFloat $ W.RationalRect 0.29 0.25 0.42 0.5)
     ]
 
