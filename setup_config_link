@@ -95,6 +95,7 @@ bin/eztransration.sh,bin/eztransration.sh
 bin/firefox-search.sh,bin/firefox-search.sh
 bin/getsunrise.sh,bin/getsunrise.sh
 bin/git-check.sh,bin/git-check.sh
+bin/google-keep,bin/google-keep
 bin/googleTTS.sh,bin/googleTTS.sh
 bin/gpsin.sh,bin/gpsin.sh
 bin/import.sh,bin/import.sh
