@@ -77,11 +77,11 @@ colorfg        = "#9fa8b1"
 borderwidth = 0
 
 -- gapwidth
-gapWidth = 3
-gapWidthU = 21
-gapWidthD = 21
-gapWidthL = 10
-gapWidthR = 10
+gapWidth = 6
+gapWidthU = 24
+gapWidthD = 24
+gapWidthL = 13
+gapWidthR = 13
 -- gapWidthU = 17
 -- gapWidthD = 17
 -- gapWidthL = 13
