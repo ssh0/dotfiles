@@ -23,23 +23,23 @@
 # ~/.Xmodmap:                                                               {{{
 # xmodmap is a utility for modifying keymaps and pointing button
 # mappings in Xorg.
-.Xmodmap,.Xmodmap
+system/Xmodmap,.Xmodmap
 #                                                                           }}}
 # ~/.Xdefaults                                                              {{{
-.Xdefaults,.Xdefaults
+system/Xdefaults,.Xdefaults
 #                                                                           }}}
 # ~/.Xresources:                                                            {{{
 # Xresources is a user-level configuration dotfile
 # https://wiki.archlinux.org/index.php/X_resources#XScreenSaver_resources
-.Xresources,.Xresources
+system/Xresources,.Xresources
 #                                                                           }}}
 # ~/.xscreensaver:                                                          {{{
 # XScreenSaver Preferences File
-.xscreensaver,.xscreensaver
+system/xscreensaver,.xscreensaver
 #                                                                           }}}
 # ~/.profile:                                                               {{{
 # executed by the command interpreter for login shells.
-.profile,.profile
+system/profile,.profile
 #                                                                           }}}
 # [vim](http://www.vim.org/):                                               {{{
 # Vim is an advanced text editor that seeks to provide the power of the
@@ -59,7 +59,7 @@ vimfiles/template/template.py,.vim/template/template.py
 vimfiles/template/template.sh,.vim/template/template.sh
 #                                                                           }}}
 # [tmux](http://tmux.sourceforge.net/)                                      {{{
-tmux.conf,.tmux.conf
+rcfiles/tmux.conf,tmux.conf
 #                                                                           }}}
 # [tmuxinator](https://github.com/tmuxinator/tmuxinator)                    {{{
 tmuxinator/clean.yml,.tmuxinator/clean.yml
@@ -181,11 +181,11 @@ ipython/profile_slide/static/custom/custom.css,.ipython/profile_slide/static/cus
 # task has a title, a long text description, a deadline (tudu warns you
 # when the date is close), and a scheduled date. There are categories
 # and priorities.
-tudurc,.tudurc
+rcfiles/tudurc,.tudurc
 #                                                                           }}}
 # [latexmk](http://www.ctan.org/pkg/latexmk/):                              {{{
 # Latexmk completely automates the process of generating a LaTeX document.
-.latexmkrc,.latexmkrc
+rcfiles/latexmkrc,.latexmkrc
 #                                                                           }}}
 # [pandoc](http://pandoc.org/):                                             {{{ 
 # If you need to convert files from one markup format into another, pandoc is
@@ -197,18 +197,18 @@ pandoc/templates/mytemplate.latex,.pandoc/templates/mytemplate.latex
 # Canonical's on-screen-display notification agent, implementing
 # the freedesktop.org Desktop Notifications Specification with
 # semi-transparent click-through bubbles.
-.notify-osd,.notify-osd
+system/notify-osd,.notify-osd
 #                                                                           }}}
 # [vimperator](https://addons.mozilla.org/ja/firefox/addon/vimperator/):    {{{
 # Make Firefox look and behave like Vim
-.vimperatorrc,.vimperatorrc
+vimperator/vimperatorrc,.vimperatorrc
 vimperator/colors/darkness.vimp,.vimperator/colors/darkness.vimp
 #                                                                           }}}
 # [mpv](http://mpv.io/):                                                    {{{
 # mpv is a fork of mplayer2 and MPlayer. It shares some features with
 # the former projects while introducing many more.
-.mpv/config,.mpv/config
-.mpv/lua/notify.lua,.mpv/scripts/notify.lua
+mpv/config,.mpv/config
+mpv/lua/notify.lua,.mpv/scripts/notify.lua
 #                                                                           }}}
 # [cmus](https://cmus.github.io/):                                          {{{
 # cmus is a small, fast and powerful console music player for Unix-like
@@ -233,6 +233,7 @@ pyradio/stations.csv,.pyradio/stations.csv
 # and configured in Haskell. In a normal WM, you spend half your time
 # aligning and searching for windows. xmonad makes work easier, by
 # automating this.
-.xmonad/xmonad.hs,.xmonad/xmonad.hs
-.xmonad/xmobarrc,.xmonad/xmobarrc
+xmonad/xmonad.hs,.xmonad/xmonad.hs
+xmonad/xmobarrc,.xmonad/xmobarrc
 #                                                                           }}}
+
