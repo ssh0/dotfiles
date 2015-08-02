@@ -59,7 +59,7 @@ vimfiles/template/template.py,.vim/template/template.py
 vimfiles/template/template.sh,.vim/template/template.sh
 #                                                                           }}}
 # [tmux](http://tmux.sourceforge.net/)                                      {{{
-rcfiles/tmux.conf,tmux.conf
+rcfiles/tmux.conf,.tmux.conf
 #                                                                           }}}
 # [tmuxinator](https://github.com/tmuxinator/tmuxinator)                    {{{
 tmuxinator/clean.yml,.tmuxinator/clean.yml
