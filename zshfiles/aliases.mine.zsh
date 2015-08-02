@@ -11,13 +11,13 @@
 #------------------------------------------------------------------------------
 
 # apt update
-alias apt-upd='sudo apt-get update'
+alias apt-upd='sudo apt update'
 
 # apt upgrade
-alias apt-upg='sudo apt-get upgrade'
+alias apt-upg='sudo apt upgrade'
 
 # apt install
-alias apt-ins='sudo apt-get install'
+alias apt-ins='sudo apt install'
 
 # git alias to "g"
 alias g='git'
