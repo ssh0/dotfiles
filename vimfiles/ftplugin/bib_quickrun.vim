@@ -1,5 +1,6 @@
 " for bib file
 let g:quickrun_config.bib = {
+\ 'runner' : 'vimproc',
 \ 'command' : 'bib2html_wrapper.sh',
 \ 'srcfile' : expand("%:p"),
 \ 'outputter' : 'error',

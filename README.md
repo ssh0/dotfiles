@@ -13,11 +13,11 @@ My dotfiles
 Screenshots
 -----------
 
-![xmonad.jpg](./screenshots/xmonad.jpg)
+![xmonad.png](./screenshots/xmonad.png)
 
-![tmux.jpg](./screenshots/tmux.jpg)
+![tmux.browsing](./screenshots/browsing.png)
 
-![vim.jpg](./screenshots/vim.jpg)
+![vim.png](./screenshots/vim.png)
 
 Install
 -------
