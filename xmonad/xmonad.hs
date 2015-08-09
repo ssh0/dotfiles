@@ -206,8 +206,8 @@ main = do
        , ((0                       , 0x1008ff11), spawn "bash $HOME/bin/sound_volume_change_wrapper.sh -")
        , ((0                       , 0x1008ff12), spawn "bash $HOME/bin/sound_volume_change_wrapper.sh m")
         -- Brightness Keys
-       , ((0                       , 0x1008FF02), spawn "xbacklight + 1 -time 100 -steps 1")
-       , ((0                       , 0x1008FF03), spawn "xbacklight - 1 -time 100 -steps 1")
+       , ((0                       , 0x1008FF02), spawn "xbacklight + 5 -time 100 -steps 1")
+       , ((0                       , 0x1008FF03), spawn "xbacklight - 5 -time 100 -steps 1")
        , ((0                       , 0xff61    ), spawn "sh $HOME/bin/screenshot.sh")
        , ((shiftMask               , 0xff61    ), spawn "sh $HOME/bin/screenshot_select.sh")
        , ((0                       , 0x1008ff1d), spawn "ipython qtconsole --matplotlib=inline")
