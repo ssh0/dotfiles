@@ -582,7 +582,8 @@ compctl -V directories -K _bd bd
 cfg-aliases() { $EDITOR ~/.aliases.mine.zsh ;}
 cfg-compton() { $EDITOR ~/.config/compton/compton.conf ;}
 cfg-dotfiles() { $EDITOR ~/.dotfiles/setup_config_link ;}
-cfg-latexmkrc() { $EDITOR ~/.latexmkrc }
+cfg-history() { $EDITOR ~/.zsh_history ;}
+cfg-latexmkrc() { $EDITOR ~/.latexmkrc ;}
 cfg-mpv() { $EDITOR ~/.mpv/config ;}
 cfg-mplayer() { $EDITOR ~/.mplayer/config ;}
 cfg-ranger() { $EDITOR ~/.config/ranger/rc.conf ;}
