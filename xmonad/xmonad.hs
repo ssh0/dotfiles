@@ -211,7 +211,7 @@ main = do
        -- Launch dmenu for launching applicatiton
        , ((modm                    , xK_p      ), spawn "exe=`dmenu_run -b -p '#' -nb '#009688' -nf '#ffffff' -sb '#ffffff' -sf '#000000'` && exec $exe")
        -- Lauch websearch application (See https://github.com/ssh0/web_search)
-       , ((mod1Mask .|. controlMask, xK_f      ), spawn "python $HOME/Workspace/python/web_search/websearch.py")
+       , ((mod1Mask .|. controlMask, xK_f      ), spawn "websearch")
        -- Play / Pause media keys
        , ((0                       , 0x1008ff18), spawn "sh $HOME/bin/cplay.sh")
        , ((0                       , 0x1008ff14), spawn "sh $HOME/bin/cplay.sh")
@@ -283,7 +283,7 @@ myManageHookFloat = composeAll
     , className =? "Nautilus"         --> doCenterFloat
     , className =? "Plugin-container" --> doCenterFloat
     , className =? "Screenkey"        --> (doRectFloat $ W.RationalRect 0.7 0.9 0.3 0.1)
-    , className =? "Websearch.py"     --> (doRectFloat $ W.RationalRect 0.45 0.4 0.1 0.01)
+    , className =? "Websearch"        --> (doRectFloat $ W.RationalRect 0.45 0.4 0.1 0.01)
     , title     =? "Speedbar"         --> doCenterFloat
     , title     =? "urxvt_float"      --> doCenterFloat
     , stringProperty "WM_NAME" =? "LINE" --> (doRectFloat $ W.RationalRect 0.60 0.1 0.39 0.82)
