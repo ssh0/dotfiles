@@ -15,7 +15,7 @@ bun=`zenity --forms \
 if [ $? -ne 0 ]; then
 	exit
 else
-	echo "$bun" >> /home/shotaro/Workspace/kakeibo.csv
+	echo "$bun" >> /home/shotaro/Workspace/memo/kakeibo.csv
 
 	zenity --info \
 		--title="" \
