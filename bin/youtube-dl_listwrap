@@ -42,7 +42,7 @@ if ${save}; then
   for t in "$title"; do
     echo "# $t" >> "${listfile}"
   done
-  echo "$1" >> "${listfile}"
+  echo "# $1" >> "${listfile}"
 fi
 
 youtube-dl -i -o "%(title)s.%(ext)s" "$@"
