@@ -27,6 +27,8 @@ system/Xmodmap,.Xmodmap
 #                                                                           }}}
 # ~/.Xdefaults                                                              {{{
 system/Xdefaults,.Xdefaults
+system/Xdefaults.satori,.Xdefaults.satori
+system/Xdefaults.material,.Xdefaults.material
 #                                                                           }}}
 # ~/.Xresources:                                                            {{{
 # Xresources is a user-level configuration dotfile
