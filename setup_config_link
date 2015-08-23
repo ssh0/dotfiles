@@ -231,6 +231,9 @@ turses/sessions,.turses/sessions
 # [pyradio](https://github.com/coderholic/pyradio)                          {{{
 pyradio/stations.csv,.pyradio/stations.csv
 #                                                                           }}}
+# [peco](https://github.com/peco/peco)                                      {{{
+peco/config.json,.peco/config.json
+#                                                                           }}}
 # [xmonad](http://xmonad.org/):                                             {{{
 # xmonad is a dynamically tiling X11 window manager that is written
 # and configured in Haskell. In a normal WM, you spend half your time
