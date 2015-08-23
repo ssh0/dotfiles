@@ -20,6 +20,7 @@ usage() {
     echo "  -h: Show this message."
     exit 1
 }
+
 save=false
 update=false
 output=""
