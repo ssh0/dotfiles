@@ -3,16 +3,6 @@
 # first edited: 2015-06-20
 
 takenote() {
-  show_usage() {
-    echo "Usage: takenote [-d dir] [-o filename] [-g editor] [-l] [-r] [-h]"
-    echo "  -d dir     : set saving directory for specific directory"
-    echo "  -o filename: set the text file's name"
-    echo "  -g editor  : open with altenative program"
-    echo "  -l         : only do 'ls dir'"
-    echo "  -r         : cd to TODAY folder, or it doesn't exist, to ROOT dir."
-    echo "  -h         : show this message"
-  }
-
   local get_dir=false
   local get_name=false
   local alternative=false
@@ -20,6 +10,16 @@ takenote() {
   local filercmd=ranger
   local filer=false
   local rootdir=$HOME/Workspace/blog
+
+  show_usage() {
+    echo "Usage: takenote [-d dir] [-o filename] [-g editor] [-l] [-r] [-h]"
+    echo "  -d dir     : set the saving directory (default: '$rootdir')"
+    echo "  -o filename: set the file's name"
+    echo "  -g editor  : open with an altenative program (default: '$EDITOR')"
+    echo "  -l         : list the today's files"
+    echo "  -r         : open the today's dir or the root dir with the filer (default: '$filercmd')"
+    echo "  -h         : show this message"
+  }
 
   check_dir() {
     if [ ! -e "$1" ]; then
@@ -48,7 +48,7 @@ takenote() {
 
   # set the saving directory
   if ! $get_dir; then
-    if check_dir "$rootdir";then
+    if check_dir "$rootdir"; then
       daydir=$(date +%Y-%m-%d)
       dir=$rootdir/$daydir
     else
@@ -80,7 +80,6 @@ takenote() {
   # set the filename
   if ! $get_name; then
     if [ ! -e "$dir" ]; then
-      mkdir "$dir"
       i=1
     else
       i=$(( $(ls "$dir" | sed -n 's/note_\([0-9]\{2\}\).md/\1/p' | tail -n 1) + 1 ))
@@ -89,15 +88,12 @@ takenote() {
   fi
 
   if $alternative; then
-    $editor "$dir"/"$name"
+    $editor "$dir/$name"
   else
-    cwd=$(pwd)
-    cd "$dir"
-    "$EDITOR" "$dir"/"$name"
-    cd "$cwd"
+    $EDITOR "$dir/$name"
   fi
 
   return 0
 }
 
-takenote "$@"
+takenote $@
