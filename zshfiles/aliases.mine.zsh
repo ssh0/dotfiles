@@ -470,7 +470,7 @@ zle -N peco-select-history
 #------------------------------------------------------------------------------
 
 function agvim(){
-  vim $(ag $@ | peco --query "$LBUFFER" --prompt ">" | awk -F : '{print "-c " $2 " " $1}')
+  vim $(ag $@ | peco --query "$LBUFFER" --prompt ">" | awk -F : '{printf("-c %s %s"),$2,$1;}')
 }
 
 #---------------------------------------------------------------------------}}}
