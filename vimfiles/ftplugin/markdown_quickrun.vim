@@ -34,6 +34,12 @@ vnoremap <silent> <F5> :QuickRun -type markdown/visual<CR>
 
 augroup markdown_pandoc
   autocmd!
+  autocmd BufWritePre *.md call s:auto_mkdir(expand('<afile>:p:h'))
+  function! s:auto_mkdir(dir)
+    if !isdirectory(a:dir)
+      call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
+    endif
+  endfunction
   autocmd BufWritePost,FileWritePost *.md :QuickRun -type markdown/update
 augroup END
 
