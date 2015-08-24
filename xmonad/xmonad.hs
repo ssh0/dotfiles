@@ -239,7 +239,7 @@ main = do
 -------------------------------------------------------------------------------
 
 myLayout = spacing gapWidth $ gaps [(U,gapWidth + gapWidthU),(D,gapWidth + gapWidthD),(L,gapWidth + gapWidthL),(R,gapWidth + gapWidthR)] $
-                 (ResizableTall 1 (1/100) (4/7) [])
+                 (ResizableTall 1 (1/100) (6/10) [])
              ||| (TwoPane (1/100) (4/7))
              ||| (ThreeColMid 1 (1/100) (16/35))
              ||| (ResizableTall 2 (1/100) (1/2) [])
