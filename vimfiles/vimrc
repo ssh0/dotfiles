@@ -209,7 +209,7 @@ function! MyFilename()
         \ &ft == 'unite' ? unite#get_status_string() :
         \ &ft == 'vimshell' ? vimshell#get_status_string() :
         \ ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
-        \ ('' != fname ? fname : '[No Name]') .
+        \ ('' != fname ? (strlen(fname) < 20 ? fname : '') : '[No Name]') .
         \ ('' != MyModified() ? ' ' . MyModified() : '')
         \ ) : ''
 endfunction
