@@ -116,6 +116,14 @@ inoremap <C-l> <Right>
 nnoremap <C-r> :source<Space>~/.vimperatorrc<CR>
 
 "---------------------------------------------------------------------------}}}
+" Ignorekeys                                                                {{{
+"------------------------------------------------------------------------------
+
+ignorekeys add plus\\.google\\.com -except f,F,o,t,;,:
+ignorekeys add mail\\.google\\.com -except f,F,o,t,;,:
+ignorekeys add www\\.google\\.com/calendar -except f,F,o,t,;,:
+
+"---------------------------------------------------------------------------}}}
 " set local settings                                                        {{{
 "------------------------------------------------------------------------------
 
