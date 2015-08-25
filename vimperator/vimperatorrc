@@ -122,6 +122,8 @@ nnoremap <C-r> :source<Space>~/.vimperatorrc<CR>
 ignorekeys add plus\\.google\\.com -except f,F,o,t,;,:
 ignorekeys add mail\\.google\\.com -except f,F,o,t,;,:
 ignorekeys add www\\.google\\.com/calendar -except f,F,o,t,;,:
+ignorekeys add twitter\\.com -except F,v,V,d,;,:
+ignorekeys add feedly\\.com -except f,F,;,:
 
 "---------------------------------------------------------------------------}}}
 " set local settings                                                        {{{
