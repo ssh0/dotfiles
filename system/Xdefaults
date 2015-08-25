@@ -24,7 +24,7 @@ URxvt*loginShell:      true
 URxvt.saveLines:       2000
 URxvt.internalBorder:  0
 URxvt.lineSpace:       0
-URxvt.intensityStyles: false
+URxvt.intensityStyles: true
 URxvt.perl-ext-common: selection
 
 ! Fonts
