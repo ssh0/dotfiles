@@ -3,3 +3,4 @@ clear lock
 keysym Caps_Lock = Escape
 keysym Henkan_Mode = Return
 keysym Muhenkan = BackSpace
+keysym Hiragana_Katakana = Zenkaku_Hankaku
