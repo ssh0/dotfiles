@@ -1,11 +1,11 @@
 #!/bin/sh
 #
 
-template='/home/shotaro/Workspace/blog/styles/stylesheet.css'
-# template='/home/shotaro/Workspace/blog/styles/bootstrap-md.css'
+template="$HOME/Workspace/blog/styles/stylesheet.css"
+# template="/home/shotaro/Workspace/blog/styles/bootstrap-md.css"
 # template='http://szk-engineering.com/markdown.css'
-header='/home/shotaro/Workspace/blog/html/header.html'
-footer='/home/shotaro/Workspace/blog/html/footer.html'
+header="$HOME/Workspace/blog/html/header.html"
+footer="$HOME/Workspace/blog/html/footer.html"
 sourcedir='source'
 
 usage() {
