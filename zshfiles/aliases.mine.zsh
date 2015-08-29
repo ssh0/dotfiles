@@ -593,6 +593,7 @@ cfg-compton() { $EDITOR ~/.config/compton/compton.conf ;}
 cfg-dotfiles() { $EDITOR ~/.dotfiles/setup_config_link ;}
 cfg-history() { $EDITOR ~/.zsh_history ;}
 cfg-latexmkrc() { $EDITOR ~/.latexmkrc ;}
+cfg-luakit() { $EDITOR ~/.config/luakit ;}
 cfg-mpv() { $EDITOR ~/.mpv/config ;}
 cfg-mplayer() { $EDITOR ~/.mplayer/config ;}
 cfg-ranger() { $EDITOR ~/.config/ranger/rc.conf ;}
