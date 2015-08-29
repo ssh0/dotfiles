@@ -242,4 +242,12 @@ peco/config.json,.peco/config.json
 xmonad/xmonad.hs,.xmonad/xmonad.hs
 xmonad/xmobarrc,.xmonad/xmobarrc
 #                                                                           }}}
-
+# [luakit](http://mason-larobina.github.io/luakit):                         {{{
+luakit/binds.lua,.config/luakit/binds.lua
+luakit/globals.lua,.config/luakit/globals.lua
+luakit/modes.lua,.config/luakit/modes.lua
+luakit/rc.lua,.config/luakit/rc.lua
+luakit/theme.lua,.config/luakit/theme.lua
+luakit/webview.lua,.config/luakit/webview.lua
+luakit/window.lua,.config/luakit/window.lua
+#                                                                           }}}
