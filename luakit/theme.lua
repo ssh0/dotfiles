@@ -6,59 +6,59 @@ local theme = {}
 
 -- Default settings
 theme.font = "Inconsolata normal 9"
-theme.fg   = "#fff"
+theme.fg   = "#ffffff"
 theme.bg   = "#1c1c1c"
 
 -- Genaral colours
 theme.success_fg = "#a5d6a7"
 theme.loaded_fg  = "#33AADD"
-theme.error_fg = "#FFF"
+theme.error_fg = "#ffffff"
 theme.error_bg = "#ef9a9a"
 
 -- Warning colours
 theme.warning_fg = "#ef9a9a"
-theme.warning_bg = "#FFF"
+theme.warning_bg = "#ffffff"
 
 -- Notification colours
-theme.notif_fg = "#444"
-theme.notif_bg = "#FFF"
+theme.notif_fg = "#353535"
+theme.notif_bg = "#ffffff"
 
 -- Menu colours
-theme.menu_fg                   = "#1c1c1c"
-theme.menu_bg                   = "#fff"
+theme.menu_fg                   = "#c6c6c6"
+theme.menu_bg                   = "#1c1c1c"
 theme.menu_selected_fg          = "#1c1c1c"
 theme.menu_selected_bg          = "#ece391"
-theme.menu_title_bg             = "#fff"
-theme.menu_primary_title_fg     = "#ef9a9a"
-theme.menu_secondary_title_fg   = "#666"
+theme.menu_title_bg             = "#353535"
+theme.menu_primary_title_fg     = "#c6c6c6"
+theme.menu_secondary_title_fg   = "#c6c6c6"
 
 -- Proxy manager
-theme.proxy_active_menu_fg      = '#1c1c1c'
-theme.proxy_active_menu_bg      = '#FFF'
-theme.proxy_inactive_menu_fg    = '#888'
-theme.proxy_inactive_menu_bg    = '#FFF'
+theme.proxy_active_menu_fg      = '#c6c6c6'
+theme.proxy_active_menu_bg      = '#1c1c1c'
+theme.proxy_inactive_menu_fg    = '#aaaaaa'
+theme.proxy_inactive_menu_bg    = '#ffffff'
 
 -- Statusbar specific
-theme.sbar_fg         = "#fff"
+theme.sbar_fg         = "#aaaaaa"
 theme.sbar_bg         = "#1c1c1c"
 
 -- Downloadbar specific
-theme.dbar_fg         = "#fff"
+theme.dbar_fg         = "#aaaaaa"
 theme.dbar_bg         = "#1c1c1c"
 theme.dbar_error_fg   = "#ef9a9a"
 
 -- Input bar specific
-theme.ibar_fg           = "#1c1c1c"
-theme.ibar_bg           = "#fff"
+theme.ibar_fg           = "#c6c6c6"
+theme.ibar_bg           = "#1c1c1c"
 
 -- Tab label
-theme.tab_fg            = "#888"
+theme.tab_fg            = "#9e9e9e"
 theme.tab_bg            = "#1c1c1c"
-theme.tab_ntheme        = "#ddd"
-theme.selected_fg       = "#fff"
+theme.tab_ntheme        = "#bdbdbd"
+theme.selected_fg       = "#ffffff"
 theme.selected_bg       = "#363636"
-theme.selected_ntheme   = "#ddd"
-theme.loading_fg        = "#fff"
+theme.selected_ntheme   = "#bdbdbd"
+theme.loading_fg        = "#ffffff"
 theme.loading_bg        = "#363636"
 
 -- Trusted/untrusted ssl colours
