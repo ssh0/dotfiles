@@ -1,7 +1,6 @@
 -- Global variables for luakit
 globals = {
-    homepage            = "https://www.google.com/",
- -- homepage            = "http://github.com/mason-larobina/luakit",
+    homepage            = "luakit://bookmarks/",
     scroll_step         = 40,
     zoom_step           = 0.1,
     max_cmd_history     = 100,
@@ -126,7 +125,6 @@ domain_props = {
         enable_smooth_scrolling = true,
         enforce_96_dpi = true,
         user_stylesheet_uri = nil,
-        user_agent = "Luakit",
     },
     --[[
     ["all"] = {
