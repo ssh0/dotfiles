@@ -5,29 +5,29 @@
 local theme = {}
 
 -- Default settings
-theme.font = "Inconsolata normal 9"
+theme.font = "TakaoPGothic normal 9"
 theme.fg   = "#ffffff"
 theme.bg   = "#1c1c1c"
 
 -- Genaral colours
 theme.success_fg = "#a5d6a7"
-theme.loaded_fg  = "#33AADD"
+theme.loaded_fg  = "#33aadd"
 theme.error_fg = "#ffffff"
 theme.error_bg = "#ef9a9a"
 
 -- Warning colours
-theme.warning_fg = "#ef9a9a"
-theme.warning_bg = "#ffffff"
+theme.warning_fg = "#1c1c1c"
+theme.warning_bg = "#ef9a9a"
 
 -- Notification colours
-theme.notif_fg = "#353535"
-theme.notif_bg = "#ffffff"
+theme.notif_fg = "#ffffff"
+theme.notif_bg = "#353535"
 
 -- Menu colours
 theme.menu_fg                   = "#c6c6c6"
 theme.menu_bg                   = "#1c1c1c"
 theme.menu_selected_fg          = "#ffffff"
-theme.menu_selected_bg          = "#353535"
+theme.menu_selected_bg          = "#404040"
 theme.menu_title_bg             = "#b9e18b"
 theme.menu_primary_title_fg     = "#1c1c1c"
 theme.menu_secondary_title_fg   = "#1c1c1c"
@@ -36,7 +36,7 @@ theme.menu_secondary_title_fg   = "#1c1c1c"
 theme.proxy_active_menu_fg      = '#c6c6c6'
 theme.proxy_active_menu_bg      = '#1c1c1c'
 theme.proxy_inactive_menu_fg    = '#aaaaaa'
-theme.proxy_inactive_menu_bg    = '#ffffff'
+theme.proxy_inactive_menu_bg    = '#1c1c1c'
 
 -- Statusbar specific
 theme.sbar_fg         = "#aaaaaa"
