@@ -59,8 +59,8 @@ require "binds"
 -- luakit-plugins
 -- Installation:
 --    git clone https://github.com/mason-larobina/luakit-plugins/ ~/.config/luakit/plugins
-require "plugins"
-plugins.policy = "automatic" -- or manual
+-- require "plugins"
+-- plugins.policy = "automatic" -- or manual
 
 require "webinspector"
 
