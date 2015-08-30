@@ -7,6 +7,7 @@ globals = {
     max_srch_history    = 100,
  -- proxy must now be set through proxy command; environment variable is broken
     default_window_size = "600x600",
+    max_title_len       = 200,
 
  -- Disables loading of hostnames from /etc/hosts (for large host files)
  -- load_etc_hosts      = false,
@@ -120,7 +121,7 @@ domain_props = {
         cursive_font_family = "TakaoPMincho",
         monospace_font_family = "Inconsolata for Powerline",
         default_font_size = 12,
-        default_monospace_font_size = 10,
+        default_monospace_font_size = 13,
         minimum_font_size = 8,
         enable_smooth_scrolling = true,
         enforce_96_dpi = true,
