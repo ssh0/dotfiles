@@ -12,7 +12,7 @@ theme.bg   = "#1c1c1c"
 -- Genaral colours
 theme.success_fg = "#a5d6a7"
 theme.loaded_fg  = "#33aadd"
-theme.error_fg = "#ffffff"
+theme.error_fg = "#1c1c1c"
 theme.error_bg = "#ef9a9a"
 
 -- Warning colours
