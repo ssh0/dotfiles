@@ -1,7 +1,7 @@
 " markdown
 let g:quickrun_config = {
-\ 'runner' : 'vimproc',
 \ 'markdown/update' : {
+\   'runner' : 'vimproc',
 \   'outputter' : 'error',
 \   'outputter/error/error' : 'message',
 \   'command' : 'mkdpreview',
@@ -11,6 +11,7 @@ let g:quickrun_config = {
 \   },
 \
 \ 'markdown/visual' : {
+\   'runner' : 'vimproc',
 \   'outputter' : 'error',
 \   'outputter/error/error' : 'message',
 \   'command' : 'mkdpreview',
