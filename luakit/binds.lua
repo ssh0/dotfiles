@@ -290,6 +290,13 @@ add_binds("normal", {
             luakit.selection.clipboard = luakit.selection.primary
             w:notify("Yanked uri: " .. uri)
         end),
+    key({}, "Y", "Yank current title to primary selection.",
+        function (w)
+            local title = w.view.title or ""
+            luakit.selection.primary = title
+            luakit.selection.clipboard = luakit.selection.primary
+            w:notify("Yanked title: " .. title)
+        end),
     key({"Control"}, "c", "Copy (as-in) control-c control-v",
         function (w)
             luakit.selection.clipboard = luakit.selection.primary
@@ -600,4 +607,38 @@ add_cmds({
         end),
 })
 
+add_binds("ex-follow", {
+    -- Yank element uri or description into primary selection
+    key({}, "y", [[Hint all links (as defined by the `follow.selectors.uri`
+        selector) and set the primary selection to the matched elements URI.]],
+        function (w)
+            w:set_mode("follow", {
+                prompt = "yank", selector = "uri", evaluator = "uri",
+                func = function (uri)
+                    assert(type(uri) == "string")
+                    uri = string.gsub(uri, " ", "%%20")
+                    -- capi.luakit.selection.primary = uri
+                    luakit.selection.primary = uri
+                    luakit.selection.clipboard = luakit.selection.primary
+                    w:notify("Yanked uri: " .. uri, false)
+                end
+            })
+        end),
+
+    -- Yank element description
+    key({}, "Y", [[Hint all links (as defined by the `follow.selectors.uri`
+        selector) and set the primary selection to the matched elements URI.]],
+        function (w)
+            w:set_mode("follow", {
+                prompt = "yank desc", selector = "desc", evaluator = "desc",
+                func = function (desc)
+                    assert(type(desc) == "string")
+                    -- capi.luakit.selection.primary = desc
+                    luakit.selection.primary = desc
+                    luakit.selection.clipboard = luakit.selection.primary
+                    w:notify("Yanked desc: " .. desc)
+                end
+            })
+        end),
+})
 -- vim: et:sw=4:ts=8:sts=4:tw=80
