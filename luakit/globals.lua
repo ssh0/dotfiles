@@ -21,7 +21,9 @@ globals = {
 local _, arch = luakit.spawn_sync("uname -sm")
 -- Only use the luakit version if in date format (reduces identifiability)
 local lkv = string.match(luakit.version, "^(%d+%.%d+%.%d+)")
-globals.useragent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.215 Safari/535.1"
+globals.useragent = string.format("Mozilla/5.0 (%s) AppleWebKit/%s+ (KHTML, like Gecko) WebKitGTK+/%s luakit%s",
+    string.sub(arch, 1, -2), luakit.webkit_user_agent_version,
+    luakit.webkit_version, (lkv and ("/" .. lkv)) or "")
 
 -- Search common locations for a ca file which is used for ssl connection validation.
 local ca_files = {
