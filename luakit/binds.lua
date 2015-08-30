@@ -290,6 +290,7 @@ add_binds("normal", {
             luakit.selection.clipboard = luakit.selection.primary
             w:notify("Yanked uri: " .. uri)
         end),
+
     key({}, "Y", "Yank current title to primary selection.",
         function (w)
             local title = w.view.title or ""
@@ -297,6 +298,7 @@ add_binds("normal", {
             luakit.selection.clipboard = luakit.selection.primary
             w:notify("Yanked title: " .. title)
         end),
+
     key({"Control"}, "c", "Copy (as-in) control-c control-v",
         function (w)
             luakit.selection.clipboard = luakit.selection.primary
@@ -607,7 +609,7 @@ add_cmds({
         end),
 })
 
-add_binds("ex-follow", {
+ex_follow_bindings = {
     -- Yank element uri or description into primary selection
     key({}, "y", [[Hint all links (as defined by the `follow.selectors.uri`
         selector) and set the primary selection to the matched elements URI.]],
@@ -640,5 +642,8 @@ add_binds("ex-follow", {
                 end
             })
         end),
-})
+}
+
+add_binds({"ex-follow"}, ex_follow_bindings)
+
 -- vim: et:sw=4:ts=8:sts=4:tw=80
