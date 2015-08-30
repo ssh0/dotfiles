@@ -136,7 +136,6 @@ follow.stylesheet = [===[
     display: block;
     position: absolute;
     background-color: #ffff99;
-    border: 0px dotted #000;
     opacity: 0.3;
     z-index: 999999999;
 }
@@ -145,12 +144,10 @@ follow.stylesheet = [===[
     display: block;
     position: absolute;
     background-color: #1c1c1c;
-    border: 1px dashed #000;
     color: #fefefe;
-    padding: 2px 2px;
+    padding: 1px 1px;
     font-family: monospace, courier, sans-serif;
-    font-size: 11px;
-    font-weight: bold;
+    font-size: 12px;
     z-index: 99999999;
 }
 
