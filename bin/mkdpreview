@@ -76,5 +76,5 @@ if $save; then
 fi
 
 if $preview; then
-  firefox --new-tab "file://${output}"
+  luakit -n "file://${output}"
 fi
