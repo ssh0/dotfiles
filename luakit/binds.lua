@@ -287,7 +287,12 @@ add_binds("normal", {
         function (w)
             local uri = string.gsub(w.view.uri or "", " ", "%%20")
             luakit.selection.primary = uri
+            luakit.selection.clipboard = luakit.selection.primary
             w:notify("Yanked uri: " .. uri)
+        end),
+    key({"Control"}, "c", "Copy (as-in) control-c control-v",
+        function (w)
+            luakit.selection.clipboard = luakit.selection.primary
         end),
 
     -- Commands
