@@ -125,7 +125,7 @@ domain_props = {
         minimum_font_size = 8,
         enable_smooth_scrolling = true,
         enforce_96_dpi = true,
-        user_stylesheet_uri = nil,
+        user_stylesheet_uri = "file://" .. luakit.data_dir .. "adblock.css",
     },
     --[[
     ["all"] = {
