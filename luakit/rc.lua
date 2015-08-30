@@ -56,6 +56,12 @@ require "binds"
 -- Optional user script loading --
 ----------------------------------
 
+-- luakit-plugins
+-- Installation:
+--    git clone https://github.com/mason-larobina/luakit-plugins/ ~/.config/luakit/plugins
+require "plugins"
+plugins.policy = "automatic" -- or manual
+
 require "webinspector"
 
 -- Add sqlite3 cookiejar
