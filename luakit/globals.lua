@@ -53,19 +53,60 @@ soup.accept_policy = cookie_policy.always
 -- it to avoid collisions with lua's string.format characters.
 -- See: http://www.lua.org/manual/5.1/manual.html#pdf-string.format
 search_engines = {
-    luakit      = "http://luakit.org/search/index/luakit?q=%s",
-    duckduckgo  = "http://duckduckgo.com/?q=%s&t=debian",
-    github      = "https://github.com/search?q=%s",
-    google      = "https://google.com/search?q=%s",
-    imdb        = "http://www.imdb.com/find?s=all&q=%s",
-    wikipedia   = "http://en.wikipedia.org/wiki/Special:Search?search=%s",
-    debbugs     = "http://bugs.debian.org/%s",
-    sourceforge = "http://sf.net/search/?words=%s",
-    netflix     = "http://dvd.netflix.com/Search?v1=%s",
+    -- default: Google検索
+    default_search = "https://www.google.co.jp/search?q=%s",
+    -- I'm feeling lucky!
+    l = "https://www.google.co.jp/search?q=%s&btnI=I",
+    -- "w": Wikipedia
+    w = "https:ja.wikipedia.org/wiki/%s",
+    -- "n": niconico動画
+    n = "http://www.nicovideo.jp/search/%s",
+    -- "nd": ニコニコ大百科
+    nd = "http://dic.nicovideo.jp/s/al/a/%s",
+    -- "p": Google画像検索
+    p = "http://www.google.com/search?hl=ja&site=imghp&tbm=isch&source=hp&q=%s&oq=%s",
+    -- "m": Google Map
+    m = "https://www.google.com/maps/place/%s",
+    -- "mfh": Google Map Navigation "from Home to ***"
+    -- if you set the searching language 'English',
+    -- then replace "自宅" to "Home"
+    mfh = "https://www.google.com/maps/dir/自宅/%s",
+    -- "mfw": Google Map Navigation "from Work to ***"
+    -- if you set the searching language 'English',
+    -- then replace "職場" to "Work"
+    mfw = "https://www.google.com/maps/dir/職場/%s",
+    -- "mfh": Google Map Navigation "from *** to Home"
+    -- if you set the searching language 'English',
+    -- then replace "自宅" to "Home"
+    mth = "https://www.google.com/maps/dir/%s/自宅",
+    -- "mfw": Google Map Navigation "from *** to Work"
+    -- if you set the searching language 'English',
+    -- then replace "職場" to "Work"
+    mtw = "https://www.google.com/maps/dir/%s/職場",
+    -- "ip": IP address search
+    ip = "http://www.ip-adress.com/whois/%s",
+    -- 'f': flickr
+    f = "https://www.flickr.com/search/?text=%s&safe_search=3",
+    -- "y": Youtubeで検索
+    y = "http://www.youtube.com/results?search_query=%s&sm=3",
+    -- "rt" Yahooリアルタイム検索
+    rt = "http://realtime.search.yahoo.co.jp/search?p=%s&ei=UTF-8",
+    -- "sc" Google Scholar検索
+    sc = "http://scholar.google.co.jp/scholar?as_vis=1&q=%s&hl=ja&as_sdt=1,5",
+    -- "q" Qiita 検索
+    q = "http://qiita.com/search?q=%s",
+    -- "g" Githubを検索
+    g = "https://github.com/search?q=%s",
+    -- "gu" Githubを検索(ユーザーを検索)
+    gu = "https://github.com/search?q=%s&type=Users",
+    -- "gs" Gistを検索
+    gs = "https://gist.github.com/search?utf8=✓&q=%s",
+    -- "t": 翻訳
+    t = "http://ejje.weblio.jp/content/%s",
 }
 
 -- Set google as fallback search engine
-search_engines.default = search_engines.google
+search_engines.default = search_engines.default_search
 -- Use this instead to disable auto-searching
 --search_engines.default = "%s"
 
@@ -73,15 +114,19 @@ search_engines.default = search_engines.google
 -- See http://webkitgtk.org/reference/webkitgtk/stable/WebKitWebSettings.html
 domain_props = {
     ["all"] = {
+        default_font_family = "TakaoPGothic",
         sans_serif_font_family = "TakaoPGothic",
         serif_font_family = "TakaoPMincho",
-        monospace_font_family = "Ubuntu Mono",
-        default_font_size = 10,
-        default_monospace_font_size = 12,
-        minimum_font_size = 1,
+        fantasy_font_family = "TakaoPMincho",
+        cursive_font_family = "TakaoPMincho",
+        monospace_font_family = "Inconsolata for Powerline",
+        default_font_size = 12,
+        default_monospace_font_size = 10,
+        minimum_font_size = 8,
         enable_smooth_scrolling = true,
         enforce_96_dpi = true,
         user_stylesheet_uri = nil,
+        user_agent = "Luakit",
     },
     --[[
     ["all"] = {
