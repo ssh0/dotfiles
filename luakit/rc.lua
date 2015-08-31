@@ -56,6 +56,10 @@ require "binds"
 -- Optional user script loading --
 ----------------------------------
 
+-- adblock
+require "adblock"
+require "adblock_chrome"
+
 -- private browsing tabs
 require "plugins.private_browsing_tabs"
 

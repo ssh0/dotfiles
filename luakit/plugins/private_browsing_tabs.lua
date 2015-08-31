@@ -14,13 +14,13 @@ local type = type
 module("plugins.private_browsing_tabs")
 
 -- Private tab label
-theme.private_tab_fg            = "#CC76BB"
-theme.private_tab_bg            = "#492F44" 
-theme.private_tab_ntheme        = "#DDDDDD"
+theme.private_tab_fg            = "#bc66ab"
+theme.private_tab_bg            = "#290f24"
+theme.private_tab_ntheme        = "#dddddd"
 theme.private_selected_fg       = "#ffffff"
-theme.private_selected_bg       = "#793D6D"
-theme.private_selected_ntheme   = "#DDDDDD"
-theme.private_loading_fg        = "#33AADD"
+theme.private_selected_bg       = "#492f44"
+theme.private_selected_ntheme   = "#bdbdbd"
+theme.private_loading_fg        = "#33aadd"
 theme.private_loading_bg        = "#330022"
 
 -- Store the old update_tablist function
