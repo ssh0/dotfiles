@@ -250,4 +250,5 @@ luakit/rc.lua,.config/luakit/rc.lua
 luakit/theme.lua,.config/luakit/theme.lua
 luakit/webview.lua,.config/luakit/webview.lua
 luakit/window.lua,.config/luakit/window.lua
+luakit/plugins/private_browsing_tabs.lua,.config/luakit/plugins/private_browsing_tabs.lua
 #                                                                           }}}

@@ -56,11 +56,8 @@ require "binds"
 -- Optional user script loading --
 ----------------------------------
 
--- luakit-plugins
--- Installation:
---    git clone https://github.com/mason-larobina/luakit-plugins/ ~/.config/luakit/plugins
--- require "plugins"
--- plugins.policy = "automatic" -- or manual
+-- private browsing tabs
+require "plugins.private_browsing_tabs"
 
 require "webinspector"
 

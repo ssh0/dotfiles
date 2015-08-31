@@ -576,6 +576,12 @@ add_cmds({
     cmd("tabp[revious]", "Switch to the previous tab.",
         function (w) w:prev_tab() end),
 
+    cmd("pr[ivate]", "Toggle private browsing tab.",
+        function (w)
+            w.view.enable_private_browsing = not w.view.enable_private_browsing
+            w:update_tablist()
+        end),
+
     cmd("q[uit]", "Close the current window.",
         function (w, a, o) w:close_win(o.bang) end),
 
