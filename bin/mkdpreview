@@ -76,5 +76,5 @@ if $save; then
 fi
 
 if $preview; then
-  luakit -n "file://${output}"
+  luakit "file://${output}"
 fi
