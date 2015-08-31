@@ -6,7 +6,7 @@ globals = {
     max_cmd_history     = 100,
     max_srch_history    = 100,
  -- proxy must now be set through proxy command; environment variable is broken
-    default_window_size = "600x600",
+    default_window_size = "640x480",
     max_title_len       = 200,
 
  -- Disables loading of hostnames from /etc/hosts (for large host files)
