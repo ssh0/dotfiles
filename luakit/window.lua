@@ -455,7 +455,7 @@ window.methods = {
 
     update_win_title = function (w)
         local uri, title = w.view.uri, w.view.title
-        title = "luakit - " .. (title or "") .. ((uri and " - " .. uri) or "")
+        title = "luakit" .. ((title and " - " .. title) or "")
         local max = globals.max_title_len or 80
         if #title > max then title = string.sub(title, 1, max) .. "..." end
         w.win.title = title
