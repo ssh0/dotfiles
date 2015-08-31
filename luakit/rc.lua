@@ -186,6 +186,12 @@ require "introspector"
 
 -- Add command completion
 require "completion"
+-- Order of completion items
+completion.order = {
+    completion.funcs.command,
+    completion.funcs.bookmarks,
+    completion.funcs.history,
+}
 
 -- NoScript plugin, toggle scripts and or plugins on a per-domain basis.
 -- `,ts` to toggle scripts, `,tp` to toggle plugins, `,tr` to reset.
