@@ -1,0 +1,2126 @@
+[Adblock Plus 2.3.1]
+! Checksum: SkHEekCxDJDPNrOUJU2D6w
+! Homepage: https://code.google.com/p/adblock-plus-japanese-filter/
+! Title: ABP Japanese element-hiding filters (ONLY for Japanese: see Support Policy)
+! Expires: 6 hours
+! Version: 201405242210
+! Redirect: https://raw.githubusercontent.com/k2jp/abp-japanese-filters/master/abp_jp_element_hiding.txt
+!
+! Last modified: 2014-05-24 22:10 +0900
+! Change log: https://code.google.com/p/adblock-plus-japanese-filter/wiki/FilterChangeLog
+! Code license: GNU GPL v3: http://www.gnu.org/licenses/gpl.html
+! Content license: Creative Commons 3.0 BY-SA: http://creativecommons.org/licenses/by-sa/3.0/
+! Support policy:  https://code.google.com/p/adblock-plus-japanese-filter/wiki/Support_Policy
+! Project owners: k2japan
+! Project committers: looter, lostincarnation, tanahata
+! Project contributors: 
+!
+! ########## Temporary white list START ##########
+! pdf file names in the "Job listings" start with "ad_..." orz Why on earth "recruitment" is translated to "advertisement" on the page of National University (?_?) 
+@@||uec.ac.jp/about/advertisement/$elemhide
+! ---------- Temporary white list END ----------
+
+! ########## Default white list START ##########
+@@||adblockplus.org^$elemhide
+@@||advertban.com^$elemhide
+! A false positive with TV CM link including -ads- , reported by 通りすがりの火狐ユーザー via blog, Jun 13, 2013
+@@||apple.com^$elemhide
+@@||code.google.com^$elemhide
+@@||indeep76.com^$elemhide
+@@||lavasoft.com^$elemhide
+@@||mozilla.$elemhide
+@@||uad.nicovideo.jp^$elemhide
+! @@||robtex.com^$elemhide
+@@||siteadvisor.com^$elemhide
+@@||spreadthunderbird.com^$elemhide
+@@||webpagetest.org^$elemhide
+@@||wikipedia.org^$elemhide
+! ---------- Default white list END ----------
+!
+!
+! ########## Element Hiding START ##########
+###AD:not(body):not(input)
+###Ad:not(body):not(input)
+~id.dwmail.jp,~login.mail.goo.ne.jp,~kukuru.yahoo.co.jp###ad:not(body):not(input)
+###ADS:not(body):not(input)
+###ADs:not(body):not(input)
+###ads:not(body):not(input)
+! Eliminated duplicated filters, Mar 26, 2012
+! ###AD-text:not(body):not(input)
+! ###AD_bottom:not(body):not(input)
+! ###AD_left:not(body):not(input)
+! ###AD_right:not(body):not(input)
+! ###AD_text:not(body):not(input)
+! ###AD_top:not(body):not(input)
+! ###ad-text:not(body):not(input)
+! ###ad_bottom:not(body):not(input)
+! ###ad_container:not(body):not(input)
+! ###ad_frame:not(body):not(input)
+! ###ad_left:not(body):not(input)
+! ###ad_listing:not(body):not(input)
+! ###ad_right:not(body):not(input)
+! ###ad_text:not(body):not(input)
+! ###ad_rs:not(body):not(input)
+! ###ad_top:not(body):not(input)
+! Eliminated duplicated filters, Feb 14, 2012
+! ###AD1:not(body):not(input)
+! ###AD2:not(body):not(input)
+! ###AD3:not(body):not(input)
+! ###AD4:not(body):not(input)
+! ###AD5:not(body):not(input)
+! ###AD6:not(body):not(input)
+! ###AD7:not(body):not(input)
+! ###AD8:not(body):not(input)
+! ###AD9:not(body):not(input)
+! ###ad1:not(body):not(input)
+! ###ad2:not(body):not(input)
+! ###ad3:not(body):not(input)
+! ###ad4:not(body):not(input)
+! ###ad5:not(body):not(input)
+! ###ad6:not(body):not(input)
+! ###ad7:not(body):not(input)
+! ###ad8:not(body):not(input)
+! ###ad9:not(body):not(input)
+###adAms:not(body):not(input)
+###ADArea:not(body):not(input)
+###AdArea:not(body):not(input)
+###adArea:not(body):not(input)
+###adarea:not(body):not(input)
+###ADBottom:not(body):not(input)
+###AdBottom:not(body):not(input)
+###adBottom:not(body):not(input)
+###adbottom:not(body):not(input)
+###ADsBottom:not(body):not(input)
+###AdsBottom:not(body):not(input)
+###adsBottom:not(body):not(input)
+###adsbottom:not(body):not(input)
+###ADBox:not(body):not(input)
+###AdBox:not(body):not(input)
+###adBox:not(body):not(input)
+###adbox:not(body):not(input)
+###ADsBox:not(body):not(input)
+###AdsBox:not(body):not(input)
+###adsBox:not(body):not(input)
+###adsbox:not(body):not(input)
+~train.yoyaku.jrkyushu.co.jp###adContainer
+###ADFrame:not(body):not(input)
+###AdFrame:not(body):not(input)
+###adFrame:not(body):not(input)
+###adframe:not(body):not(input)
+###ADLeft:not(body):not(input)
+###AdLeft:not(body):not(input)
+###adLeft:not(body):not(input)
+###adleft:not(body):not(input)
+###ADlink:not(body):not(input)
+###Adlink:not(body):not(input)
+###adLink:not(body):not(input)
+###adlink:not(body):not(input)
+###adPRtext:not(body):not(input)
+###ADRight:not(body):not(input)
+###AdRight:not(body):not(input)
+###adRight:not(body):not(input)
+###adright:not(body):not(input)
+###AdSlot:not(body):not(input)
+###adSlot:not(body):not(input)
+###ADTop:not(body):not(input)
+###AdTop:not(body):not(input)
+###adTop:not(body):not(input)
+###adtop:not(body):not(input)
+###ADsTop:not(body):not(input)
+###AdsTop:not(body):not(input)
+###adsTop:not(body):not(input)
+###adstop:not(body):not(input)
+###adv:not(body):not(input)
+###AMN-large-banner:not(body):not(input)
+###attypeJob:not(body):not(input)
+###bannerAD:not(body):not(input)
+###bannerAd:not(body):not(input)
+###bannerad:not(body):not(input)
+###block_whitepaper:not(body):not(input)
+###bottomADs:not(body):not(input)
+###bottomAds:not(body):not(input)
+###bottomads:not(body):not(input)
+###boxAD:not(body):not(input)
+###boxAd:not(body):not(input)
+###boxad:not(body):not(input)
+###boxad1:not(body):not(input)
+###defaultAD:not(body):not(input)
+###defaultAd:not(body):not(input)
+###flashAd:not(body):not(input)
+###flashAD:not(body):not(input)
+###FooterAD:not(body):not(input)
+###FooterAd:not(body):not(input)
+###footerAD:not(body):not(input)
+###footerAd:not(body):not(input)
+###googleAD:not(body):not(input)
+###googleAd:not(body):not(input)
+###googleADs:not(body):not(input)
+###googleAds:not(body):not(input)
+###HeaderAd:not(body):not(input)
+###headerAd:not(body):not(input)
+###headerBannerArea:not(body):not(input)
+###headerPR:not(body):not(input)
+! ###overture_cm:not(body):not(input)
+###PR-area:not(body):not(input)
+###pr-area:not(body):not(input)
+###PR_area:not(body):not(input)
+###pr_area:not(body):not(input)
+###PR-txt:not(body):not(input)
+###pr-txt:not(body):not(input)
+###PR_txt:not(body):not(input)
+###pr_txt:not(body):not(input)
+###prBox:not(body):not(input)
+###prbox:not(body):not(input)
+###prTxt:not(body):not(input)
+###prtxt:not(body):not(input)
+###sideadbnr:not(body):not(input)
+###sideRecommend:not(body):not(input)
+###textAD:not(body):not(input)
+###textAd:not(body):not(input)
+###textad:not(body):not(input)
+###textad-top:not(body):not(input)
+###textADs:not(body):not(input)
+###textAds:not(body):not(input)
+###top_banner_area:not(body):not(input)
+###topAD:not(body):not(input)
+###topAd:not(body):not(input)
+###topADs:not(body):not(input)
+###topAds:not(body):not(input)
+~mail.google.com##.AD:not(body):not(input)
+##.Ad:not(body):not(input)
+! Added negative condition to avoid false positives with Google+ notifications at Google Reader and Gmail, reported by @zirweed, Jun 27 and 29, 2012
+~used.realestate.yahoo.co.jp,~justin.tv,~mapion.co.jp,~rocketnews24.com##.ad:not(body):not(input)
+##.ADS:not(body):not(input)
+##.ADs:not(body):not(input)
+! At gmail.com, adding exception .adf excludes false positives with each mail header and .adn with with each mail body 2011-11-18
+##.ads:not(.adf):not(.adn):not(body):not(input)
+! Eliminated duplicated filters, Mar 26, 2012
+! ##.ad-area:not(body):not(input)
+! ##.AD-text:not(body):not(input)
+! ##.ad-text:not(body):not(input)
+! ##.ad_banner:not(body):not(input)
+! ##.ad_frame:not(body):not(input)
+! ##.ad_left:not(body):not(input)
+! ##.ad_link:not(body):not(input)
+! ##.ad_right:not(body):not(input)
+! ##.ad_rectangle:not(body):not(input)
+! ##.ad_square:not(body):not(input)
+! ##.ad_special_badge:not(body):not(input)
+! ##.AD_text:not(body):not(input)
+! ##.ad_text:not(body):not(input)
+! ##.ad_textlink:not(body):not(input)
+! ##.ad_textlink_box:not(body):not(input)
+! ##.ad_top:not(body):not(input)
+! Eliminated duplicated filters, Feb 14, 2012
+! ##.AD1:not(body):not(input)
+! ##.AD2:not(body):not(input)
+! ##.AD3:not(body):not(input)
+! ##.AD4:not(body):not(input)
+! ##.AD5:not(body):not(input)
+! ##.AD6:not(body):not(input)
+! ##.AD7:not(body):not(input)
+! ##.AD8:not(body):not(input)
+! ##.AD9:not(body):not(input)
+! ##.ad1:not(body):not(input)
+! ##.ad2:not(body):not(input)
+! ##.ad3:not(body):not(input)
+! ##.ad300:not(body):not(input)
+! ##.ad4:not(body):not(input)
+! ##.ad5:not(body):not(input)
+! ##.ad6:not(body):not(input)
+! ##.ad7:not(body):not(input)
+! ##.ad728:not(body):not(input)
+! ##.ad8:not(body):not(input)
+! ##.ad9:not(body):not(input)
+##.AdArea:not(body):not(input)
+##.adArea:not(body):not(input)
+##.adarea:not(body):not(input)
+##.AdBottom:not(body):not(input)
+##.adBottom:not(body):not(input)
+##.adbottom:not(body):not(input)
+##.AdBox:not(body):not(input)
+##.adBox:not(body):not(input)
+##.adbox:not(body):not(input)
+##.addescription:not(body):not(input)
+##.AdLeft:not(body):not(input)
+##.adLeft:not(body):not(input)
+##.adleft:not(body):not(input)
+##.AdLink:not(body):not(input)
+##.adLink:not(body):not(input)
+##.adlink:not(body):not(input)
+##.adPRtext:not(body):not(input)
+##.AdRight:not(body):not(input)
+##.adRight:not(body):not(input)
+##.adright:not(body):not(input)
+! Eliminated a duplicated filter, Feb 3, 2013
+! ##.ads_adingo:not(body):not(input)
+##.AdSlot:not(body):not(input)
+##.adSlot:not(body):not(input)
+##.adslot:not(body):not(input)
+##.AdSpace:not(body):not(input)
+##.adSpace:not(body):not(input)
+##.adspace:not(body):not(input)
+##.AdText:not(body):not(input)
+##.adText:not(body):not(input)
+##.adtext:not(body):not(input)
+##.AdTop:not(body):not(input)
+##.adTop:not(body):not(input)
+##.adtop:not(body):not(input)
+##.adtitle:not(body):not(input)
+##.adurl:not(body):not(input)
+! False positives with the class named adv as ADVANCED found at [http://p.eagate.573.jp/game/jubeat/saucer/p/playdata/music.html], reported by *@mushroom080*
+~p.eagate.573.jp,~jma.go.jp##.adv:not(body):not(input)
+##.AMN-sponsor-rolls:not(body):not(input)
+##.AMN-large-banner:not(body):not(input)
+##.bannerAd:not(body):not(input)
+##.bannerADs:not(body):not(input)
+##.bannerAds:not(body):not(input)
+##.block_whitepaper:not(body):not(input)
+##.bottomAd:not(body):not(input)
+##.bottomAds:not(body):not(input)
+##.boxAd:not(body):not(input)
+##.boxad:not(body):not(input)
+##.boxADs:not(body):not(input)
+##.boxAds:not(body):not(input)
+##.defaultAd:not(body):not(input)
+##.flashAd:not(body):not(input)
+##.flashAD:not(body):not(input)
+##.flashAds:not(body):not(input)
+##.footerAd:not(body):not(input)
+##.footerADs:not(body):not(input)
+##.footerAds:not(body):not(input)
+##.footerBanner:not(body):not(input)
+##.footerBanners:not(body):not(input)
+##.gAdsense:not(body):not(input)
+##.googleAd:not(body):not(input)
+##.googleAds:not(body):not(input)
+##.gsc-adBlock:not(body):not(input)
+##.header-banner:not(body):not(input)
+~photobucket.com##.headerAd:not(body):not(input)
+##.headerADs:not(body):not(input)
+##.headerAds:not(body):not(input)
+##.headerBanner:not(body):not(input)
+##.headerBanners:not(body):not(input)
+##.headerPR:not(body):not(input)
+##.leaderboardAd:not(body):not(input)
+##.PR-txt:not(body):not(input)
+##.PR_txt:not(body):not(input)
+##.pr-txt:not(body):not(input)
+##.pr_txt:not(body):not(input)
+##.prbox:not(body):not(input)
+~apple.com##.promos:not(body):not(input)
+##.promoted:not(body):not(input)
+##.promoted-videos:not(body):not(input)
+##.prTxt:not(body):not(input)
+##.prtxt:not(body):not(input)
+##.randomBanner:not(body):not(input)
+##.showcaseAd:not(body):not(input)
+##.sideAd:not(body):not(input)
+##.sideBanner:not(body):not(input)
+##.sideRecommend:not(body):not(input)
+##.sideTxtAd:not(body):not(input)
+##.spotlightAd:not(body):not(input)
+##.staticAd:not(body):not(input)
+##.tdftad:not(body):not(input)
+##.textAd:not(body):not(input)
+##.textAds:not(body):not(input)
+##.textad-top:not(body):not(input)
+##.topAd:not(body):not(input)
+##.topAds:not(body):not(input)
+! ========== Links with a keyword START ==========
+##a[href*="/A-affiliate2/"]
+##a[href*="/aclk?bid="]
+~famitsu.com##a[href*="&ad="]
+##a[href*="&amp;ad="]
+##a[href*="-ad."]
+##a[href*="-AD."]
+~ipss.go.jp##a[href*="-ad/"]
+##a[href*="-AD/"]
+~sharp.co.jp,~4sh.jp##a[href*="/ad-"]
+##a[href*="/AD-"]
+##a[href*="/ad."]
+##a[href*="/AD."]
+##a[href*="/ad/"]
+##a[href*="/AD/"]
+##a[href*="/ad_"]
+##a[href*="/AD_"]
+##a[href*="?ad="]
+##a[href*="_ad."]
+##a[href*="_AD."]
+##a[href*="_ad/"]
+##a[href*="_AD/"]
+~point-meijin.com##a[href*="_ad_"]
+##a[href*="_AD_"]
+##a[href*="/adcl."]
+##a[href*="/ADCLICK/"]
+##a[href*="&adgroup="]
+##a[href*="?adgroup="]
+##a[href*="?adid="]
+##a[href*="/adpeeps."]
+##a[href*="/adpromo/"]
+##a[href*="&adptg_"]
+##a[href*="&amp;adptg_"]
+##a[href*="/adrotate-out."]
+~blocklistpro.com##a[href*="-ads-"]
+##a[href*="-ADs-"]
+##a[href*="-ADS-"]
+! ~altech-ads.com##a[href*="-ads."]
+##a[href*="-ADs."]
+##a[href*="-ADS."]
+##a[href*="-ads/"]
+##a[href*="-ADs/"]
+##a[href*="-ADS/"]
+##a[href*="/ads-"]
+##a[href*="/ADs-"]
+##a[href*="/ADS-"]
+##a[href*="/ads."]
+##a[href*="/ADs."]
+##a[href*="/ADS."]
+~gendai.net,~nicovideo.jp##a[href*="/ads/"]:not([href*="/preference"])
+##a[href*="/ADs/"]
+##a[href*="/ADS/"]
+##a[href*="/ads_"]
+##a[href*="/ADs_"]
+##a[href*="/ADS_"]
+##a[href*="_ads."]:not([href*="/privacy"])
+##a[href*="_ADs."]
+##a[href*="_ADS."]
+##a[href*="_ads/"]
+##a[href*="_ADs/"]
+##a[href*="_ADS/"]
+##a[href*="_ads_"]
+##a[href*="_ADs_"]
+##a[href*="_ADS_"]
+##a[href*="/?adv="]
+##a[href*="/advt."]
+##a[href*="/adsv-"]
+##a[href*="/adsv."]
+##a[href*="/adsv/"]
+##a[href*="/adsv_"]
+##a[href*="/advert.php?"]
+##a[href*="/advertise."]
+##a[href*="/advertise/"]
+##a[href*="/advertising/"]
+##a[href*="?adwares="]
+##a[href*="?adcd="]
+##a[href*="?af_code="]
+##a[href*="?afc="]
+##a[href*="/aff.php?"]
+##a[href*="/affiliate.php?"]
+##a[href*="&aff="]
+##a[href*="&amp;aff="]
+##a[href*="?aff="]
+##a[href*="?affid="]
+##a[href*="?AFFILIATE="]
+##a[href*="?affiliate="]
+##a[href*="?AFFILIATEID="]
+##a[href*="?affiliateid="]
+##a[href*="&afftrack="]
+##a[href*="&amp;afftrack="]
+##a[href*="&AFFILIATE="]
+##a[href*="&amp;AFFILIATE="]
+##a[href*="&affiliate="]
+##a[href*="&amp;affiliate="]
+! Commented out too generic element hiding filter: 2011-06-02
+! ##a[href*="affiliate"]
+##a[href*="&afguid="]
+##a[href*="&amp;afguid="]
+##a[href*="afi_link"]
+##a[href*="?afrno="]
+##a[href*="/aftype-"]
+##a[href*="/bannerclick/"]
+##a[href*="?banner_id="]
+##a[href*="/bin/gg?"]
+##a[href*="/bizad."]
+##a[href*="/ch.html?a="]
+##a[href*="/click.ng/"]
+##a[href*="clickad?"]
+##a[href*="/clicker."][href*="/redirect."]
+##a[href*="/clink.php?"]
+##a[href*="/clk.php?"]
+##a[href*="/dlaf/=/"]
+##a[href*="/event.ng/"]
+##a[href*="/ld/"][href*="/index.php?ref="]
+##a[href*="INSERT_RANDOM_NUMBER_HERE"]
+##a[href*="/kokoku/"]
+##a[href*="/lsplus."]
+##a[href*="&partnerId="]
+##a[href*="&amp;partnerId="]
+##a[href*="/premium.html?ref="]
+##a[href*="/promotion?"]
+##a[href*="/rd/?url="]
+##a[href*="/speedclicks/"]
+! false positive 2011-03-07: ##a[href*="/splash/"]
+##a[href*="/track/traffic.php?"]
+##a[href*="/traffic.php?c="]
+##a[href*="sponsor"]
+##a[href*="utm_medium=ad"]
+##a[href*="utm_source=ad"]
+##a[href*="/?vpab0"]
+##a[href*="/?vpca0"]
+##a[href*="/?vpch0"]
+##a[href*="/?vpcy0"]
+##a[href*="/?vpcz0"]
+##a[href*="/?vpee0"]
+##a[href*="&waad="]
+##a[href*="&amp;waad="]
+##a[href*="?waad="]
+##a[target="_blank"][href$="/premium"]
+! ---------- Links with a keyword END ----------
+! ========== Links with a domain START ==========
+##a[href*="//203.86.249.80/"]
+##a[href*="//210.155.151.148/"]
+##a[href*="//123direct.info/"]
+##a[href*="//1adad.info/"]
+##a[href*="//7od.biz/"]
+##a[href*="/9lick.net/"]
+##a[href*="a-c-engine.com/id/"]
+##a[href*="px.a8.net/svt/ejp"]
+##a[href*=".accesstrade.net/at/c.html"]
+##a[href*="//acnt.biz/ac."]
+##a[href*=".ad-counter.info/"]
+##a[href*="ad-v.jp/*/click/"]
+! Moved to the paranoid subscription, Mar 9, 2013
+! ##a[href*="//adf.ly/"]
+##a[href*="//adjc.biz/"]
+##a[href*="//cou.adjust-net.jp"]
+##a[href*="adjustnetwork.com/aan/"]
+##a[href*="adpath.net/click?"]
+##a[href*=".adservicesnet.info/"]
+##a[href*="adsmarket.com/click/"]
+##a[href*=".advg.jp/ad"]
+##a[href*="//ad.agilemedia.jp"]
+##a[href*="affbuzzads.com"]
+##a[href*="ainte.jp/cid/"]
+##a[href*="//sos.allabout.co.jp"]
+##a[href*=".apple.com/"][href*="/id"][href*="&amp;at="]
+##a[href*=".apple.com/"][href*="/id"][href*="&at="]
+##a[href*=".apple.com/"][href*="/id"][href*="?at="]
+##a[href*="auc-life.org/?"]
+##a[href*=".bb-chat.tv/"]
+##a[href*="partner.become.co.jp/rd"]
+##a[href*="best-select.biz/cc"]
+##a[href*="bidders.co.jp/aff/"]
+##a[href*="bidders.co.jp/pitem/"][href*="/aff/"]
+##a[href*=".bingshopping.jp/price/isearch/"]
+##a[href*=".bizreach.jp/"]
+##a[href*=".blogmura.com/in/"]
+##a[href*="//extlink.blogsys.jp/"]
+##a[href*=".brothersoft."]
+##a[href*=".ca-mpr.jp/"]
+##a[href*="//refer.ccbill.com"]
+##a[href*="//ccrt.biz/"]
+##a[href*="//clcount.com/"]
+##a[href*="clget.jp/"]
+##a[href*="//clk-fm-report.net"]
+##a[href*=".counter-hosting.com"]
+##a[href*=".cpalead.com"]
+##a[href*=".csolution.jp/"][href*="//cm-"]
+##a[href*="digiket.com/work/show/_data/ID="][href*="/AFID="]
+##a[href*="//djdmms.net/"]
+##a[href*="dlsite.com/dlaf/=/link/"]
+##a[href*="dmm.co.jp/hit."]
+##a[href*="dmm.com/click."]
+##a[href*="dmm.co"][href*="/-/detail/=/cid="][href*="-0"]
+##a[href*=".doubleclick.net/aclk?"]
+##a[href*="//ad.doubleclick.net"]
+##a[href*="//goto.dtiblog.com/"]
+##a[href*="//click.dtiserv2.com/"]
+##a[href*="ad.durasite.net"]
+##a[href*=".ebis.ne.jp"][href*="_rd."]
+##a[href*=".ebis.ne.jp"][href*="/tr_"]
+##a[href*="//ec-design.jp/cc/"]
+##a[href*="//ever-adsense.com"]
+##a[href*="//ever-click.com"]
+##a[href*="//ever-clix.com"]
+##a[href*="//ever-website.com"]
+##a[href*="//exaf.jp/"]
+##a[href*=".google."][href*="/aclk?sa="]
+##a[href*=".google."][href*="%2Faclk%3Fsa%3D"]
+##a[href*=".googlesyndication.com/aclk?sa="]
+##a[href*="harvest-z.jp"]
+##a[href*="i2i.jp/click."]
+##a[href*="infocart.jp/"]
+##a[href*=".impressit.co.jp/reader.php"]
+##a[href*="//inf.to/"]
+##a[href*=".info-style.co.jp"]
+##a[href*=".infoseek.co.jp/redirect?sv="]
+##a[href*="infotop.jp/click."]
+##a[href*="infotop.jp/order."]
+##a[href*="//ngs.impress.co.jp"]
+##a[href*="//click.j-a-net.jp"]
+##a[href*="//j-a-net.jp/gateway/click.cgi"]
+##a[href*="//cl.jlisting.jp"]
+##a[href*="//36.jpn.org/"]
+##a[href*="//on.jpn.org/"]
+##a[href*="//search.jword.jp"]
+##a[href*="//kvors.com/click/?"]
+##a[href*="//lahw.info/"]
+##a[href*=".linksynergy.com/fs-bin/"]
+##a[href*=".linksynergy.com/php-bin/"]
+##a[href*=".liutilities.com/affcb/"]
+##a[href*=".liveads.jp/widgets_src/"]
+##a[href*=".loka.jp"]
+##a[href*="//a.mag2.jp/"]
+##a[href*="media-b.jp"][href*="count/"]
+##a[href*=".mediaplex.com"]
+##a[href*="//ads.mixi.jp"]
+##a[href*="mobile-click.org"]
+##a[href*=".movja.info/?"]
+##a[href*="//msm.to/"]
+##a[href*="//partner.jp.msn.com/"]
+##a[href*=".r.msn.com/?ld="]
+##a[href*="//mvxl.biz/"]
+##a[href*="//mbad"][href*=".nan.co.jp/"]
+##a[href*="//itpro.nikkeibp.co.jp/as/"]
+##a[href*="//nreic.info/"]
+##a[href*="okone.jp/?"]
+##a[href*=".overture.co.jp/ja_JP/legal/"]
+##a[href*=".overture.com/d/sr/"]
+##a[href*="p-advg.com/adpCnt/"]
+##a[href*="pheedo.jp/feeds/"]
+~r-agent.com##a[href*=".r-agent.com/"][href*="?vos="]
+##a[href*=".afl.rakuten.co.jp%2Fhgc%2F"]
+##a[href*=".afl.rakuten.co.jp/hsc/"]
+##a[href*="//rd.rakuten.co.jp/c/?"]
+! ##a[href*="//rd.rakuten.co.jp/s/?"]
+~rikunabi.com##a[href*=".rikunabi.com/"][href*=";vos="]
+~rikunabi.com##a[href*=".rikunabi.com/"][href*="?vos="]
+##a[href*="rssad.jp/trendmatch/"]
+##a[href*="samuraiclick.com/"]
+##a[href*="//searchpartner.jp/"]
+##a[href*="//sell4.info/"]
+##a[href*="shareasale.com/r."]
+##a[href*="//sma4.me/"]
+##a[href*=".softonic."]
+##a[href*=".softpicks.net/"]
+##a[href*="sp-affiliaters.com/adinfo/"]
+##a[href*="//g.subcul.net"]
+##a[href*="//affl.sucuri.net/?affl="]
+##a[href*=".super-search.jp/"]
+##a[href*=".tcs-asp.net/"]
+##a[href*=".trafficgate.net/"]
+##a[href*="type.jp/s/navi/"]
+##a[href*=".uniblue.com/cm/"]
+##a[href*="//rd.userlocal.jp/"]
+##a[href*="ap.valuecommerce.com/"]
+##a[href*="ck.valuecommerce.com/"]
+##a[href*="visionavi.net/motivation/"]
+##a[href*="//adrd.weblio.jp"]
+##a[href*="//blog.with2.net/link."]
+##a[href*="world-auctions.org/?aid="]
+##a[href*="ii.xii.jp"]
+##a[href*="//rd.xlisting.jp"]
+##a[href*="xmax.jp/click/"]
+##a[href*="xtendmedia.com/clk?"]
+##a[href*="//rd.listing.yahoo."]
+##a[href*="//z99pc.com/"]
+##a[href*=".ziyu.net/jump."]
+! ---------- Links with a domain END ----------
+! ========== images with an alt attribute START ==========
+##img[alt^="[PR-"]
+##img[alt^="[PR_"]
+##img[alt^="[pr-"]
+##img[alt^="[pr_"]
+##img[alt*="-PR-"]
+##img[alt*="-pr-"]
+##img[alt*="[PR]"]
+##img[alt*="[pr]"]
+##img[alt*="_PR_"]
+##img[alt*="_pr_"]
+##img[alt$="-PR]"]
+##img[alt$="-pr]"]
+##img[alt$="_PR]"]
+##img[alt$="_pr]"]
+! ---------- Images with an alt attribute END ----------
+! ========== All elements START ==========
+##[id^="AD-"]:not(body):not(input)
+##[id^="AD_"]:not(body):not(input)
+##[id^="AD0"]:not(body):not(input)
+##[id^="AD1"]:not(body):not(input)
+##[id^="AD2"]:not(body):not(input)
+##[id^="AD3"]:not(body):not(input)
+##[id^="AD4"]:not(body):not(input)
+##[id^="AD5"]:not(body):not(input)
+##[id^="AD6"]:not(body):not(input)
+##[id^="AD7"]:not(body):not(input)
+##[id^="AD8"]:not(body):not(input)
+##[id^="AD9"]:not(body):not(input)
+##[id^="ADS-"]:not(body):not(input)
+##[id^="ADS_"]:not(body):not(input)
+##[id^="ADS0"]:not(body):not(input)
+##[id^="ADS1"]:not(body):not(input)
+##[id^="ADS2"]:not(body):not(input)
+##[id^="ADS3"]:not(body):not(input)
+##[id^="ADS4"]:not(body):not(input)
+##[id^="ADS5"]:not(body):not(input)
+##[id^="ADS6"]:not(body):not(input)
+##[id^="ADS7"]:not(body):not(input)
+##[id^="ADS8"]:not(body):not(input)
+##[id^="ADS9"]:not(body):not(input)
+##[id^="ADV-"]:not(body):not(input)
+##[id^="ADV_"]:not(body):not(input)
+##[id^="ADV0"]:not(body):not(input)
+##[id^="ADV1"]:not(body):not(input)
+##[id^="ADV2"]:not(body):not(input)
+##[id^="ADV3"]:not(body):not(input)
+##[id^="ADV4"]:not(body):not(input)
+##[id^="ADV5"]:not(body):not(input)
+##[id^="ADV6"]:not(body):not(input)
+##[id^="ADV7"]:not(body):not(input)
+##[id^="ADV8"]:not(body):not(input)
+##[id^="ADV9"]:not(body):not(input)
+##[id^="ADs-"]:not(body):not(input)
+##[id^="ADs_"]:not(body):not(input)
+##[id^="ADs0"]:not(body):not(input)
+##[id^="ADs1"]:not(body):not(input)
+##[id^="ADs2"]:not(body):not(input)
+##[id^="ADs3"]:not(body):not(input)
+##[id^="ADs4"]:not(body):not(input)
+##[id^="ADs5"]:not(body):not(input)
+##[id^="ADs6"]:not(body):not(input)
+##[id^="ADs7"]:not(body):not(input)
+##[id^="ADs8"]:not(body):not(input)
+##[id^="ADs9"]:not(body):not(input)
+##[id^="ad-"]:not(body):not(input)
+~pc-zero.jp##[id^="ad_"]:not(body):not(input)
+##[id^="ad0"]:not(body):not(input)
+##[id^="ad1"]:not(body):not(input)
+##[id^="ad2"]:not(body):not(input)
+##[id^="ad3"]:not(body):not(input)
+##[id^="ad4"]:not(body):not(input)
+##[id^="ad5"]:not(body):not(input)
+##[id^="ad6"]:not(body):not(input)
+##[id^="ad7"]:not(body):not(input)
+##[id^="ad8"]:not(body):not(input)
+##[id^="ad9"]:not(body):not(input)
+##[id^="adArticle"]:not(body):not(input)
+##[id^="adBox"]:not(body):not(input)
+##[id^="adFooter"]:not(body):not(input)
+##[id^="adHeader"]:not(body):not(input)
+##[id^="ads-"]:not(body):not(input)
+! False positive with #ads_backsplashSkin at news.cnet.com reported via Issue Report 2011-11-21
+##[id^="ads_"]:not(#ads_backsplashSkin):not(body):not(input)
+##[id^="ads0"]:not(body):not(input)
+##[id^="ads1"]:not(body):not(input)
+##[id^="ads2"]:not(body):not(input)
+##[id^="ads3"]:not(body):not(input)
+##[id^="ads4"]:not(body):not(input)
+##[id^="ads5"]:not(body):not(input)
+##[id^="ads6"]:not(body):not(input)
+##[id^="ads7"]:not(body):not(input)
+##[id^="ads8"]:not(body):not(input)
+##[id^="ads9"]:not(body):not(input)
+##[id^="adv-"]:not(body):not(input)
+##[id^="adv_"]:not(body):not(input)
+##[id^="adv0"]:not(body):not(input)
+##[id^="adv1"]:not(body):not(input)
+##[id^="adv2"]:not(body):not(input)
+##[id^="adv3"]:not(body):not(input)
+##[id^="adv4"]:not(body):not(input)
+##[id^="adv5"]:not(body):not(input)
+##[id^="adv6"]:not(body):not(input)
+##[id^="adv7"]:not(body):not(input)
+##[id^="adv8"]:not(body):not(input)
+##[id^="adv9"]:not(body):not(input)
+##[id^="advert"]:not(body):not(input)
+##[id^="deqwas"]:not(body):not(input)
+##[id^="deteql"]:not(body):not(input)
+##[id^="gAdsense"]:not(body):not(input)
+##[id^="geniee_overray"]:not(body):not(input)
+##[id^="google_ad"]:not(body):not(input)
+##[id^="google_afc_"]:not(body):not(input)
+##[id*="-AD-"]:not(body):not(input)
+##[id*="-AD_"]:not(body):not(input)
+##[id*="-AD0"]:not(body):not(input)
+##[id*="-AD1"]:not(body):not(input)
+##[id*="-AD2"]:not(body):not(input)
+##[id*="-AD3"]:not(body):not(input)
+##[id*="-AD4"]:not(body):not(input)
+##[id*="-AD5"]:not(body):not(input)
+##[id*="-AD6"]:not(body):not(input)
+##[id*="-AD7"]:not(body):not(input)
+##[id*="-AD8"]:not(body):not(input)
+##[id*="-AD9"]:not(body):not(input)
+##[id*="-ADS-"]:not(body):not(input)
+##[id*="-ADS_"]:not(body):not(input)
+##[id*="-ADS0"]:not(body):not(input)
+##[id*="-ADS1"]:not(body):not(input)
+##[id*="-ADS2"]:not(body):not(input)
+##[id*="-ADS3"]:not(body):not(input)
+##[id*="-ADS4"]:not(body):not(input)
+##[id*="-ADS5"]:not(body):not(input)
+##[id*="-ADS6"]:not(body):not(input)
+##[id*="-ADS7"]:not(body):not(input)
+##[id*="-ADS8"]:not(body):not(input)
+##[id*="-ADS9"]:not(body):not(input)
+##[id*="-ADV-"]:not(body):not(input)
+##[id*="-ADV0"]:not(body):not(input)
+##[id*="-ADV1"]:not(body):not(input)
+##[id*="-ADV2"]:not(body):not(input)
+##[id*="-ADV3"]:not(body):not(input)
+##[id*="-ADV4"]:not(body):not(input)
+##[id*="-ADV5"]:not(body):not(input)
+##[id*="-ADV6"]:not(body):not(input)
+##[id*="-ADV7"]:not(body):not(input)
+##[id*="-ADV8"]:not(body):not(input)
+##[id*="-ADV9"]:not(body):not(input)
+##[id*="-ADs-"]:not(body):not(input)
+##[id*="-ADs_"]:not(body):not(input)
+##[id*="-ADs0"]:not(body):not(input)
+##[id*="-ADs1"]:not(body):not(input)
+##[id*="-ADs2"]:not(body):not(input)
+##[id*="-ADs3"]:not(body):not(input)
+##[id*="-ADs4"]:not(body):not(input)
+##[id*="-ADs5"]:not(body):not(input)
+##[id*="-ADs6"]:not(body):not(input)
+##[id*="-ADs7"]:not(body):not(input)
+##[id*="-ADs8"]:not(body):not(input)
+##[id*="-ADs9"]:not(body):not(input)
+~foreignaffairs.com##[id*="-ad-"]:not(body):not(input)
+##[id*="-ad_"]:not(body):not(input)
+~github.com##[id*="-ad0"]:not(body):not(input)
+##[id*="-ad1"]:not(body):not(input)
+##[id*="-ad2"]:not(body):not(input)
+##[id*="-ad3"]:not(body):not(input)
+##[id*="-ad4"]:not(body):not(input)
+##[id*="-ad5"]:not(body):not(input)
+##[id*="-ad6"]:not(body):not(input)
+##[id*="-ad7"]:not(body):not(input)
+##[id*="-ad8"]:not(body):not(input)
+##[id*="-ad9"]:not(body):not(input)
+##[id*="-ads-"]:not(body):not(input)
+##[id*="-ads_"]:not(body):not(input)
+##[id*="-ads0"]:not(body):not(input)
+##[id*="-ads1"]:not(body):not(input)
+##[id*="-ads2"]:not(body):not(input)
+##[id*="-ads3"]:not(body):not(input)
+##[id*="-ads4"]:not(body):not(input)
+##[id*="-ads5"]:not(body):not(input)
+##[id*="-ads6"]:not(body):not(input)
+##[id*="-ads7"]:not(body):not(input)
+##[id*="-ads8"]:not(body):not(input)
+##[id*="-ads9"]:not(body):not(input)
+##[id*="-adv-"]:not(body):not(input)
+##[id*="-adv0"]:not(body):not(input)
+##[id*="-adv1"]:not(body):not(input)
+##[id*="-adv2"]:not(body):not(input)
+##[id*="-adv3"]:not(body):not(input)
+##[id*="-adv4"]:not(body):not(input)
+##[id*="-adv5"]:not(body):not(input)
+##[id*="-adv6"]:not(body):not(input)
+##[id*="-adv7"]:not(body):not(input)
+##[id*="-adv8"]:not(body):not(input)
+##[id*="-adv9"]:not(body):not(input)
+##[id*="_AD-"]:not(body):not(input)
+##[id*="_AD_"]:not(body):not(input)
+##[id*="_AD0"]:not(body):not(input)
+##[id*="_AD1"]:not(body):not(input)
+##[id*="_AD2"]:not(body):not(input)
+##[id*="_AD3"]:not(body):not(input)
+##[id*="_AD4"]:not(body):not(input)
+##[id*="_AD5"]:not(body):not(input)
+##[id*="_AD6"]:not(body):not(input)
+##[id*="_AD7"]:not(body):not(input)
+##[id*="_AD8"]:not(body):not(input)
+##[id*="_AD9"]:not(body):not(input)
+##[id*="_ADS-"]:not(body):not(input)
+##[id*="_ADS_"]:not(body):not(input)
+##[id*="_ADS0"]:not(body):not(input)
+##[id*="_ADS1"]:not(body):not(input)
+##[id*="_ADS2"]:not(body):not(input)
+##[id*="_ADS3"]:not(body):not(input)
+##[id*="_ADS4"]:not(body):not(input)
+##[id*="_ADS5"]:not(body):not(input)
+##[id*="_ADS6"]:not(body):not(input)
+##[id*="_ADS7"]:not(body):not(input)
+##[id*="_ADS8"]:not(body):not(input)
+##[id*="_ADS9"]:not(body):not(input)
+##[id*="_ADV_"]:not(body):not(input)
+##[id*="_ADV0"]:not(body):not(input)
+##[id*="_ADV1"]:not(body):not(input)
+##[id*="_ADV2"]:not(body):not(input)
+##[id*="_ADV3"]:not(body):not(input)
+##[id*="_ADV4"]:not(body):not(input)
+##[id*="_ADV5"]:not(body):not(input)
+##[id*="_ADV6"]:not(body):not(input)
+##[id*="_ADV7"]:not(body):not(input)
+##[id*="_ADV8"]:not(body):not(input)
+##[id*="_ADV9"]:not(body):not(input)
+##[id*="_ADs-"]:not(body):not(input)
+##[id*="_ADs_"]:not(body):not(input)
+##[id*="_ADs0"]:not(body):not(input)
+##[id*="_ADs1"]:not(body):not(input)
+##[id*="_ADs2"]:not(body):not(input)
+##[id*="_ADs3"]:not(body):not(input)
+##[id*="_ADs4"]:not(body):not(input)
+##[id*="_ADs5"]:not(body):not(input)
+##[id*="_ADs6"]:not(body):not(input)
+##[id*="_ADs7"]:not(body):not(input)
+##[id*="_ADs8"]:not(body):not(input)
+##[id*="_ADs9"]:not(body):not(input)
+##[id*="_ad-"]:not(body):not(input)
+~video.fc2.com,~nocutnews.co.kr,~kukuru.yahoo.co.jp##[id*="_ad_"]:not([id*="no_ad"]):not([class^="artical"]):not(body):not(input)
+##[id*="_ad0"]:not(body):not(input)
+##[id*="_ad1"]:not(body):not(input)
+##[id*="_ad2"]:not(body):not(input)
+##[id*="_ad3"]:not(body):not(input)
+##[id*="_ad4"]:not(body):not(input)
+##[id*="_ad5"]:not(body):not(input)
+##[id*="_ad6"]:not(body):not(input)
+##[id*="_ad7"]:not(body):not(input)
+##[id*="_ad8"]:not(body):not(input)
+##[id*="_ad9"]:not(body):not(input)
+##[id*="_ads-"]:not(body):not(input)
+##[id*="_ads_"]:not(body):not(input)
+##[id*="_ads0"]:not(body):not(input)
+##[id*="_ads1"]:not(body):not(input)
+##[id*="_ads2"]:not(body):not(input)
+##[id*="_ads3"]:not(body):not(input)
+##[id*="_ads4"]:not(body):not(input)
+##[id*="_ads5"]:not(body):not(input)
+##[id*="_ads6"]:not(body):not(input)
+##[id*="_ads7"]:not(body):not(input)
+##[id*="_ads8"]:not(body):not(input)
+##[id*="_ads9"]:not(body):not(input)
+##[id*="_adv_"]:not(body):not(input)
+##[id*="_adv0"]:not(body):not(input)
+##[id*="_adv1"]:not(body):not(input)
+##[id*="_adv2"]:not(body):not(input)
+##[id*="_adv3"]:not(body):not(input)
+##[id*="_adv4"]:not(body):not(input)
+##[id*="_adv5"]:not(body):not(input)
+##[id*="_adv6"]:not(body):not(input)
+##[id*="_adv7"]:not(body):not(input)
+##[id*="_adv8"]:not(body):not(input)
+##[id*="_adv9"]:not(body):not(input)
+##[id*="ADVERTISE"]:not(body):not(input)
+##[id*="Advertise"]:not(body):not(input)
+##[id*="advertise"]:not(body):not(input)
+##[id*="ADVERTISEMENT"]:not(body):not(input)
+##[id*="Advertisement"]:not(body):not(input)
+##[id*="advertisement"]:not(body):not(input)
+##[id*="ADVERTISING"]:not(body):not(input)
+##[id*="Advertising"]:not(body):not(input)
+##[id*="advertising"]:not(body):not(input)
+##[id*="AFFILIATE"]:not(body):not(input)
+##[id*="Affiliate"]:not(body):not(input)
+##[id*="affiliate"]:not(body):not(input)
+##[id*="AdSense"]:not(body):not(input)
+##[id*="adsense"]:not(body):not(input)
+##[id*="OVERTURE"]:not(body):not(input)
+##[id*="Overture"]:not(body):not(input)
+##[id*="overture"]:not(body):not(input)
+##[id*="PRtext"]:not(body):not(input)
+##[id*="PrText"]:not(body):not(input)
+##[id*="prText"]:not(body):not(input)
+! False positive with inconsistently named id "secpromo" at http://sites.amd.com/us/game/downloads/Pages/radeon_win7-32.aspx
+~amd.com##[id*="prtext"]:not(body):not(input)
+##[id*="SPONSOR"]:not(body):not(input)
+##[id*="Sponsor"]:not(body):not(input)
+~accuweather.com##[id*="sponsor"]:not(body):not(input)
+##[id$="-AD"]:not(body):not(input)
+##[id$="-AD1"]:not(body):not(input)
+##[id$="-AD2"]:not(body):not(input)
+##[id$="-AD3"]:not(body):not(input)
+##[id$="-AD4"]:not(body):not(input)
+##[id$="-AD5"]:not(body):not(input)
+##[id$="-AD6"]:not(body):not(input)
+##[id$="-AD7"]:not(body):not(input)
+##[id$="-AD8"]:not(body):not(input)
+##[id$="-AD9"]:not(body):not(input)
+##[id$="-ADS"]:not(body):not(input)
+##[id$="-ADS0"]:not(body):not(input)
+##[id$="-ADS1"]:not(body):not(input)
+##[id$="-ADS2"]:not(body):not(input)
+##[id$="-ADS3"]:not(body):not(input)
+##[id$="-ADS4"]:not(body):not(input)
+##[id$="-ADS5"]:not(body):not(input)
+##[id$="-ADS6"]:not(body):not(input)
+##[id$="-ADS7"]:not(body):not(input)
+##[id$="-ADS8"]:not(body):not(input)
+##[id$="-ADS9"]:not(body):not(input)
+##[id$="-ADV"]:not(body):not(input)
+##[id$="-ADV0"]:not(body):not(input)
+##[id$="-ADV1"]:not(body):not(input)
+##[id$="-ADV2"]:not(body):not(input)
+##[id$="-ADV3"]:not(body):not(input)
+##[id$="-ADV4"]:not(body):not(input)
+##[id$="-ADV5"]:not(body):not(input)
+##[id$="-ADV6"]:not(body):not(input)
+##[id$="-ADV7"]:not(body):not(input)
+##[id$="-ADV8"]:not(body):not(input)
+##[id$="-ADV9"]:not(body):not(input)
+##[id$="-ADs"]:not(body):not(input)
+##[id$="-ADs0"]:not(body):not(input)
+##[id$="-ADs1"]:not(body):not(input)
+##[id$="-ADs2"]:not(body):not(input)
+##[id$="-ADs3"]:not(body):not(input)
+##[id$="-ADs4"]:not(body):not(input)
+##[id$="-ADs5"]:not(body):not(input)
+##[id$="-ADs6"]:not(body):not(input)
+##[id$="-ADs7"]:not(body):not(input)
+##[id$="-ADs8"]:not(body):not(input)
+##[id$="-ADs9"]:not(body):not(input)
+~tcmagazine.com##[id$="-ad"]:not(body):not(input)
+##[id$="-ad1"]:not(body):not(input)
+##[id$="-ad2"]:not(body):not(input)
+##[id$="-ad3"]:not(body):not(input)
+##[id$="-ad4"]:not(body):not(input)
+##[id$="-ad5"]:not(body):not(input)
+##[id$="-ad6"]:not(body):not(input)
+##[id$="-ad7"]:not(body):not(input)
+##[id$="-ad8"]:not(body):not(input)
+##[id$="-ad9"]:not(body):not(input)
+~mobile01.com##[id$="-ads"]:not(body):not(input)
+##[id$="-ads0"]:not(body):not(input)
+##[id$="-ads1"]:not(body):not(input)
+##[id$="-ads2"]:not(body):not(input)
+##[id$="-ads3"]:not(body):not(input)
+##[id$="-ads4"]:not(body):not(input)
+##[id$="-ads5"]:not(body):not(input)
+##[id$="-ads6"]:not(body):not(input)
+##[id$="-ads7"]:not(body):not(input)
+##[id$="-ads8"]:not(body):not(input)
+##[id$="-ads9"]:not(body):not(input)
+##[id$="-adv"]:not(body):not(input)
+##[id$="-adv0"]:not(body):not(input)
+##[id$="-adv1"]:not(body):not(input)
+##[id$="-adv2"]:not(body):not(input)
+##[id$="-adv3"]:not(body):not(input)
+##[id$="-adv4"]:not(body):not(input)
+##[id$="-adv5"]:not(body):not(input)
+##[id$="-adv6"]:not(body):not(input)
+##[id$="-adv7"]:not(body):not(input)
+##[id$="-adv8"]:not(body):not(input)
+##[id$="-adv9"]:not(body):not(input)
+##[id$="_AD"]:not(body):not(input)
+##[id$="_AD1"]:not(body):not(input)
+##[id$="_AD2"]:not(body):not(input)
+##[id$="_AD3"]:not(body):not(input)
+##[id$="_AD4"]:not(body):not(input)
+##[id$="_AD5"]:not(body):not(input)
+##[id$="_AD6"]:not(body):not(input)
+##[id$="_AD7"]:not(body):not(input)
+##[id$="_AD8"]:not(body):not(input)
+##[id$="_AD9"]:not(body):not(input)
+##[id$="_ADs"]:not(body):not(input)
+##[id$="_ADs0"]:not(body):not(input)
+##[id$="_ADs1"]:not(body):not(input)
+##[id$="_ADs2"]:not(body):not(input)
+##[id$="_ADs3"]:not(body):not(input)
+##[id$="_ADs4"]:not(body):not(input)
+##[id$="_ADs5"]:not(body):not(input)
+##[id$="_ADs6"]:not(body):not(input)
+##[id$="_ADs7"]:not(body):not(input)
+##[id$="_ADs8"]:not(body):not(input)
+##[id$="_ADs9"]:not(body):not(input)
+##[id$="_ADS"]:not(body):not(input)
+##[id$="_ADS0"]:not(body):not(input)
+##[id$="_ADS1"]:not(body):not(input)
+##[id$="_ADS2"]:not(body):not(input)
+##[id$="_ADS3"]:not(body):not(input)
+##[id$="_ADS4"]:not(body):not(input)
+##[id$="_ADS5"]:not(body):not(input)
+##[id$="_ADS6"]:not(body):not(input)
+##[id$="_ADS7"]:not(body):not(input)
+##[id$="_ADS8"]:not(body):not(input)
+##[id$="_ADS9"]:not(body):not(input)
+##[id$="_ADV"]:not(body):not(input)
+##[id$="_ADV0"]:not(body):not(input)
+##[id$="_ADV1"]:not(body):not(input)
+##[id$="_ADV2"]:not(body):not(input)
+##[id$="_ADV3"]:not(body):not(input)
+##[id$="_ADV4"]:not(body):not(input)
+##[id$="_ADV5"]:not(body):not(input)
+##[id$="_ADV6"]:not(body):not(input)
+##[id$="_ADV7"]:not(body):not(input)
+##[id$="_ADV8"]:not(body):not(input)
+##[id$="_ADV9"]:not(body):not(input)
+##[id$="_ad"]:not(body):not(input)
+##[id$="_ad1"]:not(body):not(input)
+##[id$="_ad2"]:not(body):not(input)
+##[id$="_ad3"]:not(body):not(input)
+##[id$="_ad4"]:not(body):not(input)
+##[id$="_ad5"]:not(body):not(input)
+##[id$="_ad6"]:not(body):not(input)
+##[id$="_ad7"]:not(body):not(input)
+##[id$="_ad8"]:not(body):not(input)
+##[id$="_ad9"]:not(body):not(input)
+##[id$="_ads"]:not(body):not(input)
+##[id$="_ads0"]:not(body):not(input)
+##[id$="_ads1"]:not(body):not(input)
+##[id$="_ads2"]:not(body):not(input)
+##[id$="_ads3"]:not(body):not(input)
+##[id$="_ads4"]:not(body):not(input)
+##[id$="_ads5"]:not(body):not(input)
+##[id$="_ads6"]:not(body):not(input)
+##[id$="_ads7"]:not(body):not(input)
+##[id$="_ads8"]:not(body):not(input)
+##[id$="_ads9"]:not(body):not(input)
+##[id$="_adv"]:not(body):not(input)
+##[id$="_adv0"]:not(body):not(input)
+##[id$="_adv1"]:not(body):not(input)
+##[id$="_adv2"]:not(body):not(input)
+##[id$="_adv3"]:not(body):not(input)
+##[id$="_adv4"]:not(body):not(input)
+##[id$="_adv5"]:not(body):not(input)
+##[id$="_adv6"]:not(body):not(input)
+##[id$="_adv7"]:not(body):not(input)
+##[id$="_adv8"]:not(body):not(input)
+##[id$="_adv9"]:not(body):not(input)
+##[id$="AdContainer"]:not(body):not(input)
+##[id$="bottom_bnr"]:not(body):not(input)
+##[class^="AD-"]:not(body):not(input)
+##[class^="AD_"]:not(body):not(input):not(table)
+##[class^="AD0"]:not(body):not(input)
+##[class^="AD1"]:not(body):not(input)
+##[class^="AD2"]:not(body):not(input)
+##[class^="AD3"]:not(body):not(input)
+##[class^="AD4"]:not(body):not(input)
+##[class^="AD5"]:not(body):not(input)
+##[class^="AD6"]:not(body):not(input)
+##[class^="AD7"]:not(body):not(input)
+##[class^="AD8"]:not(body):not(input)
+##[class^="AD9"]:not(body):not(input)
+##[class^="ADS-"]:not(body):not(input)
+##[class^="ADS_"]:not(body):not(input)
+##[class^="ADS0"]:not(body):not(input)
+##[class^="ADS1"]:not(body):not(input)
+##[class^="ADS2"]:not(body):not(input)
+##[class^="ADS3"]:not(body):not(input)
+##[class^="ADS4"]:not(body):not(input)
+##[class^="ADS5"]:not(body):not(input)
+##[class^="ADS6"]:not(body):not(input)
+##[class^="ADS7"]:not(body):not(input)
+##[class^="ADS8"]:not(body):not(input)
+##[class^="ADS9"]:not(body):not(input)
+##[class^="ADV-"]:not(body):not(input)
+##[class^="ADV_"]:not(body):not(input)
+##[class^="ADV0"]:not(body):not(input)
+##[class^="ADV1"]:not(body):not(input)
+##[class^="ADV2"]:not(body):not(input)
+##[class^="ADV3"]:not(body):not(input)
+##[class^="ADV4"]:not(body):not(input)
+##[class^="ADV5"]:not(body):not(input)
+##[class^="ADV6"]:not(body):not(input)
+##[class^="ADV7"]:not(body):not(input)
+##[class^="ADV8"]:not(body):not(input)
+##[class^="ADV9"]:not(body):not(input)
+##[class^="ADs-"]:not(body):not(input)
+##[class^="ADs_"]:not(body):not(input)
+##[class^="ADs0"]:not(body):not(input)
+##[class^="ADs1"]:not(body):not(input)
+##[class^="ADs2"]:not(body):not(input)
+##[class^="ADs3"]:not(body):not(input)
+##[class^="ADs4"]:not(body):not(input)
+##[class^="ADs5"]:not(body):not(input)
+##[class^="ADs6"]:not(body):not(input)
+##[class^="ADs7"]:not(body):not(input)
+##[class^="ADs8"]:not(body):not(input)
+##[class^="ADs9"]:not(body):not(input)
+~vmware.com##[class^="ad-"]:not(body):not(input):not(.ad-bg):not(.ad-wallpaper)
+~collegehumor.com##[class^="ad_"]:not(body):not(input)
+##[class^="ad0"]:not(body):not(input)
+##[class^="ad1"]:not(body):not(input)
+##[class^="ad2"]:not(body):not(input)
+! False positive with chat at Gmail reported by @zirweed, Feb 14, 2012
+~mail.google.com##[class^="ad3"]:not(body):not(input)
+##[class^="ad4"]:not(body):not(input)
+##[class^="ad5"]:not(body):not(input)
+##[class^="ad6"]:not(body):not(input)
+##[class^="ad7"]:not(body):not(input)
+##[class^="ad8"]:not(body):not(input)
+##[class^="ad9"]:not(body):not(input)
+##[class^="adArticle"]:not(body):not(input)
+##[class^="adBox"]:not(body):not(input)
+##[class^="adbox"]:not(body):not(input)
+##[class^="adFooter"]:not(body):not(input)
+##[class^="adHeader"]:not(body):not(input)
+##[class^="adRect"]:not(body):not(input)
+##[class^="adrect"]:not(body):not(input)
+##[class^="ads-"]:not(body):not(input)
+##[class^="ads_"]:not(body):not(input)
+##[class^="ads0"]:not(body):not(input)
+##[class^="ads1"]:not(body):not(input)
+##[class^="ads2"]:not(body):not(input)
+##[class^="ads3"]:not(body):not(input)
+##[class^="ads4"]:not(body):not(input)
+##[class^="ads5"]:not(body):not(input)
+##[class^="ads6"]:not(body):not(input)
+##[class^="ads7"]:not(body):not(input)
+##[class^="ads8"]:not(body):not(input)
+##[class^="ads9"]:not(body):not(input)
+##[class^="adSize"]:not(body):not(input)
+##[class^="adsize"]:not(body):not(input)
+! Added domain exception to avoid a false positive hiding "advanced option", reported by TORI via blog comment, Nov 22, 2012
+~mail.yahoo.com##[class^="adv-"]:not(body):not(input)
+##[class^="adv_"]:not(body):not(input)
+##[class^="adv0"]:not(body):not(input)
+##[class^="adv1"]:not(body):not(input)
+##[class^="adv2"]:not(body):not(input)
+##[class^="adv3"]:not(body):not(input)
+##[class^="adv4"]:not(body):not(input)
+##[class^="adv5"]:not(body):not(input)
+##[class^="adv6"]:not(body):not(input)
+##[class^="adv7"]:not(body):not(input)
+##[class^="adv8"]:not(body):not(input)
+##[class^="adv9"]:not(body):not(input)
+##[class^="advert"]:not(body):not(input)
+##[class^="deqwas"]:not(body):not(input)
+##[class^="deteql"]:not(body):not(input)
+##[class^="google-ads"]:not(body):not(input)
+##[class*="-AD-"]:not(body):not(input)
+##[class*="-AD_"]:not(body):not(input)
+##[class*="-AD0"]:not(body):not(input)
+##[class*="-AD1"]:not(body):not(input)
+##[class*="-AD2"]:not(body):not(input)
+##[class*="-AD3"]:not(body):not(input)
+##[class*="-AD4"]:not(body):not(input)
+##[class*="-AD5"]:not(body):not(input)
+##[class*="-AD6"]:not(body):not(input)
+##[class*="-AD7"]:not(body):not(input)
+##[class*="-AD8"]:not(body):not(input)
+##[class*="-AD9"]:not(body):not(input)
+##[class*="-ADS-"]:not(body):not(input)
+##[class*="-ADS_"]:not(body):not(input)
+##[class*="-ADS0"]:not(body):not(input)
+##[class*="-ADS1"]:not(body):not(input)
+##[class*="-ADS2"]:not(body):not(input)
+##[class*="-ADS3"]:not(body):not(input)
+##[class*="-ADS4"]:not(body):not(input)
+##[class*="-ADS5"]:not(body):not(input)
+##[class*="-ADS6"]:not(body):not(input)
+##[class*="-ADS7"]:not(body):not(input)
+##[class*="-ADS8"]:not(body):not(input)
+##[class*="-ADS9"]:not(body):not(input)
+##[class*="-ADV-"]:not(body):not(input)
+##[class*="-ADV0"]:not(body):not(input)
+##[class*="-ADV1"]:not(body):not(input)
+##[class*="-ADV2"]:not(body):not(input)
+##[class*="-ADV3"]:not(body):not(input)
+##[class*="-ADV4"]:not(body):not(input)
+##[class*="-ADV5"]:not(body):not(input)
+##[class*="-ADV6"]:not(body):not(input)
+##[class*="-ADV7"]:not(body):not(input)
+##[class*="-ADV8"]:not(body):not(input)
+##[class*="-ADV9"]:not(body):not(input)
+##[class*="-ADs-"]:not(body):not(input)
+##[class*="-ADs_"]:not(body):not(input)
+##[class*="-ADs0"]:not(body):not(input)
+##[class*="-ADs1"]:not(body):not(input)
+##[class*="-ADs2"]:not(body):not(input)
+##[class*="-ADs3"]:not(body):not(input)
+##[class*="-ADs4"]:not(body):not(input)
+##[class*="-ADs5"]:not(body):not(input)
+##[class*="-ADs6"]:not(body):not(input)
+##[class*="-ADs7"]:not(body):not(input)
+##[class*="-ADs8"]:not(body):not(input)
+##[class*="-ADs9"]:not(body):not(input)
+~foreignaffairs.com##[class*="-ad-"]:not(#page):not([class*="st-ad-"]):not(body):not(input)
+##[class*="-ad_"]:not(body):not(input)
+##[class*="-ad0"]:not(body):not(input)
+##[class*="-ad1"]:not(body):not(input)
+##[class*="-ad2"]:not(body):not(input)
+##[class*="-ad3"]:not(body):not(input)
+##[class*="-ad4"]:not(body):not(input)
+##[class*="-ad5"]:not(body):not(input)
+##[class*="-ad6"]:not(body):not(input)
+##[class*="-ad7"]:not(body):not(input)
+##[class*="-ad8"]:not(body):not(input)
+##[class*="-ad9"]:not(body):not(input)
+##[class*="-ads-"]:not(body):not(input)
+##[class*="-ads_"]:not(body):not(input)
+##[class*="-ads0"]:not(body):not(input)
+##[class*="-ads1"]:not(body):not(input)
+##[class*="-ads2"]:not(body):not(input)
+##[class*="-ads3"]:not(body):not(input)
+##[class*="-ads4"]:not(body):not(input)
+##[class*="-ads5"]:not(body):not(input)
+##[class*="-ads6"]:not(body):not(input)
+##[class*="-ads7"]:not(body):not(input)
+##[class*="-ads8"]:not(body):not(input)
+##[class*="-ads9"]:not(body):not(input)
+##[class*="-adv-"]:not(body):not(input)
+##[class*="-adv0"]:not(body):not(input)
+##[class*="-adv1"]:not(body):not(input)
+##[class*="-adv2"]:not(body):not(input)
+##[class*="-adv3"]:not(body):not(input)
+##[class*="-adv4"]:not(body):not(input)
+##[class*="-adv5"]:not(body):not(input)
+##[class*="-adv6"]:not(body):not(input)
+##[class*="-adv7"]:not(body):not(input)
+##[class*="-adv8"]:not(body):not(input)
+##[class*="-adv9"]:not(body):not(input)
+##[class*="_AD-"]:not(body):not(input)
+##[class*="_AD_"]:not(body):not(input)
+##[class*="_AD0"]:not(body):not(input)
+##[class*="_AD1"]:not(body):not(input)
+##[class*="_AD2"]:not(body):not(input)
+##[class*="_AD3"]:not(body):not(input)
+##[class*="_AD4"]:not(body):not(input)
+##[class*="_AD5"]:not(body):not(input)
+##[class*="_AD6"]:not(body):not(input)
+##[class*="_AD7"]:not(body):not(input)
+##[class*="_AD8"]:not(body):not(input)
+##[class*="_AD9"]:not(body):not(input)
+##[class*="_ADS-"]:not(body):not(input)
+##[class*="_ADS_"]:not(body):not(input)
+##[class*="_ADS0"]:not(body):not(input)
+##[class*="_ADS1"]:not(body):not(input)
+##[class*="_ADS2"]:not(body):not(input)
+##[class*="_ADS3"]:not(body):not(input)
+##[class*="_ADS4"]:not(body):not(input)
+##[class*="_ADS5"]:not(body):not(input)
+##[class*="_ADS6"]:not(body):not(input)
+##[class*="_ADS7"]:not(body):not(input)
+##[class*="_ADS8"]:not(body):not(input)
+##[class*="_ADS9"]:not(body):not(input)
+##[class*="_ADV_"]:not(body):not(input)
+##[class*="_ADV0"]:not(body):not(input)
+##[class*="_ADV1"]:not(body):not(input)
+##[class*="_ADV2"]:not(body):not(input)
+##[class*="_ADV3"]:not(body):not(input)
+##[class*="_ADV4"]:not(body):not(input)
+##[class*="_ADV5"]:not(body):not(input)
+##[class*="_ADV6"]:not(body):not(input)
+##[class*="_ADV7"]:not(body):not(input)
+##[class*="_ADV8"]:not(body):not(input)
+##[class*="_ADV9"]:not(body):not(input)
+##[class*="_ADs-"]:not(body):not(input)
+##[class*="_ADs_"]:not(body):not(input)
+##[class*="_ADs0"]:not(body):not(input)
+##[class*="_ADs1"]:not(body):not(input)
+##[class*="_ADs2"]:not(body):not(input)
+##[class*="_ADs3"]:not(body):not(input)
+##[class*="_ADs4"]:not(body):not(input)
+##[class*="_ADs5"]:not(body):not(input)
+##[class*="_ADs6"]:not(body):not(input)
+##[class*="_ADs7"]:not(body):not(input)
+##[class*="_ADs8"]:not(body):not(input)
+##[class*="_ADs9"]:not(body):not(input)
+##[class*="_ad-"]:not(body):not(input)
+~video.fc2.com,~gamespot.com,~megaupload.com##[class*="_ad_"]:not(body):not(input)
+##[class*="_ad0"]:not(body):not(input)
+##[class*="_ad1"]:not(body):not(input)
+##[class*="_ad2"]:not(body):not(input)
+##[class*="_ad3"]:not(body):not(input)
+##[class*="_ad4"]:not(body):not(input)
+##[class*="_ad5"]:not(body):not(input)
+##[class*="_ad6"]:not(body):not(input)
+##[class*="_ad7"]:not(body):not(input)
+##[class*="_ad8"]:not(body):not(input)
+##[class*="_ad9"]:not(body):not(input)
+##[class*="_ads-"]:not(body):not(input)
+! Added a negative condition #content to avoid a false positive with the main player at www.nicovideo.jp/watch/sm12345678, Nov 3, 2013
+##[class*="_ads_"]:not(#content):not(body):not(input)
+##[class*="_ads0"]:not(body):not(input)
+##[class*="_ads1"]:not(body):not(input)
+##[class*="_ads2"]:not(body):not(input)
+##[class*="_ads3"]:not(body):not(input)
+##[class*="_ads4"]:not(body):not(input)
+##[class*="_ads5"]:not(body):not(input)
+##[class*="_ads6"]:not(body):not(input)
+##[class*="_ads7"]:not(body):not(input)
+##[class*="_ads8"]:not(body):not(input)
+##[class*="_ads9"]:not(body):not(input)
+##[class*="_adv_"]:not(body):not(input)
+##[class*="_adv0"]:not(body):not(input)
+##[class*="_adv1"]:not(body):not(input)
+##[class*="_adv2"]:not(body):not(input)
+##[class*="_adv3"]:not(body):not(input)
+##[class*="_adv4"]:not(body):not(input)
+##[class*="_adv5"]:not(body):not(input)
+##[class*="_adv6"]:not(body):not(input)
+##[class*="_adv7"]:not(body):not(input)
+##[class*="_adv8"]:not(body):not(input)
+##[class*="_adv9"]:not(body):not(input)
+##[class*="adlantis"]:not(body):not(input)
+##[class*="AdSense"]:not(body):not(input)
+~wikia.com##[class*="adsense"]:not(body):not(input)
+##[class*="ADVERTISE"]:not(body):not(input)
+##[class*="Advertise"]:not(body):not(input)
+##[class*="advertise"]:not(body):not(input)
+##[class*="ADVERTISEMENT"]:not(body):not(input)
+##[class*="Advertisement"]:not(body):not(input)
+~slideboom.com##[class*="advertisement"]:not(body):not(input)
+##[class*="ADVERTISING"]:not(body):not(input)
+##[class*="Advertising"]:not(body):not(input)
+##[class*="advertising"]:not(body):not(input)
+##[class*="AdWords"]:not(body):not(input)
+##[class*="AFFILIATE"]:not(body):not(input)
+##[class*="Affiliate"]:not(body):not(input)
+##[class*="affiliate"]:not(body):not(input)
+##[class*="OVERTURE"]:not(body):not(input)
+##[class*="SPONSOR"]:not(body):not(input)
+##[class*="Overture"]:not(body):not(input)
+##[class*="overture"]:not(body):not(input)
+##[class*="PRtext"]:not(body):not(input)
+##[class*="Prtext"]:not(body):not(input)
+##[class*="prText"]:not(body):not(input)
+##[class*="prtext"]:not(body):not(input)
+##[class*="Sponsor"]:not(body):not(input)
+~bbc.co.uk,~linuxmint.com##[class*="sponsor"]:not(body):not(input)
+##[class$="-AD"]:not(body):not(input)
+##[class$="-AD1"]:not(body):not(input)
+##[class$="-AD2"]:not(body):not(input)
+##[class$="-AD3"]:not(body):not(input)
+##[class$="-AD4"]:not(body):not(input)
+##[class$="-AD5"]:not(body):not(input)
+##[class$="-AD6"]:not(body):not(input)
+##[class$="-AD7"]:not(body):not(input)
+##[class$="-AD8"]:not(body):not(input)
+##[class$="-AD9"]:not(body):not(input)
+##[class$="-ADS"]:not(body):not(input)
+##[class$="-ADs"]:not(body):not(input)
+##[class$="-ADV"]:not(body):not(input)
+! Negative conditions are added to avoid false positives around plus.google.com
+##[class$="-ad"]:not(body):not(input):not([class^="a-"]):not([class^="f-"])
+##[class$="-ad1"]:not(body):not(input)
+##[class$="-ad2"]:not(body):not(input)
+##[class$="-ad3"]:not(body):not(input)
+##[class$="-ad4"]:not(body):not(input)
+##[class$="-ad5"]:not(body):not(input)
+##[class$="-ad6"]:not(body):not(input)
+##[class$="-ad7"]:not(body):not(input)
+##[class$="-ad8"]:not(body):not(input)
+##[class$="-ad9"]:not(body):not(input)
+! False positive in right column named "with-ads" of the flickr.com search result
+~flickr.com##[class$="-ads"]:not(body):not(input)
+##[class$="-ads0"]:not(body):not(input)
+##[class$="-ads1"]:not(body):not(input)
+##[class$="-ads2"]:not(body):not(input)
+##[class$="-ads3"]:not(body):not(input)
+##[class$="-ads4"]:not(body):not(input)
+##[class$="-ads5"]:not(body):not(input)
+##[class$="-ads6"]:not(body):not(input)
+##[class$="-ads7"]:not(body):not(input)
+##[class$="-ads8"]:not(body):not(input)
+##[class$="-ads9"]:not(body):not(input)
+##[class$="-adv"]:not(body):not(input)
+##[class$="-adv0"]:not(body):not(input)
+##[class$="-adv1"]:not(body):not(input)
+##[class$="-adv2"]:not(body):not(input)
+##[class$="-adv3"]:not(body):not(input)
+##[class$="-adv4"]:not(body):not(input)
+##[class$="-adv5"]:not(body):not(input)
+##[class$="-adv6"]:not(body):not(input)
+##[class$="-adv7"]:not(body):not(input)
+##[class$="-adv8"]:not(body):not(input)
+##[class$="-adv9"]:not(body):not(input)
+##[class$="_AD"]:not(body):not(input)
+##[class$="_AD1"]:not(body):not(input)
+##[class$="_AD2"]:not(body):not(input)
+##[class$="_AD3"]:not(body):not(input)
+##[class$="_AD4"]:not(body):not(input)
+##[class$="_AD5"]:not(body):not(input)
+##[class$="_AD6"]:not(body):not(input)
+##[class$="_AD7"]:not(body):not(input)
+##[class$="_AD8"]:not(body):not(input)
+##[class$="_AD9"]:not(body):not(input)
+##[class$="_ADS"]:not(body):not(input)
+##[class$="_ADS0"]:not(body):not(input)
+##[class$="_ADS1"]:not(body):not(input)
+##[class$="_ADS2"]:not(body):not(input)
+##[class$="_ADS3"]:not(body):not(input)
+##[class$="_ADS4"]:not(body):not(input)
+##[class$="_ADS5"]:not(body):not(input)
+##[class$="_ADS6"]:not(body):not(input)
+##[class$="_ADS7"]:not(body):not(input)
+##[class$="_ADS8"]:not(body):not(input)
+##[class$="_ADS9"]:not(body):not(input)
+##[class$="_ADV"]:not(body):not(input)
+##[class$="_ADV0"]:not(body):not(input)
+##[class$="_ADV1"]:not(body):not(input)
+##[class$="_ADV2"]:not(body):not(input)
+##[class$="_ADV3"]:not(body):not(input)
+##[class$="_ADV4"]:not(body):not(input)
+##[class$="_ADV5"]:not(body):not(input)
+##[class$="_ADV6"]:not(body):not(input)
+##[class$="_ADV7"]:not(body):not(input)
+##[class$="_ADV8"]:not(body):not(input)
+##[class$="_ADV9"]:not(body):not(input)
+##[class$="_ADs"]:not(body):not(input)
+##[class$="_ADs0"]:not(body):not(input)
+##[class$="_ADs1"]:not(body):not(input)
+##[class$="_ADs2"]:not(body):not(input)
+##[class$="_ADs3"]:not(body):not(input)
+##[class$="_ADs4"]:not(body):not(input)
+##[class$="_ADs5"]:not(body):not(input)
+##[class$="_ADs6"]:not(body):not(input)
+##[class$="_ADs7"]:not(body):not(input)
+##[class$="_ADs8"]:not(body):not(input)
+##[class$="_ADs9"]:not(body):not(input)
+~cnepub.com,~itoyokado.co.jp##[class$="_ad"]:not(.gs_ad):not(body):not(input)
+##[class$="_ad1"]:not(body):not(input)
+##[class$="_ad2"]:not(body):not(input)
+##[class$="_ad3"]:not(body):not(input)
+##[class$="_ad4"]:not(body):not(input)
+##[class$="_ad5"]:not(body):not(input)
+##[class$="_ad6"]:not(body):not(input)
+##[class$="_ad7"]:not(body):not(input)
+##[class$="_ad8"]:not(body):not(input)
+##[class$="_ad9"]:not(body):not(input)
+! Added a negative condition #playerCommentPanel to avoid false positives with comment panel of movie player at nicovideo.jp, Oct 18th, 2012
+! Added a negative condition #content to avoid false positives with main contents at sendspace.com/file/, reported by ぽちょ via blog, Jan 12, 2013
+! Added a negative condition #playerTabContainer to avoid false positives with the main player at www.nicovideo.jp/watch/sm12345678, Nov 3, 2013
+##[class$="_ads"]:not(#content):not(#playerCommentPanel):not(#playerTabContainer):not(body):not(input)
+##[class$="_ads0"]:not(body):not(input)
+##[class$="_ads1"]:not(body):not(input)
+##[class$="_ads2"]:not(body):not(input)
+##[class$="_ads3"]:not(body):not(input)
+##[class$="_ads4"]:not(body):not(input)
+##[class$="_ads5"]:not(body):not(input)
+##[class$="_ads6"]:not(body):not(input)
+##[class$="_ads7"]:not(body):not(input)
+##[class$="_ads8"]:not(body):not(input)
+##[class$="_ads9"]:not(body):not(input)
+##[class$="_adv"]:not(body):not(input)
+##[class$="_adv0"]:not(body):not(input)
+##[class$="_adv1"]:not(body):not(input)
+##[class$="_adv2"]:not(body):not(input)
+##[class$="_adv3"]:not(body):not(input)
+##[class$="_adv4"]:not(body):not(input)
+##[class$="_adv5"]:not(body):not(input)
+##[class$="_adv6"]:not(body):not(input)
+##[class$="_adv7"]:not(body):not(input)
+##[class$="_adv8"]:not(body):not(input)
+##[class$="_adv9"]:not(body):not(input)
+##[class$="AdContainer"]:not(body):not(input)
+
+! ---------- All elements END ----------
+!
+! ########## Element Hiding with domains START ##########
+100shiki.com###flip1+div
+100shiki.com###text-5
+100shiki.com###text-5 + *
+4gamer.net##.paidpub_special
+4gamer.net##.sidetop
+4gamer.net##.skyscraper
+4gamer.net##.topics
+afpbb.com###bpnDirectoryBlock
+afpbb.com###mustRead
+afpbb.com###prLinkBlock
+afpbb.com###scrollparent
+afpbb.com##div[id^="ads"]
+agri-biz.jp##div[id^="banner_"]
+akb48matome.com##.akbantena
+! False positives with zoomed images, which are NOT ADs, reported via Issue Report Dec 15, 2011
+! amazon.ca,amazon.cn,amazon.co.jp,amazon.co.uk,amazon.com,amazon.de,amazon.es,amazon.fr,amazon.it###ap_container
+amazon.ca,amazon.cn,amazon.co.jp,amazon.co.uk,amazon.com,amazon.de,amazon.es,amazon.fr,amazon.it###cbcc_banner_container
+amazon.ca,amazon.cn,amazon.co.jp,amazon.co.uk,amazon.com,amazon.de,amazon.es,amazon.fr,amazon.it##.adNoOutline
+amazon.ca,amazon.cn,amazon.co.jp,amazon.co.uk,amazon.com,amazon.de,amazon.es,amazon.fr,amazon.it##[id^="DA"]
+amazon.ca,amazon.cn,amazon.co.jp,amazon.co.uk,amazon.com,amazon.de,amazon.es,amazon.fr,amazon.it##a[href*="/redirect."][href*="?tag="][href*="-22&"]
+amazon.ca,amazon.cn,amazon.co.jp,amazon.co.uk,amazon.com,amazon.de,amazon.es,amazon.fr,amazon.it##a[href*="/redirect."][href*="%3Ftag%3D"][href*="-22%26"]
+! Fallback for not working Element-Hiding filter above, Mar 10, 2012
+amazon.ca,amazon.cn,amazon.co.jp,amazon.co.uk,amazon.com,amazon.de,amazon.es,amazon.fr,amazon.it##img[usemap^="#Javari"]
+ameblo.jp###amebaBar
+ameblo.jp###eco_head
+appbank.net##a[href*="//bit.ly/"]
+dot.asahi.com##.GallerySpace
+ascii.jp###adSiteTitle
+ascii.jp###bargain
+ascii.jp###pickupAD
+ascii.jp###prWindow
+ascii.jp###spMenu
+ascii.jp##.ban
+ascii.jp##.pickwrap
+ashinari.com###area-bnrtext
+ashinari.com##.area-bnrtext
+atmarkit.co.jp###crec
+atmarkit.co.jp###frec
+atmarkit.co.jp###fyi-pickup
+atmarkit.co.jp###headmenu > .l
+atmarkit.co.jp###kyujin
+atmarkit.co.jp###masterSub
+atmarkit.co.jp###monosp
+atmarkit.co.jp###PR-ITR
+atmarkit.co.jp###rrec
+atmarkit.co.jp###rrec2
+atmarkit.co.jp###rspecial
+atmarkit.co.jp###ttl-techtarget
+atmarkit.co.jp##.crec
+atmarkit.co.jp##.frec
+atmarkit.co.jp##.fyi-box
+atmarkit.co.jp##.kyujin
+atmarkit.co.jp##.monosp
+atmarkit.co.jp##.pr-l
+atmarkit.co.jp##.rspecial
+atmarkit.co.jp##.ttl-techtarget
+atmarkit.co.jp##[id^="rcspSFlash"]:not(body):not(input)
+atmarkit.co.jp##a[href*="//dlv.itmedia.jp/rd/"]
+atmarkit.co.jp##a[href*="/ct.php?id="]
+biglobe.ne.jp##a[href*="go.biglobe.ne.jp/c/"]
+news.biglobe.ne.jp##.praTB
+bing.com##[class^="sb_ads"]
+bioimpact.jp###pr
+bioimpact.jp##div[class^="sn-box"]
+businessnetwork.jp##.specialtopics
+bizmakoto.jp,itmedia.co.jp###amazon-item
+bizmakoto.jp,itmedia.co.jp###banner
+bizmakoto.jp,itmedia.co.jp###endwpp
+bizmakoto.jp,itmedia.co.jp###fyi
+bizmakoto.jp,itmedia.co.jp###ISTLR
+bizmakoto.jp,itmedia.co.jp###ITN-r
+bizmakoto.jp,itmedia.co.jp###logoarea
+bizmakoto.jp,itmedia.co.jp###mobileshop
+bizmakoto.jp,itmedia.co.jp###osusumepc
+bizmakoto.jp,itmedia.co.jp###osusume
+bizmakoto.jp,itmedia.co.jp###r-txtfil
+! false positive 2011-02-26: bizmakoto.jp,itmedia.co.jp###red
+bizmakoto.jp,itmedia.co.jp###signboard
+bizmakoto.jp,itmedia.co.jp##.cmsBox
+bizmakoto.jp,itmedia.co.jp##.endkwd
+bizmakoto.jp,itmedia.co.jp##.endwpp
+bizmakoto.jp,itmedia.co.jp##.logoarea
+bizmakoto.jp,itmedia.co.jp##.r-txtfil
+bizmakoto.jp,itmedia.co.jp##.rcsp
+bizmakoto.jp,itmedia.co.jp##.signboard
+bizmakoto.jp,itmedia.co.jp##div[id^="ISAL"]
+bizmakoto.jp,itmedia.co.jp##div[id^="pr"]
+bizmakoto.jp,itmedia.co.jp##strong.logo
+block.fm###banner
+blogos.com###axis_navigator_container
+blogos.com,news.livedoor.com###nav-theme
+bombermine.com##[class^="misc-"]
+bspeedtest.jp##td > table[width="385"] ~ *
+number.bunshun.jp##.banner-area
+burusoku-vip.com##.column-inner-2 > .column-inner-2
+cgdigg.com##.sview + br + div
+chartpark.com##td[valign="middle"][align="center"]
+chosunonline.com###infotext
+chosunonline.com###postsub > .ad300x250
+cnet.com##a[href*="//offers.cnet.com/redir?"]
+cnet.com##a[href*="//adlog.com.com"]
+! False Positive: download link
+! cnet.com##a[href*="//dw.com.com/redir?"]
+japan.cnet.com,japan.zdnet.com###resource_info
+japan.cnet.com,japan.zdnet.com##.tieup
+japan.cnet.com,japan.zdnet.com##.tieup_box
+japan.cnet.com,japan.zdnet.com##.tieup_list_box
+japan.cnet.com,japan.zdnet.com##a[href*="//japan.cnet.com/click/"]
+japan.cnet.com,japan.zdnet.com##a[href*="//japan.cnet.com/extra/"]
+japan.cnet.com,japan.zdnet.com##a[href*="//japan.zdnet.com/click/"]
+japan.cnet.com,japan.zdnet.com##a[href*="//japan.zdnet.com/click/"]
+japan.cnet.com,japan.zdnet.com##a[href*="//japan.zdnet.com/extra/"]
+codezine.jp###shoeisha_gnavi
+! False positive with article lists reported via Issue Report, May 3, 2014
+! codezine.jp##.app
+codezine.jp##.shoeisha_gnavi
+codezine.jp##div[id*="_pnlHeadSuper"]
+coliss.com###sidebar > .block02:first-child
+personalfirewall.comodo.com###op-cis-features
+computerworld.jp##.adve_rec
+computerworld.jp##.adver
+computerworld.jp##.cwr_oracle
+coojin.com###big_main > .auctions
+cybersyndrome.net##TABLE[cellspacing="2"][cellpadding="2"][border="0"][align="left"]
+cybozu.net###recommend-top-txt > li:last-child
+cyzo.com##.r_sidebanner
+diamond.jp###article-sptopics
+diamond.jp###books-ranking
+diamond.jp###g-navi
+diamond.jp###itbiz-news
+diamond.jp###pr1
+diamond.jp###pr2
+diamond.jp###special-pr-box
+diamond.jp###special-underline
+diamond.jp###special-upperline
+diamond.jp###sptopics
+diamond.jp###sub-column > img
+diamond.jp###sub-column > table
+diamond.jp##.contents-info > .frame
+diamond.jp##.diamondonline-plus
+diamond.jp##.pickup
+diamond.jp##.section.special-topics
+diamond.jp##.top-select
+diamond.jp##a[href*="/oo/cc/"]
+diamond.jp##a[href*="campaign"]
+diamond.jp##a[href*="diamond.jp/rd/"]
+diamond.jp##a[href*="diamond.ne.jp/?banner_id="]
+diamond.jp##div[class*="ad-"][class*="section"]
+diamond.jp##div[class*="box"][class*="banner"]
+diamond.jp##div[class*="box"][class*="dolplus"]
+diamond.jp##div[class*="box"][class*="side_business-info"]
+diamond.jp##div[class*="box"][class*="side_lead"]
+diamond.jp##div[class^="yBanner0"]
+diamond.jp##[class*="campaign"]:not(body):not(input)
+diamond.jp##[class*="-recommend-"]:not(body):not(input)
+drk7.jp##.column2
+e-words.jp###l
+e-words.jp##.ladsby
+e-words.jp##.ladsby ~ table
+e-words.jp###sidebox
+e-words.jp##.l
+e-words.jp##.sidebox
+eetimes.jp##.prsbox
+excite.co.jp###amazonPickup
+excite.co.jp###gameRanking
+excite.co.jp###popular_keywords_main
+excite.co.jp###resultsBody > .hit > *[id*="awg"]
+excite.co.jp###resultsBody > .hit > *[id*="jls"]
+excite.co.jp###resultsBody > .hit > *[id*="jwd"]
+excite.co.jp###season-keywords
+excite.co.jp##a[href*="&target=ss"]
+excite.co.jp##a[href*="&amp;target=ss"]
+f-secure.jp##img[src$="/is_banner_jpn.gif"]
+facebook.com##.fbEmu
+fc2.com###sh_fc2blogheadbar
+chitekizaisan.blog28.fc2.com##.free-area1
+chitekizaisan.blog28.fc2.com##.free-area2
+peer2peer.blog79.fc2.com###newentrys
+kanasoku.blog82.fc2.com###headline
+kanasoku.blog82.fc2.com###twitter_rank
+kanasoku.blog82.fc2.com##.entry_parma > .entry_body
+minisoku.blog97.fc2.com###headline
+workingnews.blog117.fc2.com##.free_area
+matomate.blog133.fc2.com###topArea
+matomate.blog133.fc2.com###topHeadline
+ferret-plus.com###prinfo
+fileserve.com###bonus_promo
+fileserve.com###dialog_overlay
+foobar2000.org##.navad
+foobar2000.org##table:not(#menu)
+free-codecs.com###bannerTop
+free-codecs.com###rightBar
+gci-klug.jp##[class*="AdBox"]:not(body):not(input)
+gci-klug.jp##[class*="AdsBox"]:not(body):not(input)
+gendai.net##[id^="adingo_"]:not(body):not(input)
+gigafree.net###spl
+gigafree.net##.spl
+gigazine.net###headertop
+gigazine.net##.sbook + .reset + iframe
+gigazine.net##[src*="/tnemesitrevda/"]:not(body):not(input)
+gihyo.jp###contentHotspot
+gihyo.jp###gihyojpSpecial
+gihyo.jp###secondary > .textPR
+gihyo.jp###secondary > .banner
+gizmodo.com,lifehacker.com###header
+gizmodo.jp,kotaku.jp,lifehacker.jp##.ad_premiumplan
+gizmodo.jp,kotaku.jp,lifehacker.jp##.category
+gizmodo.jp,kotaku.jp,lifehacker.jp##.date_header_premium
+gizmodo.jp,kotaku.jp,lifehacker.jp##.entrybox
+gizmodo.jp,kotaku.jp,lifehacker.jp##.headline
+gizmodo.jp,kotaku.jp,lifehacker.jp##.headline_tab
+gizmodo.jp,kotaku.jp,lifehacker.jp##.headline2
+gizmodo.jp,kotaku.jp,lifehacker.jp##.pickup
+gizmodo.jp,kotaku.jp,lifehacker.jp##.tabcont
+gnavi.co.jp###supervisual
+goo.ne.jp##.sponser
+blog.goo.ne.jp###global-header
+books.google.co.jp,books.google.com###main_content + td
+maps.google.co.jp,maps.google.com###mclip
+encrypted.google.com,www.google.com,www.google.is,www.google.ie,www.google.az,www.google.com.af,www.google.co.vi,www.google.as,www.google.ae,www.google.dz,www.google.com.ar,www.google.am,www.google.com.ai,www.google.it.ao,www.google.com.ag,www.google.ad,www.google.co.uk,www.google.vg,www.google.co.il,www.google.it,www.google.co.in,www.google.co.id,www.google.co.ug,www.google.com.ua,www.google.co.uz,www.google.com.uy,www.google.com.ec,www.google.com.eg,www.google.ee,www.google.com.et,www.google.com.sv,www.google.com.au,www.google.at,www.google.com.om,www.google.nl,www.google.com.gh,www.google.gg,www.google.gy,www.google.kz,www.google.com.qa,www.google.ca,www.google.gm,www.google.com.kh,www.google.com.cu,www.google.gr,www.google.ki,www.google.kg,www.google.com.gt,www.google.gp,www.google.com.kw,www.google.co.ck,www.google.gl,www.google.ge,www.google.hr,www.google.co.ke,www.google.ci,www.google.co.cr,www.google.com.co,www.google.cg,www.google.cd,www.google.com.sa,www.google.ws,www.google.st,www.google.co.zm,www.google.sm,www.google.com.sl,www.google.dj,www.google.com.gi,www.google.je,www.google.com.jm,www.google.com.sg,www.google.co.zw,www.google.ch,www.google.se,www.google.es,www.google.lk,www.google.sk,www.google.si,www.google.sc,www.google.sn,www.google.rs,www.google.com.vc,www.google.sh,www.google.com.sb,www.google.co.th,www.google.co.kr,www.google.com.tw,www.google.com.tj,www.google.co.tz,www.google.cz,www.google.cf,www.google.cn,www.google.cl,www.google.dk,www.google.de,www.google.tk,www.google.com.do,www.google.dm,www.google.tt,www.google.tm,www.google.com.tr,www.google.to,www.google.com.ng,www.google.nr,www.google.com.na,www.google.nu,www.google.com.ni,www.google.co.jp,www.google.co.nz,www.google.com.np,www.google.com.nf,www.google.no,www.google.com.bh,www.google.ht,www.google.com.pk,www.google.com.pa,www.google.vu,www.google.bs,www.google.com.py,www.google.hu,www.google.com.bd,www.google.tl,www.google.pn,www.google.com.fj,www.google.com.ph,www.google.fi,www.google.com.pr,www.google.com.br,www.google.fr,www.google.bg,www.google.com.bn,www.google.bi,www.google.com.vn,www.google.bj,www.google.co.ve,www.google.com.by,www.google.com.bz,www.google.com.pe,www.google.be,www.google.pl,www.google.ba,www.google.co.bw,www.google.com.bo,www.google.pt,www.google.com.hk,www.google.hn,www.google.mg,www.google.mw,www.google.com.mt,www.google.com.my,www.google.im,www.google.fm,www.google.co.za,www.google.com.mx,www.google.mu,www.google.co.mz,www.google.mv,www.google.md,www.google.co.ma,www.google.mn,www.google.me,www.google.ms,www.google.jo,www.google.la,www.google.lv,www.google.lt,www.google.com.ly,www.google.li,www.google.ro,www.google.lu,www.google.rw,www.google.co.ls,www.google.com.lb,www.google.ru###mbEnd
+encrypted.google.com,www.google.com,www.google.is,www.google.ie,www.google.az,www.google.com.af,www.google.co.vi,www.google.as,www.google.ae,www.google.dz,www.google.com.ar,www.google.am,www.google.com.ai,www.google.it.ao,www.google.com.ag,www.google.ad,www.google.co.uk,www.google.vg,www.google.co.il,www.google.it,www.google.co.in,www.google.co.id,www.google.co.ug,www.google.com.ua,www.google.co.uz,www.google.com.uy,www.google.com.ec,www.google.com.eg,www.google.ee,www.google.com.et,www.google.com.sv,www.google.com.au,www.google.at,www.google.com.om,www.google.nl,www.google.com.gh,www.google.gg,www.google.gy,www.google.kz,www.google.com.qa,www.google.ca,www.google.gm,www.google.com.kh,www.google.com.cu,www.google.gr,www.google.ki,www.google.kg,www.google.com.gt,www.google.gp,www.google.com.kw,www.google.co.ck,www.google.gl,www.google.ge,www.google.hr,www.google.co.ke,www.google.ci,www.google.co.cr,www.google.com.co,www.google.cg,www.google.cd,www.google.com.sa,www.google.ws,www.google.st,www.google.co.zm,www.google.sm,www.google.com.sl,www.google.dj,www.google.com.gi,www.google.je,www.google.com.jm,www.google.com.sg,www.google.co.zw,www.google.ch,www.google.se,www.google.es,www.google.lk,www.google.sk,www.google.si,www.google.sc,www.google.sn,www.google.rs,www.google.com.vc,www.google.sh,www.google.com.sb,www.google.co.th,www.google.co.kr,www.google.com.tw,www.google.com.tj,www.google.co.tz,www.google.cz,www.google.cf,www.google.cn,www.google.cl,www.google.dk,www.google.de,www.google.tk,www.google.com.do,www.google.dm,www.google.tt,www.google.tm,www.google.com.tr,www.google.to,www.google.com.ng,www.google.nr,www.google.com.na,www.google.nu,www.google.com.ni,www.google.co.jp,www.google.co.nz,www.google.com.np,www.google.com.nf,www.google.no,www.google.com.bh,www.google.ht,www.google.com.pk,www.google.com.pa,www.google.vu,www.google.bs,www.google.com.py,www.google.hu,www.google.com.bd,www.google.tl,www.google.pn,www.google.com.fj,www.google.com.ph,www.google.fi,www.google.com.pr,www.google.com.br,www.google.fr,www.google.bg,www.google.com.bn,www.google.bi,www.google.com.vn,www.google.bj,www.google.co.ve,www.google.com.by,www.google.com.bz,www.google.com.pe,www.google.be,www.google.pl,www.google.ba,www.google.co.bw,www.google.com.bo,www.google.pt,www.google.com.hk,www.google.hn,www.google.mg,www.google.mw,www.google.com.mt,www.google.com.my,www.google.im,www.google.fm,www.google.co.za,www.google.com.mx,www.google.mu,www.google.co.mz,www.google.mv,www.google.md,www.google.co.ma,www.google.mn,www.google.me,www.google.ms,www.google.jo,www.google.la,www.google.lv,www.google.lt,www.google.com.ly,www.google.li,www.google.ro,www.google.lu,www.google.rw,www.google.co.ls,www.google.com.lb,www.google.ru###resultStats + div[style*="border:"]:not([id]):not([class])
+encrypted.google.com,www.google.com,www.google.is,www.google.ie,www.google.az,www.google.com.af,www.google.co.vi,www.google.as,www.google.ae,www.google.dz,www.google.com.ar,www.google.am,www.google.com.ai,www.google.it.ao,www.google.com.ag,www.google.ad,www.google.co.uk,www.google.vg,www.google.co.il,www.google.it,www.google.co.in,www.google.co.id,www.google.co.ug,www.google.com.ua,www.google.co.uz,www.google.com.uy,www.google.com.ec,www.google.com.eg,www.google.ee,www.google.com.et,www.google.com.sv,www.google.com.au,www.google.at,www.google.com.om,www.google.nl,www.google.com.gh,www.google.gg,www.google.gy,www.google.kz,www.google.com.qa,www.google.ca,www.google.gm,www.google.com.kh,www.google.com.cu,www.google.gr,www.google.ki,www.google.kg,www.google.com.gt,www.google.gp,www.google.com.kw,www.google.co.ck,www.google.gl,www.google.ge,www.google.hr,www.google.co.ke,www.google.ci,www.google.co.cr,www.google.com.co,www.google.cg,www.google.cd,www.google.com.sa,www.google.ws,www.google.st,www.google.co.zm,www.google.sm,www.google.com.sl,www.google.dj,www.google.com.gi,www.google.je,www.google.com.jm,www.google.com.sg,www.google.co.zw,www.google.ch,www.google.se,www.google.es,www.google.lk,www.google.sk,www.google.si,www.google.sc,www.google.sn,www.google.rs,www.google.com.vc,www.google.sh,www.google.com.sb,www.google.co.th,www.google.co.kr,www.google.com.tw,www.google.com.tj,www.google.co.tz,www.google.cz,www.google.cf,www.google.cn,www.google.cl,www.google.dk,www.google.de,www.google.tk,www.google.com.do,www.google.dm,www.google.tt,www.google.tm,www.google.com.tr,www.google.to,www.google.com.ng,www.google.nr,www.google.com.na,www.google.nu,www.google.com.ni,www.google.co.jp,www.google.co.nz,www.google.com.np,www.google.com.nf,www.google.no,www.google.com.bh,www.google.ht,www.google.com.pk,www.google.com.pa,www.google.vu,www.google.bs,www.google.com.py,www.google.hu,www.google.com.bd,www.google.tl,www.google.pn,www.google.com.fj,www.google.com.ph,www.google.fi,www.google.com.pr,www.google.com.br,www.google.fr,www.google.bg,www.google.com.bn,www.google.bi,www.google.com.vn,www.google.bj,www.google.co.ve,www.google.com.by,www.google.com.bz,www.google.com.pe,www.google.be,www.google.pl,www.google.ba,www.google.co.bw,www.google.com.bo,www.google.pt,www.google.com.hk,www.google.hn,www.google.mg,www.google.mw,www.google.com.mt,www.google.com.my,www.google.im,www.google.fm,www.google.co.za,www.google.com.mx,www.google.mu,www.google.co.mz,www.google.mv,www.google.md,www.google.co.ma,www.google.mn,www.google.me,www.google.ms,www.google.jo,www.google.la,www.google.lv,www.google.lt,www.google.com.ly,www.google.li,www.google.ro,www.google.lu,www.google.rw,www.google.co.ls,www.google.com.lb,www.google.ru###rtpl
+encrypted.google.com,www.google.com,www.google.is,www.google.ie,www.google.az,www.google.com.af,www.google.co.vi,www.google.as,www.google.ae,www.google.dz,www.google.com.ar,www.google.am,www.google.com.ai,www.google.it.ao,www.google.com.ag,www.google.ad,www.google.co.uk,www.google.vg,www.google.co.il,www.google.it,www.google.co.in,www.google.co.id,www.google.co.ug,www.google.com.ua,www.google.co.uz,www.google.com.uy,www.google.com.ec,www.google.com.eg,www.google.ee,www.google.com.et,www.google.com.sv,www.google.com.au,www.google.at,www.google.com.om,www.google.nl,www.google.com.gh,www.google.gg,www.google.gy,www.google.kz,www.google.com.qa,www.google.ca,www.google.gm,www.google.com.kh,www.google.com.cu,www.google.gr,www.google.ki,www.google.kg,www.google.com.gt,www.google.gp,www.google.com.kw,www.google.co.ck,www.google.gl,www.google.ge,www.google.hr,www.google.co.ke,www.google.ci,www.google.co.cr,www.google.com.co,www.google.cg,www.google.cd,www.google.com.sa,www.google.ws,www.google.st,www.google.co.zm,www.google.sm,www.google.com.sl,www.google.dj,www.google.com.gi,www.google.je,www.google.com.jm,www.google.com.sg,www.google.co.zw,www.google.ch,www.google.se,www.google.es,www.google.lk,www.google.sk,www.google.si,www.google.sc,www.google.sn,www.google.rs,www.google.com.vc,www.google.sh,www.google.com.sb,www.google.co.th,www.google.co.kr,www.google.com.tw,www.google.com.tj,www.google.co.tz,www.google.cz,www.google.cf,www.google.cn,www.google.cl,www.google.dk,www.google.de,www.google.tk,www.google.com.do,www.google.dm,www.google.tt,www.google.tm,www.google.com.tr,www.google.to,www.google.com.ng,www.google.nr,www.google.com.na,www.google.nu,www.google.com.ni,www.google.co.jp,www.google.co.nz,www.google.com.np,www.google.com.nf,www.google.no,www.google.com.bh,www.google.ht,www.google.com.pk,www.google.com.pa,www.google.vu,www.google.bs,www.google.com.py,www.google.hu,www.google.com.bd,www.google.tl,www.google.pn,www.google.com.fj,www.google.com.ph,www.google.fi,www.google.com.pr,www.google.com.br,www.google.fr,www.google.bg,www.google.com.bn,www.google.bi,www.google.com.vn,www.google.bj,www.google.co.ve,www.google.com.by,www.google.com.bz,www.google.com.pe,www.google.be,www.google.pl,www.google.ba,www.google.co.bw,www.google.com.bo,www.google.pt,www.google.com.hk,www.google.hn,www.google.mg,www.google.mw,www.google.com.mt,www.google.com.my,www.google.im,www.google.fm,www.google.co.za,www.google.com.mx,www.google.mu,www.google.co.mz,www.google.mv,www.google.md,www.google.co.ma,www.google.mn,www.google.me,www.google.ms,www.google.jo,www.google.la,www.google.lv,www.google.lt,www.google.com.ly,www.google.li,www.google.ro,www.google.lu,www.google.rw,www.google.co.ls,www.google.com.lb,www.google.ru###tads
+encrypted.google.com,www.google.com,www.google.is,www.google.ie,www.google.az,www.google.com.af,www.google.co.vi,www.google.as,www.google.ae,www.google.dz,www.google.com.ar,www.google.am,www.google.com.ai,www.google.it.ao,www.google.com.ag,www.google.ad,www.google.co.uk,www.google.vg,www.google.co.il,www.google.it,www.google.co.in,www.google.co.id,www.google.co.ug,www.google.com.ua,www.google.co.uz,www.google.com.uy,www.google.com.ec,www.google.com.eg,www.google.ee,www.google.com.et,www.google.com.sv,www.google.com.au,www.google.at,www.google.com.om,www.google.nl,www.google.com.gh,www.google.gg,www.google.gy,www.google.kz,www.google.com.qa,www.google.ca,www.google.gm,www.google.com.kh,www.google.com.cu,www.google.gr,www.google.ki,www.google.kg,www.google.com.gt,www.google.gp,www.google.com.kw,www.google.co.ck,www.google.gl,www.google.ge,www.google.hr,www.google.co.ke,www.google.ci,www.google.co.cr,www.google.com.co,www.google.cg,www.google.cd,www.google.com.sa,www.google.ws,www.google.st,www.google.co.zm,www.google.sm,www.google.com.sl,www.google.dj,www.google.com.gi,www.google.je,www.google.com.jm,www.google.com.sg,www.google.co.zw,www.google.ch,www.google.se,www.google.es,www.google.lk,www.google.sk,www.google.si,www.google.sc,www.google.sn,www.google.rs,www.google.com.vc,www.google.sh,www.google.com.sb,www.google.co.th,www.google.co.kr,www.google.com.tw,www.google.com.tj,www.google.co.tz,www.google.cz,www.google.cf,www.google.cn,www.google.cl,www.google.dk,www.google.de,www.google.tk,www.google.com.do,www.google.dm,www.google.tt,www.google.tm,www.google.com.tr,www.google.to,www.google.com.ng,www.google.nr,www.google.com.na,www.google.nu,www.google.com.ni,www.google.co.jp,www.google.co.nz,www.google.com.np,www.google.com.nf,www.google.no,www.google.com.bh,www.google.ht,www.google.com.pk,www.google.com.pa,www.google.vu,www.google.bs,www.google.com.py,www.google.hu,www.google.com.bd,www.google.tl,www.google.pn,www.google.com.fj,www.google.com.ph,www.google.fi,www.google.com.pr,www.google.com.br,www.google.fr,www.google.bg,www.google.com.bn,www.google.bi,www.google.com.vn,www.google.bj,www.google.co.ve,www.google.com.by,www.google.com.bz,www.google.com.pe,www.google.be,www.google.pl,www.google.ba,www.google.co.bw,www.google.com.bo,www.google.pt,www.google.com.hk,www.google.hn,www.google.mg,www.google.mw,www.google.com.mt,www.google.com.my,www.google.im,www.google.fm,www.google.co.za,www.google.com.mx,www.google.mu,www.google.co.mz,www.google.mv,www.google.md,www.google.co.ma,www.google.mn,www.google.me,www.google.ms,www.google.jo,www.google.la,www.google.lv,www.google.lt,www.google.com.ly,www.google.li,www.google.ro,www.google.lu,www.google.rw,www.google.co.ls,www.google.com.lb,www.google.ru###tadsb
+! False positive with typo-fixed note over the first result, Jan 24, 2014
+! encrypted.google.com,www.google.com,www.google.is,www.google.ie,www.google.az,www.google.com.af,www.google.co.vi,www.google.as,www.google.ae,www.google.dz,www.google.com.ar,www.google.am,www.google.com.ai,www.google.it.ao,www.google.com.ag,www.google.ad,www.google.co.uk,www.google.vg,www.google.co.il,www.google.it,www.google.co.in,www.google.co.id,www.google.co.ug,www.google.com.ua,www.google.co.uz,www.google.com.uy,www.google.com.ec,www.google.com.eg,www.google.ee,www.google.com.et,www.google.com.sv,www.google.com.au,www.google.at,www.google.com.om,www.google.nl,www.google.com.gh,www.google.gg,www.google.gy,www.google.kz,www.google.com.qa,www.google.ca,www.google.gm,www.google.com.kh,www.google.com.cu,www.google.gr,www.google.ki,www.google.kg,www.google.com.gt,www.google.gp,www.google.com.kw,www.google.co.ck,www.google.gl,www.google.ge,www.google.hr,www.google.co.ke,www.google.ci,www.google.co.cr,www.google.com.co,www.google.cg,www.google.cd,www.google.com.sa,www.google.ws,www.google.st,www.google.co.zm,www.google.sm,www.google.com.sl,www.google.dj,www.google.com.gi,www.google.je,www.google.com.jm,www.google.com.sg,www.google.co.zw,www.google.ch,www.google.se,www.google.es,www.google.lk,www.google.sk,www.google.si,www.google.sc,www.google.sn,www.google.rs,www.google.com.vc,www.google.sh,www.google.com.sb,www.google.co.th,www.google.co.kr,www.google.com.tw,www.google.com.tj,www.google.co.tz,www.google.cz,www.google.cf,www.google.cn,www.google.cl,www.google.dk,www.google.de,www.google.tk,www.google.com.do,www.google.dm,www.google.tt,www.google.tm,www.google.com.tr,www.google.to,www.google.com.ng,www.google.nr,www.google.com.na,www.google.nu,www.google.com.ni,www.google.co.jp,www.google.co.nz,www.google.com.np,www.google.com.nf,www.google.no,www.google.com.bh,www.google.ht,www.google.com.pk,www.google.com.pa,www.google.vu,www.google.bs,www.google.com.py,www.google.hu,www.google.com.bd,www.google.tl,www.google.pn,www.google.com.fj,www.google.com.ph,www.google.fi,www.google.com.pr,www.google.com.br,www.google.fr,www.google.bg,www.google.com.bn,www.google.bi,www.google.com.vn,www.google.bj,www.google.co.ve,www.google.com.by,www.google.com.bz,www.google.com.pe,www.google.be,www.google.pl,www.google.ba,www.google.co.bw,www.google.com.bo,www.google.pt,www.google.com.hk,www.google.hn,www.google.mg,www.google.mw,www.google.com.mt,www.google.com.my,www.google.im,www.google.fm,www.google.co.za,www.google.com.mx,www.google.mu,www.google.co.mz,www.google.mv,www.google.md,www.google.co.ma,www.google.mn,www.google.me,www.google.ms,www.google.jo,www.google.la,www.google.lv,www.google.lt,www.google.com.ly,www.google.li,www.google.ro,www.google.lu,www.google.rw,www.google.co.ls,www.google.com.lb,www.google.ru###taw
+! False positives: When searching for "1x1" or 0 result, no contents are displayed... Reported by liesel.einstein
+! encrypted.google.com,www.google.com,www.google.is,www.google.ie,www.google.az,www.google.com.af,www.google.co.vi,www.google.as,www.google.ae,www.google.dz,www.google.com.ar,www.google.am,www.google.com.ai,www.google.it.ao,www.google.com.ag,www.google.ad,www.google.co.uk,www.google.vg,www.google.co.il,www.google.it,www.google.co.in,www.google.co.id,www.google.co.ug,www.google.com.ua,www.google.co.uz,www.google.com.uy,www.google.com.ec,www.google.com.eg,www.google.ee,www.google.com.et,www.google.com.sv,www.google.com.au,www.google.at,www.google.com.om,www.google.nl,www.google.com.gh,www.google.gg,www.google.gy,www.google.kz,www.google.com.qa,www.google.ca,www.google.gm,www.google.com.kh,www.google.com.cu,www.google.gr,www.google.ki,www.google.kg,www.google.com.gt,www.google.gp,www.google.com.kw,www.google.co.ck,www.google.gl,www.google.ge,www.google.hr,www.google.co.ke,www.google.ci,www.google.co.cr,www.google.com.co,www.google.cg,www.google.cd,www.google.com.sa,www.google.ws,www.google.st,www.google.co.zm,www.google.sm,www.google.com.sl,www.google.dj,www.google.com.gi,www.google.je,www.google.com.jm,www.google.com.sg,www.google.co.zw,www.google.ch,www.google.se,www.google.es,www.google.lk,www.google.sk,www.google.si,www.google.sc,www.google.sn,www.google.rs,www.google.com.vc,www.google.sh,www.google.com.sb,www.google.co.th,www.google.co.kr,www.google.com.tw,www.google.com.tj,www.google.co.tz,www.google.cz,www.google.cf,www.google.cn,www.google.cl,www.google.dk,www.google.de,www.google.tk,www.google.com.do,www.google.dm,www.google.tt,www.google.tm,www.google.com.tr,www.google.to,www.google.com.ng,www.google.nr,www.google.com.na,www.google.nu,www.google.com.ni,www.google.co.jp,www.google.co.nz,www.google.com.np,www.google.com.nf,www.google.no,www.google.com.bh,www.google.ht,www.google.com.pk,www.google.com.pa,www.google.vu,www.google.bs,www.google.com.py,www.google.hu,www.google.com.bd,www.google.tl,www.google.pn,www.google.com.fj,www.google.com.ph,www.google.fi,www.google.com.pr,www.google.com.br,www.google.fr,www.google.bg,www.google.com.bn,www.google.bi,www.google.com.vn,www.google.bj,www.google.co.ve,www.google.com.by,www.google.com.bz,www.google.com.pe,www.google.be,www.google.pl,www.google.ba,www.google.co.bw,www.google.com.bo,www.google.pt,www.google.com.hk,www.google.hn,www.google.mg,www.google.mw,www.google.com.mt,www.google.com.my,www.google.im,www.google.fm,www.google.co.za,www.google.com.mx,www.google.mu,www.google.co.mz,www.google.mv,www.google.md,www.google.co.ma,www.google.mn,www.google.me,www.google.ms,www.google.jo,www.google.la,www.google.lv,www.google.lt,www.google.com.ly,www.google.li,www.google.ro,www.google.lu,www.google.rw,www.google.co.ls,www.google.com.lb,www.google.ru###topstuff
+encrypted.google.com,www.google.com,www.google.is,www.google.ie,www.google.az,www.google.com.af,www.google.co.vi,www.google.as,www.google.ae,www.google.dz,www.google.com.ar,www.google.am,www.google.com.ai,www.google.it.ao,www.google.com.ag,www.google.ad,www.google.co.uk,www.google.vg,www.google.co.il,www.google.it,www.google.co.in,www.google.co.id,www.google.co.ug,www.google.com.ua,www.google.co.uz,www.google.com.uy,www.google.com.ec,www.google.com.eg,www.google.ee,www.google.com.et,www.google.com.sv,www.google.com.au,www.google.at,www.google.com.om,www.google.nl,www.google.com.gh,www.google.gg,www.google.gy,www.google.kz,www.google.com.qa,www.google.ca,www.google.gm,www.google.com.kh,www.google.com.cu,www.google.gr,www.google.ki,www.google.kg,www.google.com.gt,www.google.gp,www.google.com.kw,www.google.co.ck,www.google.gl,www.google.ge,www.google.hr,www.google.co.ke,www.google.ci,www.google.co.cr,www.google.com.co,www.google.cg,www.google.cd,www.google.com.sa,www.google.ws,www.google.st,www.google.co.zm,www.google.sm,www.google.com.sl,www.google.dj,www.google.com.gi,www.google.je,www.google.com.jm,www.google.com.sg,www.google.co.zw,www.google.ch,www.google.se,www.google.es,www.google.lk,www.google.sk,www.google.si,www.google.sc,www.google.sn,www.google.rs,www.google.com.vc,www.google.sh,www.google.com.sb,www.google.co.th,www.google.co.kr,www.google.com.tw,www.google.com.tj,www.google.co.tz,www.google.cz,www.google.cf,www.google.cn,www.google.cl,www.google.dk,www.google.de,www.google.tk,www.google.com.do,www.google.dm,www.google.tt,www.google.tm,www.google.com.tr,www.google.to,www.google.com.ng,www.google.nr,www.google.com.na,www.google.nu,www.google.com.ni,www.google.co.jp,www.google.co.nz,www.google.com.np,www.google.com.nf,www.google.no,www.google.com.bh,www.google.ht,www.google.com.pk,www.google.com.pa,www.google.vu,www.google.bs,www.google.com.py,www.google.hu,www.google.com.bd,www.google.tl,www.google.pn,www.google.com.fj,www.google.com.ph,www.google.fi,www.google.com.pr,www.google.com.br,www.google.fr,www.google.bg,www.google.com.bn,www.google.bi,www.google.com.vn,www.google.bj,www.google.co.ve,www.google.com.by,www.google.com.bz,www.google.com.pe,www.google.be,www.google.pl,www.google.ba,www.google.co.bw,www.google.com.bo,www.google.pt,www.google.com.hk,www.google.hn,www.google.mg,www.google.mw,www.google.com.mt,www.google.com.my,www.google.im,www.google.fm,www.google.co.za,www.google.com.mx,www.google.mu,www.google.co.mz,www.google.mv,www.google.md,www.google.co.ma,www.google.mn,www.google.me,www.google.ms,www.google.jo,www.google.la,www.google.lv,www.google.lt,www.google.com.ly,www.google.li,www.google.ro,www.google.lu,www.google.rw,www.google.co.ls,www.google.com.lb,www.google.ru###wmxmsg
+encrypted.google.com,www.google.com,www.google.is,www.google.ie,www.google.az,www.google.com.af,www.google.co.vi,www.google.as,www.google.ae,www.google.dz,www.google.com.ar,www.google.am,www.google.com.ai,www.google.it.ao,www.google.com.ag,www.google.ad,www.google.co.uk,www.google.vg,www.google.co.il,www.google.it,www.google.co.in,www.google.co.id,www.google.co.ug,www.google.com.ua,www.google.co.uz,www.google.com.uy,www.google.com.ec,www.google.com.eg,www.google.ee,www.google.com.et,www.google.com.sv,www.google.com.au,www.google.at,www.google.com.om,www.google.nl,www.google.com.gh,www.google.gg,www.google.gy,www.google.kz,www.google.com.qa,www.google.ca,www.google.gm,www.google.com.kh,www.google.com.cu,www.google.gr,www.google.ki,www.google.kg,www.google.com.gt,www.google.gp,www.google.com.kw,www.google.co.ck,www.google.gl,www.google.ge,www.google.hr,www.google.co.ke,www.google.ci,www.google.co.cr,www.google.com.co,www.google.cg,www.google.cd,www.google.com.sa,www.google.ws,www.google.st,www.google.co.zm,www.google.sm,www.google.com.sl,www.google.dj,www.google.com.gi,www.google.je,www.google.com.jm,www.google.com.sg,www.google.co.zw,www.google.ch,www.google.se,www.google.es,www.google.lk,www.google.sk,www.google.si,www.google.sc,www.google.sn,www.google.rs,www.google.com.vc,www.google.sh,www.google.com.sb,www.google.co.th,www.google.co.kr,www.google.com.tw,www.google.com.tj,www.google.co.tz,www.google.cz,www.google.cf,www.google.cn,www.google.cl,www.google.dk,www.google.de,www.google.tk,www.google.com.do,www.google.dm,www.google.tt,www.google.tm,www.google.com.tr,www.google.to,www.google.com.ng,www.google.nr,www.google.com.na,www.google.nu,www.google.com.ni,www.google.co.jp,www.google.co.nz,www.google.com.np,www.google.com.nf,www.google.no,www.google.com.bh,www.google.ht,www.google.com.pk,www.google.com.pa,www.google.vu,www.google.bs,www.google.com.py,www.google.hu,www.google.com.bd,www.google.tl,www.google.pn,www.google.com.fj,www.google.com.ph,www.google.fi,www.google.com.pr,www.google.com.br,www.google.fr,www.google.bg,www.google.com.bn,www.google.bi,www.google.com.vn,www.google.bj,www.google.co.ve,www.google.com.by,www.google.com.bz,www.google.com.pe,www.google.be,www.google.pl,www.google.ba,www.google.co.bw,www.google.com.bo,www.google.pt,www.google.com.hk,www.google.hn,www.google.mg,www.google.mw,www.google.com.mt,www.google.com.my,www.google.im,www.google.fm,www.google.co.za,www.google.com.mx,www.google.mu,www.google.co.mz,www.google.mv,www.google.md,www.google.co.ma,www.google.mn,www.google.me,www.google.ms,www.google.jo,www.google.la,www.google.lv,www.google.lt,www.google.com.ly,www.google.li,www.google.ro,www.google.lu,www.google.rw,www.google.co.ls,www.google.com.lb,www.google.ru##.commercial-unit
+encrypted.google.com,www.google.com,www.google.is,www.google.ie,www.google.az,www.google.com.af,www.google.co.vi,www.google.as,www.google.ae,www.google.dz,www.google.com.ar,www.google.am,www.google.com.ai,www.google.it.ao,www.google.com.ag,www.google.ad,www.google.co.uk,www.google.vg,www.google.co.il,www.google.it,www.google.co.in,www.google.co.id,www.google.co.ug,www.google.com.ua,www.google.co.uz,www.google.com.uy,www.google.com.ec,www.google.com.eg,www.google.ee,www.google.com.et,www.google.com.sv,www.google.com.au,www.google.at,www.google.com.om,www.google.nl,www.google.com.gh,www.google.gg,www.google.gy,www.google.kz,www.google.com.qa,www.google.ca,www.google.gm,www.google.com.kh,www.google.com.cu,www.google.gr,www.google.ki,www.google.kg,www.google.com.gt,www.google.gp,www.google.com.kw,www.google.co.ck,www.google.gl,www.google.ge,www.google.hr,www.google.co.ke,www.google.ci,www.google.co.cr,www.google.com.co,www.google.cg,www.google.cd,www.google.com.sa,www.google.ws,www.google.st,www.google.co.zm,www.google.sm,www.google.com.sl,www.google.dj,www.google.com.gi,www.google.je,www.google.com.jm,www.google.com.sg,www.google.co.zw,www.google.ch,www.google.se,www.google.es,www.google.lk,www.google.sk,www.google.si,www.google.sc,www.google.sn,www.google.rs,www.google.com.vc,www.google.sh,www.google.com.sb,www.google.co.th,www.google.co.kr,www.google.com.tw,www.google.com.tj,www.google.co.tz,www.google.cz,www.google.cf,www.google.cn,www.google.cl,www.google.dk,www.google.de,www.google.tk,www.google.com.do,www.google.dm,www.google.tt,www.google.tm,www.google.com.tr,www.google.to,www.google.com.ng,www.google.nr,www.google.com.na,www.google.nu,www.google.com.ni,www.google.co.jp,www.google.co.nz,www.google.com.np,www.google.com.nf,www.google.no,www.google.com.bh,www.google.ht,www.google.com.pk,www.google.com.pa,www.google.vu,www.google.bs,www.google.com.py,www.google.hu,www.google.com.bd,www.google.tl,www.google.pn,www.google.com.fj,www.google.com.ph,www.google.fi,www.google.com.pr,www.google.com.br,www.google.fr,www.google.bg,www.google.com.bn,www.google.bi,www.google.com.vn,www.google.bj,www.google.co.ve,www.google.com.by,www.google.com.bz,www.google.com.pe,www.google.be,www.google.pl,www.google.ba,www.google.co.bw,www.google.com.bo,www.google.pt,www.google.com.hk,www.google.hn,www.google.mg,www.google.mw,www.google.com.mt,www.google.com.my,www.google.im,www.google.fm,www.google.co.za,www.google.com.mx,www.google.mu,www.google.co.mz,www.google.mv,www.google.md,www.google.co.ma,www.google.mn,www.google.me,www.google.ms,www.google.jo,www.google.la,www.google.lv,www.google.lt,www.google.com.ly,www.google.li,www.google.ro,www.google.lu,www.google.rw,www.google.co.ls,www.google.com.lb,www.google.ru##.pmoabs
+! Added for custom search, false positive occured at google notebook reported via Issue Report, fixed by @dullneko
+encrypted.google.com,www.google.com,www.google.is,www.google.ie,www.google.az,www.google.com.af,www.google.co.vi,www.google.as,www.google.ae,www.google.dz,www.google.com.ar,www.google.am,www.google.com.ai,www.google.it.ao,www.google.com.ag,www.google.ad,www.google.co.uk,www.google.vg,www.google.co.il,www.google.it,www.google.co.in,www.google.co.id,www.google.co.ug,www.google.com.ua,www.google.co.uz,www.google.com.uy,www.google.com.ec,www.google.com.eg,www.google.ee,www.google.com.et,www.google.com.sv,www.google.com.au,www.google.at,www.google.com.om,www.google.nl,www.google.com.gh,www.google.gg,www.google.gy,www.google.kz,www.google.com.qa,www.google.ca,www.google.gm,www.google.com.kh,www.google.com.cu,www.google.gr,www.google.ki,www.google.kg,www.google.com.gt,www.google.gp,www.google.com.kw,www.google.co.ck,www.google.gl,www.google.ge,www.google.hr,www.google.co.ke,www.google.ci,www.google.co.cr,www.google.com.co,www.google.cg,www.google.cd,www.google.com.sa,www.google.ws,www.google.st,www.google.co.zm,www.google.sm,www.google.com.sl,www.google.dj,www.google.com.gi,www.google.je,www.google.com.jm,www.google.com.sg,www.google.co.zw,www.google.ch,www.google.se,www.google.es,www.google.lk,www.google.sk,www.google.si,www.google.sc,www.google.sn,www.google.rs,www.google.com.vc,www.google.sh,www.google.com.sb,www.google.co.th,www.google.co.kr,www.google.com.tw,www.google.com.tj,www.google.co.tz,www.google.cz,www.google.cf,www.google.cn,www.google.cl,www.google.dk,www.google.de,www.google.tk,www.google.com.do,www.google.dm,www.google.tt,www.google.tm,www.google.com.tr,www.google.to,www.google.com.ng,www.google.nr,www.google.com.na,www.google.nu,www.google.com.ni,www.google.co.jp,www.google.co.nz,www.google.com.np,www.google.com.nf,www.google.no,www.google.com.bh,www.google.ht,www.google.com.pk,www.google.com.pa,www.google.vu,www.google.bs,www.google.com.py,www.google.hu,www.google.com.bd,www.google.tl,www.google.pn,www.google.com.fj,www.google.com.ph,www.google.fi,www.google.com.pr,www.google.com.br,www.google.fr,www.google.bg,www.google.com.bn,www.google.bi,www.google.com.vn,www.google.bj,www.google.co.ve,www.google.com.by,www.google.com.bz,www.google.com.pe,www.google.be,www.google.pl,www.google.ba,www.google.co.bw,www.google.com.bo,www.google.pt,www.google.com.hk,www.google.hn,www.google.mg,www.google.mw,www.google.com.mt,www.google.com.my,www.google.im,www.google.fm,www.google.co.za,www.google.com.mx,www.google.mu,www.google.co.mz,www.google.mv,www.google.md,www.google.co.ma,www.google.mn,www.google.me,www.google.ms,www.google.jo,www.google.la,www.google.lv,www.google.lt,www.google.com.ly,www.google.li,www.google.ro,www.google.lu,www.google.rw,www.google.co.ls,www.google.com.lb,www.google.ru##.ra:not([class*="jb"])
+encrypted.google.com,www.google.com,www.google.is,www.google.ie,www.google.az,www.google.com.af,www.google.co.vi,www.google.as,www.google.ae,www.google.dz,www.google.com.ar,www.google.am,www.google.com.ai,www.google.it.ao,www.google.com.ag,www.google.ad,www.google.co.uk,www.google.vg,www.google.co.il,www.google.it,www.google.co.in,www.google.co.id,www.google.co.ug,www.google.com.ua,www.google.co.uz,www.google.com.uy,www.google.com.ec,www.google.com.eg,www.google.ee,www.google.com.et,www.google.com.sv,www.google.com.au,www.google.at,www.google.com.om,www.google.nl,www.google.com.gh,www.google.gg,www.google.gy,www.google.kz,www.google.com.qa,www.google.ca,www.google.gm,www.google.com.kh,www.google.com.cu,www.google.gr,www.google.ki,www.google.kg,www.google.com.gt,www.google.gp,www.google.com.kw,www.google.co.ck,www.google.gl,www.google.ge,www.google.hr,www.google.co.ke,www.google.ci,www.google.co.cr,www.google.com.co,www.google.cg,www.google.cd,www.google.com.sa,www.google.ws,www.google.st,www.google.co.zm,www.google.sm,www.google.com.sl,www.google.dj,www.google.com.gi,www.google.je,www.google.com.jm,www.google.com.sg,www.google.co.zw,www.google.ch,www.google.se,www.google.es,www.google.lk,www.google.sk,www.google.si,www.google.sc,www.google.sn,www.google.rs,www.google.com.vc,www.google.sh,www.google.com.sb,www.google.co.th,www.google.co.kr,www.google.com.tw,www.google.com.tj,www.google.co.tz,www.google.cz,www.google.cf,www.google.cn,www.google.cl,www.google.dk,www.google.de,www.google.tk,www.google.com.do,www.google.dm,www.google.tt,www.google.tm,www.google.com.tr,www.google.to,www.google.com.ng,www.google.nr,www.google.com.na,www.google.nu,www.google.com.ni,www.google.co.jp,www.google.co.nz,www.google.com.np,www.google.com.nf,www.google.no,www.google.com.bh,www.google.ht,www.google.com.pk,www.google.com.pa,www.google.vu,www.google.bs,www.google.com.py,www.google.hu,www.google.com.bd,www.google.tl,www.google.pn,www.google.com.fj,www.google.com.ph,www.google.fi,www.google.com.pr,www.google.com.br,www.google.fr,www.google.bg,www.google.com.bn,www.google.bi,www.google.com.vn,www.google.bj,www.google.co.ve,www.google.com.by,www.google.com.bz,www.google.com.pe,www.google.be,www.google.pl,www.google.ba,www.google.co.bw,www.google.com.bo,www.google.pt,www.google.com.hk,www.google.hn,www.google.mg,www.google.mw,www.google.com.mt,www.google.com.my,www.google.im,www.google.fm,www.google.co.za,www.google.com.mx,www.google.mu,www.google.co.mz,www.google.mv,www.google.md,www.google.co.ma,www.google.mn,www.google.me,www.google.ms,www.google.jo,www.google.la,www.google.lv,www.google.lt,www.google.com.ly,www.google.li,www.google.ro,www.google.lu,www.google.rw,www.google.co.ls,www.google.com.lb,www.google.ru##.ts[style*="height:"][style*="92px"]
+encrypted.google.com,www.google.com,www.google.is,www.google.ie,www.google.az,www.google.com.af,www.google.co.vi,www.google.as,www.google.ae,www.google.dz,www.google.com.ar,www.google.am,www.google.com.ai,www.google.it.ao,www.google.com.ag,www.google.ad,www.google.co.uk,www.google.vg,www.google.co.il,www.google.it,www.google.co.in,www.google.co.id,www.google.co.ug,www.google.com.ua,www.google.co.uz,www.google.com.uy,www.google.com.ec,www.google.com.eg,www.google.ee,www.google.com.et,www.google.com.sv,www.google.com.au,www.google.at,www.google.com.om,www.google.nl,www.google.com.gh,www.google.gg,www.google.gy,www.google.kz,www.google.com.qa,www.google.ca,www.google.gm,www.google.com.kh,www.google.com.cu,www.google.gr,www.google.ki,www.google.kg,www.google.com.gt,www.google.gp,www.google.com.kw,www.google.co.ck,www.google.gl,www.google.ge,www.google.hr,www.google.co.ke,www.google.ci,www.google.co.cr,www.google.com.co,www.google.cg,www.google.cd,www.google.com.sa,www.google.ws,www.google.st,www.google.co.zm,www.google.sm,www.google.com.sl,www.google.dj,www.google.com.gi,www.google.je,www.google.com.jm,www.google.com.sg,www.google.co.zw,www.google.ch,www.google.se,www.google.es,www.google.lk,www.google.sk,www.google.si,www.google.sc,www.google.sn,www.google.rs,www.google.com.vc,www.google.sh,www.google.com.sb,www.google.co.th,www.google.co.kr,www.google.com.tw,www.google.com.tj,www.google.co.tz,www.google.cz,www.google.cf,www.google.cn,www.google.cl,www.google.dk,www.google.de,www.google.tk,www.google.com.do,www.google.dm,www.google.tt,www.google.tm,www.google.com.tr,www.google.to,www.google.com.ng,www.google.nr,www.google.com.na,www.google.nu,www.google.com.ni,www.google.co.jp,www.google.co.nz,www.google.com.np,www.google.com.nf,www.google.no,www.google.com.bh,www.google.ht,www.google.com.pk,www.google.com.pa,www.google.vu,www.google.bs,www.google.com.py,www.google.hu,www.google.com.bd,www.google.tl,www.google.pn,www.google.com.fj,www.google.com.ph,www.google.fi,www.google.com.pr,www.google.com.br,www.google.fr,www.google.bg,www.google.com.bn,www.google.bi,www.google.com.vn,www.google.bj,www.google.co.ve,www.google.com.by,www.google.com.bz,www.google.com.pe,www.google.be,www.google.pl,www.google.ba,www.google.co.bw,www.google.com.bo,www.google.pt,www.google.com.hk,www.google.hn,www.google.mg,www.google.mw,www.google.com.mt,www.google.com.my,www.google.im,www.google.fm,www.google.co.za,www.google.com.mx,www.google.mu,www.google.co.mz,www.google.mv,www.google.md,www.google.co.ma,www.google.mn,www.google.me,www.google.ms,www.google.jo,www.google.la,www.google.lv,www.google.lt,www.google.com.ly,www.google.li,www.google.ro,www.google.lu,www.google.rw,www.google.co.ls,www.google.com.lb,www.google.ru##.ts[style*="padding:"]
+encrypted.google.com,www.google.com,www.google.is,www.google.ie,www.google.az,www.google.com.af,www.google.co.vi,www.google.as,www.google.ae,www.google.dz,www.google.com.ar,www.google.am,www.google.com.ai,www.google.it.ao,www.google.com.ag,www.google.ad,www.google.co.uk,www.google.vg,www.google.co.il,www.google.it,www.google.co.in,www.google.co.id,www.google.co.ug,www.google.com.ua,www.google.co.uz,www.google.com.uy,www.google.com.ec,www.google.com.eg,www.google.ee,www.google.com.et,www.google.com.sv,www.google.com.au,www.google.at,www.google.com.om,www.google.nl,www.google.com.gh,www.google.gg,www.google.gy,www.google.kz,www.google.com.qa,www.google.ca,www.google.gm,www.google.com.kh,www.google.com.cu,www.google.gr,www.google.ki,www.google.kg,www.google.com.gt,www.google.gp,www.google.com.kw,www.google.co.ck,www.google.gl,www.google.ge,www.google.hr,www.google.co.ke,www.google.ci,www.google.co.cr,www.google.com.co,www.google.cg,www.google.cd,www.google.com.sa,www.google.ws,www.google.st,www.google.co.zm,www.google.sm,www.google.com.sl,www.google.dj,www.google.com.gi,www.google.je,www.google.com.jm,www.google.com.sg,www.google.co.zw,www.google.ch,www.google.se,www.google.es,www.google.lk,www.google.sk,www.google.si,www.google.sc,www.google.sn,www.google.rs,www.google.com.vc,www.google.sh,www.google.com.sb,www.google.co.th,www.google.co.kr,www.google.com.tw,www.google.com.tj,www.google.co.tz,www.google.cz,www.google.cf,www.google.cn,www.google.cl,www.google.dk,www.google.de,www.google.tk,www.google.com.do,www.google.dm,www.google.tt,www.google.tm,www.google.com.tr,www.google.to,www.google.com.ng,www.google.nr,www.google.com.na,www.google.nu,www.google.com.ni,www.google.co.jp,www.google.co.nz,www.google.com.np,www.google.com.nf,www.google.no,www.google.com.bh,www.google.ht,www.google.com.pk,www.google.com.pa,www.google.vu,www.google.bs,www.google.com.py,www.google.hu,www.google.com.bd,www.google.tl,www.google.pn,www.google.com.fj,www.google.com.ph,www.google.fi,www.google.com.pr,www.google.com.br,www.google.fr,www.google.bg,www.google.com.bn,www.google.bi,www.google.com.vn,www.google.bj,www.google.co.ve,www.google.com.by,www.google.com.bz,www.google.com.pe,www.google.be,www.google.pl,www.google.ba,www.google.co.bw,www.google.com.bo,www.google.pt,www.google.com.hk,www.google.hn,www.google.mg,www.google.mw,www.google.com.mt,www.google.com.my,www.google.im,www.google.fm,www.google.co.za,www.google.com.mx,www.google.mu,www.google.co.mz,www.google.mv,www.google.md,www.google.co.ma,www.google.mn,www.google.me,www.google.ms,www.google.jo,www.google.la,www.google.lv,www.google.lt,www.google.com.ly,www.google.li,www.google.ro,www.google.lu,www.google.rw,www.google.co.ls,www.google.com.lb,www.google.ru##a[href*="//ceron.jp/"]
+gqjapan.jp,wired.jp###rectangle
+gqjapan.jp,wired.jp###tile
+gundari.info##[class^="box_"]
+h-online.com##.teaser_priceinsight
+hamusoku.com##.topbox
+hatena.ne.jp###asin-rel-item
+hatena.ne.jp###info-header
+hatena.ne.jp###odai-container
+hatena.ne.jp##.list.ad
+a.hatena.ne.jp##h1:first-of-type ~ ol:first-of-type
+b.hatena.ne.jp###main > .box4
+b.hatena.ne.jp##.additional-unit
+b.hatena.ne.jp##.nikkei-body
+b.hatena.ne.jp##.no-bookmark-comment-message
+b.hatena.ne.jp##.sidebar > div[class^="curvebox-"]
+b.hatena.ne.jp##div[id^="afs"]
+d.hatena.ne.jp##.notice-container
+q.hatena.ne.jp###related-keyword ~ *
+q.hatena.ne.jp##.job
+hmv.co.jp##.tmplLogo
+huffingtonpost.jp###threeup_top_wrapper
+huffingtonpost.jp###videoCompAdDiv + div[style^="margin"]
+hwinfo.com##a[href*="hwinfo.com/ref/"]
+jp.ibtimes.com###ad300
+jp.ibtimes.com###pressrelease
+jp.ibtimes.com###superbanner
+jp.ibtimes.com##.ad300
+jp.ibtimes.com##.pressrelease
+jp.ibtimes.com##.superbanner
+jp.ibtimes.com###mailmg
+jp.ibtimes.com##li.mailmg
+ime.nu,ime.st##a[href*="/redirect.html"]
+ime.nu,ime.st##body > br:last-of-type ~ *:not(hr)
+infoseek.co.jp###isweb-lite-adbanner
+japan.internet.com###head-mid
+japan.internet.com##.bana
+japan.internet.com##.employment
+japan.internet.com##.topics
+investwalker.jp##td[bgcolor="#ffeedd"]
+gendai.ismedia.jp##.common-informarion
+jbpress.ismedia.jp###pr2
+jbpress.ismedia.jp###vbox
+jbpress.ismedia.jp###pr1
+jbpress.ismedia.jp##.prelease
+jbpress.ismedia.jp##[class^="premium-"]
+itarchitect.jp##.ads-textLine
+itmedia.co.jp##.colBoxArtTop
+izumino.jp##a[href*="//izumino.jp/p2k/"]
+j-cast.com###entry-bottom
+j-cast.com##.entry-bottom
+j-cast.com##div[id^="RCCompanyIR"]
+j-cast.com##div[id^="RCAscii"]
+j-cast.com##div[id^="RCChumokuJoho"]
+j-cast.com##div[id^="MCAd"]
+jiji.com##img[src$="/images/spacer.gif"]
+jorudan.co.jp##a[href*="//book.jorudan.co.jp/cgi-bin/"] ~ *
+jorudan.co.jp##.bookList
+jorudan.co.jp##.imgBanner
+kakaku.com###mainRight .alignC
+kakaku.com##.bnrBb
+kakaku.com##.prBn
+kakaku.com##[id^="boxPR"]
+marsflag.jugem.jp,marsflag.com###contLeft > h2.colTitle1
+marsflag.jugem.jp,marsflag.com###contLeft > h2.colTitle1 + p
+marsflag.jugem.jp###contLeft > h2.colTitle1 ~ table div[onclick^="window.open("]
+kabumap.com##.KM_VERS_TABLEAREA > div:not([id]):not([class])
+kget.jp##[class^="ad"]:not([class^="add"]):not(body):not(input)
+l-tike.com###mhInner
+lavasoft.jp###firstpagebanner
+livedoor.com###become
+livedoor.com###today-site
+livedoor.com###osusume
+livedoor.com###otoku-info
+livedoor.com###ranking-amazon
+livedoor.com##.powerd-by-google
+livedoor.com,livedoor.jp##a[href*="//app.click.livedoor.com"]
+livedoor.com,livedoor.jp##a[href*="//ck.rd.livedoor.com/"]
+search.livedoor.com###content h3
+search.livedoor.com###menu > div:first-child
+search.livedoor.com##.searchresult_sponsor
+macsoft.jp##.frame
+macsoft.jp##.simple
+mag2.com###charge-ossm
+mag2.com###prsite
+mag2.com###teiban
+mail.ru##.banner
+mainichi.jp###SuperBanner
+mainichi.jp##.AdAA
+mainichi.jp##.AdChumoku
+mainichi.jp##.AdGraph
+mainichi.jp##.AffAD
+mainichi.jp##.NaviAd
+mainichi.jp##.SquareAd
+mainichi.jp##[class^="ArticleAd"]:not(body):not(input)
+mainichi.jp##a[href*=".mainichi.co.jp/rd/"]
+mapion.co.jp###adTxtInMain
+markezine.jp###header > .navi > div
+markezine.jp###searcharea + div
+markezine.jp###searcharea + div + div
+markezine.jp###ranking + div
+marsflag.com###head ~ a[href*="?bannerad_"]
+marsflag.com###head ~ img
+marsflag.com###contLeft > h2.colTitle1 ~ table.resutlTable[onclick*="ad_clk"]
+mixi.jp###contentMatch
+mooter.co.jp###cluster + table[cellpadding="0"]
+mooter.co.jp##td[width="230"][valign="top"]
+msn.com###AD1line
+msn.com###AD2line
+msn.com###cjad
+msn.com##.adcenter
+msn.com##div[id^="ads"]
+jp.msn.com##.kanrenBox
+mudainodqnment.ldblog.jp##.menu_cont3
+mudainodqnment.ldblog.jp##.menu_title3
+musen-lan.com##br + table[width="150"][cellpadding="2"] ~ table[width="150"][cellpadding="2"]
+musen-lan.com##td[width="130"]
+musicman-net.com##.banner
+musicman-net.com##a[href*="/addlog/"]
+mycom.co.jp###adspecial
+mycom.co.jp##.adspecial
+mycom.co.jp##a[href*="adspecial"]
+mycom.co.jp##a[href*="kali.mycom.co.jp"]
+mycom.co.jp##[src*="adspecial"]:not(body):not(input)
+mycom.co.jp##[src*="kali.mycom.co.jp"]:not(body):not(input)
+mynavi.jp##.ts
+mywot.com###wotads-slideup
+download.hr###mediaget_box
+download.hr##.AddCenterRight
+download.hr##.file_download_box:nth-of-type(2)
+download.hr##.file_infoleft
+download.hr##a[href*="//giveaway.download.hr/"]
+download.hr##a[href*="//media.download.hr/"]
+download.hr##a[href*="hotfile.com/dl/"]
+download.hr##a[href*="mediaget.com/torrent.php?r="]
+download.hr##a[href*="myotherdrive.com/dyn/file/"]
+nakanohito.jp###paddingside > #header + #padding
+namaan.net###listing_top
+netadreport.com###amn_banner
+netadreport.com###toptext
+netadreport.com##.bottom
+netanswerplus.saisoncard.co.jp###fade-box
+netanswerplus.saisoncard.co.jp##div[class^="banner"]
+netcraft.com###netcraft-links-bottom
+newsweek.com##.inline-promo-link
+newsweekjapan.jp###bnrHead
+newsweekjapan.jp###sideAdPanel
+newsweekjapan.jp###sideBnrPanel
+nicovideo.jp###banner
+nicovideo.jp###flogbox
+nicovideo.jp###Recommend
+nicovideo.jp###web_pc_prime
+nicovideo.jp##.sidewallAd
+seiga.nicovideo.jp##a[href*="//rd.nicovideo.jp/cc/seiga_top/"]
+www.nicovideo.jp###playlist.animate
+nifty.com###gifAD
+nifty.com###subBnr
+nikkei.com##[class$="_banner"]
+nikkei.com##[class$="_pr"]
+nikkei.com##[class$="_recommend"]
+nikkeibp.co.jp##.media-campaign
+business.nikkeibp.co.jp###articlekeyword
+business.nikkeibp.co.jp###Dignio
+business.nikkeibp.co.jp###manageInfo2
+business.nikkeibp.co.jp##.articlekeyword
+business.nikkeibp.co.jp##.bunner
+business.nikkeibp.co.jp##.magGuidance3
+business.nikkeibp.co.jp##.otoGuidance
+itpro.nikkeibp.co.jp###subContent .rectangle
+itpro.nikkeibp.co.jp###subContent .rightRectangle
+itpro.nikkeibp.co.jp###leaf_datascope
+itpro.nikkeibp.co.jp##.articleBox
+itpro.nikkeibp.co.jp##.leaf_datascope
+itpro.nikkeibp.co.jp##[class^="rankingBox"]
+itpro.nikkeibp.co.jp##a[href^="/data/"]:not(body):not(input)
+pc.nikkeibp.co.jp###bs_bigsky
+pc.nikkeibp.co.jp###visual_box_iframe_margin
+pc.nikkeibp.co.jp##.bs_pr
+www.nikkeibp.co.jp##.bpselection
+www.nikkeibp.co.jp##.sub-selection
+ninja.co.jp###box_m
+ninja.co.jp###box_t
+ninja.co.jp##.attention
+ninja.co.jp##.box_m
+ninja.co.jp##.box_t
+openitonline.com,viewdocsonline.com##a[href*="/links/"]
+pcworld.com###shoppingMod
+pcworld.com##.storyList
+pcworld.com##div[id$="Ad"]
+pcworld.com##div[id$="Ads"]
+pcworld.com##div[class$="Ad"]
+pcworld.com##div[class$="Ads"]
+phpspot.org###rightbar
+president.jp##.subcolumn-dancyu
+publickey.jp,publickey1.jp##.topbanner
+pya.cc##.tk
+qiita.com###bottom-introduction
+rakuten.co.jp###sc_lidAdd_js_banner
+rakuten.co.jp##[id$="Esper"]
+rakuten.co.jp##[id$="EsperHead"]
+rakuten.co.jp##[id*="sponcer"]
+rakuten.co.jp##[id*="Sponcer"]
+rakuten.co.jp##[id^="sttl"]
+reddit.com##.organic-listing
+jp.reuters.com###adArticleText
+jp.reuters.com##.adArticleText
+president.jp.reuters.com##.prad
+revouninstaller.com##.header-flash
+revouninstaller.com##.row-banner
+ribbon.to##body > p[align="center"]
+robtex.com##.topper
+robtex.com##[id^="xad"]:not(body):not(input)
+ip.robtex.com##a[rel="nofollow"] > img
+rue89japon.com##[id^="ad_"]:not(body):not(input)
+sanspo.com###lBoard2
+sanspo.com##.lBoard2
+sbisec.co.jp##a[href*="/campaign"]
+sbisec.co.jp###topbannerarea_noflash_wrapper
+sbisec.co.jp##div[class^="home02_"]
+sbisec.co.jp##div[class^="linkBox0"]
+sbisec.co.jp##div[class^="prBox0"]
+sbisec.co.jp##div[class^="topBoxPr0"]
+sbisec.co.jp###main > form > .mgt20
+secunia.com###divTopbanner
+security-next.com##a[href*="cl="]
+security-next.com##.sbboxad
+security-next.com##h5
+softinfo.seesaa.net###links
+seo-stats.net###sidebar
+seo-stats.net##.sidebar
+slashdot.jp###a2rl
+slashdot.jp##.na2rel
+slideshare.net##.medRecBottom2
+slideshare.net##.noAdForLead
+! softpedia.com##a[href*=".softpedia.com/dyn-postdownload.php?"]
+software.com###promo_aside
+sophia-it.com##.adtx
+sophia-it.com##.shin3
+sophia-it.com##[class^="banner"]:not(body):not(input)
+sourceforge.jp###adaptive-prtext
+sourceforge.jp###adbar > .sidebar-ad-text~div:nth-of-type(2)
+sourceforge.jp###adbar > :first-child
+sourceforge.jp###main-content > a:not([id]):not([class])
+sourceforge.jp##*[id^="gpt-"]
+sourceforge.net###site-sec-header
+sourceforge.net##.recommended
+stackasterisk.jp##table.tableCaution
+surfcanyon.com###eastAds
+surfcanyon.com##.splink
+tabelog.com###targeting_restaurants
+tabelog.com##.areamatch-box
+tbs.co.jp##[id^="banner-"]:not(body):not(input)
+tbs.co.jp###promotion
+techcrunch.com###right_rail_jobBoard
+technobahn.com##[src*=".technobahn.com/cgi-bin/dart/display"]:not(body):not(input)
+technobahn.com##a[href*=".technobahn.com/cgi-bin/dart/click"]
+technobahn.com##tr.ch[id^="taw"]
+technobahn.com##tr.ch[id^="taw"]+tr
+technorati.jp###DARTinline
+technorati.jp##.DARTinline
+technozeast.com###rad
+teesoft.info###top-bottom
+teesoft.info###uniblue
+teesoft.info###footer-800
+thinkit.co.jp###megatext
+thinkit.co.jp###mini_tieup
+thinkit.co.jp###table7
+thinkit.co.jp###seo
+thinkit.co.jp##.banner
+thinkit.co.jp##.block.block-block:not(#block-block-9):not(#block-block-25)
+thinkit.co.jp##.view-tieup-articles
+thinkit.co.jp##img[src$="pr_bar.gif"]
+thinkit.co.jp##td.mini_tieup
+thinkit.co.jp##td.table7
+thinkit.co.jp##.seo
+blog.tokumaru.org##.descriptionwrapper
+tomshardware.com##.basicCentral-elm.clearfix
+toyokeizai.net###article-bottom
+toyokeizai.net###article-top-news1-inner
+toyokeizai.net###information
+toyokeizai.net###topic-board
+toyokeizai.net##.mt35
+toyokeizai.net##.pr
+toyokeizai.net##.sideBnr
+toyokeizai.net##.sidePr
+toyokeizai.net##div[class^="rightBnr"]
+translink.co.jp###barAD
+twilog.org###uf + div + div
+twitch.tv###related_channels
+twitter.com##.promoted-account
+twitter.com##.promptbird
+twitter.com##.promoted-trend
+twitter.com##.promoted-tweet
+twitter.com##.stream-items > .stream-user-gallery.separation-module
+twitteranalyzer.com###BannerHolder
+uniangel.info###cgi
+uniangel.info###globalheader
+urlvoid.com###content > *[style^="text-align: center;"]
+urlvoid.com###main-banner
+ustream.tv###AdFreePromo
+ustream.tv###CollectionWrapper
+ustream.tv###getStartedBanner
+ustream.tv##.banner-wrapper
+ustream.tv##.channelContextAd
+ustream.tv##.channelTopBannerWrapper
+ustream.tv##.topLeaderBoardContainer
+ustream.tv##.ui-widget-content[aria-labelledby^="ui-dialog-title-"][aria-labelledby$="Dialog"]
+ustream.tv##.ui-widget-content[aria-labelledby^="ui-dialog-title-"][aria-labelledby$="Dialog"]+.ui-widget-overlay
+vector.co.jp###PCSHOP_listAD
+vector.co.jp###softDetail ~ *
+vector.co.jp###special-box
+vector.co.jp###v_sub > noscript + .article:first-of-type
+vector.co.jp##a[href*="//vafs.vector.co.jp/"]
+vector.co.jp##div[id^="gad_"]
+vector.co.jp##div[class^="gad_"]
+vector.co.jp##div[id^="shop_"]
+www.vector.co.jp###top_special
+www.vector.co.jp###top_special + center
+www.vector.co.jp##td[width="426"] > table[bgcolor="#ff9933"]
+www.vector.co.jp##td[width="426"] > table[bgcolor="#ffffff"][align="center"]
+virtualdub.org##[alt$="Ad]"]:not(body):not(input)
+special.visualzoo.com###sidebar > .side_banner
+special.visualzoo.com###container > .banner_area
+weblio.jp##[class^="ad"]:not([class^="add"])
+wsj.com###newsreeliframe
+wsj.com##.adSummary
+yahoo.co.jp,yahoo.com###northbanner
+! Temporarily commented out a filter which caused a false positive at cm.tw.my.yahoo.com, reported via Issue Report 2011-08-05
+! yahoo.co.jp,yahoo.com##a[href*="lrd.yahoo.com"]
+yahoo.co.jp,yahoo.com##a[href*="//ard.yahoo."]:not([href*="//account."]):not([href*="//chiebukuro."]):not([href*="//disaster."]):not([href*="//emergency."]):not([href*="//help."]):not([href*="//login."]):not([href*="//setsuden."]):not([href*="//weather.yahoo.co.jp"]):not([href*="//www.yahoo.co.jp"])
+yahoo.co.jp,yahoo.com##a[href*=".bc.yahoo."]
+yahoo.co.jp,yahoo.com##a[href*="//krd.yahoo."]
+yahoo.co.jp,yahoo.com##a[href*="//promotion.yahoo."]
+yahoo.co.jp,yahoo.com##a[href*="//rd.ane.yahoo."]
+! Commented out to avoid too many false positives at sports.yahoo.co.jp, Nov 17, 2013
+! yahoo.co.jp,yahoo.com##a[href*="//rdsig.yahoo."]
+yahoo.co.jp,yahoo.com##a[href*="//yjaxcrd.yahoo."]
+yahoo.co.jp###centralPosition
+yahoo.co.jp###clrEx
+yahoo.co.jp###commerce
+yahoo.co.jp###homeLcsAdsBox
+yahoo.co.jp###homeLRECAds
+yahoo.co.jp###LREC
+yahoo.co.jp###mainpr
+yahoo.co.jp###MON
+yahoo.co.jp###promoareaM
+yahoo.co.jp###slot_LREC
+yahoo.co.jp###tct
+yahoo.co.jp###WS2aj
+yahoo.co.jp###yjcatspns
+yahoo.co.jp###yregad
+yahoo.co.jp###yschec
+yahoo.co.jp###yschspns
+yahoo.co.jp##.adTyumoku
+yahoo.co.jp##.jprskyad
+yahoo.co.jp##.lbad
+yahoo.co.jp##.prCT
+yahoo.co.jp##.yschec
+yahoo.co.jp##.yschspns
+yahoo.co.jp##[id^="ad"]:not([id^="add"])
+yahoo.co.jp##[id^="modAd"]
+yahoo.co.jp##[id^="pos-"]:not([id="pos-s"])
+~used.realestate.yahoo.co.jp,yahoo.co.jp##[class^="ad"]:not([class^="add"])
+yahoo.co.jp##[class*="pos-"]
+yahoo.co.jp##[class^="pr300"]
+yahoo.co.jp##[class^="prCenter"]
+blogs.yahoo.co.jp##a.blog_IMp
+search.yahoo.co.jp##.ss
+finance.yahoo.com###yfi_ysm
+finance.yahoo.com###ygma
+finance.yahoo.com##.yfi_ysm
+finance.yahoo.com##.ygma
+finance.yahoo.co.jp##.sqbFiAd
+login.yahoo.co.jp###yregtxt
+mail.yahoo.co.jp###lbadspr
+mail.yahoo.co.jp###spadsbox
+mail.yahoo.co.jp##.col-b
+mail.yahoo.co.jp##.dashcontent
+mail.yahoo.co.jp##.lbadspr
+mail.yahoo.co.jp##[id^="dashview"]:not(body):not(input)
+mail.yahoo.co.jp##[id^="jpwelcomeinsideyahoo"]:not(body):not(input)
+mail.yahoo.co.jp##[id^="jpwelcomeym"]:not(body):not(input)
+mail.yahoo.co.jp##[class$="topfilled"]
+quote.yahoo.co.jp##img[src="//i.yimg.jp/images/clear.gif"]
+quote.yahoo.co.jp##p[class$="lrec"]
+yomiuri.co.jp##a[href*="/adv/"]
+yomiuri.co.jp##[class*="-txtad-"]
+youtube.com###feed-pyv-container
+youtube.com###ticker
+youtube.com##.ads-pyv
+youtube.com##.watch-pyv-vid
+! ---------- Element Hiding with domains END ----------
+!
+! ########## Samurai Factory END ##########
+ongaeshi.biz,akazunoma.com,amearare.com,ame-zaiku.com,ari-jigoku.com,atukan.com,bokunenjin.com,butanishinju.com,buzama.com,byoubu.com,chagasi.com,chakin.com,chikouyore.com,chitosedori.com,cho-chin.com,choitoippuku.com,choumusubi.com,darumaotosi.com,dokkoisho.com,donburako.com,doumeki.com,dousetsu.com,ebo-shi.com,edo-jidai.com,enokorogusa.com,fuma-kotaro.com,garyoutensei.com,gionsyouja.com,goemonburo.com,gokenin.com,goraikou.com,gosyuugi.com,gouketu.com,hagewasi.com,hahaue.com,hanabie.com,hanagumori.com,hanamizake.com,han-be.com,hannnari.com,hariko.com,hatagashira.com,hatiju-hatiya.com,hebiichigo.com,higoyomi.com,hiroimon.com,hisa-hide.com,hishaku.com,hisyaku.com,hiyamugi.com,horemitakotoka.com,houkou-onchi.com,ho-zuki.com,hujibakama.com,huruike.com,husuma.com,huuryuu.com,iaigiri.com,ie-yasu.com,ikaduchi.com,ikidane.com,imawamukashi.com,imodurushiki.com,ina-ka.com,inukubou.com,izakamakura.com,jakou.com,jorougumo.com,jougennotuki.com,jyoukamachi.com,kacchaokkana.com,kagebo-shi.com,kagennotuki.com,kage-tora.com,kage-tsuna.com,kakukaku-sikajika.com,kakurezato.com,kan-be.com,kane-tsugu.com,kan-suke.com,karakasa.com,karakuri-yashiki.com,karamatu.com,kasajizo.com,katsu-ie.com,katsu-yori.com,kemuridama.com,ken-nyo.com,kibisuwokaesu.com,kimodameshi.com,kinbyoubu.com,kirisute-gomen.com,kitunebi.com,kiyo-masa.com,koborezakura.com,koiwazurai.com,kojyuro.com,konohashigure.com,kuchinawa.com,kumadori.com,kumogakure.com,kusakage.com,kutinawa.com,kyarame.com,maeda-keiji.com,maiougi.com,ma-jide.com,manjushage.com,mikosi.com,mitarashidango.com,mitsu-hide.com,mitsu-nari.com,mizubasyou.com,momijioroshi.com,monogoshi.com,moraimon.com,moryou.com,moto-chika.com,moto-nari.com,moutounai.com,mu-sashi.com,nabebugyou.com,naga-masa.com,namidaame.com,nao-shige.com,nemachinotsuki.com,nemiminimizu.com,noppikinaranu.com,nukimi.com,obihimo.com,oboroduki.com,obunko.com,odaikansama.com,ofuregaki.com,ohaguro.com,ohitashi.com,ohuda.com,ohugi.com,ohyakudo-mairi.com,okitsune.com,okoshi-yasu.com,omegumi.com,omiki.com,onasake.com,onushi.com,onushimowaruyonou.com,ooban-koban.com,ootugomori.com,osonae.com,otogirisou.com,otoshiana.com,rakugan.com,sankinkoutai.com,sannasubi.com,sarashi.com,sara-yashiki.com,sa-suke.com,sengoku-jidai.com,sensyuuraku.com,shichihuku.com,shidareyanagi.com,shime-saba.com,shimo-yake.com,shinobiashi.com,shiriagari.com,shirikakusazu.com,shironuri.com,shisyou.com,shiteyattari.com,siromuku.com,sodenoshita.com,sokowonantoka.com,sokushinbutsu.com,sonnabakana.com,soregashi.com,suichu-ka.com,sukimakaze.com,syakuhati.com,syanari.com,syarasoujyu.com,syogyoumujou.com,syoutikubai.com,tabigeinin.com,tada-katsu.com,taka-kage.com,tamajiri.com,tanmono.com,tenohiragaeshi.com,tirirenge.com,tiyogami.com,toshi-ie.com,toumoku.com,tsuchigumo.com,tsunokakushi.com,tubakurame.com,tudura.com,tumabeni.com,turigane.com,turubeotoshi.com,turukusa.com,tutakazura.com,tuzigiri.com,tuzikaze.com,tyabo.com,tyonmage.com,uijin.com,uji-masa.com,undeinosa.com,untokosho.com,ushimairi.com,usunuri.com,uunyan.com,waremowaremoto.com,wa-sanbon.com,yaekumo.com,yahansugi.com,yakigote.com,yakiuchi.com,yamagomori.com,yamanoha.com,yangotonaki.com,yohamanzokuja.com,yokinihakarae.com,yokochou.com,yomibitoshirazu.com,yoshi-moto.com,yoshi-tsugu.com,yukigesho.com,yukihotaru.com,yukishigure.com,yumenogotoshi.com,yu-nagi.com,yu-yake.com,zashiki.com,zatunen.com,aikotoba.jp,amigasa.jp,ashigaru.jp,at-ninja.jp,biroudo.jp,bufsiz.jp,client.jp,cyber-ninja.jp,gamagaeru.jp,gejigeji.jp,genin.jp,gozaru.jp,harisen.jp,himegimi.jp,ifdef.jp,jounin.jp,kaginawa.jp,kanashibari.jp,kanpaku.jp,karou.jp,komusou.jp,konjiki.jp,kurushiunai.jp,kusarikatabira.jp,makibishi.jp,masa-mune.jp,michikusa.jp,mukade.jp,namekuji.jp,nengu.jp,ninja-mania.jp,ninja-x.jp,ninpou.jp,nobody.jp,nomaki.jp,nukenin.jp,nusutto.jp,ojaru.jp,onmitsu.jp,o-oku.jp,shin-gen.jp,suppa.jp,syuriken.jp,the-ninja.jp,tobiiro.jp,tonosama.jp,wakatono.jp,xxxxxxxx.jp,zouri.jp,bake-neko.net,chimanako.net,chottu.net,dayuh.net,dotera.net,ehoh.net,futene.net,ganriki.net,hanagasumi.net,hide-yoshi.net,ichiya-boshi.net,iinaa.net,iiyudana.net,is-mine.net,iza-yoi.net,kachoufuugetu.net,kagechiyo.net,kasabuta.net,kenkenpa.net,ken-shin.net,kesagiri.net,kinugoshi.net,makibisi.net,mameshibori.net,mizusasi.net,nagesen.net,nigamushi.net,ninja-web.net,nobu-naga.net,nukarumi.net,obijime.net,okoshi-yasu.net,okunohosomichi.net,oteage.net,otodo.net,ran-maru.net,sa-kon.net,sessya.net,shakunage.net,shikanosuke.net,shikisokuzekuu.net,shimazu-yoshihiro.net,soragoto.net,soudesune.net,suki-ari.net,takara-bune.net,tyanoyu.net,warabimochi.net,warabuki.net,yakiin.net,yukimizake.net,yuki-mura.net,bakufu.org,nekonikoban.org,oiran.org,ukime.org###ninja-hp-inactive
+! ---------- Samurai Factory END ----------
+!
+! ---------- Element Hiding END ----------
