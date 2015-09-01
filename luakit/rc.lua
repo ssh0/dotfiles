@@ -57,8 +57,8 @@ require "binds"
 ----------------------------------
 
 -- adblock
-require "adblock"
-require "adblock_chrome"
+require "plugins.adblock"
+require "plugins.adblock_chrome"
 
 -- private browsing tabs
 require "plugins.private_browsing_tabs"
@@ -92,6 +92,12 @@ require "session"
 
 -- Add command to list closed tabs & bind to open closed tabs
 require "undoclose"
+
+local key = lousy.bind.key
+add_binds("normal", {
+    key({}, "U", "View closed tabs in a list.",
+        function (w) w:set_mode("undolist")  end),
+})
 
 -- Add command to list tab history items
 require "tabhistory"
