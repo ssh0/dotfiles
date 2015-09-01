@@ -136,7 +136,7 @@ require "follow"
 
 -- Use a custom charater set for hint labels
 local s = follow.label_styles
-follow.label_maker = s.sort(s.reverse(s.charset("fjkasdhguonmerwc")))
+follow.label_maker = s.charset("fjkasdhguonmerwc")
 
 follow.stylesheet = [===[
 #luakit_follow_overlay {
