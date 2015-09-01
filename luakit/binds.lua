@@ -371,6 +371,14 @@ add_binds("normal", {
             if not w:goto_tab(m.count) then w:next_tab() end
         end, {count=0}),
 
+    key({}, "K", "Go to previous tab.",
+        function (w) w:prev_tab() end),
+
+    key({}, "J", "Go to next tab (or `[count]` nth tab).",
+        function (w, b, m)
+            if not w:goto_tab(m.count) then w:next_tab() end
+        end, {count=0}),
+
     buf("^g0$", "Go to first tab.",
         function (w) w:goto_tab(1) end),
 
