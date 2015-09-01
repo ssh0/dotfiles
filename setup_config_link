@@ -250,8 +250,8 @@ luakit/rc.lua,.config/luakit/rc.lua
 luakit/theme.lua,.config/luakit/theme.lua
 luakit/webview.lua,.config/luakit/webview.lua
 luakit/window.lua,.config/luakit/window.lua
-luakit/plugins/adblock/adblock.lua,.config/luakit/adblock.lua
-luakit/plugins/adblock/adblock_chrome.lua,.config/luakit/adblock_chrome.lua
-luakit/plugins/adblock/easylist.txt,.local/share/luakit/adblock/easylist.txt
+luakit/plugins/adblock/adblock.lua,.config/luakit/plugins/adblock.lua
+luakit/plugins/adblock/adblock_chrome.lua,.config/luakit/plugins/adblock_chrome.lua
 luakit/plugins/private_browsing_tabs.lua,.config/luakit/plugins/private_browsing_tabs.lua
+luakit/plugins/adblock/easylist.txt,.local/share/luakit/adblock/easylist.txt
 #                                                                           }}}
