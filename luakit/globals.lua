@@ -1,10 +1,10 @@
 -- Global variables for luakit
 globals = {
     homepage            = "luakit://bookmarks/",
-    scroll_step         = 40,
+    scroll_step         = 20,
     zoom_step           = 0.1,
-    max_cmd_history     = 100,
-    max_srch_history    = 100,
+    max_cmd_history     = 1000,
+    max_srch_history    = 1000,
  -- proxy must now be set through proxy command; environment variable is broken
     default_window_size = "640x480",
     max_title_len       = 200,
