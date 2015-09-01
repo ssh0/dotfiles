@@ -133,8 +133,8 @@ main = do
        `additionalKeys`
        [
        -- Shrink / Expand the focused window
-         ((modm                , xK_h      ), sendMessage Shrink)
-       , ((modm                , xK_l      ), sendMessage Expand)
+         ((modm                , xK_comma  ), sendMessage Shrink)
+       , ((modm                , xK_period ), sendMessage Expand)
        , ((modm                , xK_z      ), sendMessage MirrorShrink)
        , ((modm                , xK_a      ), sendMessage MirrorExpand)
        -- Close the focused window
@@ -151,16 +151,20 @@ main = do
        -- Resize the focused window
        , ((modm                , xK_s      ), withFocused (keysResizeWindow (-12,-12) (0.5,0.5)))
        , ((modm                , xK_i      ), withFocused (keysResizeWindow (12,12) (0.5,0.5)))
-       , ((modm .|. controlMask, xK_l      ), withFocused (keysResizeWindow (6,0) (0,0)))
-       , ((modm .|. controlMask, xK_h      ), withFocused (keysResizeWindow (-6,0) (0,0)))
+       , ((modm .|. controlMask, xK_period ), withFocused (keysResizeWindow (6,0) (0,0)))
+       , ((modm .|. controlMask, xK_comma  ), withFocused (keysResizeWindow (-6,0) (0,0)))
        , ((modm .|. controlMask, xK_a      ), withFocused (keysResizeWindow (0,-6) (0,0)))
        , ((modm .|. controlMask, xK_z      ), withFocused (keysResizeWindow (0,6) (0,0)))
        -- Go to the next / previous workspace
        , ((modm                , xK_Right  ), nextWS )
        , ((modm                , xK_Left   ), prevWS )
+       , ((modm                , xK_l      ), nextWS )
+       , ((modm                , xK_h      ), prevWS )
        -- Shift the focused window to the next / previous workspace
        , ((modm .|. shiftMask  , xK_Right  ), shiftToNext)
        , ((modm .|. shiftMask  , xK_Left   ), shiftToPrev)
+       , ((modm .|. shiftMask  , xK_l      ), shiftToNext)
+       , ((modm .|. shiftMask  , xK_h      ), shiftToPrev)
        -- Move the focus down / up
        , ((modm                , xK_j      ), windows W.focusDown)
        , ((modm                , xK_k      ), windows W.focusUp)
