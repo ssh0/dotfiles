@@ -105,16 +105,16 @@ function detect_files()
             end
         end
     end
-    
+
     if table.maxn(filterfiles) < 1 then
         simple_mode = true
         filterfiles = { "/easylist.txt" }
     end
-    
+
     if not simple_mode then
         info( "adblock: Found " .. table.maxn(filterfiles) .. " rules lists.\n" )
     end
-    
+
     return
 end
 
@@ -296,7 +296,7 @@ load = function (reload, single_list)
         black = {},
         white = {}
     } -- This cache should let us avoid unnecessary filters duplication.
-    
+
     for _, filename in ipairs(filterfiles_loading) do
         local white, black, wlen, blen, icnt = parse_abpfilterlist(filters_dir .. filename, rules_cache)
         local list = {}
@@ -314,7 +314,7 @@ load = function (reload, single_list)
         list.title, list.white, list.black, list.ignored = filename, wlen or 0, blen or 0, icnt or 0
         list.whitelist, list.blacklist = white or {}, black or {}
     end
-    
+
     rules_cache.white, rules_cache.black = nil, nil
     rules_cache = nil
     refresh_views()
@@ -379,7 +379,7 @@ match = function (uri, signame, page_uri)
             return ret
         end
     end
-    
+
     -- Test against each list's whitelist rules first
     for _, list in pairs(rules) do
         -- Check for a match to whitelist
@@ -392,7 +392,7 @@ match = function (uri, signame, page_uri)
             end
         end
     end
-    
+
     -- Test against each list's blacklist rules
     for _, list in pairs(rules) do
         -- Check for a match to blacklist
@@ -438,10 +438,10 @@ function list_opts_modify(list_index, opt_ex, opt_inc)
     assert(list_index > 0, "list options modify: index has to be > 0")
     if not opt_ex then opt_ex = {} end
     if not opt_inc then opt_inc = {} end
-    
+
     if type(opt_ex) == "string" then opt_ex = util.string.split(opt_ex) end
     if type(opt_inc) == "string" then opt_inc = util.string.split(opt_inc) end
-    
+
     local list = util.table.values(subscriptions)[list_index]
     local opts = opt_inc
     for _, opt in ipairs(list.opts) do
@@ -449,7 +449,7 @@ function list_opts_modify(list_index, opt_ex, opt_inc)
             table.insert(opts, opt)
         end
     end
-    
+
     -- Manage list's rules
     local listIDfound = table.itemid(rules, list)
     if util.table.hasitem(opt_inc, "Enabled") then
@@ -459,7 +459,7 @@ function list_opts_modify(list_index, opt_ex, opt_inc)
     elseif util.table.hasitem(opt_inc, "Disabled") then
         rules[list.title] = nil
     end
-    
+
     list.opts = opts
     write_subscriptions()
     refresh_views()
@@ -542,18 +542,18 @@ add_cmds({
         load(true)
         info("adblock: Reloading filters complete.")
     end),
-    
+
     cmd({"adblock-list-enable", "able"}, function (w, a)
         list_opts_modify(tonumber(a), "Disabled", "Enabled")
     end),
-    
+
     cmd({"adblock-list-disable", "abld"}, function (w, a)
         list_opts_modify(tonumber(a), "Enabled", "Disabled")
     end),
     cmd({"adblock-enable", "abe"}, function (w)
 	enable()
     end),
-    
+
     cmd({"adblock-disable", "abd"}, function (w)
 	disable()
     end),
