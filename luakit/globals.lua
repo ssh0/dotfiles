@@ -64,7 +64,7 @@ search_engines = {
     -- "nd": ニコニコ大百科
     nd = "http://dic.nicovideo.jp/s/al/a/%s",
     -- "p": Google画像検索
-    p = "http://www.google.com/search?hl=ja&site=imghp&tbm=isch&source=hp&q=%s&oq=%s",
+    p = "http://www.google.com/search?site=imghp&tbm=isch&q=%s",
     -- "m": Google Map
     m = "https://www.google.com/maps/place/%s",
     -- "mfh": Google Map Navigation "from Home to ***"
