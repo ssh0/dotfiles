@@ -130,6 +130,70 @@ _mytask() {
 compdef _mytask mytask
 
 #---------------------------------------------------------------------------}}}
+# shtest                                                                    {{{
+#------------------------------------------------------------------------------
+
+shtest() {
+  show_usage() {
+    echo ""
+    echo "Make testing snippet for shell script."
+    echo ""
+    echo "Usage: show_usage [OPTION]"
+    echo ""
+    echo "Option:"
+    echo "  -o FILE: Set the file name to save. "
+    echo "  -l     : List the formatted files."
+    echo "  -h     : Show this message."
+  }
+
+  local pattern='s/test_\([0-9]\{2\}\).sh/\1/p'
+  local pattern_full='s/\(test_[0-9]\{2\}.sh\)/\1/p'
+  local get_name=false
+  local dir="$HOME/bin"
+
+  show_list() {
+    list="$(ls "$dir" | sed -n $pattern_full)"
+    echo "$list"
+  }
+
+  while getopts o:lh OPT
+  do
+    case $OPT in
+      "o" ) get_name=true
+            name="$OPTARG" ;;
+      "l" ) show_list
+            return 0 ;;
+      "h" ) show_usage;
+            return 1 ;;
+        * ) show_usage;
+            return 1 ;;
+    esac
+  done
+
+  if ! $get_name; then
+    i=$(( $(ls "$dir" | sed -n $pattern | tail -n 1) + 1 ))
+    name="$(printf test_%02d.sh "$i")"
+  fi
+
+  # change directory
+  cd $dir
+  $EDITOR "$dir/$name"
+
+  return 0
+}
+
+_shtest() {
+  typeset -A opt_args
+  _arguments -s -S \
+    "(-l -h)-o[set the text file's name.]: :( `shtest -l` )" \
+    "(-o -h)-l[List the formatted files.]: :" \
+    "(-o -l)-h[Show this message.]: :" \
+    && return 0
+}
+
+compdef _shtest shtest
+
+#---------------------------------------------------------------------------}}}
 # youtube-dl completion                                                     {{{
 #------------------------------------------------------------------------------
 #
