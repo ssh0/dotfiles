@@ -20,6 +20,7 @@ import System.IO                       -- for xmobar
 
 import XMonad.Actions.WindowGo
 import XMonad.Actions.FloatKeys
+import XMonad.Actions.CopyWindow
 import XMonad.Actions.CycleWS
 import XMonad.Actions.UpdatePointer
 import qualified XMonad.Actions.FlexibleResize as Flex -- flexible resize
@@ -138,7 +139,7 @@ main = do
        , ((modm                , xK_z      ), sendMessage MirrorShrink)
        , ((modm                , xK_a      ), sendMessage MirrorExpand)
        -- Close the focused window
-       , ((modm                , xK_c      ), kill)
+       , ((modm                , xK_c      ), kill1)
        -- Toggle layout (Fullscreen mode)
        , ((modm                , xK_f      ), sendMessage ToggleLayout)
        -- Move the focused window when the border width is none zero
@@ -165,6 +166,9 @@ main = do
        , ((modm .|. shiftMask  , xK_Left   ), shiftToPrev)
        , ((modm .|. shiftMask  , xK_l      ), shiftToNext)
        , ((modm .|. shiftMask  , xK_h      ), shiftToPrev)
+       -- CopyWindow
+       , ((modm                , xK_v      ), windows copyToAll)
+       , ((modm .|. shiftMask  , xK_v      ), killAllOtherCopies)
        -- Move the focus down / up
        , ((modm                , xK_j      ), windows W.focusDown)
        , ((modm                , xK_k      ), windows W.focusUp)
