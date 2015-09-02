@@ -1,6 +1,9 @@
 #!/bin/sh
 # written by Shotaro Fujimoto (https://github.com/ssh0)
 # first edited: 2015-05-29
+# 
+# Use with vim-quickrun.
+# Show here. http://qiita.com/ssh0/items/7af727f0513c3fbf09a4
 
 style='junsrt'
 bibtex_command='pbibtex'
