@@ -119,7 +119,7 @@ domain_props = {
         serif_font_family = "TakaoPMincho",
         fantasy_font_family = "TakaoPMincho",
         cursive_font_family = "TakaoPMincho",
-        monospace_font_family = "Inconsolata for Powerline",
+        monospace_font_family = "Ricty Diminished",
         default_font_size = 12,
         default_monospace_font_size = 13,
         minimum_font_size = 8,
@@ -128,7 +128,7 @@ domain_props = {
         enable_accelerated_compositing = true,
         enforce_96_dpi = true,
         user_stylesheet_uri = nil,
-        -- user_stylesheet_uri = "file://" .. luakit.data_dir .. "/elemhide.css",
+        user_stylesheet_uri = "file://" .. luakit.data_dir .. "/adblock/elemhide.css/elemhide.css",
     },
     --[[
     ["all"] = {
