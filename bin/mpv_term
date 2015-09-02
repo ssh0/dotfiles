@@ -1,0 +1,8 @@
+#!/bin/sh
+# written by Shotaro Fujimoto (https://github.com/ssh0)
+# first edited: 2015-09-03
+
+TERMINAL=/usr/bin/urxvt
+SHELL=/usr/bin/zsh
+
+$TERMINAL -e mpv $@
