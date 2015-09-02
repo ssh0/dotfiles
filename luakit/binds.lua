@@ -659,6 +659,41 @@ add_cmds({
 })
 
 ex_follow_bindings = {
+    -- Yank element uri to open in an external application
+    key({}, "d", [[Hint all links (as defined by the `follow.selectors.uri`
+        selector) and set the primary selection to the matched elements URI.]],
+        function (w)
+            w:set_mode("follow", {
+                prompt = "external", selector = "uri", evaluator = "uri",
+                func = function (uri)
+                    assert(type(uri) == "string")
+                    uri = string.gsub(uri, " ", "%%20")
+                    luakit.selection.primary = uri
+                    if string.match(uri, "youtube") then
+                        luakit.spawn(string.format("mpv_term %s", uri))
+                        w:notify("trying to play file on mpv " .. uri)
+                    elseif string.match(uri, "vimeo") then
+                        luakit.spawn(string.format("mpv_term %s", uri))
+                        w:notify("trying to play file on mpv " .. uri)
+                    elseif string.match(uri, "vine") then
+                        luakit.spawn(string.format("mpv_term %s", uri))
+                        w:notify("trying to play file on mpv " .. uri)
+                    elseif string.match(uri, "nicovideo") then
+                        luakit.spawn(string.format("mpv_term %s", uri))
+                        w:notify("trying to play file on mpv " .. uri)
+                    elseif string.match(uri, "file:///") then
+                        luakit.spawn(string.format("xdg-open %s", uri))
+                        w:notify("trying to open with xdg-open " .. uri)
+                    elseif string.match(uri, "jpg" or "JPG" or "png" or "PNG" or "gif" or "GIF") then
+                        luakit.spawn(string.format("feh %s", uri))
+                        w:notify("file contains image")
+                    else
+                        w:notify("unrecognized format")
+                    end
+                end
+            })
+        end),
+
     -- Yank element uri or description into primary selection
     key({}, "y", [[Hint all links (as defined by the `follow.selectors.uri`
         selector) and set the primary selection to the matched elements URI.]],
