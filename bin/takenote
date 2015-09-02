@@ -88,6 +88,9 @@ takenote() {
     name="$(printf note_%02d.md "$i")"
   fi
 
+  # change directory
+  cd $dir
+
   if $alternative; then
     $editor "$dir/$name"
   else
