@@ -1,31 +1,44 @@
 #!/bin/sh
 #
+# This script make it easy to use pandoc for conver markdown to html file.
+# It is assumed that this script is called from vim-quickrun
+# in order to edit markdown file with live-preview.
 
-template="../styles/stylesheet.css"
-# template="/home/shotaro/Workspace/blog/styles/bootstrap-md.css"
+# You cah change your style sheet file.
+template="$HOME/Workspace/blog/styles/stylesheet.css"
+# Of cource you cah load from the web.
 # template='http://szk-engineering.com/markdown.css'
-header="../html/header.html"
-footer="../html/footer.html"
+
+# You may change these files in order to show a header bar or a footer bar.
+header="$HOME/Workspace/blog/html/header.html"
+footer="$HOME/Workspace/blog/html/footer.html"
+
+# If the file is in this directory,
+# this script converts a html file to the upper directory.
 sourcedir='source'
 
 usage() {
-    echo "Simply render markdown by pandoc."
-    echo "Usage: mkdpreview [OPTION]"
-    echo ""
-    echo "OPTION:"
-    echo "  -s: Save html file in the source file dir."
-    echo "  -u: Update (the same name's) html file in the source file dir."
-    echo "  -o: Set the name of html file. \`mkdpreview -o bar.html foo.md\`"
-    echo "  -p: Preview HTML file in firefox."
-    echo "  -h: Show this message."
-    exit 1
+  echo ""
+  echo "Simply render markdown by pandoc."
+  echo "Usage: mkdpreview [OPTION]"
+  echo ""
+  echo "OPTION:"
+  echo "  -s: Save html file in the source file dir."
+  echo "  -u: Update (the same name's) html file in the source file dir."
+  echo "  -o: Set the name of html file. \`mkdpreview -o bar.html foo.md\`"
+  echo "  -p: Preview HTML file in firefox."
+  echo "  -h: Show this message."
+  exit 1
 }
 
+# default settings
 save=false
 update=false
 output=""
 preview=false
+previewprg="luakit"
 
+# option handling
 while getopts suo:ph OPT
 do
   case $OPT in
@@ -37,8 +50,10 @@ do
   esac
 done
 
+# shift arg
 shift $((OPTIND-1))
 
+# if $1 is file, check its directory.
 if [ -f "$1" ]; then
   dir="$(cd "$(dirname $1)"; pwd)"
   currentdir="$(basename $dir)"
@@ -48,11 +63,13 @@ if [ -f "$1" ]; then
   fi
   namewithext=$(basename "$1")
   name=${namewithext%.*}
-else
+# save the file in /tmp dir.
+else 
   dir=""
   name="/tmp/$(tr -cd 'a-f0-9' < /dev/urandom | head -c 32)"
 fi
 
+# set the saving direction
 if [ "${output}" = "" ]; then
   if [ -d "${dir}/html" ]; then
     output="${dir}/html/${name}.html"
@@ -61,20 +78,25 @@ if [ "${output}" = "" ]; then
   fi
 fi
 
+# save to the file direction.
 if $save; then
+  # update option
   if $update; then
     if [ -f "${output}" ];then
       pandoc -f markdown -S -t html5 -c "${template}" -B "${header}" -A \
         "${footer}" -s --mathjax -o "${output}" "$@"
+    # if file doesn't exist, do nothing.
     else
       exit 0
     fi
+  # save as new file
   else
     pandoc -f markdown -S -t html5 -c "${template}" -B "${header}" -A \
       "${footer}" -s --mathjax -o "${output}" "$@"
   fi
 fi
 
+# preview in web browser.
 if $preview; then
-  luakit "file://${output}"
+  $previewprg "file://${output}"
 fi
