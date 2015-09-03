@@ -408,6 +408,12 @@ add_binds("normal", {
             if not w:goto_tab(m.count) then w:next_tab() end
         end, {count=0}),
 
+    key({"Mod1"}, "Left", "Go to previous tab.",
+        function (w) w:prev_tab() end),
+
+    key({"Mod1"}, "Right", "Go to next tab.",
+        function (w) w:next_tab() end),
+
     key({"Mod1"}, "h", "Go to previous tab.",
         function (w) w:prev_tab() end),
 
