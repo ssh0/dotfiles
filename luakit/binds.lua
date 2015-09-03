@@ -667,7 +667,7 @@ add_cmds({
 ex_follow_bindings = {
     -- Yank element uri to open in an external application
     key({}, "d", [[Hint all links (as defined by the `follow.selectors.uri`
-        selector) and set the primary selection to the matched elements URI.]],
+        selector) and excute external program to the matched elements URI.]],
         function (w)
             w:set_mode("follow", {
                 prompt = "external", selector = "uri", evaluator = "uri",
