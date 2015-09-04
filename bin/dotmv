@@ -12,10 +12,8 @@ usage() {
   exit 1
 }
 
-# TODO: crop $HOME string automatically. (Now it is done manually, so you
-# should replace the below command by your name.)
-home_pattern='s/\/home\/shotaro\///'
-dotfile_pattern='s/\/home\/shotaro\/\.dotfiles\///'
+home_pattern="s/\/home\/$USER\///"
+dotfile_pattern="s/\/home\/$USER\/\.dotfiles\///"
 
 # set dotfiles config file
 dotfiles_config_file="$HOME/.dotfiles/setup_config_link"
@@ -58,7 +56,7 @@ mv -i "$orig" "$dot"
 # link to orig path from dotfiles
 ln -siv "$dot" "$orig"
 
-# add the cofigration to the config file.
+# add the configration to the config file.
 if [ ! "${message}" = "" ]; then
   echo "# ${message}" >> "${dotfiles_config_file}"
 fi
