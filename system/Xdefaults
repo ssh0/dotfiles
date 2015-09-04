@@ -4,7 +4,7 @@ vim: set ft=xdefaults:
 !------------------------------------------------------------------------------
 
 Xft.dpi:       96
-Xft.antialias: true
+Xft.antialias: false
 Xft.rgba:      rgb
 Xft.hinting:   true
 Xft.hintstyle: hintslight
@@ -51,7 +51,6 @@ URxvt*iso14755:        false
 !---------------------------------------------------------------------------}}}
 ! Color                                                                     {{{
 !------------------------------------------------------------------------------
-*.color4:      #3d77f5
 
 *.foreground:  #c6c6c6
 *.background:  #1c1c1c
