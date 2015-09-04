@@ -676,16 +676,16 @@ ex_follow_bindings = {
                     uri = string.gsub(uri, " ", "%%20")
                     luakit.selection.primary = uri
                     if string.match(uri, "youtube") then
-                        luakit.spawn(string.format("mpv_term %s", uri))
+                        luakit.spawn(string.format("mpv %s", uri))
                         w:notify("trying to play file on mpv " .. uri)
                     elseif string.match(uri, "vimeo") then
-                        luakit.spawn(string.format("mpv_term %s", uri))
+                        luakit.spawn(string.format("mpv %s", uri))
                         w:notify("trying to play file on mpv " .. uri)
                     elseif string.match(uri, "vine") then
-                        luakit.spawn(string.format("mpv_term %s", uri))
+                        luakit.spawn(string.format("mpv %s", uri))
                         w:notify("trying to play file on mpv " .. uri)
                     elseif string.match(uri, "nicovideo") then
-                        luakit.spawn(string.format("mpv_term %s", uri))
+                        luakit.spawn(string.format("mpv %s", uri))
                         w:notify("trying to play file on mpv " .. uri)
                     elseif string.match(uri, "file:///") then
                         luakit.spawn(string.format("xdg-open %s", uri))
