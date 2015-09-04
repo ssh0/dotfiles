@@ -74,124 +74,76 @@ alias -s {qz,tgz,zip,lzh,bz2,tbz,Z,tar,arj,xz}=extract
 alias -s {png,jpg,bmp,PNG,JPG,BMP}='feh -g 1440x900 -Z "$@"'
 
 #---------------------------------------------------------------------------}}}
-# takenote completion                                                       {{{
+# ranger completion                                                         {{{
 #------------------------------------------------------------------------------
 
-_takenote() {
+_ranger() {
   typeset -A opt_args
   _arguments -s -S \
-    "(-l -r -h)-d[set saving directory for specific directory.]: :_files -/" \
-    "(-l -r -h)-o[set the text file's name.]: :( `takenote -l | sed -n 's/\(.*\.md\)/\1/p'` )" \
-    "(-l -r -h)-g[open with alternative program (default: vim).]: :(leafpad nano gedit)" \
-    "(-d -o -g -r -h)-l[only do \`ls dir\`.]: :" \
-    "(-d -o -g -l -h)-r[cd to TODAY dir, or it doesn't exist, to ROOT dir.]: :" \
-    "(-d -o -g -l -r)-h[Show the help message.]: :" \
+    {-d,--debug}'[Activate the debug mode: Whenever an error occurs, ranger will exit and print a full traceback.]'\
+    {-c,--clean}'[Activate the clean mode: ranger will not access or create any configuration files nor will it leave any traces on your system.]'\
+    {-r,--confdir=}'[Change the configuration directory of ranger from ~/.config/ranger to "dir".]:dir:_path_files -/'\
+    '--copy-config=[Create copies of the default configuration files in your local configuration directory. Existing ones will not be overwritten.]:FILE:(all commands commands_full rc rifle scope)'\
+    '--choosefile=[Allows you to pick a file with ranger. This changes the behavior so that when you open a file, ranger will exit and write the absolute path of that file into targetfile.]:targetfile:_files'\
+    '--choosefiles=[Allows you to pick multiple files with ranger. This changes the behavior so that when you open a file, ranger will exit and write the absolute paths of all selected files into targetfile, adding one newline after each filename.]:targetfile:_files'\
+    '--choosedir=[Allows you to pick a directory with ranger. When you exit ranger, it will write the last visited directory into targetfile.]:targetfile:_files'\
+    '--selectfile=[targetfile Open ranger with targetfile selected.]:targetfile:_files'\
+    '--list-unused-keys[List common keys which are not bound to any action in the "browser" context. This list is not complete, you can bind any key that is supported by curses: use the key code returned by "getch()".]'\
+    '--list-tagged-files[List all files which are tagged with the given tag.  Note: Tags are single characters. The default tag is "*"]:tag:(* a-z)'\
+    '--profile[Print statistics of CPU usage on exit.]'\
+    '--cmd=[Execute the command after the configuration has been read.  Use this option multiple times to run multiple commands.]:command:'\
+    '--versioin[Print the version and exit.]'\
+    {-h,--help}'[Print a list of option and exit.]'\
     && return 0
+  return 1
 }
 
-compdef _takenote takenote
+compdef _ranger ranger
 
 #---------------------------------------------------------------------------}}}
-# mytask completion                                                       {{{
+# ranger-cd                                                                 {{{
 #------------------------------------------------------------------------------
+# Compatible with ranger 1.4.2 through 1.7.*
+#
+# Automatically change the directory in bash after closing ranger
+#
+# This is a bash function for .bashrc to automatically change the directory to
+# the last visited one after ranger quits.
+# To undo the effect of this function, you can type "cd -" to return to the
+# original directory.
 
-_mytask() {
-  _arguments -C \
-    '1: :->cmds' \
-    '2:: :->args' && ret=0
-
-  case $state in
-    cmds)
-      _values "mytask command" \
-          "start[Execute the taskset.]" \
-          "add[Add new taskset.]" \
-          "edit[Edit the existing taskset.]" \
-          "remove[Remove a taskset.]" \
-          "list[List all existing taskset.]"
-      ret=0
-      ;;
-    args)
-      case $line[1] in
-        start|edit|remove)
-          _values 'configs' $(mytask list)
-          ret=0
-          ;;
-        add)
-          _path_files
-          ret=0
-          ;;
-      esac
-      ;;
-  esac
-
-  return ret
+function ranger-cd {
+    tempfile="$(mktemp)"
+    # for manual install
+    ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+    # package install
+    # /usr/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+    test -f "$tempfile" &&
+    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+        cd -- "$(cat "$tempfile")"
+    fi
+    rm -f -- "$tempfile"
 }
 
-compdef _mytask mytask
+compdef _ranger ranger-cd
+
+# This binds Ctrl-O to ranger-cd:
+# bind '"\C-o":"ranger-cd\C-m"'
 
 #---------------------------------------------------------------------------}}}
-# shtest                                                                    {{{
+# Start new ranger instance only if it's not running in current shell       {{{
 #------------------------------------------------------------------------------
+# https://wiki.archlinux.org/index.php/Ranger#Start_new_ranger_instance_only_if_it.27s_not_running_in_current_shell
 
-shtest() {
-  show_usage() {
-    echo ""
-    echo "Make testing snippet for shell script."
-    echo ""
-    echo "Usage: show_usage [OPTION]"
-    echo ""
-    echo "Option:"
-    echo "  -o FILE: Set the file name to save. "
-    echo "  -l     : List the formatted files."
-    echo "  -h     : Show this message."
-  }
-
-  local pattern='s/test_\([0-9]\{2\}\).sh/\1/p'
-  local pattern_full='s/\(test_[0-9]\{2\}.sh\)/\1/p'
-  local get_name=false
-  local dir="$HOME/bin"
-
-  show_list() {
-    list="$(ls "$dir" | sed -n $pattern_full)"
-    echo "$list"
-  }
-
-  while getopts o:lh OPT
-  do
-    case $OPT in
-      "o" ) get_name=true
-            name="$OPTARG" ;;
-      "l" ) show_list
-            return 0 ;;
-      "h" ) show_usage;
-            return 1 ;;
-        * ) show_usage;
-            return 1 ;;
-    esac
-  done
-
-  if ! $get_name; then
-    i=$(( $(ls "$dir" | sed -n $pattern | tail -n 1) + 1 ))
-    name="$(printf test_%02d.sh "$i")"
-  fi
-
-  # change directory
-  cd $dir
-  $EDITOR "$dir/$name"
-
-  return 0
+function r() {
+    if [ -z "$RANGER_LEVEL" ]; then
+        ranger-cd $@
+    else
+        exit
+    fi
 }
 
-_shtest() {
-  typeset -A opt_args
-  _arguments -s -S \
-    "(-l -h)-o[set the text file's name.]: :( `shtest -l` )" \
-    "(-o -h)-l[List the formatted files.]: :" \
-    "(-o -l)-h[Show this message.]: :" \
-    && return 0
-}
-
-compdef _shtest shtest
+compdef _ranger r
 
 #---------------------------------------------------------------------------}}}
 # youtube-dl completion                                                     {{{
@@ -439,33 +391,6 @@ _pandoc() {
 compdef _pandoc pandoc
 
 #---------------------------------------------------------------------------}}}
-# ranger completion                                                         {{{
-#------------------------------------------------------------------------------
-
-_ranger() {
-  typeset -A opt_args
-  _arguments -s -S \
-    {-d,--debug}'[Activate the debug mode: Whenever an error occurs, ranger will exit and print a full traceback.]'\
-    {-c,--clean}'[Activate the clean mode: ranger will not access or create any configuration files nor will it leave any traces on your system.]'\
-    {-r,--confdir=}'[Change the configuration directory of ranger from ~/.config/ranger to "dir".]:dir:_path_files -/'\
-    '--copy-config=[Create copies of the default configuration files in your local configuration directory. Existing ones will not be overwritten.]:FILE:(all commands commands_full rc rifle scope)'\
-    '--choosefile=[Allows you to pick a file with ranger. This changes the behavior so that when you open a file, ranger will exit and write the absolute path of that file into targetfile.]:targetfile:_files'\
-    '--choosefiles=[Allows you to pick multiple files with ranger. This changes the behavior so that when you open a file, ranger will exit and write the absolute paths of all selected files into targetfile, adding one newline after each filename.]:targetfile:_files'\
-    '--choosedir=[Allows you to pick a directory with ranger. When you exit ranger, it will write the last visited directory into targetfile.]:targetfile:_files'\
-    '--selectfile=[targetfile Open ranger with targetfile selected.]:targetfile:_files'\
-    '--list-unused-keys[List common keys which are not bound to any action in the "browser" context. This list is not complete, you can bind any key that is supported by curses: use the key code returned by "getch()".]'\
-    '--list-tagged-files[List all files which are tagged with the given tag.  Note: Tags are single characters. The default tag is "*"]:tag:(* a-z)'\
-    '--profile[Print statistics of CPU usage on exit.]'\
-    '--cmd=[Execute the command after the configuration has been read.  Use this option multiple times to run multiple commands.]:command:'\
-    '--versioin[Print the version and exit.]'\
-    {-h,--help}'[Print a list of option and exit.]'\
-    && return 0
-  return 1
-}
-
-compdef _ranger ranger
-
-#---------------------------------------------------------------------------}}}
 # tmuxinator                                                                {{{
 #------------------------------------------------------------------------------
 
@@ -538,49 +463,230 @@ function agvim(){
 }
 
 #---------------------------------------------------------------------------}}}
-# ranger-cd                                                                 {{{
+# takenote                                                                  {{{
 #------------------------------------------------------------------------------
-# Compatible with ranger 1.4.2 through 1.7.*
-#
-# Automatically change the directory in bash after closing ranger
-#
-# This is a bash function for .bashrc to automatically change the directory to
-# the last visited one after ranger quits.
-# To undo the effect of this function, you can type "cd -" to return to the
-# original directory.
 
-function ranger-cd {
-    tempfile="$(mktemp)"
-    # for manual install
-    ranger --choosedir="$tempfile" "${@:-$(pwd)}"
-    # package install
-    # /usr/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
-    test -f "$tempfile" &&
-    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
-        cd -- "$(cat "$tempfile")"
+function takenote() {
+  local get_dir=false
+  local get_name=false
+  local alternative=false
+  local show_list=false
+  local filercmd=r
+  local filer=false
+  local rootdir=$HOME/Workspace/blog
+  local pattern='s/note_\([0-9]\{2\}\).md/\1/p'
+
+  show_usage() {
+    echo "Usage: takenote [-d dir] [-o filename] [-g editor] [-l] [-r] [-h]"
+    echo "  -d dir     : set the saving directory (default: '$rootdir')"
+    echo "  -o filename: set the file's name"
+    echo "  -g editor  : open with an altenative program (default: '$EDITOR')"
+    echo "  -l         : list the today's files"
+    echo "  -r         : open the today's dir or the root dir with the filer (default: '$filercmd')"
+    echo "  -h         : show this message"
+  }
+
+  check_dir() {
+    if [ ! -e "$1" ]; then
+      echo "Directory '$1' doesn't exist."
+      return 1
     fi
-    rm -f -- "$tempfile"
+  }
+
+  while getopts d:o:g:lrh OPT
+  do
+    case $OPT in
+      "d" ) get_dir=true
+            dir="$OPTARG" ;;
+      "o" ) get_name=true
+            name="$OPTARG" ;;
+      "g" ) alternative=true
+            editor="$OPTARG" ;;
+      "l" ) show_list=true ;;
+      "r" ) filer=true ;;
+      "h" ) show_usage;
+            return 0 ;;
+        * ) show_usage;
+            return 0 ;;
+    esac
+  done
+
+  # set the saving directory
+  if ! $get_dir; then
+    if check_dir "$rootdir"; then
+      daydir=$(date +%Y-%m-%d)
+      dir=$rootdir/$daydir
+    else
+      return 1
+    fi
+  fi
+
+  # only show existing file in the directory
+  if $show_list; then
+    if check_dir "$dir"; then
+      list=$(ls "$dir")
+      echo "$list"
+    fi
+    return 0
+  fi
+
+  # move to today's directory by the user defined filer
+  if $filer; then
+    if [ ! -e "$dir" ]; then
+      echo "Today's directory has not been created yet."
+      echo "Open root directory '$rootdir' ..."
+      "$filercmd" "$rootdir"
+    else
+      "$filercmd" "$dir"
+    fi
+    return 0
+  fi
+
+  # set the filename
+  if ! $get_name; then
+    if [ ! -e "$dir" ]; then
+      i=1
+    else
+      i=$(( $(ls "$dir" | sed -n $pattern | tail -n 1) + 1 ))
+    fi
+    name="$(printf note_%02d.md "$i")"
+  fi
+
+  # change directory
+  local cwd="`pwd`"
+  cd $dir
+
+  if $alternative; then
+    $editor "$dir/$name"
+  else
+    $EDITOR "$dir/$name"
+  fi
+
+  # back to recent working directory
+  cd $cwd
+
+  return 0
 }
 
-compdef _ranger ranger-cd
+_takenote() {
+  typeset -A opt_args
+  _arguments -s -S \
+    "(-l -r -h)-d[set saving directory for specific directory.]: :_files -/" \
+    "(-l -r -h)-o[set the text file's name.]: :( `takenote -l | sed -n 's/\(.*\.md\)/\1/p'` )" \
+    "(-l -r -h)-g[open with alternative program (default: vim).]: :(leafpad nano gedit)" \
+    "(-d -o -g -r -h)-l[only do \`ls dir\`.]: :" \
+    "(-d -o -g -l -h)-r[cd to TODAY dir, or it doesn't exist, to ROOT dir.]: :" \
+    "(-d -o -g -l -r)-h[Show the help message.]: :" \
+    && return 0
+}
 
-# This binds Ctrl-O to ranger-cd:
-# bind '"\C-o":"ranger-cd\C-m"'
+compdef _takenote takenote
 
 #---------------------------------------------------------------------------}}}
-# Start new ranger instance only if it's not running in current shell       {{{
+# mytask completion                                                       {{{
 #------------------------------------------------------------------------------
-# https://wiki.archlinux.org/index.php/Ranger#Start_new_ranger_instance_only_if_it.27s_not_running_in_current_shell
 
-function r() {
-    if [ -z "$RANGER_LEVEL" ]; then
-        ranger-cd $@
-    else
-        exit
-    fi
+_mytask() {
+  _arguments -C \
+    '1: :->cmds' \
+    '2:: :->args' && ret=0
+
+  case $state in
+    cmds)
+      _values "mytask command" \
+          "start[Execute the taskset.]" \
+          "add[Add new taskset.]" \
+          "edit[Edit the existing taskset.]" \
+          "remove[Remove a taskset.]" \
+          "list[List all existing taskset.]"
+      ret=0
+      ;;
+    args)
+      case $line[1] in
+        start|edit|remove)
+          _values 'configs' $(mytask list)
+          ret=0
+          ;;
+        add)
+          _path_files
+          ret=0
+          ;;
+      esac
+      ;;
+  esac
+
+  return ret
 }
 
-compdef _ranger r
+compdef _mytask mytask
+
+#---------------------------------------------------------------------------}}}
+# shtest                                                                    {{{
+#------------------------------------------------------------------------------
+
+function shtest() {
+  show_usage() {
+    echo ""
+    echo "Make testing snippet for shell script."
+    echo ""
+    echo "Usage: show_usage [OPTION]"
+    echo ""
+    echo "Option:"
+    echo "  -o FILE: Set the file name to save. "
+    echo "  -l     : List the formatted files."
+    echo "  -h     : Show this message."
+  }
+
+  local pattern='s/test_\([0-9]\{2\}\).sh/\1/p'
+  local pattern_full='s/\(test_[0-9]\{2\}.sh\)/\1/p'
+  local get_name=false
+  local dir="$HOME/bin"
+  local cwd="`pwd`"
+
+  show_list() {
+    list="$(ls "$dir" | sed -n $pattern_full)"
+    echo "$list"
+  }
+
+  while getopts o:lh OPT
+  do
+    case $OPT in
+      "o" ) get_name=true
+            name="$OPTARG" ;;
+      "l" ) show_list
+            return 0 ;;
+      "h" ) show_usage;
+            return 1 ;;
+        * ) show_usage;
+            return 1 ;;
+    esac
+  done
+
+  if ! $get_name; then
+    i=$(( $(ls "$dir" | sed -n $pattern | tail -n 1) + 1 ))
+    name="$(printf test_%02d.sh "$i")"
+  fi
+
+  # change directory
+  cd $dir
+  $EDITOR "$dir/$name"
+
+  # return to recent working directory
+  cd $cwd
+
+  return 0
+}
+
+_shtest() {
+  typeset -A opt_args
+  _arguments -s -S \
+    "(-l -h)-o[set the text file's name.]: :( `shtest -l` )" \
+    "(-o -h)-l[List the formatted files.]: :" \
+    "(-o -l)-h[Show this message.]: :" \
+    && return 0
+}
+
+compdef _shtest shtest
 
 #---------------------------------------------------------------------------}}}
 # zsh-bd                                                                    {{{
@@ -588,7 +694,7 @@ compdef _ranger r
 # Quickly go back to aspecific parent directory instead of typing cd ../../../
 # [Tarrasch/zsh-bd](https://github.com/Tarrasch/zsh-bd)
 
-bd () {
+function bd () {
   (($#<1)) && {
     print -- "usage: $0 <name-of-any-parent-directory>"
     print -- "       $0 <number-of-folders>"
