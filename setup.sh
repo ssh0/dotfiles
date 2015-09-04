@@ -59,12 +59,14 @@ for l in $(grep -Ev '^#' setup_config_link | grep -Ev '^$'); do
       info "${orig}" "${dotfile}"
       cecho $yellow "file or directory already exists."
       while true; do
-        echo "(d):show diff, (f):overwrite, (b):make backup, (n):do nothing"
+        echo "(d):show diff, (e):vimdiff, (f):overwrite, (b):make backup, (n):do nothing"
         read line
         case $line in
           [Dd] ) echo "diff -u '${dotfile}' '${orig}'"
                   diff -u "${dotfile}" "${orig}"
                   echo "" ;;
+          [Ee] ) echo "vimdiff '${dotfile}' '${orig}'"
+                  vimdiff "${dotfile}" "${orig}" ;;
           [Ff] ) if [ -d "${orig}" ]; then
                     rm -r "${orig}"
                   else
