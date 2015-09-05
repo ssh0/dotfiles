@@ -117,7 +117,7 @@ main = do
         -- any time Full mode, avoid xmobar area
        , layoutHook         = toggleLayouts (noBorders Full) $
                               avoidStruts $
-                              onWorkspace "3" simplestFloat $
+                              -- onWorkspace "3" simplestFloat $
                               myLayout
         -- xmobar setting
        , logHook            = myLogHook wsbar
