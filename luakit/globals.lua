@@ -128,7 +128,7 @@ domain_props = {
         enable_accelerated_compositing = true,
         enforce_96_dpi = true,
         user_stylesheet_uri = nil,
-        user_stylesheet_uri = "file://" .. luakit.data_dir .. "/adblock/elemhide.css",
+        -- user_stylesheet_uri = "file://" .. luakit.data_dir .. "/adblock/elemhide.css",
     },
     --[[
     ["all"] = {
