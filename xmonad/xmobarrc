@@ -2,8 +2,8 @@
 Config { font = "xft:TakaoGothic:size=9"
        , bgColor = "#1c1c1c"
        , fgColor = "#757575"
-       -- , position = TopSize C 100 12 --26
-       ,position = Static { xpos = 11 , ypos = 0, width = 1897, height = 18 }
+       , position = TopSize C 100 18
+       -- , position = Static { xpos = 11 , ypos = 0, width = 1897, height = 18 }
        , lowerOnStart = False
        , overrideRedirect = False
        , border = NoBorder
