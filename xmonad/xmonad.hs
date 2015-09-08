@@ -156,6 +156,9 @@ main = do
        , ((modm .|. controlMask, xK_comma  ), withFocused (keysResizeWindow (-6,0) (0,0)))
        , ((modm .|. controlMask, xK_a      ), withFocused (keysResizeWindow (0,-6) (0,0)))
        , ((modm .|. controlMask, xK_z      ), withFocused (keysResizeWindow (0,6) (0,0)))
+       -- Increase / Decrese the number of master pane
+       , ((modm .|. shiftMask  , xK_semicolon), sendMessage $ IncMasterN 1)
+       , ((modm                , xK_minus  ), sendMessage $ IncMasterN (-1))
        -- Go to the next / previous workspace
        , ((modm                , xK_Right  ), nextWS )
        , ((modm                , xK_Left   ), prevWS )
@@ -250,7 +253,6 @@ myLayout = spacing gapWidth $ gaps [(U,gapWidth + gapWidthU),(D,gapWidth + gapWi
                  (ResizableTall 1 (1/100) (3/5) [])
              ||| (TwoPane (1/100) (3/5))
              ||| (ThreeColMid 1 (1/100) (16/35))
-             ||| (ResizableTall 2 (1/100) (1/2) [])
 
 --------------------------------------------------------------------------- }}}
 -- myStartupHook:     Start up applications                                 {{{
@@ -312,11 +314,11 @@ myLogHook h = dynamicLogWithPP $ wsPP { ppOutput = hPutStrLn h }
 myWsBar = "xmobar $HOME/.xmonad/xmobarrc"
 
 wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws,t]
-                , ppCurrent         = xmobarColor colorGreen colorNormalbg . \s -> "■"
-                , ppUrgent          = xmobarColor colorfg    colorNormalbg . \s -> "■"
-                , ppVisible         = xmobarColor colorfg    colorNormalbg . \s -> "■"
-                , ppHidden          = xmobarColor colorfg    colorNormalbg . \s -> "■"
-                , ppHiddenNoWindows = xmobarColor colorfg    colorNormalbg . \s -> "□"
+                , ppCurrent         = xmobarColor colorGreen colorNormalbg
+                , ppUrgent          = xmobarColor colorfg    colorNormalbg . \s -> "*"
+                , ppVisible         = xmobarColor colorfg    colorNormalbg . \s -> "*"
+                , ppHidden          = xmobarColor colorfg    colorNormalbg . \s -> "*"
+                , ppHiddenNoWindows = xmobarColor colorfg    colorNormalbg . \s -> "␣"
                 , ppTitle           = xmobarColor colorGreen colorNormalbg
                 , ppOutput          = putStrLn
                 , ppWsSep           = " "
