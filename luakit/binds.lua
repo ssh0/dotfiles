@@ -637,6 +637,17 @@ add_cmds({
     cmd({"viewsource", "vs"}, "View the source code of the current document.",
         function (w, a, o) w:toggle_source(not o.bang and true or nil) end),
 
+    cmd("status", "Toggle show the status bar.",
+        function (w, a, o)
+            if w.sbar.hidden then
+                w.sbar.ebox:show()
+                w.sbar.hidden = false
+            else
+                w.sbar.ebox:hide()
+                w.sbar.hidden = true
+            end
+        end),
+
     cmd({"wqall", "wq"}, "Save the session and quit.",
         function (w, a, o) w:save_session() w:close_win(o.bang) end),
 
