@@ -8,7 +8,7 @@
 use-filedir-conf=yes
 
 # default value of 320kB is quite low, especially on slow media
-cache=320
+cache=1024
 
 # save screenshots on the desktop
 screenshot-template=~/Desktop/mpv-screenshot%n
@@ -26,7 +26,7 @@ sub-text-font-size=30
 
 # I don't like mouse stuff
 osc=no
-osd-font="Ubuntu"
+osd-font="TakaoGothic"
 
 # make the OSD progress bar be big and centered like in mplayer and mplayer2
 osd-bar-align-y=0
@@ -38,9 +38,8 @@ osd-border-color='#99000000'
 ################################################################################
 # Video Output
 
-vo=opengl-hq:smoothmotion:fancy-downscaling=no:icc-profile-auto:approx-gamma:icc-cache=~/.mpv/icc-cache
-# vo=opengl-hq
-# display-fps=60
+# vo=opengl-hq:smoothmotion:fancy-downscaling=no:icc-profile-auto:approx-gamma:icc-cache=~/.mpv/icc-cache
+vo=opengl
 
 ################################################################################
 # Audio
