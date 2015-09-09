@@ -40,6 +40,25 @@ theme = assert(lousy.theme.get(), "failed to load theme")
 -- ("$XDG_CONFIG_HOME/luakit/window.lua" or "/etc/xdg/luakit/window.lua")
 require "window"
 
+-- Show progressbar
+window.methods.update_progress = function (w)
+    local p = w.view.progress
+    if not p then p = w.view:get_prop("progress") end
+    local loaded = w.sbar.l.loaded
+    if not w.view:loading() or p == 1 then
+        loaded:hide()
+    else
+        loaded:show()
+        local pbar = { }
+        local strlen = 25
+        local pstrlen = math.floor((p*strlen))
+        for i=1,pstrlen do pbar[i] = "█" end
+        for i=pstrlen+1,strlen do pbar[i] = "-" end
+        local text = string.format("[%s] %d%%", table.concat(pbar, ""), p * 100)
+        if loaded.text ~= text then loaded.text = text end
+    end
+end
+
 -- Load users webview class
 -- ("$XDG_CONFIG_HOME/luakit/webview.lua" or "/etc/xdg/luakit/webview.lua")
 require "webview"
@@ -73,10 +92,10 @@ require "cookies"
 -- and blacklist at "$XDG_CONFIG_HOME/luakit/cookie.blacklist".
 -- Each domain must be on it's own line and you may use "*" as a
 -- wildcard character (I.e. "*google.com")
---require "cookie_blocking"
+require "cookie_blocking"
 
 -- Block all cookies by default (unless whitelisted)
---cookies.default_allow = false
+-- cookies.default_allow = false
 
 -- Add uzbl-like form filling
 require "formfiller"
@@ -136,7 +155,7 @@ require "follow"
 
 -- Use a custom charater set for hint labels
 local s = follow.label_styles
-follow.label_maker = s.charset("fjkasdhguonmerwc")
+follow.label_maker = s.charset("fjkasdhg")
 
 follow.stylesheet = [===[
 #luakit_follow_overlay {
