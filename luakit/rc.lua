@@ -44,17 +44,17 @@ require "window"
 window.methods.update_progress = function (w)
     local p = w.view.progress
     if not p then p = w.view:get_prop("progress") end
-    local loaded = w.sbar.l.loaded
+    local loaded = w.sbar.r.loaded
     if not w.view:loading() or p == 1 then
         loaded:hide()
     else
         loaded:show()
         local pbar = { }
-        local strlen = 25
+        local strlen = 30
         local pstrlen = math.floor((p*strlen))
         for i=1,pstrlen do pbar[i] = "█" end
         for i=pstrlen+1,strlen do pbar[i] = "-" end
-        local text = string.format("[%s] %d%%", table.concat(pbar, ""), p * 100)
+        local text = string.format("%s %d%%", table.concat(pbar, ""), p * 100)
         if loaded.text ~= text then loaded.text = text end
     end
 end
@@ -92,7 +92,7 @@ require "cookies"
 -- and blacklist at "$XDG_CONFIG_HOME/luakit/cookie.blacklist".
 -- Each domain must be on it's own line and you may use "*" as a
 -- wildcard character (I.e. "*google.com")
-require "cookie_blocking"
+-- require "cookie_blocking"
 
 -- Block all cookies by default (unless whitelisted)
 -- cookies.default_allow = false
