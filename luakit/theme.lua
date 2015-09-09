@@ -39,7 +39,7 @@ theme.proxy_inactive_menu_fg    = '#aaaaaa'
 theme.proxy_inactive_menu_bg    = '#1c1c1c'
 
 -- Statusbar specific
-theme.sbar_fg         = "#aaaaaa"
+theme.sbar_fg         = "#9e9e9e"
 theme.sbar_bg         = "#1c1c1c"
 
 -- Downloadbar specific
