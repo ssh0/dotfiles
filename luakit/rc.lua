@@ -47,7 +47,9 @@ window.methods.update_progress = function (w)
     local loaded = w.sbar.r.loaded
     if not w.view:loading() or p == 1 then
         loaded:hide()
+        if w.sbar.hidden then w.sbar.ebox:hide() end
     else
+        w.sbar.ebox:show()
         loaded:show()
         local pbar = { }
         local strlen = 30
