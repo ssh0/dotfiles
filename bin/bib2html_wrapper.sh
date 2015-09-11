@@ -29,4 +29,4 @@ else
   output="${dir}/${name}"
 fi
 
-bibtex2html -s "${style}" -c "${bibtex_command}" -css "${css}" -o "${output}" "$1"
+bibtex2html -s "${style}" -c "${bibtex_command}" -css "${css}" -o "${output}" -noheader -nofooter -linebreak "$1"
