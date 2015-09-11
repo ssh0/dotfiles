@@ -57,8 +57,8 @@ soup.accept_policy = cookie_policy.always
 -- it to avoid collisions with lua's string.format characters.
 -- See: http://www.lua.org/manual/5.1/manual.html#pdf-string.format
 search_engines = {
-    -- default: Google検索
-    default_search = "https://www.google.co.jp/search?q=%s",
+    -- default: DuckDuckGo
+    default_search = "https://duckduckgo.com/?q=%s&ia=about",
     -- I'm feeling lucky!
     l = "https://www.google.co.jp/search?q=%s&btnI=I",
     -- "w": Wikipedia
