@@ -266,4 +266,10 @@ if unique then
     end)
 end
 
+----------------------------------------
+-- Local setting for specific machine --
+----------------------------------------
+
+require "user_local"
+
 -- vim: et:sw=4:ts=8:sts=4:tw=80
