@@ -8,6 +8,7 @@ My dotfiles
 - zsh
 - vim
 - ranger
+- luakit
 - some user script
 
 Screenshots
