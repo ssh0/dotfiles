@@ -39,6 +39,7 @@ import XMonad.Layout.MultiToggle.Instances
 import XMonad.Layout.NoBorders         -- In Full mode, border is no use
 import XMonad.Layout.PerWorkspace      -- Configure layouts on a per-workspace
 import XMonad.Layout.ResizableTile     -- Resizable Horizontal border
+import XMonad.Layout.MouseResizableTile
 import XMonad.Layout.SimplestFloat
 import XMonad.Layout.Spacing           -- this makes smart space around windows
 import XMonad.Layout.Tabbed
@@ -74,11 +75,11 @@ colorfg        = "#9fa8b1"
 borderwidth = 0
 
 -- gapwidth
-gapWidth = 3
-gapWidthU = 7
-gapWidthD = 8
-gapWidthL = 33
-gapWidthR = 34
+gapwidth  = 3
+gapwidthU = 7
+gapwidthD = 8
+gapwidthL = 33
+gapwidthR = 34
 
 --------------------------------------------------------------------------- }}}
 -- Define keys to remove                                                    {{{
@@ -249,7 +250,8 @@ main = do
 -- myLayout:          Handle Window behaveior                               {{{
 -------------------------------------------------------------------------------
 
-myLayout = spacing gapWidth $ gaps [(U,gapWidth + gapWidthU),(D,gapWidth + gapWidthD),(L,gapWidth + gapWidthL),(R,gapWidth + gapWidthR)] $
+myLayout = spacing gapwidth $
+           gaps [(U,gapwidth + gapwidthU),(D,gapwidth + gapwidthD),(L,gapwidth + gapwidthL),(R,gapwidth + gapwidthR)] $
                  (ResizableTall 1 (1/100) (3/5) [])
              ||| (TwoPane (1/100) (3/5))
              ||| (ThreeColMid 1 (1/100) (16/35))
