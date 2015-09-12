@@ -52,7 +52,7 @@ window.methods.update_progress = function (w)
         w.sbar.ebox:show()
         loaded:show()
         local pbar = { }
-        local strlen = 30
+        local strlen = 100
         local pstrlen = math.floor((p*strlen))
         for i=1,pstrlen do pbar[i] = "█" end
         for i=pstrlen+1,strlen do pbar[i] = "-" end
