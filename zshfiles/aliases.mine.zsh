@@ -28,6 +28,9 @@ alias :q='exit'
 # mplayer alias
 alias mplayer='mplayer -msgcolor'
 
+# twitter color
+alias twitter='twitter -f ansi'
+
 # colordiff
 if [[ -x `which colordiff` ]]; then
   alias diff='colordiff -u'
