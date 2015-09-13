@@ -1,0 +1,21 @@
+#!/bin/sh
+# written by Shotaro Fujimoto (https://github.com/ssh0)
+# first edited: 2015-09-13
+
+# dotunlink
+# Unlink the symbolic link mangaed by dotfiles and copy the file from the repository.
+#
+# Usage: dotunlink FILE
+
+# Get the file's path
+filename="$(basename $1)"
+currentpath="$(cd $(dirname $1); pwd)"/"${filename}"
+
+# Get the absolute path
+abspath="$(readlink $1)"
+
+# Unlink the file
+unlink "$currentpath"
+
+# Copy the file
+cp "$abspath" "$currentpath"
