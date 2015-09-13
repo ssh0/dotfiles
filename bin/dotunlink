@@ -5,17 +5,19 @@
 # dotunlink
 # Unlink the symbolic link mangaed by dotfiles and copy the file from the repository.
 #
-# Usage: dotunlink FILE
+# Usage: dotunlink FILE [FILE2 FILE3 ...]
 
-# Get the file's path
-filename="$(basename $1)"
-currentpath="$(cd $(dirname $1); pwd)"/"${filename}"
+for f in $@; do
+  # Get the file's path
+  filename="$(basename $f)"
+  currentpath="$(cd $(dirname $f); pwd)"/"${filename}"
 
-# Get the absolute path
-abspath="$(readlink $1)"
+  # Get the absolute path
+  abspath="$(readlink $f)"
 
-# Unlink the file
-unlink "$currentpath"
+  # Unlink the file
+  unlink "$currentpath"
 
-# Copy the file
-cp "$abspath" "$currentpath"
+  # Copy the file
+  cp "$abspath" "$currentpath"
+done
