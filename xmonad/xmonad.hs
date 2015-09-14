@@ -72,10 +72,10 @@ colorNormalbg  = "#1c1c1c"
 colorfg        = "#9fa8b1"
 
 -- Border width
-borderwidth = 0
+borderwidth = 2
 
 -- gapwidth
-gapwidth  = 3
+gapwidth  = 2
 gapwidthU = 7
 gapwidthD = 8
 gapwidthL = 33
