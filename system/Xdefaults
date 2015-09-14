@@ -26,7 +26,9 @@ URxvt.saveLines:       2000
 URxvt.internalBorder:  0
 URxvt.lineSpace:       0
 URxvt.intensityStyles: false
-URxvt.perl-ext-common: selection
+URxvt.perl-ext-common: default,matcher,selection
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.mathcer.button: 1
 
 ! Fonts
 URxvt.allow_bold:      true
