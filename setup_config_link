@@ -99,6 +99,7 @@ bin/mkdpreview,bin/mkdpreview
 bin/mkpdf.sh,bin/mkpdf.sh
 bin/mplayer_term_wrapper.sh,bin/mplayer_term_wrapper.sh
 bin/mpv_term,bin/mpv_term
+bin/myrsync,bin/myrsync
 bin/mytask,bin/mytask
 bin/pandoc_beamerwrapper.sh,bin/pandoc_beamerwrapper.sh
 bin/pandoc_latexwrapper.sh,bin/pandoc_latexwrapper.sh
