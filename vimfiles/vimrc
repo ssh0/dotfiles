@@ -302,8 +302,8 @@ NeoBundle 'rcmdnk/vim-markdown', {
       \ 'depends': [
       \   'godlygeek/tabular',
       \]}
-" Unset Disable folding
-let g:vim_markdown_folding_disabled = 1
+" Enable folding
+let g:vim_markdown_folding_disabled = 0
 " Disable Default Key Mapping
 let g:vim_markdown_no_default_key_mappings = 1
 " LaTeX math
