@@ -17,8 +17,9 @@ Xft.hintstyle: hintslight
 ! URxvt*.depth:          32
 URxvt.geometry:        90x35
 URxvt*.transparent:    true
-URxvt*.shading:        80
-URxvt*fading:          false
+URxvt*.shading:        100
+URxvt.tintColor:       #303030
+URxvt*fading:          20
 ! URxvt.urgentOnBell:    true
 URxvt*visualBell:      false
 URxvt*loginShell:      true
@@ -27,8 +28,8 @@ URxvt.internalBorder:  0
 URxvt.lineSpace:       0
 URxvt.intensityStyles: false
 URxvt.perl-ext-common: default,matcher,selection
-URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.mathcer.button: 1
+URxvt.url-launcher:    /usr/bin/xdg-open
+URxvt.mathcer.button:  1
 
 ! Fonts
 URxvt.allow_bold:      true
