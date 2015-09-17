@@ -221,7 +221,7 @@ main = do
        -- Insert a transparent panel
        , ((modm                    , xK_e      ), spawn "python $HOME/Workspace/python/transparent.py")
        -- Launch dmenu for launching applicatiton
-       , ((modm                    , xK_p      ), spawn "exe=`dmenu_run -b -p '#' -nb '#009688' -nf '#ffffff' -sb '#ffffff' -sf '#000000'` && exec $exe")
+       , ((modm                    , xK_p      ), spawn "exe=`dmenu_run -l 10 -fn 'Inconsolata for PowerLine:size=20'` && exec $exe")
        -- Lauch websearch application (See https://github.com/ssh0/web_search)
        , ((mod1Mask .|. controlMask, xK_f      ), spawn "websearch")
        -- Play / Pause media keys
