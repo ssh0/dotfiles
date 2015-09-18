@@ -86,6 +86,7 @@ bin/autopep8_wrap.sh,bin/autopep8_wrap.sh
 bin/bib2html_wrapper.sh,bin/bib2html_wrapper.sh
 bin/cachecleener,bin/cachecleener
 bin/cinii.sh,bin/cinii.sh
+bin/color-pallete.sh,bin/color-pallete.sh
 bin/cplay.sh,bin/cplay.sh
 bin/dotmv,bin/dotmv
 bin/dotunlink,bin/dotunlink
