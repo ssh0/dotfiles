@@ -3,13 +3,20 @@ dotfiles
 
 My dotfiles
 
-- XMonad
-- tmux
-- zsh
-- vim
-- ranger
-- luakit
-- some user script
+* [XMonad](http://xmonad.org/)
+    * [xmond.hs](./xmonad/xmonad.hs)
+* [tmux](https://tmux.github.io/)
+    * [tmux.conf](./rcfiles/tmux.conf)
+* [zsh](http://www.zsh.org/)
+    * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+    * [zshfiles](./zshfiles/)
+* [vim](http://www.vim.org/)
+    [vimrc](./vimfiles/vimrc)
+* [ranger](http://ranger.nongnu.org/)
+    * [ranger config files](./ranger/)
+* [luakit](https://mason-larobina.github.io/luakit/)
+    * [luakit config files](./luakit/)
+* [some user script](./bin/)
 
 Screenshots
 -----------
@@ -38,10 +45,10 @@ cd ~/.dotfiles
 
 and this script replace existing files interactively.
 
-- [dotclean](./dotclean):  
+* [dotclean](./dotclean):  
   remove symbolic link which is written in [setup_config_link](./setup_config_link).
 
-- [setup.sh](./setup.sh):  
+* [setup.sh](./setup.sh):  
   set symbolic link which is written in [setup_config_link](./setup_config_link)
   (if you have your file already, you can choose the operation
   interactively: "show diff", "overwrite", "make backup" or "do nothing").
