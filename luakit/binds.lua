@@ -447,12 +447,12 @@ add_binds("normal", {
     key({}, "d", "Close current tab (or `[count]` tabs).",
         function (w, m) for i=1,m.count do w:close_tab() end end, {count=1}),
 
-    key({}, "<", "Reorder tab left `[count=1]` positions.",
+    key({"Mod1"}, "H", "Reorder tab left `[count=1]` positions.",
         function (w, m)
             w.tabs:reorder(w.view, w.tabs:current() - m.count)
         end, {count=1}),
 
-    key({}, ">", "Reorder tab right `[count=1]` positions.",
+    key({"Mod1"}, "L", "Reorder tab right `[count=1]` positions.",
         function (w, m)
             w.tabs:reorder(w.view,
                 (w.tabs:current() + m.count) % w.tabs:count())
