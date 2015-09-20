@@ -11,7 +11,7 @@ My dotfiles
     * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
     * [zshfiles](./zshfiles/)
 * [vim](http://www.vim.org/)
-    [vimrc](./vimfiles/vimrc)
+    * [vimrc](./vimfiles/vimrc)
 * [ranger](http://ranger.nongnu.org/)
     * [ranger config files](./ranger/)
 * [luakit](https://mason-larobina.github.io/luakit/)
