@@ -227,3 +227,6 @@ luakit/plugins/adblock/adp_jp_element_hiding.txt,.local/share/luakit/adblock/abp
 luakit/plugins/adblock/Adblock_Plus_list.txt,.local/share/luakit/adblock/Adblock_Plus_list.txt
 luakit/plugins/adblock/exceptionrules.txt,.local/share/luakit/adblock/exceptionrules.txt
 #---------------------------------------------------------------------------}}}
+# [tig](https://github.com/jonas/tig)                                       {{{
+rcfiles/tigrc,.tigrc
+#---------------------------------------------------------------------------}}}
