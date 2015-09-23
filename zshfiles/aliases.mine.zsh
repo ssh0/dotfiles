@@ -772,6 +772,7 @@ cfg-mplayer() { $EDITOR ~/.mplayer/config ;}
 cfg-ranger() { $EDITOR ~/.config/ranger/rc.conf ;}
 cfg-ranger-rifle() { $EDITOR ~/.config/ranger/rifle.conf ;} # edit open_with extensions
 cfg-ranger-commands() { $EDITOR ~/.config/ranger/commands.py ;} # scripts
+cfg-tig() { $EDITOR ~/.tigrc ;}
 cfg-tmux() { $EDITOR ~/.tmux.conf ;}
 cfg-tmuxinator() { $EDITOR ~/.tmuxinator/ ;}
 cfg-turses() { $EDITOR ~/.turses/config ;}
