@@ -1,18 +1,18 @@
 # tigrc
 # default cofiguration -> /usr/local/etc/tigrc
 # Please see 'man tigrc' for a complete reference.
-#
+
 # =============================================================================
 # Settings                                                                  {{{
 # ========
-#
+
 # Most of these settings can be toggleable, either via the toggle-*
 # actions or via the option menu (bound to `o` by default).
-#
+
 # -----------------------------------------------------------------------------
 # View settings                                                             {{{
 # -------------
-#
+
 # Supported column types and their options:
 #
 #   author
@@ -61,29 +61,30 @@
 # set stash-view	= line-number:no,interval=5 id:no date:default author:full commit-title
 # set status-view	= line-number:no,interval=5 status:short file-name
 # set tree-view	= line-number:no,interval=5 mode author:full file-size date:default id:no file-name
-#
+
 # --------------------------------------------------------------------------}}}
 # Pager based views                                                         {{{
 # -----------------
+
 # set pager-view	= line-number:no,interval=5 text
 # set stage-view	= line-number:no,interval=5 text
 # set log-view	= line-number:no,interval=5 text
 # set blob-view	= line-number:no,interval=5 text
 # set diff-view	= line-number:no,interval=5 text:yes,commit-title-overflow=no
-#
+
 # --------------------------------------------------------------------------}}}
 # UI display settings                                                       {{{
 # -------------------
-#
+
 # set show-changes		= yes		# Show changes commits in the main view?
 # set wrap-lines			= no		# Wrap long lines in pager views?
 # set tab-size			= 8		# Number of spaces to use when expanding tabs
 # set line-graphics		= default	# Enum: ascii, default, utf-8
-#
+
 # --------------------------------------------------------------------------}}}
 # Format reference names based on type.                                     {{{
 # -------------------------------------
-#
+
 #  - head		: The current HEAD.
 #  - tag		: A signed tag.
 #  - local-tag		: An unsigned tag.
@@ -96,11 +97,11 @@
 # Prefix with `hide:` to not show that reference type, e.g. `hide:remote`.
 # Expects a space separated list of format strings.
 # set reference-format		= [branch] <tag> {remote} ~replace~
-#
+
 # --------------------------------------------------------------------------}}}
 # Settings controlling how content is read from Git                         {{{
 # -------------------------------------------------
-#
+
 # set commit-order		= auto		# Enum: auto, default, topo, date, reverse (main)
 # set status-untracked-dirs	= yes		# Show files in untracked directories? (status)
 # set ignore-space		= no		# Enum: no, all, some, at-eol (diff)
@@ -111,11 +112,11 @@
 #set log-options		= --pretty=raw	# User-defined options for `tig log` (git-log)
 #set main-options		= -n 1000	# User-defined options for `tig` (git-log)
 #set mailmap			= yes		# Use .mailmap to show canonical name and email address
-#
+
 # --------------------------------------------------------------------------}}}
 # Misc                                                                      {{{
 # ----
-#
+
 # set refresh-mode		= auto		# Enum: manual, auto, after-command, periodic
 # set refresh-interval		= 10		# Interval in seconds between refreshes
 # set ignore-case			= no		# Ignore case when searching?
@@ -130,13 +131,13 @@
 # 						# for opening file at specific line e.g. from a diff
 # set mouse			= no		# Enable mouse support?
 # set mouse-scroll		= 3		# Number of lines to scroll via the mouse
-#
+
 # --------------------------------------------------------------------------}}}
-#
+
 # ==========================================================================}}}
 # User-defined commands                                                     {{{
 # =====================
-#
+
 # These commands allow to run shell commands directly from within Tig.
 # Unless otherwise specified, commands are run in the foreground with
 # their console output shown (as if '!' was specified). When multiple
@@ -176,14 +177,14 @@
 # bind stash	!	?git stash drop %(stash)
 # bind refs	C	?git checkout %(branch)
 # bind refs	!	?git branch -D %(branch)
-#
+
 # ==========================================================================}}}
 # Normal commands                                                           {{{
 # ===============
-#
+
 # View switching                                                            {{{
 # --------------
-#
+
 # bind generic	m	view-main
 # bind generic	d	view-diff
 # bind generic	l	view-log
@@ -198,11 +199,11 @@
 # bind generic	c	view-stage
 # bind generic	y	view-stash
 # bind generic	g	view-grep
-#
+
 # --------------------------------------------------------------------------}}}
 # View manipulation                                                         {{{
 # -----------------
-#
+
 # bind generic	<Enter>	enter			# Enter and open selected entry
 # bind generic	<Lt>	back			# Go back to the previous view state
 # bind generic	<Down>	next			# Move to next
@@ -218,11 +219,11 @@
 # bind generic	O	maximize		# Maximize the current view
 # bind generic	q	view-close		# Close the current view
 # bind generic	Q	quit			# Close all views and quit
-#
+
 # --------------------------------------------------------------------------}}}
 # View specific                                                             {{{
 # -------------
-#
+
 # bind status	u	status-update		# Stage/unstage changes in file
 # bind status	!	status-revert		# Revert changes in file
 # bind status	M	status-merge		# Open git-mergetool(1)
@@ -239,11 +240,11 @@
 # bind diff	]	:toggle diff-context +1
 # bind main	G	:toggle commit-title-graph # Toggle revision graph visualization
 # bind main	F	:toggle commit-title-refs  # Toggle reference display (tags/branches)
-#
+
 # --------------------------------------------------------------------------}}}
 # Cursor navigation                                                         {{{
 # -----------------
-#
+
 # bind generic	j	move-down
 # bind generic	k	move-up
 #bind generic	?	move-half-page-down
@@ -256,11 +257,11 @@
 # bind generic	-	move-page-up
 # bind generic	<Home>	move-first-line
 # bind generic	<End>	move-last-line
-#
+
 # --------------------------------------------------------------------------}}}
 # Scrolling                                                                 {{{
 # ---------
-#
+
 # bind generic	|	scroll-first-col
 # bind generic	<Left>	scroll-left
 # bind generic	<Right>	scroll-right
@@ -270,11 +271,11 @@
 # bind generic	<C-E>	scroll-line-down
 # bind generic	<SBack>	scroll-page-up
 # bind generic	<SFwd>	scroll-page-down
-#
+
 # --------------------------------------------------------------------------}}}
 # Searching                                                                 {{{
 # ---------
-#
+
 # bind generic	/	search
 # bind generic	?	search-back
 # bind generic	n	find-next
@@ -286,11 +287,11 @@
 # bind search	<Up>	find-prev
 # bind search	<C-P>	find-prev
 # bind search	<C-K>	find-prev
-#
+
 # --------------------------------------------------------------------------}}}
 # Option manipulation                                                       {{{
 # -------------------
-#
+
 # bind generic	o	options			# Open the options menu
 # Bindings for toggling settings
 # bind generic	I	:toggle sort-order	# Toggle ascending/descending sort order
@@ -312,19 +313,19 @@
 						# Toggle display of file in untracked directories
 # bind generic	???	:toggle vertical-split	# Toggle vertical split
 # bind generic	%	:toggle file-filter
-#
+
 # --------------------------------------------------------------------------}}}
 # Misc                                                                      {{{
 # ----
-#
+
 # bind generic	e	edit			# Open in editor
 # bind generic	:	prompt			# Open the prompt
 # bind generic	<C-L>	screen-redraw		# Redraw the screen
 # bind generic	z	stop-loading		# Stop all loading views
 # bind generic	v	show-version		# Show Tig version
-#
+
 # --------------------------------------------------------------------------}}}
-#
+
 # ==========================================================================}}}
 # Colors                                                                    {{{
 # ======
@@ -344,11 +345,11 @@
 #
 # Note the four leading spaces in the string to match. This is because
 # Git automatically indents commit messages by four spaces.
-#
+
 # -----------------------------------------------------------------------------
 # Color settings                                                            {{{
 # --------------
-#
+
 # color "diff --"			yellow	default
 # color "--- "			yellow	default
 # color "+++ "			yellow	default
@@ -437,11 +438,11 @@ color title-focus		black	white	bold
 # color palette-13		red	default bold
 # color graph-commit		blue	default
 # color search-result		black	yellow
-#
+
 # --------------------------------------------------------------------------}}}
 # Mappings for colors read from git configuration.                          {{{
 # ------------------------------------------------
-#
+
 # Set to "no" to disable.
 # set git-colors = \
 # 	branch.current=main-head \
@@ -466,7 +467,7 @@ color title-focus		black	white	bold
 # 	status.updated=stat-staged \
 # 	status.changed=stat-unstaged \
 # 	status.untracked=stat-untracked
-#
+
 # --------------------------------------------------------------------------}}}
-#
+
 # ==========================================================================}}}
