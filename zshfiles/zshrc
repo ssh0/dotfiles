@@ -49,6 +49,7 @@ ZSH_THEME="agnoster"
 #     $ cd ~/.oh-my-zsh/custom/plugins
 #     $ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 plugins=(git zsh-syntax-highlighting tmux)
+autoload -U compinit && compinit
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
@@ -56,11 +57,12 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 source $HOME/.zshrc.mine
-export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/shotaro/bin/FDK/Tools/linux"
+export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-export LANG=en_US.UTF-8
+# export LANG=en_US.UTF-8
+export LANG=ja_JP.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
