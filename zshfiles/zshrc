@@ -90,7 +90,7 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export no_proxy=localhost,127.0.0.0/8
+export no_proxy=localhost,127.0.0.0/8,192.168.1.106,192.168.1.162
 export all_proxy=
 export ALL_PROXY=
 export http_proxy=
