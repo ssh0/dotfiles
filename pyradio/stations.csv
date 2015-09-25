@@ -1,16 +1,242 @@
-PulsRadio, http://dir.xiph.org/listen/869745/listen.m3u
-I Love Radio (www.iloveradio.de), http://dir.xiph.org/listen/1924251/listen.m3u
-ElectricFM.com - America's Real Dance!, http://dir.xiph.org/listen/1400755/listen.m3u
-Big B Radio - JPOP, http://50.7.173.162:8089/listen.pls
-Touhou Radio [touhouradio.com], http://37.59.41.178:8000/listen.pls
-J-Jams, http://72.46.136.154:7161/listen.pls
-Retro PC Game Music Streaming Radio, http://gyusyabu.ddo.jp:8000/listen.pls
-Cublis KISS, http://uk4.internet-radio.com:15476/listen.pls
-GoHamRadio, http://uk4.internet-radio.com:15938/listen.pls
-Afterhours.FM (Trance/Progressive), http://at2.ah.fm:80	
-Bluemars (Ambient), http://207.200.96.225:8020/listen.pls
-Bluemars: Cryosleep (Ambient), http://207.200.96.225:8022/listen.pls
-Bluemars: Voices Within (Ambient), http://207.200.96.225:8024/listen.pls
+# https://code.google.com/p/rawmean/source/browse/trunk/MyStations
+# FARSI: راديو همراه, http://stream.radiohamrah.com/RadioHamrahAAC
+# FARSI: KIRN 670 AM, http://208.43.166.220:9000
+# FARSI: راديو گرامافون, http://majestic.wavestreamer.com:2285/Live
+# FARSI:  راديو شما, http://5303.live.streamtheworld.com/RADIO_SHOMA_SC
+# FARSI: راديو ايرانيان لندن, http://ghost.wavestreamer.com:7716/stream/1/
+# FARSI: Persian Radio, http://213.73.255.244:10500
+# FARSI: رادیو خونه, http://sc27.streamhoster.com/lv_radiokhooneh--broadcast2
+# FARSI: راديو جوان, http://stream.radiojavan.com/radiojavan
+# FARSI: راديو فردا,  http://21.akacast.akamaistream.net/7/989/229671/v1/ibb.akacast.akamaistream.net/rfe_channel_21.mp3
+# FARSI: راديو آش رشته, http://ashreshteh.com:8000
+# FARSI: راديو چيزوميز, http://85.25.106.162:8110
+# FARSI: Dance Radio, http://213.73.255.244:10600
+# FARSI: راديو ارمان, http://148.251.187.85:8313/listen.pls
+# FARSI: Radio 6o8, http://37.187.48.29:8000/2
+# FARSI: راديو سنتى, http://213.73.255.244:10700
+# FARSI: IFT Radio, http://204.140.27.155:8080/iftradio
+# FARSI: راديو دونيا, http://gig.casthost.net:8002/stream
+# FARSI: راديو رنگارنگ ١, http://audio.rangarang.us:8000/stream/4/
+# FARSI: راديو رنگارنگ ٢, http://audio.rangarang.us:8000/stream/3/
+# FARSI: راديو على, http://192.184.9.79:8348
+# FARSI: LPR (London), http://198.178.123.11:7574
+# FARSI: راديو پويا, http://209.73.138.42:2877/Live
+# FARSI: راديو جديد, http://50.7.70.66:8705
+# FARSI: راديو فاز, http://www.radiofaaz.com:8000/radiofaaz
+# FARSI: راديو همسفر, http://94.254.1.16:8000
+# FARSI: i7 Radio, http://stream.i7radio.com/high
+# FARSI: راديو دوست, http://50.7.70.66:8507
+# THAI: M-Station, http://202.162.79.110:7777
+# THAI: Radio OK, http://alpha.radiook.co.th:8000/hookmp128
+# THAI: DMC Thai TV, http://112.140.185.52:443
+# THAI: Thai FM, http://103.4.216.32:8241
+# THAI: Anime-Thai, http://122.155.0.108:4066
+# THAI: Classic Thai, http://27.254.68.193:8000
+# THAI: Time Thai, http://119.59.98.4:8040/
+# THAI: Auto DJ, http://183.90.168.211:8000/
+# THAI: JEDI MEAW WINK, http://202.183.167.209:8000/
+# THAI: Pop Radio, http://103.22.182.111:8044/
+# THAI: Best Thai, http://103.246.18.3:4032/
+# THAI: Play Thai, http://103.22.182.104:9902/
+# THAI: Gumunbra Auto PJ, http://202.129.207.211:8306/
+# THAI: Mitikao 90.5 Bangkok, http://119.59.124.149:8624/
+# THAI: fungfungfung, http://61.47.2.70:8064/
+# THAI: MerciGod Radio, http://listen.mercigod.com:8000
+# THAI: DJ.BOY NAKHONMUSIC, http://210.1.31.58:8132
+# THAI: ChiangMai Live, http://202.29.60.203:8000
+# THAI: COOL93 Fahrenhieit, http://203.150.224.142:8003
+# THAI: Easy 105.5, http://202.44.54.186:8105
+# THAI: City Radio Pattaya, http://202.170.122.148:8067
+# THAI: Bangkok Sport Radio, http://202.162.77.38:8000/SportRadio
+# THAI: Radio Thai Laboour, http://122.155.16.158:6178
+# KOREA: KPOP @ Big B Radio, http://184.95.62.170:9002/
+# KOREA: Kpop Dance, http://streaming.radionomy.com/KpopDance
+# KOREA: Aewen Radio, http://37.72.100.39:8001/stream
+# KOREA: Korea KPOP, http://222.122.178.180:8820
+# KOREA: Generation KPOP, http://176.31.241.195:8700
+# KOREA: SEOULFM, http://96.44.128.51/;?1394923302591.mp3
+# KOREA: KPOP addict, http://streaming.radionomy.com/kpop-addict
+# KOREA: Radio-KPOP, http://streaming.radionomy.com/RADIO-KPOP
+# KOREA: KPOP and more, http://204.45.126.170:8021
+# KOREA: Big B Radio, http://184.95.62.170:8002
+# KOREA: KFM 99.9, http://61.78.39.187:8000/
+# KOREA: Nanpasun, http://nanpasun.saycast.com
+# KOREA: EasyCast-386FM, http://fm386.inlive.co.kr
+# KOREA: iPhone WorldMic Korea, http://38.96.148.141:4648
+# KOREA: MelodiesOfPrayer.com, http://67.212.189.122:8187
+# KOREA: JPHiP Radio, http://radio.jphip.com:8800/
+# KOREA: Cast.cc, http://cast.cc:8888
+# KOREA: Chinamerica Hit Radio!, http://209.73.150.38:26814
+JAPAN: Japan-A-Radio, http://audio.misproductions.com/japan128k
+JAPAN: J-PopProject Radio, http://streaming.radionomy.com/J-PopProjectRadio
+JAPAN: MJHR  Radio, http://streaming207.radionomy.com:80/MJHRRadio
+JAPAN: Loli-Pop Radio, http://streaming207.radionomy.com:80/Loli-Pop-Station
+JAPAN: JPopsuki-Radio, http://jpopsuki.fm:8000/stream
+JAPAN: RadioVocaloid, http://streaming64.radionomy.com/RadioVocaloid
+JAPAN: FredFilmRadio, http://s4.webradio-hosting.com:2199/tunein/fredradiojp.pls
+JAPAN: AnimeAMAZE, http://apple.neostreams.info:10007/
+JAPAN: Ghost Anime, http://animeradio.su:8000/
+JAPAN: 91.8 the Fan, http://198.100.144.46:80/stream/1/
+JAPAN: AnimeAmaze, http://apple.neostreams.info:10007/
+JAPAN: Anime Classics Radio, http://albireo.shoutca.st/tunein/jtingb05.pls
+JAPAN: Anime Classics 2, http://albireo.shoutca.st/tunein/jtingb04.pls
+JAPAN: Extreme Anime Radio, http://knr128.keiichi.net/
+JAPAN: Armitage's Dimension, http://armitunes.com:8000/
+JAPAN: Big B Radio, http://184.95.47.178:9112
+JAPAN: JapanRadio.ru, http://japanradio.ru:8000/play
+JAPAN: JPop, http://61.78.39.187:8000
+JAPAN: AnimeNexus, http://209.126.101.188:8000/listen.pls
+JAPAN: 70s-90s J-pop Stream, http://198.178.123.14:7002
+JAPAN: Anime-stereo, http://listen.radionomy.com/anime-stereo.m3u
+JAPAN: RADIO HAYAMA, http://server10.reliastream.com:2199/tunein/radiohayama.pls
+JAPAN: Radio Anime Obsesion, http://radio.anime-obsesion.com:8902/animeobsesion
+JAPAN: AnimeNfo Radio, http://itori.animenfo.com:443/
+LISTEN2ME: KCRW Music, http://kcrw.ic.llnwd.net/stream/kcrw_music
+LISTEN2ME: KCRW Live, http://kcrw.ic.llnwd.net/stream/kcrw_live
+LISTEN2ME: Dinner Jazz Excursion, http://sc01.warpradio.com:8240/
+LISTEN2ME: KSDS Jazz, http://listen.jazz88.org/ksds.mp3
+LISTEN2ME: 4Clubbers, http://87.98.163.6:8200/
+LISTEN2ME: RadioSkyMusic, http://streaming.radionomy.com/Mistura-Fina-Instrumental
+LISTEN2ME: coolradio jazz, http://4broadcast.de:8000/coolradio-jazz-128s.mp3
+LISTEN2ME: Jazz 24, http://icy1.abacast.com:80/kplu-jazz24aac-64
+LISTEN2ME: JazzClub, http://streaming208.radionomy.com/JAZZCLUB?group=825&countrycode=US&similarprocess=0&crashed=0
+LISTEN2ME: Only Jazz, http://listen.radionomy.com/onlyjazz
+LISTEN2ME: Flamenco Beat Radio, http://216.19.176.225:26000
+LISTEN2ME: Radio Sevillanas, http://94.75.209.28:8192/
+LISTEN2ME: Radio Contepomi, http://radio.contepomi.net:9991
+LISTEN2ME: Radio Paradise, http://stream-uk1.radioparadise.com:80/mp3-128
+LISTEN2ME: NRK Jazz, http://lyd.nrk.no:80/nrk_radio_jazz_mp3_h
+LISTEN2ME: ABC Jazz, http://listen.radionomy.com/abc-jazz
+LISTEN2ME: RadioSky, http://listen.radionomy.com/RadioSky-Music
+LISTEN2ME: Adore Jazz, http://205.164.35.21:80
+LISTEN2ME: Air Jazz, http://listen.radionomy.com/air-jazz
+LISTEN2ME: Beejazz, http://listen.radionomy.com/beejazz
+LISTEN2ME: KUAZ News and Jazz, http://streaming.azpm.org/kuaz192.mp3
+LISTEN2ME: WWNO-3 New Orleans, http://nyc01.egihosting.com:18840/listen.pls
+LISTEN2ME: WDNA 88.9FM, http://war.str3am.com:7990/
+LISTEN2ME: Chillout, http://mp3channels.webradio.antenne.de/chillout
+LISTEN2ME: Swiss Internet Radio, http://82.197.167.140:80
+LISTEN2ME: Play Misty for Me, http://listen.radionomy.com/Play-Misty-for-Me
+LISTEN2ME: BBC World Service, http://bbcwssc.ic.llnwd.net/stream/bbcwssc_mp1_ws-eieuk
+LISTEN2ME: WUSF, http://131.247.45.225:8128
+LISTEN2ME: WGBH, http://audio.wgbh.org:8000
+LISTEN2ME: BCC Radio 1, http://bbcmedia.ic.llnwd.net/stream/bbcmedia_intl_lc_radio1_p?s=1333576253&e=1333590653&h=4c89293cdc8fa59cf2a8a4b913d59976
+LISTEN2ME: BBC Radio 2, http://bbcmedia.ic.llnwd.net/stream/bbcmedia_intl_lc_radio2_p?s=1333576277&e=1333590677&h=f7a08eae8e7f81dbac9d6f9e15a260b0
+LISTEN2ME: BBC Radio 3, http://bbcmedia.ic.llnwd.net/stream/bbcmedia_intl_lc_radio3_p?s=1333576282&e=1333590682&h=59cd60661725bca59c3e8fc46e918bc2
+LISTEN2ME: BBC 6Music, http://bbcmedia.ic.llnwd.net/stream/bbcmedia_intl_lc_6music_p?s=1333576314&e=1333590714&h=c606d3eaf128c0abbe72341973c7e60d
+LISTEN2ME: BBC 1Xtra, http://bbcmedia.ic.llnwd.net/stream/bbcmedia_intl_lc_1xtra_p?s=1333576331&e=1333590731&h=6b7675ec61a7357aeec4a068f94e8178
+LISTEN2ME: BBC 5Live, http://bbcmedia.ic.llnwd.net/stream/bbcmedia_intl_lc_5live_p?s=1333576360&e=1333590760&h=5277712416bedff9841efd2c3329d669
+# INDIA: RaDioTEENTAAL.com, http://195.154.176.33:8000
+# INDIA: TeluguKokila Radio, http://98.226.222.195:8097
+# INDIA: Radio Jalwa Punjabi, http://s2.voscast.com:8314
+# INDIA: bollybop, http://stream.bollybop.co.nz:8000/bollybop
+# INDIA: MASTRADIO.COM , http://stream.mastradio.net:8000/
+# INDIA: Radio Banglanet, http://sc6.spacialnet.com:33656/
+# INDIA: Washington Bangla Radio, http://banglaradio.homeip.net:8000/
+# INDIA: Malayalam Radio, http://radio.hostonnet.com:8000
+# INDIA: RadioGoonGoon, http://184.107.144.218:8040
+# INDIA: OnlineTamil Radio, http://46.28.49.164:7764
+# INDIA: Desi Music Mix, http://desimusicmix.com:8012/
+# INDIA: Bollywood (Polskie Radio), http://91.121.92.167:4600/
+# INDIA: Sada Bahar Music Radio, http://sadabaharmusicradio.serverhostingcenter.com:8512
+# INDIA: Lankasri FM, http://media3.lankasri.fm
+# INDIA: 1.FM - Bombay Beats, http://205.164.35.115:80
+# INDIA: Hindi Bollywood Dj-Gaurav, http://radio.dj-gaurav.com:8035
+# INDIA: Radio HSL, http://50.7.70.66:8485
+# INDIA: Bollywood N Bhangra USA, http://198.178.123.11:7516
+# INDIA: Suburbs of Goa, http://voxsc1.somafm.com:8850
+# INDIA: Radio Afsana, http://174.36.206.197:8198/
+# INDIA: Desi Music Mix!, http://s1.desimusicmix.com:8012/
+# LATINO: FIESTA MEXICANA, http://66.7.201.163:8004
+# LATINO: Latin House, http://pub1.di.fm/di_latinhouse
+# LATINO: RADIO CHANQUETE, http://92.48.107.35:8008
+# LATINO: Tejano FM, http://208.53.158.48:8130/
+# LATINO: LPG Radio, http://198.105.220.12:7479/Live
+# LATINO: KCSN Latin Alt 88.5, http://130.166.82.14:8002
+# LATINO: Super Estrella 107.1, http://icy1.abacast.com//entravision-kssefmmp3-48
+# LATINO: SalsaMexico HD, http://salsamexico.com/hd
+# LATINO: Vallenato Internacional, http://38.96.148.253:6336
+# LATINO: La X Estereo-Salsa, http://5.135.160.122:8038
+# LATINO: JR.FM House & Trance, http://50.22.212.194:8030
+# LATINO: JR.FM Latin Pop, http://198.57.205.90:8010
+# LATINO: Latin Flavor On Air, http://streaming.radionomy.com/LATINFLAVORONAIR/
+# LATINO: EstrellaInternacional, http://radiolatina.info:7084/
+# LATINO: LATINO FM EN DIRECTO, http://92.48.107.35:8000/
+# LATINO: LA PACHANGUERA-NY, http://radiolatina.info:8772/
+# LATINO: Estrella 90.5 FM, http://184.82.251.165:8006
+# LATINO: Radio Bolero, http://50.7.70.66:8404
+# LATINO: ROMANTICA FM, http://streaming18.brlogic.com:8238/live
+# LATINO: PANDAPOPRADIO.COM, http://s9.viastreaming.net:7240/
+# LATINO: RADIO CHANQUETE, http://92.48.107.35:8008/
+# CHINA: Chinamerica Hit Radio, http://rfe1-r1.alldigital.net:8000/lmjc539
+# CHINA: Chinese Classical Music, http://radio.chinesemusicworld.com:8202/;stream.nsv
+# CHINA: Hong Kong Chinese, http://38.96.148.141:4650
+# CHINA: Big B Radio, http://50.7.173.162:8093
+# CHINA: Big B Radio - CPOP, http://50.7.173.162:8093
+# CHINA: Washington Chinese Radio, http://50.117.8.242:5760/Live
+# CHINA: First Chinese Radio, http://198.105.220.12:7859/Live
+# CHINA: Voice for Canadian Chinese, http://198.105.220.12:7859/Live
+# CHINA: On air Power, http://61.92.48.222:8128
+# CHINA: TLIG radio (Chinese), http://46.28.49.164:7768
+# TURKISH: Radyo kalpfm, http://radyo.kalpfm.com:8044/
+# TURKISH: beirut nights, http://s2.byblosnights.com
+# TURKISH: Power Turk FM, http://sc.powergroup.com.tr:80/PowerTurk/mpeg/128/tunein
+# TURKISH: Londra Turk Radyosu, http://bloom.wavestreamer.com:2171
+# TURKISH: TaksimLive, http://95.211.162.32:8000
+# TURKISH: TaksimFM ClubMix, http://95.211.162.32:8016
+# TURKISH: Radyo EcE, http://192.99.36.162:7277
+# TURKISH: Ask FM Turkiye, http://askfm.radyolarburada.com:8060
+# TURKISH: Turku Radyo, http://www.turkuradyosu.com:9984
+# TURKISH: MAMAS FM, http://www.mamasfm.com:2000
+# TURKISH: Damar Turk FM, http://50.7.209.202:9986
+# TURKISH: UCUKKACIK Turk, http://178.33.126.136:101
+# TURKISH: Avrasya Turk, http://88.150.190.188:1071
+# TURKISH: Arabesk, http://185.12.109.172:9999
+# TURKISH: TurkrapFM, http://95.173.188.166:9984
+# TURKISH: HayatMix, http://hayatmix.com:8330/listen.pls
+# TURKISH: Romantik Turk, http://live.radyotvonline.com:7610
+# TURKISH: Best Radyo, http://80.241.213.195:8004
+# TURKISH: isimsiz fm, http://www.isimsizfm.com:8888
+# PINOY: Pinoy Alternative Rock, http://s8.voscast.com:8642
+# PINOY: Pinoy Love Songs, http://s8.voscast.com:8666
+# PINOY: MOR 94.3 Dagupan, http://192.241.193.224:8059/mordagupan
+# PINOY: Pinoy Internet Radio, http://213.239.218.99:7002/stream
+# PINOY: Himig Pinoy FM, http://s10.voscast.com:7260/listen.pls
+# PINOY: Pinoy Music Radio, http://listen.radionomy.com/pinoymixradio.m3u
+# PINOY: Pinoy Home Radio, http://174.37.159.206:8044
+# PINOY: Pinoy Love Radio, http://s6.voscast.com:8562
+# PINOY: Pinoy Hitz, http://s2.voscast.com:8426
+# PINOY: Pinoy-Pirates Radio, http://46.105.27.171:8000/
+# PINOY: Blazin 100, http://99.198.118.250:8158/
+# PINOY: RAKISTA Radio, http://rakista.com:8000/listen128.mp3
+# PINOY: Pinoy Radio Online, http://192.184.9.158:8674
+# PINOY: Radyo Kalibre, http://75.126.73.136:8002/
+# PINOY: Radyo KBYN, http://radyokabayan.serverhostingcenter.com:9044/
+# PINOY: Atlantis Radio Philippines, http://192.184.9.79:8106
+# PINOY: Tunog Pinoy Radio, http://173.193.219.163:8494
+# PINOY: COOL FM 90.1, http://67.213.213.137:8039/
+# PINOY: Joko Jun Radio, http://jokojun.servemp3.com:1414/radio
+# PINOY: DjKoRn Pinoy, http://184.154.185.177:80/
+# PINOY: Pinoy Rap Radio, http://198.178.123.23:7200
+# PINOY: V-Hive Radio, http://192.99.8.192:3154/vhiveradiostream
+# PINOY: Music Pinoy, http://76.164.217.100:7032/live
+# PINOY: PINOY RADIO UK, http://s5.voscast.com:7858/;stream.nsv
+# VIET: Saigon radio KALI, http://ice5.securenetsystems.net/KALI
+# VIET: Saigon radio KREH, http://ice5.securenetsystems.net/KREH
+# VIET: Saigon radio KVVN, http://ice5.securenetsystems.net/KVVN
+# VIET: VAB Vietnamese American, http://67.213.213.137:8087
+# VIET: Radio Saigon Dallas, http://67.212.189.122:8068
+# VIET: Vietnam-Minnesota, http://tres.kfai.org:8000/
+# VIET: Traditional music, http://archive.org/download/VietnameseTraditionalMusicRadioProgram2012/ToiYeuCoNhac07292012.mp3
+# VIET: Cherry Radio, http://50.7.96.210:8618
+# VIET: Cherry Radio: Youth, http://174.37.252.208:8500
+# VIET: Radio Viet Nam Hai Ngoai, http://vpr.serverroom.us:7492/
+# VIET: KYND Radio, http://68.168.103.13:8355/listen.pls
+# VIET: Saigon HD Radio, http://170.75.194.209:8888/listen.pls
+# VIET: RFI Vietnamese, http://95.81.147.3/2584/rfi_en_vietnamien/rfivietnamien.mp3
+# VIET: R Sputnik Vietnamese, http://audio1.video.ria.ru/voicevnm.m3u
+# VIET: Nationwide Viet HD, http://vndcradio2.serverroom.us:4480/
+# VIET: VietNam Public Radio, http://vpr.serverroom.us:7492
 Digitally Imported: Chillout, http://listen.di.fm/public3/chillout.pls
 Digitally Imported: Chillout Dreams, http://listen.di.fm/public3/chilloutdreams.pls
 Digitally Imported: Soulful House, http://listen.di.fm/public3/soulfulhouse.pls
@@ -20,7 +246,6 @@ Digitally Imported: Lounge, http://listen.di.fm/public3/lounge.pls
 Digitally Imported: PsyChill, http://listen.di.fm/public3/psychill.pls
 Electronic Culture, http://www.shouted.fm/tunein/electro-dsl.m3u
 Frequence 3 (Pop), http://streams.frequence3.net/hd-mp3.m3u
-OEM Radio, http://205.188.215.231:8000/listen.pls
 Ragga Kings, http://www.raggakings.net/listen.m3u
 SKY.FM: Mostly Classical, http://www.sky.fm/mp3/classical.pls
 SKY.FM: Jazz, http://www.sky.fm/mp3/jazz.pls
@@ -41,6 +266,3 @@ SomaFM: Secret Agent (Downtempo), http://somafm.com/secretagent.pls
 SomaFM: Covers, http://somafm.com/covers.pls
 SomaFM: Digitalis (Rock), http://somafm.com/digitalis.pls
 SomaFM: PopTron! (Pop), http://somafm.com/poptron.pls
-Virgin Radio (Pop), http://www.smgradio.com/core/audio/mp3/live.pls?service=vrbb
-Monkey Radio Groove, http://groove.monkeyradio.org/
-The Chill Lounge (Smooth Jazz), http://208.79.238.78:9046/listen.pls
