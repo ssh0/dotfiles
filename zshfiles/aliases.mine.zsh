@@ -38,6 +38,22 @@ else
   alias diff='diff -u'
 fi
 
+# color echo
+cecho() {
+  local color
+  case $1 in
+    red) color=31 ;;
+    green) color=32 ;;
+    yellow) color=33 ;;
+    blue) color=34 ;;
+    magenta) color=35 ;;
+    cyan) color=36 ;;
+    *) return 1 ;;
+  esac
+  shift
+  echo "\033[${color}m$@\033[m"
+}
+
 # speedometer
 function _speedometer() {
   speedometer -b -rx "$1" -tx "$1"
