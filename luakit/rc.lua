@@ -55,7 +55,7 @@ window.methods.update_progress = function (w)
         local strlen = 100
         local pstrlen = math.floor((p*strlen))
         for i=1,pstrlen do pbar[i] = "█" end
-        for i=pstrlen+1,strlen do pbar[i] = "-" end
+        for i=pstrlen+1,strlen do pbar[i] = "." end
         local text = string.format("%s %d%%", table.concat(pbar, ""), p * 100)
         if loaded.text ~= text then loaded.text = text end
     end
