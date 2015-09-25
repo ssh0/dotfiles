@@ -90,7 +90,7 @@ function extract() {
   esac
 }
 alias -s {qz,tgz,zip,lzh,bz2,tbz,Z,tar,arj,xz}=extract
-alias -s {png,jpg,bmp,PNG,JPG,BMP}='feh -g 1440x900 -Z "$@"'
+alias -s {png,jpg,bmp,PNG,JPG,BMP}='feh --scale-down'
 
 #---------------------------------------------------------------------------}}}
 # ranger completion                                                         {{{
