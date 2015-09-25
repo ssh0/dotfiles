@@ -117,7 +117,7 @@ main = do
                               manageDocks
         -- any time Full mode, avoid xmobar area
        , layoutHook         = toggleLayouts (noBorders Full) $
-                              avoidStruts $
+                              avoidStruts $ lessBorders OnlyFloat $
                               -- onWorkspace "3" simplestFloat $
                               myLayout
         -- xmobar setting
@@ -143,8 +143,6 @@ main = do
        , ((modm                , xK_c      ), kill1)
        -- Toggle layout (Fullscreen mode)
        , ((modm                , xK_f      ), sendMessage ToggleLayout)
-       -- Move the focused window when the border width is none zero
-       , ((modm .|. shiftMask  , xK_f      ), withFocused (keysMoveWindow (-borderwidth, -borderwidth)))
        -- Move the focused window
        , ((modm .|. controlMask, xK_Right  ), withFocused (keysMoveWindow (6,0)))
        , ((modm .|. controlMask, xK_Left   ), withFocused (keysMoveWindow (-6,0)))
