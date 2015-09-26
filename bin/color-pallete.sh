@@ -2,6 +2,9 @@
 # written by Shotaro Fujimoto (https://github.com/ssh0)
 # first edited: 2015-06-28
 
+# color-pallete.sh
+# Show zenity color pallete.
+
 COLOR=`zenity --color-selection --show-palette`
 
 case $? in
