@@ -74,6 +74,10 @@ colorfg        = "#9fa8b1"
 -- Border width
 borderwidth = 2
 
+-- Border color
+mynormalBorderColor  = colorNormalbg
+myfocusedBorderColor = colorBlue
+
 -- gapwidth
 gapwidth  = 2
 gapwidthU = 7
@@ -109,8 +113,8 @@ main = do
        { borderWidth        = borderwidth
        , terminal           = "urxvtc"
        , focusFollowsMouse  = True
-       , normalBorderColor  = colorNormalbg
-       , focusedBorderColor = colorWhite
+       , normalBorderColor  = mynormalBorderColor
+       , focusedBorderColor = myfocusedBorderColor
        , startupHook        = myStartupHook
        , manageHook         = myManageHookShift <+>
                               myManageHookFloat <+>
