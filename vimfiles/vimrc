@@ -483,9 +483,6 @@ set colorcolumn=80
 " set completion popup's height
 set pumheight=10
 
-" Minimal number of screen lines to keep above and below the cursor.
-set scrolloff=999
-
 " always split vertically when using vimdiff
 set diffopt=vertical
 
