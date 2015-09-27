@@ -11,7 +11,7 @@ export LC_TIME=en_US.UTF-8
 export EDITOR=/usr/bin/vim
 
 # TERMCMD
-export TERMCMD=urxvtc
+export TERMCMD=urxvt
 
 autoload -U add-zsh-hook 2>/dev/null || return
 
