@@ -708,6 +708,19 @@ _shtest() {
 compdef _shtest shtest
 
 #---------------------------------------------------------------------------}}}
+# myrsync completion                                                        {{{
+#------------------------------------------------------------------------------
+
+_myrsync() {
+  _values "myrsync commands"\
+    "up[upload local directory to the Dropbox directory.]" \
+    "down[download the Dropbox directory to local.]"
+    return 0
+}
+
+compdef _myrsync myrsync
+
+#---------------------------------------------------------------------------}}}
 # zsh-bd                                                                    {{{
 #------------------------------------------------------------------------------
 # Quickly go back to aspecific parent directory instead of typing cd ../../../
