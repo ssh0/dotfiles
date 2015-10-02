@@ -78,6 +78,7 @@ zshfiles/history.zsh,.oh-my-zsh/lib/history.zsh
 zshfiles/plugins/tmux/tmux.plugin.zsh,.oh-my-zsh/plugins/tmux/tmux.plugin.zsh
 #---------------------------------------------------------------------------}}}
 # bin                                                                       {{{
+bin/README.md,bin/README.md
 bin/alarm,bin/alarm
 bin/allmp4tomp3.sh,bin/allmp4tomp3.sh
 bin/autopep8_wrap.sh,bin/autopep8_wrap.sh
