@@ -31,7 +31,7 @@ bibtex2html wrapper script.
 
 I use this script with vim-quickrun.
 
-Show here. http://qiita.com/ssh0/items/7af727f0513c3fbf09a4
+See here. http://qiita.com/ssh0/items/7af727f0513c3fbf09a4
 
 ## [cachecleener](./cachecleener)
 
@@ -115,6 +115,8 @@ If the executed file is in named "source" directory,
 this script automatically look the upper directory and search the file named "main.tex" to compile.
 (You can change the source code if you'd like to use different name.)
 
+See: [TeXをもっと便利に使う!(自動コンパイル・部分コンパイル・分割ファイルから親ファイルのコンパイル)【Vim + vim-quickrun + latexmk】 - Qiita](http://qiita.com/ssh0/items/e6d7540cd46fac580bc2)
+
 ## [LINE](./LINE)
 
 use chrome app
@@ -180,6 +182,8 @@ OPTION:
   -p: Preview HTML file in firefox.
   -h: Show this message.
 ```
+
+See: [markdownの編集環境をいい感じに整えてみた[vim + quickrun + pandoc] - Qiita](http://qiita.com/ssh0/items/b68263a7866b4ce9eaf1)
 
 ## [mplayer_term_wrapper.sh](./mplayer_term_wrapper.sh)
 
@@ -302,6 +306,8 @@ You may change the variable below.
 rootdir=$HOME/Workspace/blog
 ```
 
+See: [ShellScript - スクリーンショットを撮って日付のディレクトリに連番で保存するスクリプト - Qiita](http://qiita.com/ssh0/items/2b4e7a4146cb2da01187)
+
 ## [screenshot_select.sh](./screenshot_select.sh)
 
 Take screenshot (select area by mouse dragging or click) and save it to daydir(%Y-%m-%d).
@@ -311,6 +317,8 @@ You may change the variable below.
 ```
 rootdir=$HOME/Workspace/blog
 ```
+
+See: [ShellScript - スクリーンショットを撮って日付のディレクトリに連番で保存するスクリプト - Qiita](http://qiita.com/ssh0/items/2b4e7a4146cb2da01187)
 
 ## [sound_volume_change_wrapper.sh](./sound_volume_change_wrapper.sh)
 
@@ -340,6 +348,8 @@ Usage: takenote [-d dir] [-o filename] [-g editor] [-l] [-r] [-h]
   -r         : open the today's dir or the root dir with the filer (default: '$filercmd')
   -h         : show this message
 ```
+
+See: [ディレクトリ内の一番大きな番号につづくように番号を振ってファイルを作成する - service ssh0 start](http://ssh0.hatenablog.com/entry/2015/08/26/%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E5%86%85%E3%81%AE%E4%B8%80%E7%95%AA%E5%A4%A7%E3%81%8D%E3%81%AA%E7%95%AA%E5%8F%B7%E3%81%AB%E3%81%A4%E3%81%A5%E3%81%8F%E3%82%88%E3%81%86%E3%81%AB)
 
 ## [terminal-colors](./terminal-colors)
 
