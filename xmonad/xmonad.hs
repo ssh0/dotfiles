@@ -39,7 +39,6 @@ import XMonad.Layout.MultiToggle.Instances
 import XMonad.Layout.NoBorders         -- In Full mode, border is no use
 import XMonad.Layout.PerWorkspace      -- Configure layouts on a per-workspace
 import XMonad.Layout.ResizableTile     -- Resizable Horizontal border
-import XMonad.Layout.MouseResizableTile
 import XMonad.Layout.SimplestFloat
 import XMonad.Layout.Spacing           -- this makes smart space around windows
 import XMonad.Layout.Tabbed
@@ -120,7 +119,7 @@ main = do
                               myManageHookFloat <+>
                               manageDocks
         -- any time Full mode, avoid xmobar area
-       , layoutHook         = toggleLayouts (noBorders Full) $
+       , layoutHook         = toggleLayouts (avoidStruts $ noBorders Full) $
                               avoidStruts $ lessBorders OnlyFloat $
                               -- onWorkspace "3" simplestFloat $
                               myLayout
