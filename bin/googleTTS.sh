@@ -45,7 +45,8 @@ do
 done
 
 # Google translate_TTS API's url
-readonly URL="http://translate.google.com/translate_tts?tl=${LNG}&q="
+readonly URL="http://translate.google.com/translate_tts?ie=UTF-8&total=1&idx=0&client=t&tl=${LNG}&q="
+
 
 STOCK="${STOCK}/${LNG}"
 
