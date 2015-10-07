@@ -413,6 +413,9 @@ set numberwidth=3
 " Don't redraw screen during macros
 set lazyredraw
 
+" Indicates a fast terminal connection
+set ttyfast
+
 set history=1000
 set viminfo='1000,<200,f50,c,h
 
