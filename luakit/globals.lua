@@ -107,6 +107,8 @@ search_engines = {
     gs = "https://gist.github.com/search?utf8=✓&q=%s",
     -- "t": 翻訳
     t = "http://ejje.weblio.jp/content/%s",
+    -- "wordnik": seach at wordnik
+    wordnik = "https://www.wordnik.com/words/%s",
 }
 
 -- Set google as fallback search engine
