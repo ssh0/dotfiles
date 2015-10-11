@@ -703,7 +703,7 @@ ex_follow_bindings = {
                         luakit.spawn(string.format("xdg-open %s", uri))
                         w:notify("trying to open with xdg-open " .. uri)
                     elseif string.match(uri, "jpg" or "JPG" or "png" or "PNG" or "gif" or "GIF") then
-                        luakit.spawn(string.format("feh %s", uri))
+                        luakit.spawn(string.format("feh --scale-down %s", uri))
                         w:notify("file contains image")
                     else
                         w:notify("unrecognized format")
