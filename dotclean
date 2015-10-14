@@ -1,16 +1,19 @@
 #!/bin/sh
-#
+# written by Shotaro Fujimoto (https://github.com/ssh0)
+# 
+# Remove the symbolic link in the config file (default: ./setup_config_link).
+# After execute this script, you should run setup.sh in the dotfiles directory.
+
+configfile="./setup_config_link"
+
 usage() {
-  echo "Remove the symbolic link written in config file."
-  echo "after that, you may run setup.sh in dotfiles."
-  echo "Usage: dotclean [OPTION]"
-  echo ""
+  echo "Remove the symbolic link in the config file (default: $configfile)."
+  echo "After execute this script, you should run setup.sh in the dotfiles directory.\n"
+  echo "Usage: dotclean [OPTION]\n"
   echo "OPTION:"
   echo "  -h: Show this message."
   exit 1
 }
-
-configfile="setup_config_link"
 
 if [ "$1" = "-h" ]; then
   usage
