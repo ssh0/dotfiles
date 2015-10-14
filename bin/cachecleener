@@ -14,7 +14,7 @@ line=$(printf '%*s\n' "$columns" '' | tr ' ' -)
 echo "\nThis script clear cache.\n\n"
 
 # current memory usage
-echo -n "Before:\n$line"
+echo "Before:\n$line"
 sudo free
 echo "$line"
 sudo sync
