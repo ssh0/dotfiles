@@ -11,7 +11,7 @@ if [ $columns -gt 70 ]; then
 fi
 line=$(printf '%*s\n' "$columns" '' | tr ' ' -)
 
-echo "\nThis script clear cache.\n\n"
+echo "\nThis script clear cache.\n"
 
 # current memory usage
 echo "Before:\n$line"
