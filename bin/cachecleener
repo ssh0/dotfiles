@@ -2,46 +2,47 @@
 #------------------------------------------------------------------
 #  メモリ開放                                by SONY5614
 #------------------------------------------------------------------
+# and modified by Shotaro Fujimoto (https://github.com/ssh0)
 
-echo ""
-echo "このスクリプトはメモリの開放を行います。"
-echo "-----------------------------開放前-----------------------------"
- sudo free
-echo "----------------------------------------------------------------"
- sudo sync
-echo "開放する際メモリに書き込む数値を入力してください。"
-echo "[0] 初期値"
-echo "[1] ページキャッシュ 解放"
-echo "[2] dentry、inode 解放"
-echo "[3] ページキャッシュ、dentry、inode 解放"
+# set line width
+columns=$(tput cols)
+if [ $columns -gt 70 ]; then
+  columns=70
+fi
+line=$(printf '%*s\n' "$columns" '' | tr ' ' -)
+
+echo "\nThis script clear cache.\n\n"
+
+# current memory usage
+echo -n "Before:\n$line"
+sudo free
+echo "$line"
+sudo sync
+
+# set vm.drop_caches option number
+echo "\nInput number."
+echo "[0] default"
+echo "[1] page cache"
+echo "[2] dentry, inode"
+echo "[3] page cache, dentry, inode"
 echo -n ">>[0-3?]>>"
-     read Nomber
+read Nomber
 
-     case "$Nomber" in
+# clear cache
+case "$Nomber" in
+  "0"|"1"|"2"|"3" )
+    echo ""
+    echo "sudo sysctl -w vm.drop_caches=$Nomber"
+    sudo sysctl -w vm.drop_caches=$Nomber
+    ;;
+  *)
+    echo "Unexpected key. Aborted."
+    exit 1
+    ;;
+esac
 
-         "0" )
-            echo "初期値を書き込みます..."
-            echo ""
-            sudo sysctl -w vm.drop_caches=0
-            ;;
-         "1" )
-            echo "ページキャッシュ解放..."
-            echo ""
-            sudo sysctl -w vm.drop_caches=1
-            ;;
-         "2" )
-            echo "dentry、inode 解放..."
-            echo ""
-            sudo sysctl -w vm.drop_caches=2
-            ;;
-         "3" )
-            echo "ページキャッシュ、dentry、inode 解放..."
-            echo ""
-            sudo sysctl -w vm.drop_caches=3
-            ;;
-     esac
-echo "-----------------------------開放後-----------------------------"
- sudo free
-echo "----------------------------------------------------------------"
-echo "メモリを開放しました。"
+# After message
+echo "\nAfter:\n$line" && sudo free
+echo "$line\nDone.\n"
 exit 0
+
