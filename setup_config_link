@@ -116,7 +116,7 @@ bin/touchpad_toggle.sh,bin/touchpad_toggle.sh
 bin/trackpoint_toggle.sh,bin/trackpoint_toggle.sh
 bin/urxvt_float.sh,bin/urxvt_float.sh
 bin/wmatomp3_converter.sh,bin/wmatomp3_converter.sh
-bin/youtube-dl_listwrap,bin/youtube-dl_listwrap
+bin/ytdl,bin/ytdl
 #---------------------------------------------------------------------------}}}
 # [ranger](http://ranger.nongnu.org/):                                      {{{
 # ranger is a file manager with VI key bindings.
