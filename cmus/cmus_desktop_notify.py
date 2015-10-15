@@ -139,13 +139,13 @@ def display_song():
         # Calculate seconds between track changes.
         track_change_duration = round(time.time() - float(last_notice))
 
-        # Display current track notification only if 3 seconds have
+        # Display current track notification only if 1 seconds have
         # elapsed since last track was chosen.
-        if track_change_duration > 3:
+        if track_change_duration > 1:
             # Execute notify-send with our default song data.
-            subprocess.call('notify-send -a cmus -u low -t 5000 "' + \
+            subprocess.call('notify-send -a cmus -u low -t 1000 "' + \
                             notify_summary + '" "by ' + notify_body + ' " \
--i /usr/share/icons/gnome/scalable/actions/media-playback-start-symbolic.svg',
+    -i /usr/share/icons/gnome/scalable/actions/media-playback-start-symbolic.svg',
                             shell=True)
 
 def main():
