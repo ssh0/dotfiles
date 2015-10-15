@@ -3,7 +3,7 @@
 # first edited: 2015-06-23
 
 show_usage() {
-  echo "youtube-dl_listwrap: Wrapper script for youtube-dl."
+  echo "ytdl: Wrapper script for youtube-dl."
   echo ""
   echo "Usage: youtube-dl_listwrap [-h] [-A] [-L FILE] URL [youtube-dl options]"
   echo ""
@@ -11,20 +11,23 @@ show_usage() {
   echo ""
   echo "Option:"
   echo "  -A: Don't add the URL to list file"
-  echo "  -L: Set the list file to save URL (default file: 'list')"
+  echo "  -L: Set the list file to save URL (default file: '.list')"
+  echo "  -e: Edit the list file manually."
   echo "  -h: Show this help message"
 }
 
-listfile=list
+listfile=".list"
 save=true
 
-while getopts AL:h OPT
+while getopts AL:eh OPT
 do
   case $OPT in
     "A" ) save=false ;;
     "L" ) listfile="${OPTARG}" ;;
-    "h" ) show_usage;
+    "e" ) $EDITOR "${listfile}"
           exit 0 ;;
+    "h" ) show_usage;
+          exit 1 ;;
   esac
 done
 
