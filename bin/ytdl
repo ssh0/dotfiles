@@ -5,7 +5,7 @@
 show_usage() {
   echo "ytdl: Wrapper script for youtube-dl."
   echo ""
-  echo "Usage: youtube-dl_listwrap [-h] [-A] [-L FILE] URL [youtube-dl options]"
+  echo "Usage: ytdl [-h] [-A] [-L FILE] URL [youtube-dl options]"
   echo ""
   echo "NOTE: You should place the URL *before* the youtube-dl's options."
   echo ""
