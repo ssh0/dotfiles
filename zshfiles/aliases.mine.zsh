@@ -243,7 +243,7 @@ __youtube_dl() {
 compdef __youtube_dl youtube-dl
 
 # custom wrapper
-compdef __youtube_dl youtube-dl_listwrap
+compdef __youtube_dl ytdl
 
 #---------------------------------------------------------------------------}}}
 # recordmydesktop completion                                               {{{
