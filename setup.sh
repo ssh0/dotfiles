@@ -150,6 +150,6 @@ for l in $(grep -Ev '^#' "$configfile" | grep -Ev '^$'); do
     fi
   else
     # otherwise make symbolic file normally
-    $mklink "${dotfile}" "${orig}"
+    ln -sv "${dotfile}" "${orig}"
   fi
 done
