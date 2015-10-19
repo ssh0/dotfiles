@@ -7,6 +7,24 @@
 #
 # written by Shotaro Fujimoto (https://github.com/ssh0)
 #------------------------------------------------------------------------------
+# export variables                                                          {{{
+#------------------------------------------------------------------------------
+
+# find alternative apps if it is installed on your system
+find_alt() { for i;do which "$i" >/dev/null && { echo "$i"; return 0;};done;return 1; }
+
+# set the default program
+# the first program in the array will be chosen as the default
+export OPENER=$(find_alt xdg-open exo-open gnome-open )
+export BROWSER=$(find_alt luakit firefox google-chrome chromium chromium-browser $OPENER )
+export BROWSERCLI=$(find_alt w3m links2 links lynx elinks $OPENER )
+export EDITOR=$(find_alt vim emacs nano leafpad gedit pluma $OPENER )
+export FILEMANAGER=$(find_alt hunar nautilus dolphin pcmanfm tspacefm enlightenment_filemanager $OPENER )
+export PAGER=$(find_alt less more most)
+export PLAYER=$(find_alt mpv mplayer cvlc $OPENER )
+export READER=$(find_alt mupdf zathura evince $OPENER )
+
+#---------------------------------------------------------------------------}}}
 # Alias                                                                     {{{
 #------------------------------------------------------------------------------
 
