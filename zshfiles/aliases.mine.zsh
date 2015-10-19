@@ -179,7 +179,6 @@ __youtube_dl() {
   typeset -A opt_args
   fileopts="--download-archive|-a|--batch-file|--load-info|--cookies|--ffmpeg-location"
   diropts="--cache-dir"
-  local ddir="/media/shotaro/STOCK/Videos"
   cur=$words[CURRENT]
   case $cur in
     :)
@@ -202,9 +201,6 @@ __youtube_dl() {
           '%(title)s.%(ext)s' \
           '%(autonumber)s - %(title)s.%(ext)s' \
           '%(playlist_title)s/%(title)s.%(ext)s' \
-          '${ddir}/%(title)s.%(ext)s' \
-          '${ddir}/%(autonumber)s - %(title)s.%(ext)s' \
-          '${ddir}/%(extractor)s/%(title)s.%(ext)s' \
           '-' \
           )"
       elif [[ ${prev} == "--proxy" ]]; then
