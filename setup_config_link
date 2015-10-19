@@ -109,6 +109,7 @@ bin/screenshot_select.sh,bin/screenshot_select.sh
 bin/screenshot.sh,bin/screenshot.sh
 bin/sound_volume_change_wrapper.sh,bin/sound_volume_change_wrapper.sh
 bin/start_urxvtd.sh,bin/start_urxvtd.sh
+bin/streamradio,bin/streamradio
 bin/terminal-colors,bin/terminal-colors
 bin/toggle_compton.sh,bin/toggle_compton.sh
 bin/toggle_xcompmgr.sh,bin/toggle_xcompmgr.sh
