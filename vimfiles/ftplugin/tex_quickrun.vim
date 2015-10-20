@@ -55,9 +55,7 @@ vnoremap <silent><buffer> <F5> :QuickRun -mode v -type tmptex<CR>
 " QuickRun and view compile result quickly (but don't preview pdf file)
 nnoremap <silent><F5> :QuickRun<CR>
 
-" set some useful macros
-" you can add the keystroke by '^r + register' in insert mode.
-let @d='a\mathrm{}idl'
-" let @f='a\frac{}{}hh'
-let @b='f(i\leftl%i\righthhhhh'
-let @f='i\frac{f/xi}{f i}'
+augroup latex_autocompile
+  autocmd!
+  autocmd BufWritePost,FileWritePost *.tex :QuickRun
+augroup END
