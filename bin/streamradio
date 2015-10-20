@@ -2,10 +2,16 @@
 # written by Shotaro Fujimoto (https://github.com/ssh0)
 # first edited: 2015-10-20
 
+if [ $# = 1 ];then
+  station="$1"
+else
+  station="http://streaming.radionomy.com/J-PopProjectRadio"
+fi
 
-
-mpv http://streaming.radionomy.com/J-PopProjectRadio | grep --line-buffered "icy-title" |
+mpv "$station" | grep --line-buffered "icy-title" |
   while read line; do
+    sleep 4
     line="$(echo $line | sed "s/icy-title:\s//")"
+    echo $line
     notify-send -a streamradio -t 5000 "Now playing:" "$line" -i /usr/share/icons/gnome/scalable/actions/media-playback-start-symbolic.svg
   done
