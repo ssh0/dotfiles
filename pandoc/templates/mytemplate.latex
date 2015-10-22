@@ -32,6 +32,7 @@
 \newtheorem*{theorem*}{定理}
 \newtheorem{definition}[theorem]{定義}
 \newtheorem*{definition*}{定義}
+\renewcommand\proofname{\bf 証明}
 
 % "\vector{a}" でベクトル
 \def\vector#1{\mbox{\boldmath \(#1\)}}
@@ -41,20 +42,15 @@
             pdfauthor={$author-meta$},
             pdftitle={$title-meta$},
             colorlinks=true,
-            citecolor=$if(citecolor)$$citecolor$$else$blue$endif$,
-            urlcolor=$if(urlcolor)$$urlcolor$$else$blue$endif$,
-            linkcolor=$if(linkcolor)$$linkcolor$$else$magenta$endif$,
+            citecolor=$if(citecolor)$$citecolor$$else$black$endif$,
+            urlcolor=$if(urlcolor)$$urlcolor$$else$black$endif$,
+            linkcolor=$if(linkcolor)$$linkcolor$$else$black$endif$,
             pdfborder={0 0 0}}
 \urlstyle{same}  % don't use monospace font for urls
 $if(links-as-notes)$
 % Make links footnotes instead of hotlinks:
 \renewcommand{\href}[2]{#2\footnote{\url{#1}}}
 $endif$
-
-% bib reference
-%\bibliographystyle{junsrt}
-
-
 
 $if(title)$
 \title{$title$}
@@ -87,5 +83,9 @@ $for(include-after)$
 $include-after$
 
 $endfor$
+
+% % bib reference
+% \bibliographystyle{junsrt}
+% \bibliography{reference}
 
 \end{document}
