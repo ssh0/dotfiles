@@ -145,6 +145,13 @@ NeoBundle 'Shougo/vimproc', {
 NeoBundle 'thinca/vim-quickrun'
 let g:quickrun_config = {}
 let g:quickrun_no_default_key_mapping = 0
+
+
+if $USER == "ssh0"
+  let g:quickrun_user_tex_autorun = 0
+else
+  let g:quickrun_user_tex_autorun = 1
+endif
 "                                                                           }}}
 " vim-template                                                              {{{
 NeoBundle 'thinca/vim-template'

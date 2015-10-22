@@ -57,5 +57,7 @@ nnoremap <silent><F5> :QuickRun<CR>
 
 augroup latex_autocompile
   autocmd!
-  autocmd BufWritePost,FileWritePost *.tex :QuickRun
+  if g:quickrun_user_tex_autorun != 0
+    autocmd BufWritePost,FileWritePost *.tex :QuickRun
+  endif
 augroup END
