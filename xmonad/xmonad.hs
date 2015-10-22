@@ -119,8 +119,8 @@ main = do
                               myManageHookFloat <+>
                               manageDocks
         -- any time Full mode, avoid xmobar area
-       , layoutHook         = toggleLayouts (avoidStruts $ noBorders Full) $
-                              avoidStruts $ lessBorders OnlyFloat $
+       , layoutHook         = avoidStruts $ lessBorders OnlyFloat $
+                              toggleLayouts (avoidStruts $ noBorders Full) $
                               -- onWorkspace "3" simplestFloat $
                               myLayout
         -- xmobar setting
