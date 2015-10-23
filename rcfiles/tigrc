@@ -173,7 +173,7 @@
 
 # bind main	C	?git cherry-pick %(commit)
 # bind status	C	!git commit
-bind status	P	!git push origin
+bind status	P	?git push origin
 # bind stash	P	?git stash pop %(stash)
 # bind stash	!	?git stash drop %(stash)
 # bind refs	C	?git checkout %(branch)
