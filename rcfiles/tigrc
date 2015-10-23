@@ -271,6 +271,8 @@
 # bind generic	<C-E>	scroll-line-down
 # bind generic	<SBack>	scroll-page-up
 # bind generic	<SFwd>	scroll-page-down
+bind generic <C-f> scroll-page-down
+bind generic <C-b> scroll-page-up
 
 # --------------------------------------------------------------------------}}}
 # Searching                                                                 {{{
