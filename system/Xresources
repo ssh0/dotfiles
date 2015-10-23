@@ -2,13 +2,13 @@
 xscreensaver.splash: false
 
 !font settings
-xscreensaver.Dialog.headingFont:        -*-dejavu sans-bold-r-*--9-*-*-*-*-*-*-*
-xscreensaver.Dialog.bodyFont:           -*-dejavu sans-bold-r-*--9-*-*-*-*-*-*-*
-xscreensaver.Dialog.labelFont:          -*-dejavu sans-bold-r-*--9-*-*-*-*-*-*-*
-xscreensaver.Dialog.unameFont:          -*-dejavu sans-bold-r-*--9-*-*-*-*-*-*-*
-xscreensaver.Dialog.buttonFont:         -*-dejavu sans-bold-r-*--9-*-*-*-*-*-*-*
-xscreensaver.Dialog.dateFont:           -*-dejavu sans-bold-r-*--9-*-*-*-*-*-*-*
-xscreensaver.passwd.passwdFont:         -*-dejavu sans-bold-r-*--9-*-*-*-*-*-*-*
+xscreensaver.Dialog.headingFont:        -*-dejavu sans mono-bold-r-*--9-*-*-*-*-*-*-*
+xscreensaver.Dialog.bodyFont:           -*-dejavu sans mono-bold-r-*--9-*-*-*-*-*-*-*
+xscreensaver.Dialog.labelFont:          -*-dejavu sans mono-bold-r-*--9-*-*-*-*-*-*-*
+xscreensaver.Dialog.unameFont:          -*-dejavu sans mono-bold-r-*--9-*-*-*-*-*-*-*
+xscreensaver.Dialog.buttonFont:         -*-dejavu sans mono-bold-r-*--9-*-*-*-*-*-*-*
+xscreensaver.Dialog.dateFont:           -*-dejavu sans mono-bold-r-*--9-*-*-*-*-*-*-*
+xscreensaver.passwd.passwdFont:         -*-dejavu sans mono-bold-r-*--9-*-*-*-*-*-*-*
 
 !general dialog box (affects main hostname, username, password text)
 xscreensaver.Dialog.foreground:         #eceff1
