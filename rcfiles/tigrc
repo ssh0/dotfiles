@@ -172,7 +172,7 @@
 #   %(prompt)		Prompt for the argument value.
 
 # bind main	C	?git cherry-pick %(commit)
-# bind status	C	!git commit
+bind status	C	!git commit -v
 bind status	P	?git push origin
 # bind stash	P	?git stash pop %(stash)
 # bind stash	!	?git stash drop %(stash)
