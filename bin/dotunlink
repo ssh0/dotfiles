@@ -3,12 +3,12 @@
 # first edited: 2015-09-13
 
 show_usage() {
-echo "dotunlink"
-echo "Unlink the symbolic link mangaed by dotfiles and copy the file from the repository."
-echo ""
-echo "Usage: dotunlink FILE [FILE2 FILE3 ...]"
-echo "Option:"
-echo "  -h: show this help and exit"
+  echo "dotunlink"
+  echo "Unlink the symbolic link mangaed by dotfiles and copy the file from the repository."
+  echo ""
+  echo "Usage: dotunlink FILE [FILE2 FILE3 ...]"
+  echo "Option:"
+  echo "  -h: show this help and exit"
 }
 
 if [ "$f" = "-h" ]; then
