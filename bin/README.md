@@ -330,27 +330,6 @@ You can also execute this command on terminal.
 
 If there is no process of urxvtd (urxvt daemon), start urxvtd.
 
-## [takenote](./takenote)
-
-This script make it easy to take note.
-
-If you run this script without option, make the day-directory(%Y-%m-%d) to `$rootdir`
-and launch `$EDITOR` to take note. File format is markdown.
-
-You may change `$rootdir`.
-
-```
-Usage: takenote [-d dir] [-o filename] [-g editor] [-l] [-r] [-h]
-  -d dir     : set the saving directory (default: '$rootdir')
-  -o filename: set the file's name
-  -g editor  : open with an altenative program (default: '$EDITOR')
-  -l         : list the today's files
-  -r         : open the today's dir or the root dir with the filer (default: '$filercmd')
-  -h         : show this message
-```
-
-See: [ディレクトリ内の一番大きな番号につづくように番号を振ってファイルを作成する - service ssh0 start](http://ssh0.hatenablog.com/entry/2015/08/26/%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E5%86%85%E3%81%AE%E4%B8%80%E7%95%AA%E5%A4%A7%E3%81%8D%E3%81%AA%E7%95%AA%E5%8F%B7%E3%81%AB%E3%81%A4%E3%81%A5%E3%81%8F%E3%82%88%E3%81%86%E3%81%AB)
-
 ## [terminal-colors](./terminal-colors)
 
 This file echoes a bunch of color codes to the terminal to demonstrate what's available.
@@ -400,7 +379,7 @@ converts wma to mp3 recursively. does not delete any static files, so cleanup an
 * lame    - http://lame.sourceforge.net/download.php
 * mplayer - apt-get install mplayer or http://www.mplayerhq.hu/design7/dload.html
 
-## [youtube-dl_listwrap](./youtube-dl_listwrap)
+## [ytdl](./ytdl)
 
 I usually use youtube-dl for download some video clips from internet.
 
