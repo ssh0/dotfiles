@@ -386,9 +386,9 @@ I usually use youtube-dl for download some video clips from internet.
 This script is the wrapper script of youtube-dl to save video title and url to `list` file.
 
 ```
-youtube-dl_listwrap: Wrapper script for youtube-dl.
+ytdl: Wrapper script for youtube-dl.
 
-Usage: youtube-dl_listwrap [-h] [-A] [-L FILE] URL [youtube-dl options]
+Usage: ytdl [-h] [-A] [-L FILE] URL [youtube-dl options]
 
 NOTE: You should place the URL *before* the youtube-dl's options.
 
