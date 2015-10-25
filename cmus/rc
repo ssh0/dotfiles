@@ -47,9 +47,10 @@ set shuffle=false
 set skip_track_info=false
 set smart_artist_sort=true
 set softvol=true
-set softvol_state=90 90
 set wrap_search=true
 bind -f browser ^H toggle show_hidden
+bind -f browser h browser-up
+bind -f browser l win-activate
 bind -f browser backspace browser-up
 bind -f browser space win-activate
 bind -f browser u win-update
