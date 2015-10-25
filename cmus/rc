@@ -1,0 +1,124 @@
+set aaa_mode=all
+set altformat_current= %F 
+set altformat_playlist= %f%= %d 
+set altformat_title=%f
+set altformat_trackwin= %f%= %d 
+set auto_reshuffle=true
+set buffer_seconds=10
+colorscheme mycolor
+set confirm_run=true
+set continue=true
+set device=/dev/cdrom
+set display_artist_sort_name=false
+set dsp.alsa.device=
+set dsp.ao.buffer_size=16384
+set dsp.ao.driver=
+set dsp.ao.wav_counter=1
+set format_current= %a - %l -%3n. %t%= 
+set format_playlist= %-20%a %-20%l %3n. %t%= %d 
+set format_playlist_va= %-25%A %3n. %t (%a)%= %d 
+set format_title=%a - %l - %t
+set format_trackwin=%3n. %t%= %d 
+set format_trackwin_va=%3n. %t (%a)%= %d 
+set icecast_default_charset=ISO-8859-1
+set id3_default_charset=ISO-8859-1
+set input.cdio.cddb_url=freedb.freedb.org:8880
+set lib_sort=album discnumber tracknumber albumartist title filename artist
+set mixer.alsa.channel=
+set mixer.alsa.device=
+set mixer.pulse.restore_volume=1
+set output_plugin=pulse
+set passwd=
+set pl_sort=albumartist album discnumber tracknumber title filename artist
+set play_library=true
+set play_sorted=true
+set repeat=false
+set repeat_current=false
+set replaygain=disabled
+set replaygain_limit=true
+set replaygain_preamp=6.000000
+set resume=false
+set scroll_offset=2
+set set_term_title=true
+set show_current_bitrate=false
+set show_hidden=false
+set show_remaining_time=false
+set shuffle=false
+set skip_track_info=false
+set smart_artist_sort=true
+set softvol=true
+set softvol_state=90 90
+set wrap_search=true
+bind -f browser ^H toggle show_hidden
+bind -f browser backspace browser-up
+bind -f browser space win-activate
+bind -f browser u win-update
+bind -f common ! push shell 
+bind -f common " win-add-l
+bind -f common # win-add-p
+bind -f common $ win-add-q
+bind -f common , seek -1m
+bind -f common . seek +1m
+bind -f common 0 vol +1%
+bind -f common 1 view tree
+bind -f common 2 view sorted
+bind -f common 3 view playlist
+bind -f common 4 view queue
+bind -f common 5 view browser
+bind -f common 6 view filters
+bind -f common 7 view settings
+bind -f common 9 vol -1%
+bind -f common < player-prev
+bind -f common > player-next
+bind -f common C toggle continue
+bind -f common E win-add-Q
+bind -f common F push filter 
+bind -f common G win-bottom
+bind -f common J win-mv-after
+bind -f common K win-mv-before
+bind -f common L toggle play_library
+bind -f common M toggle aaa_mode
+bind -f common N search-prev
+bind -f common O toggle play_sorted
+bind -f common R toggle repeat
+bind -f common S toggle shuffle
+bind -f common T toggle show_remaining_time
+bind -f common U win-update-cache
+bind -f common ^B win-page-up
+bind -f common ^C echo Type :quit<enter> to exit cmus.
+bind -f common ^F win-page-down
+bind -f common ^G echo {}
+bind -f common ^L refresh
+bind -f common ^R toggle repeat_current
+bind -f common c player-pause
+bind -f common d win-remove
+bind -f common delete win-remove
+bind -f common down win-down
+bind -f common end win-bottom
+bind -f common enter win-activate
+bind -f common g win-top
+bind -f common h seek -5
+bind -f common home win-top
+bind -f common i win-sel-cur
+bind -f common j win-down
+bind -f common k win-up
+bind -f common l seek +5
+bind -f common left seek -5
+bind -f common n search-next
+bind -f common p player-pause
+bind -f common page_down win-page-down
+bind -f common page_up win-page-up
+bind -f common right seek +5
+bind -f common space win-toggle
+bind -f common tab win-next
+bind -f common u update-cache
+bind -f common up win-up
+bind -f common v player-stop
+bind -f common x player-play
+fset 90s=date>=1990&date<2000
+fset classical=genre="Classical"
+fset missing-tag=!stream&(artist=""|album=""|title=""|tracknumber=-1|date=-1)
+fset mp3=filename="*.mp3"
+fset ogg=filename="*.ogg"
+fset ogg-or-mp3=ogg|mp3
+factivate

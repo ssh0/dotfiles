@@ -181,6 +181,8 @@ mpv/lua/notify.lua,.mpv/scripts/notify.lua
 # [cmus](https://cmus.github.io/):                                          {{{
 # cmus is a small, fast and powerful console music player for Unix-like
 # operating systems.
+cmus/rc,.cmus/rc
+cmus/mycolor.theme,.cmus/mycolor.theme
 cmus/status_display_program.sh,.cmus/status_display_program.sh
 cmus/cmus_desktop_notify.py,.cmus/cmus_desktop_notify.py
 #---------------------------------------------------------------------------}}}
