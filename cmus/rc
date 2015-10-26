@@ -48,6 +48,28 @@ set skip_track_info=false
 set smart_artist_sort=true
 set softvol=true
 set wrap_search=true
+unbind -f browser i
+unbind -f common +
+unbind -f common -
+unbind -f common =
+unbind -f common D
+unbind -f common I
+unbind -f common P
+unbind -f common [
+unbind -f common ]
+unbind -f common a
+unbind -f common b
+unbind -f common e
+unbind -f common m
+unbind -f common o
+unbind -f common q
+unbind -f common r
+unbind -f common s
+unbind -f common t
+unbind -f common y
+unbind -f common z
+unbind -f common {
+unbind -f common }
 bind -f browser ^H toggle show_hidden
 bind -f browser h browser-up
 bind -f browser l win-activate
