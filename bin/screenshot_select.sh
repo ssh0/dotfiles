@@ -38,7 +38,7 @@ if ! $get_name; then
     name=$(printf screen_%03d.png $i)
 fi #}}}
 
-import -quality 0 $dir/$name &
+import -quality 0 $dir/$name
 paplay /usr/share/sounds/freedesktop/stereo/camera-shutter.oga &
 notify-send "Screenshot has been made" "saved: $dir/$name" \
     -i /usr/share/icons/gnome/scalable/apps/applets-screenshooter-symbolic.svg &
