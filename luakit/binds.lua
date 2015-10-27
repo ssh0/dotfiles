@@ -499,6 +499,32 @@ add_binds("insert", {
     key({"Control"}, "z",
         "Enter `passthrough` mode, ignores all luakit keybindings.",
         function (w) w:set_mode("passthrough") end),
+
+    key({"Control"},  "e",
+        "Edit text fields in an external editor.",
+        function (w)
+            local s = w.view:eval_js("document.activeElement.value")
+
+            local n = "/tmp/" .. os.time()
+            local f = io.open(n, "w")
+            f:write(s)
+            f:flush()
+            f:close()
+
+            luakit.spawn_sync("urxvt -g 90x20 -title \"urxvt_float\" -name \"urxvt_float\" -e vim + \"" .. n .. "\"")
+
+            f = io.open(n, "r")
+            s = f:read("*all")
+            f:close()
+            -- Strip the string
+            s = s:gsub("^%s*(.-)%s*$", "%1")
+            -- Escape it but remove the quotes
+            s = string.format("%q", s):sub(2, -2)
+            -- lua escaped newlines (slash+newline) into js newlines (slash+n)
+            s = s:gsub("\\\n", "\\n")
+            w.view:eval_js("document.activeElement.value = '" .. s .. "'")
+        end),
+
 })
 
 readline_bindings = {
