@@ -1,23 +1,23 @@
 dotfiles
 ========
 
-This repository contains my dotfiles and some tools in order to make it easy to make a symbolic link to the right place and to add a new file into this repository.
+This repository contains my dotfiles and some tools in order to make it easy to make symbolic links to the right place and to add a new file into the dotfile directory.
 
 Contents
 --------
 
-* [XMonad: http://xmonad.org/](http://xmonad.org/)
+* XMonad([http://xmonad.org/](http://xmonad.org/))
     * [my xmond.hs](./xmonad/xmonad.hs)
-* [tmux: https://tmux.github.io/](https://tmux.github.io/)
+* tmux([https://tmux.github.io/](https://tmux.github.io/))
     * [my tmux.conf](./rcfiles/tmux.conf)
-* [zsh: http://www.zsh.org/](http://www.zsh.org/)
-    * [oh-my-zsh: https://github.com/robbyrussell/oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+* zsh([http://www.zsh.org/](http://www.zsh.org/))
+    * oh-my-zsh([https://github.com/robbyrussell/oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh))
     * [my zshfiles](./zshfiles/)
-* [vim: http://www.vim.org/](http://www.vim.org/)
+* vim([http://www.vim.org/](http://www.vim.org/))
     * [my vimrc](./vimfiles/vimrc)
-* [ranger: http://ranger.nongnu.org/](http://ranger.nongnu.org/)
+* ranger([http://ranger.nongnu.org/](http://ranger.nongnu.org/))
     * [my ranger config files](./ranger/)
-* [luakit: https://mason-larobina.github.io/luakit/](https://mason-larobina.github.io/luakit/)
+* luakit([https://mason-larobina.github.io/luakit/](https://mason-larobina.github.io/luakit/))
     * [my luakit config files](./luakit/)
 * [some useful scripts](./bin/)
 
@@ -33,36 +33,62 @@ Screenshots
 Install
 -------
 
-Clone this repository in your computer:
+Clone this repository in your computer(default: ~/.dotfiles),
 
 ```bash
-git clone https://github.com/ssh0/dotfiles.git ~/.dotfiles
+bash <(curl -L https://raw.githubusercontent.com/ssh0/dotfiles/master/bin/dot) clone
 ```
 
-And run:
+And make symbolic links by following command,
 
 ```bash
-cd ~/.dotfiles
-./dotclean && ./setup.sh
+~/.dotfiles/bin/dot set
 ```
 
 and this script replace existing files interactively.
 
-* [dotclean](./dotclean):  
-  remove symbolic link which is written in [setup_config_link](./setup_config_link).
+If you want not to make some links, open `~/.dotfiles/setup_config_link` and comment out these lines.
+The lines commented out are ignored by this script.
 
-* [setup.sh](./setup.sh):  
-  set symbolic link which is written in [setup_config_link](./setup_config_link)
-  (if you have your file already, you can choose the operation
-  interactively: show diff, vimdiff, overwrite, make-backup or do-nothing).
+Usage of '[dot](./bin/dot)' command
+----------------------
 
-You can add new link by [dotmv](./bin/dotmv):
+Link relation table is in '[configfile](./setup_config_link)'.
 
 ```bash
-dotmv some_file ~/.dotfiles/path/to/file
+configfile=$HOME/.dotfiles/setup_config_link
 ```
 
-Then, the script automatically move the file `some_file` to
-`~/.dotfiles/path/to/file` and make symbolic link to the original
-direction. After that, the script launch Vim and you can edit your link
-setting (file name is `setup_config_link`) manually.
+* Clone ssh0's dotfile repository on your computer.  
+```bash
+dot clone [<dir_to_clone>]
+```
+
+* Pull remote dotfile repository (by git).  
+```bash
+dot pull
+```
+
+* Make symbolic link interactively.
+  This command sets symbolic links configured in 'configfile'.  
+  (If you have your file already, you can choose the operation
+  interactively: show diff, vimdiff, overwrite, make-backup or do-nothing).  
+  WIth option "-i", this script runs without interaction mode and with "-v", this script shows verbose message.
+```bash
+dot set [-i][-v]
+```
+
+* Move the file to the dotfile dir, make the link, and edit 'configfile'.  
+```bash
+dot add some_file ~/.dotfiles/path/to/the/file
+```
+
+* Unlink the selected symbolic links and copy its original files from the dotfile directory.  
+```bash
+dot unlink <link> [<link> <link> ... ]
+```
+
+* Remove the *all* symbolic link written in the config file 'configfile'.
+```bash
+dot clear
+```
