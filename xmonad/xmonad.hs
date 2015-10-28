@@ -220,7 +220,11 @@ main = do
        -- Launch terminal with a float window
        , ((modm .|. shiftMask      , xK_Return ), spawn "sh $HOME/bin/urxvt_float.sh")
        -- Insert a transparent panel
-       , ((modm                    , xK_e      ), spawn "python $HOME/Workspace/python/transparent.py")
+       , ((modm .|. shiftMask      , xK_t      ), spawn "python $HOME/Workspace/python/transparent.py")
+       -- Launch file manager
+       , ((modm                    , xK_e      ), spawn "thunar")
+       -- Launch web browser
+       , ((modm                    , xK_w      ), spawn "luakit")
        -- Launch dmenu for launching applicatiton
        , ((modm                    , xK_p      ), spawn "exe=`dmenu_run -l 10 -fn 'Inconsolata for PowerLine:size=20'` && exec $exe")
        -- Lauch websearch application (See https://github.com/ssh0/web_search)
