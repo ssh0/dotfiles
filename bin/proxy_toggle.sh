@@ -14,9 +14,9 @@ else
     sudo sed -i.bak '/http[s]::proxy/Id' /etc/apt/apt.conf
     sudo sed -i.bak '/ftp::proxy/Id' /etc/apt/apt.conf
     sudo tee -a /etc/apt/apt.conf <<EOF
-    Acquire::http::proxy "$HTTP_PROXY_HOST/";
-    Acquire::https::proxy "$HTTPS_PROXY_HOST/";
-    Acquire::ftp::proxy "$FTP_PROXY_HOST/";
+Acquire::http::proxy "$HTTP_PROXY_HOST/";
+Acquire::https::proxy "$HTTPS_PROXY_HOST/";
+Acquire::ftp::proxy "$FTP_PROXY_HOST/";
 EOF
 
     sudo sed -i.bak "/http_proxy/Id" /etc/environment
@@ -26,12 +26,12 @@ EOF
     sudo sed -i.bak "/ftp_proxy/Id" /etc/environment
     sudo sed -i.bak "/FTP_PROXY/Id" /etc/environment
     sudo tee -a /etc/environment <<EOF
-    http_proxy=$HTTP_PROXY_HOST
-    HTTP_PROXY=$HTTP_PROXY_HOST
-    https_proxy=$HTTPS_PROXY_HOST
-    HTTPS_PROXY=$HTTPS_PROXY_HOST
-    ftp_proxy=$FTP_PROXY_HOST
-    FTP_PROXY=$FTP_PROXY_HOST
+http_proxy=$HTTP_PROXY_HOST
+HTTP_PROXY=$HTTP_PROXY_HOST
+https_proxy=$HTTPS_PROXY_HOST
+HTTPS_PROXY=$HTTPS_PROXY_HOST
+ftp_proxy=$FTP_PROXY_HOST
+FTP_PROXY=$FTP_PROXY_HOST
 EOF
     sed -i.bak '/http_proxy/Id' $shellrc
     sed -i.bak '/HTTP_PROXY/Id' $shellrc
@@ -40,12 +40,12 @@ EOF
     sed -i.bak '/ftp_proxy/Id' $shellrc
     sed -i.bak '/FTP_PROXY/Id' $shellrc
     tee -a $shellrc <<EOF
-    export http_proxy=$HTTP_PROXY_HOST
-    export HTTP_PROXY=$HTTP_PROXY_HOST
-    export https_proxy=$HTTPS_PROXY_HOST
-    export HTTPS_PROXY=$HTTPS_PROXY_HOST
-    export ftp_proxy=$FTP_PROXY_HOST
-    export FTP_PROXY=$FTP_PROXY_HOST
+export http_proxy=$HTTP_PROXY_HOST
+export HTTP_PROXY=$HTTP_PROXY_HOST
+export https_proxy=$HTTPS_PROXY_HOST
+export HTTPS_PROXY=$HTTPS_PROXY_HOST
+export ftp_proxy=$FTP_PROXY_HOST
+export FTP_PROXY=$FTP_PROXY_HOST
 EOF
   else
     if [ $1 = "off" ]; then
@@ -65,12 +65,12 @@ EOF
       sed -i.bak '/ftp_proxy/Id' $shellrc
       sed -i.bak '/FTP_PROXY/Id' $shellrc
       tee -a $shellrc <<EOF
-      export http_proxy=
-      export HTTP_PROXY=
-      export https_proxy=
-      export HTTPS_PROXY=
-      export ftp_proxy=
-      export FTP_PROXY=
+export http_proxy=
+export HTTP_PROXY=
+export https_proxy=
+export HTTPS_PROXY=
+export ftp_proxy=
+export FTP_PROXY=
 EOF
     else
       echo "arg: 'on' or 'off'"
