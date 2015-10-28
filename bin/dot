@@ -287,8 +287,10 @@ dot_unlink(){
 dot_clear(){
   for l in $(grep -Ev '^#' "${configfile}" | grep -Ev '^$'); do
     orig="$HOME/$(echo "$l" | awk 'BEGIN {FS=","; }  { print $2; }')"
-    echo "unlink ${orig}"
-    unlink ${orig}
+    if [ -L ${orig} ]; then
+      echo "unlink ${orig}"
+      unlink ${orig}
+    fi
   done
 }
 
