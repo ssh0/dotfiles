@@ -1,8 +1,8 @@
 #!/bin/sh
 #
 
-default_output="eDP1"
-default_mode="1920x1080"
+default_output="${OUTPUT_DEV:-eDP1}"
+default_mode="${OUTPUT_RES:-1920x1080}"
 projector="VGA1"
 projector_mode="1024x768"
 
@@ -30,10 +30,10 @@ do
 done
 
 # Change X Window setting by xrandr
-if [ $1 = 'start' ]; then
+if [ "$1" = "start" ]; then
   xrandr --output $default_output --mode $projector_mode
   xrandr --output $projector --mode $projector_mode --same-as $default_output
-elif [ $1 = 'stop']; then
+elif [ "$1" = "stop" ]; then
   xrandr --output $projector --off
   xrandr --output $default_output --mode $default_mode
 else
