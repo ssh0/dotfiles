@@ -73,10 +73,7 @@ makeline(){
 }
 
 dot_clone(){
-  cloneto="$HOME/.dotfiles"
-  if [ "$1" != "" ]; then
-    cloneto="$1"
-  fi
+  cloneto="${1:-"$HOME/.dotfiles"}"
   cecho $blue "\ngit clone https://github.com/ssh0/dotfiles.git ${cloneto}"; makeline
   git clone https://github.com/ssh0/dotfiles.git "${cloneto}"
 }
