@@ -1,0 +1,9 @@
+#compdef mkdocs
+
+_mkdocs() {
+  local -a cmds
+  if (( CURRENT == 2 ));then
+    cmds=('build' 'gh-deploy' 'json' 'new' 'serve')
+    _describe -t commands "subcommand" cmds
+  fi
+}

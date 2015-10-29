@@ -1,0 +1,22 @@
+#compdef ranger ranger-cd r
+
+_ranger() {
+  typeset -A opt_args
+  _arguments -s -S \
+    {-d,--debug}'[Activate the debug mode: Whenever an error occurs, ranger will exit and print a full traceback.]'\
+    {-c,--clean}'[Activate the clean mode: ranger will not access or create any configuration files nor will it leave any traces on your system.]'\
+    {-r,--confdir=}'[Change the configuration directory of ranger from ~/.config/ranger to "dir".]:dir:_path_files -/'\
+    '--copy-config=[Create copies of the default configuration files in your local configuration directory. Existing ones will not be overwritten.]:FILE:(all commands commands_full rc rifle scope)'\
+    '--choosefile=[Allows you to pick a file with ranger. This changes the behavior so that when you open a file, ranger will exit and write the absolute path of that file into targetfile.]:targetfile:_files'\
+    '--choosefiles=[Allows you to pick multiple files with ranger. This changes the behavior so that when you open a file, ranger will exit and write the absolute paths of all selected files into targetfile, adding one newline after each filename.]:targetfile:_files'\
+    '--choosedir=[Allows you to pick a directory with ranger. When you exit ranger, it will write the last visited directory into targetfile.]:targetfile:_files'\
+    '--selectfile=[targetfile Open ranger with targetfile selected.]:targetfile:_files'\
+    '--list-unused-keys[List common keys which are not bound to any action in the "browser" context. This list is not complete, you can bind any key that is supported by curses: use the key code returned by "getch()".]'\
+    '--list-tagged-files[List all files which are tagged with the given tag.  Note: Tags are single characters. The default tag is "*"]:tag:(* a-z)'\
+    '--profile[Print statistics of CPU usage on exit.]'\
+    '--cmd=[Execute the command after the configuration has been read.  Use this option multiple times to run multiple commands.]:command:'\
+    '--versioin[Print the version and exit.]'\
+    {-h,--help}'[Print a list of option and exit.]'\
+    && return 0
+  return 1
+}

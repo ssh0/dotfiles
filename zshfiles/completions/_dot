@@ -1,0 +1,37 @@
+#compdef dot
+
+_dot() {
+  _arguments -C \
+    '1: :->cmds' \
+    '2:: :->args' && ret=0
+
+  case $state in
+    cmds)
+      _values "dot commands"\
+        "clone[Clone ssh0's dotfile repository on your computer.]" \
+        "pull[Pull remote dotfile repository (by git).]" \
+        "set[Make symbolic link interactively.]" \
+        "add[Move the file to the dotfile dir, make the link, and edit '$configfile'.]" \
+        "unlink[Unlink the selected symbolic link and copy its original file from the dotfile repository.]" \
+        "clear[Remove the all symbolic link in the config file '$configfile'.]" \
+        '-h[Show this help message.]'
+      ret=0
+      ;;
+    args)
+      case $line[1] in
+        "clone"|"add"|"unlink")
+          _path_files
+          ret=0
+          ;;
+        "set")
+          _values "options"\
+            '-i[No interaction mode(skip all conflicts).]' \
+            '-v[Print verbose messages.]'
+          ret=0
+          ;;
+      esac
+      ;;
+  esac
+
+  return ret
+}

@@ -73,6 +73,17 @@ zshfiles/zshrc,.zshrc
 zshfiles/zshrc.mine,.zshrc.mine
 zshfiles/aliases.mine.zsh,.aliases.mine.zsh
 zshfiles/aliases.zsh,.oh-my-zsh/lib/aliases.zsh
+zshfiles/completions/_dot,.zsh/completions/_dot
+zshfiles/completions/_mkdocs,.zsh/completions/_mkdocs
+zshfiles/completions/_myrsync,.zsh/completions/_myrsync
+zshfiles/completions/_mytask,.zsh/completions/_mytask
+zshfiles/completions/_pandoc,.zsh/completions/_pandoc
+zshfiles/completions/_ranger,.zsh/completions/_ranger
+zshfiles/completions/_shtest,.zsh/completions/_shtest
+zshfiles/completions/_takenote,.zsh/completions/_takenote
+zshfiles/completions/_recordmydesktop,.zsh/completions/_recordmydesktop
+zshfiles/completions/_tmuxinator,.zsh/completions/_tmuxinator
+zshfiles/completions/_youtube-dl,.zsh/completions/_youtube-dl
 zshfiles/themes/agnoster.zsh-theme,.oh-my-zsh/themes/agnoster.zsh-theme
 zshfiles/history.zsh,.oh-my-zsh/lib/history.zsh
 zshfiles/plugins/tmux/tmux.plugin.zsh,.oh-my-zsh/plugins/tmux/tmux.plugin.zsh

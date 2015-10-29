@@ -1,0 +1,10 @@
+#compdef shtest
+
+_shtest() {
+  typeset -A opt_args
+  _arguments -s -S \
+    "(-l -h)-o[set the text file's name.]: :( `shtest -l` )" \
+    "(-o -h)-l[List the formatted files.]: :" \
+    "(-o -l)-h[Show this message.]: :" \
+    && return 0
+}

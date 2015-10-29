@@ -1,0 +1,8 @@
+#compdef myrsync
+
+_myrsync() {
+  _values "myrsync commands"\
+    "up[upload local directory to the Dropbox directory.]" \
+    "down[download the Dropbox directory to local.]"
+    return 0
+}
