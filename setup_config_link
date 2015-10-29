@@ -82,9 +82,11 @@ zshfiles/completions/_pandoc,.zsh/completions/_pandoc
 zshfiles/completions/_ranger,.zsh/completions/_ranger
 zshfiles/completions/_shtest,.zsh/completions/_shtest
 zshfiles/completions/_takenote,.zsh/completions/_takenote
+zshfiles/completions/_tig,.zsh/completions/_tig
 zshfiles/completions/_recordmydesktop,.zsh/completions/_recordmydesktop
 zshfiles/completions/_tmuxinator,.zsh/completions/_tmuxinator
 zshfiles/completions/_youtube-dl,.zsh/completions/_youtube-dl
+zshfiles/completions/tig-completion.bash,.zsh/completions/tig-completion.bash
 zshfiles/themes/agnoster.zsh-theme,.oh-my-zsh/themes/agnoster.zsh-theme
 zshfiles/history.zsh,.oh-my-zsh/lib/history.zsh
 zshfiles/plugins/tmux/tmux.plugin.zsh,.oh-my-zsh/plugins/tmux/tmux.plugin.zsh
