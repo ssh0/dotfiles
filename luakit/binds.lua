@@ -511,7 +511,7 @@ add_binds("insert", {
             f:flush()
             f:close()
 
-            luakit.spawn_sync("urxvt -g 90x20 -title \"urxvt_float\" -name \"urxvt_float\" -e vim + \"" .. n .. "\"")
+            luakit.spawn_sync("urxvtc -g 90x20 -title \"urxvt_float\" -name \"urxvt_float\" -e vim + \"" .. n .. "\"")
 
             f = io.open(n, "r")
             s = f:read("*all")
