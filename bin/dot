@@ -136,7 +136,6 @@ dot_set(){
           esac
         done
       fi
-      continue
     fi
 
     # if file already exists: open interaction menu
