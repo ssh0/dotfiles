@@ -74,6 +74,7 @@ zshfiles/zshrc.mine,.zshrc.mine
 zshfiles/aliases.mine.zsh,.aliases.mine.zsh
 zshfiles/aliases.zsh,.oh-my-zsh/lib/aliases.zsh
 zshfiles/completions/_dot,.zsh/completions/_dot
+zshfiles/completions/_jupyter,.zsh/completions/_jupyter
 zshfiles/completions/_mkdocs,.zsh/completions/_mkdocs
 zshfiles/completions/_myrsync,.zsh/completions/_myrsync
 zshfiles/completions/_mytask,.zsh/completions/_mytask
