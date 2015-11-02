@@ -1,0 +1,3 @@
+#!/usr/bin/perl
+$latex = 'platex -interaction=nonstopmode -kanji=utf-8 %O %S';
+$pdf_mode = 0;

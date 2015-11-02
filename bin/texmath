@@ -1,0 +1,29 @@
+#!/bin/sh
+# written by Shotaro Fujimoto (https://github.com/ssh0)
+# first edited: 2015-11-03
+
+# using latexmk rc file
+latexmkrc="$HOME/.latexmkrc_dvipng"
+
+# texmath template
+texmath_template="$HOME/.vim/template/template.texmath"
+
+# default outputdir is setted to $imgdir
+imgdir='img'
+
+if [ "$1" = "-e" ]; then
+  echo "$1"
+  if [ -f "$2" ]; then
+    echo "$2 already exists."
+  else
+    cat "$texmath_template" > "$2"
+    vim "$2"
+  fi
+elif [ ! -f "$1" ]; then
+  echo "$1 doesn't exist."
+  exit 1
+elif [ -f "$1" ]; then
+  latexmk -r "$latexmkrc" -silent "$1" \
+  && latexmk -c -silent "$1" \
+  && dvipng -T tight -bd 1000 "${1%.tex}.dvi"
+fi
