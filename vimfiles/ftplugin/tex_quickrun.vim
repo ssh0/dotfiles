@@ -50,6 +50,17 @@ let g:quickrun_config.tmptex = {
 \                      ],
 \}
 
+" LaTeX Quickrun (texmath)
+let g:quickrun_config['texmath'] = {
+\ 'runner' : 'vimproc',
+\ 'command' : 'texmath',
+\ 'outputter' : 'error',
+\ 'outputter/error/success' : 'null',
+\ 'outputter/error/error' : 'quickfix',
+\ 'srcfile' : expand("%s"),
+\ 'exec': '%c %s',
+\}
+
 vnoremap <silent><buffer> <F5> :QuickRun -mode v -type tmptex<CR>
 
 " QuickRun and view compile result quickly (but don't preview pdf file)
@@ -59,5 +70,6 @@ augroup latex_autocompile
   autocmd!
   if g:quickrun_user_tex_autorun != 0
     autocmd BufWritePost,FileWritePost *.tex :QuickRun
+    autocmd BufWritePost,FileWritePost fig*.tex :QuickRun -type texmath
   endif
 augroup END
