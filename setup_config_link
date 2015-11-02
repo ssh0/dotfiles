@@ -53,6 +53,8 @@ vimfiles/template/template.md,.vim/template/template.md
 vimfiles/template/template.mkd,.vim/template/template.mkd
 # Tex template
 vimfiles/template/template.tex,.vim/template/template.tex
+# texmath template
+vimfiles/template/template.texmath,.vim/template/template.texmath
 # Python template
 vimfiles/template/template.py,.vim/template/template.py
 # Shell script template
@@ -124,6 +126,7 @@ bin/sound_volume_change_wrapper.sh,bin/sound_volume_change_wrapper.sh
 bin/start_urxvtd.sh,bin/start_urxvtd.sh
 bin/streamradio,bin/streamradio
 bin/terminal-colors,bin/terminal-colors
+bin/texmath,bin/texmath
 bin/toggle_compton.sh,bin/toggle_compton.sh
 bin/toggle_xcompmgr.sh,bin/toggle_xcompmgr.sh
 bin/touchpad_toggle.sh,bin/touchpad_toggle.sh
@@ -167,6 +170,7 @@ rcfiles/tudurc,.tudurc
 # [latexmk](http://www.ctan.org/pkg/latexmk/):                              {{{
 # Latexmk completely automates the process of generating a LaTeX document.
 rcfiles/latexmkrc,.latexmkrc
+rcfiles/latexmkrc_dvipng,.latexmkrc_dvipng
 #---------------------------------------------------------------------------}}}
 # [pandoc](http://pandoc.org/):                                             {{{ 
 # If you need to convert files from one markup format into another, pandoc is
