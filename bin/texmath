@@ -14,16 +14,20 @@ imgdir='img'
 if [ "$1" = "-e" ]; then
   echo "$1"
   if [ -f "$2" ]; then
-    echo "$2 already exists."
+    texfile="$2"
+    echo "${texfile} already exists."
   else
-    cat "$texmath_template" > "fig_$2"
+    texfile="fig_2"
+    cat "$texmath_template" > "$texfile"
   fi
-  vim "$2"
+  vim "$texfile"
 elif [ ! -f "$1" ]; then
   echo "$1 doesn't exist."
   exit 1
 elif [ -f "$1" ]; then
-  latexmk -r "$latexmkrc" -silent "$1" \
-  && latexmk -c -silent "$1" \
-  && dvipng -T tight -bd 1000 "${1%.tex}.dvi"
+  texfile="$1"
+  latexmk -r "$latexmkrc" "${texfile}" \
+  && latexmk -c "${texfile}" \
+  && dvipng -T tight -bd 1000 "${texfile%.tex}.dvi" \
+  && rm *.fls || echo "somthing wrong while running texmath"
 fi
