@@ -1,9 +1,14 @@
 #compdef dot
 
 _dot() {
+  # local context curcontext="$curcontext" state line
+  local configfile="$HOME/.dotfiles/setup_config_link"
+  local dotrepo="$HOME/.dotfiles/"
   _arguments -C \
     '1: :->cmds' \
-    '2:: :->args' && ret=0
+    '-h[Show this help message.]' \
+    '*::arg:->args' \
+    && ret=0
 
   case $state in
     cmds)
@@ -14,20 +19,25 @@ _dot() {
         "add[Move the file to the dotfile dir, make the link, and edit '$configfile'.]" \
         "unlink[Unlink the selected symbolic link and copy its original file from the dotfile repository.]" \
         "clear[Remove the all symbolic link in the config file '$configfile'.]" \
-        '-h[Show this help message.]'
-      ret=0
+      && ret=0
       ;;
     args)
-      case $line[1] in
-        "clone"|"add"|"unlink")
-          _path_files
-          ret=0
+      local subcmd=$line[1]
+      case $subcmd in
+        "clone"|"unlink")
+          _path_files && ret=0
+          ;;
+        "add")
+          _arguments \
+            '1: :_path_files' \
+            '2:dotfiles repository:_files -W $dotrepo -P $dotrepo' \
+            && ret=0
           ;;
         "set")
           _values "options"\
             '-i[No interaction mode(skip all conflicts).]' \
-            '-v[Print verbose messages.]'
-          ret=0
+            '-v[Print verbose messages.]' \
+            && ret=0
           ;;
       esac
       ;;
