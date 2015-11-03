@@ -62,7 +62,7 @@ search_engines = {
     -- I'm feeling lucky!
     l = "https://www.google.co.jp/search?q=%s&btnI=I",
     -- "w": Wikipedia
-    w = "https:ja.wikipedia.org/wiki/%s",
+    w = "https://ja.wikipedia.org/wiki/%s",
     -- "n": niconico動画
     n = "http://www.nicovideo.jp/search/%s",
     -- "nd": ニコニコ大百科
