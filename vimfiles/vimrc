@@ -27,8 +27,13 @@ endif
 let mapleader = "\<Space>"
 let localleader = "\<Space>"
 
+" encoding
+set fileencoding=utf-8
+set encoding=utf8
+scriptencoding utf8
+
 "---------------------------------------------------------------------------}}}
-" Plugin Manager NeoBundle:                                                 {{{
+" NeoBundle:                                                                {{{
 "------------------------------------------------------------------------------
 
 " Required:
@@ -42,23 +47,17 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
 
-" easy-reading.vim                                                          {{{
-NeoBundle 'ssh0/easy-reading.vim'
-" It's my vim's whole color theme.
-" Project directory:
-" ($HOME/.vim/bundle/easy-reading.vim/colors/easy-reading.vim)
-"                                                                           }}}
 " surround.vim                                                              {{{
 NeoBundle 'surround.vim'
 "                                                                           }}}
-" vim-commentary                                                            {{{
+" tpope/vim-commentary                                                      {{{
 NeoBundle 'tpope/vim-commentary'
 "                                                                           }}}
-" vim-unimpaired                                                            {{{
+" tpope/vim-unimpaired                                                      {{{
 " complementary pairs of mappings
 NeoBundle 'tpope/vim-unimpaired'
 "                                                                           }}}
-" unite.vim                                                                 {{{
+" Shougo/unite.vim                                                          {{{
 NeoBundle 'Shougo/unite.vim'
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable =1
@@ -69,17 +68,28 @@ nnoremap <silent> <Leader>uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR
 nnoremap <silent> <Leader>ur :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> <Leader>uu :<C-u>Unite file_mru buffer<CR>
 "                                                                           }}}
-" vimfiler                                                                  {{{
+" Shougo/vimfiler.vim                                                       {{{
 NeoBundle 'Shougo/vimfiler.vim'
 " vim use vimfiler as file manager instead of netry.
 let g:vimfiler_as_default_explorer = 1
 nnoremap <silent> <Leader>e :VimFilerBufferDir -buffer-name=explorer -split
 \ -simple -winwidth=35 -toggle -no-quit<CR>
 "                                                                           }}}
-" ag                                                                        {{{
+" Shougo/vimproc                                                            {{{
+NeoBundle 'Shougo/vimproc', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
+"                                                                           }}}
+" rking/ag                                                                  {{{
 NeoBundle 'rking/ag.vim'
 "                                                                           }}}
-" ctrlp.vim                                                                 {{{
+" kien/ctrlp.vim                                                            {{{
 NeoBundle 'kien/ctrlp.vim'
 if executable('ag')
   let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
@@ -101,7 +111,16 @@ nnoremap <Leader>or :CtrlPMRUFiles<CR>
 " * Use `<c-y>` to create a new file and its parent directories.
 " * Use `<c-z>` to mark/unmark multiple files and `<c-o>` to open them.
 "                                                                           }}}
-" unite-mark                                                                {{{
+" ervandew/supertab                                                         {{{
+NeoBundle 'ervandew/supertab'
+"                                                                           }}}
+" ujihisa/neco-look                                                         {{{
+NeoBundle 'ujihisa/neco-look', {
+      \ 'depends': [
+      \   'Shougo/neocomplcache.vim',
+      \]}
+"                                                                           }}}
+" tacroe/unite-mark                                                         {{{
 NeoBundle 'tacroe/unite-mark'
 let g:unite_source_mark_marks =
 \   "abcdefghijklmnopqrstuvwxyz"
@@ -111,7 +130,7 @@ let g:unite_source_mark_marks =
 nnoremap <silent> `` :Unite mark<CR>
 nnoremap <silent> '' :Unite mark<CR>
 "                                                                           }}}
-" vim-signature                                                             {{{
+" kshenoy/vim-signature                                                     {{{
 NeoBundle 'kshenoy/vim-signature'
 " Signature
 " Highlight signs of marks dynamically based upon state indicated by
@@ -119,61 +138,18 @@ NeoBundle 'kshenoy/vim-signature'
 let g:SignatureMartTextHLDynamic = 1
 let g:SignatureMarkTextHL = "'SignColumn'"
 "                                                                           }}}
-" Folding                                                                   {{{
+" LeafCage/FoldCC                                                           {{{
 NeoBundle 'LeafCage/foldCC'
 set foldtext=FoldCCtext()
 "                                                                           }}}
-" open-browser                                                              {{{
+" tyru/open-browser                                                         {{{
 NeoBundle 'tyru/open-browser.vim'
 " for open-browser plugin
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 "                                                                           }}}
-" vimproc                                                                   {{{
-NeoBundle 'Shougo/vimproc', {
-\ 'build' : {
-\     'windows' : 'tools\\update-dll-mingw',
-\     'cygwin' : 'make -f make_cygwin.mak',
-\     'mac' : 'make -f make_mac.mak',
-\     'linux' : 'make',
-\     'unix' : 'gmake',
-\    },
-\ }
-"                                                                           }}}
-" vim-quickrun                                                              {{{
-NeoBundle 'thinca/vim-quickrun'
-let g:quickrun_config = {}
-let g:quickrun_no_default_key_mapping = 0
-
-
-if $USER == "ssh0"
-  let g:quickrun_user_tex_autorun = 0
-else
-  let g:quickrun_user_tex_autorun = 1
-endif
-"                                                                           }}}
-" vim-template                                                              {{{
-NeoBundle 'thinca/vim-template'
-augroup template
-  autocmd!
-  " inside <%= %> is estimated by vim and expanded automatically
-  autocmd User plugin-template-loaded
-        \ silent %s/<%=\(.\{-}\)%>/\=eval(submatch(1))/ge
-  " if you write like below, the string is expanded to date.
-  " <%= strftime('%Y-%m-%d') %>
-
-  " move the cursor to <+CURSOR+>
-  autocmd User plugin-template-loaded
-        \    if search('<+CURSOR+>')
-        \  |   execute 'normal! "_da>'
-        \  | endif
-augroup END
-"                                                                           }}}
-" powerline-fontpatcher                                                     {{{
-NeoBundle 'Lokaltog/powerline-fontpatcher'
-"                                                                           }}}
-" lightline.vim                                                             {{{
+" itchyny/lightline.vim                                                     {{{
 NeoBundle 'itchyny/lightline.vim'
 " my color scheme for lightline
 NeoBundle 'ssh0/easyreading.vim'
@@ -304,7 +280,35 @@ let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
 
 "                                                                           }}}
-" vim-markdown                                                              {{{
+" thinca/vim-quickrun                                                       {{{
+NeoBundle 'thinca/vim-quickrun'
+let g:quickrun_config = {}
+let g:quickrun_no_default_key_mapping = 0
+
+if $USER == "ssh0"
+  let g:quickrun_user_tex_autorun = 0
+else
+  let g:quickrun_user_tex_autorun = 1
+endif
+"                                                                           }}}
+" thinca/vim-template                                                       {{{
+NeoBundle 'thinca/vim-template'
+augroup template
+  autocmd!
+  " inside <%= %> is estimated by vim and expanded automatically
+  autocmd User plugin-template-loaded
+        \ silent %s/<%=\(.\{-}\)%>/\=eval(submatch(1))/ge
+  " if you write like below, the string is expanded to date.
+  " <%= strftime('%Y-%m-%d') %>
+
+  " move the cursor to <+CURSOR+>
+  autocmd User plugin-template-loaded
+        \    if search('<+CURSOR+>')
+        \  |   execute 'normal! "_da>'
+        \  | endif
+augroup END
+"                                                                           }}}
+" rcmdnk/vim-markdown                                                       {{{
 NeoBundle 'rcmdnk/vim-markdown', {
       \ 'depends': [
       \   'godlygeek/tabular',
@@ -316,35 +320,26 @@ let g:vim_markdown_no_default_key_mappings = 1
 " LaTeX math
 let g:vim_markdown_math = 1
 "                                                                           }}}
-" vim-markdown-quote-syntax                                                 {{{
+" joker1007/vim-markdown-quote-syntax                                       {{{
 NeoBundle 'joker1007/vim-markdown-quote-syntax'
 "                                                                           }}}
-" vimtex                                                                    {{{
+" lervag/vimtex                                                             {{{
 NeoBundle 'lervag/vimtex'
 let g:vimtex_fold_envs = 1
 let g:vimtex_view_general_viewer = 'mupdf'
 "                                                                           }}}
-" jedi-vim                                                                  {{{
+" davidhalter/jedi-vim                                                      {{{
 " for python
 NeoBundle 'davidhalter/jedi-vim'
 " jedi complete
 let g:jedi#popup_on_dot = 1
 let g:jedi#popup_select_first = 1
 "                                                                           }}}
-" vim-python-pep8-indent                                                    {{{
+" hynek/vim-python-pep8-indent                                              {{{
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {
       \ "autoload": {"insert": 1, "filetype": ["python", "python3", "djangohtml"]}}
 "                                                                           }}}
-" neco-look                                                                 {{{
-NeoBundle 'ujihisa/neco-look', {
-      \ 'depends': [
-      \   'Shougo/neocomplcache.vim',
-      \]}
-"                                                                           }}}
-" supertab                                                                  {{{
-NeoBundle 'ervandew/supertab'
-"                                                                           }}}
-" vim-gista                                                                 {{{
+" lambdalisue/vim-gista                                                     {{{
 " easily sent a gista
 NeoBundle 'lambdalisue/vim-gista', {
       \ 'depends': [
@@ -354,13 +349,22 @@ NeoBundle 'lambdalisue/vim-gista', {
 let g:gista#github_user = 'ssh0'
 let g:gista#update_on_write = 1
 "                                                                           }}}
-" hateblo                                                                   {{{
+" moznion/hateblo                                                           {{{
 " provide some funtions of Hatena Blog by using AtomPub API
 NeoBundle 'moznion/hateblo.vim', {
     \ 'depends': ['mattn/webapi-vim', 'Shougo/unite.vim']
 \ }
 " config file is in ~/.hateblo.vim
 " (You should create manually. See the project's README.)
+"                                                                           }}}
+" Lolaltog/powerline-fontpatcher                                            {{{
+NeoBundle 'Lokaltog/powerline-fontpatcher'
+"                                                                           }}}
+" ssh0/easy-reading.vim                                                     {{{
+NeoBundle 'ssh0/easy-reading.vim'
+" It's my vim's whole color theme.
+" Project directory:
+" ($HOME/.vim/bundle/easy-reading.vim/colors/easy-reading.vim)
 "                                                                           }}}
 
 call neobundle#end()
@@ -408,32 +412,85 @@ augroup filetype
   autocmd Filetype html let &formatprg=html_to_html
 augroup END
 
+augroup set_K_help
+  autocmd FileType vim setlocal keywordprg=:help
+augroup END
+
 "---------------------------------------------------------------------------}}}
 " Set Options:                                                              {{{
 "------------------------------------------------------------------------------
+" System                                                                    {{{
+" ------
 
-" number line
-set number
-set relativenumber
-set numberwidth=3
+" don't use backup or swap files
+set nowritebackup
+set nobackup
+set noswapfile
 
-" Don't redraw screen during macros
-set lazyredraw
-
-" Indicates a fast terminal connection
-set ttyfast
-
+" how many stock command history
 set history=1000
+
+" save information to ~/.viminfo
 set viminfo='1000,<200,f50,c,h
+
+" use unnamed register (for outer programs)
+set clipboard=unnamedplus,autoselect
+
+" less timeoutlen
+set timeout timeoutlen=400 ttimeoutlen=75
+
+" disable 8-bit num
+set nrformats-=octal
 
 " use mouse
 if has('mouse')
   set mouse=a
 endif
 
+" set completion popup's height
+set pumheight=10
+
+" always split vertically when using vimdiff
+set diffopt=vertical
+
+" Indicates a fast terminal connection
+set ttyfast
+
 set whichwrap=b,s,[,],<,>
 
-" Default tab width
+" help language
+set helplang=ja,en
+
+"                                                                           }}}
+" Search                                                                    {{{
+" ------
+
+" case sensitive for search
+set noignorecase
+set nosmartcase
+" wrapscan
+set wrapscan
+" Show matches while typing
+set incsearch
+" highlighted search index
+set hlsearch
+
+"                                                                           }}}
+" Apearance                                                                 {{{
+" ---------
+
+" don't redraw screen during macros
+set lazyredraw
+
+" don't give the intro message
+set shortmess+=I
+
+" number line
+set number
+set relativenumber
+set numberwidth=3
+
+" default tab width
 set softtabstop=4
 set shiftwidth=4
 set expandtab
@@ -441,23 +498,23 @@ set expandtab
 " autoindent
 set autoindent
 
-" Maximum width of text that is being inserted.
+" maximum width of text that is being inserted.
 set textwidth=0
-
-" show title
-set title
 
 " height of commandline
 set cmdheight=1
 set laststatus=2
 
+" show title
+set title
+
 " modeline:
 set modeline
 
-" don't show command in status line
-set noshowcmd
+" show command in status line
+set showcmd
 
-" Show Tab and Space at end of the line
+" show Tab and Space at end of the line
 set list
 set listchars=tab:▸\ ,trail:~
 
@@ -468,40 +525,18 @@ set showbreak=\ ↪
 set showmatch
 set matchtime=1
 
-" highlighted search index
-set hlsearch
-
-" Show matches while typing
-set incsearch
-
-" " folding
+" folding
 set fdm=marker " zf(def) zd(delete) zo(open) zc(close)
 set foldcolumn=0
 set fillchars=vert:\|
 
-" don't use backup or swap files
-set nowritebackup
-set nobackup
-set noswapfile
-
-" use unnamed register (for outer programs)
-set clipboard=unnamedplus,autoselect
-
 " wrapped by 80 characters(PEP8)
 set colorcolumn=80
-
-" set completion popup's height
-set pumheight=10
-
-" always split vertically when using vimdiff
-set diffopt=vertical
-
-" less timeoutlen
-set timeout timeoutlen=400 ttimeoutlen=75
 
 " disable the conceal function
 let g:tex_conceal=''
 
+"                                                                           }}}
 "---------------------------------------------------------------------------}}}
 " Indent:                                                                   {{{
 "------------------------------------------------------------------------------
@@ -542,8 +577,11 @@ endfunction
 " Key Bindings:                                                             {{{
 "------------------------------------------------------------------------------
 
-" Escape by jj
+" Escape by jj, kk, ll, hh
 inoremap <silent> jj <ESC>
+inoremap <silent> kk <ESC>
+inoremap <silent> ll <ESC>
+inoremap <silent> hh <ESC>
 
 " Toggle relative number by <Space> + l
 nnoremap <silent> <Leader>l :setlocal relativenumber! number!<CR>
