@@ -54,8 +54,6 @@ vimfiles/template/template.md,.vim/template/template.md
 vimfiles/template/template.mkd,.vim/template/template.mkd
 # Tex template
 vimfiles/template/template.tex,.vim/template/template.tex
-# texmath template
-vimfiles/template/template.texmath,.vim/template/template.texmath
 # Python template
 vimfiles/template/template.py,.vim/template/template.py
 # Shell script template
