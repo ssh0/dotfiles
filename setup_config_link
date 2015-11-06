@@ -47,6 +47,7 @@ system/profile,.profile
 vimfiles/vimrc,.vimrc
 vimfiles/ftplugin/bib_quickrun.vim,.vim/ftplugin/bib_quickrun.vim
 vimfiles/ftplugin/tex_quickrun.vim,.vim/ftplugin/tex_quickrun.vim
+vimfiles/ftplugin/texmath_quickrun.vim,.vim/ftplugin/texmath_quickrun.vim
 vimfiles/ftplugin/markdown_quickrun.vim,.vim/ftplugin/markdown_quickrun.vim
 # markdown template
 vimfiles/template/template.md,.vim/template/template.md

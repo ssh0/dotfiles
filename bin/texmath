@@ -12,12 +12,11 @@ texmath_template="$HOME/.vim/template/template.texmath"
 imgdir='img'
 
 if [ "$1" = "-e" ]; then
-  echo "$1"
   if [ -f "$2" ]; then
     texfile="$2"
     echo "${texfile} already exists."
   else
-    texfile="fig_2"
+    texfile="$2"
     cat "$texmath_template" > "$texfile"
   fi
   vim "$texfile"
