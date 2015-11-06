@@ -455,7 +455,7 @@ endif
 set pumheight=10
 
 " always split vertically when using vimdiff
-set diffopt=filler,vertical
+set diffopt=vertical
 
 " Indicates a fast terminal connection
 set ttyfast
