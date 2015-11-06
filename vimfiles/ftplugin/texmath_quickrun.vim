@@ -12,5 +12,4 @@ let g:quickrun_config['texmath'] = {
 augroup texmath_autocompile
   autocmd!
   autocmd BufWritePost,FileWritePost *.tex :QuickRun
-  endif
 augroup END
