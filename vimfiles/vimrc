@@ -577,11 +577,9 @@ endfunction
 " Key Bindings:                                                             {{{
 "------------------------------------------------------------------------------
 
-" Escape by jj, kk, ll, hh
+" Escape by jj, kk
 inoremap <silent> jj <ESC>
 inoremap <silent> kk <ESC>
-inoremap <silent> ll <ESC>
-inoremap <silent> hh <ESC>
 
 " Toggle relative number by <Space> + l
 nnoremap <silent> <Leader>l :setlocal relativenumber! number!<CR>
