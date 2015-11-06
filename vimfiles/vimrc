@@ -23,13 +23,12 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-" use <Space> for mapleader
+" use <Space> for mapleader & localleader
 let mapleader = "\<Space>"
 let localleader = "\<Space>"
 
 " encoding
-set fileencoding=utf-8
-set encoding=utf8
+set fileencoding=utf-8 encoding=utf-8
 scriptencoding utf8
 
 "---------------------------------------------------------------------------}}}
@@ -392,6 +391,7 @@ if $TMUX != ""
     autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
   augroup END
 endif
+
 augroup filetype
   autocmd!
   " markdown
@@ -413,7 +413,13 @@ augroup filetype
 augroup END
 
 augroup set_K_help
+  autocmd!
   autocmd FileType vim setlocal keywordprg=:help
+augroup END
+
+augroup texmath
+  autocmd!
+  autocmd FileType texmath setlocal syntax=tex
 augroup END
 
 "---------------------------------------------------------------------------}}}
@@ -423,9 +429,7 @@ augroup END
 " ------
 
 " don't use backup or swap files
-set nowritebackup
-set nobackup
-set noswapfile
+set nowritebackup nobackup noswapfile
 
 " how many stock command history
 set history=1000
@@ -451,7 +455,7 @@ endif
 set pumheight=10
 
 " always split vertically when using vimdiff
-set diffopt=vertical
+set diffopt=filler,vertical
 
 " Indicates a fast terminal connection
 set ttyfast
@@ -466,72 +470,68 @@ set helplang=ja,en
 " ------
 
 " case sensitive for search
-set noignorecase
-set nosmartcase
-" wrapscan
-set wrapscan
+set noignorecase nosmartcase
 " Show matches while typing
 set incsearch
 " highlighted search index
 set hlsearch
+" wrapscan
+set wrapscan
 
 "                                                                           }}}
 " Apearance                                                                 {{{
 " ---------
 
-" don't redraw screen during macros
-set lazyredraw
-
 " don't give the intro message
 set shortmess+=I
 
-" number line
-set number
-set relativenumber
-set numberwidth=3
+" don't redraw screen during macros
+set lazyredraw
 
-" default tab width
-set softtabstop=4
-set shiftwidth=4
-set expandtab
+" number line
+set number relativenumber numberwidth=3
 
 " autoindent
 set autoindent
 
-" maximum width of text that is being inserted.
+" insert space instead of TAB
+set expandtab smarttab shiftround
+
+" default tab width
+set softtabstop=4 shiftwidth=4
+
+" don't break a long line
 set textwidth=0
+
+" wrapped by 80 characters(PEP8)
+set colorcolumn=80
+
+" show title & command in status line
+set title showcmd
 
 " height of commandline
 set cmdheight=1
+
+" the last window will have a status line always
 set laststatus=2
 
-" show title
-set title
-
-" modeline:
-set modeline
-
-" show command in status line
-set showcmd
-
 " show Tab and Space at end of the line
-set list
-set listchars=tab:▸\ ,trail:~
+set list listchars=tab:▸\ ,trail:~
 
 " showbreaks
 set showbreak=\ ↪
 
 " highlight mathched parenthesis
-set showmatch
-set matchtime=1
+set showmatch matchtime=1
 
 " folding
-set fdm=marker " zf(def) zd(delete) zo(open) zc(close)
-set foldcolumn=0
+set foldmethod=marker foldcolumn=0
+
+" characters to vertical separator
 set fillchars=vert:\|
 
-" wrapped by 80 characters(PEP8)
-set colorcolumn=80
+" modeline
+set modeline
 
 " disable the conceal function
 let g:tex_conceal=''
@@ -541,21 +541,22 @@ let g:tex_conceal=''
 " Indent:                                                                   {{{
 "------------------------------------------------------------------------------
 
-autocmd FileType sh         setlocal sw=2 sts=2 ts=2 et
-autocmd FileType apache     setlocal sw=4 sts=4 ts=4 et
-autocmd FileType css        setlocal sw=4 sts=4 ts=4 noet
-autocmd FileType diff       setlocal sw=4 sts=4 ts=4 noet
-autocmd FileType html       setlocal sw=4 sts=4 ts=4 noet
-autocmd FileType java       setlocal sw=4 sts=4 ts=4 et
-autocmd FileType javascript setlocal sw=4 sts=4 ts=4 noet
-autocmd FileType ruby       setlocal sw=2 sts=2 ts=2 et
-autocmd FileType eruby      setlocal sw=2 sts=2 ts=2 et
-autocmd FileType sql        setlocal sw=4 sts=4 ts=4 et
-autocmd FileType vim        setlocal sw=2 sts=2 ts=2 et
-autocmd FileType xml        setlocal sw=4 sts=4 ts=4 noet
-autocmd FileType yaml       setlocal sw=2 sts=2 ts=2 et
-autocmd FileType zsh        setlocal sw=2 sts=2 ts=2 et
-autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
+autocmd FileType sh         setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType apache     setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+autocmd FileType css        setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
+autocmd FileType diff       setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
+autocmd FileType html       setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
+autocmd FileType java       setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+autocmd FileType javascript setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
+autocmd FileType ruby       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType eruby      setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType sql        setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+autocmd FileType tex        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType vim        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType xml        setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
+autocmd FileType yaml       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType zsh        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType coffee     setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
 "---------------------------------------------------------------------------}}}
 " My function:                                                              {{{
