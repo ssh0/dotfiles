@@ -72,6 +72,8 @@ cecho() {
   echo "\033[${color}m$@\033[m"
 }
 
+alias tree='tree -C'
+
 # speedometer
 function _speedometer() {
   speedometer -b -rx "$1" -tx "$1"
