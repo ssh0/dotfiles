@@ -52,15 +52,13 @@ plugins=(git zsh-syntax-highlighting tmux)
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
+fpath=($HOME/.zsh/completions $fpath)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 source $HOME/.zshrc.mine
 export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 export MANPATH="/usr/local/man:$MANPATH"
-fpath=($HOME/.zsh/completions $fpath)
-
-autoload -U compinit && compinit
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
