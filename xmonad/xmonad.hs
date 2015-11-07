@@ -39,6 +39,7 @@ import XMonad.Layout.MultiToggle.Instances
 import XMonad.Layout.NoBorders         -- In Full mode, border is no use
 import XMonad.Layout.PerWorkspace      -- Configure layouts on a per-workspace
 import XMonad.Layout.ResizableTile     -- Resizable Horizontal border
+import XMonad.Layout.Simplest
 import XMonad.Layout.SimplestFloat
 import XMonad.Layout.Spacing           -- this makes smart space around windows
 import XMonad.Layout.Tabbed
@@ -260,6 +261,7 @@ myLayout = spacing gapwidth $
                  (ResizableTall 1 (1/100) (3/5) [])
              ||| (TwoPane (1/100) (3/5))
              ||| (ThreeColMid 1 (1/100) (16/35))
+             ||| Simplest
 
 --------------------------------------------------------------------------- }}}
 -- myStartupHook:     Start up applications                                 {{{
