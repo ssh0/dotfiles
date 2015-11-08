@@ -506,8 +506,8 @@ set textwidth=0
 " wrapped by 80 characters(PEP8)
 set colorcolumn=80
 
-" show title & command in status line
-set title showcmd
+" status line
+set title showcmd noshowmode
 
 " height of commandline
 set cmdheight=1
