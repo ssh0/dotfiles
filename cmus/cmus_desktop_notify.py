@@ -108,8 +108,8 @@ def status_data(item):
 def display_song():
     """Display the song data using notify-send."""
 
-    # We only display a notification if something is playing.
-    if status_data("status") == "playing":
+    # We only display a notification if something is playing or paused.
+    if status_data("status") in ["playing", "paused"]:
 
         # Check to see if title data exists before trying to display it.
         # Display "Unknown" otherwise.
@@ -139,13 +139,19 @@ def display_song():
         # Calculate seconds between track changes.
         track_change_duration = round(time.time() - float(last_notice))
 
+        # Set notification icon.
+        if status_data("status") == "playing":
+            notify_icon = '/usr/share/icons/gnome/scalable/actions/media-playback-start-symbolic.svg '
+        if status_data("status") == "paused":
+            notify_icon = '/usr/share/icons/gnome/scalable/actions/media-playback-pause-symbolic.svg '
+
         # Display current track notification only if 1 seconds have
         # elapsed since last track was chosen.
         if track_change_duration > 1:
             # Execute notify-send with our default song data.
             subprocess.call('notify-send -a cmus -u low -t 1000 "' + \
-                            notify_summary + '" "by ' + notify_body + ' " \
-    -i /usr/share/icons/gnome/scalable/actions/media-playback-start-symbolic.svg',
+                            notify_summary + '" "by ' + notify_body + '" ' + \
+                            '-i ' + notify_icon,
                             shell=True)
 
 def main():
