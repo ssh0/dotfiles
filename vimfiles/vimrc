@@ -72,18 +72,18 @@ NeoBundle 'Shougo/vimfiler.vim'
 " vim use vimfiler as file manager instead of netry.
 let g:vimfiler_as_default_explorer = 1
 nnoremap <silent> <Leader>e :VimFilerBufferDir -buffer-name=explorer -split
-\ -simple -winwidth=35 -toggle -no-quit<CR>
+      \ -simple -winwidth=35 -toggle -no-quit<CR>
 "                                                                           }}}
 " Shougo/vimproc                                                            {{{
 NeoBundle 'Shougo/vimproc', {
-\ 'build' : {
-\     'windows' : 'tools\\update-dll-mingw',
-\     'cygwin' : 'make -f make_cygwin.mak',
-\     'mac' : 'make -f make_mac.mak',
-\     'linux' : 'make',
-\     'unix' : 'gmake',
-\    },
-\ }
+      \ 'build' : {
+      \     'windows' : 'tools\\update-dll-mingw',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'linux' : 'make',
+      \     'unix' : 'gmake',
+      \    },
+      \ }
 "                                                                           }}}
 " rking/ag                                                                  {{{
 NeoBundle 'rking/ag.vim'
@@ -122,9 +122,9 @@ NeoBundle 'ujihisa/neco-look', {
 " tacroe/unite-mark                                                         {{{
 NeoBundle 'tacroe/unite-mark'
 let g:unite_source_mark_marks =
-\   "abcdefghijklmnopqrstuvwxyz"
-\ . "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-\ . "0123456789.'`^<>[]{}()\""
+      \   "abcdefghijklmnopqrstuvwxyz"
+      \ . "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+      \ . "0123456789.'`^<>[]{}()\""
 " key bind: `` or ''
 nnoremap <silent> `` :Unite mark<CR>
 nnoremap <silent> '' :Unite mark<CR>
@@ -249,9 +249,9 @@ function! CtrlPMark()
 endfunction
 
 let g:ctrlp_status_func = {
-  \ 'main': 'CtrlPStatusFunc_1',
-  \ 'prog': 'CtrlPStatusFunc_2',
-  \ }
+      \ 'main': 'CtrlPStatusFunc_1',
+      \ 'prog': 'CtrlPStatusFunc_2',
+      \ }
 
 function! CtrlPStatusFunc_1(focus, byfname, regex, prev, item, next, marked)
   let g:lightline.ctrlp_regex = a:regex
@@ -351,8 +351,8 @@ let g:gista#update_on_write = 1
 " moznion/hateblo                                                           {{{
 " provide some funtions of Hatena Blog by using AtomPub API
 NeoBundle 'moznion/hateblo.vim', {
-    \ 'depends': ['mattn/webapi-vim', 'Shougo/unite.vim']
-\ }
+      \ 'depends': ['mattn/webapi-vim', 'Shougo/unite.vim']
+      \ }
 " config file is in ~/.hateblo.vim
 " (You should create manually. See the project's README.)
 "                                                                           }}}
