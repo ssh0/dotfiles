@@ -27,6 +27,9 @@ bindkey '^xe' edit-command-line
 # Keybinding
 bindkey '^r' peco-select-history
 
+# thefuck (https://github.com/nvbn/thefuck)
+eval "$(thefuck --alias)"
+
 # Notification of local host command {{{
 # ----------------------------------
 #
