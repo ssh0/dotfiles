@@ -76,7 +76,7 @@ borderwidth = 6
 
 -- Border color
 mynormalBorderColor  = colorNormalbg
-myfocusedBorderColor = colorGray
+myfocusedBorderColor = colorBlue
 
 -- gapwidth
 gapwidth  = 0
