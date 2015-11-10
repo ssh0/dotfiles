@@ -1,10 +1,4 @@
 # vim: set ft=zsh
-#        _ _
-#   __ _| (_) __ _ ___  ___  ___
-#  / _` | | |/ _` / __|/ _ \/ __|
-# | (_| | | | (_| \__ \  __/\__ \
-#  \__,_|_|_|\__,_|___/\___||___/
-#
 # written by Shotaro Fujimoto (https://github.com/ssh0)
 #------------------------------------------------------------------------------
 # export variables                                                          {{{
@@ -23,6 +17,7 @@ export FILEMANAGER=$(find_alt thunar nautilus dolphin pcmanfm tspacefm enlighten
 export PAGER=$(find_alt less more most)
 export PLAYER=$(find_alt mpv mplayer cvlc $OPENER )
 export READER=$(find_alt mupdf zathura evince $OPENER )
+export TERMCMD=$(find_alt urxvt xterm gnome-terminal)
 
 #---------------------------------------------------------------------------}}}
 # Alias                                                                     {{{
@@ -33,15 +28,16 @@ alias apt-upd='sudo apt update'
 
 # apt upgrade
 alias apt-upg='sudo apt upgrade'
-
-# apt install
-alias apt-ins='sudo apt install'
-
+#
 # git alias to "g"
 alias g='git'
+compdef g=git
 
 # I often type ":q" to exit terminal
 alias :q='exit'
+
+# thefuck (https://github.com/nvbn/thefuck)
+alias fuck='eval "$(thefuck $(fc -ln -1 | tail -n 1)); fc -R"'
 
 # mplayer alias
 alias mplayer='mplayer -msgcolor'
@@ -127,9 +123,6 @@ function ranger-cd {
     rm -f -- "$tempfile"
 }
 
-# This binds Ctrl-O to ranger-cd:
-# bind '"\C-o":"ranger-cd\C-m"'
-
 #---------------------------------------------------------------------------}}}
 # Start new ranger instance only if it's not running in current shell       {{{
 #------------------------------------------------------------------------------
@@ -142,6 +135,7 @@ function r() {
         exit
     fi
 }
+compdef r=ranger
 
 #---------------------------------------------------------------------------}}}
 # peco-history alias                                                        {{{
@@ -419,9 +413,9 @@ cfg-tmuxinator() { $EDITOR ~/.tmuxinator/ ;}
 cfg-turses() { $EDITOR ~/.turses/config ;}
 cfg-vimcolor() { $EDITOR ~/.vim/bundle/easy-reading.vim/colors/easy-reading.vim ;}
 cfg-vimperatorrc() { $EDITOR ~/.vimperatorrc ;}
-cfg-vimrc() { $EDITOR ~/.vimrc ;}
+cfg-vim() { $EDITOR ~/.vimrc ;}
 cfg-xdefaults() { $EDITOR ~/.Xdefaults ;}
-cfg-Xmodmap() { $EDITOR ~/.Xmodmap ;}
+cfg-xmodmap() { $EDITOR ~/.Xmodmap ;}
 cfg-xmonad() { $EDITOR ~/.xmonad/xmonad.hs ;}
 cfg-xresources() { $EDITOR ~/.Xresources ;}
 cfg-websearch() { $EDITOR ~/Workspace/python/web_search/websearch/config.py ;}

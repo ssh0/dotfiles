@@ -7,28 +7,14 @@ source /etc/zsh_command_not_found
 # PATH to /usr/local/lib
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
-# LANGUAGE
-export LC_TIME=en_US.UTF-8
-
-# EDITOR
-export EDITOR=/usr/bin/vim
-
-# TERMCMD
-export TERMCMD=urxvt
-
 autoload -U add-zsh-hook 2>/dev/null || return
 
 # edit command line in vim:
 # by pressing: ^xe
-autoload -Uz edit-command-line
-zle -N edit-command-line
 bindkey '^xe' edit-command-line
 
 # Keybinding
 bindkey '^r' peco-select-history
-
-# thefuck (https://github.com/nvbn/thefuck)
-eval "$(thefuck --alias)"
 
 # Notification of local host command {{{
 # ----------------------------------
