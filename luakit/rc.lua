@@ -167,7 +167,7 @@ follow.stylesheet = [===[
     position: absolute;
     background-color: #1c1c1c;
     color: #fefefe;
-    padding: 2px 2px;
+    padding: 2px 5px;
     font-family: monospace, courier, sans-serif;
     font-size: 12px;
     font-weight: bold;
