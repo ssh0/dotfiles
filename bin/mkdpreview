@@ -18,16 +18,22 @@ footer="$HOME/Workspace/blog/html/footer.html"
 sourcedir='source'
 
 usage() {
-  echo ""
-  echo "Simply render markdown by pandoc."
-  echo "Usage: mkdpreview [OPTION]"
-  echo ""
-  echo "OPTION:"
-  echo "  -s: Save html file in the source file dir."
-  echo "  -u: Update (the same name's) html file in the source file dir."
-  echo "  -o: Set the name of html file. \`mkdpreview -o bar.html foo.md\`"
-  echo "  -p: Preview HTML file in firefox."
-  echo "  -h: Show this message."
+  cat << EOF
+
+NAME
+      mkdpreview - Simply render markdown by pandoc.
+
+USAGE
+      mkdpreview [OPTION]
+
+OPTION
+      -s: Save html file in the source file dir.
+      -u: Update (the same name's) html file in the source file dir.
+      -o: Set the name of html file. \`mkdpreview -o bar.html foo.md\`
+      -p: Preview HTML file in firefox.
+      -h: Show this message.
+
+EOF
   exit 1
 }
 
