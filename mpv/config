@@ -31,7 +31,7 @@ osd-font="Migu 1P"
 # make the OSD progress bar be big and centered like in mplayer and mplayer2
 osd-bar-align-y=0
 osd-bar-h=5
-osd-border-size=0
+osd-border-size=2
 osd-color='#CCFFFFFF'
 osd-border-color='#99000000'
 
