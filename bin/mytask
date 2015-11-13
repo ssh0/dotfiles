@@ -13,20 +13,22 @@ fi
 
 usage() {
   cat <<EOF
-mytask is the scirpt to start my current tasks easily.
 
-Usage:
-  $ mytask [option] [start|add|remove|list] [cmdoption]
+NAME
+      mytask - start my current tasks easily.
 
-Option:
-  -h       Show this help message.
+USAGE
+      mytask [option] [start|add|remove|list] [cmdoption]
 
-Command:
-  start    Execute the taskset.
-  add      Add new taskset.
-  edit     Edit the existing taskset.
-  remove   Remove a taskset.
-  list     List all existing taskset.
+OPTION
+      -h:  Show this help message.
+
+COMMAND
+      start    Execute the taskset.
+      add      Add new taskset.
+      edit     Edit the existing taskset.
+      remove   Remove a taskset.
+      list     List all existing taskset.
 EOF
   exit 1
 }

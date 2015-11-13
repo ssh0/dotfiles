@@ -2,12 +2,19 @@
 #
 
 usage() {
-  echo "Alart after given minutes."
-  echo "Usage: $0 n"
-  echo ""
-  echo "In n, you can set n minutes."
-  echo "Option:"
-  echo "  -h: Show this help."
+  cat << EOF
+
+NAME
+      alarm - Alart after given minutes.
+
+USAGE
+      alarm n
+
+      In n, you can set n minutes.
+
+Option
+      -h: Show this help.
+EOF
   exit 1
 }
 

@@ -2,17 +2,23 @@
 # written by Shotaro Fujimoto (https://github.com/ssh0)
 # first edited: 2015-07-19
 
-show_usage (){
-  echo "pandoc_beamerwrapper: pandoc wrapper for converting to beamer"
-  echo "Usage: pandoc_beamerwrapper [-h] [pandoc's options] INPUTFILE(or stdin)"
-  echo ""
-  echo "Option:"
-  echo "  -h: Show this help message."
-  echo ""
+usage (){
+  cat << EOF
+
+NAME
+      pandoc_beamerwrapper - pandoc wrapper for converting to beamer
+
+USAGE
+      pandoc_beamerwrapper [-h] [pandoc's options] INPUTFILE(or stdin)
+
+OPTION
+      -h: Show this help message.
+
+EOF
 }
 
 if [ "$1" = "-h" ]; then
-  show_usage
+  usage
   exit 0
 fi
 

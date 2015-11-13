@@ -6,15 +6,25 @@ default_mode="${OUTPUT_RES:-1920x1080}"
 projector="VGA1"
 projector_mode="1024x768"
 
-show_usage() {
-  echo "Usage: $0 COMMAND [-d output] [-m mode] [-h]"
-  echo "  COMMAND:"
-  echo "    start: Start Presentation mode"
-  echo "    stop : Stop Presentaion mode"
-  echo "  OPTION:"
-  echo "    -d: Output device connecting (default: $projector)"
-  echo "    -m: Manually select the display resolution (default: $projector_mode)"
-  echo "    -h: Show this message and quit"
+usage() {
+  cat << EOF
+
+NAME
+      presenmode.sh - provide easy way to manage the monitors with xrandr.
+
+USAGE
+      presenmode.sh COMMAND [-d output] [-m mode] [-h]
+
+COMMAND
+      start: Start Presentation mode
+      stop : Stop Presentaion mode
+
+OPTION
+      -d: Output device connecting (default: $projector)
+      -m: Manually select the display resolution (default: $projector_mode)
+      -h: Show this message and quit
+
+EOF
   exit 1
 }
 
@@ -24,8 +34,8 @@ do
   case $OPT in
     "d" ) projector="$OPTARG" ;;
     "m" ) projector_mode="$OPTARG" ;;
-    "h" ) show_usage ;;
-      * ) show_usage ;;
+    "h" ) usage ;;
+      * ) usage ;;
   esac
 done
 
@@ -37,5 +47,5 @@ elif [ "$1" = "stop" ]; then
   xrandr --output $projector --off
   xrandr --output $default_output --mode $default_mode
 else
-  show_usage
+  usage
 fi

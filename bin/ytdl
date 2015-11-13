@@ -2,18 +2,25 @@
 # written by Shotaro Fujimoto (https://github.com/ssh0)
 # first edited: 2015-06-23
 
-show_usage() {
-  echo "ytdl: Wrapper script for youtube-dl."
-  echo ""
-  echo "Usage: ytdl [-h] [-A] [-L FILE] URL [youtube-dl options]"
-  echo ""
-  echo "NOTE: You should place the URL *before* the youtube-dl's options."
-  echo ""
-  echo "Option:"
-  echo "  -A: Don't add the URL to list file"
-  echo "  -L: Set the list file to save URL (default file: '.list')"
-  echo "  -e: Edit the list file manually."
-  echo "  -h: Show this help message"
+usage() {
+  cat << EOF
+
+NAME
+      ytdl - wrapper script for youtube-dl.
+
+USAGE
+      ytdl [-h] [-A] [-L FILE] URL [youtube-dl options]
+
+      You should place the URL *before* the youtube-dl's options.
+      If you want to know youtube-dl's options, see manpage.
+
+OPTION
+      -A: Don't add the URL to list file
+      -L: Set the list file to save URL (default file: '.list')
+      -e: Edit the list file manually.
+      -h: Show this help message
+
+EOF
 }
 
 listfile=".list"
@@ -26,14 +33,14 @@ do
     "L" ) listfile="${OPTARG}" ;;
     "e" ) $EDITOR "${listfile}"
           exit 0 ;;
-    "h" ) show_usage;
+    "h" ) usage;
           exit 1 ;;
   esac
 done
 
 shift $((OPTIND-1))
 if [ $# = 0 ];then
-  show_usage
+  usage
   exit 1
 fi
 
