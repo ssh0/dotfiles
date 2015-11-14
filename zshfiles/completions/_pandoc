@@ -4,13 +4,13 @@
 
 _pandoc() {
   typeset -A opt_args
-  local context state line
+  local context
 
   _arguments -s -S \
-    '(-f+ --from=+)'{-r+,--read=+}'[Specify input format.]:FORMAT:(native json markdown textile rst html docbook latex)'\
+    '(-f+,--from=+)'{-r+,--read=+}'[Specify input format.]:FORMAT:(native json markdown textile rst html docbook latex)'\
     '(-r+,--read=+)'{-f+,--from=+}'[Specify input format.]:FORMAT:(native json markdown textile rst html docbook latex)'\
-    '(-t+ --to=+)'{-w+,--write=+}'[Specify output format.]:FORMAT:(native json plain markdown rst html html5 latex beamer context man mediawiki textile org texinfo docbook opendocument odt docx epub asciidoc slidy slideous dzslides s5 rtf)'\
-    '(-w+ --write=+)'{-t+,--to=+}'[Specify output format.]:FORMAT:(native json plain markdown rst html html5 latex beamer context man mediawiki textile org texinfo docbook opendocument odt docx epub asciidoc slidy slideous dzslides s5 rtf)'\
+    '(-t+,--to=+)'{-w+,--write=+}'[Specify output format.]:FORMAT:(native json plain markdown rst html html5 latex beamer context man mediawiki textile org texinfo docbook opendocument odt docx epub asciidoc slidy slideous dzslides s5 rtf)'\
+    '(-w+,--write=+)'{-t+,--to=+}'[Specify output format.]:FORMAT:(native json plain markdown rst html html5 latex beamer context man mediawiki textile org texinfo docbook opendocument odt docx epub asciidoc slidy slideous dzslides s5 rtf)'\
     {-o+,--output=+}'[Write output to FILE instead of stdout.]:FILE:_files'\
     '--data-dir=+[Specify the user data directory to search for pandoc data files.]:DIRECTORY:_files -/'\
     {-v,--version}'[Print version.]'\
