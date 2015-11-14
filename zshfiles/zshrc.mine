@@ -9,6 +9,9 @@ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 autoload -U add-zsh-hook 2>/dev/null || return
 
+# show decription for completion
+zstyle ':completion:*' format '%B%F{magenta}%d%b%f'
+
 # edit command line in vim:
 # by pressing: ^xe
 bindkey '^xe' edit-command-line
