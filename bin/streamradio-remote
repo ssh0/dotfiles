@@ -2,6 +2,9 @@
 # written by Shotaro Fujimoto (https://github.com/ssh0)
 
 cachefile="$HOME/.cache/streamradio/station"
+if [ ! -e ${cachefile} ]; then
+  touch "${cachefile}"
+fi
 fifofile="$HOME/.cache/streamradio/fifo"
 
 defaultstation="http://streaming.radionomy.com/J-PopProjectRadio"
