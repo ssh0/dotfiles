@@ -29,5 +29,5 @@ _mytask() {
       ;;
   esac
 
-  return ret
+  return $ret
 }
