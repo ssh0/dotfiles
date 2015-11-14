@@ -6,12 +6,6 @@ fifofile="$HOME/.cache/streamradio/fifo"
 
 defaultstation="http://streaming.radionomy.com/J-PopProjectRadio"
 
-if [ $# = 1 ];then
-  station="$1"
-elif [ "${station}" = "" ]; then
-  station="${defaultstation}"
-fi
-
 station="$(head -n 1 "${cachefile}")"
 
 if [ "$1" = "pause" ]; then
@@ -19,6 +13,11 @@ if [ "$1" = "pause" ]; then
 elif [ "$1" = "quit" ]; then
   echo "quit" >> "${fifofile}"
 elif [ "$1" = "start" ]; then
+  if [ ! "$2" = "" ];then
+    station="$2"
+  elif [ "${station}" = "" ]; then
+    station="${defaultstation}"
+  fi
   echo "${station}" > "${cachefile}"
   echo "load ${station}" >> "${fifofile}"
 fi
