@@ -233,6 +233,8 @@ main = do
        -- Play / Pause media keys
        , ((0                       , 0x1008ff18), spawn "sh $HOME/bin/cplay.sh")
        , ((0                       , 0x1008ff14), spawn "sh $HOME/bin/cplay.sh")
+       , ((shiftMask               , 0x1008ff18), spawn "streamradio-remote pause")
+       , ((shiftMask               , 0x1008ff14), spawn "streamradio-remote pause")
        -- Volume setting media keys
        , ((0                       , 0x1008ff13), spawn "bash $HOME/bin/sound_volume_change_wrapper.sh +")
        , ((0                       , 0x1008ff11), spawn "bash $HOME/bin/sound_volume_change_wrapper.sh -")
