@@ -124,6 +124,7 @@ bin/screenshot.sh,bin/screenshot.sh
 bin/sound_volume_change_wrapper.sh,bin/sound_volume_change_wrapper.sh
 bin/start_urxvtd.sh,bin/start_urxvtd.sh
 bin/streamradio,bin/streamradio
+bin/streamradio-remote,bin/streamradio-remote
 bin/terminal-colors,bin/terminal-colors
 bin/texmath,bin/texmath
 bin/toggle_compton.sh,bin/toggle_compton.sh
