@@ -120,10 +120,10 @@ main = do
                               myManageHookFloat <+>
                               manageDocks
         -- any time Full mode, avoid xmobar area
-       , layoutHook         = avoidStruts $ lessBorders OnlyFloat $
-                              toggleLayouts (noBorders Full) $
+       , layoutHook         = lessBorders OnlyFloat $
+                              toggleLayouts (avoidStruts $ noBorders Full) $
                               -- onWorkspace "3" simplestFloat $
-                              myLayout
+                              avoidStruts $ myLayout
         -- xmobar setting
        , logHook            = myLogHook wsbar
        , handleEventHook    = fadeWindowsEventHook
