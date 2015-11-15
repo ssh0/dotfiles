@@ -344,6 +344,10 @@ augroup template
         \  | endif
 augroup END
 "                                                                           }}}
+" thinca/vim-splash                                                         {{{
+NeoBundle 'thinca/vim-splash'
+let g:splash#path = expand('~/.splash-vim.txt')
+"                                                                           }}}
 " rcmdnk/vim-markdown                                                       {{{
 NeoBundle 'rcmdnk/vim-markdown', {
       \ 'depends': ['godlygeek/tabular'],
