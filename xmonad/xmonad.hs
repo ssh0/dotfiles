@@ -18,12 +18,12 @@ import qualified XMonad.StackSet as W  -- myManageHookShift
 import Control.Monad (liftM2)          -- myManageHookShift
 import System.IO                       -- for xmobar
 
-import XMonad.Actions.WindowGo
-import XMonad.Actions.FloatKeys
 import XMonad.Actions.CopyWindow
 import XMonad.Actions.CycleWS
-import XMonad.Actions.UpdatePointer
 import qualified XMonad.Actions.FlexibleResize as Flex -- flexible resize
+import XMonad.Actions.FloatKeys
+import XMonad.Actions.UpdatePointer
+import XMonad.Actions.WindowGo
 import XMonad.Hooks.DynamicLog         -- for xmobar
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.FadeWindows
@@ -33,7 +33,6 @@ import XMonad.Hooks.Place
 import XMonad.Layout
 import XMonad.Layout.DragPane          -- see only two window
 import XMonad.Layout.Gaps
--- import qualified XMonad.Layout.Magnifier as Mag  -- this makes window bigger
 import XMonad.Layout.MultiToggle
 import XMonad.Layout.MultiToggle.Instances
 import XMonad.Layout.NoBorders         -- In Full mode, border is no use
@@ -49,8 +48,8 @@ import XMonad.Layout.TwoPane
 import XMonad.Prompt
 import XMonad.Prompt.Window            -- pops up a prompt with window names
 import XMonad.Util.EZConfig            -- removeKeys, additionalKeys
-import XMonad.Util.Run(spawnPipe)      -- spawnPipe, hPutStrLn
 import XMonad.Util.Run
+import XMonad.Util.Run(spawnPipe)      -- spawnPipe, hPutStrLn
 
 import Graphics.X11.ExtraTypes.XF86
 
@@ -338,7 +337,7 @@ wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws,t]
 -- myXPConfig:        XPConfig                                            {{{
 
 myXPConfig = defaultXPConfig
-                { font              = "xft:TakaoGothic:size=12:antialias=true"
+                { font              = "xft:Migu 1M:size=12:antialias=true"
                 , fgColor           = colorfg
                 , bgColor           = colorNormalbg
                 , borderColor       = colorNormalbg
