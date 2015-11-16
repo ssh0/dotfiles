@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # written by Shotaro Fujimoto (https://github.com/ssh0)
 # This script manages symbolic for dotfiles.
 
@@ -60,7 +60,7 @@ blue=34
 cecho() {
   color=$1
   shift
-  echo "\033[${color}m$@\033[m"
+  echo -e "\033[${color}m$@\033[00m"
 }
 
 makeline(){
