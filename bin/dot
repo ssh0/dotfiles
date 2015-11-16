@@ -2,6 +2,9 @@
 # written by Shotaro Fujimoto (https://github.com/ssh0)
 # This script manages symbolic for dotfiles.
 
+# You can change the dotfiles to clone
+clone_repository='https://github.com/ssh0/dotfiles.git'
+
 dotdir="$HOME/.dotfiles"
 configfile="$HOME/.dotfiles/setup_config_link"
 
@@ -35,7 +38,7 @@ COMMAND
           Remove the all symbolic link in the config file '$configfile'.
 
 OPTION
-      -h: Show this help message.
+      -h,--help:    Show this help message.
 
 COMMAND OPTIONS
       clone [<arg>]
@@ -74,16 +77,22 @@ makeline(){
 
 dot_clone(){
   cloneto="${1:-"$HOME/.dotfiles"}"
-  cecho $blue "\ngit clone https://github.com/ssh0/dotfiles.git ${cloneto}"; makeline
-  git clone https://github.com/ssh0/dotfiles.git "${cloneto}"
+  cecho $blue "\ngit clone ${clone_repository} ${cloneto}"
+  makeline
+  read -p "Continue? [y/N]" confirm
+  if [ "$confirm" != "y" ]; then
+    echo "Aborted."
+    exit 1
+  fi
+  git clone "${clone_repository}" "${cloneto}"
 }
 
 dot_pull(){
   # git pull
-  cecho $blue "\ncd ${dotdir} && git pull"; makeline
+  cecho $blue "\ncd ${dotdir} && git pull"
+  makeline
   cd ${dotdir} && git pull
 }
-
 
 dot_set(){
   interactive=true
@@ -292,24 +301,30 @@ dot_clear(){
 
 # main command handling
 case "$1" in
-  "clone" )
-    shift 1
-    dot_clone $@;;
-  "pull"  )
-    shift 1
-    dot_pull $@;;
-  "set"  )
-    shift 1
-    dot_set $@;;
-  "add"   )
-    shift 1
-    dot_add $@;;
+  "clone")
+    shift 1; dot_clone $@
+    ;;
+  "pull")
+    shift 1; dot_pull $@
+    ;;
+  "set")
+    shift 1; dot_set $@
+    ;;
+  "add")
+    shift 1; dot_add $@
+    ;;
   "unlink")
-    shift 1
-    dot_unlink $@;;
-  "clear" )
-    shift 1
-    dot_clear $@;;
-  "-h"    ) usage ;;
+    shift 1; dot_unlink $@
+    ;;
+  "clear")
+    shift 1; dot_clear $@
+    ;;
+  "-h"|"--help" )
+    usage
+    ;;
+  *)
+    echo "command '$1' not found."
+    usage
+    ;;
 esac
 
