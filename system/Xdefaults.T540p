@@ -1,0 +1,95 @@
+vim: set ft=xdefaults:
+!------------------------------------------------------------------------------
+! Xft settings                                                              {{{
+!------------------------------------------------------------------------------
+
+Xft.dpi:       96
+Xft.antialias: false
+Xft.rgba:      rgb
+Xft.hinting:   true
+Xft.hintstyle: hintslight
+
+!---------------------------------------------------------------------------}}}
+! URxvt settings                                                            {{{
+!------------------------------------------------------------------------------
+
+! For showing img in ranger with w3mimgdisplay, disable this
+! URxvt*.depth:          32
+URxvt.geometry:        90x35
+URxvt*.transparent:    true
+URxvt*.shading:        110
+URxvt.tintColor:       #101010
+URxvt*fading:          0
+! URxvt.urgentOnBell:    true
+URxvt*visualBell:      false
+URxvt*loginShell:      true
+URxvt.saveLines:       2000
+URxvt.internalBorder:  0
+URxvt.lineSpace:       0
+URxvt.intensityStyles: false
+URxvt.perl-ext-common: default,selection
+URxvt.url-launcher:    /usr/bin/xdg-open
+URxvt.mathcer.button:  1
+
+! Fonts
+URxvt.allow_bold:      true
+URxvt*font:            xft:Inconsolata for Powerline:size=15,xft:Migu 1M:size=15
+! Fix font space
+URxvt*letterSpace:     0
+
+! Scrollbar
+URxvt.scrollBar:       false
+URxvt.scrollStyle:     rxvt
+URxvt.scrollBar_right: true
+
+! Cursor
+URxvt.cursorBlink:     true
+URxvt.cursorUnderline: false
+
+! Pointer
+URxvt.pointerBlank:    true
+
+! iso 14755 disable
+URxvt*iso14755:        false
+
+!---------------------------------------------------------------------------}}}
+! Color                                                                     {{{
+!------------------------------------------------------------------------------
+
+*.foreground:  #c6c6c6
+*.background:  #1c1c1c
+*.cursorColor: #00d700
+
+! black
+*.color0:      #353535
+*.color8:      #9e9e9e
+
+! red
+*.color1:      #ef9a9a
+*.color9:      #f489ad
+
+! green
+*.color2:      #a5d6a7
+*.color10:     #b9e18b
+
+! yellow
+*.color3:      #ece391
+*.color11:     #e8cc76
+
+! blue
+*.color4:      #9fc7e8
+*.color12:     #71badc
+
+! magenta
+*.color5:      #e0b1e8
+*.color13:     #ab90db
+
+! cyan
+*.color6:      #a2e2ea
+*.color14:     #71d7cd
+
+! white
+*.color7:      #bdbdbd
+*.color15:     #aaaaaa
+
+!---------------------------------------------------------------------------}}}
