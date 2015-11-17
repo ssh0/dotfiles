@@ -1,7 +1,8 @@
 dotfiles
 ========
 
-This repository contains my dotfiles and some tools in order to make it easy to make symbolic links to the right place and to add a new file into the dotfile directory.
+This repository contains my dotfiles.
+In order to set symbolic link, add new file to the directory, and manage machine specific configurations, I use [dot](https://github.com/ssh0/dot) which is bash script and is simple and configurable.
 
 Contents
 --------
@@ -36,30 +37,27 @@ Install
 Clone this repository in your computer(default: ~/.dotfiles),
 
 ```bash
-bash <(curl -L https://raw.githubusercontent.com/ssh0/dotfiles/master/bin/dot) clone
+bash <(curl -L https://raw.githubusercontent.com/ssh0/dot/master/dot) clone
 ```
 
 And make symbolic links by following command,
 
 ```bash
-~/.dotfiles/bin/dot set
+dot set
 ```
 
 and this script replace existing files interactively.
 
-If you want not to make some links, open `~/.dotfiles/setup_config_link` and comment out these lines.
+If you want not to make some links, open `~/.dotfiles/dotlink` and comment out these lines.
 The lines commented out are ignored by this script.
 
-Usage of '[dot](./bin/dot)' command
+Usage of '[dot](https://github.com/ssh0/dot)' command
 ----------------------
 
-Link relation table is in '[configfile](./setup_config_link)'.
+Configuration file is in '[dotrc](./dotrc)'.
+Link relation table is in '[dotlink](./dotlink)'.
 
-```bash
-configfile=$HOME/.dotfiles/setup_config_link
-```
-
-* Clone ssh0's dotfile repository on your computer.  
+* Clone the dotfile repository on your computer.  
 ```bash
 dot clone [<dir_to_clone>]
 ```
@@ -69,18 +67,15 @@ dot clone [<dir_to_clone>]
 dot pull
 ```
 
-* Make symbolic link interactively.
-  This command sets symbolic links configured in 'configfile'.  
-  (If you have your file already, you can choose the operation
-  interactively: show diff, vimdiff, overwrite, make-backup or do-nothing).  
-  WIth option "-i", this script runs without interaction mode and with "-v", this script shows verbose message.
+* Make symbolic link interactively.  
+  This command sets symbolic links configured in 'dotlink'.(If you have your file already, you can choose the operation interactively: show diff, edit these files, overwrite, make-backup or do-nothing).  With option "-i", this script runs without interaction mode and with "-v", this script shows verbose message.
 ```bash
 dot set [-i][-v]
 ```
 
-* Move the file to the dotfile dir, make the link, and edit 'configfile'.  
+* Move the new file to the dotfile dir, make the link, and edit 'dotlink'.  
 ```bash
-dot add some_file ~/.dotfiles/path/to/the/file
+dot add some_file [~/.dotfiles/path/to/the/file]
 ```
 
 * Unlink the selected symbolic links and copy its original files from the dotfile directory.  
