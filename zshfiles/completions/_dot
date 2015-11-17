@@ -1,9 +1,7 @@
 #compdef dot
 
 _dot() {
-  # local context curcontext="$curcontext" state line
-  local configfile="$HOME/.dotfiles/setup_config_link"
-  local dotrepo="$HOME/.dotfiles/"
+  local context curcontext="$curcontext" state line
   _arguments -C \
     '1: :->cmds' \
     '-h[Show this help message.]' \
@@ -16,9 +14,11 @@ _dot() {
         "clone[Clone ssh0's dotfile repository on your computer.]" \
         "pull[Pull remote dotfile repository (by git).]" \
         "set[Make symbolic link interactively.]" \
-        "add[Move the file to the dotfile dir, make the link, and edit '$configfile'.]" \
+        "add[Move the file to the dotfile dir, make the link, and edit \$dotlink.]" \
+        "edit[Edit \$dotlink.]" \
         "unlink[Unlink the selected symbolic link and copy its original file from the dotfile repository.]" \
-        "clear[Remove the all symbolic link in the config file '$configfile'.]" \
+        "clear[Remove the all symbolic link in the config file \$dotlink.]" \
+        "config[Edit rcfile \$dotrc.]" \
       && ret=0
       ;;
     args)
@@ -29,8 +29,7 @@ _dot() {
           ;;
         "add")
           _arguments \
-            '1: :_path_files' \
-            '2:dotfiles repository:_files -W $dotrepo -P $dotrepo' \
+            '*: :_path_files' \
             && ret=0
           ;;
         "set")
