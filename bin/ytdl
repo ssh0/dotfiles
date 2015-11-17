@@ -31,7 +31,7 @@ do
   case $OPT in
     "A" ) save=false ;;
     "L" ) listfile="${OPTARG}" ;;
-    "e" ) $EDITOR "${listfile}"
+    "e" ) vim + "${listfile}"
           exit 0 ;;
     "h" ) usage;
           exit 1 ;;
