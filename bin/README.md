@@ -51,18 +51,6 @@ else play / pause remote command will be sent to cmus program.
 
 It's useful if you set the shortcut-key with multimedia key.
 
-## [dotmv](./dotmv)
-
-```
-Move the file to dotfiles dir, make the link, and edit setup config
-Usage: dotmv [OPTION] SOURCE DEST(must be set into dotfiles)
-
-OPTION:
-  -m: Add your message for setup configuration file.
-  -h: Show this message.
-```
-
-## [dotunlink](./dotunlink)
 
 ```
 dotunlink
@@ -337,6 +325,22 @@ Each line is the color code of one forground color, out of 17 (default + 16 esca
 followed by a test use of that color on all nine background colors (default + 8 escapes).
 
 from: http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html
+
+## [texmath](./texmath)
+
+```
+NAME
+      texmath - compile latex to png with dvipng (and create texmath file)
+USAGE
+      texmath [-e FILE | FILE] [-h]
+ARGUMENTS
+      -e FILE: Open and edit FILE.
+               Or create it when FILE doesn't exist, 
+      FILE:    If you provide only file name, this script compiles the file with
+               latexmk and then creates png file by dvipng.
+      --help:  Display this help and exit
+
+```
 
 ## [toggle_compton.sh](./toggle_compton.sh)
 
