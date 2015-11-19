@@ -1,105 +1,121 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+# =============================================================================
+# export variables                                                          {{{
+# =============================================================================
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time thatrch oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+# set the zsh root directoy
+export ZSH=$HOME/.zsh
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
+# PATH to /usr/local/lib
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-# [zsh-syntax-highlighting]
-#     $ cd ~/.oh-my-zsh/custom/plugins
-#     $ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-plugins=(zsh-syntax-highlighting tmux)
-
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-
-fpath=($HOME/.zsh/completions $fpath)
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-source $HOME/.zshrc.mine
-export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
+# set language environment
 export LANG=en_US.UTF-8
 export LC_TIME=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+# set PATH
+export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export MANPATH="/usr/local/man:$MANPATH"
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# used to store all the repo clones for antigen
+export ADOTDIR=${ZSH}/antigen
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-#
+# ==========================================================================}}}
+# Antigen (manage zsh plugins)                                              {{{
+# =============================================================================
 
-# zshprofile
-if (which zprof > /dev/null) ;then
-  zprof | less
+antigen_repo_url="https://github.com/zsh-users/antigen.git"
+antigen_raw_url="https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh"
+
+# where to clone antigen
+antigen_root="${ADOTDIR}/repos/antigen"
+
+# if Antigen is not installed, automatically clone it and reload shell
+if [[ ! -f "${antigen_root}/antigen.zsh" ]]; then
+  echo "Antigen is not installed in this machine."
+  echo "Installing Antigen..."
+  echo ""
+  if hash git; then
+    install -d ${antigen_root}
+    git clone ${antigen_repo_url} ${antigen_root}
+  elif hash curl; then
+    install -d ${antigen_root}
+    curl -L ${antigen_raw_url} -o ${antigen_root}/antigen.zsh
+  elif hash wget; then 
+    install -d ${antigen_root}
+    wget ${antigen_raw_url} -o ${antigen_root}/antigen.zsh
+  else
+    echo "git or curl or wget required to install."
+    echo "Aborted."
+    exit 1
+  fi
+  exec zsh -l
 fi
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
+source ${antigen_root}/antigen.zsh
 
-# Display device and resolution
-export OUTPUT_DEV=eDP1
-export OUTPUT_RES=1920x1080
+# bundles {{{
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle robbyrussell/oh-my-zsh lib
+# }}}
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-export no_proxy=localhost,127.0.0.0/8,192.168.1.106,192.168.1.162
-export all_proxy=
-export ALL_PROXY=
-export http_proxy=
-export HTTP_PROXY=
-export https_proxy=
-export HTTPS_PROXY=
-export ftp_proxy=
-export FTP_PROXY=
+# need this
+antigen apply
+
+# ==========================================================================}}}
+# history                                                                   {{{
+# =============================================================================
+
+HISTFILE=${ZSH}/history
+
+# ignore duplication command history list
+setopt hist_ignore_all_dups
+
+# ==========================================================================}}}
+# completions                                                               {{{
+# =============================================================================
+
+# add fpath for completions
+# there are completion functoins named like '_function'.
+fpath=($ZSH/completions $fpath)
+
+# show decription for completion
+zstyle ':completion:*' format '%B%F{magenta}%d%b%f'
+
+autoload -U compinit
+compinit -i -d ~/.zsh/compdump
+
+# ==========================================================================}}}
+# source some files                                                         {{{
+# =============================================================================
+
+# set the prompt theme
+source ${ZSH}/themes/agnoster.zsh-theme
+
+# tmux plugin
+source ${ZSH}/plugins/tmux/tmux.plugin.zsh
+
+# command-not-found
+source /etc/zsh_command_not_found
+
+# some useful aliases
+source "$ZSH/aliases.zsh"
+
+# user specific configuration
+if [[ -f $ZSH/rc.mine ]]; then
+  source $ZSH/rc.mine
+fi
+
+autoload -U add-zsh-hook 2>/dev/null || return
+
+# ==========================================================================}}}
+# bindkeys                                                                  {{{
+# =============================================================================
+
+# edit command line in vim:
+# by pressing: ^xe
+bindkey '^xe' edit-command-line
+
+# Keybinding
+bindkey '^r' peco-select-history
+
+# ==========================================================================}}}
