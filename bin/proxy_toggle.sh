@@ -4,7 +4,8 @@ HTTP_PROXY_HOST="http://www-proxy.waseda.jp:8080"
 HTTPS_PROXY_HOST="https://www-proxy.waseda.jp:8080"
 FTP_PROXY_HOST="ftp://proxy.waseda.jp:21"
 
-shellrc=$HOME/.zshrc  # .bashrc
+# shellrc=$HOME/.zshrc  # .bashrc
+shellrc=${ZSH}/rc.mine  # .bashrc
 
 if [ $# = 0 ]; then
   echo "Error: no args"
