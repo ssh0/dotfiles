@@ -172,6 +172,7 @@
 #   %(prompt)		Prompt for the argument value.
 
 # bind main	C	?git cherry-pick %(commit)
+bind main	Y	!@bash -c "echo -n %(commit) | xsel -i; xsel -o | xsel -i -b"
 bind status	C	!git commit -v
 bind status	P	?git push origin
 # bind stash	P	?git stash pop %(stash)
