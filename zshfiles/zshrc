@@ -55,15 +55,15 @@ fi
 
 source ${antigen_root}/antigen.zsh
 
-# bundles {{{
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle robbyrussell/oh-my-zsh lib/git.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/grep.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/history.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/spectrum.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh
-# antigen bundle b4b4r07/enhancd zsh/enhancd.plugin.zsh
-# }}}
+
+ENHANCD_COMMAND='encd'
+antigen bundle b4b4r07/enhancd zsh/enhancd.plugin.zsh
 
 # need this
 antigen apply
@@ -92,8 +92,20 @@ unsetopt flowcontrol
 setopt auto_menu         # show completion menu on succesive tab press
 setopt complete_in_word
 setopt always_to_end
+setopt auto_param_slash
 
 WORDCHARS=''
+
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*' format '%B%F{magenta}%d%b%f'
+
+zstyle ':completion:*:default' menu select=2
+zstyle ':completion:*:messages' format '%F{yellow}%d'$DEFAULT
+zstyle ':completion:*:warnings' format '%F{red}No matches for:''%F{yelllow} %d'$DEFAULT
+zstyle ':completion:*:options' description 'yes'
+zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'$DEFAULT
+
+zstyle ':completion:*' group-name ''
 
 # case sensitive (but if upper case, don't translate it to lower case.)
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -124,9 +136,6 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
 
 # ... unless we really want to.
 zstyle '*' single-ignored show
-
-# show decription for completion
-zstyle ':completion:*' format '%B%F{magenta}%d%b%f'
 
 # ==========================================================================}}}
 # source some files                                                         {{{
@@ -162,5 +171,8 @@ bindkey '^xe' edit-command-line
 
 # Keybinding
 bindkey '^r' peco-select-history
+
+# reverse-menu-complete by `Shift+Tab`
+bindkey '^[[Z' reverse-menu-complete
 
 # ==========================================================================}}}
