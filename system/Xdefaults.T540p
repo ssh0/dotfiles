@@ -33,7 +33,7 @@ URxvt.mathcer.button:  1
 
 ! Fonts
 URxvt.allow_bold:      true
-URxvt*font:            xft:Inconsolata for Powerline:size=15,xft:Migu 1M:size=15
+URxvt*font:            xft:Inconsolata for Powerline:size=13.5,xft:Migu 1M:size=13.5
 ! Fix font space
 URxvt*letterSpace:     0
 
