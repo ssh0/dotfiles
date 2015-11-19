@@ -41,7 +41,7 @@
 
 # Set your favorite editor.
 # (setting priority: this option > $EDITOR (default) > xdg-open)
-# dot_edit_default_editor='vim +'
+dot_edit_default_editor='vim +'
 
 # Color settings
 
