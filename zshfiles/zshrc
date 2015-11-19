@@ -1,3 +1,12 @@
+# _____________________________/\\\___________________________________
+#  ____________________________\/\\\___________________________________
+#   ____________________________\/\\\___________________________________
+#    __/\\\\\\\\\\\__/\\\\\\\\\\_\/\\\__________/\\/\\\\\\\____/\\\\\\\\_
+#     _\///////\\\/__\/\\\//////__\/\\\\\\\\\\__\/\\\/////\\\_/\\\//////__
+#      ______/\\\/____\/\\\\\\\\\\_\/\\\/////\\\_\/\\\___\///_/\\\_________
+#       ____/\\\/______\////////\\\_\/\\\___\/\\\_\/\\\_______\//\\\________
+#        __/\\\\\\\\\\\__/\\\\\\\\\\_\/\\\___\/\\\_\/\\\________\///\\\\\\\\_
+#         _\///////////__\//////////__\///____\///__\///____________\////////_
 # =============================================================================
 # export variables                                                          {{{
 # =============================================================================
@@ -44,7 +53,7 @@ if [[ ! -f "${antigen_root}/antigen.zsh" ]]; then
     curl -L ${antigen_raw_url} -o ${antigen_root}/antigen.zsh
   elif hash wget; then 
     install -d ${antigen_root}
-    wget ${antigen_raw_url} -o ${antigen_root}/antigen.zsh
+    wget ${antigen_raw_url} -O ${antigen_root}/antigen.zsh
   else
     echo "git or curl or wget required to install."
     echo "Aborted."
@@ -55,7 +64,7 @@ fi
 
 source ${antigen_root}/antigen.zsh
 
-antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-syntax-highlighting zsh-syntax-highlighting.plugin.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/git.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/grep.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/history.zsh
@@ -148,7 +157,11 @@ source ${ZSH}/themes/agnoster.zsh-theme
 source ${ZSH}/plugins/tmux/tmux.plugin.zsh
 
 # command-not-found
-source /etc/zsh_command_not_found
+if [[ -x /usr/lib/command-not-found ]] ; then
+  function command_not_found_handler() {
+  /usr/lib/command-not-found --no-failure-msg -- $1
+}
+fi
 
 # some useful aliases
 source "$ZSH/aliases.zsh"
