@@ -17,7 +17,7 @@ if [ ! -e ${fifofile} ]; then
   mkfifo "${fifofile}"
 fi
 
-PLAYER="mpg123 --control --utf8 --title --preload 1 --buffer 2048 --smooth --remote --fifo ${fifofile}"
+PLAYER="mpg123 --control --utf8 --title --preload 1 --buffer 2048 --smooth --realtime --remote --fifo ${fifofile}"
 
 $PLAYER 2>&1 | grep --line-buffered "StreamTitle" |
   while read line; do
