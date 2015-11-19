@@ -83,9 +83,7 @@ tmuxinator/stream.yml,.tmuxinator/stream.yml
 # Zsh is a shell designed for interactive use, although it is also a
 # powerful scripting language.
 zshfiles/zshrc,.zshrc
-zshfiles/zshrc.mine,.zshrc.mine
-zshfiles/aliases.mine.zsh,.aliases.mine.zsh
-zshfiles/aliases.zsh,.oh-my-zsh/lib/aliases.zsh
+zshfiles/aliases.zsh,.zsh/aliases.zsh
 zshfiles/completions/_dot,.zsh/completions/_dot
 zshfiles/completions/_jupyter,.zsh/completions/_jupyter
 zshfiles/completions/_mkdocs,.zsh/completions/_mkdocs
@@ -100,9 +98,8 @@ zshfiles/completions/_recordmydesktop,.zsh/completions/_recordmydesktop
 zshfiles/completions/_tmuxinator,.zsh/completions/_tmuxinator
 zshfiles/completions/_youtube-dl,.zsh/completions/_youtube-dl
 zshfiles/completions/tig-completion.bash,.zsh/completions/tig-completion.bash
-zshfiles/themes/agnoster.zsh-theme,.oh-my-zsh/themes/agnoster.zsh-theme
-zshfiles/history.zsh,.oh-my-zsh/lib/history.zsh
-zshfiles/plugins/tmux/tmux.plugin.zsh,.oh-my-zsh/plugins/tmux/tmux.plugin.zsh
+zshfiles/themes/agnoster.zsh-theme,.zsh/themes/agnoster.zsh-theme
+zshfiles/plugins/tmux/tmux.plugin.zsh,.zsh/plugins/tmux/tmux.plugin.zsh
 #---------------------------------------------------------------------------}}}
 # bin                                                                       {{{
 bin/README.md,bin/README.md
