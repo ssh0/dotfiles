@@ -226,7 +226,7 @@ main = do
        -- Launch web browser
        , ((modm                    , xK_w      ), spawn "luakit")
        -- Launch dmenu for launching applicatiton
-       , ((modm                    , xK_p      ), spawn "exe=`dmenu_run -l 10 -fn 'Inconsolata for PowerLine:size=20'` && exec $exe")
+       , ((modm                    , xK_p      ), spawn "exe=`dmenu_run -l 10 -fn 'Migu 1M:size=20'` && exec $exe")
        -- Lauch websearch application (See https://github.com/ssh0/web_search)
        , ((mod1Mask .|. controlMask, xK_f      ), spawn "websearch")
        -- Play / Pause media keys
