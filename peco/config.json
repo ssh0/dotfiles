@@ -1,16 +1,14 @@
 {
+    "Prompt": "[peco]",
     "Style": {
-        "Basic": ["on_default", "default"],
+        "Basic": ["on_default", "white"],
         "SavedSelection": ["bold", "on_white", "black"],
-        "Selected": ["underline", "on_cyan", "black"],
+        "Selected": ["bold", "on_black", "white"],
         "Query": ["green", "bold"],
         "Matched": ["black", "on_yellow"]
+    },
+    "Keymap": {
+        "C-t": "peco.ToggleSelection",
+        "C-s": "peco.ToggleSelectionAndSelectNext"
     }
-}
-
-{
-  "Keymap": {
-    "C-t": "peco.ToggleSelection",
-    "C-s": "peco.ToggleSelectionAndSelectNext"
-  }
 }
