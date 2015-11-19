@@ -505,11 +505,11 @@ fi
 # Configurations                                                            {{{
 #------------------------------------------------------------------------------
 
-cfg-aliases() { $EDITOR ~/.aliases.mine.zsh ;}
+cfg-aliases() { $EDITOR $ZSH/aliases.zsh ;}
 cfg-compton() { $EDITOR ~/.config/compton/compton.conf ;}
 cfg-dotlink() { $EDITOR ~/.dotfiles/dotlink ;}
 cfg-dotrc() { $EDITOR ~/.dotfiles/dotrc ;}
-cfg-history() { $EDITOR ~/.zsh_history ;}
+cfg-history() { $EDITOR $ZSH/history ;}
 cfg-latexmkrc() { $EDITOR ~/.latexmkrc ;}
 cfg-luakit() { $EDITOR ~/.config/luakit ;}
 cfg-mpv() { $EDITOR ~/.mpv/config ;}
@@ -529,7 +529,7 @@ cfg-xmodmap() { $EDITOR ~/.Xmodmap ;}
 cfg-xmonad() { $EDITOR ~/.xmonad/xmonad.hs ;}
 cfg-xresources() { $EDITOR ~/.Xresources ;}
 cfg-websearch() { $EDITOR ~/Workspace/python/web_search/websearch/config.py ;}
-cfg-zshrc() { $EDITOR ~/.zshrc.mine ;}
+cfg-zshrc() { $EDITOR ~/.zshrc ;}
 
 #---------------------------------------------------------------------------}}}
 # Configurations Reload                                                     {{{
@@ -538,6 +538,6 @@ cfg-zshrc() { $EDITOR ~/.zshrc.mine ;}
 rld-xdefaults() { xrdb ~/.Xdefaults ;}
 rld-xmodmap() { xmodmap ~/.Xmodmap ;}
 rld-xresources() { xrdb -load ~/.Xresources ;}
-rld-zshrc() { source ~/.zshrc ;}
+rld-zshrc() { exec zsh -l ;}
 
 #---------------------------------------------------------------------------}}}
