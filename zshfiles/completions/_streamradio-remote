@@ -1,0 +1,28 @@
+#compdef streamradio-remote
+
+_streamradio-remote() {
+  _arguments -C \
+    '1: :->cmds' \
+    '2:: :->args' \
+    {-h,--help}'[Show the help messages.]: :' \
+    && ret=0
+
+  case $state in
+    cmds)
+      _values "streamradio-remote command" \
+          "start[Start streaming of given URL]" \
+          "pause[Pause/Resume the streaming]" \
+          "quit[Stop the streaming and abort streamradio.]"
+      ret=0
+      ;;
+    args)
+      if [ "$line[1]" = "start" ]; then
+        _arguments \
+          "*:URL:( "$(cat ~/.pyradio/stations.csv | peco | awk 'BEGIN {FS=", "; }  { print $2; }')" )"
+          ret=0
+      fi
+      ;;
+  esac
+
+  return $ret
+}
