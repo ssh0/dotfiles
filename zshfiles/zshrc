@@ -5,6 +5,8 @@
 # set the zsh root directoy
 export ZSH=$HOME/.zsh
 
+export ZSH_CACHE_DIR=$ZSH/cache
+
 # PATH to /usr/local/lib
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
@@ -17,7 +19,7 @@ export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/
 export MANPATH="/usr/local/man:$MANPATH"
 
 # used to store all the repo clones for antigen
-export ADOTDIR=${ZSH}/antigen
+export ADOTDIR=$ZSH/antigen
 
 # ==========================================================================}}}
 # Antigen (manage zsh plugins)                                              {{{
@@ -55,7 +57,12 @@ source ${antigen_root}/antigen.zsh
 
 # bundles {{{
 antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle robbyrussell/oh-my-zsh lib
+antigen bundle robbyrussell/oh-my-zsh lib/git.zsh
+antigen bundle robbyrussell/oh-my-zsh lib/grep.zsh
+antigen bundle robbyrussell/oh-my-zsh lib/history.zsh
+antigen bundle robbyrussell/oh-my-zsh lib/spectrum.zsh
+antigen bundle robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh
+antigen bundle b4b4r07/enhancd zsh/enhancd.plugin.zsh
 # }}}
 
 # need this
@@ -78,11 +85,48 @@ setopt hist_ignore_all_dups
 # there are completion functoins named like '_function'.
 fpath=($ZSH/completions $fpath)
 
+autoload -U compinit
+compinit
+
+unsetopt flowcontrol
+setopt auto_menu         # show completion menu on succesive tab press
+setopt complete_in_word
+setopt always_to_end
+
+WORDCHARS=''
+
+# case sensitive (but if upper case, don't translate it to lower case.)
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+zstyle ':completion:*' list-colors ''
+
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
+
+# disable named-directories autocompletion
+zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
+
+# Use caching so that commands like apt and dpkg complete are useable
+zstyle ':completion::complete:*' use-cache true
+zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
+
+# Don't complete uninteresting users
+zstyle ':completion:*:*:*:users' ignored-patterns \
+        adm amanda apache at avahi avahi-autoipd beaglidx bin cacti canna \
+        clamav daemon dbus distcache dnsmasq dovecot fax ftp games gdm \
+        gkrellmd gopher hacluster haldaemon halt hsqldb ident junkbust kdm \
+        ldap lp mail mailman mailnull man messagebus  mldonkey mysql nagios \
+        named netdump news nfsnobody nobody nscd ntp nut nx obsrun openvpn \
+        operator pcap polkitd postfix postgres privoxy pulse pvm quagga radvd \
+        rpc rpcuser rpm rtkit scard shutdown squid sshd statd svn sync tftp \
+        usbmux uucp vcsa wwwrun xfs '_*'
+
+# ... unless we really want to.
+zstyle '*' single-ignored show
+
 # show decription for completion
 zstyle ':completion:*' format '%B%F{magenta}%d%b%f'
-
-autoload -U compinit
-compinit -i -d ~/.zsh/compdump
 
 # ==========================================================================}}}
 # source some files                                                         {{{
@@ -105,14 +149,15 @@ if [[ -f $ZSH/rc.mine ]]; then
   source $ZSH/rc.mine
 fi
 
-autoload -U add-zsh-hook 2>/dev/null || return
-
 # ==========================================================================}}}
 # bindkeys                                                                  {{{
 # =============================================================================
 
 # edit command line in vim:
 # by pressing: ^xe
+# Edit the current command line in $EDITOR
+autoload -U edit-command-line
+zle -N edit-command-line
 bindkey '^xe' edit-command-line
 
 # Keybinding
