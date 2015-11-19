@@ -5,7 +5,7 @@
 #------------------------------------------------------------------------------
 
 # find alternative apps if it is installed on your system
-find_alt() { for i;do which "$i" >/dev/null && { echo "$i"; return 0;};done;return 1; }
+find_alt() { for i;do hash "$i" >/dev/null && { echo "$i"; return 0;};done;return 1; }
 
 # set the default program
 # the first program in the array will be chosen as the default
@@ -39,6 +39,9 @@ alias :q='exit'
 # thefuck (https://github.com/nvbn/thefuck)
 alias fuck='eval "$(thefuck $(fc -ln -1 | tail -n 1)); fc -R"'
 
+# Colorize 
+# ========
+
 # mplayer alias
 alias mplayer='mplayer -msgcolor'
 
@@ -46,7 +49,7 @@ alias mplayer='mplayer -msgcolor'
 alias twitter='twitter -f ansi'
 
 # colordiff
-if [[ -x `which colordiff` ]]; then
+if hash colordiff; then
   alias diff='colordiff -u'
 else
   alias diff='diff -u'
@@ -143,7 +146,7 @@ compdef r=ranger
 
 function peco-select-history() {
     typeset tac
-    if which tac > /dev/null; then
+    if hash tac > /dev/null; then
         tac=tac
     else
         tac='tail -r'
@@ -447,9 +450,9 @@ function __my_preexec_end_timetrack() {
 
     if test -n "${REMOTEHOST}${SSH_CONNECTION}"; then
         notify_method="remotehost"
-    elif which growlnotify >/dev/null 2>&1; then
+    elif hash growlnotify >/dev/null 2>&1; then
         notify_method="growlnotify"
-    elif which notify-send >/dev/null 2>&1; then
+    elif hash notify-send >/dev/null 2>&1; then
         notify_method="notify-send"
     else
         return
@@ -494,8 +497,8 @@ function __my_preexec_end_timetrack() {
     unset __timetrack_command
 }
 
-if which growlnotify >/dev/null 2>&1 ||
-    which notify-send >/dev/null 2>&1 ||
+if hash growlnotify >/dev/null 2>&1 ||
+    hash >/dev/null 2>&1 ||
     test -n "${REMOTEHOST}${SSH_CONNECTION}"; then
     add-zsh-hook preexec __my_preexec_start_timetrack
     add-zsh-hook precmd __my_preexec_end_timetrack
