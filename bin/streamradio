@@ -1,6 +1,12 @@
 #!/bin/sh -e
 # written by Shotaro Fujimoto (https://github.com/ssh0)
 
+if [ $# -gt 0 ]; then
+  echo "This script needs no arguments."
+  echo "You mean 'streamradio-remote $1' ?"
+  exit 1
+fi
+
 streamradiocachedir="$HOME/.cache/streamradio"
 if [ ! -e ${streamradiocachedir} ]; then
   mkdir -p "${streamradiocachedir}"

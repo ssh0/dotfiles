@@ -11,6 +11,18 @@ defaultstation="http://streaming.radionomy.com/J-PopProjectRadio"
 
 station="$(head -n 1 "${cachefile}")"
 
+usage() {
+  cat <<EOF
+
+streamradio-remote - remote control script with streamradio
+
+SYNOPSYS
+  streamradio-remote [-h|--help] [start <URL>] [pause] [quit]
+
+EOF
+  exit 1
+}
+
 if [ "$1" = "pause" ]; then
   echo "pause" >> "${fifofile}"
 elif [ "$1" = "quit" ]; then
@@ -23,4 +35,6 @@ elif [ "$1" = "start" ]; then
   fi
   echo "${station}" > "${cachefile}"
   echo "load ${station}" >> "${fifofile}"
+elif [ "$1" = "-h" -o "$1" = "--help" ]; then
+  usage
 fi
