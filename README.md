@@ -8,11 +8,11 @@ Contents
 --------
 
 * XMonad([http://xmonad.org/](http://xmonad.org/))
-    * [my xmond.hs](./xmonad/xmonad.hs)
+    * [my xmonad.hs](./xmonad/xmonad.hs)
 * tmux([https://tmux.github.io/](https://tmux.github.io/))
     * [my tmux.conf](./rcfiles/tmux.conf)
 * zsh([http://www.zsh.org/](http://www.zsh.org/))
-    * oh-my-zsh([https://github.com/robbyrussell/oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh))
+    * antigen(https://github.com/zsh-users/antigen[https://github.com/zsh-users/antigen])
     * [my zshfiles](./zshfiles/)
 * vim([http://www.vim.org/](http://www.vim.org/))
     * [my vimrc](./vimfiles/vimrc)
@@ -34,56 +34,53 @@ Screenshots
 Install
 -------
 
+### Using dot
+
 Clone this repository in your computer(default: ~/.dotfiles),
 
-```bash
-bash <(curl -L https://raw.githubusercontent.com/ssh0/dot/master/dot) clone
+First, install dot.
+
+Clone dot's project repository into your computer:
+
+```
+git clone https://github.com/ssh0/dot.git ~/.git/dot
 ```
 
-And make symbolic links by following command,
+Next, run this command for install:
 
-```bash
+```
+cd ~/.git/dot
+sudo make install
+```
+
+Maks sure if you successfully installed dot by
+
+```
+dot --help
+```
+
+Clone this repository to your specified directory (default: `~/.dotfiles`).
+
+```
+dot clone [/path/you/want/to/clone]
+```
+
+In order to make symbolilinks:
+
+```
 dot set
 ```
 
-and this script replace existing files interactively.
+In case that there are exisiting files, the script asks you what to do.
 
-If you want not to make some links, open `~/.dotfiles/dotlink` and comment out these lines.
-The lines commented out are ignored by this script.
+If you don't want to add some files, you can comment out the line correspond to them in `~/.dotfiles/dotlink` with "#".
 
-Usage of '[dot](https://github.com/ssh0/dot)' command
-----------------------
+### Simple installation without dot
 
-Configuration file is in '[dotrc](./dotrc)'.
-Link relation table is in '[dotlink](./dotlink)'.
+Clone or folk this repository:
 
-* Clone the dotfile repository on your computer.  
-```bash
-dot clone [<dir_to_clone>]
+```
+git clone https://github.com/ssh0/dotfiles.git ~/.ssh0-dotfiles
 ```
 
-* Pull remote dotfile repository (by git).  
-```bash
-dot pull
-```
-
-* Make symbolic link interactively.  
-  This command sets symbolic links configured in 'dotlink'.(If you have your file already, you can choose the operation interactively: show diff, edit these files, overwrite, make-backup or do-nothing).  With option "-i", this script runs without interaction mode and with "-v", this script shows verbose message.
-```bash
-dot set [-i][-v]
-```
-
-* Move the new file to the dotfile dir, make the link, and edit 'dotlink'.  
-```bash
-dot add some_file [~/.dotfiles/path/to/the/file]
-```
-
-* Unlink the selected symbolic links and copy its original files from the dotfile directory.  
-```bash
-dot unlink <link> [<link> <link> ... ]
-```
-
-* Remove the *all* symbolic link written in the config file 'configfile'.
-```bash
-dot clear
-```
+Then you can modify or copy the file you want.
