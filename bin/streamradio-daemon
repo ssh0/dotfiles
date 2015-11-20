@@ -1,0 +1,30 @@
+#!/bin/sh -e
+# written by Shotaro Fujimoto (https://github.com/ssh0)
+
+if [ $# -gt 0 ]; then
+  echo "This script needs no arguments."
+  echo "You mean 'streamradio $1' ?"
+  exit 1
+fi
+
+streamradiocachedir="$HOME/.cache/streamradio"
+if [ ! -e ${streamradiocachedir} ]; then
+  mkdir -p "${streamradiocachedir}"
+fi
+cachefile="${streamradiocachedir}/station"
+fifofile="${streamradiocachedir}/fifo"
+if [ ! -e ${fifofile} ]; then
+  mkfifo "${fifofile}"
+fi
+
+PLAYER="mpg123 --control --utf8 --title --preload 1 --buffer 2048 --smooth --realtime --remote --fifo ${fifofile}"
+
+$PLAYER 2>&1 | grep --line-buffered "StreamTitle" |
+  while read line; do
+    line="$(echo $line | sed -e 's/;.*//' -e 's/.*=//' -e "s/'//g")"
+    echo $line >> "${cachefile}"
+    notify-send -a streamradio -t 5000 "Now playing:" "$line" \
+      -i /usr/share/icons/gnome/scalable/actions/media-playback-start-symbolic.svg
+  done
+
+exit 0

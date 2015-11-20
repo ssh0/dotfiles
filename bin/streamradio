@@ -1,30 +1,56 @@
-#!/bin/sh -e
+#!/bin/sh
 # written by Shotaro Fujimoto (https://github.com/ssh0)
 
-if [ $# -gt 0 ]; then
-  echo "This script needs no arguments."
-  echo "You mean 'streamradio-remote $1' ?"
+cachefile="$HOME/.cache/streamradio/station"
+if [ ! -e ${cachefile} ]; then
+  touch "${cachefile}"
+fi
+fifofile="$HOME/.cache/streamradio/fifo"
+stationfile="$HOME/.pyradio/stations.csv"
+
+defaultstation="http://streaming.radionomy.com/J-PopProjectRadio"
+
+station="$(head -n 1 "${cachefile}")"
+
+usage() {
+  cat <<EOF
+
+streamradio - remote control script with streamradio
+
+SYNOPSYS
+  streamradio [-h|--help] [start <URL>] [pause] [list [stations|current]] [quit]
+
+EOF
   exit 1
-fi
+}
 
-streamradiocachedir="$HOME/.cache/streamradio"
-if [ ! -e ${streamradiocachedir} ]; then
-  mkdir -p "${streamradiocachedir}"
+if [ "$1" = "pause" ]; then
+  echo "pause" >> "${fifofile}"
+elif [ "$1" = "quit" ]; then
+  echo "quit" >> "${fifofile}"
+elif [ "$1" = "start" ]; then
+  if [ ! "$2" = "" ];then
+    station="$2"
+  elif [ "${station}" = "" ]; then
+    station="${defaultstation}"
+  fi
+  echo "${station}" > "${cachefile}"
+  echo "load ${station}" >> "${fifofile}"
+elif [ "$1" = "list" ]; then
+  if [ "$2" = "stations" ]; then
+    if hash peco; then
+      cat ${stationfile} | peco | awk 'BEGIN {FS=", "; }  { print $2; }'
+    else
+      cat ${stationfile}
+    fi
+  elif [ "$2" = "current" ]; then
+    cat ${cachefile}
+  fi
+elif [ "$1" = "-h" -o "$1" = "--help" ]; then
+  usage
+else
+  echo "Unknown command: $1"
+  usage
 fi
-cachefile="${streamradiocachedir}/station"
-fifofile="${streamradiocachedir}/fifo"
-if [ ! -e ${fifofile} ]; then
-  mkfifo "${fifofile}"
-fi
-
-PLAYER="mpg123 --control --utf8 --title --preload 1 --buffer 2048 --smooth --realtime --remote --fifo ${fifofile}"
-
-$PLAYER 2>&1 | grep --line-buffered "StreamTitle" |
-  while read line; do
-    line="$(echo $line | sed -e 's/;.*//' -e 's/.*=//' -e "s/'//g")"
-    echo $line >> "${cachefile}"
-    notify-send -a streamradio -t 5000 "Now playing:" "$line" \
-      -i /usr/share/icons/gnome/scalable/actions/media-playback-start-symbolic.svg
-  done
 
 exit 0
