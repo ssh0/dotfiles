@@ -170,7 +170,7 @@ if [[ -x /usr/lib/command-not-found ]] ; then
 fi
 
 # some useful aliases
-source "$ZSH/aliases.zsh"
+source $ZSH/aliases.zsh
 
 # user specific configuration
 if [[ -f $ZSH/rc.mine ]]; then
