@@ -1,5 +1,5 @@
 {
-    "Prompt": "[peco]",
+    "Prompt": "██",
     "Layout": "bottom-up",
     "Style": {
         "Basic": ["on_default", "white"],
