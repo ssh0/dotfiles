@@ -10,8 +10,9 @@ _streamradio-remote() {
   case $state in
     cmds)
       _values "streamradio-remote command" \
-          "start[Start streaming of given URL]" \
-          "pause[Pause/Resume the streaming]" \
+          "start[Start streaming of given URL.]" \
+          "pause[Pause/Resume the streaming.]" \
+          "list[List some informations.]" \
           "quit[Stop the streaming and abort streamradio.]"
       ret=0
       ;;
@@ -20,6 +21,11 @@ _streamradio-remote() {
         _arguments \
           "*:URL:( "$(cat ~/.pyradio/stations.csv | peco | awk 'BEGIN {FS=", "; }  { print $2; }')" )"
           ret=0
+      elif [ "$line[1]" = "list" ]; then
+        _values "list what" \
+          "stations[List up stations.]" \
+          "current[List up current streaming information.]"
+        ret=0
       fi
       ;;
   esac
