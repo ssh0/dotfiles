@@ -71,14 +71,14 @@ colorNormalbg  = "#1c1c1c"
 colorfg        = "#9fa8b1"
 
 -- Border width
-borderwidth = 6
+borderwidth = 2
 
 -- Border color
 mynormalBorderColor  = colorNormalbg
 myfocusedBorderColor = colorBlue
 
 -- gapwidth
-gapwidth  = 0
+gapwidth  = 2
 gapwidthU = 7
 gapwidthD = 8
 gapwidthL = 33
@@ -119,13 +119,14 @@ main = do
                               myManageHookFloat <+>
                               manageDocks
         -- any time Full mode, avoid xmobar area
-       , layoutHook         = lessBorders OnlyFloat $
+       , layoutHook         = -- lessBorders OnlyFloat $
                               toggleLayouts (avoidStruts $ noBorders Full) $
                               -- onWorkspace "3" simplestFloat $
                               avoidStruts $ myLayout
         -- xmobar setting
        , logHook            = myLogHook wsbar
-       , handleEventHook    = fadeWindowsEventHook
+       , handleEventHook    = fadeWindowsEventHook <+>
+                              fullscreenEventHook
        , workspaces         = myWorkspaces
        , modMask            = modm
        , mouseBindings      = newMouse
@@ -147,17 +148,13 @@ main = do
        -- Toggle layout (Fullscreen mode)
        , ((modm                , xK_f      ), sendMessage ToggleLayout)
        -- Move the focused window
-       , ((modm .|. controlMask, xK_Right  ), withFocused (keysMoveWindow (6,0)))
-       , ((modm .|. controlMask, xK_Left   ), withFocused (keysMoveWindow (-6,0)))
-       , ((modm .|. controlMask, xK_Up     ), withFocused (keysMoveWindow (0,-6)))
-       , ((modm .|. controlMask, xK_Down   ), withFocused (keysMoveWindow (0,6)))
+       , ((modm .|. controlMask, xK_Right  ), withFocused (keysMoveWindow (2,0)))
+       , ((modm .|. controlMask, xK_Left   ), withFocused (keysMoveWindow (-2,0)))
+       , ((modm .|. controlMask, xK_Up     ), withFocused (keysMoveWindow (0,-2)))
+       , ((modm .|. controlMask, xK_Down   ), withFocused (keysMoveWindow (0,2)))
        -- Resize the focused window
-       , ((modm                , xK_s      ), withFocused (keysResizeWindow (-12,-12) (0.5,0.5)))
-       , ((modm                , xK_i      ), withFocused (keysResizeWindow (12,12) (0.5,0.5)))
-       , ((modm .|. controlMask, xK_period ), withFocused (keysResizeWindow (6,0) (0,0)))
-       , ((modm .|. controlMask, xK_comma  ), withFocused (keysResizeWindow (-6,0) (0,0)))
-       , ((modm .|. controlMask, xK_a      ), withFocused (keysResizeWindow (0,-6) (0,0)))
-       , ((modm .|. controlMask, xK_z      ), withFocused (keysResizeWindow (0,6) (0,0)))
+       , ((modm                , xK_s      ), withFocused (keysResizeWindow (-6,-6) (0.5,0.5)))
+       , ((modm                , xK_i      ), withFocused (keysResizeWindow (6,6) (0.5,0.5)))
        -- Increase / Decrese the number of master pane
        , ((modm .|. shiftMask  , xK_semicolon), sendMessage $ IncMasterN 1)
        , ((modm                , xK_minus  ), sendMessage $ IncMasterN (-1))
@@ -304,6 +301,7 @@ myManageHookFloat = composeAll
     , className =? "Websearch"        --> (doRectFloat $ W.RationalRect 0.45 0.4 0.1 0.01)
     , title     =? "Speedbar"         --> doCenterFloat
     , title     =? "urxvt_float"      --> doCenterFloat
+    , isFullscreen                    --> doFullFloat
     , stringProperty "WM_NAME" =? "LINE" --> (doRectFloat $ W.RationalRect 0.60 0.1 0.39 0.82)
     , stringProperty "WM_NAME" =? "Google Keep" --> (doRectFloat $ W.RationalRect 0.3 0.1 0.4 0.82)
     , stringProperty "WM_NAME" =? "tmptex.pdf - 1/1 (96 dpi)" --> (doRectFloat $ W.RationalRect 0.29 0.25 0.42 0.5)
