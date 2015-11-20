@@ -39,6 +39,11 @@ alias :q='exit'
 # thefuck (https://github.com/nvbn/thefuck)
 alias fuck='eval "$(thefuck $(fc -ln -1 | tail -n 1)); fc -R"'
 
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g ......='../../../../..'
+
 # Colorize 
 # ========
 
@@ -163,7 +168,7 @@ zle -N peco-select-history
 #------------------------------------------------------------------------------
 
 function agvim(){
-  vim $(ag $@ | peco --query "$LBUFFER" --prompt ">" | awk -F : '{printf("-c %s %s"),$2,$1;}')
+  vim $(ag $@ | peco --query "$LBUFFER" | awk -F : '{printf("-c %s %s"),$2,$1;}')
 }
 
 #---------------------------------------------------------------------------}}}
