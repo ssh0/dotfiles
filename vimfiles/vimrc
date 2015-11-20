@@ -52,10 +52,6 @@ NeoBundle 'surround.vim'
 " tpope/vim-commentary                                                      {{{
 NeoBundle 'tpope/vim-commentary'
 "                                                                           }}}
-" tpope/vim-unimpaired                                                      {{{
-" complementary pairs of mappings
-NeoBundle 'tpope/vim-unimpaired'
-"                                                                           }}}
 " Shougo/unite.vim                                                          {{{
 NeoBundleLazy 'Shougo/unite.vim', {
       \ 'autoload': {
