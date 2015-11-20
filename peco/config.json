@@ -9,6 +9,8 @@
     },
     "Keymap": {
         "C-t": "peco.ToggleSelection",
-        "C-s": "peco.ToggleSelectionAndSelectNext"
+        "C-s": "peco.ToggleSelectionAndSelectNext",
+        "C-f": "peco.ScrollPageDown",
+        "C-b": "peco.ScrollPageUp"
     }
 }
