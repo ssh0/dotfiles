@@ -99,6 +99,7 @@ compinit
 
 unsetopt flowcontrol
 setopt auto_menu         # show completion menu on succesive tab press
+setopt interactive_comments
 setopt complete_in_word
 setopt always_to_end
 setopt auto_param_slash
@@ -146,6 +147,11 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
 # ... unless we really want to.
 zstyle '*' single-ignored show
 
+# history search
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+
 # ==========================================================================}}}
 # source some files                                                         {{{
 # =============================================================================
@@ -175,6 +181,8 @@ fi
 # bindkeys                                                                  {{{
 # =============================================================================
 
+bindkey -e
+
 # edit command line in vim:
 # by pressing: ^xe
 # Edit the current command line in $EDITOR
@@ -187,5 +195,9 @@ bindkey '^r' peco-select-history
 
 # reverse-menu-complete by `Shift+Tab`
 bindkey '^[[Z' reverse-menu-complete
+
+# by C-p, C-n
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
 
 # ==========================================================================}}}
