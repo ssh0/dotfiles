@@ -14,7 +14,7 @@ dotfiles
 * tmux([https://tmux.github.io/](https://tmux.github.io/))
     * [my tmux.conf](./rcfiles/tmux.conf)
 * zsh([http://www.zsh.org/](http://www.zsh.org/))
-    * antigen(https://github.com/zsh-users/antigen[https://github.com/zsh-users/antigen])
+    * antigen([https://github.com/zsh-users/antigen](https://github.com/zsh-users/antigen))
     * [my zshfiles](./zshfiles/)
 * vim([http://www.vim.org/](http://www.vim.org/))
     * [my vimrc](./vimfiles/vimrc)
