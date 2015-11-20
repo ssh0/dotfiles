@@ -1,5 +1,6 @@
 {
     "Prompt": "[peco]",
+    "Layout": "bottom-up",
     "Style": {
         "Basic": ["on_default", "white"],
         "SavedSelection": ["bold", "on_white", "black"],
@@ -10,6 +11,8 @@
     "Keymap": {
         "C-t": "peco.ToggleSelection",
         "C-s": "peco.ToggleSelectionAndSelectNext",
+        "C-j": "peco.SelectDown",
+        "C-k": "peco.SelectUp",
         "C-f": "peco.ScrollPageDown",
         "C-b": "peco.ScrollPageUp"
     }
