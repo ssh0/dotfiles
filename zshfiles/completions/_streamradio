@@ -1,6 +1,6 @@
-#compdef streamradio-remote
+#compdef streamradio
 
-_streamradio-remote() {
+_streamradio() {
   _arguments -C \
     '1: :->cmds' \
     '2:: :->args' \
@@ -9,7 +9,7 @@ _streamradio-remote() {
 
   case $state in
     cmds)
-      _values "streamradio-remote command" \
+      _values "streamradio command" \
           "start[Start streaming of given URL.]" \
           "pause[Pause/Resume the streaming.]" \
           "list[List some informations.]" \
