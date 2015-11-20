@@ -402,6 +402,12 @@ NeoBundle 'moznion/hateblo.vim', {
 " config file is in ~/.hateblo.vim
 " (You should create manually. See the project's README.)
 "                                                                           }}}
+" googlesuggest-complete-vim                                                {{{
+" set complete function from googlesuggest
+" Require:
+"   set completefunc=googlesuggest#Complete
+NeoBundle 'mattn/googlesuggest-complete-vim'
+"                                                                           }}}
 " Lolaltog/powerline-fontpatcher                                            {{{
 NeoBundle 'Lokaltog/powerline-fontpatcher'
 "                                                                           }}}
