@@ -76,6 +76,9 @@ antigen bundle robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh
 ENHANCD_COMMAND='c'
 antigen bundle b4b4r07/enhancd zsh/enhancd.plugin.zsh
 
+# need this
+antigen apply
+
 # antigen-bundle-noload: return file location string.
 source $ADOTDIR/antigen_bundle_noload.zsh
 
@@ -87,10 +90,6 @@ source $ADOTDIR/antigen_bundle_noload.zsh
 dircolorsfile=$(antigen-bundle-noload ivoarch/dircolors-zenburn dircolors)
 eval $(dircolors "$dircolorsfile")
 
-# need this
-antigen apply
-
-# avoid clean
 export _ANTIGEN_BUNDLE_RECORD="$(cat $ADOTDIR/antigen_bundle_record)"
 
 # ==========================================================================}}}
