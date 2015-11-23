@@ -688,6 +688,7 @@ nnoremap で de
 inoremap <silent> っj <ESC>
 
 nnoremap っz zz
+nnoremap ・ /
 "}}}
 
 " quote and bracket
