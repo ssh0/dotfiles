@@ -72,6 +72,7 @@ antigen bundle robbyrussell/oh-my-zsh lib/history.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/spectrum.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/termsupport.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh
+antigen bundle fcambus/ansiweather
 
 ENHANCD_COMMAND='c'
 antigen bundle b4b4r07/enhancd zsh/enhancd.plugin.zsh

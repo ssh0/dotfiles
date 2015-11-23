@@ -254,3 +254,6 @@ luakit/plugins/adblock/exceptionrules.txt,.local/share/luakit/adblock/exceptionr
 # [tig](https://github.com/jonas/tig)                                       {{{
 rcfiles/tigrc,.tigrc
 #---------------------------------------------------------------------------}}}
+# [ansiweather](https://github.com/fcambus/ansiweather)                     {{{
+rcfiles/ansiweatherrc,.ansiweatherrc
+#---------------------------------------------------------------------------}}}
