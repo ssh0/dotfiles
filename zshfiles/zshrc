@@ -63,7 +63,6 @@ if [[ ! -f "${antigen_root}/antigen.zsh" ]]; then
 fi
 
 source ${antigen_root}/antigen.zsh
-_ANTIGEN_BUNDLE_RECORD="${antigen_repo_url} antigen.zsh plugin true"
 
 antigen bundle zsh-users/zsh-syntax-highlighting zsh-syntax-highlighting.plugin.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/git.zsh
