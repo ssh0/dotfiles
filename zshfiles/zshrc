@@ -37,6 +37,8 @@ export ENHANCD_COMMAND='c'
 # zgen                                                                      {{{
 # =============================================================================
 
+ZGEN_AUTOLOAD_COMPINIT=false
+
 zgen_repo_url="https://github.com/tarjoilija/zgen.git"
 zgen_raw_url="https://raw.githubusercontent.com/tarjoilija/zgen.git"
 
@@ -79,7 +81,7 @@ if ! zgen saved; then
     zgen load robbyrussell/oh-my-zsh lib/termsupport.zsh
     zgen load robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh
     zgen load fcambus/ansiweather
-    zgen load b4b4r07/enhancd zsh/enhancd.plugin.zsh
+    zgen load b4b4r07/enhancd zsh
 
     # save all to init script
     zgen save
@@ -167,7 +169,7 @@ compinit
 # set the prompt theme
 source "${ZSH_ROOT}/themes/agnoster.zsh-theme"
 
-eval $(dircolors "${ZSH_ROOT}/dircolors/dircolors-zenburn/dircolors")
+eval $(dircolors "${ZSH_ROOT}/dircolors/dircolors-zenburn")
 
 # tmux plugin
 source "${ZSH_ROOT}/plugins/tmux/tmux.plugin.zsh"
