@@ -100,6 +100,7 @@ zshfiles/completions/_streamradio,.zsh/completions/_streamradio
 zshfiles/completions/_tmuxinator,.zsh/completions/_tmuxinator
 zshfiles/completions/_youtube-dl,.zsh/completions/_youtube-dl
 zshfiles/completions/tig-completion.bash,.zsh/completions/tig-completion.bash
+zshfiles/dircolors/dircolors-zenburn,.zsh/dircolors/dircolors-zenburn
 zshfiles/themes/agnoster.zsh-theme,.zsh/themes/agnoster.zsh-theme
 zshfiles/plugins/tmux/tmux.plugin.zsh,.zsh/plugins/tmux/tmux.plugin.zsh
 #---------------------------------------------------------------------------}}}
