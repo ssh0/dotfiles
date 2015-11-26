@@ -12,7 +12,7 @@
 # =============================================================================
 
 # set the zsh root directoy
-export ZSH=$HOME/.zsh
+export ZSH_ROOT=$HOME/.zsh
 
 export ZSH_CACHE_DIR=$ZSH/cache
 
@@ -30,30 +30,33 @@ export MANPATH="/usr/local/man:$MANPATH"
 # used to store all the repo clones for antigen
 export ADOTDIR=$ZSH/antigen
 
+# enhancd by "c"
+export ENHANCD_COMMAND='c'
+
 # ==========================================================================}}}
-# Antigen (manage zsh plugins)                                              {{{
+# zgen                                                                      {{{
 # =============================================================================
 
-antigen_repo_url="https://github.com/zsh-users/antigen.git"
-antigen_raw_url="https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh"
+zgen_repo_url="https://github.com/tarjoilija/zgen.git"
+zgen_raw_url="https://raw.githubusercontent.com/tarjoilija/zgen.git"
 
 # where to clone antigen
-antigen_root="${ADOTDIR}/repos/antigen"
+zgen_root="${HOME}/.zsh/plugins/zgen"
 
 # if Antigen is not installed, automatically clone it and reload shell
-if [[ ! -f "${antigen_root}/antigen.zsh" ]]; then
-  echo "Antigen is not installed in this machine."
-  echo "Installing Antigen..."
+if [[ ! -f "${zgen_root}/zgen.zsh" ]]; then
+  echo "zgen is not installed in this machine."
+  echo "Installing zgen..."
   echo ""
   if hash git; then
-    install -d "${antigen_root}"
-    git clone "${antigen_repo_url}" "${antigen_root}"
+    install -d "${zgen_root}"
+    git clone "${zgen_repo_url}" "${zgen_root}"
   elif hash curl; then
-    install -d "${antigen_root}"
-    curl -L "${antigen_raw_url}" -o "${antigen_root}/antigen.zsh"
+    install -d "${zgen_root}"
+    curl -L "${zgen_raw_url}" -o "${zgen_root}/zgen.zsh"
   elif hash wget; then 
-    install -d "${antigen_root}"
-    wget "${antigen_raw_url}" -O "${antigen_root}/antigen.zsh"
+    install -d "${zgen_root}"
+    wget "${zgen_raw_url}" -O "${zgen_root}/zgen.zsh"
   else
     echo "git or curl or wget required to install."
     echo "Aborted."
@@ -62,41 +65,31 @@ if [[ ! -f "${antigen_root}/antigen.zsh" ]]; then
   exec zsh -l
 fi
 
-source "${antigen_root}/antigen.zsh"
+source "${zgen_root}/zgen.zsh"
 
-antigen bundle zsh-users/zsh-syntax-highlighting zsh-syntax-highlighting.plugin.zsh
-antigen bundle robbyrussell/oh-my-zsh lib/git.zsh
-antigen bundle robbyrussell/oh-my-zsh lib/grep.zsh
-antigen bundle robbyrussell/oh-my-zsh lib/history.zsh
-antigen bundle robbyrussell/oh-my-zsh lib/spectrum.zsh
-antigen bundle robbyrussell/oh-my-zsh lib/termsupport.zsh
-antigen bundle robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh
-antigen bundle fcambus/ansiweather
+# check if there's no init script
+if ! zgen saved; then
+    echo "Creating a zgen save"
 
-export ENHANCD_COMMAND='c'
-antigen bundle b4b4r07/enhancd zsh/enhancd.plugin.zsh
+    zgen load zsh-users/zsh-syntax-highlighting
+    zgen load robbyrussell/oh-my-zsh lib/git.zsh
+    zgen load robbyrussell/oh-my-zsh lib/grep.zsh
+    zgen load robbyrussell/oh-my-zsh lib/history.zsh
+    zgen load robbyrussell/oh-my-zsh lib/spectrum.zsh
+    zgen load robbyrussell/oh-my-zsh lib/termsupport.zsh
+    zgen load robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh
+    zgen load fcambus/ansiweather
+    zgen load b4b4r07/enhancd zsh/enhancd.plugin.zsh
 
-# need this
-antigen apply
-
-# antigen-bundle-noload: return file location string.
-source "$ADOTDIR/antigen_bundle_noload.zsh"
-
-# dircolors
-# eval $(dircolors $(antigen-bundle-noload jmcantrell/dircolors dircolors-8))
-# eval $(dircolors $(antigen-bundle-noload peterhellberg/dircolors-jellybeans dircolors.jellybeans))
-# eval $(dircolors $(antigen-bundle-noload seebi/dircolors-solarized dircolors.256dark))
-# eval $(dircolors $(antigen-bundle-noload seebi/dircolors-solarized dircolors.ansi-dark))
-dircolorsfile=$(antigen-bundle-noload ivoarch/dircolors-zenburn dircolors)
-eval $(dircolors "$dircolorsfile")
-
-export _ANTIGEN_BUNDLE_RECORD="$(cat "$ADOTDIR"/antigen_bundle_record)"
+    # save all to init script
+    zgen save
+fi
 
 # ==========================================================================}}}
 # history                                                                   {{{
 # =============================================================================
 
-HISTFILE=${ZSH}/history
+HISTFILE=${ZSH_ROOT}/history
 
 # ignore duplication command history list
 setopt hist_ignore_all_dups
@@ -107,7 +100,7 @@ setopt hist_ignore_all_dups
 
 # add fpath for completions
 # there are completion functoins named like '_function'.
-fpath=($ZSH/completions $fpath)
+fpath=($ZSH_ROOT/completions $fpath)
 
 unsetopt flowcontrol
 setopt auto_menu         # show completion menu on succesive tab press
@@ -172,10 +165,12 @@ compinit
 # =============================================================================
 
 # set the prompt theme
-source "${ZSH}/themes/agnoster.zsh-theme"
+source "${ZSH_ROOT}/themes/agnoster.zsh-theme"
+
+eval $(dircolors "${ZSH_ROOT}/dircolors/dircolors-zenburn/dircolors")
 
 # tmux plugin
-source "${ZSH}/plugins/tmux/tmux.plugin.zsh"
+source "${ZSH_ROOT}/plugins/tmux/tmux.plugin.zsh"
 
 # command-not-found
 if [[ -x /usr/lib/command-not-found ]] ; then
@@ -185,11 +180,11 @@ if [[ -x /usr/lib/command-not-found ]] ; then
 fi
 
 # some useful aliases
-source "$ZSH/aliases.zsh"
+source "${ZSH_ROOT}/aliases.zsh"
 
 # user specific configuration
-if [[ -f "$ZSH/rc.mine" ]]; then
-  source "$ZSH/rc.mine"
+if [[ -f "${ZSH_ROOT}/rc.mine" ]]; then
+  source "${ZSH_ROOT}/rc.mine"
 fi
 
 # ==========================================================================}}}
