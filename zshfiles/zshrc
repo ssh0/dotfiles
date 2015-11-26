@@ -82,6 +82,7 @@ if ! zgen saved; then
     zgen load robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh
     zgen load fcambus/ansiweather
     zgen load b4b4r07/enhancd zsh
+    zgen load chrissicool/zsh-256color
 
     # save all to init script
     zgen save
