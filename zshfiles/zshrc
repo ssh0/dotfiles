@@ -46,14 +46,14 @@ if [[ ! -f "${antigen_root}/antigen.zsh" ]]; then
   echo "Installing Antigen..."
   echo ""
   if hash git; then
-    install -d ${antigen_root}
-    git clone ${antigen_repo_url} ${antigen_root}
+    install -d "${antigen_root}"
+    git clone "${antigen_repo_url}" "${antigen_root}"
   elif hash curl; then
-    install -d ${antigen_root}
-    curl -L ${antigen_raw_url} -o ${antigen_root}/antigen.zsh
+    install -d "${antigen_root}"
+    curl -L "${antigen_raw_url}" -o "${antigen_root}/antigen.zsh"
   elif hash wget; then 
-    install -d ${antigen_root}
-    wget ${antigen_raw_url} -O ${antigen_root}/antigen.zsh
+    install -d "${antigen_root}"
+    wget "${antigen_raw_url}" -O "${antigen_root}/antigen.zsh"
   else
     echo "git or curl or wget required to install."
     echo "Aborted."
@@ -62,7 +62,7 @@ if [[ ! -f "${antigen_root}/antigen.zsh" ]]; then
   exec zsh -l
 fi
 
-source ${antigen_root}/antigen.zsh
+source "${antigen_root}/antigen.zsh"
 
 antigen bundle zsh-users/zsh-syntax-highlighting zsh-syntax-highlighting.plugin.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/git.zsh
@@ -73,14 +73,14 @@ antigen bundle robbyrussell/oh-my-zsh lib/termsupport.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh
 antigen bundle fcambus/ansiweather
 
-ENHANCD_COMMAND='c'
+export ENHANCD_COMMAND='c'
 antigen bundle b4b4r07/enhancd zsh/enhancd.plugin.zsh
 
 # need this
 antigen apply
 
 # antigen-bundle-noload: return file location string.
-source $ADOTDIR/antigen_bundle_noload.zsh
+source "$ADOTDIR/antigen_bundle_noload.zsh"
 
 # dircolors
 # eval $(dircolors $(antigen-bundle-noload jmcantrell/dircolors dircolors-8))
@@ -90,7 +90,7 @@ source $ADOTDIR/antigen_bundle_noload.zsh
 dircolorsfile=$(antigen-bundle-noload ivoarch/dircolors-zenburn dircolors)
 eval $(dircolors "$dircolorsfile")
 
-export _ANTIGEN_BUNDLE_RECORD="$(cat $ADOTDIR/antigen_bundle_record)"
+export _ANTIGEN_BUNDLE_RECORD="$(cat "$ADOTDIR"/antigen_bundle_record)"
 
 # ==========================================================================}}}
 # history                                                                   {{{
@@ -116,23 +116,23 @@ setopt complete_in_word
 setopt always_to_end
 setopt auto_param_slash
 
-WORDCHARS=''
+export WORDCHARS=''
 
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' format '%B%F{magenta}%d%b%f'
 
 zstyle ':completion:*:default' menu select=2
-zstyle ':completion:*:messages' format '%F{yellow}%d'$DEFAULT
-zstyle ':completion:*:warnings' format '%F{red}No matches for:''%F{yelllow} %d'$DEFAULT
+zstyle ':completion:*:messages' format '%F{yellow}%d'"$DEFAULT"
+zstyle ':completion:*:warnings' format '%F{red}No matches for:''%F{yelllow} %d'"$DEFAULT"
 zstyle ':completion:*:options' description 'yes'
-zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'$DEFAULT
+zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'"$DEFAULT"
 
 zstyle ':completion:*' group-name ''
 
 # case sensitive (but if upper case, don't translate it to lower case.)
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
@@ -143,7 +143,7 @@ zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-dir
 
 # Use caching so that commands like apt and dpkg complete are useable
 zstyle ':completion::complete:*' use-cache true
-zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
+zstyle ':completion::complete:*' cache-path "$ZSH_CACHE_DIR"
 
 # Don't complete uninteresting users
 zstyle ':completion:*:*:*:users' ignored-patterns \
@@ -172,24 +172,24 @@ compinit
 # =============================================================================
 
 # set the prompt theme
-source ${ZSH}/themes/agnoster.zsh-theme
+source "${ZSH}/themes/agnoster.zsh-theme"
 
 # tmux plugin
-source ${ZSH}/plugins/tmux/tmux.plugin.zsh
+source "${ZSH}/plugins/tmux/tmux.plugin.zsh"
 
 # command-not-found
 if [[ -x /usr/lib/command-not-found ]] ; then
   function command_not_found_handler() {
-  /usr/lib/command-not-found --no-failure-msg -- $1
+  /usr/lib/command-not-found --no-failure-msg -- "$1"
 }
 fi
 
 # some useful aliases
-source $ZSH/aliases.zsh
+source "$ZSH/aliases.zsh"
 
 # user specific configuration
-if [[ -f $ZSH/rc.mine ]]; then
-  source $ZSH/rc.mine
+if [[ -f "$ZSH/rc.mine" ]]; then
+  source "$ZSH/rc.mine"
 fi
 
 # ==========================================================================}}}
