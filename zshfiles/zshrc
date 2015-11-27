@@ -27,11 +27,30 @@ export LC_TIME=en_US.UTF-8
 export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 export MANPATH="/usr/local/man:$MANPATH"
 
+# find alternative apps if it is installed on your system
+find_alt() { for i;do hash "$i" >/dev/null && { echo "$i"; return 0;};done;return 1; }
+
+# set the default program
+# the first program in the array will be chosen as the default
+export OPENER=$(find_alt xdg-open exo-open gnome-open )
+export BROWSER=$(find_alt luakit firefox google-chrome chromium chromium-browser $OPENER )
+export BROWSERCLI=$(find_alt w3m links2 links lynx elinks $OPENER )
+export EDITOR=$(find_alt vim emacs nano leafpad gedit pluma $OPENER )
+export FILEMANAGER=$(find_alt thunar nautilus dolphin pcmanfm tspacefm enlightenment_filemanager $OPENER )
+export PAGER=$(find_alt less more most)
+export PLAYER=$(find_alt mpv mplayer cvlc $OPENER )
+export READER=$(find_alt mupdf zathura evince $OPENER )
+export TERMCMD=$(find_alt urxvt xterm gnome-terminal)
+
 # used to store all the repo clones for antigen
 export ADOTDIR=$ZSH/antigen
 
 # enhancd by "c"
 export ENHANCD_COMMAND='c'
+
+# takenote
+export TAKENOTE_ROOTDIR="$HOME/Workspace/blog"
+export TAKENOTE_FILERCMD=ranger
 
 # ==========================================================================}}}
 # zgen                                                                      {{{
@@ -82,7 +101,9 @@ if ! zgen saved; then
     zgen load robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh
     zgen load fcambus/ansiweather
     zgen load b4b4r07/enhancd zsh
+    zgen load Tarrasch/zsh-bd
     zgen load chrissicool/zsh-256color
+    zgen load ssh0/zsh-takenote
 
     # save all to init script
     zgen save
