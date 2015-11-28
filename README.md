@@ -2,41 +2,38 @@ dotfiles
 ========
 
 This repository contains my dotfiles.
-In order to set symbolic link, add new file to the directory, and manage machine specific configurations, I use [dot](https://github.com/ssh0/dot) which is bash script and is simple and configurable.
+
+I use [dot](https://github.com/ssh0/dot) in order to set symbolic link to add new file to this repository and to deal with machine specific configurations.
 
 Contents
 --------
 
 * XMonad([http://xmonad.org/](http://xmonad.org/))
-    * [my xmonad.hs](./xmonad/xmonad.hs)
+    * [xmonad.hs](./xmonad/xmonad.hs)
 * tmux([https://tmux.github.io/](https://tmux.github.io/))
-    * [my tmux.conf](./rcfiles/tmux.conf)
+    * [tmux.conf](./rcfiles/tmux.conf)
 * zsh([http://www.zsh.org/](http://www.zsh.org/))
-    * antigen([https://github.com/zsh-users/antigen](https://github.com/zsh-users/antigen))
-    * [my zshfiles](./zshfiles/)
+    * zgen([tarjoilija/zgen](https://github.com/tarjoilija/zgen))
+    * [zshfiles](./zshfiles/)
 * vim([http://www.vim.org/](http://www.vim.org/))
-    * [my vimrc](./vimfiles/vimrc)
+    * [vimrc](./vimfiles/vimrc)
 * ranger([http://ranger.nongnu.org/](http://ranger.nongnu.org/))
-    * [my ranger config files](./ranger/)
+    * [config files](./ranger/)
 * luakit([https://mason-larobina.github.io/luakit/](https://mason-larobina.github.io/luakit/))
-    * [my luakit config files](./luakit/)
+    * [config files](./luakit/)
 * [some useful scripts](./bin/)
 
-Screenshots
+Screenshot
 -----------
 
-![xmonad.png](./screenshots/xmonad.png)
-
-![tmux.browsing](./screenshots/browsing.png)
-
-![vim.png](./screenshots/vim.png)
+![screenshot.png](./screenshots/screenshot.png)
 
 Install
 -------
 
 ### Using dot
 
-Clone this repository in your computer(default: ~/.dotfiles),
+Clone this repository in your computer(default: `~/.dotfiles`),
 
 First, install dot.
 
@@ -53,19 +50,13 @@ cd ~/.git/dot
 sudo make install
 ```
 
-Maks sure if you successfully installed dot by
-
-```
-dot --help
-```
-
-Clone this repository to your specified directory (default: `~/.dotfiles`).
+Then, clone this repository to your specified directory (default: `~/.dotfiles`).
 
 ```
 dot clone [/path/you/want/to/clone]
 ```
 
-In order to make symbolilinks:
+In order to make symbolic links:
 
 ```
 dot set
@@ -73,7 +64,13 @@ dot set
 
 In case that there are exisiting files, the script asks you what to do.
 
-If you don't want to add some files, you can comment out the line correspond to them in `~/.dotfiles/dotlink` with "#".
+If you don't want to add some files, you can comment out the line in `~/.dotfiles/dotlink` with "#".
+
+In order to update newer setting,
+
+```
+dot pull
+```
 
 ### Simple installation without dot
 
