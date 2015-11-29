@@ -31,7 +31,11 @@ do
   case $OPT in
     "A" ) save=false ;;
     "L" ) listfile="${OPTARG}" ;;
-    "e" ) vim + "${listfile}"
+    "e" ) if [ ! -e "${listfile}" ]; then
+            echo "[ytdl] listfile '${listfile}' does not exist."
+            exit 0
+          fi
+          vim + "${listfile}"
           exit 0 ;;
     "h" ) usage;
           exit 1 ;;
