@@ -102,8 +102,8 @@ if executable('ag')
   NeoBundle 'rking/ag.vim'
 endif
 "                                                                           }}}
-" kien/ctrlp.vim                                                            {{{
-NeoBundle 'kien/ctrlp.vim'
+" ctrlpvim/ctrlp.vim                                                        {{{
+NeoBundle 'ctrlpvim/ctrlp.vim'
 if executable('ag')
   let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
 endif
