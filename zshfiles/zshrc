@@ -47,6 +47,10 @@ export PLAYER=$(find_alt mpv mplayer cvlc $OPENER )
 export READER=$(find_alt mupdf zathura evince $OPENER )
 export TERMCMD=$(find_alt urxvt xterm gnome-terminal)
 
+# dot management (ssh0/dot)
+export DOT_REPO="https://github.com/ssh0/dotfiles.git"
+export DOT_DIR="$HOME/.dotfiles"
+
 # enhancd by "c"
 export ENHANCD_COMMAND='c'
 
@@ -106,6 +110,7 @@ if ! zgen saved; then
     zgen load Tarrasch/zsh-bd
     zgen load chrissicool/zsh-256color
     zgen load ssh0/zsh-takenote
+    zgen load ssh0/dot
 
     # save all to init script
     zgen save
