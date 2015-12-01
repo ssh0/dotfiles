@@ -112,6 +112,46 @@ if ! zgen saved; then
 fi
 
 # ==========================================================================}}}
+# # zplug(trial)                                                              {{{
+# # =============================================================================
+
+# source "$HOME/.zplug/zplug"
+
+# # これだと動かない。---
+# zplug "robbyrussell/oh-my-zsh", of:lib/git.zsh
+# zplug "robbyrussell/oh-my-zsh", of:lib/grep.zsh
+# zplug "robbyrussell/oh-my-zsh", of:lib/history.zsh
+# zplug "robbyrussell/oh-my-zsh", of:lib/spectrum.zsh
+# zplug "robbyrussell/oh-my-zsh", of:lib/termsupport.zsh
+# # ---------------------
+# # 最後のみ読み込まれるっぽい
+# # from:oh-my-zsh にするとpluginディレクトリ以下しか読み込ませない
+# zplug "robbyrussell/oh-my-zsh", of:lib/theme-and-appearance.zsh
+
+# # 以下おk
+# zplug "zsh-users/zsh-syntax-highlighting"
+# zplug "fcambus/ansiweather", as:command
+# zplug "b4b4r07/enhancd"
+# zplug "Tarrasch/zsh-bd"
+# zplug "chrissicool/zsh-256color"
+# zplug "ssh0/zsh-takenote"
+
+# # completion含んでる奴はas:commandじゃなくて普通にsourceしたほうがいい
+
+# # Install plugins if there are plugins that have not been installed
+# if ! zplug check --verbose; then
+#     printf "Install? [y/N]: "
+#     if read -q; then
+#         echo; zplug install
+#         # 並列処理いい感じ
+#     fi
+# fi
+
+# # Then, source plugins and add commands to $PATH
+# # zplug load --verbose
+# zplug load
+
+# # ==========================================================================}}}
 # history                                                                   {{{
 # =============================================================================
 
