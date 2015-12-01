@@ -161,6 +161,14 @@ let g:SignatureMarkTextHL = "'SignColumn'"
 NeoBundle 'LeafCage/foldCC'
 set foldtext=FoldCCtext()
 "                                                                           }}}
+" Yggdroot/indentLine                                                       {{{
+NeoBundle 'Yggdroot/indentLine'
+let g:indentLine_color_term = 239
+let g:indentLine_char = '│'
+"                                                                           }}}
+" lilydjwg/colorizer                                                        {{{
+NeoBundle 'lilydjwg/colorizer'
+"                                                                           }}}
 " tyru/open-browser                                                         {{{
 NeoBundleLazy 'tyru/open-browser.vim', {
       \ 'autoload': {
@@ -435,7 +443,7 @@ colorscheme easy-reading
 if $TMUX != ""
   augroup titlesettings
     autocmd!
-    autocmd BufEnter * call system("tmux rename-window " . "'(vim)" . expand("%:t") . "'")
+    autocmd BufEnter,InsertEnter * call system("tmux rename-window " . "'(vim)" . expand("%:t") . "'")
     autocmd VimLeave * call system("tmux rename-window zsh")
     autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
   augroup END
@@ -699,6 +707,9 @@ inoremap "" ""<Left>
 inoremap '' ''<Left>
 inoremap <> <><Left>
 inoremap $$ $$<Left>
+
+vnoremap < <gv
+vnoremap > >gv
 
 " source vimrc
 map <Leader>so :source ~/.vimrc<CR>
