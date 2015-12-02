@@ -78,7 +78,7 @@ mynormalBorderColor  = colorNormalbg
 myfocusedBorderColor = colorBlue
 
 -- gapwidth
-gapwidth  = 6
+gapwidth  = 3
 gapwidthU = 7
 gapwidthD = 8
 gapwidthL = 33
