@@ -71,14 +71,14 @@ colorNormalbg  = "#1c1c1c"
 colorfg        = "#9fa8b1"
 
 -- Border width
-borderwidth = 2
+borderwidth = 0
 
 -- Border color
 mynormalBorderColor  = colorNormalbg
 myfocusedBorderColor = colorBlue
 
 -- gapwidth
-gapwidth  = 2
+gapwidth  = 6
 gapwidthU = 7
 gapwidthD = 8
 gapwidthL = 33
@@ -215,7 +215,7 @@ main = do
        -- Launch terminal
        , ((modm                    , xK_Return ), spawn "urxvtc")
        -- Launch terminal with a float window
-       , ((modm .|. shiftMask      , xK_Return ), spawn "sh $HOME/bin/urxvt_float.sh")
+       , ((modm .|. shiftMask      , xK_Return ), spawn "$HOME/bin/urxvt_float.sh")
        -- Insert a transparent panel
        , ((modm .|. shiftMask      , xK_t      ), spawn "python $HOME/Workspace/python/transparent.py")
        -- Launch file manager
@@ -239,15 +239,15 @@ main = do
        , ((0                       , 0x1008FF02), spawn "xbacklight + 5 -time 100 -steps 1")
        , ((0                       , 0x1008FF03), spawn "xbacklight - 5 -time 100 -steps 1")
        -- Take a screenshot (whole window)
-       , ((0                       , 0xff61    ), spawn "sh $HOME/bin/screenshot.sh")
+       , ((0                       , 0xff61    ), spawn "$HOME/bin/screenshot.sh")
        -- Take a screenshot (selected area)
-       , ((shiftMask               , 0xff61    ), spawn "sh $HOME/bin/screenshot_select.sh")
+       , ((shiftMask               , 0xff61    ), spawn "$HOME/bin/screenshot_select.sh")
        -- Launch ipython qtconsole
        , ((0                       , 0x1008ff1d), spawn "ipython qtconsole --matplotlib=inline")
        -- Toggle touchpad
-       , ((controlMask             , xK_Escape ), spawn "bash $HOME/bin/touchpad_toggle.sh")
+       , ((controlMask             , xK_Escape ), spawn "$HOME/bin/touchpad_toggle.sh")
        -- Toggle trackpoint (Lenovo PC)
-       , ((mod1Mask                , xK_Escape ), spawn "bash $HOME/bin/trackpoint_toggle.sh")
+       , ((mod1Mask                , xK_Escape ), spawn "$HOME/bin/trackpoint_toggle.sh")
        ]
 
 --------------------------------------------------------------------------- }}}
@@ -271,6 +271,7 @@ myStartupHook = do
         spawn "xscreensaver -no-splash"
         spawn "$HOME/.dropbox-dist/dropboxd"
         spawn "bash $HOME/.fehbg"
+        spawn "$HOME/bin/start_urxvtd.sh"
 
 --------------------------------------------------------------------------- }}}
 -- myManageHookShift: some window must created there                        {{{
