@@ -168,9 +168,6 @@ fpath=($ZSH_ROOT/completions $fpath)
 
 source "${ZSH_ROOT}/history.zsh"
 
-autoload -U compinit
-compinit
-
 # ==========================================================================}}}
 # source some files                                                         {{{
 # =============================================================================
@@ -197,6 +194,9 @@ source "${ZSH_ROOT}/aliases.zsh"
 if [[ -f "${ZSH_ROOT}/rc.mine" ]]; then
   source "${ZSH_ROOT}/rc.mine"
 fi
+
+autoload -U compinit
+compinit
 
 # ==========================================================================}}}
 # bindkeys                                                                  {{{
