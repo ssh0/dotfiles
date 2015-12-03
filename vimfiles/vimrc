@@ -655,9 +655,6 @@ nnoremap l <Right>zv
 " yank to line end
 nnoremap Y y$
 
-" craeate new tab
-nnoremap <silent> <C-t> :tabnew<CR>
-
 " cursor moved in insert mode
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
@@ -671,7 +668,7 @@ nnoremap <silent> <C-k> :wincmd k<CR>
 nnoremap <silent> <C-l> :wincmd l<CR>
 
 " clear highlight by pressing Esc twice
-nnoremap <ESC><ESC> :nohlsearch<CR>
+nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
 
 " open the file in new tab
 nnoremap gf <C-w>gf
@@ -712,11 +709,11 @@ vnoremap < <gv
 vnoremap > >gv
 
 " source vimrc
-map <Leader>so :source ~/.vimrc<CR>
+map <Leader>so :source ~/.vimrc
 
 " my functions
-nnoremap <Leader>h1 :call Markdown_h1()<CR>
-nnoremap <Leader>h2 :call Markdown_h2()<CR>
-nnoremap <Leader>h3 :call Markdown_h3()<CR>
+nnoremap <silent> <Leader>h1 :call Markdown_h1()<CR>
+nnoremap <silent> <Leader>h2 :call Markdown_h2()<CR>
+nnoremap <silent> <Leader>h3 :call Markdown_h3()<CR>
 
 "---------------------------------------------------------------------------}}}
