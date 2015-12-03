@@ -149,7 +149,11 @@ zle -N peco-select-history
 #------------------------------------------------------------------------------
 
 function agvim(){
-  vim $(ag $@ | peco --query "$LBUFFER" | awk -F : '{printf("-c %s %s"),$2,$1;}')
+  local agfilepath
+  agfilepath="$(echo $(ag $@ | peco --query "$LBUFFER" | awk -F : '{print "+" $2 " \047" $1 "\047"}'))"
+  if [ "$agfilepath" != "" ]; then
+    eval $(echo "vim $agfilepath")
+  fi
 }
 
 #---------------------------------------------------------------------------}}}
