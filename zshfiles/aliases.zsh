@@ -160,8 +160,8 @@ function agvim(){
 # shtest                                                                    {{{
 #------------------------------------------------------------------------------
 
-SHTEST_FILENAME_PRE="test_"
-SHTEST_FILENAME_EXTENSION="sh"
+export SHTEST_FILENAME_PRE="test_"
+export SHTEST_FILENAME_EXTENSION="sh"
 
 
 function shtest() {
@@ -196,19 +196,6 @@ function shtest() {
 
   return 0
 }
-
-_shtest() {
-  local pattern='s/\('"${SHTEST_FILENAME_PRE}"'[0-9]\{'"${TAKENOTE_FILENAME_NUMORDER}"'\}'"${TAKENOTE_FILENAME_POST}"'.'"${SHTEST_FILENAME_EXTENSION}"'\)/\1/p'
-  typeset -A opt_args
-  _arguments -S \
-    "(-l -h)-o[Set the text file's name.]:files:( `shtest -l | sed -n $pattern ` )" \
-    "(-o -h)-l[Show the files in the today's directory.]: :" \
-    "(-o -l)-h[Show the help message.]: :" \
-    && return 0
-}
-
-compdef _shtest shtest
-
 
 #---------------------------------------------------------------------------}}}
 # Notification of local host command {{{
