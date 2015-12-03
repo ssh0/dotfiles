@@ -31,53 +31,11 @@ Screenshot
 Install
 -------
 
-### Using dot
-
-Clone this repository in your computer(default: `~/.dotfiles`),
-
-First, install dot.
-
-Clone dot's project repository into your computer:
-
-```
-git clone https://github.com/ssh0/dot.git ~/.git/dot
-```
-
-Next, run this command for install:
-
-```
-cd ~/.git/dot
-sudo make install
-```
-
-Then, clone this repository to your specified directory (default: `~/.dotfiles`).
-
-```
-dot clone [/path/you/want/to/clone]
-```
-
-In order to make symbolic links:
-
-```
-dot set
-```
-
-In case that there are exisiting files, the script asks you what to do.
-
-If you don't want to add some files, you can comment out the line in `~/.dotfiles/dotlink` with "#".
-
-In order to update newer setting,
-
-```
-dot pull
-```
-
-### Simple installation without dot
-
 Clone or folk this repository:
 
 ```
 git clone https://github.com/ssh0/dotfiles.git ~/.ssh0-dotfiles
 ```
 
-Then you can modify or copy the file you want.
+Then you can copy the file and modify it.
+
