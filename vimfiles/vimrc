@@ -379,6 +379,10 @@ NeoBundle 'davidhalter/jedi-vim'
 let g:jedi#popup_on_dot = 1
 let g:jedi#popup_select_first = 1
 "                                                                           }}}
+" nvie/vim-flake8                                                           {{{
+" Press <F7> to run flake8
+NeoBundle 'nvie/vim-flake8'
+"                                                                           }}}
 " hynek/vim-python-pep8-indent                                              {{{
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {
       \ 'autoload': {
