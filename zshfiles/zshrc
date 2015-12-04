@@ -132,6 +132,7 @@ fi
 # zplug "zsh-users/zsh-syntax-highlighting"
 # zplug "fcambus/ansiweather", as:command
 # zplug "b4b4r07/enhancd"
+# zplug "b4b4r07/zplug"
 # zplug "Tarrasch/zsh-bd"
 # zplug "chrissicool/zsh-256color"
 # zplug "ssh0/zsh-takenote"
