@@ -25,11 +25,15 @@ Required: ffmpeg
 
 autopep8 wrapper for python code.
 
+Required: autopep8
+
 ## [bib2html_wrapper.sh](./bib2html_wrapper.sh)
 
 bibtex2html wrapper script.
 
 I use this script with vim-quickrun.
+
+Required: bibtex2html
 
 See here. http://qiita.com/ssh0/items/7af727f0513c3fbf09a4
 
@@ -50,16 +54,6 @@ if there is no process of cmus, start cmus on urxvt terminal.
 else play / pause remote command will be sent to cmus program.
 
 It's useful if you set the shortcut-key with multimedia key.
-
-
-```
-dotunlink
-Unlink the symbolic link mangaed by dotfiles and copy the file from the repository.
-
-Usage: dotunlink FILE [FILE2 FILE3 ...]
-Option:
-  -h: show this help and exit
-```
 
 ## [facebook](./facebook)
 
@@ -240,11 +234,14 @@ Option:
 
 xrandr wrapper for switching display at presentaion.
 
-You may change these variables.
+You may change these environment variables. (write and export in 'zshrc')
 
 ```
-default_output="eDP1"
-default_mode="1920x1080"
+OUTPUT_DEV=eDP1
+OUTPUT_RES=1920x1080
+```
+
+```
 projector="VGA1"
 projector_mode="1024x768"
 ```
