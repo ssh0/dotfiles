@@ -110,6 +110,9 @@ main = do
     wsbar <- spawnPipe myWsBar
     xmonad $ ewmh defaultConfig
        { borderWidth        = borderwidth
+       -- urxvtc is client terminal application. you should launch the daemon 
+       -- before using urxvtc
+       --     $ urxvtd -q -f -o
        , terminal           = "urxvtc"
        , focusFollowsMouse  = True
        , normalBorderColor  = mynormalBorderColor
