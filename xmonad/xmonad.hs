@@ -175,6 +175,8 @@ main = do
        , ((modm                , xK_v      ), windows copyToAll)
        , ((modm .|. shiftMask  , xK_v      ), killAllOtherCopies)
        -- Move the focus down / up
+       , ((modm                , xK_Down   ), windows W.focusDown)
+       , ((modm                , xK_Up     ), windows W.focusUp)
        , ((modm                , xK_j      ), windows W.focusDown)
        , ((modm                , xK_k      ), windows W.focusUp)
        -- Swap the focused window down / up
