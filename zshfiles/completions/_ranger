@@ -1,4 +1,4 @@
-#compdef ranger ranger-cd r
+#compdef ranger
 
 _ranger() {
   typeset -A opt_args

@@ -212,9 +212,6 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^xe' edit-command-line
 
-# Keybinding
-bindkey '^r' peco-select-history
-
 # reverse-menu-complete by `Shift+Tab`
 bindkey '^[[Z' reverse-menu-complete
 

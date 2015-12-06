@@ -41,7 +41,6 @@ else
   alias diff='diff -u'
 fi
 
-# color echo
 alias tree='tree -C'
 
 #---------------------------------------------------------------------------}}}
@@ -127,18 +126,19 @@ function man() {
 # To undo the effect of this function, you can type "cd -" to return to the
 # original directory.
 
-function ranger-cd {
-    tempfile="$(mktemp -t tmp.XXXXXXX)"
-    # for manual install
-    /usr/local/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
-    # for package install
-    # /usr/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
-    test -f "$tempfile" &&
-    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
-        cd -- "$(cat "$tempfile")"
-    fi
-    rm -f -- "$tempfile"
+function ranger-cd() {
+  tempfile="$(mktemp -t tmp.XXXXXXX)"
+  # for manual install
+  /usr/local/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+  # for package install
+  # /usr/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+  test -f "$tempfile" &&
+  if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+      cd -- "$(cat "$tempfile")"
+  fi
+  rm -f -- "$tempfile"
 }
+compdef ranger-cd=ranger
 
 #---------------------------------------------------------------------------}}}
 # Start new ranger instance only if it's not running in current shell       {{{
@@ -146,11 +146,11 @@ function ranger-cd {
 # https://wiki.archlinux.org/index.php/Ranger#Start_new_ranger_instance_only_if_it.27s_not_running_in_current_shell
 
 function r() {
-    if [ -z "$RANGER_LEVEL" ]; then
-        ranger-cd $@
-    else
-        exit
-    fi
+  if [ -z "$RANGER_LEVEL" ]; then
+    ranger-cd $@
+  else
+    exit
+  fi
 }
 compdef r=ranger
 
@@ -171,12 +171,15 @@ function peco-select-history() {
 }
 zle -N peco-select-history
 
+# Keybinding
+bindkey '^r' peco-select-history
+
 #---------------------------------------------------------------------------}}}
 # agvim                                                                     {{{
-# http://qiita.com/fmy/items/b92254d14049996f6ec3
 #------------------------------------------------------------------------------
+# http://qiita.com/fmy/items/b92254d14049996f6ec3
 
-function agvim(){
+function agvim() {
   local agfilepath
   agfilepath="$(echo $(ag $@ | peco --query "$LBUFFER" | awk -F : '{print "+" $2 " \047" $1 "\047"}'))"
   if [ "$agfilepath" != "" ]; then
@@ -187,6 +190,7 @@ function agvim(){
 #---------------------------------------------------------------------------}}}
 # shtest                                                                    {{{
 #------------------------------------------------------------------------------
+# work with zsh-takenote(https://github.com/ssh0/zsh-takenote)
 
 export SHTEST_FILENAME_PRE="test_"
 export SHTEST_FILENAME_EXTENSION="sh"
@@ -226,8 +230,8 @@ function shtest() {
 }
 
 #---------------------------------------------------------------------------}}}
-# Notification of local host command {{{
-# ----------------------------------
+# Notification of local host command                                        {{{
+#------------------------------------------------------------------------------
 #
 # Automatic notification via growlnotify / notify-send
 #
@@ -334,7 +338,7 @@ if hash growlnotify >/dev/null 2>&1 ||
     add-zsh-hook precmd __my_preexec_end_timetrack
 fi
 
-# }}}
+#---------------------------------------------------------------------------}}}
 # Configurations                                                            {{{
 #------------------------------------------------------------------------------
 
@@ -365,7 +369,7 @@ cfg-websearch() { $EDITOR ~/Workspace/python/web_search/websearch/config.py ;}
 cfg-zshrc() { $EDITOR ~/.zshrc ;}
 
 #---------------------------------------------------------------------------}}}
-# Configurations Reload                                                     {{{
+# Reload Configurations                                                     {{{
 #------------------------------------------------------------------------------
 
 rld-xdefaults() { xrdb ~/.Xdefaults ;}
