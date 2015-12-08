@@ -1,7 +1,7 @@
 # vim: set ft=zsh
 
 # ranger-cd
-#----------
+#------------------------------------------------------------------------------
 # Compatible with ranger 1.4.2 through 1.7.*
 #
 # Automatically change the directory in bash after closing ranger

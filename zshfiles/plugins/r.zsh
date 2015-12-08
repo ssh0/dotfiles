@@ -11,5 +11,6 @@ function r() {
     exit
   fi
 }
+
 compdef r=ranger
 
