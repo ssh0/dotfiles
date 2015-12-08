@@ -70,7 +70,7 @@ zgen_repo_url="https://github.com/tarjoilija/zgen.git"
 zgen_raw_url="https://raw.githubusercontent.com/tarjoilija/zgen.git"
 
 # where to clone antigen
-zgen_root="${HOME}/.zsh/plugins/zgen"
+zgen_root="$HOME/.zsh/plugins/zgen"
 
 # if Antigen is not installed, automatically clone it and reload shell
 if [[ ! -f "${zgen_root}/zgen.zsh" ]]; then
@@ -160,7 +160,7 @@ fi
 # history                                                                   {{{
 # =============================================================================
 
-HISTFILE=${ZSH_ROOT}/history
+HISTFILE="$ZSH_ROOT/history"
 
 # ignore duplication command history list
 setopt hist_ignore_all_dups
@@ -173,7 +173,7 @@ setopt hist_ignore_all_dups
 # there are completion functoins named like '_function'.
 fpath=($ZSH_ROOT/completions $fpath)
 
-source "${ZSH_ROOT}/plugins/history.zsh"
+source "$ZSH_ROOT/plugins/history.zsh"
 
 autoload -U compinit
 compinit
@@ -183,32 +183,32 @@ compinit
 # =============================================================================
 
 # set the prompt theme
-source "${ZSH_ROOT}/themes/agnoster.zsh-theme"
+source "$ZSH_ROOT/themes/agnoster.zsh-theme"
 
 # dircolors
-eval $(dircolors "${ZSH_ROOT}/dircolors/dircolors-zenburn")
+eval $(dircolors "$ZSH_ROOT/dircolors/dircolors-zenburn")
 
 # load plugin for tmux
-source "${ZSH_ROOT}/plugins/tmux/tmux.plugin.zsh"
+source "$ZSH_ROOT/plugins/tmux/tmux.plugin.zsh"
 
 # load my plugins
-source "${ZSH_ROOT}/plugins/alias.zsh"
-source "${ZSH_ROOT}/plugins/cecho.zsh"
-source "${ZSH_ROOT}/plugins/colorize.zsh"
-source "${ZSH_ROOT}/plugins/extract.zsh"
-source "${ZSH_ROOT}/plugins/agvim.zsh"
-source "${ZSH_ROOT}/plugins/man.zsh"
-source "${ZSH_ROOT}/plugins/peco-history.zsh"
-source "${ZSH_ROOT}/plugins/ranger.zsh"
-source "${ZSH_ROOT}/plugins/r.zsh"
-source "${ZSH_ROOT}/plugins/shtest.zsh"
-source "${ZSH_ROOT}/plugins/longrun-command-tracker.zsh"
-source "${ZSH_ROOT}/plugins/cfg-alias.zsh"
-source "${ZSH_ROOT}/plugins/rld-alias.zsh"
+source "$ZSH_ROOT/plugins/alias.zsh"
+source "$ZSH_ROOT/plugins/cecho.zsh"
+source "$ZSH_ROOT/plugins/colorize.zsh"
+source "$ZSH_ROOT/plugins/extract.zsh"
+source "$ZSH_ROOT/plugins/agvim.zsh"
+source "$ZSH_ROOT/plugins/man.zsh"
+source "$ZSH_ROOT/plugins/peco-history.zsh"
+source "$ZSH_ROOT/plugins/ranger.zsh"
+source "$ZSH_ROOT/plugins/r.zsh"
+source "$ZSH_ROOT/plugins/shtest.zsh"
+source "$ZSH_ROOT/plugins/longrun-command-tracker.zsh"
+source "$ZSH_ROOT/plugins/cfg-alias.zsh"
+source "$ZSH_ROOT/plugins/rld-alias.zsh"
 
 # user specific configuration
-if [[ -f "${ZSH_ROOT}/rc.mine" ]]; then
-  source "${ZSH_ROOT}/rc.mine"
+if [[ -f "$ZSH_ROOT/rc.mine" ]]; then
+  source "$ZSH_ROOT/rc.mine"
 fi
 
 # ==========================================================================}}}
