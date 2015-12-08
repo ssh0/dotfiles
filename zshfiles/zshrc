@@ -167,7 +167,7 @@ setopt hist_ignore_all_dups
 # there are completion functoins named like '_function'.
 fpath=($ZSH_ROOT/completions $fpath)
 
-source "${ZSH_ROOT}/history.zsh"
+source "${ZSH_ROOT}/plugins/history.zsh"
 
 autoload -U compinit
 compinit
@@ -179,20 +179,26 @@ compinit
 # set the prompt theme
 source "${ZSH_ROOT}/themes/agnoster.zsh-theme"
 
+# dircolors
 eval $(dircolors "${ZSH_ROOT}/dircolors/dircolors-zenburn")
 
-# tmux plugin
+# load plugin for tmux
 source "${ZSH_ROOT}/plugins/tmux/tmux.plugin.zsh"
 
-# command-not-found
-if [[ -x /usr/lib/command-not-found ]] ; then
-  function command_not_found_handler() {
-  /usr/lib/command-not-found --no-failure-msg -- "$1"
-}
-fi
-
-# some useful aliases
-source "${ZSH_ROOT}/aliases.zsh"
+# load my plugins
+source "${ZSH_ROOT}/plugins/alias.zsh"
+source "${ZSH_ROOT}/plugins/cecho.zsh"
+source "${ZSH_ROOT}/plugins/colorize.zsh"
+source "${ZSH_ROOT}/plugins/extract.zsh"
+source "${ZSH_ROOT}/plugins/agvim.zsh"
+source "${ZSH_ROOT}/plugins/man.zsh"
+source "${ZSH_ROOT}/plugins/peco-history.zsh"
+source "${ZSH_ROOT}/plugins/ranger.zsh"
+source "${ZSH_ROOT}/plugins/r.zsh"
+source "${ZSH_ROOT}/plugins/shtest.zsh"
+source "${ZSH_ROOT}/plugins/longrun-command-tracker.zsh"
+source "${ZSH_ROOT}/plugins/cfg-alias.zsh"
+source "${ZSH_ROOT}/plugins/rld-alias.zsh"
 
 # user specific configuration
 if [[ -f "${ZSH_ROOT}/rc.mine" ]]; then
