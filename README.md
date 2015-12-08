@@ -39,3 +39,10 @@ git clone https://github.com/ssh0/dotfiles.git ~/.ssh0-dotfiles
 
 Then you can copy the file and modify it.
 
+License
+-------
+
+All the files in this repository (except submodule) is under [WTFPL - Do What the Fuck You Want to Public License](http://www.wtfpl.net/).
+
+See full text at [LICENSE](./LICENSE).
+
