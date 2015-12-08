@@ -12,7 +12,7 @@
 # original directory.
 
 function ranger-cd() {
-  tempfile="$(mktemp -t tmp.XXXXXXX)"
+  local tempfile="$(mktemp -t tmp.XXXXXXX)"
   # for manual install
   /usr/local/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
   # for package install
@@ -23,5 +23,6 @@ function ranger-cd() {
   fi
   rm -f -- "$tempfile"
 }
+
 compdef ranger-cd=ranger
 

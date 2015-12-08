@@ -47,6 +47,8 @@ export PLAYER=$(find_alt mpv mplayer cvlc $OPENER )
 export READER=$(find_alt mupdf zathura evince $OPENER )
 export TERMCMD=$(find_alt urxvt xterm gnome-terminal)
 
+unfunction find_alt
+
 # dot management (ssh0/dot)
 export DOT_REPO="https://github.com/ssh0/dotfiles.git"
 export DOT_DIR="$HOME/.dotfiles"
@@ -90,9 +92,13 @@ if [[ ! -f "${zgen_root}/zgen.zsh" ]]; then
     exit 1
   fi
   exec zsh -l
+else
+  source "${zgen_root}/zgen.zsh"
+  unset zgen_repo_url
+  unset zgen_raw_url
+  unset zgen_root
 fi
 
-source "${zgen_root}/zgen.zsh"
 
 # check if there's no init script
 if ! zgen saved; then
