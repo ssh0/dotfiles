@@ -83,7 +83,6 @@ tmuxinator/stream.yml,.tmuxinator/stream.yml
 # Zsh is a shell designed for interactive use, although it is also a
 # powerful scripting language.
 zshfiles/zshrc,.zshrc
-zshfiles/aliases.zsh,.zsh/aliases.zsh
 zshfiles/completions/_jupyter,.zsh/completions/_jupyter
 zshfiles/completions/_mkdocs,.zsh/completions/_mkdocs
 zshfiles/completions/_myrsync,.zsh/completions/_myrsync
