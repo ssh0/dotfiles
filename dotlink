@@ -98,9 +98,22 @@ zshfiles/completions/_tmuxinator,.zsh/completions/_tmuxinator
 zshfiles/completions/_youtube-dl,.zsh/completions/_youtube-dl
 zshfiles/completions/tig-completion.bash,.zsh/completions/tig-completion.bash
 zshfiles/dircolors/dircolors-zenburn,.zsh/dircolors/dircolors-zenburn
-zshfiles/history.zsh,.zsh/history.zsh
 zshfiles/themes/agnoster.zsh-theme,.zsh/themes/agnoster.zsh-theme
 zshfiles/plugins/tmux/tmux.plugin.zsh,.zsh/plugins/tmux/tmux.plugin.zsh
+zshfiles/plugins/agvim.zsh,.zsh/plugins/agvim.zsh
+zshfiles/plugins/alias.zsh,.zsh/plugins/alias.zsh
+zshfiles/plugins/cecho.zsh,.zsh/plugins/cecho.zsh
+zshfiles/plugins/cfg-alias.zsh,.zsh/plugins/cfg-alias.zsh
+zshfiles/plugins/colorize.zsh,.zsh/plugins/colorize.zsh
+zshfiles/plugins/extract.zsh,.zsh/plugins/extract.zsh
+zshfiles/plugins/history.zsh,.zsh/plugins/history.zsh
+zshfiles/plugins/longrun-command-tracker.zsh,.zsh/plugins/longrun-command-tracker.zsh
+zshfiles/plugins/man.zsh,.zsh/plugins/man.zsh
+zshfiles/plugins/peco-history.zsh,.zsh/plugins/peco-history.zsh
+zshfiles/plugins/ranger.zsh,.zsh/plugins/ranger.zsh
+zshfiles/plugins/rld-alias.zsh,.zsh/plugins/rld-alias.zsh
+zshfiles/plugins/r.zsh,.zsh/plugins/r.zsh
+zshfiles/plugins/shtest.zsh,.zsh/plugins/shtest.zsh
 #---------------------------------------------------------------------------}}}
 # bin                                                                       {{{
 bin/README.md,bin/README.md
