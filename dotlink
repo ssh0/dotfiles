@@ -104,6 +104,7 @@ zshfiles/plugins/alias.zsh,.zsh/plugins/alias.zsh
 zshfiles/plugins/cecho.zsh,.zsh/plugins/cecho.zsh
 zshfiles/plugins/cfg-alias.zsh,.zsh/plugins/cfg-alias.zsh
 zshfiles/plugins/colorize.zsh,.zsh/plugins/colorize.zsh
+zshfiles/plugins/command-not-found.zsh,.zsh/plugins/command-not-found.zsh
 zshfiles/plugins/extract.zsh,.zsh/plugins/extract.zsh
 zshfiles/plugins/history.zsh,.zsh/plugins/history.zsh
 zshfiles/plugins/longrun-command-tracker.zsh,.zsh/plugins/longrun-command-tracker.zsh
