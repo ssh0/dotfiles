@@ -275,12 +275,6 @@ forked from https://github.com/haru8/radiko_rec
 
 record the radiko progrom.
 
-## [ris2bib](./ris2bib)
-
-forked from https://github.com/dpohanlon/ris2bib
-
-Convert Nature .ris format to .bib bibliography format.
-
 ## [screenshot.sh](./screenshot.sh)
 
 Take screenshot (full window) and save it to daydir(%Y-%m-%d).
