@@ -140,7 +140,6 @@ bin/presenmode.sh,bin/presenmode.sh
 bin/presentation.sh,bin/presentation.sh
 bin/proxy_toggle.sh,bin/proxy_toggle.sh
 bin/radiko_rec.sh,bin/radiko_rec.sh
-bin/ris2bib,bin/ris2bib
 bin/screenshot_select.sh,bin/screenshot_select.sh
 bin/screenshot.sh,bin/screenshot.sh
 bin/sound_volume_change_wrapper.sh,bin/sound_volume_change_wrapper.sh
