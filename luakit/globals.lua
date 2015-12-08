@@ -103,6 +103,8 @@ search_engines = {
     g = "https://github.com/search?q=%s",
     -- "gu" Githubを検索(ユーザーを検索)
     gu = "https://github.com/search?q=%s&type=Users",
+    -- "gc" Githubを検索(コードを検索)
+    gc = "https://github.com/search?q=%s&type=Code",
     -- "gs" Gistを検索
     gs = "https://gist.github.com/search?utf8=✓&q=%s",
     -- "t": 翻訳
