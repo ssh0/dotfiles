@@ -3,7 +3,6 @@
 # Configurations
 #------------------------------------------------------------------------------
 
-cfg-aliases() { $EDITOR ${ZSH_ROOT}/aliases.zsh ;}
 cfg-compton() { $EDITOR ~/.config/compton/compton.conf ;}
 cfg-dotlink() { $EDITOR ~/.dotfiles/dotlink ;}
 cfg-dotrc() { $EDITOR ~/.dotfiles/dotrc ;}
