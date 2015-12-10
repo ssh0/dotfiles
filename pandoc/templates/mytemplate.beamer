@@ -13,9 +13,9 @@
 
 \bibliographystyle{junsrt}
 
-\usetheme{default}
+\usetheme{Antibes}
 % Hannover, boxes, default
-\usecolortheme{orchid}
+\usecolortheme{seagull}
 \usefonttheme{default} %{professionalfonts}
 \useinnertheme{rectangles} % rounded rectangles
 %%%%%%%%%%%%%%%% フレーム外側のテーマの選択(省略可)
