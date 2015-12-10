@@ -19,7 +19,6 @@ set mail_check = 120
 set timeout = 300
 set imap_keepalive = 300
 set spoolfile = "+INBOX"
-set record = "+[GMail]/Sent Mail"
 
 set move = no
 set pager_stop = yes
@@ -97,8 +96,8 @@ bind editor <space> noop
 # Macros                                                                    {{{
 #------------------------------------------------------------------------------
 
-macro index <F12> '<sync-mailbox><enter-command>source ~/.mutt/account.com.gmail.藤本將太郎<enter><change-folder>!<enter>'
-macro index <F11> '<sync-mailbox><enter-command>source ~/.mutt/account.com.waseda.藤本將太郎<enter><change-folder>!<enter>'
+macro index <F12> '<sync-mailbox><enter-command>source ~/Dropbox/conf/account.com.gmail.藤本將太郎<enter><change-folder>!<enter>'
+macro index <F11> '<sync-mailbox><enter-command>source ~/Dropbox/conf/account.com.waseda.藤本將太郎<enter><change-folder>!<enter>'
 
 macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
 macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
