@@ -568,7 +568,7 @@ set textwidth=0
 set colorcolumn=80
 
 " status line
-set title showcmd noshowmode
+set title showcmd
 
 " height of commandline
 set cmdheight=1
