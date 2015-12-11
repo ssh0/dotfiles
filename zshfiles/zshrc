@@ -104,19 +104,34 @@ fi
 if ! zgen saved; then
     echo "Creating a zgen save"
 
-    zgen load zsh-users/zsh-syntax-highlighting
-    zgen load robbyrussell/oh-my-zsh lib/git.zsh
-    zgen load robbyrussell/oh-my-zsh lib/grep.zsh
-    zgen load robbyrussell/oh-my-zsh lib/history.zsh
-    zgen load robbyrussell/oh-my-zsh lib/spectrum.zsh
-    zgen load robbyrussell/oh-my-zsh lib/termsupport.zsh
-    zgen load robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh
-    zgen load fcambus/ansiweather
-    zgen load b4b4r07/enhancd zsh
-    zgen load Tarrasch/zsh-bd
-    zgen load chrissicool/zsh-256color
-    zgen load ssh0/zsh-takenote
-    zgen load ssh0/dot
+    # zgen load zsh-users/zsh-syntax-highlighting
+    # zgen load robbyrussell/oh-my-zsh lib/git.zsh
+    # zgen load robbyrussell/oh-my-zsh lib/grep.zsh
+    # zgen load robbyrussell/oh-my-zsh lib/history.zsh
+    # zgen load robbyrussell/oh-my-zsh lib/spectrum.zsh
+    # zgen load robbyrussell/oh-my-zsh lib/termsupport.zsh
+    # zgen load robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh
+    # zgen load fcambus/ansiweather
+    # zgen load b4b4r07/enhancd zsh
+    # zgen load Tarrasch/zsh-bd
+    # zgen load chrissicool/zsh-256color
+    # zgen load ssh0/zsh-takenote
+    # zgen load ssh0/dot
+    zgen loadall <<EOPLG
+      zsh-users/zsh-syntax-highlighting
+      robbyrussell/oh-my-zsh lib/git.zsh
+      robbyrussell/oh-my-zsh lib/grep.zsh
+      robbyrussell/oh-my-zsh lib/history.zsh
+      robbyrussell/oh-my-zsh lib/spectrum.zsh
+      robbyrussell/oh-my-zsh lib/termsupport.zsh
+      robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh
+      fcambus/ansiweather
+      b4b4r07/enhancd zsh
+      Tarrasch/zsh-bd
+      chrissicool/zsh-256color
+      ssh0/zsh-takenote
+      ssh0/dot
+EOPLG
 
     # save all to init script
     zgen save
@@ -170,7 +185,7 @@ setopt hist_ignore_all_dups
 # =============================================================================
 
 # add fpath for completions
-# there are completion functoins named like '_function'.
+# there are completion functions named like '_function'.
 fpath=($ZSH_ROOT/completions $fpath)
 
 source "$ZSH_ROOT/functions/history.zsh"
@@ -192,19 +207,9 @@ eval $(dircolors "$ZSH_ROOT/dircolors/dircolors-zenburn")
 source "$ZSH_ROOT/plugins/tmux/tmux.plugin.zsh"
 
 # load my plugins
-source "$ZSH_ROOT/functions/alias.zsh"
-source "$ZSH_ROOT/functions/cecho.zsh"
-source "$ZSH_ROOT/functions/colorize.zsh"
-source "$ZSH_ROOT/functions/extract.zsh"
-source "$ZSH_ROOT/functions/agvim.zsh"
-source "$ZSH_ROOT/functions/man.zsh"
-source "$ZSH_ROOT/functions/peco-history.zsh"
-source "$ZSH_ROOT/functions/ranger.zsh"
-source "$ZSH_ROOT/functions/r.zsh"
-source "$ZSH_ROOT/functions/shtest.zsh"
-source "$ZSH_ROOT/functions/longrun-command-tracker.zsh"
-source "$ZSH_ROOT/functions/cfg-alias.zsh"
-source "$ZSH_ROOT/functions/rld-alias.zsh"
+for myfile ($ZSH_ROOT/functions/*.zsh); do
+  source "$myfile"
+done
 
 # user specific configuration
 if [[ -f "$ZSH_ROOT/rc.mine" ]]; then
