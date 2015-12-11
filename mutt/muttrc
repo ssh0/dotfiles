@@ -80,6 +80,7 @@ bind pager \cd half-down
 bind pager \cu half-up
 bind pager \cf next-page
 bind pager \cb previous-page
+bind pager i noop
 
 bind index gg first-entry
 bind index G last-entry
@@ -87,6 +88,7 @@ bind index \cd half-down
 bind index \cu half-up
 bind index \cf next-page
 bind index \cb previous-page
+bind index i noop
 
 bind editor <Tab> complete-query
 bind editor ^T complete
