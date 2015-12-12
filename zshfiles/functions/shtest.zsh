@@ -24,6 +24,7 @@ function shtest() {
 
   if [ "$1" = "-h" ]; then
     show_usage
+    unset -f show_usage
     return 1
   fi
 
@@ -37,8 +38,7 @@ function shtest() {
 
   export TAKENOTE_FILENAME_PRE="${_TAKENOTE_FILENAME_PRE}"
   export TAKENOTE_FILENAME_EXTENSION="${_TAKENOTE_FILENAME_EXTENSION}"
-  unset _TAKENOTE_FILENAME_PRE
-  unset _TAKENOTE_FILENAME_EXTENSION
+  unset _TAKENOTE_FILENAME_PRE _TAKENOTE_FILENAME_EXTENSION
 
   return 0
 }
