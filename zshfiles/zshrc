@@ -150,7 +150,7 @@ fi
 # zplug "lib/termsupport", from:oh-my-zsh
 # zplug "lib/theme-and-appearance", from:oh-my-zsh
 
-# zplug "zsh-users/zsh-syntax-highlighting", nice:10
+# zplug "zsh-users/zsh-syntax-highlighting"
 # zplug "fcambus/ansiweather", as:command
 # zplug "b4b4r07/enhancd"
 # zplug "b4b4r07/zplug"
