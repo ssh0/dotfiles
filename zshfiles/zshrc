@@ -29,6 +29,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 
 # find alternative apps if it is installed on your system
 find_alt() {
+  local i
   for i in $@; do
     hash "$i" && { echo "$i"; return 0; }
   done
@@ -92,13 +93,12 @@ if [[ ! -f "${zgen_root}/zgen.zsh" ]]; then
     exit 1
   fi
   exec zsh -l
-else
-  source "${zgen_root}/zgen.zsh"
-  unset zgen_repo_url
-  unset zgen_raw_url
-  unset zgen_root
 fi
 
+source "${zgen_root}/zgen.zsh"
+unset zgen_repo_url
+unset zgen_raw_url
+unset zgen_root
 
 # check if there's no init script
 if ! zgen saved; then
@@ -210,6 +210,7 @@ source "$ZSH_ROOT/plugins/tmux/tmux.plugin.zsh"
 for myfile ($ZSH_ROOT/functions/*.zsh); do
   source "$myfile"
 done
+unset -v myfile
 
 # user specific configuration
 if [[ -f "$ZSH_ROOT/rc.mine" ]]; then
