@@ -6,6 +6,7 @@
 cfg-compton() { $EDITOR ~/.config/compton/compton.conf ;}
 cfg-dotlink() { $EDITOR ~/.dotfiles/dotlink ;}
 cfg-dotrc() { $EDITOR ~/.dotfiles/dotrc ;}
+cfg-functions() { $EDITOR ~/.zsh/functions/ ;}
 cfg-history() { $EDITOR ${ZSH_ROOT}/history ;}
 cfg-latexmkrc() { $EDITOR ~/.latexmkrc ;}
 cfg-luakit() { $EDITOR ~/.config/luakit ;}
