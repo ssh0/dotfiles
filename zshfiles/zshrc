@@ -178,7 +178,7 @@ fpath=($ZSH_ROOT/completions $fpath)
 source "$ZSH_ROOT/functions/history.zsh"
 
 autoload -U compinit
-compinit
+compinit -D
 
 # ==========================================================================}}}
 # source some files                                                         {{{
@@ -223,6 +223,21 @@ bindkey '^[[Z' reverse-menu-complete
 # by C-p, C-n
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
+
+# ==========================================================================}}}
+# zprof                                                                     {{{
+# =============================================================================
+
+# If you want to activate profiling, comment in `~/.zshenv`.
+#
+# ```~/.zshenv
+# zmodload zsh/zprof && zprof
+# ```
+
+
+if (which zprof > /dev/null); then
+  zprof | less
+fi
 
 # ==========================================================================}}}
 # vim: set ft=zsh
