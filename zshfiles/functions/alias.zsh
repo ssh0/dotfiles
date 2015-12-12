@@ -4,14 +4,22 @@
 #------------------------------------------------------------------------------
 
 # apt update
-alias apt-upd='sudo apt update'
+if hash apt-fast; then
+  alias apt-upd='apt-fast update'
+  alias apt-upg='apt-fast upgrade'
+  alias apt-ins='apt-fast install'
+else
+  alias apt-upd='sudo apt update'
+  alias apt-upg='sudo apt upgrade'
+  alias apt-ins='sudo apt install'
+fi
 
-# apt upgrade
-alias apt-upg='sudo apt upgrade'
-#
 # git alias to "g"
 alias g='git'
 compdef g=git
+
+alias v='vim'
+compdef v=vim
 
 # I often type ":q" to exit terminal
 alias :q='exit'
