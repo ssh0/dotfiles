@@ -102,39 +102,26 @@ unset zgen_root
 
 # check if there's no init script
 if ! zgen saved; then
-    echo "Creating a zgen save"
+  echo "Creating a zgen save"
 
-    # zgen load zsh-users/zsh-syntax-highlighting
-    # zgen load robbyrussell/oh-my-zsh lib/git.zsh
-    # zgen load robbyrussell/oh-my-zsh lib/grep.zsh
-    # zgen load robbyrussell/oh-my-zsh lib/history.zsh
-    # zgen load robbyrussell/oh-my-zsh lib/spectrum.zsh
-    # zgen load robbyrussell/oh-my-zsh lib/termsupport.zsh
-    # zgen load robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh
-    # zgen load fcambus/ansiweather
-    # zgen load b4b4r07/enhancd zsh
-    # zgen load Tarrasch/zsh-bd
-    # zgen load chrissicool/zsh-256color
-    # zgen load ssh0/zsh-takenote
-    # zgen load ssh0/dot
-    zgen loadall <<EOPLG
-      zsh-users/zsh-syntax-highlighting
-      robbyrussell/oh-my-zsh lib/git.zsh
-      robbyrussell/oh-my-zsh lib/grep.zsh
-      robbyrussell/oh-my-zsh lib/history.zsh
-      robbyrussell/oh-my-zsh lib/spectrum.zsh
-      robbyrussell/oh-my-zsh lib/termsupport.zsh
-      robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh
-      fcambus/ansiweather
-      b4b4r07/enhancd zsh
-      Tarrasch/zsh-bd
-      chrissicool/zsh-256color
-      ssh0/zsh-takenote
-      ssh0/dot
+  zgen loadall <<EOPLG
+    zsh-users/zsh-syntax-highlighting
+    robbyrussell/oh-my-zsh lib/git.zsh
+    robbyrussell/oh-my-zsh lib/grep.zsh
+    robbyrussell/oh-my-zsh lib/history.zsh
+    robbyrussell/oh-my-zsh lib/spectrum.zsh
+    robbyrussell/oh-my-zsh lib/termsupport.zsh
+    robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh
+    fcambus/ansiweather
+    b4b4r07/enhancd zsh
+    Tarrasch/zsh-bd
+    chrissicool/zsh-256color
+    ssh0/zsh-takenote
+    ssh0/dot
 EOPLG
 
-    # save all to init script
-    zgen save
+  # save all to init script
+  zgen save
 fi
 
 # ==========================================================================}}}
