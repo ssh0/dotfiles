@@ -230,6 +230,8 @@ bindkey "^N" history-beginning-search-forward-end
 bindkey '^T' fzf-completion
 bindkey '^I' $fzf_default_completion
 
+bindkey '^r' peco-select-history
+
 # ==========================================================================}}}
 # zprof                                                                     {{{
 # =============================================================================

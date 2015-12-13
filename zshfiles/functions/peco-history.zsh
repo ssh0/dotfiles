@@ -16,6 +16,3 @@ function peco-select-history() {
 }
 zle -N peco-select-history
 
-# Keybinding
-bindkey '^r' peco-select-history
-
