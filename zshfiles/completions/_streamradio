@@ -1,6 +1,7 @@
 #compdef streamradio
 
 _streamradio() {
+  local ret
   _arguments -C \
     '1: :->cmds' \
     '2:: :->args' \
