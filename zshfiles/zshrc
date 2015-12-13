@@ -36,6 +36,9 @@ find_alt() {
   return 1
 }
 
+# use fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # set the default program
 # the first program in the array will be chosen as the default
 export OPENER=$(find_alt xdg-open exo-open gnome-open )
@@ -44,6 +47,7 @@ export BROWSERCLI=$(find_alt w3m links2 links lynx elinks $OPENER )
 export EDITOR=$(find_alt vim emacs nano leafpad gedit pluma $OPENER )
 export FILEMANAGER=$(find_alt thunar nautilus dolphin pcmanfm tspacefm enlightenment_filemanager $OPENER )
 export PAGER=$(find_alt less more most)
+export PERCOL=$(find_alt fzf peco percol)
 export PLAYER=$(find_alt mpv mplayer cvlc $OPENER )
 export READER=$(find_alt mupdf zathura evince $OPENER )
 export TERMCMD=$(find_alt urxvt xterm gnome-terminal)
@@ -200,9 +204,7 @@ done
 unset -v myfile
 
 # user specific configuration
-if [[ -f "$ZSH_ROOT/rc.mine" ]]; then
-  source "$ZSH_ROOT/rc.mine"
-fi
+[ -f "$ZSH_ROOT/rc.mine" ] && source "$ZSH_ROOT/rc.mine"
 
 # ==========================================================================}}}
 # bindkeys                                                                  {{{
