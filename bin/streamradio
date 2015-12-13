@@ -38,8 +38,8 @@ elif [ "$1" = "start" ]; then
   echo "load ${station}" >> "${fifofile}"
 elif [ "$1" = "list" ]; then
   if [ "$2" = "stations" ]; then
-    if hash peco; then
-      cat ${stationfile} | peco | awk 'BEGIN {FS=", "; }  { print $2; }'
+    if hash $PERCOL 2>/dev/null; then
+      cat ${stationfile} | $PERCOL | awk 'BEGIN {FS=", "; }  { print $2; }'
     else
       cat ${stationfile}
     fi
