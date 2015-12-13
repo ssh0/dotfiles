@@ -4,7 +4,7 @@
 #------------------------------------------------------------------------------
 
 # apt update
-if hash apt-fast; then
+if hash apt-fast 2>/dev/null; then
   alias apt-upd='apt-fast update'
   alias apt-upg='apt-fast upgrade'
   alias apt-ins='apt-fast install'

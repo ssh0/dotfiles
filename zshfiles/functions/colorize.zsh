@@ -10,7 +10,7 @@ alias mplayer='mplayer -msgcolor'
 alias twitter='twitter -f ansi'
 
 # colordiff
-if hash colordiff; then
+if hash colordiff 2>/dev/null; then
   alias diff='colordiff -u'
 else
   alias diff='diff -u'

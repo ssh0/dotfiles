@@ -5,7 +5,7 @@
 
 function peco-select-history() {
     typeset tac
-    if hash tac > /dev/null; then
+    if hash tac 2> /dev/null; then
         tac=tac
     else
         tac='tail -r'

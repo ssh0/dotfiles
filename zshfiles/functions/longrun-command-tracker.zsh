@@ -4,7 +4,7 @@
 #------------------------------------------------------------------------------
 #
 # Automatic notification via growlnotify / notify-send
-#
+# http://qiita.com/hayamiz/items/d64730b61b7918fbb970
 #
 # Notification of remote host command
 # -----------------------------------
@@ -54,9 +54,9 @@ function __my_preexec_end_timetrack() {
 
     if test -n "${REMOTEHOST}${SSH_CONNECTION}"; then
         notify_method="remotehost"
-    elif hash growlnotify >/dev/null 2>&1; then
+    elif hash growlnotify 2>/dev/null; then
         notify_method="growlnotify"
-    elif hash notify-send >/dev/null 2>&1; then
+    elif hash notify-send 2>/dev/null; then
         notify_method="notify-send"
     else
         return
@@ -101,8 +101,8 @@ function __my_preexec_end_timetrack() {
     unset __timetrack_command
 }
 
-if hash growlnotify >/dev/null 2>&1 ||
-    hash >/dev/null 2>&1 ||
+if hash growlnotify 2>/dev/null ||
+    hash notify-send 2>/dev/null ||
     test -n "${REMOTEHOST}${SSH_CONNECTION}"; then
     add-zsh-hook preexec __my_preexec_start_timetrack
     add-zsh-hook precmd __my_preexec_end_timetrack
