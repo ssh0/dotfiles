@@ -31,7 +31,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 find_alt() {
   local i
   for i in $@; do
-    hash "$i" && { echo "$i"; return 0; }
+    hash "$i" 2>/dev/null && echo "$i" && return 0
   done
   return 1
 }
@@ -83,13 +83,13 @@ if [[ ! -f "${zgen_root}/zgen.zsh" ]]; then
   echo "zgen is not installed in this machine."
   echo "Installing zgen..."
   echo ""
-  if hash git; then
+  if hash git 2>/dev/null; then
     install -d "${zgen_root}"
     git clone "${zgen_repo_url}" "${zgen_root}"
-  elif hash curl; then
+  elif hash curl 2>/dev/null; then
     install -d "${zgen_root}"
     curl -L "${zgen_raw_url}" -o "${zgen_root}/zgen.zsh"
-  elif hash wget; then 
+  elif hash wget 2>/dev/null; then 
     install -d "${zgen_root}"
     wget "${zgen_raw_url}" -O "${zgen_root}/zgen.zsh"
   else
