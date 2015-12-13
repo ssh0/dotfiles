@@ -7,7 +7,7 @@
 #                     \__,_|\___/ \__|_| |_|_|\___||___/                      #
 #                                                                             #
 ###############################################################################
-# This file is config file for dot.
+# This file is config file for dot.                                         {{{
 # You can comment out by adding "#" at the beginning of the line.
 # And an empty line is ignored by dot.
 #
@@ -29,60 +29,94 @@
 # In the second example, the script automatically completes the second
 # arguments and confirm whether or not to execute that command.
 #
-#------------------------------------------------------------------------------
+#===========================================================================}}}
 # ~/.Xmodmap:                                                               {{{
+#==============================================================================
 # xmodmap is a utility for modifying keymaps and pointing button
 # mappings in Xorg.
+
 system/Xmodmap,.Xmodmap
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # ~/.Xdefaults                                                              {{{
+#==============================================================================
+
 system/Xdefaults,.Xdefaults
 # system/Xdefaults.T540p,.Xdefaults
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # ~/.Xresources:                                                            {{{
+#==============================================================================
 # Xresources is a user-level configuration dotfile
 # https://wiki.archlinux.org/index.php/X_resources#XScreenSaver_resources
+
 system/Xresources,.Xresources
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # ~/.xscreensaver:                                                          {{{
+#==============================================================================
 # XScreenSaver Preferences File
+
 system/xscreensaver,.xscreensaver
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # ~/.profile:                                                               {{{
+#==============================================================================
 # executed by the command interpreter for login shells.
+
 system/profile,.profile
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # [vim](http://www.vim.org/):                                               {{{
+#==============================================================================
 # Vim is an advanced text editor that seeks to provide the power of the
 # de-facto Unix editor 'Vi', with a more complete feature set.
+
 vimfiles/vimrc,.vimrc
+
 vimfiles/ftplugin/bib_quickrun.vim,.vim/ftplugin/bib_quickrun.vim
 vimfiles/ftplugin/tex_quickrun.vim,.vim/ftplugin/tex_quickrun.vim
 vimfiles/ftplugin/texmath_quickrun.vim,.vim/ftplugin/texmath_quickrun.vim
 vimfiles/ftplugin/markdown_quickrun.vim,.vim/ftplugin/markdown_quickrun.vim
+
 # markdown template
 vimfiles/template/template.md,.vim/template/template.md
 vimfiles/template/template.mkd,.vim/template/template.mkd
+
 # Tex template
 vimfiles/template/template.tex,.vim/template/template.tex
+
 # Python template
 vimfiles/template/template.py,.vim/template/template.py
+
 # Shell script template
 vimfiles/template/template.sh,.vim/template/template.sh
+
 vimfiles/.splash-vim.txt,.splash-vim.txt
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # [tmux](http://tmux.sourceforge.net/)                                      {{{
+#==============================================================================
+
 rcfiles/tmux.conf,.tmux.conf
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # [tmuxinator](https://github.com/tmuxinator/tmuxinator)                    {{{
+#==============================================================================
+
 tmuxinator/clean.yml,.tmuxinator/clean.yml
 tmuxinator/dev.yml,.tmuxinator/dev.yml
 tmuxinator/stream.yml,.tmuxinator/stream.yml
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # [zsh](http://zsh.sourceforge.net/):                                       {{{
+#==============================================================================
 # Zsh is a shell designed for interactive use, although it is also a
 # powerful scripting language.
+
 zshfiles/zshrc,.zshrc
+
+# Completions
 zshfiles/completions/_jupyter,.zsh/completions/_jupyter
 zshfiles/completions/_mkdocs,.zsh/completions/_mkdocs
 zshfiles/completions/_myrsync,.zsh/completions/_myrsync
@@ -96,8 +130,12 @@ zshfiles/completions/_streamradio,.zsh/completions/_streamradio
 zshfiles/completions/_tmuxinator,.zsh/completions/_tmuxinator
 zshfiles/completions/_youtube-dl,.zsh/completions/_youtube-dl
 zshfiles/completions/tig-completion.bash,.zsh/completions/tig-completion.bash
+
+# dircolors & prompt theme
 zshfiles/dircolors/dircolors-zenburn,.zsh/dircolors/dircolors-zenburn
 zshfiles/themes/agnoster.zsh-theme,.zsh/themes/agnoster.zsh-theme
+
+# Some functions and aliases
 zshfiles/plugins/tmux/tmux.plugin.zsh,.zsh/plugins/tmux/tmux.plugin.zsh
 zshfiles/functions/agvim.zsh,.zsh/functions/agvim.zsh
 zshfiles/functions/alias.zsh,.zsh/functions/alias.zsh
@@ -114,8 +152,12 @@ zshfiles/functions/ranger.zsh,.zsh/functions/ranger.zsh
 zshfiles/functions/rld-alias.zsh,.zsh/functions/rld-alias.zsh
 zshfiles/functions/r.zsh,.zsh/functions/r.zsh
 zshfiles/functions/shtest.zsh,.zsh/functions/shtest.zsh
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # bin                                                                       {{{
+#==============================================================================
+# Some useful scripts (See bin/README.md)
+
 bin/README.md,bin/README.md
 bin/alarm,bin/alarm
 bin/allmp4tomp3.sh,bin/allmp4tomp3.sh
@@ -155,21 +197,29 @@ bin/trackpoint_toggle.sh,bin/trackpoint_toggle.sh
 bin/urxvt_float.sh,bin/urxvt_float.sh
 bin/wmatomp3_converter.sh,bin/wmatomp3_converter.sh
 bin/ytdl,bin/ytdl
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # [ranger](http://ranger.nongnu.org/):                                      {{{
+#==============================================================================
 # ranger is a file manager with VI key bindings.
+
 ranger/colorschemes/mycolor.py,.config/ranger/colorschemes/mycolor.py
 ranger/rc.conf,.config/ranger/rc.conf
 ranger/rifle.conf,.config/ranger/rifle.conf
 ranger/scope.sh,.config/ranger/scope.sh
 ranger/commands.py,.config/ranger/commands.py
 ranger/commands_sample.py,.config/ranger/commands_sample.py
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # [compton](https://github.com/chjj/compton):                               {{{
+#==============================================================================
 # Compton is a compositor for X, and a fork of xcompmgr-dana.
+
 compton/compton.conf,.config/compton/compton.conf
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # [ipython](http://ipython.org/):                                           {{{
+#==============================================================================
 # IPython provides a rich architecture for interactive computing with:
 #     - Powerful interactive shells (terminal and Qt-based).
 #     - A browser-based notebook with support for code, rich text, mathematical
@@ -177,77 +227,117 @@ compton/compton.conf,.config/compton/compton.conf
 #     - Support for interactive data visualization and use of GUI toolkits.
 #     - Flexible, embeddable interpreters to load into your own projects.
 #     - Easy to use, high performance tools for parallel computing.
+
 ipython/nbextensions/livereveal/main.css,.ipython/nbextensions/livereveal/main.css
 ipython/profile_default/static/custom/custom.css,.ipython/profile_default/static/custom/custom.css
 ipython/profile_slide/static/custom/custom.css,.ipython/profile_slide/static/custom/custom.css
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # [tudu](http://cli-apps.org/content/show.php/TuDu?content=129325):         {{{
+#==============================================================================
 # TuDu is a comand line interface to manage hierarchical todos. Each
 # task has a title, a long text description, a deadline (tudu warns you
 # when the date is close), and a scheduled date. There are categories
 # and priorities.
+
 rcfiles/tudurc,.tudurc
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # [latexmk](http://www.ctan.org/pkg/latexmk/):                              {{{
+#==============================================================================
 # Latexmk completely automates the process of generating a LaTeX document.
+
 rcfiles/latexmkrc,.latexmkrc
 rcfiles/latexmkrc_dvipng,.latexmkrc_dvipng
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # [pandoc](http://pandoc.org/):                                             {{{ 
+#==============================================================================
 # If you need to convert files from one markup format into another, pandoc is
 # your swiss-army knife.
+
 pandoc/templates/mytemplate.beamer,.pandoc/templates/mytemplate.beamer
 pandoc/templates/mytemplate.latex,.pandoc/templates/mytemplate.latex
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # [notify-osd](https://wiki.ubuntu.com/NotifyOSD):                          {{{
+#==============================================================================
 # Canonical's on-screen-display notification agent, implementing
 # the freedesktop.org Desktop Notifications Specification with
 # semi-transparent click-through bubbles.
+
 system/notify-osd,.notify-osd
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # [vimperator](https://addons.mozilla.org/ja/firefox/addon/vimperator/):    {{{
 # Make Firefox look and behave like Vim
+#==============================================================================
+
 vimperator/vimperatorrc,.vimperatorrc
 vimperator/colors/darkness.vimp,.vimperator/colors/darkness.vimp
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # [mpv](http://mpv.io/):                                                    {{{
+#==============================================================================
 # mpv is a fork of mplayer2 and MPlayer. It shares some features with
 # the former projects while introducing many more.
+
 mpv/config,.mpv/config
 mpv/lua/notify.lua,.mpv/scripts/notify.lua
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # [cmus](https://cmus.github.io/):                                          {{{
+#==============================================================================
 # cmus is a small, fast and powerful console music player for Unix-like
 # operating systems.
+
 cmus/rc,.cmus/rc
 cmus/mycolor.theme,.cmus/mycolor.theme
 cmus/status_display_program.sh,.cmus/status_display_program.sh
 cmus/cmus_desktop_notify.py,.cmus/cmus_desktop_notify.py
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # [mutt](http://www.mutt.org/):                                             {{{
+#==============================================================================
 # E-Mail Client
+
 mutt/muttrc,.mutt/muttrc
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # [turses](https://github.com/dialelo/turses):                              {{{
+#==============================================================================
 # A Twitter client for the console.
+
 turses/config,.turses/config
 turses/sessions,.turses/sessions
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # [pyradio](https://github.com/coderholic/pyradio)                          {{{
+#==============================================================================
+
 pyradio/stations.csv,.pyradio/stations.csv
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # [peco](https://github.com/peco/peco)                                      {{{
+#==============================================================================
+
 peco/config.json,.peco/config.json
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # [xmonad](http://xmonad.org/):                                             {{{
+#==============================================================================
 # xmonad is a dynamically tiling X11 window manager that is written
 # and configured in Haskell. In a normal WM, you spend half your time
 # aligning and searching for windows. xmonad makes work easier, by
 # automating this.
+
 xmonad/xmonad.hs,.xmonad/xmonad.hs
 xmonad/xmobarrc,.xmonad/xmobarrc
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # [luakit](http://mason-larobina.github.io/luakit):                         {{{
+#==============================================================================
+
 luakit/binds.lua,.config/luakit/binds.lua
 luakit/globals.lua,.config/luakit/globals.lua
 luakit/rc.lua,.config/luakit/rc.lua
@@ -261,10 +351,17 @@ luakit/plugins/private_browsing_tabs.lua,.config/luakit/plugins/private_browsing
 luakit/plugins/adblock/adp_jp_element_hiding.txt,.local/share/luakit/adblock/abp_jp_element_hiding.txt
 luakit/plugins/adblock/Adblock_Plus_list.txt,.local/share/luakit/adblock/Adblock_Plus_list.txt
 luakit/plugins/adblock/exceptionrules.txt,.local/share/luakit/adblock/exceptionrules.txt
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # [tig](https://github.com/jonas/tig)                                       {{{
+#==============================================================================
+
 rcfiles/tigrc,.tigrc
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
 # [ansiweather](https://github.com/fcambus/ansiweather)                     {{{
+#==============================================================================
+
 rcfiles/ansiweatherrc,.ansiweatherrc
-#---------------------------------------------------------------------------}}}
+
+#===========================================================================}}}
