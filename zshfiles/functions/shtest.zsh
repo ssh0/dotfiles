@@ -20,11 +20,11 @@ function shtest() {
     echo "  -o FILE: Set the file name to save. "
     echo "  -l     : List the files."
     echo "  -h     : Show this message."
+    unset -f $0
   }
 
   if [ "$1" = "-h" ]; then
     show_usage
-    unset -f show_usage
     return 1
   fi
 
