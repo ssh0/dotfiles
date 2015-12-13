@@ -38,6 +38,7 @@ find_alt() {
 
 # use fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_COMPLETION_TRIGGER=''
 
 # set the default program
 # the first program in the array will be chosen as the default
@@ -225,6 +226,9 @@ bindkey '^[[Z' reverse-menu-complete
 # by C-p, C-n
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
+
+bindkey '^T' fzf-completion
+bindkey '^I' $fzf_default_completion
 
 # ==========================================================================}}}
 # zprof                                                                     {{{
