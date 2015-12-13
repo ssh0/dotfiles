@@ -576,6 +576,9 @@ set cmdheight=1
 " the last window will have a status line always
 set laststatus=2
 
+" show wildmenu
+set wildmenu
+
 " show Tab and Space at end of the line
 set list listchars=tab:▸\ ,trail:~
 
