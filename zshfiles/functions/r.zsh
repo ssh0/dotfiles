@@ -5,11 +5,7 @@
 # https://wiki.archlinux.org/index.php/Ranger#Start_new_ranger_instance_only_if_it.27s_not_running_in_current_shell
 
 function r() {
-  if [ -z "$RANGER_LEVEL" ]; then
-    ranger-cd $@
-  else
-    exit
-  fi
+  test -z "$RANGER_LEVEL" && ranger-cd $@ || exit
 }
 
 compdef r=ranger
