@@ -81,8 +81,8 @@ myfocusedBorderColor = colorBlue
 gapwidth  = 3
 gapwidthU = 12
 gapwidthD = 12
-gapwidthL = 36
-gapwidthR = 36
+gapwidthL = 40
+gapwidthR = 41
 
 --------------------------------------------------------------------------- }}}
 -- Define keys to remove                                                    {{{
