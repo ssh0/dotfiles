@@ -19,7 +19,7 @@ _streamradio() {
     args)
       if [ "$line[1]" = "start" ]; then
         _arguments \
-          "*:URL:( "$(cat ~/.pyradio/stations.csv | peco | awk 'BEGIN {FS=", "; }  { print $2; }')" )"
+          "*:URL:( "$(cat ~/.pyradio/stations.csv | $PERCOL | awk 'BEGIN {FS=", "; }  { print $2; }')" )"
           ret=0
       elif [ "$line[1]" = "list" ]; then
         _values "list what" \
