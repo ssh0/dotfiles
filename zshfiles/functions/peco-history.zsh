@@ -10,7 +10,7 @@ function peco-select-history() {
     else
         tac='tail -r'
     fi
-    BUFFER=$(fc -l -n 1 | eval $tac | peco --query "$LBUFFER" --prompt ">")
+    BUFFER=$(fc -l -n 1 | eval $tac | $PERCOL)
     CURSOR=$#BUFFER
     zle redisplay
 }
