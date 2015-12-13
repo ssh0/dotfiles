@@ -627,11 +627,11 @@ autocmd FileType coffee     setlocal shiftwidth=2 softtabstop=2 tabstop=2 expand
 "------------------------------------------------------------------------------
 
 function! Markdown_h1()
-  normal! VypVr=
+  normal! V"ly"lpVr=
 endfunction
 
 function! Markdown_h2()
-  normal! VypVr-
+  normal! V"ly"lpVr-
 endfunction
 
 function! Markdown_h3()
