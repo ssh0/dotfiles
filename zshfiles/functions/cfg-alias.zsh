@@ -14,11 +14,9 @@ cfg-mplayer() { $EDITOR ~/.mplayer/config ;}
 cfg-mpv() { $EDITOR ~/.mpv/config ;}
 cfg-nvim() { $EDITOR ~/.config/nvim/init.vim ;}
 cfg-ranger() { $EDITOR ~/.config/ranger/rc.conf ;}
-cfg-ranger-commands() { $EDITOR ~/.config/ranger/commands.py ;} # scripts
 cfg-ranger-rifle() { $EDITOR ~/.config/ranger/rifle.conf ;} # edit open_with extensions
 cfg-tig() { $EDITOR ~/.tigrc ;}
 cfg-tmux() { $EDITOR ~/.tmux.conf ;}
-cfg-tmuxinator() { $EDITOR ~/.tmuxinator/ ;}
 cfg-turses() { $EDITOR ~/.turses/config ;}
 cfg-vim() { $EDITOR ~/.vimrc ;}
 cfg-vimcolor() { $EDITOR ~/.vim/bundle/easy-reading.vim/colors/easy-reading.vim ;}
