@@ -10,7 +10,7 @@
 " The config if NeoVim set it to default or don't work with nvim,
 " comment out with '">>> '
 "
-" See :h vim-difference
+" See :h vim_diff
 "
 " written by Shotaro Fujimoto (https://github.com/ssh0)
 "------------------------------------------------------------------------------
@@ -551,7 +551,7 @@ set wrapscan
 " ---------
 
 " don't give the intro message
-set shortmess+=I
+">>> set shortmess+=I
 
 " don't redraw screen during macros
 set lazyredraw
@@ -659,7 +659,7 @@ nnoremap <Down> gj
 nnoremap <Up> gk
 
 " Insert empty line
-nnoremap <CR> o <ESC>0D
+nnoremap <CR> o <ESC>0"_D
 
 " move from line head to line end
 nnoremap h <Left>zv
