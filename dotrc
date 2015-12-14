@@ -7,7 +7,6 @@
 
 # Set the directory that the script regard as dotfiles directory.
 # dotdir="$HOME/.dotfiles"
-# dotdir_pattern="s/\/home\/$USER\/\.dotfiles\///p"
 
 # Set the path to your dotlink which describes the correspondence relation.
 # dotlink="$dotdir/dotlink"
@@ -18,11 +17,6 @@
 # edit these files manually.)
 # dotlinklocal="$HOME/.config/dot/dotlink.local"
 # linkfiles=("${dotlink}" "${dotlinklocal}")
-
-# You don't have to change this line unless you want config for other user.
-# It is better in such a case that run the command `export USER=username`
-# before executing `dot`.
-# home_pattern="s/\/home\/$USER\///p"
 
 # Options
 
