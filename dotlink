@@ -67,6 +67,13 @@ system/xscreensaver,.xscreensaver
 system/profile,.profile
 
 #===========================================================================}}}
+# netrc                                                                     {{{
+#==============================================================================
+# (contain private information)
+
+/home/shotaro/Dropbox/conf/netrc,.netrc
+
+#===========================================================================}}}
 # [vim](http://www.vim.org/):                                               {{{
 #==============================================================================
 # Vim is an advanced text editor that seeks to provide the power of the
