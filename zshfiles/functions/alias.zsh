@@ -18,6 +18,10 @@ fi
 alias g='git'
 compdef g=git
 
+if hash nvim 2>/dev/null; then
+  alias vim='nvim'
+fi
+
 alias v='vim'
 compdef v=vim
 
