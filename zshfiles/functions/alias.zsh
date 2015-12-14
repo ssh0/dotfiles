@@ -30,7 +30,7 @@ compdef v=vim
 alias :q='exit'
 
 # thefuck (https://github.com/nvbn/thefuck)
-alias fuck='eval "$(thefuck $(fc -ln -1 | tail -n 1)); fc -R"'
+alias f='eval "$(thefuck $(fc -ln -1 | tail -n 1)); fc -R"'
 
 alias -g ...='../..'
 alias -g ....='../../..'
