@@ -95,6 +95,13 @@ vimfiles/template/template.sh,.vim/template/template.sh
 vimfiles/.splash-vim.txt,.splash-vim.txt
 
 #===========================================================================}}}
+# [neovim](https://neovim.io/):                                             {{{
+#==============================================================================
+# Neovim is a project that seeks to aggressively refactor Vim
+
+neovim/init.vim,.config/nvim/init.vim
+
+#===========================================================================}}}
 # [tmux](http://tmux.sourceforge.net/)                                      {{{
 #==============================================================================
 
