@@ -207,8 +207,6 @@ ranger/colorschemes/mycolor.py,.config/ranger/colorschemes/mycolor.py
 ranger/rc.conf,.config/ranger/rc.conf
 ranger/rifle.conf,.config/ranger/rifle.conf
 ranger/scope.sh,.config/ranger/scope.sh
-ranger/commands.py,.config/ranger/commands.py
-ranger/commands_sample.py,.config/ranger/commands_sample.py
 
 #===========================================================================}}}
 # [compton](https://github.com/chjj/compton):                               {{{
