@@ -378,3 +378,4 @@ rcfiles/tigrc,.tigrc
 rcfiles/ansiweatherrc,.ansiweatherrc
 
 #===========================================================================}}}
+gitconfig,.gitconfig

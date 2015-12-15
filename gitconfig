@@ -1,0 +1,45 @@
+[user]
+    email = fuji101ijuf@gmail.com
+    name = ssh0
+[push]
+    default = simple
+[alias]
+[github]
+    user = ssh0
+[color]
+    status = auto
+    diff = auto
+    branch = auto
+    interactive = auto
+    grep = auto
+[alias]
+    st = status
+    sh = show
+    so = remote show origin
+    ad = add
+    c = commit -v
+    ci = commit -a
+    cam = commit -a --amend
+    co = checkout
+    # branch
+    br = branch
+    ba = branch -a           # Show all the branches including origin
+    bm = branch --merged     # Show the branch already merged
+    bn = branch --no-merged  # Show the branch not merged
+    # log
+    lp = log -p              # with diff
+    lr = log origin          # log in origin
+    # log tree
+    log-graph = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
+    log-all = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
+    # diff
+    dm = diff master           # diff against master
+    dw = diff --color-words    # diff with color words
+    dc = diff --cached         # diff ageinst cached one
+    # edit unmerged file when conflict occured
+    edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
+    # add unmerged file when conflict occured
+    add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+    # grep
+    gr = grep
+    gn = grep -n
