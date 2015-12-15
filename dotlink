@@ -74,6 +74,12 @@ system/profile,.profile
 /home/shotaro/Dropbox/conf/netrc,.netrc
 
 #===========================================================================}}}
+# gitconfig                                                                 {{{
+#==============================================================================
+
+gitconfig,.gitconfig
+
+#===========================================================================}}}
 # [vim](http://www.vim.org/):                                               {{{
 #==============================================================================
 # Vim is an advanced text editor that seeks to provide the power of the
@@ -378,4 +384,3 @@ rcfiles/tigrc,.tigrc
 rcfiles/ansiweatherrc,.ansiweatherrc
 
 #===========================================================================}}}
-gitconfig,.gitconfig
