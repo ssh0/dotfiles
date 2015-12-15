@@ -169,6 +169,7 @@ zshfiles/functions/history.zsh,.zsh/functions/history.zsh
 # zshfiles/functions/longrun-command-tracker.zsh,.zsh/functions/longrun-command-tracker.zsh
 zshfiles/functions/man.zsh,.zsh/functions/man.zsh
 zshfiles/functions/peco-history.zsh,.zsh/functions/peco-history.zsh
+zshfiles/functions/progressbar.zsh,.zsh/functions/progressbar.zsh
 zshfiles/functions/ranger.zsh,.zsh/functions/ranger.zsh
 zshfiles/functions/rld-alias.zsh,.zsh/functions/rld-alias.zsh
 zshfiles/functions/r.zsh,.zsh/functions/r.zsh
