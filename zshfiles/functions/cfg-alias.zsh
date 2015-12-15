@@ -3,27 +3,27 @@
 # Configurations
 #------------------------------------------------------------------------------
 
-cfg-compton() { $EDITOR ~/.config/compton/compton.conf ;}
-cfg-dotlink() { $EDITOR ~/.dotfiles/dotlink ;}
-cfg-dotrc() { $EDITOR ~/.dotfiles/dotrc ;}
-cfg-functions() { $EDITOR ~/.zsh/functions ;}
-cfg-history() { $EDITOR ${ZSH_ROOT}/history ;}
-cfg-latexmkrc() { $EDITOR ~/.latexmkrc ;}
-cfg-luakit() { $EDITOR ~/.config/luakit ;}
-cfg-mplayer() { $EDITOR ~/.mplayer/config ;}
-cfg-mpv() { $EDITOR ~/.mpv/config ;}
-cfg-nvim() { $EDITOR ~/.config/nvim/init.vim ;}
-cfg-ranger() { $EDITOR ~/.config/ranger/rc.conf ;}
-cfg-ranger-rifle() { $EDITOR ~/.config/ranger/rifle.conf ;} # edit open_with extensions
-cfg-tig() { $EDITOR ~/.tigrc ;}
-cfg-tmux() { $EDITOR ~/.tmux.conf ;}
-cfg-turses() { $EDITOR ~/.turses/config ;}
-cfg-vim() { $EDITOR ~/.vimrc ;}
-cfg-vimcolor() { $EDITOR ~/.vim/bundle/easy-reading.vim/colors/easy-reading.vim ;}
-cfg-vimperatorrc() { $EDITOR ~/.vimperatorrc ;}
-cfg-websearch() { $EDITOR ~/Workspace/python/web_search/websearch/config.py ;}
-cfg-xdefaults() { $EDITOR ~/.Xdefaults ;}
-cfg-xmodmap() { $EDITOR ~/.Xmodmap ;}
-cfg-xmonad() { $EDITOR ~/.xmonad/xmonad.hs ;}
-cfg-xresources() { $EDITOR ~/.Xresources ;}
-cfg-zshrc() { $EDITOR ~/.zshrc ;}
+cf-compton() { $EDITOR ~/.config/compton/compton.conf ;}
+cf-dotlink() { $EDITOR ~/.dotfiles/dotlink ;}
+cf-dotrc() { $EDITOR ~/.dotfiles/dotrc ;}
+cf-functions() { $EDITOR ~/.zsh/functions ;}
+cf-history() { $EDITOR ${ZSH_ROOT}/history ;}
+cf-latexmkrc() { $EDITOR ~/.latexmkrc ;}
+cf-luakit() { $EDITOR ~/.config/luakit ;}
+cf-mplayer() { $EDITOR ~/.mplayer/config ;}
+cf-mpv() { $EDITOR ~/.mpv/config ;}
+cf-nvim() { $EDITOR ~/.config/nvim/init.vim ;}
+cf-ranger() { $EDITOR ~/.config/ranger/rc.conf ;}
+cf-ranger-rifle() { $EDITOR ~/.config/ranger/rifle.conf ;} # edit open_with extensions
+cf-tig() { $EDITOR ~/.tigrc ;}
+cf-tmux() { $EDITOR ~/.tmux.conf ;}
+cf-turses() { $EDITOR ~/.turses/config ;}
+cf-vim() { $EDITOR ~/.vimrc ;}
+cf-vimcolor() { $EDITOR ~/.vim/bundle/easy-reading.vim/colors/easy-reading.vim ;}
+cf-vimperatorrc() { $EDITOR ~/.vimperatorrc ;}
+cf-websearch() { $EDITOR ~/Workspace/python/web_search/websearch/config.py ;}
+cf-xdefaults() { $EDITOR ~/.Xdefaults ;}
+cf-xmodmap() { $EDITOR ~/.Xmodmap ;}
+cf-xmonad() { $EDITOR ~/.xmonad/xmonad.hs ;}
+cf-xresources() { $EDITOR ~/.Xresources ;}
+cf-zshrc() { $EDITOR ~/.zshrc ;}
