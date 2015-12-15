@@ -372,7 +372,8 @@ let g:vim_markdown_no_default_key_mappings = 1
 let g:vim_markdown_math = 1
 "                                                                           }}}
 " joker1007/vim-markdown-quote-syntax                                       {{{
-NeoBundle 'joker1007/vim-markdown-quote-syntax'
+">>> NeoBundle 'joker1007/vim-markdown-quote-syntax'
+">>> Don't work with markdown
 "                                                                           }}}
 " lervag/vimtex                                                             {{{
 NeoBundle 'lervag/vimtex'
