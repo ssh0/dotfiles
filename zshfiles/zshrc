@@ -230,8 +230,10 @@ bindkey '^[[Z' reverse-menu-complete
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 
-bindkey '^T' fzf-completion
-bindkey '^I' $fzf_default_completion
+if hash fzf 2>/dev/null; then
+  bindkey '^T' fzf-completion
+  bindkey '^I' $fzf_default_completion
+fi
 
 bindkey '^r' peco-select-history
 
