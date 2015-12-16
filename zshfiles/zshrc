@@ -124,7 +124,7 @@ if ! zgen saved; then
     b4b4r07/enhancd zsh
     Tarrasch/zsh-bd
     chrissicool/zsh-256color
-    ssh0/zsh-get_seriarised_filename
+    ssh0/zsh-get_serialised_filename
     ssh0/zsh-takenote
     ssh0/dot
 EOPLG
