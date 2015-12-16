@@ -11,16 +11,16 @@ if [ $columns -gt 70 ]; then
 fi
 line=$(printf '%*s\n' "$columns" '' | tr ' ' -)
 
-echo "\nThis script clear cache.\n"
+echo -e "\nThis script clear cache.\n"
 
 # current memory usage
-echo "Before:\n$line"
+echo -e "Before:\n$line"
 sudo free
 echo "$line"
 sudo sync
 
 # set vm.drop_caches option number
-echo "\nInput number."
+echo -e "\nInput number."
 echo "[0] default"
 echo "[1] page cache"
 echo "[2] dentry, inode"
@@ -42,7 +42,7 @@ case "$number" in
 esac
 
 # After message
-echo "\nAfter:\n$line" && sudo free
-echo "$line\nDone.\n"
+echo -e "\nAfter:\n$line" && sudo free
+echo -e "$line\nDone.\n"
 exit 0
 
