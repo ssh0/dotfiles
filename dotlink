@@ -183,7 +183,6 @@ zshfiles/functions/shtest.zsh,.zsh/functions/shtest.zsh
 bin/README.md,bin/README.md
 bin/alarm,bin/alarm
 bin/allmp4tomp3.sh,bin/allmp4tomp3.sh
-bin/autopep8_wrap.sh,bin/autopep8_wrap.sh
 bin/bib2html_wrapper.sh,bin/bib2html_wrapper.sh
 bin/cachecleener,bin/cachecleener
 bin/color-pallete.sh,bin/color-pallete.sh
