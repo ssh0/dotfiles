@@ -1,6 +1,15 @@
-#!/bin/sh
+#!/bin/bash
+# written by Shotaro Fujimoto (https://github.com/ssh0)
+#
+# alarm - alert after n minutes by notify-send and by notification sound.
 #
 
+# set notificate icon and sound you like
+notification_icon="/usr/share/icons/gnome/scalable/status/alarm-symbolic.svg"
+notification_sound="/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga"
+
+
+# how to use this script
 usage() {
   cat << EOF
 
@@ -15,31 +24,43 @@ USAGE
 Option
       -h: Show this help.
 EOF
-  exit 1
 }
 
-while getopts h OPT
-do
+# Option hundling
+while getopts h OPT; do
   case $OPT in
-    "h") usage ;;
-  * ) usage ;;
-esac
+    "h")
+      usage; exit 0 ;;
+    * )
+      usage; exit 1 ;;
+  esac
 done
 
+# arg number check
 if [ $# -ne 1 ]; then
   echo "Only 1 argument is needed: (given $#)."
-  usage
-elif echo $1 | egrep -q '^[0-9]+$'; then
-  start_time="`date +"%Y/%m/%d %H:%M:%S"`"
-  echo "Start: $start_time"
-  end_time=$(date -d "${start_time} $1 minutes" +"%Y/%m/%d %H:%M:%S")
-  echo "Alart at ${end_time} ("$1" minutes)."
-  sleep ${1}m
-  notify-send "Time! $1 min" "by $0"\
-    -t 6000 \
-    -i /usr/share/icons/gnome/scalable/status/alarm-symbolic.svg
-  paplay /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga &
-else
-  echo "Set numerical number."
-  usage
+  usage; exit 1
 fi
+
+# if numerical number is not set
+echo $1 | egrep -q '^[0-9]+$' || (echo "Set numerical number."; exit 1)
+
+# record start time
+start_time="`date +"%Y/%m/%d %H:%M:%S"`"
+echo "Start at $start_time"
+
+# show end time
+end_time=$(date -d "${start_time} $1 minutes" +"%Y/%m/%d %H:%M:%S")
+echo "Alert at ${end_time} ("$1" minutes)."
+
+# sleep n minutes ...
+sleep ${1}m
+
+# then, send notification
+notify-send "Time! $1 min" "by $0"\
+  -t 6000 \
+  -i "${notification_icon}"
+paplay "${notification_sound}" &
+
+exit 0
+

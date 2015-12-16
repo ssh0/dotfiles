@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #------------------------------------------------------------------
 #  メモリ開放                                by SONY5614
 #------------------------------------------------------------------
@@ -26,14 +26,14 @@ echo "[1] page cache"
 echo "[2] dentry, inode"
 echo "[3] page cache, dentry, inode"
 echo -n ">>[0-3?]>>"
-read Nomber
+read number
 
 # clear cache
-case "$Nomber" in
+case "$number" in
   "0"|"1"|"2"|"3" )
     echo ""
-    echo "sudo sysctl -w vm.drop_caches=$Nomber"
-    sudo sysctl -w vm.drop_caches=$Nomber
+    echo "sudo sysctl -w vm.drop_caches=$number"
+    sudo sysctl -w vm.drop_caches=$number
     ;;
   *)
     echo "Unexpected key. Aborted."

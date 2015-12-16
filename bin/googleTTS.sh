@@ -2,29 +2,38 @@
 #
 # folked from https://gist.github.com/markusfisch/873364#file-say-sh
 # written by markusfisch
+#
+# googleTTS - google-Text-To-Speech (using google translate)
 
-# for japanese people
+# some error occured, exit immediately
+set -e
+
+
+# Google translate_TTS API's url
+readonly URL="http://translate.google.com/translate_tts?ie=UTF-8&total=1&idx=0&client=t&tl=${LNG}&q="
+
+# for Japanese
 LNG=${LANGUAGE:-ja}
-# for English poeople
+# for English
 # LNG=${LNG:-en}
 
-# set default saving directory
-STOCK="${HOME}/Downloads/TTS"
+# set the root directory to save file
+root_dir="${HOME}/Downloads/TTS"
 
 # set default player
 playcmd="mpv --really-quiet"
 
 usage() {
-    echo "Text to speech CLI interface using Google translate_TTS API"
-    echo "Usage: $0 [OPTION] TERM"
-    echo ""
-    echo "Set options for language, saving directory:"
-    echo "  -l,    Set language (default: $LNG)"
-    echo "  -d,    Set saving directory (default: $STOCK/$LNG)"
-    echo "  -p,    Set the output player command (default: $playcmd)"
-    echo ""
-    echo "  -h,    Show this message and quit quietly"
-    exit 0
+  echo "Text to speech CLI interface using Google translate_TTS API"
+  echo "Usage: googleTTS.sh [OPTION] TERM"
+  echo ""
+  echo "Set options for language, saving directory:"
+  echo "  -l,    Set language (default: $LNG)"
+  echo "  -d,    Set saving directory (default: $root_dir/$LNG)"
+  echo "  -p,    Set the output player command (default: $playcmd)"
+  echo ""
+  echo "  -h,    Show this message and quit quietly"
+  exit 0
 }
 
 # FUTURE #
@@ -35,45 +44,38 @@ usage() {
 
 while getopts l:d:p:h OPT
 do
-    case $OPT in
-        "l" ) LNG="$OPTARG" ;;
-        "d" ) STOCK="$OPTARG" ;;
-        "p" ) playcmd="$OPTARG" ;;
-        "h" ) usage ;;
-        "?" ) usage ;;
-    esac
+  case $OPT in
+    "l" ) LNG="$OPTARG" ;;
+    "d" ) root_dir="$OPTARG" ;;
+    "p" ) playcmd="$OPTARG" ;;
+    "h" ) usage ;;
+    * ) usage ;;
+  esac
 done
 
-# Google translate_TTS API's url
-readonly URL="http://translate.google.com/translate_tts?ie=UTF-8&total=1&idx=0&client=t&tl=${LNG}&q="
-
-
-STOCK="${STOCK}/${LNG}"
-
-[ -d "${STOCK}" ] || {
-    mkdir -p "${STOCK}" || {
-        echo "error: cannot create speech stock \"$STOCK\""
-        exit 1
-    }
-}
-
 shift $((OPTIND-1))
-TEXT="`echo $*`"
-FILE="`date +"%Y%m%d%H%M%S"`"
-# if [ `expr length "${TEXT}"` -gt 10 ]; then
-#     FILE="`echo "$TEXT" | cut -c -10`".mp3
+
+save_dir="${root_dir}/${LNG}"
+if [ ! -d "${save_dir}" ]; then
+  mkdir -p "${save_dir}" || (echo "error: cannot create speech stock \"$save_dir\""; exit 1)
+fi
+
+text="`echo $*`"
+file="`date +"%Y%m%d%H%M%S"`"
+# if [ `expr length "${text}"` -gt 10 ]; then
+#     file="`echo "$text" | cut -c -10`".mp3
 # else
-#     FILE=${TEXT}.mp3
+#     file=${text}.mp3
 # fi
 
-FILE="${STOCK}/${FILE}"
-TERM="`echo ${TEXT} | nkf -wWMQ | tr = %`"
-# TERM="${TEXT}"
-# [ -f "${FILE}" ] ||
+file="${save_dir}/${file}"
+TERM="`echo ${text} | nkf -wWMQ | tr = %`"
+# TERM="${text}"
+# [ -f "${file}" ] ||
     echo ${URL}${TERM}
-    wget -U Mozilla --restrict-file-names=nocontrol -O "${FILE}" ${URL}${TERM}
+    wget -U Mozilla --restrict-file-names=nocontrol -O "${file}" ${URL}${TERM}
     # firefox --new-tab "${URL}${TERM}"
 
 [ -n "${playcmd}" ] &&
-    ${playcmd} "${FILE}" &>/dev/null
+    ${playcmd} "${file}" &>/dev/null
     exit 0
