@@ -183,7 +183,10 @@ build_prompt() {
   prompt_hg
   prompt_end
 }
+
 PROMPT='%{%f%b%k%}$(build_prompt)%{$reset_color%}
 %{$fg_bold[green]%}: %{$reset_color%}'
-
 RPROMPT=''
+
+PROMPT2='  │ '
+RPROMPT2='%{$fg_bold[green]%}%_%{$reset_color%}'
