@@ -1,0 +1,24 @@
+# Bind keys
+
+bindkey -e
+
+# edit command line in vim:
+# by pressing: ^xe
+# Edit the current command line in $EDITOR
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+
+# reverse-menu-complete by `Shift+Tab`
+bindkey '^[[Z' reverse-menu-complete
+
+# by C-p, C-n
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
+
+if hash fzf 2>/dev/null; then
+  bindkey '^T' fzf-completion
+  bindkey '^I' $fzf_default_completion
+fi
+
+bindkey '^r' peco-select-history
