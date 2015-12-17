@@ -160,20 +160,25 @@ zshfiles/themes/agnoster.zsh-theme,.zsh/themes/agnoster.zsh-theme
 zshfiles/plugins/tmux/tmux.plugin.zsh,.zsh/plugins/tmux/tmux.plugin.zsh
 zshfiles/functions/agvim.zsh,.zsh/functions/agvim.zsh
 zshfiles/functions/alias.zsh,.zsh/functions/alias.zsh
+zshfiles/functions/bindkey.zsh,.zsh/functions/bindkey.zsh
 zshfiles/functions/cecho.zsh,.zsh/functions/cecho.zsh
 zshfiles/functions/cfg-alias.zsh,.zsh/functions/cfg-alias.zsh
 zshfiles/functions/colorize.zsh,.zsh/functions/colorize.zsh
 zshfiles/functions/command-not-found.zsh,.zsh/functions/command-not-found.zsh
+zshfiles/functions/completion.zsh,.zsh/functions/completion.zsh
+zshfiles/functions/environment.zsh,.zsh/functions/environment.zsh
 zshfiles/functions/extract.zsh,.zsh/functions/extract.zsh
 zshfiles/functions/history.zsh,.zsh/functions/history.zsh
 # zshfiles/functions/longrun-command-tracker.zsh,.zsh/functions/longrun-command-tracker.zsh
 zshfiles/functions/man.zsh,.zsh/functions/man.zsh
 zshfiles/functions/peco-history.zsh,.zsh/functions/peco-history.zsh
 zshfiles/functions/progressbar.zsh,.zsh/functions/progressbar.zsh
+zshfiles/functions/r.zsh,.zsh/functions/r.zsh
 zshfiles/functions/ranger.zsh,.zsh/functions/ranger.zsh
 zshfiles/functions/rld-alias.zsh,.zsh/functions/rld-alias.zsh
-zshfiles/functions/r.zsh,.zsh/functions/r.zsh
 zshfiles/functions/shtest.zsh,.zsh/functions/shtest.zsh
+zshfiles/functions/zgen.zsh,.zsh/functions/zgen.zsh
+zshfiles/functions/zplug.zsh,.zsh/functions/zplug.zsh
 
 #===========================================================================}}}
 # bin                                                                       {{{
