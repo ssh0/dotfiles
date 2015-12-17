@@ -210,13 +210,24 @@ let g:lightline = {
       \ 'colorscheme': 'easyreading',
       \ 'mode_map': { 'c': 'NORMAL' },
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], ['ctrlpmark'] ],
+      \   'left': [ [ 'mode', 'paste' ], [ 'filename' ], ['ctrlpmark'] ],
       \   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \ },
+      \ 'tabline': {
+      \   'left': [
+      \     [ 'tabs' ],
+      \   ],
+      \   'right': [
+      \     [ 'close' ],
+      \     [ 'git_branch', 'git_traffic', 'git_status', 'cwd' ],
+      \   ],
       \ },
       \ 'component_function': {
       \   'modified': 'MyModified',
       \   'readonly': 'MyReadonly',
-      \   'fugitive': 'MyFugitive',
+      \   'git_branch': 'g:lightline.my.git_branch',
+      \   'git_traffic': 'g:lightline.my.git_traffic',
+      \   'git_status': 'g:lightline.my.git_status',
       \   'filename': 'MyFilename',
       \   'fileformat': 'MyFileformat',
       \   'filetype': 'MyFiletype',
@@ -257,12 +268,18 @@ function! MyFilename()
         \ ) : ''
 endfunction
 
-function! MyFugitive()
-  if exists('*fugitive#head')
-    let _ = fugitive#head()
-    return strlen(_) ? ''._ : ''
-  endif
-  return ''
+" gita (steal from vimgita README)
+let g:lightline.my = {}
+function! g:lightline.my.git_branch() " 
+  return winwidth(0) > 70 ? gita#statusline#preset('branch') : ''
+endfunction
+
+function! g:lightline.my.git_traffic() " 
+  return winwidth(0) > 70 ? gita#statusline#preset('traffic') : ''
+endfunction
+
+function! g:lightline.my.git_status() " 
+  return winwidth(0) > 70 ? gita#statusline#preset('status') : ''
 endfunction
 
 function! MyFileformat()
