@@ -14,167 +14,19 @@
 # set the zsh root directoy
 export ZSH_ROOT=$HOME/.zsh
 
-export ZSH_CACHE_DIR=$ZSH/cache
-
-# PATH to /usr/local/lib
-export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
-
-# set language environment
-export LANG=en_US.UTF-8
-export LC_TIME=en_US.UTF-8
-
-# set PATH
-export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-export MANPATH="/usr/local/man:$MANPATH"
-
-# find alternative apps if it is installed on your system
-find_alt() {
-  local i
-  for i in $@; do
-    hash "$i" 2>/dev/null && echo "$i" && return 0
-  done
-  return 1
-}
-
-# use fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_COMPLETION_TRIGGER=''
-
-# set the default program
-# the first program in the array will be chosen as the default
-export OPENER=$(find_alt xdg-open exo-open gnome-open )
-export BROWSER=$(find_alt luakit firefox google-chrome chromium chromium-browser $OPENER )
-export BROWSERCLI=$(find_alt w3m links2 links lynx elinks $OPENER )
-export EDITOR=$(find_alt nvim vim emacs nano leafpad gedit pluma $OPENER )
-export FILEMANAGER=$(find_alt thunar nautilus dolphin pcmanfm tspacefm enlightenment_filemanager $OPENER )
-export PAGER=$(find_alt less more most)
-export PERCOL=$(find_alt fzf peco percol)
-export PLAYER=$(find_alt mpv mplayer cvlc $OPENER )
-export READER=$(find_alt mupdf zathura evince $OPENER )
-export TERMCMD=$(find_alt urxvt xterm gnome-terminal)
-
-unfunction find_alt
-
-# To stop ranger from loading both the default and my custom rc.conf
-export RANGER_LOAD_DEFAULT_RC=false
-
-# dot management (ssh0/dot)
-export DOT_REPO="https://github.com/ssh0/dotfiles.git"
-export DOT_DIR="$HOME/.dotfiles"
-
-# enhancd by "c"
-export ENHANCD_COMMAND='c'
-
-# takenote
-export TAKENOTE_ROOTDIR="$HOME/Workspace/blog"
-export TAKENOTE_FILERCMD=ranger
+source "$ZSH_ROOT/functions/environment.zsh"
 
 # ==========================================================================}}}
 # zgen                                                                      {{{
 # =============================================================================
 
-ZGEN_AUTOLOAD_COMPINIT=false
-
-zgen_repo_url="https://github.com/tarjoilija/zgen.git"
-zgen_raw_url="https://raw.githubusercontent.com/tarjoilija/zgen.git"
-
-# where to clone antigen
-zgen_root="$HOME/.zsh/plugins/zgen"
-
-# if Antigen is not installed, automatically clone it and reload shell
-if [[ ! -f "${zgen_root}/zgen.zsh" ]]; then
-  echo "zgen is not installed in this machine."
-  echo "Installing zgen..."
-  echo ""
-  if hash git 2>/dev/null; then
-    install -d "${zgen_root}"
-    git clone "${zgen_repo_url}" "${zgen_root}"
-  elif hash curl 2>/dev/null; then
-    install -d "${zgen_root}"
-    curl -L "${zgen_raw_url}" -o "${zgen_root}/zgen.zsh"
-  elif hash wget 2>/dev/null; then 
-    install -d "${zgen_root}"
-    wget "${zgen_raw_url}" -O "${zgen_root}/zgen.zsh"
-  else
-    echo "git or curl or wget required to install."
-    echo "Aborted."
-    exit 1
-  fi
-  exec zsh -l
-fi
-
-source "${zgen_root}/zgen.zsh"
-unset zgen_repo_url
-unset zgen_raw_url
-unset zgen_root
-
-# check if there's no init script
-if ! zgen saved; then
-  echo "Creating a zgen save"
-
-  zgen loadall <<EOPLG
-    zsh-users/zsh-syntax-highlighting
-    robbyrussell/oh-my-zsh lib/git.zsh
-    robbyrussell/oh-my-zsh lib/grep.zsh
-    robbyrussell/oh-my-zsh lib/history.zsh
-    robbyrussell/oh-my-zsh lib/spectrum.zsh
-    robbyrussell/oh-my-zsh lib/termsupport.zsh
-    robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh
-    fcambus/ansiweather
-    b4b4r07/enhancd zsh
-    Tarrasch/zsh-bd
-    chrissicool/zsh-256color
-    ssh0/zsh-get_serialised_filename
-    ssh0/zsh-takenote
-    ssh0/dot
-EOPLG
-
-  # save all to init script
-  zgen save
-fi
+source "$ZSH_ROOT/functions/zgen.zsh"
 
 # ==========================================================================}}}
-# # zplug                                                                     {{{
-# # =============================================================================
-
-# source "$HOME/.zplug/zplug"
-
-# zplug "lib/git", from:oh-my-zsh
-# zplug "lib/grep", from:oh-my-zsh
-# zplug "lib/history", from:oh-my-zsh
-# zplug "lib/spectrum", from:oh-my-zsh
-# zplug "lib/termsupport", from:oh-my-zsh
-# zplug "lib/theme-and-appearance", from:oh-my-zsh
-
-# zplug "zsh-users/zsh-syntax-highlighting"
-# zplug "fcambus/ansiweather", as:command
-# zplug "b4b4r07/enhancd"
-# zplug "b4b4r07/zplug"
-# zplug "Tarrasch/zsh-bd"
-# zplug "chrissicool/zsh-256color"
-# zplug "ssh0/zsh-takenote"
-# zplug "ssh0/dot"
-
-# # Install plugins if there are plugins that have not been installed
-# if ! zplug check --verbose; then
-#     printf "Install? [y/N]: "
-#     if read -q; then
-#         echo; zplug install
-#     fi
-# fi
-
-# # Then, source plugins and add commands to $PATH
-# # zplug load --verbose
-# zplug load
-
-# # ==========================================================================}}}
-# history                                                                   {{{
+# zplug                                                                     {{{
 # =============================================================================
 
-HISTFILE="$ZSH_ROOT/history"
-
-# ignore duplication command history list
-setopt hist_ignore_all_dups
+# source "$ZSH_ROOT/functions/zplug.zsh"
 
 # ==========================================================================}}}
 # completions                                                               {{{
@@ -184,7 +36,7 @@ setopt hist_ignore_all_dups
 # there are completion functions named like '_function'.
 fpath=($ZSH_ROOT/completions $fpath)
 
-source "$ZSH_ROOT/functions/history.zsh"
+source "$ZSH_ROOT/functions/completion.zsh"
 
 autoload -U compinit
 compinit -D
@@ -203,26 +55,27 @@ eval $(dircolors "$ZSH_ROOT/dircolors/dircolors-zenburn")
 source "$ZSH_ROOT/plugins/tmux/tmux.plugin.zsh"
 
 # load my plugins
-myplugin=(
-  "agvim.zsh"
-  "alias.zsh"
-  "cecho.zsh"
-  "cfg-alias.zsh"
-  "colorize.zsh"
-  "command-not-found.zsh"
-  "extract.zsh"
-  "man.zsh"
-  "peco-history.zsh"
-  "progressbar.zsh"
-  "r.zsh"
-  "ranger.zsh"
-  "rld-alias.zsh"
-  "shtest.zsh"
+myplugins=(
+  "$ZSH_ROOT/functions/agvim.zsh"
+  "$ZSH_ROOT/functions/alias.zsh"
+  "$ZSH_ROOT/functions/cecho.zsh"
+  "$ZSH_ROOT/functions/cfg-alias.zsh"
+  "$ZSH_ROOT/functions/colorize.zsh"
+  "$ZSH_ROOT/functions/command-not-found.zsh"
+  "$ZSH_ROOT/functions/extract.zsh"
+  "$ZSH_ROOT/functions/history.zsh"
+  "$ZSH_ROOT/functions/man.zsh"
+  "$ZSH_ROOT/functions/peco-history.zsh"
+  "$ZSH_ROOT/functions/progressbar.zsh"
+  "$ZSH_ROOT/functions/r.zsh"
+  "$ZSH_ROOT/functions/ranger.zsh"
+  "$ZSH_ROOT/functions/rld-alias.zsh"
+  "$ZSH_ROOT/functions/shtest.zsh"
   )
-for myplugin in "${myplugin[@]}"; do
-  source "${ZSH_ROOT}/functions/${myplugin}"
+for myplugin in "${myplugins[@]}"; do
+  source "${myplugin}"
 done
-unset -v myplugin
+unset -v myplugins myplugin
 
 # user specific configuration
 [ -f "$ZSH_ROOT/rc.mine" ] && source "$ZSH_ROOT/rc.mine"
@@ -231,28 +84,7 @@ unset -v myplugin
 # bindkeys                                                                  {{{
 # =============================================================================
 
-bindkey -e
-
-# edit command line in vim:
-# by pressing: ^xe
-# Edit the current command line in $EDITOR
-autoload -U edit-command-line
-zle -N edit-command-line
-bindkey '^xe' edit-command-line
-
-# reverse-menu-complete by `Shift+Tab`
-bindkey '^[[Z' reverse-menu-complete
-
-# by C-p, C-n
-bindkey "^P" history-beginning-search-backward-end
-bindkey "^N" history-beginning-search-forward-end
-
-if hash fzf 2>/dev/null; then
-  bindkey '^T' fzf-completion
-  bindkey '^I' $fzf_default_completion
-fi
-
-bindkey '^r' peco-select-history
+source "$ZSH_ROOT/functions/bindkey.zsh"
 
 # ==========================================================================}}}
 # zprof                                                                     {{{
@@ -263,7 +95,6 @@ bindkey '^r' peco-select-history
 # ```~/.zshenv
 # zmodload zsh/zprof && zprof
 # ```
-
 
 if (which zprof > /dev/null); then
   zprof | less
