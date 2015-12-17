@@ -203,10 +203,26 @@ eval $(dircolors "$ZSH_ROOT/dircolors/dircolors-zenburn")
 source "$ZSH_ROOT/plugins/tmux/tmux.plugin.zsh"
 
 # load my plugins
-for myfile ($ZSH_ROOT/functions/*.zsh); do
-  source "$myfile"
+myplugin=(
+  "agvim.zsh"
+  "alias.zsh"
+  "cecho.zsh"
+  "cfg-alias.zsh"
+  "colorize.zsh"
+  "command-not-found.zsh"
+  "extract.zsh"
+  "man.zsh"
+  "peco-history.zsh"
+  "progressbar.zsh"
+  "r.zsh"
+  "ranger.zsh"
+  "rld-alias.zsh"
+  "shtest.zsh"
+  )
+for myplugin in "${myplugin[@]}"; do
+  source "${ZSH_ROOT}/functions/${myplugin}"
 done
-unset -v myfile
+unset -v myplugin
 
 # user specific configuration
 [ -f "$ZSH_ROOT/rc.mine" ] && source "$ZSH_ROOT/rc.mine"
