@@ -103,6 +103,13 @@ NeoBundle 'Shougo/vimproc', {
       \    },
       \ }
 "                                                                           }}}
+" lambdalisue/vim-gita                                                      {{{
+NeoBundleLazy 'lambdalisue/vim-gita', {
+      \ 'autoload': {
+      \   'commands': ['Gita'],
+      \    },
+      \ }
+"                                                                           }}}
 " rking/ag                                                                  {{{
 if executable('ag')
   NeoBundle 'rking/ag.vim'
