@@ -18,3 +18,5 @@ fi
 
 alias tree='tree -C'
 
+alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
+
