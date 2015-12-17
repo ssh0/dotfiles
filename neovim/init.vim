@@ -34,9 +34,8 @@ let mapleader = "\<Space>"
 let localleader = "\<Space>"
 
 " encoding
-set fileencoding=utf-8
-">>> set encoding=utf-8
 scriptencoding utf8
+set fileencoding=utf-8
 
 "---------------------------------------------------------------------------}}}
 " NeoBundle:                                                                {{{
