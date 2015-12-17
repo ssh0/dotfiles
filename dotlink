@@ -87,6 +87,34 @@ gitconfig,.gitconfig
 
 vimfiles/vimrc,.vimrc
 
+vimfiles/ftplugin/bib_quickrun.vim,.config/nvim/ftplugin/bib_quickrun.vim
+vimfiles/ftplugin/gitcommit.vim,.config/nvim/ftplugin/gitcommit.vim
+vimfiles/ftplugin/tex_quickrun.vim,.config/nvim/ftplugin/tex_quickrun.vim
+vimfiles/ftplugin/texmath_quickrun.vim,.config/nvim/ftplugin/texmath_quickrun.vim
+vimfiles/ftplugin/markdown_quickrun.vim,.config/nvim/ftplugin/markdown_quickrun.vim
+
+# markdown template
+vimfiles/template/template.md,.config/nvim/template/template.md
+vimfiles/template/template.mkd,.config/nvim/template/template.mkd
+
+# Tex template
+vimfiles/template/template.tex,.config/nvim/template/template.tex
+
+# Python template
+vimfiles/template/template.py,.config/nvim/template/template.py
+
+# Shell script template
+vimfiles/template/template.sh,.config/nvim/template/template.sh
+
+vimfiles/.splash-vim.txt,.splash-vim.txt
+
+#===========================================================================}}}
+# [neovim](https://neovim.io/):                                             {{{
+#==============================================================================
+# Neovim is a project that seeks to aggressively refactor Vim
+
+neovim/init.vim,.config/nvim/init.vim
+
 vimfiles/ftplugin/bib_quickrun.vim,.vim/ftplugin/bib_quickrun.vim
 vimfiles/ftplugin/gitcommit.vim,.vim/ftplugin/gitcommit.vim
 vimfiles/ftplugin/tex_quickrun.vim,.vim/ftplugin/tex_quickrun.vim
@@ -105,15 +133,6 @@ vimfiles/template/template.py,.vim/template/template.py
 
 # Shell script template
 vimfiles/template/template.sh,.vim/template/template.sh
-
-vimfiles/.splash-vim.txt,.splash-vim.txt
-
-#===========================================================================}}}
-# [neovim](https://neovim.io/):                                             {{{
-#==============================================================================
-# Neovim is a project that seeks to aggressively refactor Vim
-
-neovim/init.vim,.config/nvim/init.vim
 
 #===========================================================================}}}
 # [tmux](http://tmux.sourceforge.net/)                                      {{{
