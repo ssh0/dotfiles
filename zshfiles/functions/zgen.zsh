@@ -39,6 +39,7 @@ if ! zgen saved; then
 
   zgen loadall <<EOPLG
     zsh-users/zsh-syntax-highlighting
+    robbyrussell/oh-my-zsh lib/git.zsh
     robbyrussell/oh-my-zsh lib/spectrum.zsh
     robbyrussell/oh-my-zsh lib/termsupport.zsh
     robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh
