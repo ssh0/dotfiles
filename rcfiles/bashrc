@@ -58,9 +58,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]'
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w'
 fi
 unset color_prompt force_color_prompt
 
@@ -73,9 +73,13 @@ xterm*|rxvt*)
     ;;
 esac
 
+export PS1="$PS1\n\$ "
+export PS2='  │ '
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    eval $(dircolors "$HOME/.zsh/dircolors/dircolors-zenburn")
+    
     alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
@@ -114,7 +118,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PS1="[\$ \w ]\n> "
 
 [ -f ~/.zgen/ssh0/dot-master/dot.sh ] && source ~/.zgen/ssh0/dot-master/dot.sh 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
