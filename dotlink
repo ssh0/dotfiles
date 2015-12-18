@@ -149,6 +149,12 @@ tmuxinator/dev.yml,.tmuxinator/dev.yml
 tmuxinator/stream.yml,.tmuxinator/stream.yml
 
 #===========================================================================}}}
+# bashrc                                                                   {{{
+#==============================================================================
+
+rcfiles/bashrc,.bashrc
+
+#===========================================================================}}}
 # [zsh](http://zsh.sourceforge.net/):                                       {{{
 #==============================================================================
 # Zsh is a shell designed for interactive use, although it is also a
