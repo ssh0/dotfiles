@@ -241,9 +241,9 @@ let g:lightline = {
       \ 'component_type': {
       \   'syntastic': 'error',
       \ },
-      \ 'separator': { 'left': '▓▒', 'right': '▒▓' },
+      \ 'separator': { 'left': '▒', 'right': '▒' },
       \ 'subseparator': { 'left': '│', 'right': '│' },
-      \ 'tabline_separator': { 'left': '', 'right': '▒▓' },
+      \ 'tabline_separator': { 'left': '', 'right': '▒' },
       \ 'tabline_subseparator': { 'left': '│', 'right': '│' },
       \ }
 
