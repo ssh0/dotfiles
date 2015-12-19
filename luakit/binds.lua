@@ -511,7 +511,7 @@ add_binds("insert", {
             f:flush()
             f:close()
 
-            luakit.spawn_sync("urxvt -g 90x20 -title \"urxvt_float\" -name \"urxvt_float\" -e vim \"" .. n .. "\" -c \"set completefunc=googlesuggest#Complete\"")
+            luakit.spawn_sync("urxvt -g 90x20 -title \"urxvt_float\" -name \"urxvt_float\" -e nvim \"" .. n .. "\" -c \"set completefunc=googlesuggest#Complete\"")
 
             f = io.open(n, "r")
             s = f:read("*all")
