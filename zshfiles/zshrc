@@ -14,7 +14,9 @@
 # set the zsh root directoy
 export ZSH_ROOT=$HOME/.zsh
 
-source "$ZSH_ROOT/functions/environment.zsh"
+# use fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_COMPLETION_TRIGGER=''
 
 # ==========================================================================}}}
 # zgen                                                                      {{{

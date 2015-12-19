@@ -10,7 +10,6 @@ export LANG=en_US.UTF-8
 export LC_TIME=en_US.UTF-8
 
 # set PATH
-export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 export MANPATH="/usr/local/man:$MANPATH"
 
 # find alternative apps if it is installed on your system
@@ -21,10 +20,6 @@ find_alt() {
   done
   return 1
 }
-
-# use fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_COMPLETION_TRIGGER=''
 
 # set the default program
 # the first program in the array will be chosen as the default
