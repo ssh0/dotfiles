@@ -35,51 +35,72 @@ dotfiles
 
 ### [dot](https://github.com/ssh0/dot)を用いた方法。
 
-まず，dotをインストールします。
+#### 1. dotのインストール
+
+##### 1.a zsh プラグインマネージャを使用する方法
+
+それぞれ`zshrc`に以下のように指定してください。
+
+* [zplug](https://github.com/b4b4r07/zplug)
+
+```
+zplug "ssh0/dot"
+```
+
+* [zgen](https://github.com/tarjoilija/zgen)
+
+```
+zgen load ssh0/dot
+```
+
+* [antigen](https://github.com/zsh-users/antigen)
+
+```
+antigen bundle ssh0/dot
+```
+
+以下のように環境変数を指定することによって、dotがどのリポジトリを管理するか決定します。自分のdotfilesを既に持っている場合は、`zshrc`に追記してください。
+
+```
+export DOT_REPO="https://github.com/username/dotfiles.git"
+export DOT_DIR="$HOME/.dotfiles"
+```
+
+`dot`のインストールについて詳しく知りたい方は、`dot`の[README](https://github.com/ssh0/dot/blob/master/README_ja.md)をご覧ください。
+
+##### 1.b 手動でインストール
 
 dotのプロジェクトリポジトリを自分のPCにクローンしてください。
 
 ```
-git clone https://github.com/ssh0/dot.git ~/.git/dot
+git clone https://github.com/ssh0/dot.git ~/.zsh/plugins/dot
 ```
 
-次に，以下のコマンドを実行してください。
+次に，`bashrc`や`zshrc`に以下を記述して、dotコマンドが使えるようにしてください。
 
 ```
-cd ~/.git/dot
-sudo make install
+source $HOME/.zsh/plugins/dot
 ```
 
-dotを用いて，指定したディレクトリに本リポジトリをクローンします(デフォルト: `~/.dotfiles`)。
+`bashrc`や`zshrc`の変更が適用されるように、一回ターミナルを閉じてください。
+
+#### 2. dotを用いてリポジトリをクローン、シンボリックリンクを作成
 
 ```
-dot clone [/path/you/want/to/clone]
+DOT_REPO="https://github.com/ssh0/dotfiles.git"; DOT_DIR="$HOME/.dotfiles-ssh0"
+dot clone && dot set -v
 ```
 
-シンボリックリンクを張るには
+を実行することで、このリポジトリ内のファイルが、ローカルにクローンされ、シンボリックリンクが生成されます。もし既にファイルが存在している場合には，対話メニューが出るので，そこから操作を指定してください。
 
-```
-dot set
-```
-
-を実行してください。もし既にファイルが存在している場合には，対話メニューが出るので，そこから操作を指定してください。
-
-もし初めから追加したくないファイルがあるならば，`~/.dotfiles/dotlink`の該当行を"#"でコメントアウトしてください。
-
-リポジトリを最新状態にするには，
-
-```
-dot pull
-```
-
-を実行してください。
+もし初めから追加したくないファイルがあるならば，`~/.dotfiles-ssh0/dotlink`の該当行を"#"でコメントアウトしてください。
 
 ### dotを用いないシンプルな方法
 
 このリポジトリをクローンするかフォークしてください。
 
 ```
-git clone https://github.com/ssh0/dotfiles.git ~/.ssh0-dotfiles
+git clone https://github.com/ssh0/dotfiles.git ~/.dotfiles-ssh0
 ```
 
 お好みの設定ファイルをコピーしたり，シンボリックリンクを張ったりして，設定を反映させてください。
