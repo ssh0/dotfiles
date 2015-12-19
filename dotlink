@@ -182,7 +182,6 @@ zshfiles/completions/tig-completion.bash,.zsh/completions/tig-completion.bash
 
 # dircolors & prompt theme
 zshfiles/dircolors/dircolors-zenburn,.zsh/dircolors/dircolors-zenburn
-zshfiles/themes/simple_is_power.zsh-theme,.zsh/themes/simple_is_power.zsh-theme
 
 # Some functions and aliases
 zshfiles/functions/agvim.zsh,.zsh/functions/agvim.zsh
@@ -200,6 +199,7 @@ zshfiles/functions/history.zsh,.zsh/functions/history.zsh
 zshfiles/functions/man.zsh,.zsh/functions/man.zsh
 zshfiles/functions/peco-history.zsh,.zsh/functions/peco-history.zsh
 zshfiles/functions/progressbar.zsh,.zsh/functions/progressbar.zsh
+zshfiles/functions/prompt.zsh,.zsh/functions/prompt.zsh
 zshfiles/functions/r.zsh,.zsh/functions/r.zsh
 zshfiles/functions/ranger.zsh,.zsh/functions/ranger.zsh
 zshfiles/functions/rld-alias.zsh,.zsh/functions/rld-alias.zsh

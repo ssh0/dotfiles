@@ -37,9 +37,6 @@ autoload -U compinit
 #        |
 compinit -D
 
-# set the prompt theme
-source "$ZSH_ROOT/themes/simple_is_power.zsh-theme"
-
 # dircolors
 eval $(dircolors "$ZSH_ROOT/dircolors/dircolors-zenburn")
 
@@ -56,12 +53,14 @@ myfunctions=(
     man
     peco-history
     progressbar
+    prompt
     r
     ranger
     rld-alias
     shtest
     tmux
   )
+
 for myfunction in $myfunctions; do
   source "$ZSH_ROOT/functions/${myfunction}.zsh"
 done

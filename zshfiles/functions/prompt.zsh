@@ -24,7 +24,7 @@ fg_red=210
 # A few utility functions to make it easy and re-usable to draw segmented prompts
 
 CURRENT_BG='NONE'
-SEGMENT_SEPARATOR=''
+SEGMENT_SEPARATOR='▒'
 
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
@@ -201,7 +201,7 @@ PROMPT='%{%f%b%k%}$(build_prompt)%{$reset_color%}
 %{$fg_bold[green]%}: %{$reset_color%}'
 RPROMPT=''
 
-PROMPT2='  │ '
+PROMPT2='  %{%F{30}%}↪%{$reset_color%} '
 RPROMPT2='%{$fg_bold[green]%}%_%{$reset_color%}'
 
 #===========================================================================}}}
