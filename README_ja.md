@@ -100,7 +100,7 @@ dot clone && dot set -v
 このリポジトリをクローンするかフォークしてください。
 
 ```
-git clone https://github.com/ssh0/dotfiles.git ~/.dotfiles-ssh0
+git clone --depth 1 https://github.com/ssh0/dotfiles.git ~/.dotfiles-ssh0
 ```
 
 お好みの設定ファイルをコピーしたり，シンボリックリンクを張ったりして，設定を反映させてください。
