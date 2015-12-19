@@ -122,12 +122,10 @@ search_engines.default = search_engines.default_search
 -- See http://webkitgtk.org/reference/webkitgtk/stable/WebKitWebSettings.html
 domain_props = {
     ["all"] = {
-        default_font_family = "TakaoPGothic",
-        sans_serif_font_family = "TakaoPGothic",
+        default_font_family = "Migu 1C",
+        sans_serif_font_family = "Migu 1C",
         serif_font_family = "TakaoPMincho",
-        fantasy_font_family = "TakaoPMincho",
-        cursive_font_family = "TakaoPMincho",
-        monospace_font_family = "Ricty Diminished",
+        monospace_font_family = "Migu 1M",
         default_font_size = 12,
         default_monospace_font_size = 13,
         minimum_font_size = 8,
