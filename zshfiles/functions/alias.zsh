@@ -42,3 +42,4 @@ function _speedometer() {
 }
 alias spdmeter='_speedometer'
 
+alias sudo='sudo '
