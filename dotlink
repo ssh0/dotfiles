@@ -87,6 +87,9 @@ gitconfig,.gitconfig
 
 vimfiles/vimrc,.vimrc
 
+# Share viminfo by Dropbox
+/home/shotaro/Dropbox/conf/viminfo,.viminfo
+
 vimfiles/ftplugin/bib_quickrun.vim,.config/nvim/ftplugin/bib_quickrun.vim
 vimfiles/ftplugin/gitcommit.vim,.config/nvim/ftplugin/gitcommit.vim
 vimfiles/ftplugin/tex_quickrun.vim,.config/nvim/ftplugin/tex_quickrun.vim
