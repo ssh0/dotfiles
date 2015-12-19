@@ -6,9 +6,9 @@ zgen_repo_url="https://github.com/tarjoilija/zgen.git"
 zgen_raw_url="https://raw.githubusercontent.com/tarjoilija/zgen.git"
 
 # where to clone antigen
-zgen_root="$HOME/.zsh/plugins/zgen"
+zgen_root="$HOME/.zgen/tarjoilija/zgen-master"
 
-# if Antigen is not installed, automatically clone it and reload shell
+# if zgen is not installed, automatically clone it and reload shell
 if [[ ! -f "${zgen_root}/zgen.zsh" ]]; then
   echo "zgen is not installed in this machine."
   echo "Installing zgen..."
@@ -38,18 +38,18 @@ if ! zgen saved; then
   echo "Creating a zgen save"
 
   zgen loadall <<EOPLG
-    zsh-users/zsh-syntax-highlighting
+    b4b4r07/enhancd zsh
+    chrissicool/zsh-256color
     robbyrussell/oh-my-zsh lib/git.zsh
     robbyrussell/oh-my-zsh lib/spectrum.zsh
     robbyrussell/oh-my-zsh lib/termsupport.zsh
     robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh
-    fcambus/ansiweather
-    b4b4r07/enhancd zsh
-    Tarrasch/zsh-bd
-    chrissicool/zsh-256color
+    ssh0/dot
     ssh0/zsh-get_serialised_filename
     ssh0/zsh-takenote
-    ssh0/dot
+    fcambus/ansiweather
+    Tarrasch/zsh-bd
+    zsh-users/zsh-syntax-highlighting
 EOPLG
 
   # save all to init script
