@@ -43,9 +43,6 @@ source "$ZSH_ROOT/themes/simple_is_power.zsh-theme"
 # dircolors
 eval $(dircolors "$ZSH_ROOT/dircolors/dircolors-zenburn")
 
-# load plugin for tmux
-source "$ZSH_ROOT/plugins/tmux/tmux.plugin.zsh"
-
 # load functions
 myfunctions=(
     agvim
@@ -63,6 +60,7 @@ myfunctions=(
     ranger
     rld-alias
     shtest
+    tmux
   )
 for myfunction in $myfunctions; do
   source "$ZSH_ROOT/functions/${myfunction}.zsh"
