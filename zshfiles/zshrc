@@ -8,44 +8,34 @@
 #        __/\\\\\\\\\\\__/\\\\\\\\\\_\/\\\___\/\\\_\/\\\________\///\\\\\\\\_
 #         _\///////////__\//////////__\///____\///__\///____________\////////_
 # =============================================================================
-# export variables                                                          {{{
-# =============================================================================
 
-# set the zsh root directoy
+# Export variables
+# Set the zsh root directoy
 export ZSH_ROOT=$HOME/.zsh
 
 # use fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_COMPLETION_TRIGGER=''
 
-# ==========================================================================}}}
-# zgen                                                                      {{{
-# =============================================================================
+# Set some environmet variables
+source "$ZSH_ROOT/functions/environment.zsh"
 
+# Use zgen to load some zsh plugins
 source "$ZSH_ROOT/functions/zgen.zsh"
 
-# ==========================================================================}}}
-# zplug                                                                     {{{
-# =============================================================================
-
+# zplug
 # source "$ZSH_ROOT/functions/zplug.zsh"
 
-# ==========================================================================}}}
-# completions                                                               {{{
-# =============================================================================
-
-# add fpath for completions
-# there are completion functions named like '_function'.
+# Add fpath for completions
+# There are completion functions named like '_function'.
 fpath=($ZSH_ROOT/completions $fpath)
 
 source "$ZSH_ROOT/functions/completion.zsh"
 
 autoload -U compinit
+#        .------ don't use compdump (a bit faster in my environment)
+#        |
 compinit -D
-
-# ==========================================================================}}}
-# source some files                                                         {{{
-# =============================================================================
 
 # set the prompt theme
 source "$ZSH_ROOT/themes/simple_is_power.zsh-theme"
@@ -56,42 +46,38 @@ eval $(dircolors "$ZSH_ROOT/dircolors/dircolors-zenburn")
 # load plugin for tmux
 source "$ZSH_ROOT/plugins/tmux/tmux.plugin.zsh"
 
-# load my plugins
-myplugins=(
-  "$ZSH_ROOT/functions/agvim.zsh"
-  "$ZSH_ROOT/functions/alias.zsh"
-  "$ZSH_ROOT/functions/cecho.zsh"
-  "$ZSH_ROOT/functions/cfg-alias.zsh"
-  "$ZSH_ROOT/functions/colorize.zsh"
-  "$ZSH_ROOT/functions/command-not-found.zsh"
-  "$ZSH_ROOT/functions/extract.zsh"
-  "$ZSH_ROOT/functions/history.zsh"
-  "$ZSH_ROOT/functions/man.zsh"
-  "$ZSH_ROOT/functions/peco-history.zsh"
-  "$ZSH_ROOT/functions/progressbar.zsh"
-  "$ZSH_ROOT/functions/r.zsh"
-  "$ZSH_ROOT/functions/ranger.zsh"
-  "$ZSH_ROOT/functions/rld-alias.zsh"
-  "$ZSH_ROOT/functions/shtest.zsh"
+# load functions
+myfunctions=(
+    agvim
+    alias
+    cecho
+    cfg-alias
+    colorize
+    command-not-found
+    extract
+    history
+    man
+    peco-history
+    progressbar
+    r
+    ranger
+    rld-alias
+    shtest
   )
-for myplugin in "${myplugins[@]}"; do
-  source "${myplugin}"
+for myfunction in $myfunctions; do
+  source "$ZSH_ROOT/functions/${myfunction}.zsh"
 done
-unset -v myplugins myplugin
+unset -v myfunctions myfunction
+
 
 # user specific configuration
 [ -f "$ZSH_ROOT/rc.mine" ] && source "$ZSH_ROOT/rc.mine"
 
-# ==========================================================================}}}
-# bindkeys                                                                  {{{
-# =============================================================================
-
+# bindkeys
 source "$ZSH_ROOT/functions/bindkey.zsh"
 
-# ==========================================================================}}}
-# zprof                                                                     {{{
-# =============================================================================
-
+# zprof
+# -----
 # If you want to activate profiling, comment in `~/.zshenv`.
 #
 # ```~/.zshenv
@@ -102,5 +88,4 @@ if (which zprof > /dev/null); then
   zprof | less
 fi
 
-# ==========================================================================}}}
 # vim: set ft=zsh
