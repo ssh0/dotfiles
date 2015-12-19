@@ -182,7 +182,7 @@ zshfiles/completions/tig-completion.bash,.zsh/completions/tig-completion.bash
 
 # dircolors & prompt theme
 zshfiles/dircolors/dircolors-zenburn,.zsh/dircolors/dircolors-zenburn
-zshfiles/themes/agnoster.zsh-theme,.zsh/themes/agnoster.zsh-theme
+zshfiles/themes/simple_is_power.zsh-theme,.zsh/themes/simple_is_power.zsh-theme
 
 # Some functions and aliases
 zshfiles/plugins/tmux/tmux.plugin.zsh,.zsh/plugins/tmux/tmux.plugin.zsh
