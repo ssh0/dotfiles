@@ -48,8 +48,8 @@ export RANGER_LOAD_DEFAULT_RC=false
 export DOT_REPO="https://github.com/ssh0/dotfiles.git"
 export DOT_DIR="$HOME/.dotfiles"
 
-# enhancd by "cd"
-export ENHANCD_COMMAND='cd'
+# enhancd by "c"
+export ENHANCD_COMMAND='c'
 
 # takenote
 export TAKENOTE_ROOTDIR="$HOME/Workspace/blog"
