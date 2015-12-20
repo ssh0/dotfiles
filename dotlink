@@ -110,6 +110,7 @@ vimfiles/template/template.py,.vim/template/template.py
 vimfiles/template/template.sh,.vim/template/template.sh
 
 vimfiles/.splash-vim.txt,.splash-vim.txt
+$HOME/Dropbox/conf/hateblo.vim,.hateblo.vim
 
 #===========================================================================}}}
 # [neovim](https://neovim.io/):                                             {{{
