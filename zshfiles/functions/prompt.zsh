@@ -81,7 +81,7 @@ prompt_status() {
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
   [[ -n ${RANGER_LEVEL} ]] && symbols+="%{%F{153}%}®"
 
-  [[ -n "$symbols" ]] && prompt_segment ${bg_dir} default "$symbols"
+  [[ -n "$symbols" ]] && prompt_segment NONE default "$symbols\n"
 }
 
 #---------------------------------------------------------------------------}}}
@@ -189,8 +189,8 @@ prompt_hg() {
 build_prompt() {
   # prompt_init
   RETVAL=$?
-  prompt_virtualenv
   prompt_status
+  prompt_virtualenv
   prompt_dir
   prompt_git
   prompt_hg
