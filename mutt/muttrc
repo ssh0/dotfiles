@@ -26,9 +26,8 @@ set include
 set sort = 'threads'
 set sort_aux = 'reverse-last-date-received'
 set auto_tag = yes
-ignore "Authentication-Results:"
-ignore "DomainKey-Signature:"
-ignore "DKIM-Signature:"
+ignore *
+unignore from: subject to cc date
 hdr_order Date From To Cc
 alternative_order text/plain text/html *
 auto_view text/html
