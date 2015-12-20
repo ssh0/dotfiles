@@ -142,7 +142,9 @@ vimfiles/template/template.sh,.config/nvim/template/template.sh
 # [tmux](http://tmux.sourceforge.net/)                                      {{{
 #==============================================================================
 
-rcfiles/tmux.conf,.tmux.conf
+tmux/tmux.conf,.tmux.conf
+tmux/tmux.conf.d/status.conf,.config/tmux/status.conf
+tmux/tmux.conf.d/status_powerline.conf,.config/tmux/status_powerline.conf
 
 #===========================================================================}}}
 # [tmuxinator](https://github.com/tmuxinator/tmuxinator)                    {{{
