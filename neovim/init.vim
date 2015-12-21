@@ -582,8 +582,8 @@ set wrapscan
 " don't redraw screen during macros
 set lazyredraw
 
-" number line
-set number relativenumber numberwidth=3
+" no number line
+set nonumber norelativenumber numberwidth=3
 
 " autoindent
 ">>> set autoindent
