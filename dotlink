@@ -355,6 +355,7 @@ cmus/cmus_desktop_notify.py,.cmus/cmus_desktop_notify.py
 # E-Mail Client
 
 mutt/muttrc,.mutt/muttrc
+$HOME/Dropbox/conf/mutt/alias,.mutt/alias
 
 #===========================================================================}}}
 # [turses](https://github.com/dialelo/turses):                              {{{
