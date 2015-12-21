@@ -45,7 +45,6 @@ myfunctions=(
     agvim
     alias
     cecho
-    cfg-alias
     colorize
     command-not-found
     extract
@@ -56,7 +55,6 @@ myfunctions=(
     prompt
     r
     ranger
-    rld-alias
     shtest
     tmux
   )
