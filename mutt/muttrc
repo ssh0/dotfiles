@@ -34,7 +34,7 @@ source ~/.mutt/alias
 
 set imap_check_subscribed
 # set hostname = gmail.com
-set mail_check = 5
+set mail_check = 300
 set timeout = 1800
 set imap_keepalive = 300
 set spoolfile = "+INBOX"
