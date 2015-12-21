@@ -191,7 +191,6 @@ zshfiles/functions/agvim.zsh,.zsh/functions/agvim.zsh
 zshfiles/functions/alias.zsh,.zsh/functions/alias.zsh
 zshfiles/functions/bindkey.zsh,.zsh/functions/bindkey.zsh
 zshfiles/functions/cecho.zsh,.zsh/functions/cecho.zsh
-zshfiles/functions/cfg-alias.zsh,.zsh/functions/cfg-alias.zsh
 zshfiles/functions/colorize.zsh,.zsh/functions/colorize.zsh
 zshfiles/functions/command-not-found.zsh,.zsh/functions/command-not-found.zsh
 zshfiles/functions/completion.zsh,.zsh/functions/completion.zsh
@@ -205,7 +204,6 @@ zshfiles/functions/progressbar.zsh,.zsh/functions/progressbar.zsh
 zshfiles/functions/prompt.zsh,.zsh/functions/prompt.zsh
 zshfiles/functions/r.zsh,.zsh/functions/r.zsh
 zshfiles/functions/ranger.zsh,.zsh/functions/ranger.zsh
-zshfiles/functions/rld-alias.zsh,.zsh/functions/rld-alias.zsh
 zshfiles/functions/shtest.zsh,.zsh/functions/shtest.zsh
 zshfiles/functions/tmux.zsh,.zsh/functions/tmux.zsh
 zshfiles/functions/zgen.zsh,.zsh/functions/zgen.zsh
