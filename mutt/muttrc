@@ -5,6 +5,20 @@ folder-hook 'account.com.waseda.藤本將太郎' 'source ~/Dropbox/conf/account.
 
 # Default account
 source ~/Dropbox/conf/account.com.gmail.藤本將太郎
+# inside of this file is like -------------------------------------------------
+# set imap_user = "gmailaddress@gmail.com"
+# set imap_pass = "password"
+# set smtp_url = "smtp://gmailaddress@smtp.gmail.com:587/"
+# set smtp_pass = "password"
+# set from = "gmailaddress@gmail.com"
+# set realname = "Your Real Name"
+# set folder = "imaps://imap.gmail.com:993"
+# set spoolfile = "+INBOX"
+# set postponed = "+[Gmail]/Drafts"
+# set record = "+[GMail]/Sent Mail"
+# set header_cache = ~/.mutt/path/to/save/header_cache
+# set message_cachedir = ~/.mutt/path/to/save/body_cache
+# -----------------------------------------------------------------------------
 
 # Set default text editor
 set editor = "$EDITOR"
@@ -13,16 +27,23 @@ set editor = "$EDITOR"
 # Basic Config                                                              {{{
 #------------------------------------------------------------------------------
 
+set alias_file = "~/.mutt/alias"
+
+# source aliases
+source ~/.mutt/alias
+
 set imap_check_subscribed
 # set hostname = gmail.com
-set mail_check = 120
-set timeout = 300
+set mail_check = 5
+set timeout = 1800
 set imap_keepalive = 300
 set spoolfile = "+INBOX"
 
 set move = no
 set pager_stop = yes
+set pager_index_lines=12
 set include
+set index_format = "%Z │ %-27.27L %s %> │ %{%Y-%m-%d %H:%M} "
 set sort = 'threads'
 set sort_aux = 'reverse-last-date-received'
 set auto_tag = yes
@@ -31,6 +52,10 @@ unignore from: subject to cc date
 hdr_order Date From To Cc
 alternative_order text/plain text/html *
 auto_view text/html
+
+set status_format = "%> ✉:%?M?%M/?%m%?n? Ｎ:%n?%?o? 古:%o?%?d? ⌫:%d?%?F? ⚑:%F?%?t? #:%t?%?p? ↪:%p?%?b? ↧:%b?%?l? %P "
+set pager_format = "[%C/%m]%Z %n - %s %> "
+set compose_format = "Compose [%l +: %a] %> "
 
 #---------------------------------------------------------------------------}}}
 # Color Theme                                                               {{{
@@ -48,9 +73,10 @@ color tree       red      color234
 color search     black    blue
 color markers    red      color234
 
-color header brightyellow color234 "From: "
-color header brightyellow color234 "Subject: "
 color header brightyellow color234 "Date: "
+color header brightyellow color234 "From: "
+color header brightyellow color234 "To: "
+color header brightyellow color234 "Subject: "
 
 color quoted  green color234
 color quoted1 cyan  color234
@@ -93,7 +119,7 @@ bind editor <Tab> complete-query
 bind editor ^T complete
 bind editor <space> noop 
 
-#---------------------------------------------------------------------------}}} 
+#---------------------------------------------------------------------------}}}
 # Macros                                                                    {{{
 #------------------------------------------------------------------------------
 
