@@ -44,7 +44,7 @@ set pager_stop = yes
 set pager_index_lines=12
 set markers = no
 set include
-set index_format = "%Z │ %-27.27L %s %> │ %{%Y-%m-%d %H:%M} "
+set index_format = "%Z │ %{%Y-%m-%d %H:%M} │ %-27.27L │ %s "
 set sort = 'threads'
 set sort_aux = 'reverse-last-date-received'
 set auto_tag = yes
@@ -78,6 +78,11 @@ color header blue   default "Date: "
 color header green  default "From: "
 color header white  default "To: "
 color header yellow default "Subject: "
+
+# point out URLs
+color body magenta default "(ftp|http|https)://[^ ]+"
+# e-mail addresses
+color body magenta default [-a-z_0-9.]+@[-a-z_0-9.]+
 
 color quoted  green default
 color quoted1 cyan  default
