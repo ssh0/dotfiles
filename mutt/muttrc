@@ -42,6 +42,7 @@ set spoolfile = "+INBOX"
 set move = no
 set pager_stop = yes
 set pager_index_lines=12
+set markers = no
 set include
 set index_format = "%Z │ %-27.27L %s %> │ %{%Y-%m-%d %H:%M} "
 set sort = 'threads'
