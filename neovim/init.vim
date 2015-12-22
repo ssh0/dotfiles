@@ -684,9 +684,6 @@ nnoremap <silent> <Leader>l :setlocal relativenumber! number!<CR>
 nnoremap <Down> gj
 nnoremap <Up> gk
 
-" Insert empty line
-nnoremap <CR> o <ESC>0"_D
-
 " move from line head to line end
 nnoremap h <Left>zv
 
