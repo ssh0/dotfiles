@@ -95,6 +95,8 @@ search_engines = {
     y = "http://www.youtube.com/results?search_query=%s&sm=3",
     -- "rt" Yahooリアルタイム検索
     rt = "http://realtime.search.yahoo.co.jp/search?p=%s&ei=UTF-8",
+    -- "tw" Search in twitter
+    tw = "https://twitter.com/search?src=typd&q=%s",
     -- "sc" Google Scholar検索
     sc = "http://scholar.google.co.jp/scholar?as_vis=1&q=%s&hl=ja&as_sdt=1,5",
     -- "q" Qiita 検索
