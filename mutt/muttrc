@@ -61,32 +61,32 @@ set compose_format = "Compose [%l +: %a] %> "
 # Color Theme                                                               {{{
 #------------------------------------------------------------------------------
 
-color normal     white    color234
-color tilde      color235 color234
-color hdrdefault cyan     color234
-color attachment yellow   color234
-color error      red      color234
-color message    white    color234
+color normal     white    default
+color tilde      color235 default
+color hdrdefault cyan     default
+color attachment yellow   default
+color error      red      default
+color message    white    default
 color indicator  green    black
 color status     white    black
-color tree       red      color234
+color tree       white    default
 color search     black    blue
-color markers    red      color234
+color markers    red      default
 
-color header brightyellow color234 "Date: "
-color header brightyellow color234 "From: "
-color header brightyellow color234 "To: "
-color header brightyellow color234 "Subject: "
+color header blue   default "Date: "
+color header green  default "From: "
+color header white  default "To: "
+color header yellow default "Subject: "
 
-color quoted  green color234
-color quoted1 cyan  color234
-color quoted2 green color234
-color quoted3 cyan  color234
+color quoted  green default
+color quoted1 cyan  default
+color quoted2 green default
+color quoted3 cyan  default
 
-color index yellow    color234 '~O'
-color index yellow    color234 '~N'
-color index brightred color234 '~F'    
-color index blue      default  '~D'
+color index yellow    default '~O'
+color index yellow    default '~N'
+color index brightred default '~F'    
+color index blue      default '~D'
 
 #---------------------------------------------------------------------------}}} 
 # Bindings                                                                  {{{
