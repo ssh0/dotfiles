@@ -84,10 +84,10 @@ color body magenta default "(ftp|http|https)://[^ ]+"
 # e-mail addresses
 color body magenta default [-a-z_0-9.]+@[-a-z_0-9.]+
 
-color quoted  green default
-color quoted1 cyan  default
-color quoted2 green default
-color quoted3 cyan  default
+color quoted  green   default
+color quoted1 cyan    default
+color quoted2 blue    default
+color quoted3 magenta default
 
 color index yellow    default '~O'
 color index yellow    default '~N'
