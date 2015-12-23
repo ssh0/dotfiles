@@ -57,7 +57,7 @@ echo "Alert at ${end_time} ("$1" minutes)."
 sleep ${1}m
 
 # then, send notification
-notify-send "Time! $1 min" "by $0"\
+notify-send "Time!" "$1 min"\
   -t 6000 \
   -i "${notification_icon}"
 paplay "${notification_sound}" &
