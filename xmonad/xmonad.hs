@@ -80,7 +80,7 @@ myfocusedBorderColor = colorBlue
 -- gapwidth
 gapwidth  = 3
 gapwidthU = 10
-gapwidthD = 10
+gapwidthD = 11
 gapwidthL = 40
 gapwidthR = 41
 
