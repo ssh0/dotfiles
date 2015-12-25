@@ -405,6 +405,7 @@ luakit/plugins/private_browsing_tabs.lua,.config/luakit/plugins/private_browsing
 luakit/plugins/adblock/adp_jp_element_hiding.txt,.local/share/luakit/adblock/abp_jp_element_hiding.txt
 luakit/plugins/adblock/Adblock_Plus_list.txt,.local/share/luakit/adblock/Adblock_Plus_list.txt
 luakit/plugins/adblock/exceptionrules.txt,.local/share/luakit/adblock/exceptionrules.txt
+luakit/luakit.desktop,.local/share/applications/luakit.desktop
 
 #===========================================================================}}}
 # [tig](https://github.com/jonas/tig)                                       {{{
