@@ -35,7 +35,7 @@ do
             echo "[ytdl] listfile '${listfile}' does not exist."
             exit 0
           fi
-          vim + "${listfile}"
+          $EDITOR + "${listfile}"
           exit 0 ;;
     "h" ) usage;
           exit 1 ;;
