@@ -429,3 +429,10 @@ rcfiles/ansiweatherrc,.ansiweatherrc
 rcfiles/zathurarc,.config/zathura/zathurarc
 
 #===========================================================================}}}
+# [Feednix](https://github.com/Jarkore/Feednix)                             {{{
+#==============================================================================
+# An ncurses based client for Feedly.
+
+$HOME/Dropbox/conf/feednix/config.json,.config/feednix/config.json
+
+#===========================================================================}}}
