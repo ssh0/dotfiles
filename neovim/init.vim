@@ -385,16 +385,16 @@ NeoBundle 'thinca/vim-splash'
 let g:splash#path = expand('~/.splash-vim.txt')
 "                                                                           }}}
 " rcmdnk/vim-markdown                                                       {{{
-NeoBundle 'rcmdnk/vim-markdown', {
-      \ 'depends': ['godlygeek/tabular'],
-      \ }
+" NeoBundle 'rcmdnk/vim-markdown', {
+"       \ 'depends': ['godlygeek/tabular'],
+"       \ }
 
-" Enable folding
-let g:vim_markdown_folding_disabled = 0
-" Disable Default Key Mapping
-let g:vim_markdown_no_default_key_mappings = 1
-" LaTeX math
-let g:vim_markdown_math = 1
+" " Enable folding
+" let g:vim_markdown_folding_disabled = 0
+" " Disable Default Key Mapping
+" let g:vim_markdown_no_default_key_mappings = 1
+" " LaTeX math
+" let g:vim_markdown_math = 1
 "                                                                           }}}
 " joker1007/vim-markdown-quote-syntax                                       {{{
 ">>> NeoBundle 'joker1007/vim-markdown-quote-syntax'
