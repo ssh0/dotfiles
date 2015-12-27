@@ -141,9 +141,9 @@ nnoremap <Leader>or :CtrlPMRUFiles<CR>
 NeoBundle 'ervandew/supertab'
 "                                                                           }}}
 " ujihisa/neco-look                                                         {{{
-NeoBundle 'ujihisa/neco-look', {
-      \ 'depends': ['Shougo/neocomplcache.vim']
-      \ }
+" NeoBundle 'ujihisa/neco-look', {
+"       \ 'depends': ['Shougo/neocomplcache.vim']
+"       \ }
 "                                                                           }}}
 " tacroe/unite-mark                                                         {{{
 NeoBundleLazy 'tacroe/unite-mark', {
@@ -175,9 +175,9 @@ NeoBundle 'LeafCage/foldCC'
 set foldtext=FoldCCtext()
 "                                                                           }}}
 " Yggdroot/indentLine                                                       {{{
-NeoBundle 'Yggdroot/indentLine'
-let g:indentLine_color_term = 239
-let g:indentLine_char = '│'
+" NeoBundle 'Yggdroot/indentLine'
+" let g:indentLine_color_term = 239
+" let g:indentLine_char = '│'
 "                                                                           }}}
 " lilydjwg/colorizer                                                        {{{
 NeoBundle 'lilydjwg/colorizer'
