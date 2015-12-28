@@ -239,6 +239,7 @@ bin/proxy_toggle.sh,bin/proxy_toggle.sh
 bin/radiko_rec.sh,bin/radiko_rec.sh
 bin/screenshot_select.sh,bin/screenshot_select.sh
 bin/screenshot.sh,bin/screenshot.sh
+bin/search,bin/search
 bin/sound_volume_change_wrapper.sh,bin/sound_volume_change_wrapper.sh
 bin/start_urxvtd.sh,bin/start_urxvtd.sh
 bin/streamradio,bin/streamradio
