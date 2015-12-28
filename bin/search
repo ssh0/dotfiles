@@ -166,7 +166,7 @@ search() {
   if $gui; then
     $BROWSER "$url"
   else
-    if [ -n $TMUX ]; then
+    if [ -n "$TMUX" ]; then
       if [ $(tput cols) -gt 160 ]; then
         tmux split-window -h $BROWSERCLI "$url"
       else
