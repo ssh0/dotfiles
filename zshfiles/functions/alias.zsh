@@ -67,6 +67,8 @@ cf-turses() { $EDITOR ~/.turses/config ;}
 cf-vim() { $EDITOR ~/.vimrc ;}
 cf-vimcolor() { $EDITOR ~/.vim/bundle/easy-reading.vim/colors/easy-reading.vim ;}
 cf-vimperatorrc() { $EDITOR ~/.vimperatorrc ;}
+cf-w3m() { $EDITOR ~/.w3m/config ;}
+cf-w3m-keymap() { $EDITOR ~/.w3m/keymap ;}
 cf-websearch() { $EDITOR ~/Workspace/python/web_search/websearch/config.py ;}
 cf-xdefaults() { $EDITOR ~/.Xdefaults ;}
 cf-xmodmap() { $EDITOR ~/.Xmodmap ;}
