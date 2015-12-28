@@ -7,9 +7,6 @@ localpath="$HOME/Workspace/"
 rsynccmd='rsync -av --delete'
 
 columns=$(tput cols)
-if [ $columns -gt 70 ]; then
-  columns=70
-fi
 line=$(printf '%*s\n' "$columns" '' | tr ' ' -)
 
 sync() {
