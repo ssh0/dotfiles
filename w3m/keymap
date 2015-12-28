@@ -14,7 +14,7 @@ keymap C-e NULL #LINE_END
 keymap C-f NULL #MOVE_RIGHT
 keymap C-h NULL #HISTORY
 keymap C-j NULL #GOTO_LINK
-# keymap C-k COOKIE
+keymap C-k NULL #COOKIE
 # keymap C-l REDRAW
 keymap C-m NULL #GOTO_LINK
 keymap C-n NULL #MOVE_DOWN
