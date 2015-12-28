@@ -86,17 +86,17 @@ fixed_wheel_scroll_count 5
 relative_wheel_scroll_ratio 30
 relative_wheel_scroll 0
 reverse_mouse 0
-use_mouse 1
+use_mouse 0
 migemo_command cmigemo -q -d /usr/share/cmigemo/utf-8/migemo-dict
 use_migemo 1
 ignorecase_search 1
 wrap_search 0
-mark_all_pages 0
-vi_prec_num 0
-emacs_like_lineedit 0
-mark 0
+mark_all_pages 1
+vi_prec_num 1
+emacs_like_lineedit 1
+mark 1
 close_tab_back 0
-confirm_qq 1
+confirm_qq 0
 save_hist 1
 history 100
 use_history 1
