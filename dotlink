@@ -436,3 +436,11 @@ rcfiles/zathurarc,.config/zathura/zathurarc
 $HOME/Dropbox/conf/feednix/config.json,.config/feednix/config.json
 
 #===========================================================================}}}
+# [w3m](http://w3m.sourceforge.net/index.ja.html)                           {{{
+#==============================================================================
+# w3m is a text-based web browser as well as a pager like `more' or `less'.
+
+w3m/config,.w3m/config
+w3m/keymap,.w3m/keymap
+
+#===========================================================================}}}
