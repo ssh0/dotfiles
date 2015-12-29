@@ -191,9 +191,12 @@ keymap gf TAB_LINK
 keymap C-] GOTO_LINK
 keymap SPC GOTO_LINK
 ########## info ##########
-keymap y PEEK
-keymap ;y PEEK_LINK
 keymap gC-g INFO
+
+########## external ##########
+keymap y EXTERN "echo %s | xsel -i; xsel -o | xsel -i -b"
+keymap ;y EXTERN_LINK "echo %s | xsel -i; xsel -o | xsel -i -b"
+keymap O EXTERN "$BROWSER %s"
 
 ########## search ##########
 keymap / ISEARCH
