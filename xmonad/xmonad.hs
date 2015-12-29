@@ -71,18 +71,18 @@ colorNormalbg  = "#1c1c1c"
 colorfg        = "#9fa8b1"
 
 -- Border width
-borderwidth = 0
+borderwidth = 5
 
 -- Border color
 mynormalBorderColor  = colorNormalbg
-myfocusedBorderColor = colorBlue
+myfocusedBorderColor = colorfg
 
 -- gapwidth
-gapwidth  = 3
-gapwidthU = 10
-gapwidthD = 11
-gapwidthL = 40
-gapwidthR = 41
+gapwidth  = 4
+gapwidthU = 7
+gapwidthD = 8
+gapwidthL = 37
+gapwidthR = 38
 
 --------------------------------------------------------------------------- }}}
 -- Define keys to remove                                                    {{{
@@ -260,10 +260,10 @@ main = do
 -------------------------------------------------------------------------------
 
 myLayout = spacing gapwidth $
-           gaps [(U,gapwidth + gapwidthU),(D,gapwidth + gapwidthD),(L,gapwidth + gapwidthL),(R,gapwidth + gapwidthR)] $
-                 (ResizableTall 1 (1/100) (3/5) [])
-             ||| (TwoPane (1/100) (3/5))
-             ||| (ThreeColMid 1 (1/100) (16/35))
+           gaps [(U, gapwidthU),(D, gapwidthD),(L, gapwidthL),(R, gapwidthR)] $
+                 (ResizableTall 1 (1/40) (1/2) [])
+             ||| (TwoPane (1/40) (1/2))
+             ||| (ThreeColMid 1 (1/20) (16/35))
              ||| Simplest
 
 --------------------------------------------------------------------------- }}}
