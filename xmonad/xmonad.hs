@@ -71,14 +71,14 @@ colorNormalbg  = "#1c1c1c"
 colorfg        = "#9fa8b1"
 
 -- Border width
-borderwidth = 5
+borderwidth = 0
 
 -- Border color
 mynormalBorderColor  = colorNormalbg
 myfocusedBorderColor = colorfg
 
 -- gapwidth
-gapwidth  = 4
+gapwidth  = 9
 gapwidthU = 7
 gapwidthD = 8
 gapwidthL = 37
