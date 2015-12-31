@@ -214,7 +214,6 @@ zshfiles/functions/zplug.zsh,.zsh/functions/zplug.zsh
 #==============================================================================
 # Some useful scripts (See bin/README.md)
 
-bin/README.md,bin/README.md
 bin/alarm,bin/alarm
 bin/allmp4tomp3.sh,bin/allmp4tomp3.sh
 bin/bib2html_wrapper.sh,bin/bib2html_wrapper.sh
