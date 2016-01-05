@@ -23,6 +23,9 @@
 \usepackage{amsthm}
 \usepackage{ascmac}
 
+% otf font
+\usepackage{otf}
+
 % 改ページの許可
 \allowdisplaybreaks[1]
 
