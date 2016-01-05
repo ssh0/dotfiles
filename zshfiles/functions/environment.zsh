@@ -43,6 +43,9 @@ export RANGER_LOAD_DEFAULT_RC=false
 export DOT_REPO="https://github.com/ssh0/dotfiles.git"
 export DOT_DIR="$HOME/.dotfiles"
 
+# override the safe location for pick
+export PICK_SAFE="$HOME/Dropbox/conf/pick.safe"
+
 # enhancd by "c"
 export ENHANCD_COMMAND='cd'
 
