@@ -28,12 +28,12 @@ sourcedir='source'
 
 [[ -f "$1" ]] || (echo "There is no file '$1'.";  exit 1)
 
-dir="$(cd "$(dirname $1)"; pwd)"
-namewithext=$(basename "$1")
-name=${namewithext%.*}
+dir="$(cd "$(dirname "$1")"; pwd)"
+namewithext="$(basename "$1")"
+name="${namewithext%.*}.html"
 
-currentdir="$(basename $dir)"
-dir_up="$(dirname $dir)"
+currentdir="$(basename "$dir")"
+dir_up="$(dirname "$dir")"
 
 if [ "${currentdir}" = "${sourcedir}" ]; then
   dir="${dir_up}"
@@ -46,4 +46,3 @@ else
 fi
 
 bibtex2html -s "${style}" -c "${bibtex_command}" -css "${css}" -o "${output}" -noheader -nofooter -linebreak "$1"
-
