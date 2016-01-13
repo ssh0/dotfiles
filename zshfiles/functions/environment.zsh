@@ -12,6 +12,9 @@ export LC_TIME=en_US.UTF-8
 # set PATH
 export MANPATH="/usr/local/man:$MANPATH"
 
+# python startup
+export PYTHONSTARTUP="$HOME/.pythonrc.py"
+
 # find alternative apps if it is installed on your system
 find_alt() {
   local i
