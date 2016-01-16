@@ -79,8 +79,8 @@ myfocusedBorderColor = colorfg
 
 -- gapwidth
 gapwidth  = 9
-gapwidthU = 7
-gapwidthD = 8
+gapwidthU = 4
+gapwidthD = 4
 gapwidthL = 37
 gapwidthR = 38
 
