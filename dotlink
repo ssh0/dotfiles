@@ -246,6 +246,7 @@ bin/toggle_compton.sh,bin/toggle_compton.sh
 bin/toggle_xcompmgr.sh,bin/toggle_xcompmgr.sh
 bin/touchpad_toggle.sh,bin/touchpad_toggle.sh
 bin/trackpoint_toggle.sh,bin/trackpoint_toggle.sh
+bin/trello,bin/trello
 bin/urxvt_float.sh,bin/urxvt_float.sh
 bin/wmatomp3_converter.sh,bin/wmatomp3_converter.sh
 bin/ytdl,bin/ytdl
