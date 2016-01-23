@@ -10,6 +10,9 @@ use-filedir-conf=yes
 # default value of 320kB is quite low, especially on slow media
 cache=1024
 
+# message level (less verbosity)
+msg-level=demux=no:ad=no:ffmpeg=no:ao=no:cplayer=fatal
+
 # save screenshots on the desktop
 screenshot-template=~/Desktop/mpv-screenshot%n
 
