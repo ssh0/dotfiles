@@ -492,7 +492,7 @@ savefig.transparent  : True  # setting that controls whether figures are saved
 # You can access the verbose instance in your code
 #   from matplotlib import verbose.
 
-verbose.level : helpful     # one of silent, helpful, debug, debug-annoying
+verbose.level : silent     # one of silent, helpful, debug, debug-annoying
 #verbose.fileo : sys.stdout  # a log filename, sys.stdout or sys.stderr
 
 #===========================================================================}}}
