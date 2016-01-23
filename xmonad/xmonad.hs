@@ -271,9 +271,9 @@ myStartupHook = do
         spawn "gnome-settings-daemon"
         spawn "nm-applet"
         spawn "xscreensaver -no-splash"
-        spawn "$HOME/.dropbox-dist/dropboxd"
-        spawn "$HOME/.fehbg"
-        spawn "$HOME/bin/start_urxvtd.sh"
+        spawn "bash $HOME/.dropbox-dist/dropboxd"
+        spawn "bash $HOME/.fehbg"
+        spawn "bash $HOME/bin/start_urxvtd.sh"
 
 --------------------------------------------------------------------------- }}}
 -- myManageHookShift: some window must created there                        {{{
