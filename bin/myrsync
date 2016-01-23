@@ -4,7 +4,7 @@
 
 dropboxpath="$HOME/Dropbox/Workspace/"
 localpath="$HOME/Workspace/"
-rsynccmd='rsync -av --delete'
+rsynccmd='rsync -azv --progress --delete'
 
 columns=$(tput cols)
 line=$(printf '%*s\n' "$columns" '' | tr ' ' -)
