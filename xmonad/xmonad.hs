@@ -85,22 +85,6 @@ gapwidthL = 37
 gapwidthR = 38
 
 --------------------------------------------------------------------------- }}}
--- Define keys to remove                                                    {{{
--------------------------------------------------------------------------------
-
-keysToRemove x =
-    [
-        -- Unused gmrun binding
-          (modm .|. shiftMask, xK_p)
-        -- Unused close window binding
-        , (modm .|. shiftMask, xK_c)
-        , (modm .|. shiftMask, xK_Return)
-    ]
-
--- Delete the keys combinations we want to remove.
-strippedKeys x = foldr M.delete (keys defaultConfig x) (keysToRemove x)
-
---------------------------------------------------------------------------- }}}
 -- main                                                                     {{{
 -------------------------------------------------------------------------------
 
@@ -136,60 +120,73 @@ main = do
        }
 
        -------------------------------------------------------------------- }}}
+       -- Define keys to remove                                             {{{
+       ------------------------------------------------------------------------
+
+       `removeKeysP`
+       [
+       -- Unused gmrun binding
+       "M-S-p",
+       -- Unused close window binding
+       "M-S-c",
+       "M-S-<Return>"
+       ]
+
+       -------------------------------------------------------------------- }}}
        -- Keymap: window operations                                         {{{
        ------------------------------------------------------------------------
 
-       `additionalKeys`
+       `additionalKeysP`
        [
        -- Shrink / Expand the focused window
-         ((modm                , xK_comma  ), sendMessage Shrink)
-       , ((modm                , xK_period ), sendMessage Expand)
-       , ((modm                , xK_z      ), sendMessage MirrorShrink)
-       , ((modm                , xK_a      ), sendMessage MirrorExpand)
+         ("M-,"    , sendMessage Shrink)
+       , ("M-."    , sendMessage Expand)
+       , ("M-z"    , sendMessage MirrorShrink)
+       , ("M-a"    , sendMessage MirrorExpand)
        -- Close the focused window
-       , ((modm                , xK_c      ), kill1)
+       , ("M-c"    , kill1)
        -- Toggle layout (Fullscreen mode)
-       , ((modm                , xK_f      ), sendMessage ToggleLayout)
+       , ("M-f"    , sendMessage ToggleLayout)
        -- Move the focused window
-       , ((modm .|. controlMask, xK_Right  ), withFocused (keysMoveWindow (2,0)))
-       , ((modm .|. controlMask, xK_Left   ), withFocused (keysMoveWindow (-2,0)))
-       , ((modm .|. controlMask, xK_Up     ), withFocused (keysMoveWindow (0,-2)))
-       , ((modm .|. controlMask, xK_Down   ), withFocused (keysMoveWindow (0,2)))
+       , ("M-C-<R>", withFocused (keysMoveWindow (2,0)))
+       , ("M-C-<L>", withFocused (keysMoveWindow (-2,0)))
+       , ("M-C-<U>", withFocused (keysMoveWindow (0,-2)))
+       , ("M-C-<D>", withFocused (keysMoveWindow (0,2)))
        -- Resize the focused window
-       , ((modm                , xK_s      ), withFocused (keysResizeWindow (-6,-6) (0.5,0.5)))
-       , ((modm                , xK_i      ), withFocused (keysResizeWindow (6,6) (0.5,0.5)))
+       , ("M-s"    , withFocused (keysResizeWindow (-6,-6) (0.5,0.5)))
+       , ("M-i"    , withFocused (keysResizeWindow (6,6) (0.5,0.5)))
        -- Increase / Decrese the number of master pane
-       , ((modm .|. shiftMask  , xK_semicolon), sendMessage $ IncMasterN 1)
-       , ((modm                , xK_minus  ), sendMessage $ IncMasterN (-1))
+       , ("M-S-;"  , sendMessage $ IncMasterN 1)
+       , ("M--"    , sendMessage $ IncMasterN (-1))
        -- Go to the next / previous workspace
-       , ((modm                , xK_Right  ), nextWS )
-       , ((modm                , xK_Left   ), prevWS )
-       , ((modm                , xK_l      ), nextWS )
-       , ((modm                , xK_h      ), prevWS )
+       , ("M-<R>"  , nextWS )
+       , ("M-<L>"  , prevWS )
+       , ("M-l"    , nextWS )
+       , ("M-h"    , prevWS )
        -- Shift the focused window to the next / previous workspace
-       , ((modm .|. shiftMask  , xK_Right  ), shiftToNext)
-       , ((modm .|. shiftMask  , xK_Left   ), shiftToPrev)
-       , ((modm .|. shiftMask  , xK_l      ), shiftToNext)
-       , ((modm .|. shiftMask  , xK_h      ), shiftToPrev)
+       , ("M-S-<R>", shiftToNext)
+       , ("M-S-<L>", shiftToPrev)
+       , ("M-S-l"  , shiftToNext)
+       , ("M-S-h"  , shiftToPrev)
        -- CopyWindow
-       , ((modm                , xK_v      ), windows copyToAll)
-       , ((modm .|. shiftMask  , xK_v      ), killAllOtherCopies)
+       , ("M-v"    , windows copyToAll)
+       , ("M-S-v"  , killAllOtherCopies)
        -- Move the focus down / up
-       , ((modm                , xK_Down   ), windows W.focusDown)
-       , ((modm                , xK_Up     ), windows W.focusUp)
-       , ((modm                , xK_j      ), windows W.focusDown)
-       , ((modm                , xK_k      ), windows W.focusUp)
+       , ("M-<D>"  , windows W.focusDown)
+       , ("M-<U>"  , windows W.focusUp)
+       , ("M-j"    , windows W.focusDown)
+       , ("M-k"    , windows W.focusUp)
        -- Swap the focused window down / up
-       , ((modm .|. shiftMask  , xK_j      ), windows W.swapDown)
-       , ((modm .|. shiftMask  , xK_k      ), windows W.swapUp)
+       , ("M-S-j"  , windows W.swapDown)
+       , ("M-S-k"  , windows W.swapUp)
        -- Shift the focused window to the master window
-       , ((modm .|. shiftMask  , xK_m      ), windows W.shiftMaster)
+       , ("M-S-m"  , windows W.shiftMaster)
        -- Search a window and focus into the window
-       , ((modm                , xK_g      ), windowPromptGoto myXPConfig)
+       , ("M-g"    , windowPromptGoto myXPConfig)
        -- Search a window and bring to the current workspace
-       , ((modm                , xK_b      ), windowPromptBring myXPConfig)
+       , ("M-b"    , windowPromptBring myXPConfig)
        -- Move the focus to next screen (multi screen)
-       , ((modm                , xK_w      ), nextScreen)
+       , ("M-w"    , nextScreen)
        ]
 
        -------------------------------------------------------------------- }}}
@@ -211,48 +208,48 @@ main = do
        -- Keymap: custom commands                                           {{{
        ------------------------------------------------------------------------
 
-       `additionalKeys`
+       `additionalKeysP`
        [
        -- Lock screen
-         ((mod1Mask .|. controlMask, xK_l      ), spawn "xscreensaver-command -lock")
+         ("M1-C-l", spawn "xscreensaver-command -lock")
        -- Toggle compton (compsite manager)
-       , ((mod1Mask .|. controlMask, xK_t      ), spawn "bash $HOME/bin/toggle_compton.sh")
+       , ("M1-C-t", spawn "bash $HOME/bin/toggle_compton.sh")
        -- Launch terminal
-       , ((modm                    , xK_Return ), spawn "urxvtc")
+       , ("M-<Return>", spawn "urxvtc")
        -- Launch terminal with a float window
-       , ((modm .|. shiftMask      , xK_Return ), spawn "$HOME/bin/urxvt_float.sh")
+       , ("M-S-<Return>", spawn "$HOME/bin/urxvt_float.sh")
        -- Insert a transparent panel
-       , ((modm .|. shiftMask      , xK_t      ), spawn "python $HOME/Workspace/python/transparent.py")
+       , ("M-S-t", spawn "python $HOME/Workspace/python/transparent.py")
        -- Launch file manager
-       , ((modm                    , xK_e      ), spawn "thunar")
+       , ("M-e", spawn "thunar")
        -- Launch web browser
-       , ((modm                    , xK_w      ), spawn "luakit")
+       , ("M-w", spawn "luakit")
        -- Launch dmenu for launching applicatiton
-       , ((modm                    , xK_p      ), spawn "exe=`dmenu_run -l 10 -fn 'Migu 1M:size=20'` && exec $exe")
+       , ("M-p", spawn "exe=`dmenu_run -l 10 -fn 'Migu 1M:size=20'` && exec $exe")
        -- Lauch websearch application (See https://github.com/ssh0/web_search)
-       , ((mod1Mask .|. controlMask, xK_f      ), spawn "websearch")
+       , ("M1-C-f", spawn "websearch")
        -- Play / Pause media keys
-       , ((0                       , 0x1008ff18), spawn "sh $HOME/bin/cplay.sh")
-       , ((0                       , 0x1008ff14), spawn "sh $HOME/bin/cplay.sh")
-       , ((shiftMask               , 0x1008ff18), spawn "streamradio pause")
-       , ((shiftMask               , 0x1008ff14), spawn "streamradio pause")
+       , ("<XF86AudioPlay>", spawn "$HOME/bin/cplay.sh")
+       , ("<XF86ModeLock>", spawn "$HOME/bin/cplay.sh")
+       , ("S-<XF86AudioPlay>", spawn "streamradio pause")
+       , ("S-<XF86ModeLock>", spawn "streamradio pause")
        -- Volume setting media keys
-       , ((0                       , 0x1008ff13), spawn "bash $HOME/bin/sound_volume_change_wrapper.sh +")
-       , ((0                       , 0x1008ff11), spawn "bash $HOME/bin/sound_volume_change_wrapper.sh -")
-       , ((0                       , 0x1008ff12), spawn "bash $HOME/bin/sound_volume_change_wrapper.sh m")
+       , ("<XF86AudioRaiseVolume>", spawn "$HOME/bin/sound_volume_change_wrapper.sh +")
+       , ("<XF86AudioLowerVolume>", spawn "$HOME/bin/sound_volume_change_wrapper.sh -")
+       , ("<XF86AudioMute>", spawn "$HOME/bin/sound_volume_change_wrapper.sh m")
         -- Brightness Keys
-       , ((0                       , 0x1008FF02), spawn "xbacklight + 5 -time 100 -steps 1")
-       , ((0                       , 0x1008FF03), spawn "xbacklight - 5 -time 100 -steps 1")
+       , ("<XF86MonBrightnessUp>", spawn "xbacklight + 5 -time 100 -steps 1")
+       , ("<XF86MonBrightnessDown>", spawn "xbacklight - 5 -time 100 -steps 1")
        -- Take a screenshot (whole window)
-       , ((0                       , 0xff61    ), spawn "$HOME/bin/screenshot.sh")
+       , ("<Print>", spawn "$HOME/bin/screenshot.sh")
        -- Take a screenshot (selected area)
-       , ((shiftMask               , 0xff61    ), spawn "$HOME/bin/screenshot_select.sh")
+       , ("S-<Print>", spawn "$HOME/bin/screenshot_select.sh")
        -- Launch ipython qtconsole
-       , ((0                       , 0x1008ff1d), spawn "ipython qtconsole --matplotlib=inline")
+       , ("<XF86Calculator>", spawn "ipython qtconsole --matplotlib=inline")
        -- Toggle touchpad
-       , ((controlMask             , xK_Escape ), spawn "$HOME/bin/touchpad_toggle.sh")
+       , ("C-<Escape>", spawn "$HOME/bin/touchpad_toggle.sh")
        -- Toggle trackpoint (Lenovo PC)
-       , ((mod1Mask                , xK_Escape ), spawn "$HOME/bin/trackpoint_toggle.sh")
+       , ("M1-<Escape>", spawn "$HOME/bin/trackpoint_toggle.sh")
        ]
 
 --------------------------------------------------------------------------- }}}
@@ -261,8 +258,8 @@ main = do
 
 myLayout = spacing gapwidth $
            gaps [(U, gapwidthU),(D, gapwidthD),(L, gapwidthL),(R, gapwidthR)] $
-                 (ResizableTall 1 (1/40) (1/2) [])
-             ||| (TwoPane (1/40) (1/2))
+                 (ResizableTall 1 (1/50) (1/2) [])
+             ||| (TwoPane (1/50) (1/2))
              ||| (ThreeColMid 1 (1/20) (16/35))
              ||| Simplest
 
@@ -275,7 +272,7 @@ myStartupHook = do
         spawn "nm-applet"
         spawn "xscreensaver -no-splash"
         spawn "$HOME/.dropbox-dist/dropboxd"
-        spawn "bash $HOME/.fehbg"
+        spawn "$HOME/.fehbg"
         spawn "$HOME/bin/start_urxvtd.sh"
 
 --------------------------------------------------------------------------- }}}
