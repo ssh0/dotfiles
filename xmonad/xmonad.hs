@@ -78,11 +78,11 @@ mynormalBorderColor  = colorNormalbg
 myfocusedBorderColor = colorfg
 
 -- gapwidth
-gapwidth  = 9
-gapwidthU = 4
-gapwidthD = 4
-gapwidthL = 37
-gapwidthR = 38
+gapwidth  = 4
+gapwidthU = 9
+gapwidthD = 9
+gapwidthL = 42
+gapwidthR = 43
 
 --------------------------------------------------------------------------- }}}
 -- main                                                                     {{{
