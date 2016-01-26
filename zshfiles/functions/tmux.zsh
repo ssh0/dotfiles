@@ -1,18 +1,28 @@
 # tmux
-# Aliases
-
-alias ta='tmux attach -t'
-alias ts='tmux new-session -s'
-alias tl='tmux list-sessions'
-alias tksv='tmux kill-server'
-alias tkss='tmux kill-session -t'
 
 # Only run if tmux is actually installed
 if hash tmux; then
+  # Start a new session from within tmux with ZSH_TMUX_AUTOSTART=true - Super User
+  # http://superuser.com/questions/821339/start-a-new-session-from-within-tmux-with-zsh-tmux-autostart-true
+  tmux-new-session() {
+    if [[ -n $TMUX ]]; then
+      tmux switch-client -t "$(TMUX= tmux -S "${TMUX%,*,*}" new-session -dP "$@")"
+    else
+      tmux new-session "$@"
+    fi
+  }
+
+  # Aliases
+  alias ta='tmux attach -t'
+  alias ts='tmux-new-session -s'
+  alias tl='tmux list-sessions'
+  alias tksv='tmux kill-server'
+  alias tkss='tmux kill-session -t'
+
   # Autostart if not already in tmux.
-  if [[ -z "$TMUX" ]]; then
+  if [[ ! -n $TMUX ]]; then
     # get the IDs
-    ID="`tmux ls`"
+    ID="`tmux list-sessions`"
     if [[ -z "$ID" ]]; then
       tmux new-session && exit
     fi
