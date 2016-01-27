@@ -31,7 +31,7 @@ if hash tmux; then
     if [[ "$ID" = "Create New Session" ]]; then
       tmux new-session && exit
     fi
-    tmux attach-session -d -t "$ID" && exit
+    tmux attach-session -t "$ID" && exit
   fi
 fi
 
