@@ -26,9 +26,10 @@ if hash tmux; then
     if [[ -z "$ID" ]]; then
       tmux new-session && exit
     fi
-    ID="$ID\nCreate New Session:"
+    create_new_session="Create New Session"
+    ID="$ID\n${create_new_session}:"
     ID="`echo $ID | $PERCOL | cut -d: -f1`"
-    if [[ "$ID" = "Create New Session" ]]; then
+    if [[ "$ID" = "${create_new_session}" ]]; then
       tmux new-session && exit
     fi
     tmux attach-session -t "$ID" && exit
