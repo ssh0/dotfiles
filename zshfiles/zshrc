@@ -20,6 +20,9 @@ export FZF_COMPLETION_TRIGGER=''
 # Set some environmet variables
 source "$ZSH_ROOT/functions/environment.zsh"
 
+# tmux plugin should be loaded as much as possible before
+source "$ZSH_ROOT/functions/tmux.zsh"
+
 # Use zgen to load some zsh plugins
 source "$ZSH_ROOT/functions/zgen.zsh"
 
@@ -56,7 +59,6 @@ myfunctions=(
     r
     ranger
     shtest
-    tmux
   )
 
 for myfunction in $myfunctions; do
