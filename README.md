@@ -8,7 +8,7 @@ This repository contains my dotfiles.
 I use [dot](https://github.com/ssh0/dot) in order to set symbolic link to add new file to this repository and to deal with machine specific configurations.
 
 Contents
---------
+========
 
 * XMonad([http://xmonad.org/](http://xmonad.org/))
     * [xmonad.hs](./xmonad/xmonad.hs)
@@ -26,20 +26,30 @@ Contents
 * [some useful scripts](./bin/)
 
 Screenshot
------------
+==========
 
 ![screenshot.png](./screenshots/screenshot.png)
 
 ![screenshot\_fullscreen\_mode.png](./screenshots/screenshot_fullscreen_mode.png)
 
-Install
--------
+Installation
+============
 
-### Install with [dot](https://github.com/ssh0/dot)
+* [Install with dot](#install_with_dot)
+    1. [Install dot](#install_dot)
+        * [Install with zsh plugin manager](#install_with_zsh_plugin_manager)
+        * [Install manually](#install_manually)
+    2. [Clone and deploy using dot](#clone_and_deploy_using_dot)
+* [Install without dot (simple)](#install_without_dot)
 
-#### 1. Install `dot`
 
-##### 1.a Install with zsh plugin manager
+## <a name="install_with_dot"> Install with dot</a>
+
+* [dot](https://github.com/ssh0/dot)
+
+### <a name="install_dot"> 1. Install `dot` </a>
+
+#### <a name="install_with_zsh_plugin_manager"> 1.a Install with zsh plugin manager </a>
 
 If you use zsh plugin manager already, add below line to your `zshrc`.
 
@@ -71,7 +81,7 @@ export DOT_DIR="$HOME/.dotfiles"
 
 If you want to know more installation guide, see `dot`'s [README](https://github.com/ssh0/dot).
 
-##### 1.b Install manually
+#### <a name="install_manually">1.b Install manually</a>
 
 Clone the `dot`'s repository:
 
@@ -87,7 +97,7 @@ source $HOME/.zsh/plugins/dot
 
 In order to take effect, close the terminal and restart.
 
-#### 2. Clone and deploy using dot
+### <a name="clone_and_deploy_using_dot"> 2. Clone and deploy using dot </a>
 
 Running the below command
 
@@ -101,7 +111,7 @@ If files or links have already existed, this command will ask you to choose the 
 
 Or if you know what kind of files are no need to make links, you can comment out the line in `~/.dotfiles-ssh0/dotlink` and these will be ignored by `dot` command.
 
-### Install without dot(simple)
+## <a name="install_without_dot">Install without dot (simple) </a>
 
 Clone (or folk) this repository to your computer:
 
@@ -113,7 +123,7 @@ then, you can copy or make a symbolic from the directory to the right place(
 which is described in `dotlink`).
 
 License
--------
+=======
 
 All the files in this repository (except submodule) is under [WTFPL - Do What the Fuck You Want to Public License](http://www.wtfpl.net/).
 

@@ -8,7 +8,7 @@ dotfiles
 シンボリックリンクを張ったり，新しいファイルをリポジトリ内に取り込んだり，マシン固有の設定を管理するために，[dot](https://github.com/ssh0/dot)を使っています。
 
 内容
-----
+====
 
 * XMonad([http://xmonad.org/](http://xmonad.org/))
     * [xmonad.hs](./xmonad/xmonad.hs)
@@ -26,20 +26,29 @@ dotfiles
 * [便利なシェルスクリプト群](./bin/)
 
 スクリーンショット
-------------------
+==================
 
 ![screenshot.png](./screenshots/screenshot.png)
 
 ![screenshot\_fullscreen\_mode.png](./screenshots/screenshot_fullscreen_mode.png)
 
 インストール
---------------
+============
 
-### [dot](https://github.com/ssh0/dot)を用いた方法。
+* [dotを用いた方法](#install_with_dot)
+    1. [dotのインストール](#install_dot)
+        * [zshプラグインマネージャを使用する方法](#install_with_zsh_plugin_manager)
+        * [手動でインストール](#install_manually)
+    2. [dotを用いてリポジトリをクローン、シンボリックリンクを作成](#clone_and_deploy_using_dot)
+* [dotを用いないシンプルな方法](#install_without_dot)
 
-#### 1. dotのインストール
+## <a name="install_with_dot">dotを用いた方法</a>
 
-##### 1.a zsh プラグインマネージャを使用する方法
+* [dot](https://github.com/ssh0/dot)
+
+### <a name="install_dot">1. dotのインストール</a>
+
+#### <a name="install_with_zsh_plugin_manager">1.a zsh プラグインマネージャを使用する方法</a>
 
 それぞれ`zshrc`に以下のように指定してください。
 
@@ -70,7 +79,7 @@ export DOT_DIR="$HOME/.dotfiles"
 
 `dot`のインストールについて詳しく知りたい方は、`dot`の[README](https://github.com/ssh0/dot/blob/master/README_ja.md)をご覧ください。
 
-##### 1.b 手動でインストール
+#### <a name="install_manually">1.b 手動でインストール</a>
 
 dotのプロジェクトリポジトリを自分のPCにクローンしてください。
 
@@ -86,7 +95,7 @@ source $HOME/.zsh/plugins/dot
 
 `bashrc`や`zshrc`の変更が適用されるように、一回ターミナルを閉じてください。
 
-#### 2. dotを用いてリポジトリをクローン、シンボリックリンクを作成
+### <a name="clone_and_deploy_using_dot">2. dotを用いてリポジトリをクローン、シンボリックリンクを作成</a>
 
 ```
 DOT_REPO="https://github.com/ssh0/dotfiles.git"; DOT_DIR="$HOME/.dotfiles-ssh0"
@@ -97,7 +106,7 @@ dot clone && dot set -v
 
 もし初めから追加したくないファイルがあるならば，`~/.dotfiles-ssh0/dotlink`の該当行を"#"でコメントアウトしてください。
 
-### dotを用いないシンプルな方法
+## <a name="install_without_dot">dotを用いないシンプルな方法</a>
 
 このリポジトリをクローンするかフォークしてください。
 
@@ -108,7 +117,7 @@ git clone --depth 1 https://github.com/ssh0/dotfiles.git ~/.dotfiles-ssh0
 お好みの設定ファイルをコピーしたり，シンボリックリンクを張ったりして，設定を反映させてください。
 
 ライセンス
-----------
+==========
 
 このリポジトリ内の(サブモジュール化されたものを除く)すべてのファイルは[WTFPL](http://www.wtfpl.net/)ライセンスの下で公開されます。
 
