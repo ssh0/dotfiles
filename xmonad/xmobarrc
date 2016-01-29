@@ -1,5 +1,5 @@
 -- -*- mode:haskell -*-
-Config { font = "xft:Migu 1M:size=10.5"
+Config { font = "xft:Migu 1M:size=13"
        , bgColor = "#1c1c1c"
        , fgColor = "#757575"
        , position = TopSize C 100 35
