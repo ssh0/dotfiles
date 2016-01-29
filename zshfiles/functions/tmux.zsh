@@ -31,8 +31,11 @@ if hash tmux; then
     ID="`echo $ID | $PERCOL | cut -d: -f1`"
     if [[ "$ID" = "${create_new_session}" ]]; then
       tmux new-session && exit
+    elif [[ -n "$ID" ]]; then
+      tmux attach-session -t "$ID" && exit
+    else
+      :  # Start terminal normally
     fi
-    tmux attach-session -t "$ID" && exit
   fi
 fi
 
