@@ -97,7 +97,8 @@ main = do
        -- urxvtc is client terminal application. you should launch the daemon 
        -- before using urxvtc
        --     $ urxvtd -q -f -o
-       , terminal           = "urxvtc"
+       -- , terminal           = "urxvtc"
+       , terminal           = "urxvt"
        , focusFollowsMouse  = True
        , normalBorderColor  = mynormalBorderColor
        , focusedBorderColor = myfocusedBorderColor
@@ -215,7 +216,7 @@ main = do
        -- Toggle compton (compsite manager)
        , ("M1-C-t", spawn "bash $HOME/bin/toggle_compton.sh")
        -- Launch terminal
-       , ("M-<Return>", spawn "urxvtc")
+       , ("M-<Return>", spawn "urxvt")
        -- Launch terminal with a float window
        , ("M-S-<Return>", spawn "$HOME/bin/urxvt_float.sh")
        -- Insert a transparent panel
