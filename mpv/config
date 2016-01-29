@@ -27,8 +27,7 @@ sub-text-font-size=30
 ################################################################################
 # On Screen Display
 
-# I don't like mouse stuff
-osc=no
+# osc=no
 osd-font="Migu 1P"
 
 # make the OSD progress bar be big and centered like in mplayer and mplayer2
