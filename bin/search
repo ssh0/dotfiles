@@ -142,8 +142,8 @@ search() {
       url="http://ejje.weblio.jp/content/%s"
       shift 1
       ;;
-    # "wordnik": seach at wordnik
-    "wordnik")
+    # "wd": seach at wordnik
+    "wd")
       url="https://www.wordnik.com/words/%s"
       shift 1
       ;;
