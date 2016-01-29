@@ -11,17 +11,18 @@ theme.fg     = "#ffffff"
 theme.fg1    = "#c6c6c6"
 theme.bg     = "#1c1c1c"
 theme.black  = "#353535"
-theme.black2 = "#474747"
-theme.black3 = "#9e9e9e"
+theme.black1 = "#474747"
+theme.black2 = "#9e9e9e"
 theme.red    = "#ef9a9a"
 theme.green  = "#a5d6a7"
+theme.green1 = "#00d700"
 theme.green2 = "#b9e18b"
 theme.yellow = "#ece391"
 theme.white  = "#aaaaaa"
 
--- Genaral colours
+-- General colours
 theme.success_fg = theme.green
-theme.loaded_fg  = theme.black2
+theme.loaded_fg  = theme.black1
 theme.error_fg   = theme.bg
 theme.error_bg   = theme.red
 
@@ -37,7 +38,7 @@ theme.notif_bg = theme.black
 theme.menu_fg                   = theme.fg1
 theme.menu_bg                   = theme.bg
 theme.menu_selected_fg          = theme.fg
-theme.menu_selected_bg          = theme.black2
+theme.menu_selected_bg          = theme.black1
 theme.menu_title_bg             = theme.bg
 theme.menu_primary_title_fg     = theme.green2
 theme.menu_secondary_title_fg   = theme.green2
@@ -49,7 +50,7 @@ theme.proxy_inactive_menu_fg    = theme.white
 theme.proxy_inactive_menu_bg    = theme.bg
 
 -- Statusbar specific
-theme.sbar_fg         = theme.black3
+theme.sbar_fg         = theme.black2
 theme.sbar_bg         = theme.bg
 
 -- Downloadbar specific
@@ -62,12 +63,12 @@ theme.ibar_fg           = theme.fg1
 theme.ibar_bg           = theme.bg
 
 -- Tab label
-theme.tab_fg            = theme.black3
+theme.tab_fg            = theme.black2
 theme.tab_bg            = theme.bg
-theme.tab_ntheme        = theme.yellow
-theme.selected_fg       = theme.fg
-theme.selected_bg       = theme.black2
-theme.selected_ntheme   = theme.yellow
+theme.tab_ntheme        = theme.black2
+theme.selected_fg       = theme.green1
+theme.selected_bg       = theme.bg
+theme.selected_ntheme   = theme.green1
 theme.loading_fg        = theme.fg
 theme.loading_bg        = theme.black
 
