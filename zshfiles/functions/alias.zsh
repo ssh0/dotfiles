@@ -56,7 +56,7 @@ cf-history() { $EDITOR ${ZSH_ROOT}/history ;}
 cf-latexmkrc() { $EDITOR ~/.latexmkrc ;}
 cf-luakit() { $EDITOR ~/.config/luakit ;}
 cf-mplayer() { $EDITOR ~/.mplayer/config ;}
-cf-mpv() { $EDITOR ~/.mpv/config ;}
+cf-mpv() { $EDITOR ~/.config/mpv/mpv.conf ;}
 cf-mutt() { $EDITOR ~/.mutt/muttrc ;}
 cf-nvim() { $EDITOR ~/.config/nvim/init.vim ;}
 cf-ranger() { $EDITOR ~/.config/ranger/rc.conf ;}
