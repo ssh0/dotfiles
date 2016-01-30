@@ -334,8 +334,9 @@ vimperator/colors/darkness.vimp,.vimperator/colors/darkness.vimp
 # mpv is a fork of mplayer2 and MPlayer. It shares some features with
 # the former projects while introducing many more.
 
-mpv/config,.mpv/config
-mpv/lua/notify.lua,.mpv/scripts/notify.lua
+mpv/config,.config/mpv/mpv.conf
+mpv/lua/notify.lua,.config/mpv/scripts/notify.lua
+mpv/lua-settings/osc.conf,.config/mpv/lua-settings/osc.conf
 
 #===========================================================================}}}
 # [cmus](https://cmus.github.io/):                                          {{{
