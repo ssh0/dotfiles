@@ -168,9 +168,9 @@ search() {
   else
     if [ -n "$TMUX" ]; then
       if [ $(tput cols) -gt 160 ]; then
-        tmux split-window -h $BROWSERCLI "$url"
+        tmux split-window -h -p 70 $BROWSERCLI "$url"
       else
-        tmux split-window -v $BROWSERCLI "$url"
+        tmux split-window -v -p 90 $BROWSERCLI "$url"
       fi
     else
       $BROWSERCLI "$url"
