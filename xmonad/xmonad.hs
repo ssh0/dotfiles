@@ -78,11 +78,11 @@ mynormalBorderColor  = colorNormalbg
 myfocusedBorderColor = colorfg
 
 -- gapwidth
-gapwidth  = 4
-gapwidthU = 5
-gapwidthD = 6
-gapwidthL = 42
-gapwidthR = 43
+gapwidth  = 8
+gapwidthU = 2
+gapwidthD = 1
+gapwidthL = 36
+gapwidthR = 37
 
 --------------------------------------------------------------------------- }}}
 -- main                                                                     {{{
@@ -259,9 +259,9 @@ main = do
 
 myLayout = spacing gapwidth $
            gaps [(U, gapwidthU),(D, gapwidthD),(L, gapwidthL),(R, gapwidthR)] $
-                 (ResizableTall 1 (1/50) (1/2) [])
-             ||| (TwoPane (1/50) (1/2))
-             ||| (ThreeColMid 1 (1/20) (16/35))
+                 (ResizableTall 1 (1/55) (1/2) [])
+             ||| (TwoPane (1/55) (1/2))
+             ||| (ThreeColMid 1 (1/55) (16/35))
              ||| Simplest
 
 --------------------------------------------------------------------------- }}}
