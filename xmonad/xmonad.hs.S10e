@@ -81,8 +81,8 @@ myfocusedBorderColor = colorfg
 gapwidth  = 3
 gapwidthU = 7
 gapwidthD = 6
-gapwidthL = 36
-gapwidthR = 37
+gapwidthL = 5
+gapwidthR = 5
 
 --------------------------------------------------------------------------- }}}
 -- main                                                                     {{{
@@ -259,8 +259,6 @@ main = do
 
 myLayout = spacing gapwidth $
            gaps [(U, gapwidthU),(D, gapwidthD),(L, gapwidthL),(R, gapwidthR)] $
-                 (ResizableTall 1 (1/50) (1/2) [])
-             ||| (TwoPane (1/50) (1/2))
              ||| Simplest
 
 --------------------------------------------------------------------------- }}}
