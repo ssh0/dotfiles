@@ -1,6 +1,6 @@
-#compdef search
+#compdef s
 
-_search() {
+_s() {
   _values "search with" \
     "l[I'm feeling lucky!]" \
     "w[Wikipedia]" \
