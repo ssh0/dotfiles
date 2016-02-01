@@ -5,7 +5,7 @@
 # * $BROWSERCLI -- in terminal
 # * $BROWSER -- for GUI application
 
-search() {
+s() {
   local uri query i
 
   # default: Google search, use $BROWSERCLI
@@ -180,5 +180,5 @@ search() {
   return 0
 }
 
-search $@
+s $@
 
