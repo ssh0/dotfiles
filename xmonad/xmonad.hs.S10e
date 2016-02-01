@@ -257,9 +257,9 @@ main = do
 -- myLayout:          Handle Window behaveior                               {{{
 -------------------------------------------------------------------------------
 
-myLayout = spacing gapwidth $
-           gaps [(U, gapwidthU),(D, gapwidthD),(L, gapwidthL),(R, gapwidthR)] $
-             ||| Simplest
+myLayout = spacing gapwidth
+           $ gaps [(U, gapwidthU),(D, gapwidthD),(L, gapwidthL),(R, gapwidthR)]
+           $ Simplest
 
 --------------------------------------------------------------------------- }}}
 -- myStartupHook:     Start up applications                                 {{{
