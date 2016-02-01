@@ -104,7 +104,7 @@ search() {
       ;;
     # "tw" Search in twitter
     "tw")
-      url="https://twitter.com/search?src=typd&q=%s"
+      url="https://mobile.twitter.com/search?src=typd&q=%s"
       shift 1
       ;;
     # "sc" Google Scholar
