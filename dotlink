@@ -173,7 +173,7 @@ zshfiles/completions/_mytask,.zsh/completions/_mytask
 zshfiles/completions/_pandoc,.zsh/completions/_pandoc
 zshfiles/completions/_ranger,.zsh/completions/_ranger
 zshfiles/completions/_recordmydesktop,.zsh/completions/_recordmydesktop
-zshfiles/completions/_search,.zsh/completions/_search
+zshfiles/completions/_s,.zsh/completions/_s
 zshfiles/completions/_shtest,.zsh/completions/_shtest
 zshfiles/completions/_streamradio,.zsh/completions/_streamradio
 zshfiles/completions/_tig,.zsh/completions/_tig
@@ -236,7 +236,8 @@ bin/proxy_toggle.sh,bin/proxy_toggle.sh
 bin/radiko_rec.sh,bin/radiko_rec.sh
 bin/screenshot_select.sh,bin/screenshot_select.sh
 bin/screenshot.sh,bin/screenshot.sh
-bin/search,bin/search
+bin/s,bin/s
+bin/s_provider,bin/s_provider
 bin/sound_volume_change_wrapper.sh,bin/sound_volume_change_wrapper.sh
 bin/start_urxvtd.sh,bin/start_urxvtd.sh
 bin/streamradio,bin/streamradio

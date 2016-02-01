@@ -6,151 +6,22 @@
 # * $BROWSER -- for GUI application
 
 s() {
-  local uri query i
+  local query l i
+  local provider_f="$HOME/bin/s_provider"
 
   # default: Google search, use $BROWSERCLI
   local default_search="https://www.google.com/search?q=%s"
+  local url="$default_search"
   local gui=false
 
-  case "$1" in
-    # I'm feeling lucky!
-    "l")
-      url="https://www.google.co.jp/search?q=%s&btnI=I"
+  for l in $(grep -Ev '^#|^$' "${provider_f}"); do
+    if [ "$1" = "$(echo "$l" | cut -d, -f1)" ]; then
+      url="$(echo "$l" | cut -d, -f2)"
+      gui=$(echo "$l" | cut -d, -f3)
       shift 1
-      ;;
-    # "w": Wikipedia
-    "w")
-      url="https://ja.wikipedia.org/wiki/%s"
-      shift 1
-      ;;
-    # "n": niconico
-    "n")
-      url="http://www.nicovideo.jp/search/%s"
-      gui=true
-      shift 1
-      ;;
-    # "nd": niconico dictionary
-    "nd")
-      url="http://dic.nicovideo.jp/s/al/a/%s"
-      shift 1
-      ;;
-    # "p": Google image search
-    "p")
-      url="http://www.google.com/search?site=imghp&tbm=isch&q=%s"
-      gui=true
-      shift 1
-      ;;
-    # "m": Google Map
-    "m")
-      url="https://www.google.com/maps/place/%s"
-      gui=true
-      shift 1
-      ;;
-    # "mfh": Google Map Navigation "from Home to ***"
-    # if you set the searching language 'English',
-    # then replace "自宅" to "Home"
-    "mfh")
-      url="https://www.google.com/maps/dir/自宅/%s"
-      gui=true
-      shift 1
-      ;;
-    # "mfw": Google Map Navigation "from Work to ***"
-    # if you set the searching language 'English',
-    # then replace "職場" to "Work"
-    "mfw")
-      url="https://www.google.com/maps/dir/職場/%s"
-      gui=true
-      shift 1
-      ;;
-    # "mfh": Google Map Navigation "from *** to Home"
-    # if you set the searching language 'English',
-    # then replace "自宅" to "Home"
-    "mth")
-      url="https://www.google.com/maps/dir/%s/自宅"
-      gui=true
-      shift 1
-      ;;
-    # "mfw": Google Map Navigation "from *** to Work"
-    # if you set the searching language 'English',
-    # then replace "職場" to "Work"
-    "mtw")
-      url="https://www.google.com/maps/dir/%s/職場"
-      gui=true
-      shift 1
-      ;;
-    # "ip": IP address search
-    "ip")
-      url="http://www.ip-adress.com/whois/%s"
-      gui=true
-      shift 1
-      ;;
-    # 'f': flickr
-    "f")
-      url="https://www.flickr.com/search/?text=%s&safe_search=3"
-      gui=true
-      shift 1
-      ;;
-    # "y": Youtube
-    "y")
-      url="http://www.youtube.com/results?search_query=%s&sm=3"
-      gui=true
-      shift 1
-      ;;
-    # "rt" Yahoo real time search
-    "rt")
-      url="http://realtime.search.yahoo.co.jp/search?p=%s&ei=UTF-8"
-      gui=true
-      shift 1
-      ;;
-    # "tw" Search in twitter
-    "tw")
-      url="https://mobile.twitter.com/search?src=typd&q=%s"
-      shift 1
-      ;;
-    # "sc" Google Scholar
-    "sc")
-      url="http://scholar.google.co.jp/scholar?as_vis=1&q=%s&hl=ja&as_sdt=1,5"
-      shift 1
-      ;;
-    # "q" Search in Qiita
-    "q")
-      url="http://qiita.com/search?q=%s"
-      shift 1
-      ;;
-      # "g" Search in Github (repo)
-    "g")
-      url="https://github.com/search?q=%s"
-      shift 1
-      ;;
-    # "gu" Search in Github (user)
-    "gu")
-      url="https://github.com/search?q=%s&type=Users"
-      shift 1
-      ;;
-    # "gc" Search in Github (code)
-    "gc")
-      url="https://github.com/search?q=%s&type=Code"
-      shift 1
-      ;;
-    # "gs" Search in Gist
-    "gs")
-      url="https://gist.github.com/search?utf8=✓&q=%s"
-      shift 1
-      ;;
-    # "t": transfer ja <-> en
-    "t")
-      url="http://ejje.weblio.jp/content/%s"
-      shift 1
-      ;;
-    # "wd": seach at wordnik
-    "wd")
-      url="https://www.wordnik.com/words/%s"
-      shift 1
-      ;;
-    *)
-      url="$default_search"
-      ;;
-  esac
+      break
+    fi
+  done
 
   [ -n "$1" ] && query="$1" || {
       echo "Needs at least one search term."; return 1

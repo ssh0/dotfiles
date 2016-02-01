@@ -1,0 +1,90 @@
+# s - Search from terminal
+# This file contains the list of the provides to search.
+#
+# FORMAT:
+# A,url,{true|false}
+# |  |    |
+# |  |    +--- Open in GUI browser or not.
+# |  +--- Set the search providers url. Search query is placed in "%s".
+# +--- Alias for the provider.
+#
+# EXAMPLE:
+# default_search,https://www.google.com/search?q=%s,false
+
+# I'm feeling lucky!
+l,https://www.google.co.jp/search?q=%s&btnI=I,false
+
+# "w": Wikipedia
+w,https://ja.wikipedia.org/wiki/%s,false
+
+# "n": niconico
+n,http://www.nicovideo.jp/search/%s,true
+
+# "nd": niconico dictionary
+nd,http://dic.nicovideo.jp/s/al/a/%s,false
+
+# "p": Google image search
+p,http://www.google.com/search?site=imghp&tbm=isch&q=%s,true
+
+# "m": Google Map
+m,https://www.google.com/maps/place/%s,true
+
+# "mfh": Google Map Navigation "from Home to ***"
+# if you set the searching language 'English',
+# then replace "自宅" to "Home"
+mfh,https://www.google.com/maps/dir/自宅/%s,true
+
+# "mfw": Google Map Navigation "from Work to ***"
+# if you set the searching language 'English',
+# then replace "職場" to "Work"
+mfw,https://www.google.com/maps/dir/職場/%s,true
+
+# "mfh": Google Map Navigation "from *** to Home"
+# if you set the searching language 'English',
+# then replace "自宅" to "Home"
+mth,https://www.google.com/maps/dir/%s/自宅,true
+
+# "mfw": Google Map Navigation "from *** to Work"
+# if you set the searching language 'English',
+# then replace "職場" to "Work"
+mtw,https://www.google.com/maps/dir/%s/職場,true
+
+# "ip": IP address search
+ip,http://www.ip-adress.com/whois/%s,true
+
+# 'f': flickr
+f,https://www.flickr.com/search/?text=%s&safe_search=3,true
+
+# "y": Youtube
+y,http://www.youtube.com/results?search_query=%s&sm=3,true
+
+# "rt" Yahoo real time search
+rt,http://realtime.search.yahoo.co.jp/search?p=%s&ei=UTF-8,true
+
+# "tw" Search in twitter
+tw,https://mobile.twitter.com/search?src=typd&q=%s,false
+
+# "sc" Google Scholar
+sc,http://scholar.google.co.jp/scholar?as_vis=1&q=%s&hl=ja&as_sdt=1,5,false
+
+# "q" Search in Qiita
+q,http://qiita.com/search?q=%s,false
+
+# "g" Search in Github (repo)
+g,https://github.com/search?q=%s,false
+
+# "gu" Search in Github (user)
+gu,https://github.com/search?q=%s&type=Users,false
+
+# "gc" Search in Github (code)
+gc,https://github.com/search?q=%s&type=Code,false
+
+# "gs" Search in Gist
+gs,https://gist.github.com/search?utf8=✓&q=%s,false
+
+# "t": transfer ja <-> en
+t,http://ejje.weblio.jp/content/%s,false
+
+# "wd": seach at wordnik
+wd,https://www.wordnik.com/words/%s,false
+
