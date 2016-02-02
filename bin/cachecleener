@@ -1,8 +1,10 @@
 #!/bin/bash
-#------------------------------------------------------------------
-#  メモリ開放                                by SONY5614
-#------------------------------------------------------------------
+# 
+# This script erase cache memory (need sudo).
+# 
+# Thanks to SONY5614.  
 # and modified by Shotaro Fujimoto (https://github.com/ssh0)
+#==============================================================================
 
 # set line width
 columns=$(tput cols)

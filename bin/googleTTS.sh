@@ -1,9 +1,18 @@
 #!/bin/bash
+# folked from https://gist.github.com/markusfisch/873364#file-say-sh, written by markusfisch
 #
-# folked from https://gist.github.com/markusfisch/873364#file-say-sh
-# written by markusfisch
+# ```
+# Text to speech CLI interface using Google translate_TTS API
+# Usage: googleTTS.sh [OPTION] TERM
 #
-# googleTTS - google-Text-To-Speech (using google translate)
+# Set options for language, saving directory:
+#   -l,    Set language (default: $LNG)
+#   -d,    Set saving directory (default: ${HOME}/Downloads/TTS/$LNG)
+#   -p,    Set the output player command (default: $playcmd)
+#
+#   -h,    Show this message and quit quietly
+# ```
+#==============================================================================
 
 # some error occured, exit immediately
 set -e
@@ -23,16 +32,9 @@ root_dir="${HOME}/Downloads/TTS"
 # set default player
 playcmd="mpv --really-quiet"
 
+f="$0"
 usage() {
-  echo "Text to speech CLI interface using Google translate_TTS API"
-  echo "Usage: googleTTS.sh [OPTION] TERM"
-  echo ""
-  echo "Set options for language, saving directory:"
-  echo "  -l,    Set language (default: $LNG)"
-  echo "  -d,    Set saving directory (default: $root_dir/$LNG)"
-  echo "  -p,    Set the output player command (default: $playcmd)"
-  echo ""
-  echo "  -h,    Show this message and quit quietly"
+  header.sh "$f" | grep -v "\`\`\`"
   exit 0
 }
 

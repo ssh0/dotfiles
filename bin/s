@@ -1,9 +1,12 @@
 #!/bin/bash
 # written by Shotaro Fujimoto (https://github.com/ssh0)
-# search from terminal
-# using
-# * $BROWSERCLI -- in terminal
-# * $BROWSER -- for GUI application
+#
+# Search from terminal
+# 
+# Using  
+# * `$BROWSERCLI` -- in terminal
+# * `$BROWSER` -- for GUI application
+#==============================================================================
 
 s() {
   local query l i

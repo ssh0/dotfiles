@@ -1,6 +1,8 @@
 #!/bin/bash
 # written by Shotaro Fujimoto (https://github.com/ssh0)
-# first edited: 2015-06-14
+#
+# If there is no process of urxvtd (urxvt daemon), start urxvtd.
+#==============================================================================
 
 condition="$(ps -aux | grep urxvtd | grep -v grep | grep -v $0)" 
 if [ "$condition" = "" ]; then

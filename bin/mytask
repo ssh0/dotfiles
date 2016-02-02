@@ -1,6 +1,24 @@
 #!/bin/sh
 # written by Shotaro Fujimoto (https://github.com/ssh0)
-# first edited: 2015-07-28
+# 
+# ```
+# NAME
+#       mytask - start my current tasks easily.
+# 
+# USAGE
+#       mytask [option] [start|add|remove|list] [cmdoption]
+# 
+# OPTION
+#       -h:  Show this help message.
+# 
+# COMMAND
+#       start    Execute the taskset.
+#       add      Add new taskset.
+#       edit     Edit the existing taskset.
+#       remove   Remove a taskset.
+#       list     List all existing taskset.
+# ```
+#==============================================================================
 
 # mytaskroot=$HOME/.mytask
 # taskset="$mytaskroot"/taskset
@@ -11,25 +29,9 @@ if [ ! -d "$taskset" ]; then
   mkdir -p "$taskset"
 fi
 
+f="$0"
 usage() {
-  cat <<EOF
-
-NAME
-      mytask - start my current tasks easily.
-
-USAGE
-      mytask [option] [start|add|remove|list] [cmdoption]
-
-OPTION
-      -h:  Show this help message.
-
-COMMAND
-      start    Execute the taskset.
-      add      Add new taskset.
-      edit     Edit the existing taskset.
-      remove   Remove a taskset.
-      list     List all existing taskset.
-EOF
+  header.sh "$f" | grep -v "\`\`\`"
   exit 1
 }
 

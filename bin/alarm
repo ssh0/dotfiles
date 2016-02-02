@@ -1,29 +1,29 @@
 #!/bin/bash
 # written by Shotaro Fujimoto (https://github.com/ssh0)
 #
-# alarm - alert after n minutes by notify-send and by notification sound.
+# ```
+# NAME
+#       alarm - Alart after given minutes.
 #
+# USAGE
+#       alarm n
+#
+#       In n, you can set n minutes.
+#
+# Option
+#       -h: Show this help.
+# ```
+#==============================================================================
 
 # set notificate icon and sound you like
 notification_icon="/usr/share/icons/gnome/scalable/status/alarm-symbolic.svg"
 notification_sound="/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga"
 
-
+# this file's path
+f="$0"
 # how to use this script
 usage() {
-  cat << EOF
-
-NAME
-      alarm - Alart after given minutes.
-
-USAGE
-      alarm n
-
-      In n, you can set n minutes.
-
-Option
-      -h: Show this help.
-EOF
+  header.sh "$f" | grep -v "\`\`\`"
 }
 
 # Option hundling

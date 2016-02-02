@@ -1,5 +1,6 @@
 #!/bin/sh
-# written by Shotaro Fujimoto (https://github.com/ssh0)
-# first edited: 2015-09-03
+# 
+# Execute mpv with another terminal (urxvtc(urxvt client))
+#==============================================================================
 
 urxvtc -name "urxvt_log" -e mpv $@

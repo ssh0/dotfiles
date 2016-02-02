@@ -1,26 +1,26 @@
 #!/bin/sh
 # written by Shotaro Fujimoto (https://github.com/ssh0)
-# first edited: 2015-06-23
+# ```
+# NAME
+#       ytdl - wrapper script for youtube-dl.
+# 
+# USAGE
+#       ytdl [-h] [-A] [-L FILE] URL [youtube-dl options]
+# 
+#       You should place the URL *before* the youtube-dl's options.
+#       If you want to know youtube-dl's options, see manpage.
+# 
+# OPTION
+#       -A: Don't add the URL to list file
+#       -L: Set the list file to save URL (default file: '.list')
+#       -e: Edit the list file manually.
+#       -h: Show this help message
+# ```
+#==============================================================================
 
+f="$0"
 usage() {
-  cat << EOF
-
-NAME
-      ytdl - wrapper script for youtube-dl.
-
-USAGE
-      ytdl [-h] [-A] [-L FILE] URL [youtube-dl options]
-
-      You should place the URL *before* the youtube-dl's options.
-      If you want to know youtube-dl's options, see manpage.
-
-OPTION
-      -A: Don't add the URL to list file
-      -L: Set the list file to save URL (default file: '.list')
-      -e: Edit the list file manually.
-      -h: Show this help message
-
-EOF
+  header.sh "$f" | grep -v "\`\`\`"
 }
 
 listfile=".list"

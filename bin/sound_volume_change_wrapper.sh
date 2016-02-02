@@ -1,6 +1,10 @@
 #!/bin/bash
 # written by Shotaro Fujimoto (https://github.com/ssh0)
-# first edited: 2015-06-03
+# 
+# You should set a shortcut to the multimediakey(volume up/down/mute) to call this script.
+# 
+# You can also execute this command on terminal.
+#==============================================================================
 
 case "$1" in
   "+")

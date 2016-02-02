@@ -1,4 +1,7 @@
 #!/bin/sh
+#
+# impressive(presentation software) wrapper script.
+#==============================================================================
 if [ $# -ne 1 ]; then
   echo "need 1 argument to start the presentation." 1>&2
   exit 0

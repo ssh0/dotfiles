@@ -1,20 +1,21 @@
 #!/bin/bash
 # written by Shotaro Fujimoto (https://github.com/ssh0)
+# ```
+# NAME
+#       pandoc_latexwrapper - pandoc wrapper for converting to latex
+# 
+# USAGE
+#       pandoc_latexwrapper [-h] [pandoc's options] INPUTFILE(or stdin)
+# 
+# OPTION
+#       -h: Show this help message.
+# ```
+#==============================================================================
 # first edited: 2015-06-26
 
+f="$0"
 usage (){
-  cat << EOF
-
-NAME
-      pandoc_latexwrapper - pandoc wrapper for converting to latex
-
-USAGE
-      pandoc_latexwrapper [-h] [pandoc's options] INPUTFILE(or stdin)
-
-OPTION
-      -h: Show this help message.
-
-EOF
+  header.sh "$f" | grep -v "\`\`\`"
 }
 
 if [ "$1" = "-h" ]; then

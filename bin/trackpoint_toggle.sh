@@ -1,6 +1,7 @@
 #!/bin/bash
 # written by Shotaro Fujimoto (https://github.com/ssh0)
-# first edited: 2015-06-19
+# use when you in Lenovo Thinkpad.
+#==============================================================================
 
 declare -i ID
 ID=`xinput list | grep -Eo 'TrackPoint\s*id\=[0-9]{1,2}' | grep -Eo '[0-9]{1,2}'`

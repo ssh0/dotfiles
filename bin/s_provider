@@ -1,15 +1,23 @@
 # s - Search from terminal
+#
 # This file contains the list of the provides to search.
 #
 # FORMAT:
+#
+# ```
 # A,url,{true|false}
 # |  |    |
 # |  |    +--- Open in GUI browser or not.
 # |  +--- Set the search providers url. Search query is placed in "%s".
 # +--- Alias for the provider.
+# ```
 #
 # EXAMPLE:
+#
+# ```
 # default_search,https://www.google.com/search?q=%s,false
+# ```
+#==============================================================================
 
 # I'm feeling lucky!
 l,https://www.google.co.jp/search?q=%s&btnI=I,false

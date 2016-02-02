@@ -1,5 +1,7 @@
 #!/bin/sh -e
 # written by Shotaro Fujimoto (https://github.com/ssh0)
+# Streamradio daemon program
+#==============================================================================
 
 if [ $# -gt 0 ]; then
   echo "This script needs no arguments."

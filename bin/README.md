@@ -1,79 +1,81 @@
 bin
 ===
 
-some useful user scripts.
+Some useful user scripts.
 
 ## [alarm](./alarm)
 
-```
-Alart after given minutes.
-Usage: alarm n
 
-In n, you can set n minutes.
-Option:
-  -h: Show this help.
+```
+NAME
+      alarm - Alart after given minutes.
+
+USAGE
+      alarm n
+
+      In n, you can set n minutes.
+
+Option
+      -h: Show this help.
 ```
 
 ## [allmp4tomp3.sh](./allmp4tomp3.sh)
 
-```
-Convert all mp4 file in the current dir to mp3 files.
+allmp4tomp3.sh - Convert all mp4 file in the current dir to mp3 files.
+
 Required: ffmpeg
+
+## [bib2html\_wrapper.sh](./bib2html_wrapper.sh)
+
+
+**bibtex2html_wrapper.sh**  
+bibtex2html wrapper script to convert bibtex file to
+readable and searchable html file.  
+(I often use with vim-quickrun to automatically execute this script.)
+
+Required: [bibtex2html](https://www.lri.fr/~filliatr/bibtex2html/)
+
+```
+apt-get install bibtex2html
 ```
 
-## [autopep8_wrap.sh](./autopep8_wrap.sh)
-
-autopep8 wrapper for python code.
-
-Required: autopep8
-
-## [bib2html_wrapper.sh](./bib2html_wrapper.sh)
-
-bibtex2html wrapper script.
-
-I use this script with vim-quickrun.
-
-Required: bibtex2html
-
-See here. http://qiita.com/ssh0/items/7af727f0513c3fbf09a4
+Show detail here.
+(japanese) http://qiita.com/ssh0/items/7af727f0513c3fbf09a4
 
 ## [cachecleener](./cachecleener)
 
 This script erase cache memory (need sudo).
 
-Thanks to SONY5614.
+Thanks to SONY5614.  
+and modified by Shotaro Fujimoto (https://github.com/ssh0)
 
 ## [color-pallete.sh](./color-pallete.sh)
 
-show zenity color pallete
+
+color-pallete.sh - Show zenity color pallete and pick a color.
+
+But it doesn't work properly in Ubuntu 14.04 because of zenity's bug.  
+See https://bugs.launchpad.net/ubuntu/+source/zenity/+bug/1355423
 
 ## [cplay.sh](./cplay.sh)
 
-if there is no process of cmus, start cmus on urxvt terminal.
 
-else play / pause remote command will be sent to cmus program.
+cplay.sh - send pause command to cmus or if it has not launched, run cmus.
 
+if there is no process of cmus, start cmus on urxvt terminal.  
+else play / pause remote command will be sent to cmus program.  
 It's useful if you set the shortcut-key with multimedia key.
 
 ## [facebook](./facebook)
 
-use chrome app
-
-```
-/opt/google/chrome/google-chrome --profile-directory=Default --app-id=dihbebhmaoagdpbcnfedokpfkkgmmpgc
-```
+launch facebook chrome-app from command line
 
 ## [google-keep](./google-keep)
 
-use chrome app
-
-```
-/opt/google/chrome/google-chrome --profile-directory=Default --app-id=hmjkmjkepdijhoojdojkdfohbdgmmhki
-```
+launch google-keep chrome-app from command line
 
 ## [googleTTS.sh](./googleTTS.sh)
 
-folked from https://gist.github.com/markusfisch/873364#file-say-sh
 
 ```
 Text to speech CLI interface using Google translate_TTS API
@@ -87,30 +89,43 @@ Set options for language, saving directory:
   -h,    Show this message and quit quietly
 ```
 
-## [latexmk_wrapper](./latexmk_wrapper)
+## [header.sh](./header.sh)
 
-latexmk wrapper
+
+`$1`: filename
+
+* return lines from line 3 to
+"#=============================================================================="
+* Needs space after '#'.
+
+## [latexmk\_wrapper](./latexmk_wrapper)
+
 
 I often use this script with vim-quickrun to compile latex files.
 
 If the executed file is in named "source" directory,
-this script automatically look the upper directory and search the file named "main.tex" to compile.
+this script automatically look the upper directory and search the file named
+"main.tex" to compile.  
 (You can change the source code if you'd like to use different name.)
 
 See: [TeXをもっと便利に使う!(自動コンパイル・部分コンパイル・分割ファイルから親ファイルのコンパイル)【Vim + vim-quickrun + latexmk】 - Qiita](http://qiita.com/ssh0/items/e6d7540cd46fac580bc2)
 
 ## [LINE](./LINE)
 
-use chrome app
+launch LINE chrome-app from command line
 
-```
-/opt/google/chrome/google-chrome --profile-directory=Default --app-id=menkifleemblimdogmoihpfopnplikde
-```
+## [makebinreadme.sh](./makebinreadme.sh)
+
+
+Make bin/README.md
+
+Required: ./header.sh
 
 ## [mkdpreview](./mkdpreview)
 
-This script make it easy to use pandoc for conver markdown to html file.
-It is assumed that this script is called from vim-quickrun in order to edit markdown file with previewing.
+This script make it easy to use pandoc for converting markdown to html file.
+It is assumed that this script is called from vim-quickrun
+in order to edit markdown file with live-preview.
 
 You can change your style sheet file.
 
@@ -167,15 +182,16 @@ OPTION:
 
 See: [markdownの編集環境をいい感じに整えてみた[vim + quickrun + pandoc] - Qiita](http://qiita.com/ssh0/items/b68263a7866b4ce9eaf1)
 
-## [mplayer_term_wrapper.sh](./mplayer_term_wrapper.sh)
+## [mplayer\_term\_wrapper.sh](./mplayer_term_wrapper.sh)
 
 play video with color ascii on xterm.
 
-## [mpv_term](./mpv_term)
+## [mpv\_term](./mpv_term)
 
-execute mpv with another terminal (urxvtc(urxvt client))
+Execute mpv with another terminal (urxvtc(urxvt client))
 
 ## [myrsync](./myrsync)
+
 
 I use dropbox for daily work. And I often use rsync program to synchronize the directories.
 
@@ -188,46 +204,54 @@ localpath="$HOME/Workspace/"
 
 Usage:
 
-`myrsync up` = `rsync -av --delete $localpath $dropboxpath`
+`myrsync up` = `rsync -av --delete $localpath $dropboxpath`  
 `myrsync down` = `rsync -av --delete $dropboxpath $localpath`
 
 ## [mytask](./mytask)
 
-```
-mytask is the scirpt to start my current tasks easily.
-
-Usage:
-  $ mytask [option] [start|add|remove|list] [cmdoption]
-
-Option:
-  -h       Show this help message.
-
-Command:
-  start    Execute the taskset.
-  add      Add new taskset.
-  edit     Edit the existing taskset.
-  remove   Remove a taskset.
-  list     List all existing taskset.
-```
-
-## [pandoc_beamerwrapper.sh](./pandoc_beamerwrapper.sh)
 
 ```
-pandoc_beamerwrapper: pandoc wrapper for converting to beamer
-Usage: pandoc_beamerwrapper [-h] [pandoc's options] INPUTFILE(or stdin)
+NAME
+      mytask - start my current tasks easily.
 
-Option:
-  -h: Show this help message.
+USAGE
+      mytask [option] [start|add|remove|list] [cmdoption]
+
+OPTION
+      -h:  Show this help message.
+
+COMMAND
+      start    Execute the taskset.
+      add      Add new taskset.
+      edit     Edit the existing taskset.
+      remove   Remove a taskset.
+      list     List all existing taskset.
 ```
 
-## [pandoc_latexwrapper.sh](./pandoc_latexwrapper.sh)
+## [pandoc\_beamerwrapper.sh](./pandoc_beamerwrapper.sh)
 
 ```
-pandoc_latexwrapper: pandoc wrapper for converting to latex
-Usage: pandoc_latexwrapper [-h] [pandoc's options] INPUTFILE(or stdin)
+NAME
+      pandoc_beamerwrapper - pandoc wrapper for converting to beamer
 
-Option:
-  -h: Show this help message.
+USAGE
+      pandoc_beamerwrapper [-h] [pandoc's options] INPUTFILE(or stdin)
+
+OPTION
+      -h: Show this help message.
+```
+
+## [pandoc\_latexwrapper.sh](./pandoc_latexwrapper.sh)
+
+```
+NAME
+      pandoc_latexwrapper - pandoc wrapper for converting to latex
+
+USAGE
+      pandoc_latexwrapper [-h] [pandoc's options] INPUTFILE(or stdin)
+
+OPTION
+      -h: Show this help message.
 ```
 
 ## [presenmode.sh](./presenmode.sh)
@@ -246,34 +270,59 @@ projector="VGA1"
 projector_mode="1024x768"
 ```
 
-Usage:
-
 ```
-Usage: $0 COMMAND [-d output] [-m mode] [-h]
-  COMMAND:
-    start: Start Presentation mode
-    stop : Stop Presentaion mode
-  OPTION:
-    -d: Output device connecting (default: $projector)
-    -m: Manually select the display resolution (default: $projector_mode)
-    -h: Show this message and quit
+NAME
+      presenmode.sh - provide easy way to manage the monitors with xrandr.
+
+USAGE
+      presenmode.sh COMMAND [-d output] [-m mode] [-h]
+
+COMMAND
+      start: Start Presentation mode
+      stop : Stop Presentaion mode
+
+OPTION
+      -d: Output device connecting (default: $projector)
+      -m: Manually select the display resolution (default: $projector_mode)
+      -h: Show this message and quit
 ```
 
 ## [presentation.sh](./presentation.sh)
 
 impressive(presentation software) wrapper script.
 
-## [proxy_toggle.sh](./proxy_toggle.sh)
+## [proxy\_toggle.sh](./proxy_toggle.sh)
 
 If you are in proxy network, you should manage your proxy setting.
 
 This script enables you to toggle proxy setting by one command.
 
-## [radiko_rec.sh](./radiko_rec.sh)
+## [radiko\_rec.sh](./radiko_rec.sh)
 
-forked from https://github.com/haru8/radiko_rec
+Record the radiko progrom.
 
-record the radiko progrom.
+forked from [here](https://github.com/haru8/radiko_rec).
+
+## [s](./s)
+
+
+Search from terminal
+
+Using  
+* `$BROWSERCLI` -- in terminal
+* `$BROWSER` -- for GUI application
+
+## [screenshot\_select.sh](./screenshot_select.sh)
+
+Take screenshot (select area by mouse dragging or click) and save it to daydir(%Y-%m-%d).
+
+You may change the variable below.
+
+```
+rootdir=$HOME/Workspace/blog
+```
+
+See: [ShellScript - スクリーンショットを撮って日付のディレクトリに連番で保存するスクリプト - Qiita](http://qiita.com/ssh0/items/2b4e7a4146cb2da01187)
 
 ## [screenshot.sh](./screenshot.sh)
 
@@ -287,33 +336,59 @@ rootdir=$HOME/Workspace/blog
 
 See: [ShellScript - スクリーンショットを撮って日付のディレクトリに連番で保存するスクリプト - Qiita](http://qiita.com/ssh0/items/2b4e7a4146cb2da01187)
 
-## [screenshot_select.sh](./screenshot_select.sh)
+## [sound\_volume\_change\_wrapper.sh](./sound_volume_change_wrapper.sh)
 
-Take screenshot (select area by mouse dragging or click) and save it to daydir(%Y-%m-%d).
-
-You may change the variable below.
-
-```
-rootdir=$HOME/Workspace/blog
-```
-
-See: [ShellScript - スクリーンショットを撮って日付のディレクトリに連番で保存するスクリプト - Qiita](http://qiita.com/ssh0/items/2b4e7a4146cb2da01187)
-
-## [sound_volume_change_wrapper.sh](./sound_volume_change_wrapper.sh)
 
 You should set a shortcut to the multimediakey(volume up/down/mute) to call this script.
 
 You can also execute this command on terminal.
 
-## [start_urxvtd.sh](./start_urxvtd.sh)
+## [s\_provider](./s_provider)
+
+This file contains the list of the provides to search.
+
+FORMAT:
+
+```
+A,url,{true|false}
+|  |    |
+|  |    +--- Open in GUI browser or not.
+|  +--- Set the search providers url. Search query is placed in "%s".
++--- Alias for the provider.
+```
+
+EXAMPLE:
+
+```
+default_search,https://www.google.com/search?q=%s,false
+```
+
+## [start\_urxvtd.sh](./start_urxvtd.sh)
+
 
 If there is no process of urxvtd (urxvt daemon), start urxvtd.
 
+## [streamradio](./streamradio)
+
+```
+streamradio - remote control script with streamradio
+
+SYNOPSYS
+  streamradio [-h|--help] [start <URL>] [pause] [list [stations|current]] [quit]
+```
+
+## [streamradio-daemon](./streamradio-daemon)
+
+Streamradio daemon program
+
 ## [terminal-colors](./terminal-colors)
 
-This file echoes a bunch of color codes to the terminal to demonstrate what's available.
-Each line is the color code of one forground color, out of 17 (default + 16 escapes),
-followed by a test use of that color on all nine background colors (default + 8 escapes).
+This file echoes a bunch of color codes to the 
+terminal to demonstrate what's available.  Each 
+line is the color code of one forground color,
+out of 17 (default + 16 escapes), followed by a 
+test use of that color on all nine background 
+colors (default + 8 escapes).
 
 from: http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html
 
@@ -322,30 +397,33 @@ from: http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html
 ```
 NAME
       texmath - compile latex to png with dvipng (and create texmath file)
+
 USAGE
       texmath [-e FILE | FILE] [-h]
+
 ARGUMENTS
       -e FILE: Open and edit FILE.
                Or create it when FILE doesn't exist, 
+
       FILE:    If you provide only file name, this script compiles the file with
                latexmk and then creates png file by dvipng.
-      --help:  Display this help and exit
 
+      --help:  Display this help and exit
 ```
 
-## [toggle_compton.sh](./toggle_compton.sh)
+## [toggle\_compton.sh](./toggle_compton.sh)
 
 I use composite mangager compton.
 
 This script toggle enabling the composite manager.
 
-## [toggle_xcompmgr.sh](./toggle_xcompmgr.sh)
+## [toggle\_xcompmgr.sh](./toggle_xcompmgr.sh)
 
 This script toggle enabling the composite manager xcompmgr.
 
 I don't use xcompmgr because it's slightly buggy.
 
-## [touchpad_toggle.sh](./touchpad_toggle.sh)
+## [touchpad\_toggle.sh](./touchpad_toggle.sh)
 
 toggle enabling the touchpad.
 
@@ -353,42 +431,55 @@ I often use this srcipt in my laptop. (also shortcut to it)
 
 From: [How to disable the touchpad? - Ask Ubuntu](http://askubuntu.com/questions/65951/how-to-disable-the-touchpad)
 
-## [trackpoint_toggle.sh](./trackpoint_toggle.sh)
+## [trackpoint\_toggle.sh](./trackpoint_toggle.sh)
 
 use when you in Lenovo Thinkpad.
 
-## [urxvt_float.sh](./urxvt_float.sh)
+## [trello](./trello)
 
-urxvt with "urxvt_float" name.
+launch trello chrome-app from command line.
+
+* [Trello External Window - Chrome Web Store](https://chrome.google.com/webstore/detail/trello-external-window/gkcknpgdmiigoagkcoglklgaagnpojed)
+
+## [urxvt\_float.sh](./urxvt_float.sh)
+
+urxvt with `urxvt_float` name.
 
 For xmonad float window handling.
 
-## [wmatomp3_converter.sh](./wmatomp3_converter.sh)
+## [wmatomp3\_converter.sh](./wmatomp3_converter.sh)
 
 By Marko Haapala
 
-converts wma to mp3 recursively. does not delete any static files, so cleanup and renaming is needed afterwards. 
+converts wma to mp3 recursively. does not delete any static files, so 
+cleanup and renaming is needed afterwards. 
 
 **requirements:**
 
-* lame    - http://lame.sourceforge.net/download.php
-* mplayer - apt-get install mplayer or http://www.mplayerhq.hu/design7/dload.html
+* [lame](http://lame.sourceforge.net/download.php)
+* mplayer
+    * `apt-get install mplayer` or http://www.mplayerhq.hu/design7/dload.html
 
 ## [ytdl](./ytdl)
 
-I usually use youtube-dl for download some video clips from internet.
-
-This script is the wrapper script of youtube-dl to save video title and url to `list` file.
-
 ```
-ytdl: Wrapper script for youtube-dl.
+NAME
+      ytdl - wrapper script for youtube-dl.
 
-Usage: ytdl [-h] [-A] [-L FILE] URL [youtube-dl options]
+USAGE
+      ytdl [-h] [-A] [-L FILE] URL [youtube-dl options]
 
-NOTE: You should place the URL *before* the youtube-dl's options.
+      You should place the URL *before* the youtube-dl's options.
+      If you want to know youtube-dl's options, see manpage.
 
-Option:
-  -A: Don't add the URL to list file
-  -L: Set the list file to save URL (default file: 'list')
-  -h: Show this help message
+OPTION
+      -A: Don't add the URL to list file
+      -L: Set the list file to save URL (default file: '.list')
+      -e: Edit the list file manually.
+      -h: Show this help message
 ```
+
+---
+
+This page is generated automatically with [makebinreadme.sh](./makebinreadme.sh)
+

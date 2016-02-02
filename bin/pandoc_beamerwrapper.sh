@@ -1,20 +1,20 @@
 #!/bin/bash
 # written by Shotaro Fujimoto (https://github.com/ssh0)
-# first edited: 2015-07-19
+# ```
+# NAME
+#       pandoc_beamerwrapper - pandoc wrapper for converting to beamer
+# 
+# USAGE
+#       pandoc_beamerwrapper [-h] [pandoc's options] INPUTFILE(or stdin)
+# 
+# OPTION
+#       -h: Show this help message.
+# ```
+#==============================================================================
 
+f="$0"
 usage (){
-  cat << EOF
-
-NAME
-      pandoc_beamerwrapper - pandoc wrapper for converting to beamer
-
-USAGE
-      pandoc_beamerwrapper [-h] [pandoc's options] INPUTFILE(or stdin)
-
-OPTION
-      -h: Show this help message.
-
-EOF
+  header.sh "$f" | grep -v "\`\`\`"
 }
 
 if [ "$1" = "-h" ]; then
