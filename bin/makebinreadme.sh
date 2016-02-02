@@ -1,10 +1,10 @@
 #!/bin/bash
 # written by Shotaro Fujimoto (https://github.com/ssh0)
-# 
+#=#=#=
 # Make bin/README.md
 # 
-# Required: ./header.sh
-#==============================================================================
+# Required: [header.sh](./header.sh)
+#=#=
 
 readme="README.md"
 
@@ -19,7 +19,6 @@ EOF
 
 for file in $(find . -type f -name "*" | sort | grep -v "README"); do
   echo "## ["$(echo ${file##\./} | sed 's@\_@\\_@g')"]($file)" >> "$readme"
-  echo >> "$readme"
   echo "$(header.sh "$file")" >> "$readme"
   echo >> "$readme"
 done
@@ -27,7 +26,7 @@ done
 cat << EOF >> "$readme"
 ---
 
-This page is generated automatically with [makebinreadme.sh](./makebinreadme.sh)
+This page is generated automatically by [makebinreadme.sh](./makebinreadme.sh)
 
 EOF
 

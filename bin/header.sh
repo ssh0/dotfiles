@@ -1,15 +1,29 @@
 #!/bin/bash
 # written by Shotaro Fujimoto (https://github.com/ssh0)
+#=#=#=
+# ```
+# NAME
+#       header.sh - Print the 'header part' of the file.
 #
-# `$1`: filename
+# USAGE
+#       header.sh [-h] <file>
 #
-# * return lines from line 3 to
-# "#=============================================================================="
-# * Needs space after '#'.
-#==============================================================================
+# REMARK
+#       'header part' starts with "#=#=#=" and ends with "#=#="
+#       Needs space after each '#'
+# ```
+#=#=
 
-grep -E '^\s*#' "$1" | sed '1,2d' \
-  | nl --number-width=2 --number-separator='' --number-format='ln' \
-    --section-delimiter='#==============================================================================' \
-  | grep -ve '^\s*#' | cut -b5-
+if [ "$1" = "-h" ]; then
+  # print usage
+  $0 $0 | grep -v "\`\`\`"
+  exit 0
+fi
+
+cat "$1" \
+  | nl --number-width=3 --number-separator='' --number-format='ln' \
+    --section-delimiter='#=' --header-numbering='a' --body-numbering='n' \
+    --footer-numbering='n' \
+  | grep -ve '^\s\+' \
+  | cut -b6-
 
