@@ -221,8 +221,10 @@ bin/cplay.sh,bin/cplay.sh
 bin/facebook,bin/facebook
 bin/google-keep,bin/google-keep
 bin/googleTTS.sh,bin/googleTTS.sh
+bin/header.sh,bin/header.sh
 bin/latexmk_wrapper,bin/latexmk_wrapper
 bin/LINE,bin/LINE
+bin/makebinreadme.sh,bin/makebinreadme.sh
 bin/mkdpreview,bin/mkdpreview
 bin/mplayer_term_wrapper.sh,bin/mplayer_term_wrapper.sh
 bin/mpv_term,bin/mpv_term
