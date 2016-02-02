@@ -5,7 +5,6 @@ Some useful user scripts.
 
 ## [alarm](./alarm)
 
-
 ```
 NAME
       alarm - Alart after given minutes.
@@ -26,7 +25,6 @@ allmp4tomp3.sh - Convert all mp4 file in the current dir to mp3 files.
 Required: ffmpeg
 
 ## [bib2html\_wrapper.sh](./bib2html_wrapper.sh)
-
 
 **bibtex2html_wrapper.sh**  
 bibtex2html wrapper script to convert bibtex file to
@@ -51,14 +49,12 @@ and modified by Shotaro Fujimoto (https://github.com/ssh0)
 
 ## [color-pallete.sh](./color-pallete.sh)
 
-
 color-pallete.sh - Show zenity color pallete and pick a color.
 
 But it doesn't work properly in Ubuntu 14.04 because of zenity's bug.  
 See https://bugs.launchpad.net/ubuntu/+source/zenity/+bug/1355423
 
 ## [cplay.sh](./cplay.sh)
-
 
 cplay.sh - send pause command to cmus or if it has not launched, run cmus.
 
@@ -76,7 +72,6 @@ launch google-keep chrome-app from command line
 
 ## [googleTTS.sh](./googleTTS.sh)
 
-
 ```
 Text to speech CLI interface using Google translate_TTS API
 Usage: googleTTS.sh [OPTION] TERM
@@ -91,15 +86,19 @@ Set options for language, saving directory:
 
 ## [header.sh](./header.sh)
 
+```
+NAME
+      header.sh - Print the 'header part' of the file.
 
-`$1`: filename
+USAGE
+      header.sh [-h] <file>
 
-* return lines from line 3 to
-"#=============================================================================="
-* Needs space after '#'.
+REMARK
+      'header part' starts with "#=#=#=" and ends with "#=#="
+      Needs space after each '#'
+```
 
 ## [latexmk\_wrapper](./latexmk_wrapper)
-
 
 I often use this script with vim-quickrun to compile latex files.
 
@@ -116,10 +115,9 @@ launch LINE chrome-app from command line
 
 ## [makebinreadme.sh](./makebinreadme.sh)
 
-
 Make bin/README.md
 
-Required: ./header.sh
+Required: [header.sh](./header.sh)
 
 ## [mkdpreview](./mkdpreview)
 
@@ -192,7 +190,6 @@ Execute mpv with another terminal (urxvtc(urxvt client))
 
 ## [myrsync](./myrsync)
 
-
 I use dropbox for daily work. And I often use rsync program to synchronize the directories.
 
 You may change the variables.
@@ -208,7 +205,6 @@ Usage:
 `myrsync down` = `rsync -av --delete $dropboxpath $localpath`
 
 ## [mytask](./mytask)
-
 
 ```
 NAME
@@ -305,10 +301,9 @@ forked from [here](https://github.com/haru8/radiko_rec).
 
 ## [s](./s)
 
-
 Search from terminal
 
-Using  
+Using:  
 * `$BROWSERCLI` -- in terminal
 * `$BROWSER` -- for GUI application
 
@@ -338,12 +333,13 @@ See: [ShellScript - スクリーンショットを撮って日付のディレク
 
 ## [sound\_volume\_change\_wrapper.sh](./sound_volume_change_wrapper.sh)
 
-
 You should set a shortcut to the multimediakey(volume up/down/mute) to call this script.
 
 You can also execute this command on terminal.
 
 ## [s\_provider](./s_provider)
+
+s - Search from terminal
 
 This file contains the list of the provides to search.
 
@@ -364,7 +360,6 @@ default_search,https://www.google.com/search?q=%s,false
 ```
 
 ## [start\_urxvtd.sh](./start_urxvtd.sh)
-
 
 If there is no process of urxvtd (urxvt daemon), start urxvtd.
 
@@ -433,7 +428,7 @@ From: [How to disable the touchpad? - Ask Ubuntu](http://askubuntu.com/questions
 
 ## [trackpoint\_toggle.sh](./trackpoint_toggle.sh)
 
-use when you in Lenovo Thinkpad.
+Toggle trackpoint enable/disable (useful when you in Lenovo Thinkpad).
 
 ## [trello](./trello)
 
@@ -449,9 +444,7 @@ For xmonad float window handling.
 
 ## [wmatomp3\_converter.sh](./wmatomp3_converter.sh)
 
-By Marko Haapala
-
-converts wma to mp3 recursively. does not delete any static files, so 
+Converts wma to mp3 recursively. does not delete any static files, so 
 cleanup and renaming is needed afterwards. 
 
 **requirements:**
@@ -481,5 +474,5 @@ OPTION
 
 ---
 
-This page is generated automatically with [makebinreadme.sh](./makebinreadme.sh)
+This page is generated automatically by [makebinreadme.sh](./makebinreadme.sh)
 
