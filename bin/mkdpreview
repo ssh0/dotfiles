@@ -1,5 +1,5 @@
 #!/bin/sh
-#
+#=#=#=
 # This script make it easy to use pandoc for converting markdown to html file.
 # It is assumed that this script is called from vim-quickrun
 # in order to edit markdown file with live-preview.
@@ -59,8 +59,7 @@
 # 
 # See: [markdownの編集環境をいい感じに整えてみた[vim + quickrun + pandoc] - Qiita](http://qiita.com/ssh0/items/b68263a7866b4ce9eaf1)
 # 
-
-#==============================================================================
+#=#=
 
 # You cah change your style sheet file.
 template="$HOME/Workspace/blog/styles/stylesheet.css"

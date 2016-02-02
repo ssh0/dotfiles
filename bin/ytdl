@@ -1,5 +1,6 @@
 #!/bin/sh
 # written by Shotaro Fujimoto (https://github.com/ssh0)
+#=#=#=
 # ```
 # NAME
 #       ytdl - wrapper script for youtube-dl.
@@ -16,7 +17,7 @@
 #       -e: Edit the list file manually.
 #       -h: Show this help message
 # ```
-#==============================================================================
+#=#=
 
 f="$0"
 usage() {

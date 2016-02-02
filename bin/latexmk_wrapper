@@ -1,6 +1,7 @@
 #!/bin/sh
 # written by Shotaro Fujimoto (https://github.com/ssh0)
 #
+#=#=#=
 # I often use this script with vim-quickrun to compile latex files.
 # 
 # If the executed file is in named "source" directory,
@@ -10,7 +11,7 @@
 # 
 # See: [TeXをもっと便利に使う!(自動コンパイル・部分コンパイル・分割ファイルから親ファイルのコンパイル)【Vim + vim-quickrun + latexmk】 - Qiita](http://qiita.com/ssh0/items/e6d7540cd46fac580bc2)
 # 
-#==============================================================================
+#=#=
 
 # If there is a file named below in the same directory,
 # this script automatically detect that the file is root tex file,

@@ -1,7 +1,7 @@
 #!/bin/sh
-#
+#=#=#=
 # play video with color ascii on xterm.
-#==============================================================================
+#=#=
 
 xterm -fn 6x12 \
       -e "export TERM=xterm-16color; \

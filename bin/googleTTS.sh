@@ -1,6 +1,7 @@
 #!/bin/bash
 # folked from https://gist.github.com/markusfisch/873364#file-say-sh, written by markusfisch
 #
+#=#=#=
 # ```
 # Text to speech CLI interface using Google translate_TTS API
 # Usage: googleTTS.sh [OPTION] TERM
@@ -12,7 +13,7 @@
 #
 #   -h,    Show this message and quit quietly
 # ```
-#==============================================================================
+#=#=
 
 # some error occured, exit immediately
 set -e

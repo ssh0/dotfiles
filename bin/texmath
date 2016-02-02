@@ -1,5 +1,7 @@
 #!/bin/bash -e
 # written by Shotaro Fujimoto (https://github.com/ssh0)
+
+#=#=#=
 # ```
 # NAME
 #       texmath - compile latex to png with dvipng (and create texmath file)
@@ -16,7 +18,8 @@
 # 
 #       --help:  Display this help and exit
 # ```
-#==============================================================================
+#=#=
+
 latexmkrc="$HOME/.latexmkrc_dvipng"
 
 f="$0"

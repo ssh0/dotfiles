@@ -1,9 +1,9 @@
 #!/bin/bash
-#
+#=#=#=
 # Record the radiko progrom.
 # 
 # forked from [here](https://github.com/haru8/radiko_rec).
-#==============================================================================
+#=#=
 
 LANG=ja_JP.utf8
 

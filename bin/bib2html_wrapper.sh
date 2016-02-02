@@ -1,20 +1,21 @@
 #!/bin/bash
 # written by Shotaro Fujimoto (https://github.com/ssh0)
 #
+#=#=#=
 # **bibtex2html_wrapper.sh**  
 # bibtex2html wrapper script to convert bibtex file to
 # readable and searchable html file.  
 # (I often use with vim-quickrun to automatically execute this script.)
 #
 # Required: [bibtex2html](https://www.lri.fr/~filliatr/bibtex2html/)
-# 
+
 # ```
 # apt-get install bibtex2html
 # ```
-#
+
 # Show detail here.
 # (japanese) http://qiita.com/ssh0/items/7af727f0513c3fbf09a4
-#==============================================================================
+#=#=
 
 # set bibliography style
 style='junsrt'
@@ -49,3 +50,4 @@ else
 fi
 
 bibtex2html -s "${style}" -c "${bibtex_command}" -css "${css}" -o "${output}" -noheader -nofooter -linebreak "$1"
+

@@ -1,5 +1,5 @@
 #!/bin/sh
-# 
+#=#=#=
 # Take screenshot (select area by mouse dragging or click) and save it to daydir(%Y-%m-%d).
 # 
 # You may change the variable below.
@@ -10,7 +10,7 @@
 # 
 # See: [ShellScript - スクリーンショットを撮って日付のディレクトリに連番で保存するスクリプト - Qiita](http://qiita.com/ssh0/items/2b4e7a4146cb2da01187)
 # 
-#==============================================================================
+#=#=
 
 get_dir=false
 get_name=false

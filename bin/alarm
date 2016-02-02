@@ -1,6 +1,7 @@
 #!/bin/bash
 # written by Shotaro Fujimoto (https://github.com/ssh0)
 #
+#=#=#=
 # ```
 # NAME
 #       alarm - Alart after given minutes.
@@ -13,7 +14,7 @@
 # Option
 #       -h: Show this help.
 # ```
-#==============================================================================
+#=#=
 
 # set notificate icon and sound you like
 notification_icon="/usr/share/icons/gnome/scalable/status/alarm-symbolic.svg"

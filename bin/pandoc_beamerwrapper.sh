@@ -1,5 +1,6 @@
 #!/bin/bash
 # written by Shotaro Fujimoto (https://github.com/ssh0)
+#=#=#=
 # ```
 # NAME
 #       pandoc_beamerwrapper - pandoc wrapper for converting to beamer
@@ -10,7 +11,7 @@
 # OPTION
 #       -h: Show this help message.
 # ```
-#==============================================================================
+#=#=
 
 f="$0"
 usage (){

@@ -1,6 +1,7 @@
 #!/bin/sh
 # written by Shotaro Fujimoto (https://github.com/ssh0)
-# 
+
+#=#=#=
 # I use dropbox for daily work. And I often use rsync program to synchronize the directories.
 # 
 # You may change the variables.
@@ -15,7 +16,7 @@
 # `myrsync up` = `rsync -av --delete $localpath $dropboxpath`  
 # `myrsync down` = `rsync -av --delete $dropboxpath $localpath`
 # 
-#==============================================================================
+#=#=
 
 dropboxpath="$HOME/Dropbox/Workspace/"
 localpath="$HOME/Workspace/"

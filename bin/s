@@ -1,12 +1,13 @@
 #!/bin/bash
 # written by Shotaro Fujimoto (https://github.com/ssh0)
 #
+#=#=#=
 # Search from terminal
 # 
-# Using  
+# Using:  
 # * `$BROWSERCLI` -- in terminal
 # * `$BROWSER` -- for GUI application
-#==============================================================================
+#=#=
 
 s() {
   local query l i

@@ -1,3 +1,4 @@
+#=#=#=
 # s - Search from terminal
 #
 # This file contains the list of the provides to search.
@@ -17,7 +18,7 @@
 # ```
 # default_search,https://www.google.com/search?q=%s,false
 # ```
-#==============================================================================
+#=#=
 
 # I'm feeling lucky!
 l,https://www.google.co.jp/search?q=%s&btnI=I,false

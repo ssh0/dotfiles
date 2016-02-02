@@ -1,5 +1,5 @@
 #!/bin/sh
-# 
+#=#=#=
 # xrandr wrapper for switching display at presentaion.
 # 
 # You may change these environment variables. (write and export in 'zshrc')
@@ -30,7 +30,7 @@
 #       -m: Manually select the display resolution (default: $projector_mode)
 #       -h: Show this message and quit
 # ```
-#==============================================================================
+#=#=
 
 default_output="${OUTPUT_DEV:-eDP1}"
 default_mode="${OUTPUT_RES:-1920x1080}"

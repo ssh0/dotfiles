@@ -1,5 +1,7 @@
 #!/bin/bash
 # written by Shotaro Fujimoto (https://github.com/ssh0)
+# first edited: 2015-06-26
+#=#=#=
 # ```
 # NAME
 #       pandoc_latexwrapper - pandoc wrapper for converting to latex
@@ -10,8 +12,7 @@
 # OPTION
 #       -h: Show this help message.
 # ```
-#==============================================================================
-# first edited: 2015-06-26
+#=#=
 
 f="$0"
 usage (){

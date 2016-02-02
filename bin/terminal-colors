@@ -1,5 +1,6 @@
 #!/bin/bash
 #
+#=#=#=
 # This file echoes a bunch of color codes to the 
 # terminal to demonstrate what's available.  Each 
 # line is the color code of one forground color,
@@ -8,7 +9,7 @@
 # colors (default + 8 escapes).
 #
 # from: http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html
-#==============================================================================
+#=#=
 
 T='gYw'   # The test text
 
