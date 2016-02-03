@@ -1,0 +1,51 @@
+-- -*- mode:haskell -*-
+Config { font = "xft:Migu 1M:size=10.5"
+       , bgColor = "#1c1c1c"
+       , fgColor = "#757575"
+       , position = TopSize C 100 35
+       -- , position = Static { xpos = 37 , ypos = 0, width = 1845, height = 18 }
+       , lowerOnStart = False
+       , overrideRedirect = False
+       , border = NoBorder
+       , borderColor = "#26a69a"
+       , commands = [ Run Network "eth0"  [ "-t"       , "<icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/net_down_03.xbm/><rx>  <icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/net_up_03.xbm/><tx>   "
+                                          , "-L"       , "40"
+                                          , "-H"       , "200"
+                                          , "-m"       , "3"
+                                          , "--normal" , "#ffffff"
+                                          , "--high"   , "#a5d6a7"
+                                          ] 10
+                    , Run MultiCpu        [ "-t"       , "<icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/cpu.xbm/> <total0>.<total1>.<total2>.<total3>.<total4>.<total5>.<total6>.<total7>  "
+                                          , "-L"       , "40"
+                                          , "-H"       , "85"
+                                          , "-m"       , "2"
+                                          , "--normal" , "#ffffff"
+                                          , "--high"   , "#f44336"
+                                          ] 10
+
+                    , Run Memory          [ "-t"       , "<icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/mem.xbm/> <usedratio>%   "
+                                          , "-L"       , "40"
+                                          , "-H"       , "90"
+                                          , "-m"       , "2"
+                                          , "--normal" , "#ffffff"
+                                          , "--high"   , "#f44336"
+                                          ] 10
+                    , Run BatteryP        ["CMB1"]
+                                          [ "-t"       , "<icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/bat_full_02.xbm/> <acstatus>  "
+                                          , "-L"       , "20"
+                                          , "-H"       , "80"
+                                          , "--low"    , "#f44336"
+                                          , "--normal" , "#ffffff"
+                                          , "--"
+                                                , "-o" , "<left>% (<timeleft>)"
+                                                , "-O" , "Charging <left>%"
+                                                , "-i" , "<left>%"
+                                          ] 50
+                    , Run Date "%a %m/%d %H:%M" "date" 10
+                    , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = " %StdinReader% }{ %multicpu%%memory%%eth0%%battery%<fc=#ece391>%date%</fc> "
+       }
+

@@ -392,6 +392,7 @@ xmonad/xmonad.hs,.xmonad/xmonad.hs
 xmonad/xmobarrc,.xmonad/xmobarrc
 # xmonad/xmonad.hs.S10e,.xmonad/xmonad.hs
 # xmonad/xmobarrc.S10e,.xmonad/xmobarrc
+# xmonad/xmobarrc.T540p,.xmonad/xmobarrc
 
 #===========================================================================}}}
 # [luakit](http://mason-larobina.github.io/luakit):                         {{{
