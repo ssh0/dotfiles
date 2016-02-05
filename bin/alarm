@@ -24,7 +24,8 @@ notification_sound="/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga
 f="$0"
 # how to use this script
 usage() {
-  header.sh "$f" | grep -v "\`\`\`"
+  cat "$f" | nl -w3 -s- -nln -d'#=' -ha -bn -fn \
+    | grep -ve '^\s\+' | cut -b7- | grep -v "\`\`\`"
 }
 
 # Option hundling

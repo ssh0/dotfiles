@@ -16,7 +16,8 @@
 
 f="$0"
 usage (){
-  header.sh "$f" | grep -v "\`\`\`"
+  cat "$f" | nl -w3 -s- -nln -d'#=' -ha -bn -fn \
+    | grep -ve '^\s\+' | cut -b7- | grep -v "\`\`\`"
 }
 
 if [ "$1" = "-h" ]; then
