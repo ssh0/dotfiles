@@ -214,11 +214,11 @@ main = do
        -- Lock screen
          ("M1-C-l", spawn "xscreensaver-command -lock")
        -- Toggle compton (compsite manager)
-       , ("M1-C-t", spawn "bash $HOME/bin/toggle_compton.sh")
+       , ("M1-C-t", spawn "toggle_compton.sh")
        -- Launch terminal
        , ("M-<Return>", spawn "urxvt")
        -- Launch terminal with a float window
-       , ("M-S-<Return>", spawn "$HOME/bin/urxvt_float.sh")
+       , ("M-S-<Return>", spawn "urxvt_float.sh")
        -- Insert a transparent panel
        , ("M-S-t", spawn "python $HOME/Workspace/python/transparent.py")
        -- Launch file manager
@@ -230,27 +230,27 @@ main = do
        -- Lauch websearch application (See https://github.com/ssh0/web_search)
        , ("M1-C-f", spawn "websearch")
        -- Play / Pause media keys
-       , ("<XF86AudioPlay>", spawn "$HOME/bin/cplay.sh")
-       , ("<XF86ModeLock>", spawn "$HOME/bin/cplay.sh")
+       , ("<XF86AudioPlay>", spawn "cplay.sh")
+       , ("<XF86ModeLock>", spawn "cplay.sh")
        , ("S-<XF86AudioPlay>", spawn "streamradio pause")
        , ("S-<XF86ModeLock>", spawn "streamradio pause")
        -- Volume setting media keys
-       , ("<XF86AudioRaiseVolume>", spawn "$HOME/bin/sound_volume_change_wrapper.sh +")
-       , ("<XF86AudioLowerVolume>", spawn "$HOME/bin/sound_volume_change_wrapper.sh -")
-       , ("<XF86AudioMute>", spawn "$HOME/bin/sound_volume_change_wrapper.sh m")
+       , ("<XF86AudioRaiseVolume>", spawn "sound_volume_change_wrapper.sh +")
+       , ("<XF86AudioLowerVolume>", spawn "sound_volume_change_wrapper.sh -")
+       , ("<XF86AudioMute>", spawn "sound_volume_change_wrapper.sh m")
         -- Brightness Keys
        , ("<XF86MonBrightnessUp>", spawn "xbacklight + 5 -time 100 -steps 1")
        , ("<XF86MonBrightnessDown>", spawn "xbacklight - 5 -time 100 -steps 1")
        -- Take a screenshot (whole window)
-       , ("<Print>", spawn "$HOME/bin/screenshot.sh")
+       , ("<Print>", spawn "screenshot.sh")
        -- Take a screenshot (selected area)
-       , ("S-<Print>", spawn "$HOME/bin/screenshot_select.sh")
+       , ("S-<Print>", spawn "screenshot_select.sh")
        -- Launch ipython qtconsole
        , ("<XF86Calculator>", spawn "ipython qtconsole --matplotlib=inline")
        -- Toggle touchpad
-       , ("C-<Escape>", spawn "$HOME/bin/touchpad_toggle.sh")
+       , ("C-<Escape>", spawn "touchpad_toggle.sh")
        -- Toggle trackpoint (Lenovo PC)
-       , ("M1-<Escape>", spawn "$HOME/bin/trackpoint_toggle.sh")
+       , ("M1-<Escape>", spawn "trackpoint_toggle.sh")
        ]
 
 --------------------------------------------------------------------------- }}}
@@ -272,9 +272,8 @@ myStartupHook = do
         spawn "gnome-settings-daemon"
         spawn "nm-applet"
         spawn "xscreensaver -no-splash"
-        spawn "bash $HOME/.dropbox-dist/dropboxd"
+        spawn "$HOME/.dropbox-dist/dropboxd"
         spawn "bash $HOME/.fehbg"
-        spawn "bash $HOME/bin/start_urxvtd.sh"
 
 --------------------------------------------------------------------------- }}}
 -- myManageHookShift: some window must created there                        {{{
