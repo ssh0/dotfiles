@@ -231,9 +231,9 @@ main = do
        , ("M1-C-f", spawn "websearch")
        -- Play / Pause media keys
        , ("<XF86AudioPlay>", spawn "cplay.sh")
-       , ("<XF86ModeLock>", spawn "cplay.sh")
+       , ("<XF86HomePage>", spawn "cplay.sh")
        , ("S-<XF86AudioPlay>", spawn "streamradio pause")
-       , ("S-<XF86ModeLock>", spawn "streamradio pause")
+       , ("S-<XF86HomePage>", spawn "streamradio pause")
        -- Volume setting media keys
        , ("<XF86AudioRaiseVolume>", spawn "sound_volume_change_wrapper.sh +")
        , ("<XF86AudioLowerVolume>", spawn "sound_volume_change_wrapper.sh -")
@@ -323,15 +323,15 @@ myLogHook h = dynamicLogWithPP $ wsPP { ppOutput = hPutStrLn h }
 myWsBar = "xmobar $HOME/.xmonad/xmobarrc"
 
 wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws,t]
-                , ppCurrent         = xmobarColor colorWhite colorNormalbg . \s -> "*"
-                , ppUrgent          = xmobarColor colorfg    colorNormalbg . \s -> "*"
-                , ppVisible         = xmobarColor colorfg    colorNormalbg . \s -> "*"
-                , ppHidden          = xmobarColor colorfg    colorNormalbg . \s -> "*"
-                , ppHiddenNoWindows = xmobarColor colorfg    colorNormalbg . \s -> "-"
+                , ppCurrent         = xmobarColor colorGreen colorNormalbg . \s -> "●"
+                , ppUrgent          = xmobarColor colorfg    colorNormalbg . \s -> "●"
+                , ppVisible         = xmobarColor colorfg    colorNormalbg . \s -> "●"
+                , ppHidden          = xmobarColor colorfg    colorNormalbg . \s -> "●"
+                , ppHiddenNoWindows = xmobarColor colorfg    colorNormalbg . \s -> "◯"
                 , ppTitle           = xmobarColor colorGreen colorNormalbg
                 , ppOutput          = putStrLn
                 , ppWsSep           = " "
-                , ppSep             = " : "
+                , ppSep             = "  "
                 }
 
 --------------------------------------------------------------------------- }}}
