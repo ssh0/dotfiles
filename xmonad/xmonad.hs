@@ -214,7 +214,7 @@ main = do
        -- Lock screen
          ("M1-C-l", spawn "xscreensaver-command -lock")
        -- Toggle compton (compsite manager)
-       , ("M1-C-t", spawn "toggle_compton.sh")
+       , ("M1-C-t", spawn "bash toggle_compton.sh")
        -- Launch terminal
        , ("M-<Return>", spawn "urxvt")
        -- Launch terminal with a float window
