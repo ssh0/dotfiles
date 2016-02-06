@@ -13,15 +13,16 @@
 # Set the zsh root directoy
 export ZSH_ROOT=$HOME/.zsh
 
-# use fzf
+# Use fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_COMPLETION_TRIGGER=''
 
 # Set some environmet variables
 source "$ZSH_ROOT/functions/environment.zsh"
 
-# tmux plugin should be loaded as much as possible before
-source "$ZSH_ROOT/functions/tmux.zsh"
+# tmux plugin should be loaded as much as possible before.
+# Only run if tmux is actually installed.
+hash tmux 2>/dev/null && source "$ZSH_ROOT/functions/tmux.zsh"
 
 # Use zgen to load some zsh plugins
 source "$ZSH_ROOT/functions/zgen.zsh"
@@ -43,7 +44,7 @@ compinit -D
 # dircolors
 eval $(dircolors "$ZSH_ROOT/dircolors/dircolors-zenburn")
 
-# load functions
+# Load functions
 myfunctions=(
     agvim
     alias
@@ -67,7 +68,7 @@ done
 unset -v myfunctions myfunction
 
 
-# user specific configuration
+# User specific configuration
 [ -f "$ZSH_ROOT/rc.mine" ] && source "$ZSH_ROOT/rc.mine"
 
 # bindkeys
