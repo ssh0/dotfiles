@@ -11,7 +11,11 @@ tmux-new-session() {
 }
 
 # Aliases
-alias ta='tmux attach -t'
+if [[ -n $TMUX ]]; then
+  alias ta='tmux switch-client -t'
+else
+  alias ta='tmux attach-session -t'
+fi
 alias ts='tmux-new-session -s'
 alias tl='tmux list-sessions'
 alias tksv='tmux kill-server'
