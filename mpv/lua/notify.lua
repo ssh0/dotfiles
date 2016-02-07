@@ -30,6 +30,27 @@ function print_debug(s)
 	return true
 end
 
+--- Function equivalent to dirname in POSIX systems
+--@param str the path string
+function basename(str)
+	if str:match(".-/.-") then
+		local name = string.gsub(str, "(.*/)(.*)", "%2")
+		return name
+	else
+		return ''
+	end
+end
+
+--@param str the path string
+function remove_extension(path)
+	local found, len, remainder = string.find(path, "^(.*)%.[^%.]*$")
+	if found then
+		return remainder
+	else
+		return path
+	end
+end
+
 -- -- url-escape a string, per RFC 2396, Section 2
 -- function string.urlescape(str)
 -- 	s, c = string.gsub(str, "([^A-Za-z0-9_.!~*'()/-])",
@@ -264,19 +285,19 @@ function notify_current_track()
 	params = "-i /usr/share/icons/gnome/scalable/actions/media-playback-start-symbolic.svg"
 	-- end
 
-	if title == "" then
-		summary = string.shellescape(mp.get_property_native("filename"))
+	if title == "" or title == "na" then
+		summary = string.shellescape(remove_extension(mp.get_property_native("filename")))
 	else
 		summary = string.shellescape(string.htmlescape(title))
 	end
-	if artist == "" then
-		if album == "" then
-			body = string.shellescape(os.getenv("PWD"))
+	if artist == "" or artist == "na" then
+		if album == "" or album == "na" then
+			body = string.shellescape(basename(os.getenv("PWD")))
 		else
 			body = string.shellescape("album: " .. string.htmlescape(album))
 		end
 	else
-		if album == "" then
+		if album == "" or album == "na" then
 			body = string.shellescape("artist: " .. string.htmlescape(artist))
 		else
 			body = string.shellescape("artist : %s<br/><i>album: %s</i>"):format(
