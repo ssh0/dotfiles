@@ -30,7 +30,7 @@ function print_debug(s)
 	return true
 end
 
--- url-escape a string, per RFC 2396, Section 2
+-- -- url-escape a string, per RFC 2396, Section 2
 -- function string.urlescape(str)
 -- 	s, c = string.gsub(str, "([^A-Za-z0-9_.!~*'()/-])",
 -- 		function(c)
@@ -54,7 +54,7 @@ function string.shellescape(str)
 	return "'"..string.gsub(str, "'", "'\"'\"'").."'"
 end
 
--- converts string to a valid filename on most (modern) filesystems
+-- -- converts string to a valid filename on most (modern) filesystems
 -- function string.safe_filename(str)
 -- 	s, c = string.gsub(str, "([^A-Za-z0-9_.-])",
 -- 		function(c)
@@ -115,7 +115,7 @@ end
 -- 			for k,name in pairs(morenames) do
 -- 				for k,ext in pairs(moreexts) do
 -- 					fn = path .. name .. "." .. ext
--- 					--print_debug("get_folder_cover_art: trying " .. fn)
+-- 					print_debug("get_folder_cover_art: trying " .. fn)
 -- 					f = io.open(fn, "r")
 -- 					if f then
 -- 						f:close()
@@ -182,14 +182,14 @@ end
 --
 -- 	-- fetch image from Cover Art Archive
 -- 	url = ("http://coverartarchive.org/release/%s/front-250"):format(mbid)
--- 	print("fetching album cover from " .. url)
+-- 	print_debug("fetching album cover from " .. url)
 -- 	d, c, h = http.request(url)
 -- 	if c ~= 200 then
--- 		print(("Cover Art Archive returned HTTP %s for MBID %s"):format(c, mbid))
+-- 		print_debug(("Cover Art Archive returned HTTP %s for MBID %s"):format(c, mbid))
 -- 		return nil
 -- 	end
 -- 	if not d or string.len(d) < 1 then
--- 		print(("Cover Art Archive returned no content for MBID %s"):format(mbid))
+-- 		print_debug(("Cover Art Archive returned no content for MBID %s"):format(mbid))
 -- 		print_debug("HTTP response: " .. d)
 -- 		return nil
 -- 	end
@@ -250,41 +250,47 @@ function notify_current_track()
 	-- 	delete_scaled_image = true
 	-- end
 
-	-- then load cover art from the internet
+	-- -- then load cover art from the internet
 	-- if (not scaled_image or scaled_image == "")
-	   -- and ((artist ~= "" and album ~= "") or album_mbid ~= "") then
-		-- scaled_image = fetch_musicbrainz_cover_art(artist, album, album_mbid)
-		-- cover_image = scaled_image
+	--    and ((artist ~= "" and album ~= "") or album_mbid ~= "") then
+	-- 	scaled_image = fetch_musicbrainz_cover_art(artist, album, album_mbid)
+	-- 	cover_image = scaled_image
 	-- end
 
 	-- if scaled_image and string.len(scaled_image) > 1  then
-		-- print("found cover art in " .. cover_image)
-		-- params = " -i " .. string.shellescape(scaled_image)
+	-- 	print("found cover art in " .. cover_image)
+	-- 	params = " -i " .. string.shellescape(cover_image)
+	-- else
+	params = "-i /usr/share/icons/gnome/scalable/actions/media-playback-start-symbolic.svg"
 	-- end
 
-	if(artist == "") then
-		summary = string.shellescape("Now playing:")
-	else
-		summary = string.shellescape(string.htmlescape(artist))
-	end
 	if title == "" then
-		body = string.shellescape(mp.get_property_native("filename"))
+		summary = string.shellescape(mp.get_property_native("filename"))
+	else
+		summary = string.shellescape(string.htmlescape(title))
+	end
+	if artist == "" then
+		if album == "" then
+			body = os.getenv("PWD")
+		else
+			body = string.shellescape("album: " .. string.htmlescape(album))
+		end
 	else
 		if album == "" then
-			body = string.shellescape(string.htmlescape(title))
+			body = string.shellescape("artist: " .. string.htmlescape(artist))
 		else
-			body = string.shellescape(("%s<br/><i>%s</i>"):format(
-				string.htmlescape(title), string.htmlescape(album)))
+			body = string.shellescape("artist : %s<br/><i>album: %s</i>"):format(
+				string.htmlescape(artist), string.htmlescape(album))
 		end
 	end
 
-	command = ("notify-send -a mpv %s %s -i /usr/share/icons/gnome/scalable/actions/media-playback-start-symbolic.svg"):format(summary, body)
+	command = ("notify-send -a mpv %s %s %s"):format(summary, body, params)
 	print_debug("command: " .. command)
 	os.execute(command)
 
-	-- if delete_scaled_image and not os.remove(scaled_image) then
-		-- print("could not remove" .. scaled_image .. ", please remove it manually")
-	-- end
+	if delete_scaled_image and not os.remove(scaled_image) then
+		print("could not remove" .. scaled_image .. ", please remove it manually")
+	end
 end
 
 
