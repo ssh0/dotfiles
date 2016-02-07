@@ -271,7 +271,7 @@ function notify_current_track()
 	end
 	if artist == "" then
 		if album == "" then
-			body = os.getenv("PWD")
+			body = string.shellescape(os.getenv("PWD"))
 		else
 			body = string.shellescape("album: " .. string.htmlescape(album))
 		end
