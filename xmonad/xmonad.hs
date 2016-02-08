@@ -11,12 +11,11 @@
 -- Import modules                                                           {{{
 -------------------------------------------------------------------------------
 import qualified Data.Map as M
+import Control.Monad (liftM2)          -- myManageHookShift
+import System.IO                       -- for xmobar
 
 import XMonad
 import qualified XMonad.StackSet as W  -- myManageHookShift
-
-import Control.Monad (liftM2)          -- myManageHookShift
-import System.IO                       -- for xmobar
 
 import XMonad.Actions.CopyWindow
 import XMonad.Actions.CycleWS
@@ -24,32 +23,30 @@ import qualified XMonad.Actions.FlexibleResize as Flex -- flexible resize
 import XMonad.Actions.FloatKeys
 import XMonad.Actions.UpdatePointer
 import XMonad.Actions.WindowGo
+
 import XMonad.Hooks.DynamicLog         -- for xmobar
 import XMonad.Hooks.EwmhDesktops
-import XMonad.Hooks.FadeWindows
 import XMonad.Hooks.ManageDocks        -- avoid xmobar area
 import XMonad.Hooks.ManageHelpers
-import XMonad.Hooks.Place
+
 import XMonad.Layout
 import XMonad.Layout.DragPane          -- see only two window
 import XMonad.Layout.Gaps
-import XMonad.Layout.MultiToggle
-import XMonad.Layout.MultiToggle.Instances
 import XMonad.Layout.NoBorders         -- In Full mode, border is no use
 import XMonad.Layout.PerWorkspace      -- Configure layouts on a per-workspace
 import XMonad.Layout.ResizableTile     -- Resizable Horizontal border
 import XMonad.Layout.Simplest
 import XMonad.Layout.SimplestFloat
 import XMonad.Layout.Spacing           -- this makes smart space around windows
-import XMonad.Layout.Tabbed
-import XMonad.Layout.ThreeColumns      -- for many windows
 import XMonad.Layout.ToggleLayouts     -- Full window at any time
 import XMonad.Layout.TwoPane
+
 import XMonad.Prompt
 import XMonad.Prompt.Window            -- pops up a prompt with window names
 import XMonad.Util.EZConfig            -- removeKeys, additionalKeys
 import XMonad.Util.Run
 import XMonad.Util.Run(spawnPipe)      -- spawnPipe, hPutStrLn
+import XMonad.Util.SpawnOnce
 
 import Graphics.X11.ExtraTypes.XF86
 
@@ -106,15 +103,13 @@ main = do
        , manageHook         = myManageHookShift <+>
                               myManageHookFloat <+>
                               manageDocks
-        -- any time Full mode, avoid xmobar area
-       , layoutHook         = -- lessBorders OnlyFloat $
-                              toggleLayouts (avoidStruts $ noBorders Full) $
+       , layoutHook         = toggleLayouts (avoidStruts $ noBorders Full) $
                               onWorkspace "3" (avoidStruts $ simplestFloat) $
                               avoidStruts $ myLayout
         -- xmobar setting
        , logHook            = myLogHook wsbar
-       , handleEventHook    = fadeWindowsEventHook <+>
-                              fullscreenEventHook
+                                >> updatePointer (Relative 0.5 0.5)
+       , handleEventHook    = fullscreenEventHook
        , workspaces         = myWorkspaces
        , modMask            = modm
        , mouseBindings      = newMouse
@@ -261,7 +256,6 @@ myLayout = spacing gapwidth $
            gaps [(U, gapwidthU),(D, gapwidthD),(L, gapwidthL),(R, gapwidthR)] $
                  (ResizableTall 1 (1/55) (1/2) [])
              ||| (TwoPane (1/55) (1/2))
-             ||| (ThreeColMid 1 (1/55) (16/35))
              ||| Simplest
 
 --------------------------------------------------------------------------- }}}
@@ -269,11 +263,12 @@ myLayout = spacing gapwidth $
 -------------------------------------------------------------------------------
 
 myStartupHook = do
-        spawn "gnome-settings-daemon"
-        spawn "nm-applet"
-        spawn "xscreensaver -no-splash"
-        spawn "$HOME/.dropbox-dist/dropboxd"
-        spawn "bash $HOME/.fehbg"
+        spawnOnce "gnome-settings-daemon"
+        spawnOnce "nm-applet"
+        spawnOnce "xscreensaver -no-splash"
+        spawnOnce "$HOME/.dropbox-dist/dropboxd"
+        spawnOnce "bash $HOME/.fehbg"
+        spawnOnce "compton -b --config $HOME/.config/compton/compton.conf"
 
 --------------------------------------------------------------------------- }}}
 -- myManageHookShift: some window must created there                        {{{
