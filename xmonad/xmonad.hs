@@ -108,7 +108,7 @@ main = do
                               avoidStruts $ myLayout
         -- xmobar setting
        , logHook            = myLogHook wsbar
-                                >> updatePointer (Relative 0.5 0.5)
+                                >> updatePointer (Relative 0.99 0.99)
        , handleEventHook    = fullscreenEventHook
        , workspaces         = myWorkspaces
        , modMask            = modm
