@@ -36,10 +36,12 @@ Installation
 ============
 
 * [Install with dot](#install_with_dot)
-    1. [Install dot](#install_dot)
-        * [Install with zsh plugin manager](#install_with_zsh_plugin_manager)
-        * [Install manually](#install_manually)
-    2. [Clone and deploy using dot](#clone_and_deploy_using_dot)
+    * [install.sh](#install_sh)
+    * [Install manually](#manually)
+        1. [Install dot](#install_dot)
+            * [Install with zsh plugin manager](#install_with_zsh_plugin_manager)
+            * [Install manually](#install_manually)
+        2. [Clone and deploy using dot](#clone_and_deploy_using_dot)
 * [Install without dot (simple)](#install_without_dot)
 
 
@@ -47,9 +49,28 @@ Installation
 
 * [dot](https://github.com/ssh0/dot)
 
-### <a name="install_dot"> 1. Install `dot` </a>
+### <a name="install_sh">install.sh</a>
 
-#### <a name="install_with_zsh_plugin_manager"> 1.a Install with zsh plugin manager </a>
+Clone this repository by
+
+```
+git clone https://github.com/ssh0/dotfiles.git ~/.ssh0-dotfiles
+```
+
+Then, execute
+
+```
+cd ~/.ssh0-dotifles
+./install.sh
+```
+
+`install.sh` will make `dot` command to be load and set the symolic links written in `dotlink` by that.
+
+### <a name="manually">Install manually</a>
+
+#### <a name="install_dot"> 1. Install `dot` </a>
+
+##### <a name="install_with_zsh_plugin_manager"> 1.a Install with zsh plugin manager </a>
 
 If you use zsh plugin manager already, add below line to your `zshrc`.
 
@@ -81,7 +102,7 @@ export DOT_DIR="$HOME/.dotfiles"
 
 If you want to know more installation guide, see `dot`'s [README](https://github.com/ssh0/dot).
 
-#### <a name="install_manually">1.b Install manually</a>
+##### <a name="install_manually">1.b Install manually</a>
 
 Clone the `dot`'s repository:
 
@@ -97,7 +118,7 @@ source $HOME/.zsh/plugins/dot
 
 In order to take effect, close the terminal and restart.
 
-### <a name="clone_and_deploy_using_dot"> 2. Clone and deploy using dot </a>
+#### <a name="clone_and_deploy_using_dot"> 2. Clone and deploy using dot </a>
 
 Running the below command
 
