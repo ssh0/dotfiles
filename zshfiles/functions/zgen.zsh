@@ -45,7 +45,6 @@ if ! zgen saved; then
     robbyrussell/oh-my-zsh lib/termsupport.zsh
     robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh
     ssh0/dot
-    ssh0/zsh-get_serialised_filename
     ssh0/zsh-takenote
     fcambus/ansiweather
     Tarrasch/zsh-bd
