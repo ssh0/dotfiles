@@ -36,19 +36,40 @@ dotfiles
 ============
 
 * [dotを用いた方法](#install_with_dot)
-    1. [dotのインストール](#install_dot)
-        * [zshプラグインマネージャを使用する方法](#install_with_zsh_plugin_manager)
-        * [手動でインストール](#install_manually)
-    2. [dotを用いてリポジトリをクローン、シンボリックリンクを作成](#clone_and_deploy_using_dot)
+    * [スクリプトを用いた方法](#install_sh)
+    * [手動でインストール](#manually)
+        1. [dotのインストール](#install_dot)
+            * [zshプラグインマネージャを使用する方法](#install_with_zsh_plugin_manager)
+            * [手動でインストール](#install_manually)
+        2. [dotを用いてリポジトリをクローン、シンボリックリンクを作成](#clone_and_deploy_using_dot)
 * [dotを用いないシンプルな方法](#install_without_dot)
 
 ## <a name="install_with_dot">dotを用いた方法</a>
 
 * [dot](https://github.com/ssh0/dot)
 
-### <a name="install_dot">1. dotのインストール</a>
+### <a name="install_sh">スクリプトを用いた方法</a>
 
-#### <a name="install_with_zsh_plugin_manager">1.a zsh プラグインマネージャを使用する方法</a>
+```
+git clone https://github.com/ssh0/dotfiles.git ~/.ssh0-dotfiles
+```
+
+などとしてこのリポジトリをクローンした後に，
+
+```
+cd ~/.ssh0-dotifles
+./install.sh
+```
+
+を実行。
+
+このスクリプトは一時的に`dot`コマンドを使用できるようにし，`dotlink`に書かれたファイルの対応関係に基づいてシンボリックリンクを張ります。
+
+### <a name="manually">手動でインストール</a>
+
+#### <a name="install_dot">1. dotのインストール</a>
+
+##### <a name="install_with_zsh_plugin_manager">1.a zsh プラグインマネージャを使用する方法</a>
 
 それぞれ`zshrc`に以下のように指定してください。
 
@@ -79,7 +100,7 @@ export DOT_DIR="$HOME/.dotfiles"
 
 `dot`のインストールについて詳しく知りたい方は、`dot`の[README](https://github.com/ssh0/dot/blob/master/README_ja.md)をご覧ください。
 
-#### <a name="install_manually">1.b 手動でインストール</a>
+##### <a name="install_manually">1.b 手動でインストール</a>
 
 dotのプロジェクトリポジトリを自分のPCにクローンしてください。
 
@@ -95,7 +116,7 @@ source $HOME/.zsh/plugins/dot
 
 `bashrc`や`zshrc`の変更が適用されるように、一回ターミナルを閉じてください。
 
-### <a name="clone_and_deploy_using_dot">2. dotを用いてリポジトリをクローン、シンボリックリンクを作成</a>
+#### <a name="clone_and_deploy_using_dot">2. dotを用いてリポジトリをクローン、シンボリックリンクを作成</a>
 
 ```
 DOT_REPO="https://github.com/ssh0/dotfiles.git"; DOT_DIR="$HOME/.dotfiles-ssh0"
