@@ -409,8 +409,8 @@ color cursor			default	236	bold
 # color grep.file			blue	default
 # color file-size			default	default
 # color line-number		cyan	default
-color title-blur		black	white
-color title-focus		black	white	bold
+color title-blur		black	236	bold
+color title-focus		236	white	bold
 # color main-commit		default	default
 # color main-tag			magenta	default	bold
 # color main-local-tag		magenta	default
