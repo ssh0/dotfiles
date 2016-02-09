@@ -39,7 +39,7 @@ s() {
   url="$(printf "$url" "$query")"
 
   if $gui; then
-    $BROWSER "$url"
+    $BROWSER "$url" >& /dev/null &
   else
     if [ -n "$TMUX" ]; then
       if [ $(tput cols) -gt 160 ]; then
