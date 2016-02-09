@@ -35,7 +35,7 @@ playcmd="mpv --really-quiet"
 
 f="$0"
 usage() {
-  cat "$f" | nl -w3 -s- -nln -d'#=' -ha -bn -fn \
+  nl -w3 -s- -nln -d'#=' -ha -bn -fn "$f" \
     | grep -ve '^\s\+' | cut -b7- | grep -v "\`\`\`"
   exit 0
 }

@@ -24,7 +24,7 @@ notification_sound="/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga
 f="$0"
 # how to use this script
 usage() {
-  cat "$f" | nl -w3 -s- -nln -d'#=' -ha -bn -fn \
+  nl -w3 -s- -nln -d'#=' -ha -bn -fn "$f" \
     | grep -ve '^\s\+' | cut -b7- | grep -v "\`\`\`"
 }
 
