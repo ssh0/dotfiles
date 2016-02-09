@@ -64,7 +64,8 @@ cf-mpv() { $EDITOR ~/.config/mpv/mpv.conf ;}
 cf-mutt() { $EDITOR ~/.mutt/muttrc ;}
 cf-nvim() { $EDITOR ~/.config/nvim/init.vim ;}
 cf-ranger() { $EDITOR ~/.config/ranger/rc.conf ;}
-cf-ranger-rifle() { $EDITOR ~/.config/ranger/rifle.conf ;} # edit open_with extensions
+cf-ranger-rifle() { $EDITOR ~/.config/ranger/rifle.conf ;}
+cf-s() { $EDITOR ~/bin/s_provider ;}
 cf-tig() { $EDITOR ~/.tigrc ;}
 cf-tmux() { $EDITOR ~/.tmux.conf ;}
 cf-turses() { $EDITOR ~/.turses/config ;}
