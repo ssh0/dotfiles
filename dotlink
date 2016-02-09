@@ -7,7 +7,7 @@
 #                     \__,_|\___/ \__|_| |_|_|\___||___/                      #
 #                                                                             #
 ###############################################################################
-# This file is config file for dot.                                         {{{
+# This file contains dotfiles linksets.                                     {{{
 # You can comment out by adding "#" at the beginning of the line.
 # And an empty line is ignored by dot.
 #
@@ -29,6 +29,13 @@
 # In the second example, the script automatically completes the second
 # arguments and confirm whether or not to execute that command.
 #
+#===========================================================================}}}
+# dotrc:                                                                    {{{
+#==============================================================================
+# Configuration file of dot command.
+
+dotrc,.config/dot/dotrc
+
 #===========================================================================}}}
 # ~/.Xmodmap:                                                               {{{
 #==============================================================================
