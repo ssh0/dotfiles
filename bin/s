@@ -2,58 +2,86 @@
 # written by Shotaro Fujimoto (https://github.com/ssh0)
 #
 #=#=#=
-# Search from terminal
-# 
-# Using:  
-# * `$BROWSERCLI` -- in terminal
-# * `$BROWSER` -- for GUI application
+# ```
+# NAME
+#       s - Search from terminal
+#
+# USAGE
+#       s [-h|-l] <search_provider> <search queries>
+#
+# OPTIONS
+#       -h    Show help message
+#       -l    Show search providers list
+#       -g    Force search in GUI browser
+#
+# ENVIRONMENT VARIABLE:
+#       $BROWSERCLI     browser used in terminal
+#       $BROWSER        GUI browser
+# ```
 #=#=
 
-s() {
-  local query l i
-  local provider_f="$HOME/bin/s_provider"
+f="$0"
 
-  # default: Google search, use $BROWSERCLI
-  local default_search="https://www.google.com/search?q=%s"
-  local url="$default_search"
-  local gui=false
+provider_f="$HOME/bin/s_provider"
 
-  for l in $(grep -Ev '^#|^$' "${provider_f}"); do
-    if [ "$1" = "$(echo "$l" | cut -d, -f1)" ]; then
-      url="$(echo "$l" | cut -d, -f2)"
-      gui=$(echo "$l" | cut -d, -f3)
-      shift 1
-      break
-    fi
-  done
+# default: Google search, use $BROWSERCLI
+default_search="https://www.google.com/search?q=%s"
+url="$default_search"
+gui=false
 
-  [ -n "$1" ] && query="$1" || {
-      echo "Needs at least one search term."; return 1
-      }
-
-  shift 1
-  for i in $@; do
-    query="$query%20$i"
-  done
-
-  url="$(printf "$url" "$query")"
-
-  if $gui; then
-    $BROWSER "$url" >& /dev/null &
-  else
-    if [ -n "$TMUX" ]; then
-      if [ $(tput cols) -gt 160 ]; then
-        tmux split-window -h -p 70 $BROWSERCLI "$url"
-      else
-        tmux split-window -v -p 90 $BROWSERCLI "$url"
-      fi
-    else
-      $BROWSERCLI "$url"
-    fi
-  fi
-
-  return 0
+usage() {
+  cat "$f" | nl -w3 -s- -nln -d'#=' -ha -bn -fn \
+    | grep -ve '^\s\+' | cut -b7- | grep -v "\`\`\`"
 }
 
-s $@
+list_providers() {
+  grep -e "^# \"" "${provider_f}" | sed 's/\"//g' \
+    | cut -b3- | awk -F ":" '{ printf("%5s:%s\n", $1,$2) ;}'
+}
+
+while getopts glh OPT
+do
+  case $OPT in
+    "g") gui=true ;;
+    "l") list_providers; exit 0 ;;
+    "h") usage; exit 0 ;;
+      *) usage; exit 1 ;;
+  esac
+done
+
+shift $((OPTIND-1))
+
+for l in $(grep -Ev '^#|^$' "${provider_f}"); do
+  if [ "$1" = "$(echo "$l" | cut -d, -f1)" ]; then
+    url="$(echo "$l" | cut -d, -f2)"
+    gui=$($gui || echo "$l" | cut -d, -f3)
+    shift 1
+    break
+  fi
+done
+
+[ -n "$1" ] && query="$1" || {
+    echo "Needs at least one search term."; exit 1
+    }
+
+shift 1
+for i in $@; do
+  query="$query%20$i"
+done
+
+url="$(printf "$url" "$query")"
+
+if $gui; then
+  $BROWSER "$url" >& /dev/null &
+else
+  if [ -n "$TMUX" ]; then
+    if [ $(tput cols) -gt 160 ]; then
+      tmux split-window -h -p 70 $BROWSERCLI "$url"
+    else
+      tmux split-window -v -p 90 $BROWSERCLI "$url"
+    fi
+  else
+    $BROWSERCLI "$url"
+  fi
+fi
 

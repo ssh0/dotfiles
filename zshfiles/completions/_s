@@ -1,29 +1,21 @@
 #compdef s
 
 _s() {
-  _values "search with" \
-    "l[I'm feeling lucky!]" \
-    "w[Wikipedia]" \
-    "n[Niconico (gui)]" \
-    "nd[Niconico dictionary]" \
-    "p[Google Image (gui)]" \
-    "m[Google Map (gui)]" \
-    "mfh[Google Navi: from 'Home' to * (gui)]" \
-    "mfw[Google Navi: from 'Work' to * (gui)]" \
-    "mth[Google Navi: from * to 'Home' (gui)]" \
-    "mtw[Google Navi: from * to 'Work' (gui)]" \
-    "ip[IP address (gui)]" \
-    "f[flickr (gui)]" \
-    "y[YouTube (gui)]" \
-    "rt[Yahoo realtime search (gui)]" \
-    "tw[twitter]" \
-    "sc[Google Scholar]" \
-    "q[Qiita]" \
-    "g[GitHub repository]" \
-    "gu[GitHub user]" \
-    "gc[GitHub code]" \
-    "gs[Gist]" \
-    "t[weblio]" \
-    "wd[wordnik]"
+  local state
+  local provider_f="$HOME/bin/s_provider"
+  providers=$(grep -e "^# \"" "$provider_f" | sed 's/\"//g' \
+    | cut -b3- | awk -F ": " '{ printf("%s\\:\047%s\047 ", $1,$2) ;}')
+  _arguments  \
+    '-h[Show help message]: :' \
+    '-l[Show search providers list]: :' \
+    '-g[Force search in GUI browser]' \
+    '1: :->alis' \
+    && ret=0
+
+  case $state in
+    alis)
+      _arguments "1:providers:(($providers))"  && ret=0
+      ;;
+  esac
   return 0
 }
