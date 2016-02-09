@@ -301,11 +301,22 @@ forked from [here](https://github.com/haru8/radiko_rec).
 
 ## [s](./s)
 
-Search from terminal
+```
+NAME
+      s - Search from terminal
 
-Using:  
-* `$BROWSERCLI` -- in terminal
-* `$BROWSER` -- for GUI application
+USAGE
+      s [-h|-l] <search_provider> <search queries>
+
+OPTIONS
+      -h    Show help message
+      -l    Show search providers list
+      -g    Force search in GUI browser
+
+ENVIRONMENT VARIABLE:
+      $BROWSERCLI     browser used in terminal
+      $BROWSER        GUI browser
+```
 
 ## [screenshot\_select.sh](./screenshot_select.sh)
 
@@ -346,12 +357,16 @@ This file contains the list of the provides to search.
 FORMAT:
 
 ```
+# "A": Some description here (Dont use single quote)
 A,url,{true|false}
 |  |    |
 |  |    +--- Open in GUI browser or not.
 |  +--- Set the search providers url. Search query is placed in "%s".
 +--- Alias for the provider.
 ```
+
+* Commeting line is used by zsh completion function '_s'  
+See [here](../zshfiles/completions/_s).
 
 EXAMPLE:
 
