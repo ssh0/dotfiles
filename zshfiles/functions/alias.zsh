@@ -8,6 +8,7 @@ if hash apt-fast 2>/dev/null; then
   alias apt-upd='apt-fast update'
   alias apt-upg='apt-fast upgrade'
   alias apt-ins='apt-fast install'
+  alias apt-get='apt-fast'
 else
   alias apt-upd='sudo apt update'
   alias apt-upg='sudo apt upgrade'
@@ -28,6 +29,9 @@ compdef v=vim
 
 # I often type ":q" to exit terminal
 alias :q='exit'
+
+# s command
+alias o='s'
 
 # thefuck (https://github.com/nvbn/thefuck)
 alias f='eval "$(thefuck $(fc -ln -1 | tail -n 1)); fc -R"'
