@@ -714,22 +714,22 @@ ex_follow_bindings = {
                     uri = string.gsub(uri, " ", "%%20")
                     luakit.selection.primary = uri
                     if string.match(uri, "youtube") then
-                        luakit.spawn(string.format("mpv %s", uri))
+                        luakit.spawn(string.format("youtube-dl '%s' -o - | mpv -", uri))
                         w:notify("trying to play file on mpv " .. uri)
                     elseif string.match(uri, "vimeo") then
-                        luakit.spawn(string.format("mpv %s", uri))
+                        luakit.spawn(string.format("youtube-dl '%s' -o - | mpv -", uri))
                         w:notify("trying to play file on mpv " .. uri)
                     elseif string.match(uri, "vine") then
-                        luakit.spawn(string.format("mpv %s", uri))
+                        luakit.spawn(string.format("youtube-dl '%s' -o - | mpv -", uri))
                         w:notify("trying to play file on mpv " .. uri)
                     elseif string.match(uri, "nicovideo") then
-                        luakit.spawn(string.format("mpv %s", uri))
+                        luakit.spawn(string.format("youtube-dl '%s' -o - | mpv -", uri))
                         w:notify("trying to play file on mpv " .. uri)
                     elseif string.match(uri, "file:///") then
-                        luakit.spawn(string.format("xdg-open %s", uri))
+                        luakit.spawn(string.format("xdg-open '%s'", uri))
                         w:notify("trying to open with xdg-open " .. uri)
                     elseif string.match(uri, "jpg" or "JPG" or "png" or "PNG" or "gif" or "GIF") then
-                        luakit.spawn(string.format("feh --scale-down %s", uri))
+                        luakit.spawn(string.format("feh --scale-down '%s'", uri))
                         w:notify("file contains image")
                     else
                         w:notify("unrecognized format")
