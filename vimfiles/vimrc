@@ -522,7 +522,7 @@ set nowritebackup nobackup noswapfile
 set history=1000
 
 " save information to ~/.viminfo
-set viminfo='1000,<200,f50,c,h
+set viminfo='1000,<3000,f50,c,h
 
 " use unnamed register (for outer programs)
 set clipboard=unnamedplus,autoselect
