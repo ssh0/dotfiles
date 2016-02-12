@@ -3,10 +3,10 @@
 # If you want to know all the description, see README.
 
 # You can change the dotfiles to clone
-#clone_repository='https://github.com/ssh0/dotfiles.git'
+clone_repository='https://github.com/ssh0/dotfiles.git'
 
 # Set the directory that the script regard as dotfiles directory.
-#dotdir="$HOME/.dotfiles"
+dotdir="$HOME/.dotfiles"
 
 # Set the path to your dotlink which describes the correspondence relation.
 #dotlink="$dotdir/dotlink"

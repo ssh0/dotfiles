@@ -42,10 +42,6 @@ unfunction find_alt
 # To stop ranger from loading both the default and my custom rc.conf
 export RANGER_LOAD_DEFAULT_RC=false
 
-# dot management (ssh0/dot)
-export DOT_REPO="https://github.com/ssh0/dotfiles.git"
-export DOT_DIR="$HOME/.dotfiles"
-
 # override the safe location for pick
 # export PICK_SAFE="$HOME/Dropbox/conf/pick.safe"
 
