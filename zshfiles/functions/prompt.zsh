@@ -25,6 +25,7 @@ fg_red=210
 
 CURRENT_BG='NONE'
 SEGMENT_SEPARATOR='▒'
+# SEGMENT_SEPARATOR='▓▒░'
 
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
@@ -76,7 +77,7 @@ prompt_init() {
 prompt_status() {
   local symbols
   symbols=()
-  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{${fg_red}}%}✘"
+  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{${fg_red}}%}✞"
   [[ $UID -eq 0 ]] && symbols+="%{%F{223}%}⚡"
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
   [[ -n ${RANGER_LEVEL} ]] && symbols+="%{%F{153}%}®"
@@ -113,7 +114,7 @@ prompt_git() {
 
   if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
     dirty=$(parse_git_dirty)
-    ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git show-ref --head -s --abbrev |head -n1 2> /dev/null)"
+    ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➔ $(git show-ref --head -s --abbrev |head -n1 2> /dev/null)"
     if [[ -n $dirty ]]; then
       prompt_segment ${bg_dark} 223
     else
@@ -134,8 +135,8 @@ prompt_git() {
     zstyle ':vcs_info:*' enable git
     zstyle ':vcs_info:*' get-revision true
     zstyle ':vcs_info:*' check-for-changes true
-    zstyle ':vcs_info:*' stagedstr '✚'
-    zstyle ':vcs_info:git:*' unstagedstr '●'
+    zstyle ':vcs_info:*' stagedstr '✛'
+    zstyle ':vcs_info:git:*' unstagedstr '◉'
     zstyle ':vcs_info:*' formats ' %u%c'
     zstyle ':vcs_info:*' actionformats ' %u%c'
     vcs_info
