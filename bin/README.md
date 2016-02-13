@@ -357,7 +357,11 @@ This file contains the list of the provides to search.
 FORMAT:
 
 ```
-# "A": Some description here (Dont use single quote)
+ +--- Line that matches with '^# \"' is used for printing providers lists.
+ |   +--- After ': ' parts is also used for printing providers lists.
+ |   |                      +--- After the second ': ' is real comment.
+ |   |                      |
+# "A": Some description here: This field is ignored by completion.
 A,url,{true|false}
 |  |    |
 |  |    +--- Open in GUI browser or not.
@@ -365,13 +369,14 @@ A,url,{true|false}
 +--- Alias for the provider.
 ```
 
-* Commeting line is used by zsh completion function '_s'  
+* Commeting line is used by zsh completion function '_s'.  
 See [here](../zshfiles/completions/_s).
 
 EXAMPLE:
 
 ```
-default_search,https://www.google.com/search?q=%s,false
+# "m": Google Map: Search with Google Map and open page in GUI browser.
+m,https://www.google.com/maps/place/%s,true
 ```
 
 ## [start\_urxvtd.sh](./start_urxvtd.sh)
