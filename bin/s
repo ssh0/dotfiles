@@ -35,15 +35,19 @@ usage() {
 }
 
 list_providers() {
-  grep -e "^# \"" "${provider_f}" | sed 's/\"//g' \
-    | cut -b3- | awk -F ":" '{ printf("%5s:%s\n", $1,$2) ;}'
+  local lists="$(grep -e "^# \"" "${provider_f}" | sed 's/\"//g' | cut -b3-)"
+  if [ "$1" = "zsh" ]; then
+    echo "${lists}" | awk -F ": " '{ printf("%s:%s\n",$1,$2) ;}'
+  else
+    echo "${lists}" | awk -F ": " '{ printf("%5s :%s\n",$1,$2) ;}'
+  fi
 }
 
 while getopts glh OPT
 do
   case $OPT in
     "g") gui=true ;;
-    "l") list_providers; exit 0 ;;
+    "l") list_providers "$2"; exit 0 ;;
     "h") usage; exit 0 ;;
       *) usage; exit 1 ;;
   esac

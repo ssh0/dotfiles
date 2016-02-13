@@ -6,7 +6,11 @@
 # FORMAT:
 #
 # ```
-# # "A": Some description here (Dont use single quote)
+#  +--- Line that matches with '^# \"' is used for printing providers lists.
+#  |   +--- After ': ' parts is also used for printing providers lists.
+#  |   |                      +--- After the second ': ' is real comment.
+#  |   |                      |
+# # "A": Some description here: This field is ignored by completion.
 # A,url,{true|false}
 # |  |    |
 # |  |    +--- Open in GUI browser or not.
@@ -14,17 +18,18 @@
 # +--- Alias for the provider.
 # ```
 #
-# * Commeting line is used by zsh completion function '_s'  
+# * Commeting line is used by zsh completion function '_s'.  
 # See [here](../zshfiles/completions/_s).
 #
 # EXAMPLE:
 #
 # ```
-# default_search,https://www.google.com/search?q=%s,false
+# # "m": Google Map: Search with Google Map and open page in GUI browser.
+# m,https://www.google.com/maps/place/%s,true
 # ```
 #=#=
 
-# "l": I´m feeling lucky!
+# "l": Google - I'm feeling lucky!
 l,https://www.google.co.jp/search?q=%s&btnI=I,false
 
 # "w": Wikipedia
@@ -36,7 +41,7 @@ n,http://www.nicovideo.jp/search/%s,true
 # "nd": niconico dictionary
 nd,http://dic.nicovideo.jp/s/al/a/%s,false
 
-# "p": Google image search
+# "p": Google image
 p,http://www.google.com/search?site=imghp&tbm=isch&q=%s,true
 
 # "m": Google Map
@@ -62,7 +67,7 @@ mth,https://www.google.com/maps/dir/%s/自宅,true
 # then replace '職場' to 'Work'
 mtw,https://www.google.com/maps/dir/%s/職場,true
 
-# "ip": IP address search
+# "ip": IP address
 ip,http://www.ip-adress.com/whois/%s,true
 
 # 'f': flickr
@@ -74,38 +79,38 @@ y,http://www.youtube.com/results?search_query=%s&sm=3,true
 # "rt": Yahoo real time search
 rt,http://realtime.search.yahoo.co.jp/search?p=%s&ei=UTF-8,true
 
-# "tw": Search in twitter
+# "tw": twitter
 tw,https://mobile.twitter.com/search?src=typd&q=%s,false
 
 # "sc": Google Scholar
 sc,http://scholar.google.co.jp/scholar?as_vis=1&q=%s&hl=ja&as_sdt=1,5,false
 
-# "q": Search in Qiita
+# "q": Qiita
 q,http://qiita.com/search?q=%s,false
 
-# "g": Search in Github (repo)
+# "g": Github - repo
 g,https://github.com/search?q=%s,false
 
-# "gu": Search in Github (user)
+# "gu": Github - user
 gu,https://github.com/search?q=%s&type=Users,false
 
-# "gc": Search in Github (code)
+# "gc": Github - code
 gc,https://github.com/search?q=%s&type=Code,false
 
-# "gs": Search in Gist
+# "gs": Gist
 gs,https://gist.github.com/search?utf8=✓&q=%s,false
 
-# "t": transfer ja <-> en
+# "t": translate ja <-> en
 t,http://ejje.weblio.jp/content/%s,false
 
-# "wd": seach at wordnik
+# "wd": wordnik
 wd,https://www.wordnik.com/words/%s,false
 
-# "mpl": Search matplotlib documentation
+# "mpl": matplotlib documentation
 mpl,http://matplotlib.org/search.html?q=%s,true
 
-# "py2": Search Python 2.7 documentation
+# "py2": Python 2.7 documentation
 py2,https://docs.python.org/2.7/search.html?q=%s,true
 
-# "py3": Search Python 3.4 documentation
+# "py3": Python 3.4 documentation
 py2,https://docs.python.org/3.4/search.html?q=%s,true

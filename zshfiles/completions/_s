@@ -1,21 +1,20 @@
 #compdef s
 
 _s() {
-  local state
-  local provider_f="$HOME/bin/s_provider"
-  providers=$(grep -e "^# \"" "$provider_f" | sed 's/\"//g' \
-    | cut -b3- | awk -F ": " '{ printf("%s\\:\047%s\047 ", $1,$2) ;}')
+  local providers
+  providers=(${(f)"$(s -l zsh)"})
+
   _arguments  \
     '-h[Show help message]: :' \
     '-l[Show search providers list]: :' \
     '-g[Force search in GUI browser]' \
-    '1: :->alis' \
-    && ret=0
+    '1: :->alis'
 
   case $state in
     alis)
-      _arguments "1:providers:(($providers))"  && ret=0
+      _describe -t providers "search providers" providers
       ;;
   esac
-  return 0
+
+  return 
 }
