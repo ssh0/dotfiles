@@ -25,7 +25,7 @@ _youtube-dl() {
       elif [[ ${prev} =~ "-o|--output" ]]; then
         _arguments "*:template:(\
           '%(title)s.%(ext)s' \
-          '%(autonumber)s - %(title)s.%(ext)s' \
+          '%(playlist_index)s - %(title)s.%(ext)s' \
           '%(playlist_title)s/%(title)s.%(ext)s' \
           '-' \
           )"
