@@ -80,6 +80,7 @@ cf-xmodmap() { $EDITOR ~/.Xmodmap ;}
 cf-xmonad() { $EDITOR ~/.xmonad/xmonad.hs ;}
 cf-xresources() { $EDITOR ~/.Xresources ;}
 cf-zshrc() { $EDITOR ~/.zshrc ;}
+cf-zgen() { $EDITOR ~/.zsh/functions/zgen.zsh ;}
 
 # reload configurations
 rl-xdefaults() { xrdb ~/.Xdefaults ;}
