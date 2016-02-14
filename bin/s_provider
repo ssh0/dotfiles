@@ -36,7 +36,7 @@ l,https://www.google.co.jp/search?q=%s&btnI=I,false
 w,https://ja.wikipedia.org/wiki/%s,false
 
 # "n": niconico
-n,http://search.nicovideo.jp/video/search/%s?sort=last_comment_time,true
+n,http://www.nicovideo.jp/search/%s,true
 
 # "nd": niconico dictionary
 nd,http://dic.nicovideo.jp/s/al/a/%s,false
