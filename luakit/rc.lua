@@ -16,7 +16,7 @@ if unique then
         else
             unique.send_message("winopen")
         end
-        luakit.quit()
+        -- luakit.quit()
     end
 end
 

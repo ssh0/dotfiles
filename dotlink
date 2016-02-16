@@ -412,7 +412,6 @@ xmonad/xmobarrc,.xmonad/xmobarrc
 # [luakit](http://mason-larobina.github.io/luakit):                         {{{
 #==============================================================================
 
-luakit/binds.lua,.config/luakit/binds.lua
 luakit/globals.lua,.config/luakit/globals.lua
 luakit/rc.lua,.config/luakit/rc.lua
 luakit/theme.lua,.config/luakit/theme.lua
