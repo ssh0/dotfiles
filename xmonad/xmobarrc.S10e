@@ -1,4 +1,4 @@
--- -*- mode:haskell -*-
+-- vim: ft=haskell
 Config { font = "xft:Migu 1M:size=10.5"
        , bgColor = "#1c1c1c"
        , fgColor = "#757575"

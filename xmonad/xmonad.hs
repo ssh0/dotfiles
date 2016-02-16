@@ -353,3 +353,4 @@ myMouse x = [ ((modm, button3), (\w -> focus w >> Flex.mouseResizeWindow w)) ]
 newMouse x = M.union (mouseBindings defaultConfig x) (M.fromList (myMouse x))
 
 --------------------------------------------------------------------------- }}}
+-- vim: ft=haskell

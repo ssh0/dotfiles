@@ -412,7 +412,6 @@ xmonad/xmobarrc,.xmonad/xmobarrc
 # [luakit](http://mason-larobina.github.io/luakit):                         {{{
 #==============================================================================
 
-luakit/binds.lua,.config/luakit/binds.lua
 luakit/globals.lua,.config/luakit/globals.lua
 luakit/rc.lua,.config/luakit/rc.lua
 luakit/theme.lua,.config/luakit/theme.lua
@@ -422,7 +421,7 @@ luakit/user_local.lua,.config/luakit/user_local.lua
 luakit/plugins/adblock/adblock.lua,.config/luakit/plugins/adblock.lua
 luakit/plugins/adblock/adblock_chrome.lua,.config/luakit/plugins/adblock_chrome.lua
 luakit/plugins/private_browsing_tabs.lua,.config/luakit/plugins/private_browsing_tabs.lua
-luakit/plugins/adblock/adp_jp_element_hiding.txt,.local/share/luakit/adblock/abp_jp_element_hiding.txt
+luakit/plugins/adblock/adp_jp_element_hiding.txt,.local/share/luakit/adblock/adp_jp_element_hiding.txt
 luakit/plugins/adblock/Adblock_Plus_list.txt,.local/share/luakit/adblock/Adblock_Plus_list.txt
 luakit/plugins/adblock/exceptionrules.txt,.local/share/luakit/adblock/exceptionrules.txt
 luakit/luakit.desktop,.local/share/applications/luakit.desktop
