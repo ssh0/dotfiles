@@ -113,4 +113,41 @@ mpl,http://matplotlib.org/search.html?q=%s,true
 py2,https://docs.python.org/2.7/search.html?q=%s,true
 
 # "py3": Python 3.4 documentation
-py2,https://docs.python.org/3.4/search.html?q=%s,true
+py3,https://docs.python.org/3.4/search.html?q=%s,true
+
+# "8tr": 
+8tr,https://8tracks.com/explore/%s",true
+
+# "arx": arxiv
+arx,http://arxiv.org/find/all/1/all:+%s/0/1/0/all/0/1,true
+
+# "dig": Digg
+dig,https://digg.com/search?q=%s,true
+
+# "dg": duckduckgo
+dg,https://duckduckgo.com/?q=%s,true
+
+# "gm": Gmail
+gm,https://mail.google.com/mail/u/0/#search/%s,true
+
+# "g+": Google Plus
+g+,https://plus.google.com/s/%s/top,true
+
+# "hn": Hacker News
+hn,https://hn.algolia.com/?q=%s,false
+
+# "pin": Pinterest
+pin,https://www.pinterest.com/search/pins/?q=%s,true
+
+# "red": Reddit
+red,https://www.reddit.com/search?q=%s,true
+
+# "sdc": SoundCloud
+sdc,https://soundcloud.com/search?q=%s,true
+
+# "so": Stackoverflow
+so,https://stackoverflow.com/search?q=%s,true
+
+# "tor": Torentz
+tor,https://www.torrentz.eu/search?q=%s,true
+
