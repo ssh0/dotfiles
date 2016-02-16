@@ -73,6 +73,172 @@ require "modes"
 -- ("$XDG_CONFIG_HOME/luakit/binds.lua" or "/etc/xdg/luakit/binds.lua")
 require "binds"
 
+add_binds("normal", {
+    -- Toggle status bar
+    lousy.bind.key({"Shift"}, "F11", "Toggle show the status bar.",
+        function (w, a, o)
+            if w.sbar.hidden then
+                w.sbar.ebox:show()
+                w.sbar.hidden = false
+            else
+                w.sbar.ebox:hide()
+                w.sbar.hidden = true
+            end
+        end),
+
+    -- Yanking
+    lousy.bind.key({}, "y", "Yank current URI to primary selection.",
+        function (w)
+            local uri = string.gsub(w.view.uri or "", " ", "%%20")
+            luakit.selection.primary = uri
+            luakit.selection.clipboard = luakit.selection.primary
+            w:notify("Yanked uri: " .. uri)
+        end),
+
+    lousy.bind.key({}, "Y", "Yank current title to primary selection.",
+        function (w)
+            local title = w.view.title or ""
+            luakit.selection.primary = title
+            luakit.selection.clipboard = luakit.selection.primary
+            w:notify("Yanked title: " .. title)
+        end),
+
+    lousy.bind.key({"Control"}, "c", "Copy (as-in) control-c control-v",
+        function (w)
+            luakit.selection.clipboard = luakit.selection.primary
+        end),
+
+    lousy.bind.key({"Mod1"}, "Left", "Go to previous tab.",
+        function (w) w:prev_tab() end),
+
+    lousy.bind.key({"Mod1"}, "Right", "Go to next tab.",
+        function (w) w:next_tab() end),
+
+    lousy.bind.key({"Mod1"}, "h", "Go to previous tab.",
+        function (w) w:prev_tab() end),
+
+    lousy.bind.key({"Mod1"}, "l", "Go to next tab.",
+        function (w) w:next_tab() end),
+
+    lousy.bind.key({"Mod1"}, "H", "Reorder tab left `[count=1]` positions.",
+        function (w, m)
+            w.tabs:reorder(w.view, w.tabs:current() - m.count)
+        end, {count=1}),
+
+    lousy.bind.key({"Mod1"}, "L", "Reorder tab right `[count=1]` positions.",
+        function (w, m)
+            w.tabs:reorder(w.view,
+                (w.tabs:current() + m.count) % w.tabs:count())
+        end, {count=1})
+})
+
+add_binds("insert", {
+    lousy.bind.key({"Control"},  "e",
+        "Edit text fields in an external editor.",
+        function (w)
+            local s = w.view:eval_js("document.activeElement.value")
+
+            local n = "/tmp/" .. os.time()
+            local f = io.open(n, "w")
+            f:write(s)
+            f:flush()
+            f:close()
+
+            luakit.spawn_sync("urxvt -g 90x20 -title \"urxvt_float\" -name \"urxvt_float\" -e nvim \"" .. n .. "\" -c \"set completefunc=googlesuggest#Complete\"")
+
+            f = io.open(n, "r")
+            s = f:read("*all")
+            f:close()
+            -- Strip the string
+            s = s:gsub("^%s*(.-)%s*$", "%1")
+            -- Escape it but remove the quotes
+            s = string.format("%q", s):sub(2, -2)
+            -- lua escaped newlines (slash+newline) into js newlines (slash+n)
+            s = s:gsub("\\\n", "\\n")
+            w.view:eval_js("document.activeElement.value = '" .. s .. "'")
+        end)
+})
+
+add_cmds({
+    lousy.bind.cmd("pr[ivate]", "Toggle private browsing tab.",
+        function (w)
+            w.view.enable_private_browsing = not w.view.enable_private_browsing
+            w:update_tablist()
+        end)
+})
+
+ex_follow_bindings = {
+    -- Yank element uri to open in an external application
+    lousy.bind.key({}, "d", [[Hint all links (as defined by the `follow.selectors.uri`
+        selector) and excute external program to the matched elements URI.]],
+        function (w)
+            w:set_mode("follow", {
+                prompt = "external", selector = "uri", evaluator = "uri",
+                func = function (uri)
+                    assert(type(uri) == "string")
+                    uri = string.gsub(uri, " ", "%%20")
+                    luakit.selection.primary = uri
+                    if string.match(uri, "youtube") then
+                        luakit.spawn(string.format("youtube-dl %s -o - | mpv -", uri))
+                        w:notify("trying to play file on mpv " .. uri)
+                    elseif string.match(uri, "vimeo") then
+                        luakit.spawn(string.format("youtube-dl %s -o - | mpv -", uri))
+                        w:notify("trying to play file on mpv " .. uri)
+                    elseif string.match(uri, "vine") then
+                        luakit.spawn(string.format("youtube-dl %s -o - | mpv -", uri))
+                        w:notify("trying to play file on mpv " .. uri)
+                    elseif string.match(uri, "nicovideo") then
+                        luakit.spawn(string.format("youtube-dl %s -o - | mpv -", uri))
+                        w:notify("trying to play file on mpv " .. uri)
+                    elseif string.match(uri, "file:///") then
+                        luakit.spawn(string.format("xdg-open %s", uri))
+                        w:notify("trying to open with xdg-open " .. uri)
+                    elseif string.match(uri, "jpg" or "JPG" or "png" or "PNG" or "gif" or "GIF") then
+                        luakit.spawn(string.format("feh --scale-down %s", uri))
+                        w:notify("file contains image")
+                    else
+                        w:notify("unrecognized format")
+                    end
+                end
+            })
+        end),
+
+    -- Yank element uri or description into primary selection
+    lousy.bind.key({}, "y", [[Hint all links (as defined by the `follow.selectors.uri`
+        selector) and set the primary selection to the matched elements URI.]],
+        function (w)
+            w:set_mode("follow", {
+                prompt = "yank", selector = "uri", evaluator = "uri",
+                func = function (uri)
+                    assert(type(uri) == "string")
+                    uri = string.gsub(uri, " ", "%%20")
+                    -- capi.luakit.selection.primary = uri
+                    luakit.selection.primary = uri
+                    luakit.selection.clipboard = luakit.selection.primary
+                    w:notify("Yanked uri: " .. uri, false)
+                end
+            })
+        end),
+
+    -- Yank element description
+    lousy.bind.key({}, "Y", [[Hint all links (as defined by the `follow.selectors.uri`
+        selector) and set the primary selection to the matched elements URI.]],
+        function (w)
+            w:set_mode("follow", {
+                prompt = "yank desc", selector = "desc", evaluator = "desc",
+                func = function (desc)
+                    assert(type(desc) == "string")
+                    -- capi.luakit.selection.primary = desc
+                    luakit.selection.primary = desc
+                    luakit.selection.clipboard = luakit.selection.primary
+                    w:notify("Yanked desc: " .. desc)
+                end
+            })
+        end)
+}
+
+add_binds({"ex-follow"}, ex_follow_bindings)
+
 ----------------------------------
 -- Optional user script loading --
 ----------------------------------
@@ -114,9 +280,8 @@ require "session"
 -- Add command to list closed tabs & bind to open closed tabs
 require "undoclose"
 
-local key = lousy.bind.key
 add_binds("normal", {
-    key({}, "U", "View closed tabs in a list.",
+    lousy.bind.key({}, "U", "View closed tabs in a list.",
         function (w) w:set_mode("undolist")  end),
 })
 
