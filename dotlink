@@ -209,6 +209,7 @@ zshfiles/functions/completion.zsh,.zsh/functions/completion.zsh
 zshfiles/functions/environment.zsh,.zsh/functions/environment.zsh
 zshfiles/functions/extract.zsh,.zsh/functions/extract.zsh
 zshfiles/functions/history.zsh,.zsh/functions/history.zsh
+zshfiles/functions/less.zsh,.zsh/functions/less.zsh
 # zshfiles/functions/longrun-command-tracker.zsh,.zsh/functions/longrun-command-tracker.zsh
 zshfiles/functions/man.zsh,.zsh/functions/man.zsh
 zshfiles/functions/peco-history.zsh,.zsh/functions/peco-history.zsh

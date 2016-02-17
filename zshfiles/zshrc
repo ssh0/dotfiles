@@ -54,6 +54,7 @@ myfunctions=(
     extract
     history
     man
+    less
     peco-history
     progressbar
     prompt

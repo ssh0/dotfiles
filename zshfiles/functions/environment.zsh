@@ -9,9 +9,6 @@ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 export LANG=en_US.UTF-8
 export LC_TIME=en_US.UTF-8
 
-# less options:
-export LESS='-iMRj.5'
-
 # set PATH
 export MANPATH="/usr/local/man:$MANPATH"
 

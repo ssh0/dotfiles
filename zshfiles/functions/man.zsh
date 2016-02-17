@@ -10,11 +10,11 @@
 
 function man() {
   case "$(bash -c "type -t -- $1"):$1" in
-    builtin:*) # built-in
-      bash -c "help -m $1 | ${PAGER:-less}"
+    builtin:*|keyword:*) # built-in
+      bash -c ". $HOME/.zsh/functions/less.zsh; help -m $1 | less"
       ;;
     *[[?*]*) # pattern
-      bash -c "help -m $1 | ${PAGER:-less}"
+      bash -c ". $HOME/.zsh/functions/less.zsh; help -m $1 | less"
       ;;
     *) command -p man "$@";;  # something else, presumed to be an external command
                               # or options for the man command or a section number
