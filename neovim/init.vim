@@ -192,14 +192,6 @@ NeoBundleLazy 'tyru/open-browser.vim', {
       \     },
       \ }
 
-let s:hooks = neobundle#get_hooks("open-browser.vim")
-function! s:hooks.on_source(bundle)
-  let g:netrw_nogx = 1 " disable netrw's gx mapping.
-endfunction
-unlet s:hooks
-
-nmap gx <Plug>(openbrowser-smart-search)
-vmap gx <Plug>(openbrowser-smart-search)
 "                                                                           }}}
 " itchyny/lightline.vim                                                     {{{
 NeoBundle 'itchyny/lightline.vim'
@@ -559,6 +551,9 @@ set whichwrap=b,s,[,],<,>
 
 " help language
 set helplang=ja,en
+
+" try to open under the cursor with `gx`
+let g:netrw_browsex_viewer= "xdg-open"
 
 "                                                                           }}}
 " Search                                                                    {{{
