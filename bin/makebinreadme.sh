@@ -7,13 +7,12 @@
 #=#=
 
 readme="README.md"
+title="$(basename "${PWD}")"
 
 # initialise
 cat << EOF > "$readme"
-bin
+${title}
 ===
-
-Some useful user scripts.
 
 EOF
 
