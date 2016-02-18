@@ -53,8 +53,8 @@ myfunctions=(
     command-not-found
     extract
     history
-    man
     less
+    man
     peco-history
     progressbar
     prompt
