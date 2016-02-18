@@ -1,7 +1,11 @@
-# tmux
+#=#=#=
+# set tmux aliases and start up behavior
+#
+# > [Start a new session from within tmux with ZSH_TMUX_AUTOSTART=true - Super User](http://superuser.com/questions/821339/start-a-new-session-from-within-tmux-with-zsh-tmux-autostart-true)
+#
+# Auto start tmux when the terminal launched.
+#=#=
 
-# Start a new session from within tmux with ZSH_TMUX_AUTOSTART=true - Super User
-# http://superuser.com/questions/821339/start-a-new-session-from-within-tmux-with-zsh-tmux-autostart-true
 tmux-new-session() {
   if [[ -n $TMUX ]]; then
     tmux switch-client -t "$(TMUX= tmux -S "${TMUX%,*,*}" new-session -dP "$@")"

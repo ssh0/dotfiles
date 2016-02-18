@@ -1,7 +1,7 @@
 # vim: set ft=zsh
-
+#=#=#=
 # ranger-cd
-#------------------------------------------------------------------------------
+#
 # Compatible with ranger 1.4.2 through 1.7.*
 #
 # Automatically change the directory in bash after closing ranger
@@ -10,6 +10,7 @@
 # the last visited one after ranger quits.
 # To undo the effect of this function, you can type "cd -" to return to the
 # original directory.
+#=#=
 
 function ranger-cd() {
   local tempfile="$(mktemp -t tmp.XXXXXXX)"

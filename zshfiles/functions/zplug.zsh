@@ -1,4 +1,20 @@
-# zplug load settings
+#=#=#=
+# zplug load settings (not in use now)
+#
+# * from oh-my-zsh
+#     * lib/git
+#     * lib/spectrum
+#     * lib/termsupport
+#     * lib/theme-and-appearance
+# * fcambus/ansiweather
+# * b4b4r07/enhancd
+# * b4b4r07/zplug
+# * Tarrasch/zsh-bd
+# * chrissicool/zsh-256color
+# * ssh0/zsh-takenote
+# * ssh0/dot
+# * zsh-users/zsh-syntax-highlighting
+#=#=
 
 zplug_source="$HOME/.zplug/repos/b4b4r07/zplug/zplug"
 
@@ -26,8 +42,6 @@ if [[ -f $ZPLUG_EXTERNAL ]]; then
   source $ZPLUG_EXTERNAL
 else
   zplug "lib/git", from:oh-my-zsh
-  zplug "lib/grep", from:oh-my-zsh
-  zplug "lib/history", from:oh-my-zsh
   zplug "lib/spectrum", from:oh-my-zsh
   zplug "lib/termsupport", from:oh-my-zsh
   zplug "lib/theme-and-appearance", from:oh-my-zsh

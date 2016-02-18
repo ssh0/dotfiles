@@ -1,8 +1,16 @@
 # vim: set ft=zsh
-
-# agvim
-#------------------------------------------------------------------------------
-# http://qiita.com/fmy/items/b92254d14049996f6ec3
+#=#=#=
+# agvim - Search files with ag, select with `$PERCOL`, and edit in vim.
+#
+# **Usage:**
+#
+# ```
+# cd ~/Workspace/blog
+# agvim xmonad
+# ```
+#
+# ref) http://qiita.com/fmy/items/b92254d14049996f6ec3
+#=#=
 
 function agvim() {
   local agfilepath

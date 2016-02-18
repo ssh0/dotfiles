@@ -1,18 +1,16 @@
 # vim: set ft=zsh
-
+#=#=#=
 # Notification of local host command
-#------------------------------------------------------------------------------
 #
-# Automatic notification via growlnotify / notify-send
-# http://qiita.com/hayamiz/items/d64730b61b7918fbb970
+# Automatic notification via growlnotify / notify-send  
 #
-# Notification of remote host command
-# -----------------------------------
+# > http://qiita.com/hayamiz/items/d64730b61b7918fbb970
 #
-# "==ZSH LONGRUN COMMAND TRACKER==" is printed after long run command execution
-# You can utilize it as a trigger
+# "==ZSH LONGRUN COMMAND TRACKER==" is printed after long run command execution  
+# You can utilize it as a trigger.
+#=#=
 #
-# ## Example: iTerm2 trigger( http://qiita.com/yaotti/items/3764572ea1e1972ba928 )
+# Example: iTerm2 trigger( http://qiita.com/yaotti/items/3764572ea1e1972ba928 )
 #
 #  * Trigger regex: ==ZSH LONGRUN COMMAND TRACKER==(.*)
 #  * Parameters: \1

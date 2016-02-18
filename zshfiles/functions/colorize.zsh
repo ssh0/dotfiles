@@ -1,7 +1,13 @@
 # vim: set ft=zsh
-
-# Colorize 
-#------------------------------------------------------------------------------
+#=#=#=
+# Colorize some applications outputs
+#
+# * mplayer
+# * twitter command
+# * diff aliased to colordiff
+# * tree -C
+# * grep
+#=#=
 
 # mplayer alias
 alias mplayer='mplayer -msgcolor'

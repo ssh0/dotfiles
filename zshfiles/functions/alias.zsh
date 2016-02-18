@@ -1,7 +1,17 @@
 # vim: set ft=zsh
-
-# Alias
-#------------------------------------------------------------------------------
+#=#=#=
+# Set aliases (if available)
+#
+# **Ex)**
+#
+# * apt for apt-faset
+# * vim for nvim
+# * g for git
+# * :q for exit
+# * f for thefuck
+# * cf-* (functions for editing some applications)
+# * rl-* (functions for reload some applications)
+#=#=
 
 # apt update
 if hash apt-fast 2>/dev/null; then

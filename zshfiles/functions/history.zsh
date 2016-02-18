@@ -1,4 +1,12 @@
-# history
+#=#=#=
+# Set options for history
+#
+# **Features**
+#
+# * increase history size
+# * ignore duplicate line
+# * share history with each terminals
+#=#=
 
 HISTFILE="$ZSH_ROOT/history"
 

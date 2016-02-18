@@ -1,3 +1,12 @@
+#=#=#=
+# Set completion options
+#
+# **Features**
+#
+# * show completion menu
+# * verobose output (with description)
+# * ls colors with LS_COLORS
+#=#=
 unsetopt flowcontrol
 setopt auto_menu         # show completion menu on succesive tab press
 setopt interactive_comments

@@ -1,3 +1,13 @@
+#=#=#=
+# Set options for less
+#
+# **Features**
+#
+# * with color
+# * different color for bold, underline, standout font
+# * verbose status line message (show file name)
+#=#=
+
 # less options:
 export LESS='-iMRj.5'
 

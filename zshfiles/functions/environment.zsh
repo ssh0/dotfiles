@@ -1,4 +1,12 @@
+#=#=#=
 # Set environment variables
+#
+# **Features**
+#
+# * language
+# * default application (find_alt is useful function)
+# * some applications options (ranger, enhancd, takenote, cheat)
+#=#=
 
 export ZSH_CACHE_DIR=$ZSH/cache
 
@@ -42,7 +50,7 @@ export RANGER_LOAD_DEFAULT_RC=false
 # override the safe location for pick
 # export PICK_SAFE="$HOME/Dropbox/conf/pick.safe"
 
-# enhancd by "c"
+# enhancd by "cd"
 export ENHANCD_COMMAND='cd'
 
 # takenote

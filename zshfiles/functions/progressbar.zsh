@@ -1,11 +1,19 @@
 #!/usr/bin/zsh
 # written by Shotaro Fujimoto (https://github.com/ssh0)
 # first edited: 2015-12-03
+#=#=#=
+# progressbar - make progress bar easily
 #
-# make progress bar easily
+# **Usage:**
 #
-# bash - How to add a progress bar to a shell script? - Stack Overflow
-# http://stackoverflow.com/questions/238073/how-to-add-a-progress-bar-to-a-shell-script
+# ```
+# progressbar n [ barchar_empty barchar_fill ]
+# ```
+#
+# (int `n`: 0 ~ 100) 
+#
+# > [bash - How to add a progress bar to a shell script? - Stack Overflow](http://stackoverflow.com/questions/238073/how-to-add-a-progress-bar-to-a-shell-script)
+#=#=
 
 progressbar() {
   # Usage:
@@ -23,7 +31,7 @@ progressbar() {
 
   # Process data
   _done=$(( ($1 * ${columns}) / 100 ))
-  _left=$(( ${columns} - $done ))
+  _left=$(( ${columns} - ${_done} ))
   # Build progressbar string lengths
   _fill=$(printf "%${_done}s")
   _empty=$(printf "%${_left}s")
@@ -32,23 +40,24 @@ progressbar() {
   printf "\rProgress : [${_fill// /"$barchar_fill"}${_empty// /"$barchar_empty"}] ${1}%%"
 }
 
-# EXAMPLE
+# EXAMPLE:
 #
-# # Variables
-# varstart=1
-# 
-# # This accounts as the "totalState" variable for the ProgressBar function
-# varend=99
-# 
-# # Proof of concept
-# for number in $(seq ${varstart} ${varend})
-# do
-#   sleep 0.01
-#   # progress (int: 0 ~ 100)
-#   progress=$(( (${number}*100/${varend}*100) / 100 ))
-#   # barchar_fill="${3:-█}"
-#   ProgressBar ${progress}
-# done
-# printf '\nFinished!\n'
-# 
+# progressbar_test(){
+#   # Variables
+#   varstart=1
+#
+#   # This accounts as the "totalState" variable for the ProgressBar function
+#   varend=99
+#
+#   # Proof of concept
+#   for number in $(seq ${varstart} ${varend})
+#   do
+#     sleep 0.01
+#     # progress (int: 0 ~ 100)
+#     progress=$(( (${number}*100/${varend}*100) / 100 ))
+#     progressbar ${progress} "_" "█"
+#   done
+#   printf '\nFinished!\n'
+# }
+# . progressbar_test
 

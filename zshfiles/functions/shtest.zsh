@@ -1,12 +1,24 @@
 # vim: set ft=zsh
-
-# shtest
-#------------------------------------------------------------------------------
-# work with zsh-takenote(https://github.com/ssh0/zsh-takenote)
+#=#=#=
+# shtest - Make testing snippet of shell script
+#
+# **Usage:**
+#
+# ```
+# shtest [OPTION]
+# ```
+#
+# | Option | Arguments | Description              |
+# | ------ | --------- | ------------------------ |
+# | `-o`   | FILE      | Set the filename to edit |
+# | `-l`   |           | List the files           |
+# | `-h`   |           | Show help message        |
+#
+# Require: [zsh-takenote](https://github.com/ssh0/zsh-takenote)
+#=#=
 
 export SHTEST_FILENAME_PRE="test_"
 export SHTEST_FILENAME_EXTENSION="sh"
-
 
 function shtest() {
 

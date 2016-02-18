@@ -1,7 +1,9 @@
 # vim: set ft=zsh
-
-# peco-history
-#-------------
+#=#=#=
+# peco-select-history - for history search with ^r key
+#
+# But I don't use peco now. I use fzf instead.
+#=#=
 
 function peco-select-history() {
     typeset tac

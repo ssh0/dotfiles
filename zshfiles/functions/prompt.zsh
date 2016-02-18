@@ -1,15 +1,15 @@
 # vim:ft=zsh ts=2 sw=2 sts=2
-#
-# simle_is_power theme
+#=#=#=
+# simle_is_power theme  
 # folked from agnoster's Theme - https://gist.github.com/3712874
-#
-# # README
 #
 # In order for this theme to render correctly, you will need a
 # [Powerline-patched font](https://github.com/Lokaltog/powerline-fonts).
 #
-# Depends on oh-my-zsh/lib/git.zsh
-
+# * Depends on oh-my-zsh/lib/git.zsh
+#
+# TODO: make this theme standalone
+#=#=
 #==============================================================================
 # Color setting                                                             {{{
 #==============================================================================

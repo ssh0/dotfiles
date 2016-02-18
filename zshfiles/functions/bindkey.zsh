@@ -1,4 +1,12 @@
+#=#=#=
 # Bind keys
+#
+# **Ex)**
+#
+# * ^xe for edit in command line (useful)
+# * ^t for fzf-completion
+# * ^r for history search with fzf
+#=#=
 
 bindkey -e
 

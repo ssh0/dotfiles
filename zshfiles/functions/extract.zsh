@@ -1,6 +1,10 @@
 # vim: set ft=zsh
-
-# extract images
+#=#=#=
+# extract - extract archive files by detecting extension
+#
+# **Supported format**  
+# * tar.gz, tgz, tar.xz, xz, zip, lzh, tar.bz2, tbz, tar.Z, gz, bz2, Z, tar, arj
+#=#=
 
 function extract() {
   case $1 in

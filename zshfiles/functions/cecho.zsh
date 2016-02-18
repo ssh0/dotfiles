@@ -1,6 +1,13 @@
 # vim: set ft=zsh
+#=#=#=
+# cecho - colorized echo
 #
-# cecho (color echo)
+# **Usage**
+#
+# ```
+# echo blue "Hello world!"
+# ```
+#=#=
 
 cecho() {
   local color
