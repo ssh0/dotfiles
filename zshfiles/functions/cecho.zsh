@@ -5,7 +5,7 @@
 # **Usage**
 #
 # ```
-# echo blue "Hello world!"
+# cecho blue "Hello world!"
 # ```
 #=#=
 

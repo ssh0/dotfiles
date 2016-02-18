@@ -45,7 +45,7 @@ cecho - colorized echo
 **Usage**
 
 ```
-echo blue "Hello world!"
+cecho blue "Hello world!"
 ```
 
 ## [colorize.zsh](./colorize.zsh)
