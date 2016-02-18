@@ -20,15 +20,18 @@
 #     * fzf
 #
 # Optional:
-#     * "highlight" for highlighting scripts
+#     * "pygmentize" or "highlight" for highlighting scripts
 #     * LESS="R" option for ansi color in "less" command
 # 
 
 function man() {
   case "$(whence -wa -- $1 | uniq | fzf -1 | sed 's/: / /' | cut -d' ' -f2)" in
     builtin) # built-in
-      /usr/bin/man --pager="less -p'^       \\$1 '" zshbuiltins
-      # TODO: how many spaces before the commands?
+      local man_indent _space
+      # TODO: get how many spaces before the commands
+      man_indent=7
+      _space="$(printf '%*s' "$man_indent" '')"
+      /usr/bin/man --pager="less -p'^${_space}\\$1 '" zshbuiltins
       ;;
     reserved) # reserved words
       /usr/bin/man --pager="less -p'^COMPLEX COMMANDS$'" zshall
@@ -37,7 +40,11 @@ function man() {
       whence -c $1
       ;;
     function) # function
-      if hash highlight 2>/dev/null; then
+      if hash pygmentize 2>/dev/null; then
+        whence -f "$(whence $1)" \
+          | pygmentize -l sh \
+          | ${MANPAGER:-${PAGER:-less}}
+      elif hash highlight 2>/dev/null; then
         whence -f "$(whence $1)" \
           | highlight --out-format=ansi --src-lang=Bash \
           | ${MANPAGER:-${PAGER:-less}}
