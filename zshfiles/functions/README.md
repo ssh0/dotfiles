@@ -137,7 +137,7 @@ Install zsh manuals to enable `man zshbuiltins`:
 $ mkdir -p ~/Downloads/zsh-doc; cd $_
 $ wget http://downloads.sourceforge.net/project/zsh/zsh/5.0.2/zsh-5.0.2.tar.bz2
 $ tar -xvf zsh-5.0.2.tar.bz2
-$ sudo cp Doc/*.1 /usr/local/share/man/man1
+$ sudo cp zsh-5.0.2/Doc/*.1 /usr/local/share/man/man1
 ```
 
 **Require:**
