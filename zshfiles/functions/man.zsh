@@ -41,15 +41,15 @@ function man() {
       ;;
     function) # function
       if hash pygmentize 2>/dev/null; then
-        whence -f "$(whence $1)" \
+        whence -f "$1" \
           | pygmentize -l sh \
           | ${MANPAGER:-${PAGER:-less}}
       elif hash highlight 2>/dev/null; then
-        whence -f "$(whence $1)" \
+        whence -f "$1" \
           | highlight --out-format=ansi --src-lang=Bash \
           | ${MANPAGER:-${PAGER:-less}}
       else
-        whence -f "$(whence $1)" | ${MANPAGER:-${PAGER:-less}}
+        whence -f "$1" | ${MANPAGER:-${PAGER:-less}}
       fi
       ;;
     *) /usr/bin/man "$@"
