@@ -25,7 +25,7 @@ done
 cat << EOF >> "$readme"
 ---
 
-This page is generated automatically by [makebinreadme.sh](./makebinreadme.sh)
+This page is generated automatically by [makebinreadme.sh](https://github.com/ssh0/dotfiles/blob/master/bin/makebinreadme.sh)
 
 EOF
 
