@@ -103,9 +103,10 @@ main = do
        , manageHook         = myManageHookShift <+>
                               myManageHookFloat <+>
                               manageDocks
-       , layoutHook         = toggleLayouts (avoidStruts $ noBorders Full) $
-                              onWorkspace "3" (avoidStruts $ simplestFloat) $
-                              avoidStruts $ myLayout
+       , layoutHook         = avoidStruts $ ( toggleLayouts (noBorders Full)
+                                            $ onWorkspace "3" simplestFloat
+                                            $ myLayout
+                                            )
         -- xmobar setting
        , logHook            = myLogHook wsbar
                                 >> updatePointer (Relative 0.99 0.99)
@@ -298,8 +299,9 @@ myManageHookFloat = composeAll
     , className =? "Screenkey"        --> (doRectFloat $ W.RationalRect 0.7 0.9 0.3 0.1)
     , className =? "Websearch"        --> (doRectFloat $ W.RationalRect 0.45 0.4 0.1 0.01)
     , title     =? "Speedbar"         --> doCenterFloat
-    , title     =? "urxvt_float"      --> doCenterFloat
+    , title     =? "urxvt_float"      --> doSideFloat SC
     , isFullscreen                    --> doFullFloat
+    , isDialog                        --> doSideFloat SC
     , stringProperty "WM_NAME" =? "LINE" --> (doRectFloat $ W.RationalRect 0.60 0.1 0.39 0.82)
     , stringProperty "WM_NAME" =? "Google Keep" --> (doRectFloat $ W.RationalRect 0.3 0.1 0.4 0.82)
     , stringProperty "WM_NAME" =? "tmptex.pdf - 1/1 (96 dpi)" --> (doRectFloat $ W.RationalRect 0.29 0.25 0.42 0.5)
