@@ -60,6 +60,14 @@ if there is no process of cmus, start cmus on urxvt terminal.
 else play / pause remote command will be sent to cmus program.  
 It's useful if you set the shortcut-key with multimedia key.
 
+## [dripaudio](./dripaudio)
+
+dripaudio - extract aac codec audio files from mp4 files in `$PWD`
+
+**Require:**
+
+* ffmpeg
+
 ## [facebook](./facebook)
 
 launch facebook chrome-app from command line

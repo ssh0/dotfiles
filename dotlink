@@ -233,6 +233,7 @@ bin/bib2html_wrapper.sh,bin/bib2html_wrapper.sh
 bin/cachecleener,bin/cachecleener
 bin/color-pallete.sh,bin/color-pallete.sh
 bin/cplay.sh,bin/cplay.sh
+bin/dripaudio,bin/dripaudio
 bin/facebook,bin/facebook
 bin/google-keep,bin/google-keep
 bin/googleTTS.sh,bin/googleTTS.sh

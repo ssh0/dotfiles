@@ -1,0 +1,19 @@
+#!/bin/bash
+# written by Shotaro Fujimoto (https://github.com/ssh0)
+# first edited: 2016-02-23
+#=#=#=
+# dripaudio - extract aac codec audio files from mp4 files in `$PWD`
+#
+# **Require:**
+#
+# * ffmpeg
+#=#=
+
+(
+IFS=$'\n';
+for file in $(ls *.mp4); do
+  input_mp4="${file%.mp4}"
+  ffmpeg -i "${input_mp4}.mp4" -acodec copy "${input_mp4}.aac"
+  mv "${input_mp4}.aac" "${input_mp4}.m4a"
+done
+)
