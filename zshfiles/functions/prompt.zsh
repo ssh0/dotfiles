@@ -82,7 +82,7 @@ prompt_status() {
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
   [[ -n ${RANGER_LEVEL} ]] && symbols+="%{%F{153}%}®"
 
-  [[ -n "$symbols" ]] && prompt_segment NONE default "$symbols\n"
+  [[ -n "$symbols" ]] && prompt_segment ${bg_dark} NONE "$symbols"
 }
 
 #---------------------------------------------------------------------------}}}
@@ -135,8 +135,8 @@ prompt_git() {
     zstyle ':vcs_info:*' enable git
     zstyle ':vcs_info:*' get-revision true
     zstyle ':vcs_info:*' check-for-changes true
-    zstyle ':vcs_info:*' stagedstr '✛'
-    zstyle ':vcs_info:git:*' unstagedstr '◉'
+    zstyle ':vcs_info:*' stagedstr '+'
+    zstyle ':vcs_info:git:*' unstagedstr '*'
     zstyle ':vcs_info:*' formats ' %u%c'
     zstyle ':vcs_info:*' actionformats ' %u%c'
     vcs_info
@@ -188,13 +188,13 @@ prompt_hg() {
 #==============================================================================
 
 build_prompt() {
-  # prompt_init
   RETVAL=$?
-  prompt_status
+  prompt_init
   prompt_virtualenv
   prompt_dir
   prompt_git
   prompt_hg
+  prompt_status
   prompt_end
 }
 

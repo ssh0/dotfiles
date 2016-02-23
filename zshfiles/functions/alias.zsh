@@ -73,6 +73,7 @@ cf-mplayer() { $EDITOR ~/.mplayer/config ;}
 cf-mpv() { $EDITOR ~/.config/mpv/mpv.conf ;}
 cf-mutt() { $EDITOR ~/.mutt/muttrc ;}
 cf-nvim() { $EDITOR ~/.config/nvim/init.vim ;}
+cf-prompt() { $EDITOR ~/.zsh/functions/prompt.zsh ;}
 cf-ranger() { $EDITOR ~/.config/ranger/rc.conf ;}
 cf-ranger-rifle() { $EDITOR ~/.config/ranger/rifle.conf ;}
 cf-s() { $EDITOR ~/bin/s_provider ;}
