@@ -600,6 +600,9 @@ set colorcolumn=80
 " status line
 set title noshowcmd
 
+" highlight cursorline
+set cursorline
+
 " height of commandline
 set cmdheight=1
 
