@@ -87,20 +87,19 @@ add_binds("normal", {
         end),
 
     -- Yanking
-    lousy.bind.key({}, "y", "Yank current URI to primary selection.",
+    lousy.bind.buf("^cu$", "Yank current URI to clipboard.",
         function (w)
             local uri = string.gsub(w.view.uri or "", " ", "%%20")
-            luakit.selection.primary = uri
-            luakit.selection.clipboard = luakit.selection.primary
-            w:notify("Yanked uri: " .. uri)
+            luakit.selection.clipboard = uri
+            w:notify("Yanked uri (to clipboard): " .. uri)
         end),
 
-    lousy.bind.key({}, "Y", "Yank current title to primary selection.",
+    lousy.bind.buf("^ct$", "Yank current title to clipboard.",
         function (w)
             local title = w.view.title or ""
             luakit.selection.primary = title
             luakit.selection.clipboard = luakit.selection.primary
-            w:notify("Yanked title: " .. title)
+            w:notify("Yanked title (to clipboard): " .. title)
         end),
 
     lousy.bind.key({"Control"}, "c", "Copy (as-in) control-c control-v",
