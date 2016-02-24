@@ -390,7 +390,7 @@ NeoBundle 'tyru/markdown-codehl-onthefly.vim'
 " let g:vim_markdown_math = 1
 "                                                                           }}}
 " joker1007/vim-markdown-quote-syntax                                       {{{
-NeoBundle 'joker1007/vim-markdown-quote-syntax'
+" NeoBundle 'joker1007/vim-markdown-quote-syntax'
 "                                                                           }}}
 " lervag/vimtex                                                             {{{
 NeoBundle 'lervag/vimtex'
