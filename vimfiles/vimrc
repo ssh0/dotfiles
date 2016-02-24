@@ -29,7 +29,8 @@ let localleader = "\<Space>"
 
 " encoding
 scriptencoding utf8
-set fileencoding=utf-8 encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 
 "---------------------------------------------------------------------------}}}
 " NeoBundle:                                                                {{{
@@ -185,14 +186,6 @@ NeoBundleLazy 'tyru/open-browser.vim', {
       \     },
       \ }
 
-let s:hooks = neobundle#get_hooks("open-browser.vim")
-function! s:hooks.on_source(bundle)
-  let g:netrw_nogx = 1 " disable netrw's gx mapping.
-endfunction
-unlet s:hooks
-
-nmap gx <Plug>(openbrowser-smart-search)
-vmap gx <Plug>(openbrowser-smart-search)
 "                                                                           }}}
 " itchyny/lightline.vim                                                     {{{
 NeoBundle 'itchyny/lightline.vim'
@@ -378,6 +371,12 @@ augroup END
 NeoBundle 'thinca/vim-splash'
 let g:splash#path = expand('~/.splash-vim.txt')
 "                                                                           }}}
+" tpope/vim-markdown                                                        {{{
+NeoBundle 'tpope/vim-markdown'
+"                                                                           }}}
+" tyru/markdown-codehl-onthefly.vim                                         {{{
+NeoBundle 'tyru/markdown-codehl-onthefly.vim'
+"                                                                           }}}
 " rcmdnk/vim-markdown                                                       {{{
 " NeoBundle 'rcmdnk/vim-markdown', {
 "       \ 'depends': ['godlygeek/tabular'],
@@ -552,6 +551,9 @@ set whichwrap=b,s,[,],<,>
 " help language
 set helplang=ja,en
 
+" try to open under the cursor with `gx`
+let g:netrw_browsex_viewer= "xdg-open"
+
 "                                                                           }}}
 " Search                                                                    {{{
 " ------
@@ -595,6 +597,9 @@ set colorcolumn=80
 
 " status line
 set title noshowcmd
+
+" highlight cursorline
+set cursorline
 
 " height of commandline
 set cmdheight=1

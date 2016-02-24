@@ -377,6 +377,12 @@ augroup END
 NeoBundle 'thinca/vim-splash'
 let g:splash#path = expand('~/.splash-vim.txt')
 "                                                                           }}}
+" tpope/vim-markdown                                                        {{{
+NeoBundle 'tpope/vim-markdown'
+"                                                                           }}}
+" tyru/markdown-codehl-onthefly.vim                                         {{{
+NeoBundle 'tyru/markdown-codehl-onthefly.vim'
+"                                                                           }}}
 " rcmdnk/vim-markdown                                                       {{{
 " NeoBundle 'rcmdnk/vim-markdown', {
 "       \ 'depends': ['godlygeek/tabular'],
@@ -609,6 +615,9 @@ set cmdheight=1
 " the last window will have a status line always
 ">>> set laststatus=2
 
+" show wildmenu
+set wildmenu
+
 " show Tab and Space at end of the line
 set list listchars=tab:▸\ ,trail:~
 
@@ -657,11 +666,11 @@ autocmd FileType coffee     setlocal shiftwidth=2 softtabstop=2 tabstop=2 expand
 "------------------------------------------------------------------------------
 
 function! Markdown_h1()
-  normal! VypVr=
+  normal! V"ly"lpVr=
 endfunction
 
 function! Markdown_h2()
-  normal! VypVr-
+  normal! V"ly"lpVr-
 endfunction
 
 function! Markdown_h3()
