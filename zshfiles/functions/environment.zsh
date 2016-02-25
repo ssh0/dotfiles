@@ -13,6 +13,9 @@ export ZSH_CACHE_DIR=$ZSH/cache
 # PATH to /usr/local/lib
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
+# XDG_CONFIG_HOME
+export XDG_CONFIG_HOME=$HOME/.config
+
 # set language environment
 export LANG=en_US.UTF-8
 export LC_TIME=en_US.UTF-8
