@@ -11,9 +11,6 @@ set continue=true
 set device=/dev/cdrom
 set display_artist_sort_name=false
 set dsp.alsa.device=
-set dsp.ao.buffer_size=16384
-set dsp.ao.driver=
-set dsp.ao.wav_counter=1
 set format_current= %a - %l -%3n. %t%= 
 set format_playlist= %-20%a %-20%l %3n. %t%= %d 
 set format_playlist_va= %-25%A %3n. %t (%a)%= %d 
@@ -22,7 +19,6 @@ set format_trackwin=%3n. %t%= %d
 set format_trackwin_va=%3n. %t (%a)%= %d 
 set icecast_default_charset=ISO-8859-1
 set id3_default_charset=ISO-8859-1
-set input.cdio.cddb_url=freedb.freedb.org:8880
 set lib_sort=album discnumber tracknumber albumartist title filename artist
 set mixer.alsa.channel=
 set mixer.alsa.device=
@@ -62,7 +58,6 @@ unbind -f common b
 unbind -f common e
 unbind -f common m
 unbind -f common o
-unbind -f common q
 unbind -f common r
 unbind -f common s
 unbind -f common t
@@ -131,6 +126,7 @@ bind -f common n search-next
 bind -f common p player-pause
 bind -f common page_down win-page-down
 bind -f common page_up win-page-up
+bind -f common q quit
 bind -f common right seek +5
 bind -f common space win-toggle
 bind -f common tab win-next
