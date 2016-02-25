@@ -137,7 +137,7 @@ Or if you know what kind of files are no need to make links, you can comment out
 Clone (or folk) this repository to your computer:
 
 ```
-git clone --depth 1 https://github.com/ssh0/dotfiles.git ~/.dotfiles-ssh0
+git clone --depth 1 --recursive https://github.com/ssh0/dotfiles.git ~/.dotfiles-ssh0
 ```
 
 then, you can copy or make a symbolic from the directory to the right place(
