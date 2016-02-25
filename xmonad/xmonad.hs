@@ -76,10 +76,10 @@ myfocusedBorderColor = colorfg
 
 -- gapwidth
 gapwidth  = 8
-gapwidthU = 2
-gapwidthD = 1
-gapwidthL = 38
-gapwidthR = 39
+gwU = 2
+gwD = 1
+gwL = 38
+gwR = 39
 
 --------------------------------------------------------------------------- }}}
 -- main                                                                     {{{
@@ -253,9 +253,8 @@ main = do
 -- myLayout:          Handle Window behaveior                               {{{
 -------------------------------------------------------------------------------
 
-myLayout = spacing gapwidth $
-           gaps [(U, gapwidthU),(D, gapwidthD),(L, gapwidthL),(R, gapwidthR)] $
-                 (ResizableTall 1 (1/55) (1/2) [])
+myLayout = spacing gapwidth $ gaps [(U, gwU),(D, gwD),(L, gwL),(R, gwR)]
+           $ (ResizableTall 1 (1/55) (1/2) [])
              ||| (TwoPane (1/55) (1/2))
              ||| Simplest
 
@@ -324,7 +323,7 @@ wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws,t]
                 , ppUrgent          = xmobarColor colorfg    colorNormalbg . \s -> "●"
                 , ppVisible         = xmobarColor colorfg    colorNormalbg . \s -> "●"
                 , ppHidden          = xmobarColor colorfg    colorNormalbg . \s -> "●"
-                , ppHiddenNoWindows = xmobarColor colorfg    colorNormalbg . \s -> "◯"
+                , ppHiddenNoWindows = xmobarColor colorfg    colorNormalbg . \s -> "○"
                 , ppTitle           = xmobarColor colorGreen colorNormalbg
                 , ppOutput          = putStrLn
                 , ppWsSep           = " "
