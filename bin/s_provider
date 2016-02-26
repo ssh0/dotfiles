@@ -151,3 +151,9 @@ so,https://stackoverflow.com/search?q=%s,true
 # "tor": Torentz
 tor,https://www.torrentz.eu/search?q=%s,true
 
+# "an": Anitube.se
+an,http://www.anitube.se/search/?search_id=%s,true
+
+# "fb": Facebook
+fb,https://www.facebook.com/search/top/?q=%s,true
+
