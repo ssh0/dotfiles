@@ -1,9 +1,71 @@
 mpd_host = "localhost"
 mpd_port = "6600"
+mpd_music_dir = "$HOME/Music"
+
+mpd_communication_mode = "notifications"
+#mpd_communication_mode = "polling"
+
 visualizer_fifo_path = "/tmp/mpd.fifo"
 visualizer_output_name = "my_fifo"
 visualizer_sync_interval = "30" 
-visualizer_in_stereo = "yes"
+visualizer_in_stereo = "no"
 #visualizer_type = "wave" (spectrum/wave)
 visualizer_type = "spectrum"
-visualizer_look = "x▉"
+visualizer_look = "◆▉"
+visualizer_color = "magenta"
+
+colors_enabled = "yes"
+
+main_window_highlight_color = "green"
+
+statusbar_color = "green"
+statusbar_visibility = "yes"
+
+titles_visibility = "no"
+header_visibility = "no"
+display_volume_level = "no"
+
+main_window_color = "white"
+
+song_list_format = "{$5%a$9 }{%t}|{$8%f$9}$R{$3%l$9}"
+song_columns_list_format = "(73)[]{t|f} (20)[red]{bE}(7)[green]{lr}"
+
+now_playing_prefix = "$7▶$9 $b"
+now_playing_suffix = "$/b"
+
+song_status_format = "{{$5%a$9{ $2\"%b\"$9{ $6(%y)$9}} $8-$9 }{%t}}|{%f}"
+song_library_format = "{%n - }{%t}|{%f}"
+tag_editor_album_format = "%b{ (%y)}"
+
+alternative_header_first_line_format = "$b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b"
+alternative_header_second_line_format = "{{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}"
+song_window_title_format = "{%a - }{%t}|{%f}"
+
+playlist_disable_highlight_delay = "1"
+
+display_screens_numbers_on_start = "no"
+autocenter_mode = "yes"
+centered_cursor = "yes"
+cyclic_scrolling = "yes"
+
+color1 = "white"
+color2 = "green"
+
+empty_tag_marker = "-"
+empty_tag_color = "cyan"
+
+progressbar_color = "magenta"
+progressbar_look = "━◘─"
+
+mouse_support = "no"
+discard_colors_if_item_is_selected = "yes"
+
+ask_before_clearing_main_playlist = "yes"
+
+message_delay_time = "1"
+follow_now_playing_lyrics = "yes"
+lyrics_directory = "$HOME/Music/.lyrics"
+allow_physical_directories_deletion = "no"
+allow_physical_files_deletion = "no"
+store_lyrics_in_song_dir = "no"
+fetch_lyrics_for_current_song_in_background = "yes"
