@@ -6,8 +6,8 @@ Config { font = "xft:Migu 1M:size=13"
        -- , position = Static { xpos = 37 , ypos = 0, width = 1845, height = 18 }
        , lowerOnStart = False
        , overrideRedirect = False
-       , border = NoBorder
-       , borderColor = "#26a69a"
+       , border = FullB
+       , borderColor = "#585858"
        , commands = [ Run Network "eth0"  [ "-t"       , "<icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/net_down_03.xbm/><rx>  <icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/net_up_03.xbm/><tx>   "
                                           , "-L"       , "40"
                                           , "-H"       , "200"

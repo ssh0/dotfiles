@@ -6,8 +6,8 @@ Config { font = "xft:Migu 1M:size=10.5"
        -- , position = Static { xpos = 8 , ypos = 0, width = 1008, height = 25 }
        , lowerOnStart = False
        , overrideRedirect = False
-       , border = NoBorder
-       , borderColor = "#26a69a"
+       , border = FullB
+       , borderColor = "#585858"
        , commands = [ Run Network "wlan0" [ "-t"       , "wlan0: <rx>  <tx>   "
                                           , "-L"       , "40"
                                           , "-H"       , "200"
