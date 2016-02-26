@@ -70,9 +70,11 @@ cf-history() { $EDITOR ${ZSH_ROOT}/history ;}
 cf-latexmkrc() { $EDITOR ~/.latexmkrc ;}
 cf-luakit() { $EDITOR ~/.config/luakit ;}
 cf-mplayer() { $EDITOR ~/.mplayer/config ;}
+cf-mpd() { $EDITOR ~/.config/mpd/mpd.conf ;}
 cf-mpv() { $EDITOR ~/.config/mpv/mpv.conf ;}
 cf-mutt() { $EDITOR ~/.mutt/muttrc ;}
 cf-nvim() { $EDITOR ~/.config/nvim/init.vim ;}
+cf-ncmpcpp() { $EDITOR ~/.ncmpcpp/config ;}
 cf-prompt() { $EDITOR ~/.zsh/functions/prompt.zsh ;}
 cf-ranger() { $EDITOR ~/.config/ranger/rc.conf ;}
 cf-ranger-rifle() { $EDITOR ~/.config/ranger/rifle.conf ;}
