@@ -263,7 +263,7 @@ song_window_title_format = "{%a - }{%t}|{%f}"
 ##   not available.
 ##
 #
-song_columns_list_format = "(53)[]{t|f:Title} (40)[red]{b|D:Album}(7)[green]{lr:Time}"
+song_columns_list_format = "(60)[]{t|f:Title} (40)[red]{b|D:Album}(8f)[green]{lr:Time}"
 #
 ##==========================================================================}}}
 ## various settings                                                         {{{
