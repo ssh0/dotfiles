@@ -228,6 +228,7 @@ main = do
        -- Play / Pause media keys
        , ("<XF86AudioPlay>"  , spawn "ncmpcpp toggle")
        , ("<XF86HomePage>"   , spawn "ncmpcpp toggle")
+       , ("S-<F6>"           , spawn "ncmpcpp toggle")
        , ("S-<XF86AudioPlay>", spawn "streamradio pause")
        , ("S-<XF86HomePage>" , spawn "streamradio pause")
        -- Volume setting media keys
