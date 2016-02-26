@@ -287,9 +287,11 @@ playlist_shorten_total_times = "yes"
 playlist_display_mode = "columns"
 #(classic/columns)
 #
-#browser_display_mode = "classic" (classic/columns)
+browser_display_mode = "columns"
+#(classic/columns)
 #
-#search_engine_display_mode = "classic" (classic/columns)
+search_engine_display_mode = "columns"
+#(classic/columns)
 #
 #playlist_editor_display_mode = "classic" (classic/columns)
 #
