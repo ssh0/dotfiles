@@ -446,8 +446,6 @@ luakit/plugins/adblock/Adblock_Plus_list.txt,.local/share/luakit/adblock/Adblock
 luakit/plugins/adblock/exceptionrules.txt,.local/share/luakit/adblock/exceptionrules.txt
 luakit/luakit.desktop,.local/share/applications/luakit.desktop
 $HOME/Dropbox/conf/luakit/bookmarks.db,.local/share/luakit/bookmarks.db
-$HOME/Dropbox/conf/luakit/cookies.db,.local/share/luakit/cookies.db
-$HOME/Dropbox/conf/luakit/history.db,.local/share/luakit/history.db
 $HOME/Dropbox/conf/luakit/quickmarks,.local/share/luakit/quickmarks
 
 #===========================================================================}}}
