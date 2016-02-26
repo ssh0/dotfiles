@@ -11,7 +11,7 @@ visualizer_sync_interval = "30"
 visualizer_in_stereo = "no"
 #visualizer_type = "wave" (spectrum/wave)
 visualizer_type = "spectrum"
-visualizer_look = "◆▉"
+visualizer_look = "♦▉"
 visualizer_color = "magenta"
 
 colors_enabled = "yes"
@@ -22,7 +22,10 @@ statusbar_color = "green"
 statusbar_visibility = "yes"
 
 titles_visibility = "no"
-header_visibility = "no"
+header_visibility = "yes"
+header_text_scrolling = "yes"
+header_window_color = "white"
+state_line_color = "black"
 display_volume_level = "no"
 
 main_window_color = "white"
