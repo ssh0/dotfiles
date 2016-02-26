@@ -226,16 +226,16 @@ main = do
        -- Lauch websearch application (See https://github.com/ssh0/web_search)
        , ("M1-C-f", spawn "websearch")
        -- Play / Pause media keys
-       , ("<XF86AudioPlay>", spawn "cplay.sh")
-       , ("<XF86HomePage>", spawn "cplay.sh")
+       , ("<XF86AudioPlay>"  , spawn "ncmpcpp toggle")
+       , ("<XF86HomePage>"   , spawn "ncmpcpp toggle")
        , ("S-<XF86AudioPlay>", spawn "streamradio pause")
-       , ("S-<XF86HomePage>", spawn "streamradio pause")
+       , ("S-<XF86HomePage>" , spawn "streamradio pause")
        -- Volume setting media keys
        , ("<XF86AudioRaiseVolume>", spawn "sound_volume_change_wrapper.sh +")
        , ("<XF86AudioLowerVolume>", spawn "sound_volume_change_wrapper.sh -")
-       , ("<XF86AudioMute>", spawn "sound_volume_change_wrapper.sh m")
+       , ("<XF86AudioMute>"       , spawn "sound_volume_change_wrapper.sh m")
         -- Brightness Keys
-       , ("<XF86MonBrightnessUp>", spawn "xbacklight + 5 -time 100 -steps 1")
+       , ("<XF86MonBrightnessUp>"  , spawn "xbacklight + 5 -time 100 -steps 1")
        , ("<XF86MonBrightnessDown>", spawn "xbacklight - 5 -time 100 -steps 1")
        -- Take a screenshot (whole window)
        , ("<Print>", spawn "screenshot.sh")
