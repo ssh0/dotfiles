@@ -30,8 +30,6 @@ Screenshot
 
 ![screenshot.png](./screenshots/screenshot.png)
 
-![screenshot\_fullscreen\_mode.png](./screenshots/screenshot_fullscreen_mode.png)
-
 Installation
 ============
 
