@@ -39,9 +39,7 @@ Installation
     * [install.sh](#install_sh)
     * [Install manually](#manually)
         1. [Install dot](#install_dot)
-            * [Install with zsh plugin manager](#install_with_zsh_plugin_manager)
-            * [Install manually](#install_manually)
-        2. [Clone and deploy using dot](#clone_and_deploy_using_dot)
+        2. [Clone repository and create symbolic links using dot](#clone_and_deploy_using_dot)
 * [Install without dot (simple)](#install_without_dot)
 
 
@@ -64,84 +62,36 @@ cd ~/.ssh0-dotifles
 ./install.sh
 ```
 
-`install.sh` will make `dot` command to be load and set the symolic links written in `dotlink` by that.
+[install.sh](./install.sh) will install `dot` and set the symolic links written in `dotlink`.
 
-### <a name="manually">Install manually</a>
+### <a name="manually">Install dot manually</a>
 
-#### <a name="install_dot"> 1. Install `dot` </a>
+#### <a name="install_dot"> 1. Install dot</a>
 
-##### <a name="install_with_zsh_plugin_manager"> 1.a Install with zsh plugin manager </a>
+See `dot`'s [README](https://github.com/ssh0/dot).
 
-If you use zsh plugin manager already, add below line to your `zshrc`.
+#### <a name="clone_and_deploy_using_dot"> 2. Clone repository and create symbolic links using dot</a>
 
-* [zplug](https://github.com/b4b4r07/zplug)
-
-```
-zplug "ssh0/dot"
-```
-
-* [zgen](https://github.com/tarjoilija/zgen)
-
-```
-zgen load ssh0/dot
-```
-
-* [antigen](https://github.com/zsh-users/antigen)
-
-```
-antigen bundle ssh0/dot
-```
-
-Then if you have your dotfiles already, write the below line to your `zshrc`.
-`dot` looks the variables to manage it.
-
-```
-export DOT_REPO="https://github.com/username/dotfiles.git"
-export DOT_DIR="$HOME/.dotfiles"
-```
-
-If you want to know more installation guide, see `dot`'s [README](https://github.com/ssh0/dot).
-
-##### <a name="install_manually">1.b Install manually</a>
-
-Clone the `dot`'s repository:
-
-```
-git clone https://github.com/ssh0/dot.git ~/.zsh/plugins/dot
-```
-
-And write like the below into `bashrc` or `zshrc` in order to enable to use `dot` command.
-
-```
-source $HOME/.zsh/plugins/dot
-```
-
-In order to take effect, close the terminal and restart.
-
-#### <a name="clone_and_deploy_using_dot"> 2. Clone and deploy using dot </a>
-
-Running the below command
+Run the below command:
 
 ```
 DOT_REPO="https://github.com/ssh0/dotfiles.git"; DOT_DIR="$HOME/.dotfiles-ssh0"
 dot clone && dot set -v
 ```
 
-clone this repository to your computer and make the symbolic links.
-If files or links have already existed, this command will ask you to choose the operation for it, so don't worry about it.
+Then, this repository is cloned on your computer and the symbolic links will be created.
 
-Or if you know what kind of files are no need to make links, you can comment out the line in `~/.dotfiles-ssh0/dotlink` and these will be ignored by `dot` command.
+If files or links have already existed, this command will ask you to choose the operation for it, so don't worry about it. Or you can skip these files by using `dot set --ignore -v`.
 
 ## <a name="install_without_dot">Install without dot (simple) </a>
 
-Clone (or folk) this repository to your computer:
+Clone (or folk) this repository on your computer:
 
 ```
 git clone --depth 1 --recursive https://github.com/ssh0/dotfiles.git ~/.dotfiles-ssh0
 ```
 
-then, you can copy or make a symbolic from the directory to the right place(
-which is described in `dotlink`).
+then, you can copy or make a symbolic from the directory to the right place(described in `dotlink`).
 
 License
 =======
