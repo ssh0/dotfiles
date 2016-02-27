@@ -115,7 +115,7 @@ py2,https://docs.python.org/2.7/search.html?q=%s,true
 # "py3": Python 3.4 documentation
 py3,https://docs.python.org/3.4/search.html?q=%s,true
 
-# "8tr": 
+# "8tr": 8tracks
 8tr,https://8tracks.com/explore/%s",true
 
 # "arx": arxiv

@@ -20,31 +20,29 @@
 # ```
 #=#=
 
-f="$0"
-
-provider_f="$HOME/bin/s_provider"
+script_dir="$(builtin cd "$(dirname "${BASH_SOURCE:-${(%):-%N}}")" && pwd)"
+script_file="${script_dir}/s"
+providers="${script_dir}/s_provider"
 
 # default: Google search, use $BROWSERCLI
-default_search="https://www.google.com/search?q=%s"
-url="$default_search"
+url="https://www.google.com/search?q=%s"
 gui=false
 
 usage() {
-  nl -w3 -s- -nln -d'#=' -ha -bn -fn "$f" \
+  nl -w3 -s- -nln -d'#=' -ha -bn -fn "${script_file}" \
     | grep -ve '^\s\+' | cut -b7- | grep -v "\`\`\`"
 }
 
 list_providers() {
-  local lists="$(grep -e "^# \"" "${provider_f}" | sed 's/\"//g' | cut -b3-)"
-  if [ "$1" = "zsh" ]; then
+  local lists="$(grep -e "^# \"" "${providers}" | sed 's/\"//g' | cut -b3-)"
+  if [[ "$1" = "zsh" ]]; then
     echo "${lists}" | awk -F ": " '{ printf("%s:%s\n",$1,$2) ;}'
   else
     echo "${lists}" | awk -F ": " '{ printf("%5s :%s\n",$1,$2) ;}'
   fi
 }
 
-while getopts glh OPT
-do
+while getopts glh OPT; do
   case $OPT in
     "g") gui=true ;;
     "l") list_providers "$2"; exit 0 ;;
@@ -55,34 +53,35 @@ done
 
 shift $((OPTIND-1))
 
-for l in $(grep -Ev '^#|^$' "${provider_f}"); do
-  if [ "$1" = "$(echo "$l" | cut -d, -f1)" ]; then
+while read l; do
+  alis="$(echo "$l" | cut -d, -f1)"
+  if [[ "$1" = ${alis} ]]; then
     url="$(echo "$l" | cut -d, -f2)"
     gui=$($gui || echo "$l" | cut -d, -f3)
     shift 1
     break
   fi
-done
+done < <(grep -Ev '^#|^$' "${providers}")
 
-[ -n "$1" ] && query="$1" || {
-    echo "Needs at least one search term."; exit 1
+[[ -n "$1" ]] && query="$1" || {
+    echo "At least one search term will be needed."; exit 1
     }
 
 shift 1
-for i in $@; do
-  query="$query%20$i"
+for q in $@; do
+  query="$query%20$q"
 done
 
 url="$(printf "$url" "$query")"
 
 if $gui; then
-  $BROWSER "$url" >& /dev/null &
+  $BROWSER "$url" 2> /dev/null &
 else
-  if [ -n "$TMUX" ]; then
-    if [ $(tput cols) -gt 160 ]; then
+  if [[ -n "$TMUX" ]]; then
+    if [[ $(tput cols) -gt 160 ]]; then
       tmux split-window -h -p 70 $BROWSERCLI "$url"
     else
-      tmux split-window -v -p 90 $BROWSERCLI "$url"
+      tmux new-window $BROWSERCLI "$url"
     fi
   else
     $BROWSERCLI "$url"
