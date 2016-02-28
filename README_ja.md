@@ -65,18 +65,58 @@ cd ~/.ssh0-dotifles
 
 #### <a name="install_dot">1. dotのインストール</a>
 
-`dot`の[README](https://github.com/ssh0/dot/blob/master/README_ja.md)にしたがってインストールしてください。
+* リポジトリのクローン
+
+```
+git clone https://github.com/ssh0/dot $HOME/.zsh/dot
+```
+
+* 自分の{bash|zsh}rcファイルに以下を追記
+
+```
+export DOT_REPO="https://github.com/your_username/dotfiles.git"
+export DOT_DIR="$HOME/.dotfiles"
+fpath=($HOME/.zsh/dot $fpath)  # <- for completion
+source $HOME/.zsh/dot/dot.sh
+```
+
+詳しくは`dot`の[README](https://github.com/ssh0/dot/blob/master/README_ja.md)を参照してください。
 
 #### <a name="clone_and_deploy_using_dot">2. dotを用いてリポジトリをクローン、シンボリックリンクを作成</a>
 
+* dotコマンド用の設定ファイルを準備する
+
 ```
-DOT_REPO="https://github.com/ssh0/dotfiles.git"; DOT_DIR="$HOME/.dotfiles-ssh0"
-dot clone && dot set -v
+mkdir -p $HOME/.config/dot
+echo 'clone_repository="https://github.com/ssh0/dotfiles.git"' > $HOME/.config/dot/dotrc-ssh0
+echo 'dotdir="$HOME/.dotfiles-ssh0"' >> $HOME/.config/dot/dotrc-ssh0
+echo 'dotlink="$HOME/.dotfiles-ssh0/dotlink"' >> $HOME/.config/dot/dotrc-ssh0
 ```
 
-を実行することで、このリポジトリ内のファイルが、ローカルにクローンされ、シンボリックリンクが生成されます。もし既にファイルが存在している場合には、操作を選択できるので、そこで操作を指定してください。
+* 自分の{bash|zsh}rcファイルに以下を追記(その後shellrcファイルを再読み込み)
+
+```
+alias dot-ssh0="dot -c $HOME/.config/dot/dotrc-ssh0"
+```
+
+* 以下のコマンドを実行
+
+```
+dot-ssh0 clone && dot-ssh0 set -v
+```
+
+これにより、このリポジトリ内のファイルがローカルにクローンされ、シンボリックリンクが生成されていきます。もし既にファイルが存在している場合には、操作を選択できるので、そこで操作を指定してください。
 
 もしくは、`dot set --ignore -v`とオプションをつければ、重複するファイルなどはすべて無視されます。
+
+このリポジトリは進行中のプロジェクトであるため、いくつかのファイルは将来変更、追加される可能性があります。
+これらのファイルを最新に保つには、
+
+```
+dot-ssh0 update -v -i
+```
+
+と実行してください。
 
 ## <a name="install_without_dot">dotを用いないシンプルな方法</a>
 
