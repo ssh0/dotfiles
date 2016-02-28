@@ -12,6 +12,7 @@
 -------------------------------------------------------------------------------
 import qualified Data.Map as M
 import Control.Monad (liftM2)          -- myManageHookShift
+import Data.Monoid
 import System.IO                       -- for xmobar
 
 import XMonad
@@ -110,7 +111,7 @@ main = do
         -- xmobar setting
        , logHook            = myLogHook wsbar
                                 >> updatePointer (Relative 0.99 0.99)
-       , handleEventHook    = fullscreenEventHook
+       , handleEventHook    = fullscreenEventHook <+> removeBordersEventHook
        , workspaces         = myWorkspaces
        , modMask            = modm
        , mouseBindings      = newMouse
@@ -304,6 +305,18 @@ myManageHookFloat = composeAll
     , stringProperty "WM_NAME" =? "Google Keep" --> (doRectFloat $ W.RationalRect 0.3 0.1 0.4 0.82)
     , stringProperty "WM_NAME" =? "tmptex.pdf - 1/1 (96 dpi)" --> doCenterFloat
     ]
+
+--------------------------------------------------------------------------- }}}
+-- removeBordersEventHook:                                                  {{{
+-------------------------------------------------------------------------------
+
+removeBordersEventHook :: Event -> X All
+removeBordersEventHook ev = do
+    whenX (className =? "mpv" `runQuery` w) $ withDisplay $ \d ->
+        io $ setWindowBorderWidth d w 0
+    return (All True)
+        where
+        w = ev_window ev
 
 --------------------------------------------------------------------------- }}}
 -- myLogHook:         loghock settings                                      {{{
