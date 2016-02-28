@@ -81,18 +81,18 @@ URxvt*iso14755:        false
 
 ! blue
 *.color4:      #9fc7e8
-*.color12:     #71badc
+*.color12:     #81badc
 
 ! magenta
 *.color5:      #e0b1e8
-*.color13:     #ab90db
+*.color13:     #bb97db
 
 ! cyan
 *.color6:      #a2e2ea
-*.color14:     #71d7cd
+*.color14:     #75d7cd
 
 ! white
-*.color7:      #bdbdbd
-*.color15:     #aaaaaa
+*.color7:      #90a2a0
+*.color15:     #bdbdbd
 
 !---------------------------------------------------------------------------}}}
