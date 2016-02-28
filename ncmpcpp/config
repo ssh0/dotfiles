@@ -314,7 +314,8 @@ progressbar_look = "━◘─"
 #
 #default_place_to_search_in = "database" (database/playlist)
 #
-#user_interface = "classic" (classic/alternative)
+user_interface = "alternative"
+#(classic/alternative)
 #
 #media_library_left_column = "a" (possible values: a,y,g,c,p, legend above)
 #
@@ -430,7 +431,7 @@ mouse_support = "no"
 #
 empty_tag_marker = "-"
 #
-#tag_editor_extended_numeration = "no"
+tag_editor_extended_numeration = "yes"
 #
 #media_library_display_date = "yes"
 #
