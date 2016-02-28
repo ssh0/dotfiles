@@ -76,8 +76,8 @@ myfocusedBorderColor = "#585858"
 
 -- gapwidth
 gapwidth  = 2
-gwU = 6
-gwD = 7
+gwU = 8
+gwD = 5
 gwL = 5
 gwR = 5
 
