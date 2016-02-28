@@ -92,6 +92,7 @@ mkdir -p $HOME/.config/dot
 echo 'clone_repository="https://github.com/ssh0/dotfiles.git"' > $HOME/.config/dot/dotrc-ssh0
 echo 'dotdir="$HOME/.dotfiles-ssh0"' >> $HOME/.config/dot/dotrc-ssh0
 echo 'dotlink="$HOME/.dotfiles-ssh0/dotlink"' >> $HOME/.config/dot/dotrc-ssh0
+echo 'linkfiles=("$HOME/.dotfiles-ssh0/dotlink")' >> $HOME/.config/dot/dotrc-ssh0
 ```
 
 * Write below lines in your {bash|zsh}rc and re-load shellrc
