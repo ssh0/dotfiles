@@ -1,7 +1,7 @@
 -- vim: ft=haskell
 Config { font = "xft:Migu 1M:size=13"
        , bgColor = "#1c1c1c"
-       , fgColor = "#757575"
+       , fgColor = "#585858"
        , position = TopSize C 100 35
        -- , position = Static { xpos = 37 , ypos = 0, width = 1845, height = 18 }
        , lowerOnStart = False
@@ -12,30 +12,30 @@ Config { font = "xft:Migu 1M:size=13"
                                           , "-L"       , "40"
                                           , "-H"       , "200"
                                           , "-m"       , "3"
-                                          , "--normal" , "#ffffff"
-                                          , "--high"   , "#a5d6a7"
+                                          , "--normal" , "#bdbdbd"
+                                          , "--high"   , "#95b595"
                                           ] 10
                     , Run MultiCpu        [ "-t"       , "<icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/cpu.xbm/> <total0>.<total1>.<total2>.<total3>.<total4>.<total5>.<total6>.<total7>  "
                                           , "-L"       , "40"
                                           , "-H"       , "85"
                                           , "-m"       , "2"
-                                          , "--normal" , "#ffffff"
-                                          , "--high"   , "#f44336"
+                                          , "--normal" , "#bdbdbd"
+                                          , "--high"   , "#b99595"
                                           ] 10
 
                     , Run Memory          [ "-t"       , "<icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/mem.xbm/> <usedratio>%   "
                                           , "-L"       , "40"
                                           , "-H"       , "90"
                                           , "-m"       , "2"
-                                          , "--normal" , "#ffffff"
-                                          , "--high"   , "#f44336"
+                                          , "--normal" , "#bdbdbd"
+                                          , "--high"   , "#b99595"
                                           ] 10
                     , Run BatteryP        ["CMB1"]
                                           [ "-t"       , "<icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/bat_full_02.xbm/> <acstatus>  "
                                           , "-L"       , "20"
                                           , "-H"       , "80"
-                                          , "--low"    , "#f44336"
-                                          , "--normal" , "#ffffff"
+                                          , "--low"    , "#b99595"
+                                          , "--normal" , "#bdbdbd"
                                           , "--"
                                                 , "-o" , "<left>% (<timeleft>)"
                                                 , "-O" , "Charging <left>%"
@@ -46,6 +46,6 @@ Config { font = "xft:Migu 1M:size=13"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% }{ %multicpu%%memory%%eth0%%battery%<fc=#ece391>%date%</fc> "
+       , template = " %StdinReader% }{ %multicpu%%memory%%eth0%%battery%<fc=#aea386>%date%</fc> "
        }
 

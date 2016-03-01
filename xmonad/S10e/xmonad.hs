@@ -59,14 +59,13 @@ myWorkspaces = ["1", "2", "3", "4", "5"]
 modm = mod4Mask
 
 -- Color Setting
-colorBlue      = "#9fc7e8"
-colorGreen     = "#a5d6a7"
-colorRed       = "#ef9a9a"
-colorGray      = "#9e9e9e"
-colorWhite     = "#ffffff"
-colorGrayAlt   = "#eceff1"
+colorBlue      = "#868bae"
+colorGreen     = "#86ae87"
+colorRed       = "#ae8686"
+colorGray      = "#90a2a0"
+colorWhite     = "#bdbdbd"
 colorNormalbg  = "#1c1c1c"
-colorfg        = "#9fa8b1"
+colorfg        = "#585858"
 
 -- Border width
 borderwidth = 1
