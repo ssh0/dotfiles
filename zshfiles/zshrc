@@ -29,6 +29,8 @@ source "$ZSH_ROOT/functions/zgen.zsh"
 # zplug
 #source "$ZSH_ROOT/functions/zplug.zsh"
 
+export ZSH=$HOME/.zsh
+
 # Add fpath for completions
 # There are completion functions named like '_function'.
 fpath=($ZSH_ROOT/completions $fpath)
