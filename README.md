@@ -11,7 +11,7 @@ Contents
 ========
 
 * XMonad([http://xmonad.org/](http://xmonad.org/))
-    * [xmonad.hs](./xmonad/xmonad.hs)
+    * [xmonad.hs](./xmonad/ssh0-home/xmonad.hs)
 * tmux([https://tmux.github.io/](https://tmux.github.io/))
     * [tmux.conf](./rcfiles/tmux.conf)
 * zsh([http://www.zsh.org/](http://www.zsh.org/))
