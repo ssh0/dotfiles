@@ -1,11 +1,6 @@
 #=#=#=
 # zplug load settings (not in use now)
 #
-# * from oh-my-zsh
-#     * lib/git
-#     * lib/spectrum
-#     * lib/termsupport
-#     * lib/theme-and-appearance
 # * fcambus/ansiweather
 # * b4b4r07/enhancd
 # * b4b4r07/zplug
@@ -41,11 +36,6 @@ function zplug_reset() {
 if [[ -f $ZPLUG_EXTERNAL ]]; then
   source $ZPLUG_EXTERNAL
 else
-  zplug "lib/git", from:oh-my-zsh
-  zplug "lib/spectrum", from:oh-my-zsh
-  zplug "lib/termsupport", from:oh-my-zsh
-  zplug "lib/theme-and-appearance", from:oh-my-zsh
-
   zplug "fcambus/ansiweather", as:command
   zplug "b4b4r07/enhancd"
   zplug "b4b4r07/zplug"
@@ -65,5 +55,5 @@ else
 
   # Then, source plugins and add commands to $PATH
   # zplug load --verbose
-  zplug load --verbose
+  zplug load
 fi

@@ -27,7 +27,6 @@ fi
 
 # git alias to "g"
 alias g='git'
-compdef g=git
 
 if hash nvim 2>/dev/null; then
   alias vim='nvim'
@@ -35,7 +34,6 @@ if hash nvim 2>/dev/null; then
 fi
 
 alias v='vim'
-compdef v=vim
 
 # I often type ":q" to exit terminal
 alias :q='exit'

@@ -5,14 +5,12 @@
 #
 # In order for this theme to render correctly, you will need a
 # [Powerline-patched font](https://github.com/Lokaltog/powerline-fonts).
-#
-# * Depends on oh-my-zsh/lib/git.zsh
-#
-# TODO: make this theme standalone
 #=#=
 #==============================================================================
 # Color setting                                                             {{{
 #==============================================================================
+
+setopt prompt_subst
 
 bg_dir=23
 bg_dark=237
@@ -129,7 +127,6 @@ prompt_git() {
       mode=" >R>"
     fi
 
-    setopt promptsubst
     autoload -Uz vcs_info
 
     zstyle ':vcs_info:*' enable git

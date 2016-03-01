@@ -18,6 +18,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 
 # set language environment
 export LANG=en_US.UTF-8
+export MANLANG=ja_JP.UTF-8
 export LC_TIME=en_US.UTF-8
 
 # python startup
@@ -59,6 +60,10 @@ export ENHANCD_COMMAND='cd'
 # takenote
 export TAKENOTE_ROOTDIR="$HOME/Workspace/blog"
 export TAKENOTE_FILERCMD=ranger
+
+# shtest
+export SHTEST_FILENAME_PRE="test_"
+export SHTEST_FILENAME_EXTENSION="sh"
 
 # cheat
 # -----

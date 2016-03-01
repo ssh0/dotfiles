@@ -1,19 +1,6 @@
 functions
 ===
 
-## [agvim.zsh](./agvim.zsh)
-
-agvim - Search files with ag, select with `$PERCOL`, and edit in vim.
-
-**Usage:**
-
-```
-cd ~/Workspace/blog
-agvim xmonad
-```
-
-ref) http://qiita.com/fmy/items/b92254d14049996f6ec3
-
 ## [alias.zsh](./alias.zsh)
 
 Set aliases (if available)
@@ -37,16 +24,6 @@ Bind keys
 * ^xe for edit in command line (useful)
 * ^t for fzf-completion
 * ^r for history search with fzf
-
-## [cecho.zsh](./cecho.zsh)
-
-cecho - colorized echo
-
-**Usage**
-
-```
-cecho blue "Hello world!"
-```
 
 ## [colorize.zsh](./colorize.zsh)
 
@@ -90,6 +67,9 @@ extract - extract archive files by detecting extension
 
 **Supported format**  
 * tar.gz, tgz, tar.xz, xz, zip, lzh, tar.bz2, tbz, tar.Z, gz, bz2, Z, tar, arj
+
+## [git.zsh](./git.zsh)
+
 
 ## [history.zsh](./history.zsh)
 
@@ -155,20 +135,6 @@ peco-select-history - for history search with ^r key
 
 But I don't use peco now. I use fzf instead.
 
-## [progressbar.zsh](./progressbar.zsh)
-
-progressbar - make progress bar easily
-
-**Usage:**
-
-```
-progressbar n [ barchar_empty barchar_fill ]
-```
-
-(int `n`: 0 ~ 100) 
-
-> [bash - How to add a progress bar to a shell script? - Stack Overflow](http://stackoverflow.com/questions/238073/how-to-add-a-progress-bar-to-a-shell-script)
-
 ## [prompt.zsh](./prompt.zsh)
 
 simle_is_power theme  
@@ -176,10 +142,6 @@ folked from agnoster's Theme - https://gist.github.com/3712874
 
 In order for this theme to render correctly, you will need a
 [Powerline-patched font](https://github.com/Lokaltog/powerline-fonts).
-
-* Depends on oh-my-zsh/lib/git.zsh
-
-TODO: make this theme standalone
 
 ## [ranger.zsh](./ranger.zsh)
 
@@ -232,10 +194,10 @@ zgen load settings
 
 * b4b4r07/enhancd zsh
 * chrissicool/zsh-256color
-* robbyrussell/oh-my-zsh lib/git.zsh
-* robbyrussell/oh-my-zsh lib/spectrum.zsh
+* ~~robbyrussell/oh-my-zsh lib/git.zsh~~
+* ~~robbyrussell/oh-my-zsh lib/spectrum.zsh~~
 * robbyrussell/oh-my-zsh lib/termsupport.zsh
-* robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh
+* ~~robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh~~
 * ssh0/dot
 * ssh0/zsh-takenote
 * fcambus/ansiweather

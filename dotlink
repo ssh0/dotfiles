@@ -192,7 +192,6 @@ zshfiles/completions/_pandoc,.zsh/completions/_pandoc
 zshfiles/completions/_ranger,.zsh/completions/_ranger
 zshfiles/completions/_recordmydesktop,.zsh/completions/_recordmydesktop
 zshfiles/completions/_s,.zsh/completions/_s
-zshfiles/completions/_shtest,.zsh/completions/_shtest
 zshfiles/completions/_streamradio,.zsh/completions/_streamradio
 zshfiles/completions/_tig,.zsh/completions/_tig
 zshfiles/completions/_tmuxinator,.zsh/completions/_tmuxinator
@@ -203,25 +202,24 @@ zshfiles/completions/tig-completion.bash,.zsh/completions/tig-completion.bash
 zshfiles/dircolors/dircolors-zenburn,.zsh/dircolors/dircolors-zenburn
 
 # Some functions and aliases
-zshfiles/functions/agvim.zsh,.zsh/functions/agvim.zsh
 zshfiles/functions/alias.zsh,.zsh/functions/alias.zsh
 zshfiles/functions/bindkey.zsh,.zsh/functions/bindkey.zsh
-zshfiles/functions/cecho.zsh,.zsh/functions/cecho.zsh
 zshfiles/functions/colorize.zsh,.zsh/functions/colorize.zsh
 zshfiles/functions/command-not-found.zsh,.zsh/functions/command-not-found.zsh
 zshfiles/functions/completion.zsh,.zsh/functions/completion.zsh
 zshfiles/functions/environment.zsh,.zsh/functions/environment.zsh
 zshfiles/functions/extract.zsh,.zsh/functions/extract.zsh
+zshfiles/functions/git.zsh,.zsh/functions/git.zsh
 zshfiles/functions/history.zsh,.zsh/functions/history.zsh
 zshfiles/functions/less.zsh,.zsh/functions/less.zsh
 # zshfiles/functions/longrun-command-tracker.zsh,.zsh/functions/longrun-command-tracker.zsh
 zshfiles/functions/man.zsh,.zsh/functions/man.zsh
 zshfiles/functions/peco-history.zsh,.zsh/functions/peco-history.zsh
-zshfiles/functions/progressbar.zsh,.zsh/functions/progressbar.zsh
 zshfiles/functions/prompt.zsh,.zsh/functions/prompt.zsh
 zshfiles/functions/r.zsh,.zsh/functions/r.zsh
 zshfiles/functions/ranger.zsh,.zsh/functions/ranger.zsh
 zshfiles/functions/shtest.zsh,.zsh/functions/shtest.zsh
+zshfiles/functions/termsupport.zsh,.zsh/functions/termsupport.zsh
 zshfiles/functions/tmux.zsh,.zsh/functions/tmux.zsh
 zshfiles/functions/zgen.zsh,.zsh/functions/zgen.zsh
 zshfiles/functions/zplug.zsh,.zsh/functions/zplug.zsh
@@ -231,10 +229,12 @@ zshfiles/functions/zplug.zsh,.zsh/functions/zplug.zsh
 #==============================================================================
 # Some useful scripts (See bin/README.md)
 
+bin/agvim,bin/agvim
 bin/alarm,bin/alarm
 bin/allmp4tomp3.sh,bin/allmp4tomp3.sh
 bin/bib2html_wrapper.sh,bin/bib2html_wrapper.sh
 bin/cachecleener,bin/cachecleener
+bin/cecho,bin/cecho
 bin/color-pallete.sh,bin/color-pallete.sh
 bin/cplay.sh,bin/cplay.sh
 bin/dripaudio,bin/dripaudio
@@ -254,6 +254,7 @@ bin/pandoc_beamerwrapper.sh,bin/pandoc_beamerwrapper.sh
 bin/pandoc_latexwrapper.sh,bin/pandoc_latexwrapper.sh
 bin/presenmode.sh,bin/presenmode.sh
 bin/presentation.sh,bin/presentation.sh
+bin/progressbar,bin/progressbar
 bin/proxy_toggle.sh,bin/proxy_toggle.sh
 bin/radiko_rec.sh,bin/radiko_rec.sh
 bin/screenshot_select.sh,bin/screenshot_select.sh

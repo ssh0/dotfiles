@@ -21,11 +21,10 @@ case $HIST_STAMPS in
   *) alias history='fc -l 1' ;;
 esac
 
-setopt append_history
-setopt extended_history
-setopt hist_expire_dups_first
-setopt hist_ignore_all_dups
-setopt hist_ignore_space
+setopt extended_history      # コマンドの開始時刻と経過時間を登録
+setopt hist_ignore_dups      # 直線のコマンド行と同一なら登録しない
+setopt hist_ignore_all_dups  # 登録済みコマンドの古い方を削除
+setopt hist_ignore_space     # コマンド行の先頭が空白なら登録しない
+setopt hist_reduce_blanks    # 余分な空白は詰めて登録
 setopt hist_verify
-setopt inc_append_history
-setopt share_history
+setopt share_history         # ヒストリの共有

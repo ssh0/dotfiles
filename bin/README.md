@@ -1,6 +1,19 @@
 bin
 ===
 
+## [agvim](./agvim)
+
+agvim - Search files with ag, select with `$PERCOL`, and edit in vim.
+
+**Usage:**
+
+```
+cd ~/Workspace/blog
+agvim xmonad
+```
+
+ref) http://qiita.com/fmy/items/b92254d14049996f6ec3
+
 ## [alarm](./alarm)
 
 ```
@@ -44,6 +57,16 @@ This script erase cache memory (need sudo).
 
 Thanks to SONY5614.  
 and modified by Shotaro Fujimoto (https://github.com/ssh0)
+
+## [cecho](./cecho)
+
+cecho - colorized echo
+
+**Usage**
+
+```
+cecho blue "Hello world!"
+```
 
 ## [color-pallete.sh](./color-pallete.sh)
 
@@ -292,6 +315,20 @@ OPTION
 ## [presentation.sh](./presentation.sh)
 
 impressive(presentation software) wrapper script.
+
+## [progressbar](./progressbar)
+
+progressbar - make progress bar easily
+
+**Usage:**
+
+```
+progressbar n [ barchar_empty barchar_fill ]
+```
+
+(int `n`: 0 ~ 100) 
+
+> [bash - How to add a progress bar to a shell script? - Stack Overflow](http://stackoverflow.com/questions/238073/how-to-add-a-progress-bar-to-a-shell-script)
 
 ## [proxy\_toggle.sh](./proxy_toggle.sh)
 

@@ -3,10 +3,6 @@
 #
 # * b4b4r07/enhancd zsh
 # * chrissicool/zsh-256color
-# * robbyrussell/oh-my-zsh lib/git.zsh
-# * robbyrussell/oh-my-zsh lib/spectrum.zsh
-# * robbyrussell/oh-my-zsh lib/termsupport.zsh
-# * robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh
 # * ssh0/dot
 # * ssh0/zsh-takenote
 # * fcambus/ansiweather
@@ -54,10 +50,6 @@ if ! zgen saved; then
   zgen loadall <<EOPLG
     b4b4r07/enhancd zsh
     chrissicool/zsh-256color
-    robbyrussell/oh-my-zsh lib/git.zsh
-    robbyrussell/oh-my-zsh lib/spectrum.zsh
-    robbyrussell/oh-my-zsh lib/termsupport.zsh
-    robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh
     ssh0/dot
     ssh0/zsh-takenote
     fcambus/ansiweather

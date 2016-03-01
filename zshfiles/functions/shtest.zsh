@@ -1,4 +1,4 @@
-# vim: set ft=zsh
+# vim: ft=zsh
 #=#=#=
 # shtest - Make testing snippet of shell script
 #
@@ -17,10 +17,7 @@
 # Require: [zsh-takenote](https://github.com/ssh0/zsh-takenote)
 #=#=
 
-export SHTEST_FILENAME_PRE="test_"
-export SHTEST_FILENAME_EXTENSION="sh"
-
-function shtest() {
+shtest() {
 
   show_usage() {
     echo ""

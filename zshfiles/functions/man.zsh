@@ -27,6 +27,10 @@
 #=#=
 
 function man() {
+  local _LANG=${LANG:-"en_US.UTF-8"}
+  # set language
+  export LANG=${MANLANG:-${_LANG}}
+
   case "$(whence -wa -- $1 | uniq | fzf -1 | sed 's/: / /' | cut -d' ' -f2)" in
     builtin) # built-in
       local man_indent _space
@@ -57,5 +61,6 @@ function man() {
     *) /usr/bin/man "$@"
       ;;
   esac
+  export LANG=${_LANG}
 }
 

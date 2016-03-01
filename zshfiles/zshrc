@@ -9,18 +9,17 @@
 #         _\///////////__\//////////__\///____\///__\///____________\////////_
 # =============================================================================
 
-# Export variables
 # Set the zsh root directoy
 export ZSH_ROOT=$HOME/.zsh
 
-# Use fzf
+# Using fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_COMPLETION_TRIGGER=''
 
 # Set some environmet variables
 source "$ZSH_ROOT/functions/environment.zsh"
 
-# tmux plugin should be loaded as much as possible before.
+# tmux plugin should be loaded as much as first of zshrc.
 # Only run if tmux is actually installed.
 hash tmux 2>/dev/null && source "$ZSH_ROOT/functions/tmux.zsh"
 
@@ -28,7 +27,7 @@ hash tmux 2>/dev/null && source "$ZSH_ROOT/functions/tmux.zsh"
 source "$ZSH_ROOT/functions/zgen.zsh"
 
 # zplug
-# source "$ZSH_ROOT/functions/zplug.zsh"
+#source "$ZSH_ROOT/functions/zplug.zsh"
 
 # Add fpath for completions
 # There are completion functions named like '_function'.
@@ -44,36 +43,35 @@ compinit -D
 # dircolors
 eval $(dircolors "$ZSH_ROOT/dircolors/dircolors-zenburn")
 
-# Load functions
-myfunctions=(
-    agvim
-    alias
-    cecho
-    colorize
-    command-not-found
-    extract
-    history
-    less
-    man
-    peco-history
-    progressbar
-    prompt
-    r
-    ranger
-    shtest
-  )
-
-for myfunction in $myfunctions; do
+# Load custom plugins
+while read myfunction; do
   source "$ZSH_ROOT/functions/${myfunction}.zsh"
-done
-unset -v myfunctions myfunction
+done < <(cat << EOF
+alias
+history
+colorize
+command-not-found
+extract
+git
+less
+man
+ranger
+r
+shtest
+peco-history
+bindkey
+termsupport
+prompt
+EOF
+)
 
+unset -v myfunction
+
+# perform implicit tees or cats when multiple redirections are attempted
+setopt multios
 
 # User specific configuration
 [ -f "$ZSH_ROOT/rc.mine" ] && source "$ZSH_ROOT/rc.mine"
-
-# bindkeys
-source "$ZSH_ROOT/functions/bindkey.zsh"
 
 # zprof
 # -----

@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/bin/bash
 # written by Shotaro Fujimoto (https://github.com/ssh0)
 # first edited: 2015-12-03
 #=#=#=
@@ -18,7 +18,6 @@
 progressbar() {
   # Usage:
   #   progressbar progress(int: 0 ~ 100) [ barchar_empty barchar_fill ]
-  local barchar_empty barchar_fill columns _done _left _fill _empty
 
   barchar_empty="${2:--}"
   barchar_fill="${3:-#}"
@@ -39,6 +38,8 @@ progressbar() {
   # Generate progressbar
   printf "\rProgress : [${_fill// /"$barchar_fill"}${_empty// /"$barchar_empty"}] ${1}%%"
 }
+
+progressbar $@
 
 # EXAMPLE:
 #
