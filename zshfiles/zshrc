@@ -19,6 +19,9 @@ export FZF_COMPLETION_TRIGGER=''
 # Set some environmet variables
 source "$ZSH_ROOT/functions/environment.zsh"
 
+# dircolors
+eval $(dircolors "$ZSH_ROOT/dircolors/dircolors-zenburn")
+
 # tmux plugin should be loaded as much as first of zshrc.
 # Only run if tmux is actually installed.
 hash tmux 2>/dev/null && source "$ZSH_ROOT/functions/tmux.zsh"
@@ -41,9 +44,6 @@ autoload -U compinit
 #        .------ don't use compdump (a bit faster in my environment)
 #        |
 compinit -D
-
-# dircolors
-eval $(dircolors "$ZSH_ROOT/dircolors/dircolors-zenburn")
 
 # Load custom plugins
 while read myfunction; do
