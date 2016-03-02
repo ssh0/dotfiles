@@ -559,7 +559,7 @@ set whichwrap=b,s,[,],<,>
 set helplang=ja,en
 
 " try to open under the cursor with `gx`
-let g:netrw_browsex_viewer= "xdg-open"
+let g:netrw_browsex_viewer="xdg-open"
 
 "                                                                           }}}
 " Search                                                                    {{{
