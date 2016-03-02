@@ -107,28 +107,28 @@ URxvt*iso14755:        false
 *.color8:      #404040
 
 ! red
-*.color1:      #ba8686
-*.color9:      #c39595
+*.color1:      #ae8686
+*.color9:      #ba8f8f
 
 ! green
-*.color2:      #86ae87
-*.color10:     #95b595
+*.color2:      #86ae86
+*.color10:     #8fba8f
 
 ! yellow
-*.color3:      #aea386
-*.color11:     #bdb191
+*.color3:      #aeae86
+*.color11:     #baba8f
 
 ! blue
-*.color4:      #868bae
-*.color12:     #8f95ba
+*.color4:      #8686ae
+*.color12:     #8f8fba
 
 ! magenta
-*.color5:      #ae869e
-*.color13:     #ba8fa9
+*.color5:      #ae86ae
+*.color13:     #ba8fba
 
 ! cyan
-*.color6:      #86aea5
-*.color14:     #8fbab1
+*.color6:      #86aeae
+*.color14:     #8fbaba
 
 ! white
 *.color7:      #90a2a0
