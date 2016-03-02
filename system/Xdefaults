@@ -120,15 +120,15 @@ URxvt*iso14755:        false
 
 ! blue
 *.color4:      #868bae
-*.color12:     #8d93b8
+*.color12:     #8f95ba
 
 ! magenta
 *.color5:      #ae869e
 *.color13:     #ba8fa9
 
 ! cyan
-*.color6:      #70a8b0
-*.color14:     #78b4bd
+*.color6:      #86aea5
+*.color14:     #8fbab1
 
 ! white
 *.color7:      #90a2a0
