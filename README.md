@@ -5,7 +5,11 @@ dotfiles
 
 This repository contains my dotfiles.
 
-I use [dot](https://github.com/ssh0/dot) in order to set symbolic link to add new file to this repository and to deal with machine specific configurations.
+I use dotfiles manager [dot](https://github.com/ssh0/dot) in order to:
+
+* Set symbolic links
+* Add new file to this repository
+* Switch machine specific configurations
 
 Contents
 ========
