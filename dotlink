@@ -425,8 +425,8 @@ peco/config.json,.peco/config.json
 # aligning and searching for windows. xmonad makes work easier, by
 # automating this.
 
-xmonad/${HOST}/xmonad.hs,.xmonad/xmonad.hs
-xmonad/${HOST}/xmobarrc,.xmonad/xmobarrc
+xmonad/${PC}/xmonad.hs,.xmonad/xmonad.hs
+xmonad/${PC}/xmobarrc,.xmonad/xmobarrc
 
 #===========================================================================}}}
 # [luakit](http://mason-larobina.github.io/luakit):                         {{{
@@ -434,9 +434,9 @@ xmonad/${HOST}/xmobarrc,.xmonad/xmobarrc
 
 luakit/globals.lua,.config/luakit/globals.lua
 luakit/rc.lua,.config/luakit/rc.lua
-luakit/theme.lua.${HOST},.config/luakit/theme.lua
+luakit/theme.lua.${PC},.config/luakit/theme.lua
 luakit/window.lua,.config/luakit/window.lua
-luakit/user_local.lua.${HOST},.config/luakit/user_local.lua
+luakit/user_local.lua.${PC},.config/luakit/user_local.lua
 luakit/plugins/adblock/adblock.lua,.config/luakit/plugins/adblock.lua
 luakit/plugins/adblock/adblock_chrome.lua,.config/luakit/plugins/adblock_chrome.lua
 luakit/plugins/private_browsing_tabs.lua,.config/luakit/plugins/private_browsing_tabs.lua
