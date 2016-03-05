@@ -28,32 +28,23 @@ fi
 source ${zplug_source}
 unset -v zplug_source
 
-function zplug_reset() {
-  echo "zplug: Deleting $ZPLUG_EXTERNAL"
-  rm "${ZPLUG_EXTERNAL}"
-}
+zplug "fcambus/ansiweather", as:command
+zplug "b4b4r07/enhancd"
+zplug "b4b4r07/zplug"
+zplug "Tarrasch/zsh-bd"
+zplug "chrissicool/zsh-256color"
+zplug "ssh0/zsh-takenote"
+zplug "ssh0/dot"
+zplug "zsh-users/zsh-syntax-highlighting", nice:10
 
-if [[ -f $ZPLUG_EXTERNAL ]]; then
-  source $ZPLUG_EXTERNAL
-else
-  zplug "fcambus/ansiweather", as:command
-  zplug "b4b4r07/enhancd"
-  zplug "b4b4r07/zplug"
-  zplug "Tarrasch/zsh-bd"
-  zplug "chrissicool/zsh-256color"
-  zplug "ssh0/zsh-takenote"
-  zplug "ssh0/dot"
-  zplug "zsh-users/zsh-syntax-highlighting", nice:10
-
-  # Install plugins if there are plugins that have not been installed
-  if ! zplug check --verbose; then
-      printf "Install? [y/N]: "
-      if read -q; then
-          echo; zplug install
-      fi
-  fi
-
-  # Then, source plugins and add commands to $PATH
-  # zplug load --verbose
-  zplug load
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
 fi
+
+# Then, source plugins and add commands to $PATH
+# zplug load --verbose
+zplug load
