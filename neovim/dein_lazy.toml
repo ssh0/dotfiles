@@ -1,0 +1,4 @@
+[[plugins]]
+repo = 'rking/ag.vim'
+if = 'executable("ag")'
+in_i = 1

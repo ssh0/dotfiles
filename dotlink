@@ -132,6 +132,10 @@ $HOME/Dropbox/conf/hateblo.vim,.hateblo.vim
 vimfiles/bundle/neobundle.vim,.config/nvim/bundle/neobundle.vim
 
 neovim/init.vim,.config/nvim/init.vim
+neovim/neobundle.vim,.config/nvim/neobundle.vim
+neovim/dein.vim,.config/nvim/dein.vim
+neovim/dein.toml,.config/nvim/dein.toml
+neovim/dein_lazy.toml,.config/nvim/dein_lazy.toml
 
 vimfiles/ftplugin/bib_quickrun.vim,.config/nvim/ftplugin/bib_quickrun.vim
 vimfiles/ftplugin/gitcommit.vim,.config/nvim/ftplugin/gitcommit.vim
