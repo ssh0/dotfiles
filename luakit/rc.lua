@@ -155,7 +155,14 @@ add_binds("insert", {
             -- lua escaped newlines (slash+newline) into js newlines (slash+n)
             s = s:gsub("\\\n", "\\n")
             w.view:eval_js("document.activeElement.value = '" .. s .. "'")
-        end)
+        end),
+
+    lousy.bind.key({"Mod1"}, "Left", "Go to previous tab.",
+        function (w) w:prev_tab() end),
+
+    lousy.bind.key({"Mod1"}, "Right", "Go to next tab.",
+        function (w) w:next_tab() end),
+
 })
 
 add_cmds({
