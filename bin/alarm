@@ -4,15 +4,27 @@
 #=#=#=
 # ```
 # NAME
-#       alarm - Alart after given minutes.
+#       alarm - Alert after given minutes.
 #
-# USAGE
-#       alarm n
+# SYNOPSYS
+#       alarm NUMBER[smhd]
+#       alarm [-t <Notification title>][-b <Notification body>] NUMBER[smhd]
+#       alarm -h
 #
-#       In n, you can set n minutes.
-#
-# Option
+# OPTION
 #       -h: Show this help.
+#       -t: Set notification title
+#       -b: Set notification body
+#
+# EXAMPLE
+#       # ramen timer
+#       alarm 3m
+#
+#       # alert after 1 hour 10 minutes 30 seconds
+#       alarm 1h 10m 30s
+#
+#       # with custom message
+#       alarm -t "Time to sleep" -b "zzz..." 6h
 # ```
 #=#=
 
@@ -29,40 +41,75 @@ usage() {
 }
 
 # Option hundling
-while getopts h OPT; do
+while getopts ht:b: OPT; do
   case $OPT in
     "h")
       usage; exit 0 ;;
+    "t")
+      ntf_title="${OPTARG}" ;;
+    "b")
+      ntf_body="${OPTARG}" ;;
     * )
       usage; exit 1 ;;
   esac
 done
 
+shift $((OPTIND-1))
+
 # arg number check
-if [ $# -ne 1 ]; then
-  echo "Only 1 argument is needed: (given $#)."
+if [ $# -eq 0 ]; then
+  echo "At least 1 argument is needed."
   usage; exit 1
 fi
-
-# if numerical number is not set
-echo $1 | egrep -q '^[0-9]+$' || (echo "Set numerical number."; exit 1)
 
 # record start time
 start_time="`date +"%Y/%m/%d %H:%M:%S"`"
 echo "Start at $start_time"
 
-# show end time
-end_time=$(date -d "${start_time} $1 minutes" +"%Y/%m/%d %H:%M:%S")
-echo "Alert at ${end_time} ("$1" minutes)."
+parse_date() {
+  case ${1: -1} in
+    "d") [[ ${1%d} -gt 0 ]] && echo -n " ${1%d} days" ;;
+    "h") [[ ${1%h} -gt 0 ]] && echo -n " ${1%h} hours" ;;
+    "m") [[ ${1%m} -gt 0 ]] && echo -n " ${1%m} minutes" ;;
+    "s") [[ ${1%s} -gt 0 ]] && echo -n " ${1%s} seconds" ;;
+    [0-9]) echo -n " ${1%s} seconds" ;;
+    *) echo -n "";;
+  esac
+}
 
-# sleep n minutes ...
-sleep ${1}m
+dateafter=""
+for l in $@; do
+  dateafter="${dateafter}$(parse_date $l)"
+done
+
+# show end time
+end_time=$(date -d "${start_time} ${dateafter}" +"%Y/%m/%d %H:%M:%S")
+echo "Alert at ${end_time} (${dateafter} )..."
+
+# set default notification messages
+notification_title="${dateafter}"
+notification_body="${start_time} : start\n${end_time} : end"
+
+## visual timer (choose tty-clock or xclock)
+# tty-clock -sc &
+xclock -update 1 &
+clockpid=$!
+
+# trap Ctrl-C and kill child process
+trap 'kill -s SIGTERM $clockpid; exit 1' 1 2 3 ERR
+
+# sleep ...
+sleep $@
 
 # then, send notification
-notify-send "Time!" "$1 min"\
+notify-send "${ntf_title:-${notification_title}}" \
+  "${ntf_body:-${notification_body}}" \
   -t 6000 \
   -i "${notification_icon}"
 paplay "${notification_sound}" &
+
+kill -s SIGTERM $clockpid
+echo "Done!"
 
 exit 0
 
