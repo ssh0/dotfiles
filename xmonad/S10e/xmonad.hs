@@ -296,6 +296,7 @@ myManageHookFloat = composeAll
     , className =? "Plugin-container" --> doCenterFloat
     , className =? "Screenkey"        --> (doRectFloat $ W.RationalRect 0.7 0.9 0.3 0.1)
     , className =? "Websearch"        --> doCenterFloat
+    , className =? "XClock"           --> doSideFloat NE
     , title     =? "Speedbar"         --> doCenterFloat
     , title     =? "urxvt_float"      --> doSideFloat SC
     , isFullscreen                    --> doFullFloat
