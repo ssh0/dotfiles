@@ -18,15 +18,27 @@ ref) http://qiita.com/fmy/items/b92254d14049996f6ec3
 
 ```
 NAME
-      alarm - Alart after given minutes.
+      alarm - Alert after given minutes.
 
-USAGE
-      alarm n
+SYNOPSYS
+      alarm NUMBER[smhd]
+      alarm [-t <Notification title>][-b <Notification body>] NUMBER[smhd]
+      alarm -h
 
-      In n, you can set n minutes.
-
-Option
+OPTION
       -h: Show this help.
+      -t: Set notification title
+      -b: Set notification body
+
+EXAMPLE
+      # ramen timer
+      alarm 3m
+
+      # alert after 1 hour 10 minutes 30 seconds
+      alarm 1h 10m 30s
+
+      # with custom message
+      alarm -t "Time to sleep" -b "zzz..." 6h
 ```
 
 ## [allmp4tomp3.sh](./allmp4tomp3.sh)
