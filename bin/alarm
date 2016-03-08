@@ -4,7 +4,7 @@
 #=#=#=
 # ```
 # NAME
-#       alarm - Alert after given minutes.
+#       alarm - Alert after specified time with popup and sound.
 #
 # SYNOPSYS
 #       alarm NUMBER[smhd]
@@ -28,13 +28,13 @@
 # ```
 #=#=
 
-# set notificate icon and sound you like
+# set notification icon and sound as you like
 notification_icon="/usr/share/icons/gnome/scalable/status/alarm-symbolic.svg"
 notification_sound="/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga"
 
 # this file's path
 f="$0"
-# how to use this script
+# show how to use this script
 usage() {
   nl -w3 -s- -nln -d'#=' -ha -bn -fn "$f" \
     | grep -ve '^\s\+' | cut -b7- | grep -v "\`\`\`"
@@ -58,13 +58,13 @@ shift $((OPTIND-1))
 
 # arg number check
 if [ $# -eq 0 ]; then
-  echo "At least 1 argument is needed."
+  echo "[alarm] At least 1 argument is needed." >&2
   usage; exit 1
 fi
 
 # record start time
 start_time="`date +"%Y/%m/%d %H:%M:%S"`"
-echo "Start at $start_time"
+echo "[alarm] Start at $start_time"
 
 parse_date() {
   case ${1: -1} in
@@ -84,10 +84,10 @@ done
 
 # show end time
 end_time=$(date -d "${start_time} ${dateafter}" +"%Y/%m/%d %H:%M:%S")
-echo "Alert at ${end_time} (${dateafter} )..."
+echo "[alarm] Alert at ${end_time} (${dateafter} )..."
 
 # set default notification messages
-notification_title="${dateafter}"
+notification_title="[alarm] ${dateafter}"
 notification_body="${start_time} : start\n${end_time} : end"
 
 ## visual timer (choose tty-clock or xclock)
@@ -109,7 +109,7 @@ notify-send "${ntf_title:-${notification_title}}" \
 paplay "${notification_sound}" &
 
 kill -s SIGTERM $clockpid
-echo "Done!"
+echo "[alarm] Done!"
 
 exit 0
 

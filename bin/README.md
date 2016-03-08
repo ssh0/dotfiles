@@ -18,7 +18,7 @@ ref) http://qiita.com/fmy/items/b92254d14049996f6ec3
 
 ```
 NAME
-      alarm - Alert after given minutes.
+      alarm - Alert after specified time with popup and sound.
 
 SYNOPSYS
       alarm NUMBER[smhd]
