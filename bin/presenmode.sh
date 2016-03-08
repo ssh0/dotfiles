@@ -39,8 +39,7 @@ projector_mode="1024x768"
 
 f="$0"
 usage() {
-  nl -w3 -s- -nln -d'#=' -ha -bn -fn "$f" \
-    | grep -ve '^\s\+' | cut -b7- | grep -v "\`\`\`"
+  sed -n '/^#=#=#=/,/^#=#=/p' $f | sed -e '1d;$d' | cut -b3- | grep -v "\`\`\`"
   exit 1
 }
 

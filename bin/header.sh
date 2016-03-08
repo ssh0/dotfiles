@@ -20,9 +20,5 @@ if [ "$1" = "-h" ]; then
   exit 0
 fi
 
-nl --number-width=3 --number-separator='' --number-format='ln' \
-   --section-delimiter='#=' --header-numbering='a' --body-numbering='n' \
-   --footer-numbering='n' "$1" \
-  | grep -ve '^\s\+' \
-  | cut -b6-
+sed -n '/^#=#=#=/,/^#=#=/p' $1 | sed -e '1d;$d' | cut -b3-
 

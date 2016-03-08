@@ -29,8 +29,10 @@ url="https://www.google.com/search?q=%s"
 gui=false
 
 usage() {
-  nl -w3 -s- -nln -d'#=' -ha -bn -fn "${script_file}" \
-    | grep -ve '^\s\+' | cut -b7- | grep -v "\`\`\`"
+  sed -n '/^#=#=#=/,/^#=#=/p' ${script_file} \
+    | sed -e '1d;$d' \
+    | cut -b3- \
+    | grep -v "\`\`\`"
 }
 
 list_providers() {

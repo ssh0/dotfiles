@@ -18,6 +18,7 @@ EOF
 
 for file in $(find . -type f -name "*" | sort | grep -v "README"); do
   echo "## ["$(echo ${file##\./} | sed 's@\_@\\_@g')"]($file)" >> "$readme"
+  echo >> "$readme"
   echo "$(header.sh "$file")" >> "$readme"
   echo >> "$readme"
 done
