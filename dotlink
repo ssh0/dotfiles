@@ -495,3 +495,9 @@ rcfiles/pythonrc.py,.pythonrc.py
 rcfiles/matplotlibrc,.config/matplotlib/matplotlibrc
 
 #===========================================================================}}}
+# [youtube-dl](https://github.com/rg3/youtube-dl)                           {{{
+#==============================================================================
+
+youtube-dl/config,.config/youtube-dl/config
+
+#===========================================================================}}}
