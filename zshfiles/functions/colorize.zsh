@@ -30,9 +30,3 @@ alias tree='tree -C'
 
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
 
-if ls --color -d . &>/dev/null 2>&1; then
-  alias ls='ls --color=tty'
-else
-  alias ls='ls -G'
-fi
-
