@@ -216,6 +216,7 @@ zshfiles/functions/extract.zsh,.zsh/functions/extract.zsh
 zshfiles/functions/git.zsh,.zsh/functions/git.zsh
 zshfiles/functions/history.zsh,.zsh/functions/history.zsh
 zshfiles/functions/less.zsh,.zsh/functions/less.zsh
+zshfiles/functions/ls.zsh,.zsh/functions/ls.zsh
 # zshfiles/functions/longrun-command-tracker.zsh,.zsh/functions/longrun-command-tracker.zsh
 zshfiles/functions/man.zsh,.zsh/functions/man.zsh
 zshfiles/functions/peco-history.zsh,.zsh/functions/peco-history.zsh
@@ -246,6 +247,7 @@ bin/facebook,bin/facebook
 bin/google-keep,bin/google-keep
 bin/googleTTS.sh,bin/googleTTS.sh
 bin/header.sh,bin/header.sh
+bin/incfn,bin/incfn
 bin/latexmk_wrapper,bin/latexmk_wrapper
 bin/LINE,bin/LINE
 bin/makebinreadme.sh,bin/makebinreadme.sh
