@@ -3,14 +3,14 @@
 #
 #=#=#=
 # I often use this script with vim-quickrun to compile latex files.
-# 
+#
 # If the executed file is in named "source" directory,
 # this script automatically look the upper directory and search the file named
 # "main.tex" to compile.  
 # (You can change the source code if you'd like to use different name.)
-# 
-# See: [TeXをもっと便利に使う!(自動コンパイル・部分コンパイル・分割ファイルから親ファイルのコンパイル)【Vim + vim-quickrun + latexmk】 - Qiita](http://qiita.com/ssh0/items/e6d7540cd46fac580bc2)
-# 
+#
+# >[TeXをもっと便利に使う!(自動コンパイル・部分コンパイル・分割ファイルから親ファイルのコンパイル)【Vim + vim-quickrun + latexmk】 - Qiita](http://qiita.com/ssh0/items/e6d7540cd46fac580bc2)
+#
 #=#=
 
 # If there is a file named below in the same directory,

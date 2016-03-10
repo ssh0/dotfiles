@@ -1,10 +1,10 @@
 #!/bin/bash
 #=#=#=
 # toggle enabling the touchpad.
-# 
+#
 # I often use this srcipt in my laptop. (also shortcut to it)
-# 
-# From: [How to disable the touchpad? - Ask Ubuntu](http://askubuntu.com/questions/65951/how-to-disable-the-touchpad)
+#
+# >[How to disable the touchpad? - Ask Ubuntu](http://askubuntu.com/questions/65951/how-to-disable-the-touchpad)
 #=#=
 
 declare -i ID

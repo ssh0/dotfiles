@@ -5,10 +5,10 @@
 # ```
 # NAME
 #       pandoc_latexwrapper - pandoc wrapper for converting to latex
-# 
+#
 # USAGE
 #       pandoc_latexwrapper [-h] [pandoc's options] INPUTFILE(or stdin)
-# 
+#
 # OPTION
 #       -h: Show this help message.
 # ```

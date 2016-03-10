@@ -1,7 +1,7 @@
 #!/bin/sh
 #=#=#=
 # If you are in proxy network, you should manage your proxy setting.
-# 
+#
 # This script enables you to toggle proxy setting by one command.
 #=#=
 HTTP_PROXY_HOST="http://www-proxy.waseda.jp:8080"

@@ -1,7 +1,7 @@
 #!/bin/sh
 #=#=#=
 # urxvt with `urxvt_float` name.
-# 
+#
 # For xmonad float window handling.
 #=#=
 

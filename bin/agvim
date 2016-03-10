@@ -9,7 +9,7 @@
 # agvim xmonad
 # ```
 #
-# ref) http://qiita.com/fmy/items/b92254d14049996f6ec3
+# >[ag(The Silver Searcher)で検索しpecoで更に絞り込みvimで該当行を開く - Qiita](http://qiita.com/fmy/items/b92254d14049996f6ec3)
 #=#=
 
 agfilepath="$(echo $(ag $@ | $PERCOL | awk -F : '{print "+" $2 " \047" $1 "\047"}'))"

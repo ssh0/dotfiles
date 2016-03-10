@@ -4,10 +4,10 @@
 # ```
 # NAME
 #       pandoc_beamerwrapper - pandoc wrapper for converting to beamer
-# 
+#
 # USAGE
 #       pandoc_beamerwrapper [-h] [pandoc's options] INPUTFILE(or stdin)
-# 
+#
 # OPTION
 #       -h: Show this help message.
 # ```

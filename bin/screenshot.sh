@@ -1,15 +1,15 @@
 #!/bin/sh
 #=#=#=
 # Take screenshot (full window) and save it to daydir(%Y-%m-%d).
-# 
+#
 # You may change the variable below.
-# 
+#
 # ```
 # rootdir=$HOME/Workspace/blog
 # ```
-# 
-# See: [ShellScript - スクリーンショットを撮って日付のディレクトリに連番で保存するスクリプト - Qiita](http://qiita.com/ssh0/items/2b4e7a4146cb2da01187)
-# 
+#
+# >[ShellScript - スクリーンショットを撮って日付のディレクトリに連番で保存するスクリプト - Qiita](http://qiita.com/ssh0/items/2b4e7a4146cb2da01187)
+#
 #=#=
 
 get_dir=false

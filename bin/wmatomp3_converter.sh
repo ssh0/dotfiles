@@ -1,5 +1,4 @@
 #!/bin/bash
-#
 # By Marko Haapala
 #=#=#=
 # Converts wma to mp3 recursively. does not delete any static files, so 
@@ -9,7 +8,7 @@
 #
 # * [lame](http://lame.sourceforge.net/download.php)
 # * mplayer
-#     * `apt-get install mplayer` or http://www.mplayerhq.hu/design7/dload.html
+#     * `apt-get install mplayer` or download from [here](http://www.mplayerhq.hu/design7/dload.html)
 #=#=
 
 current_directory=$(pwd)

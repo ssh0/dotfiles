@@ -2,7 +2,7 @@
 # written by Shotaro Fujimoto (https://github.com/ssh0)
 #=#=#=
 # Make bin/README.md
-# 
+#
 # Required: [header.sh](./header.sh)
 #=#=
 

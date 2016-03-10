@@ -12,7 +12,7 @@ cd ~/Workspace/blog
 agvim xmonad
 ```
 
-ref) http://qiita.com/fmy/items/b92254d14049996f6ec3
+>[ag(The Silver Searcher)で検索しpecoで更に絞り込みvimで該当行を開く - Qiita](http://qiita.com/fmy/items/b92254d14049996f6ec3)
 
 ## [alarm](./alarm)
 
@@ -49,7 +49,6 @@ Required: ffmpeg
 
 ## [bib2html\_wrapper.sh](./bib2html_wrapper.sh)
 
-**bibtex2html_wrapper.sh**  
 bibtex2html wrapper script to convert bibtex file to
 readable and searchable html file.  
 (I often use with vim-quickrun to automatically execute this script.)
@@ -60,8 +59,9 @@ Required: [bibtex2html](https://www.lri.fr/~filliatr/bibtex2html/)
 apt-get install bibtex2html
 ```
 
-Show detail here.
-(japanese) http://qiita.com/ssh0/items/7af727f0513c3fbf09a4
+See details here. (japanese article)
+
+>[bibtex2htmlを利用したクールな文献管理 - Qiita](http://qiita.com/ssh0/items/7af727f0513c3fbf09a4)
 
 ## [cachecleener](./cachecleener)
 
@@ -85,7 +85,7 @@ cecho blue "Hello world!"
 color-pallete.sh - Show zenity color pallete and pick a color.
 
 But it doesn't work properly in Ubuntu 14.04 because of zenity's bug.  
-See https://bugs.launchpad.net/ubuntu/+source/zenity/+bug/1355423
+>[https://bugs.launchpad.net/ubuntu/+source/zenity/+bug/1355423](https://bugs.launchpad.net/ubuntu/+source/zenity/+bug/1355423)
 
 ## [cplay.sh](./cplay.sh)
 
@@ -139,6 +139,73 @@ REMARK
       Needs space after each '#'
 ```
 
+## [incfn](./incfn)
+
+```
+NAME
+      incfn - get a serialised filename incremented by 1
+
+USAGE
+      incfn [OPTOINS]
+      (At least one option from (-b -a -e -h) are necessary.)
+
+OPTIONS
+      -h    Show this help message.
+
+      -b filename_before
+            Set the string before the number. [default: ""]
+
+      -a filename_after
+            Set the string after the number. [default: ""]
+
+      -e filename_extension
+            Set the extension of the file. [default: ""]
+
+      -d root_dir
+            Specify the directory. [default: $PWD]
+
+      -n num_of_digits
+            Specify the number of digits. [default: 3]
+
+```
+
+### Examples
+
+In your shell script, sometimes you want save a file in '/path/to/save'
+with serial-numbered file name.
+Assume that the structure of '/path/to/save' is now
+
+```
+path
+└── to
+    └── save
+        ├── 01_file
+        ├── 02_file
+        ├── 04_file
+        ├── file_001.txt
+        ├── file_002.txt
+        └── file_003.txt
+```
+
+Then you can get the seriarised file name incremented by 1 like below:
+
+```bash
+$ cd /path/to/save
+
+$ incfn -b file_ -e txt
+/path/to/save/file_004.txt
+
+$ incfn -n 2 -a _file
+/path/to/save/05_file
+
+$ incfn -d /path/to/other -b newfile_ -e md
+/path/to/other/newfile_001.md
+```
+
+**Remark**
+
+This script prints a filename **whether the targeted directory exists or not**.
+
 ## [latexmk\_wrapper](./latexmk_wrapper)
 
 I often use this script with vim-quickrun to compile latex files.
@@ -148,7 +215,7 @@ this script automatically look the upper directory and search the file named
 "main.tex" to compile.  
 (You can change the source code if you'd like to use different name.)
 
-See: [TeXをもっと便利に使う!(自動コンパイル・部分コンパイル・分割ファイルから親ファイルのコンパイル)【Vim + vim-quickrun + latexmk】 - Qiita](http://qiita.com/ssh0/items/e6d7540cd46fac580bc2)
+>[TeXをもっと便利に使う!(自動コンパイル・部分コンパイル・分割ファイルから親ファイルのコンパイル)【Vim + vim-quickrun + latexmk】 - Qiita](http://qiita.com/ssh0/items/e6d7540cd46fac580bc2)
 
 ## [LINE](./LINE)
 
@@ -161,6 +228,22 @@ Make bin/README.md
 Required: [header.sh](./header.sh)
 
 ## [mkdpreview](./mkdpreview)
+
+```
+NAME
+      mkdpreview - Simply render markdown by pandoc.
+
+SYNOPSYS
+      mkdpreview [OPTION] markdownfile
+
+OPTIONS
+      -s: Save html file in the source file dir.
+      -u: Update (the same name's) html file in the source file dir.
+      -o: Set the name of html file. \`mkdpreview -o bar.html foo.md\`
+      -p: Preview HTML file in firefox.
+      -h: Show this message.
+
+```
 
 This script make it easy to use pandoc for converting markdown to html file.
 It is assumed that this script is called from vim-quickrun
@@ -185,16 +268,14 @@ header="$HOME/Workspace/blog/html/header.html"
 footer="$HOME/Workspace/blog/html/footer.html"
 ```
 
-MINE:
-
-header.html
+my header.html
 
 ```html
 <div id="main_content_wrap" class="outer">
 <section id="main_content" class="inner">
 ```
 
-footer.html
+my footer.html
 
 ```html
 </section>
@@ -205,21 +286,7 @@ If the executed file is in "source" directory,
 this script converts a html file to the upper directory.
 (And if "html" directory exists, the html file will be converted to there.)
 
-Usage:
-
-```
-Simply render markdown by pandoc.
-Usage: mkdpreview [OPTION] markdownfile
-
-OPTION:
-  -s: Save html file in the source file dir.
-  -u: Update (the same name's) html file in the source file dir.
-  -o: Set the name of html file. \`mkdpreview -o bar.html foo.md\`
-  -p: Preview HTML file in firefox.
-  -h: Show this message.
-```
-
-See: [markdownの編集環境をいい感じに整えてみた[vim + quickrun + pandoc] - Qiita](http://qiita.com/ssh0/items/b68263a7866b4ce9eaf1)
+>[markdownの編集環境をいい感じに整えてみた[vim + quickrun + pandoc] - Qiita](http://qiita.com/ssh0/items/b68263a7866b4ce9eaf1)
 
 ## [mplayer\_term\_wrapper.sh](./mplayer_term_wrapper.sh)
 
@@ -242,7 +309,8 @@ localpath="$HOME/Workspace/"
 
 Usage:
 
-`myrsync up` = `rsync -av --delete $localpath $dropboxpath`  
+`myrsync up` = `rsync -av --delete $localpath $dropboxpath`
+
 `myrsync down` = `rsync -av --delete $dropboxpath $localpath`
 
 ## [mytask](./mytask)
@@ -383,7 +451,7 @@ You may change the variable below.
 rootdir=$HOME/Workspace/blog
 ```
 
-See: [ShellScript - スクリーンショットを撮って日付のディレクトリに連番で保存するスクリプト - Qiita](http://qiita.com/ssh0/items/2b4e7a4146cb2da01187)
+>[ShellScript - スクリーンショットを撮って日付のディレクトリに連番で保存するスクリプト - Qiita](http://qiita.com/ssh0/items/2b4e7a4146cb2da01187)
 
 ## [screenshot.sh](./screenshot.sh)
 
@@ -395,7 +463,7 @@ You may change the variable below.
 rootdir=$HOME/Workspace/blog
 ```
 
-See: [ShellScript - スクリーンショットを撮って日付のディレクトリに連番で保存するスクリプト - Qiita](http://qiita.com/ssh0/items/2b4e7a4146cb2da01187)
+>[ShellScript - スクリーンショットを撮って日付のディレクトリに連番で保存するスクリプト - Qiita](http://qiita.com/ssh0/items/2b4e7a4146cb2da01187)
 
 ## [sound\_volume\_change\_wrapper.sh](./sound_volume_change_wrapper.sh)
 
@@ -444,7 +512,11 @@ If there is no process of urxvtd (urxvt daemon), start urxvtd.
 streamradio - remote control script with streamradio
 
 SYNOPSYS
-  streamradio [-h|--help] [start <URL>] [pause] [list [stations|current]] [quit]
+      streamradio start <URL>
+      streamradio pause
+      streamradio list [stations|current]
+      streamradio quit
+      streamradio [-h|--help] 
 ```
 
 ## [streamradio-daemon](./streamradio-daemon)
@@ -460,7 +532,7 @@ out of 17 (default + 16 escapes), followed by a
 test use of that color on all nine background 
 colors (default + 8 escapes).
 
-from: http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html
+>[http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html](http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html)
 
 ## [texmath](./texmath)
 
@@ -499,7 +571,7 @@ toggle enabling the touchpad.
 
 I often use this srcipt in my laptop. (also shortcut to it)
 
-From: [How to disable the touchpad? - Ask Ubuntu](http://askubuntu.com/questions/65951/how-to-disable-the-touchpad)
+>[How to disable the touchpad? - Ask Ubuntu](http://askubuntu.com/questions/65951/how-to-disable-the-touchpad)
 
 ## [trackpoint\_toggle.sh](./trackpoint_toggle.sh)
 
@@ -509,7 +581,7 @@ Toggle trackpoint enable/disable (useful when you in Lenovo Thinkpad).
 
 launch trello chrome-app from command line.
 
-* [Trello External Window - Chrome Web Store](https://chrome.google.com/webstore/detail/trello-external-window/gkcknpgdmiigoagkcoglklgaagnpojed)
+>[Trello External Window - Chrome Web Store](https://chrome.google.com/webstore/detail/trello-external-window/gkcknpgdmiigoagkcoglklgaagnpojed)
 
 ## [urxvt\_float.sh](./urxvt_float.sh)
 
@@ -526,7 +598,7 @@ cleanup and renaming is needed afterwards.
 
 * [lame](http://lame.sourceforge.net/download.php)
 * mplayer
-    * `apt-get install mplayer` or http://www.mplayerhq.hu/design7/dload.html
+    * `apt-get install mplayer` or download from [here](http://www.mplayerhq.hu/design7/dload.html)
 
 ## [ytdl](./ytdl)
 

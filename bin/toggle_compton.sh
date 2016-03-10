@@ -1,8 +1,7 @@
 #!/bin/bash
-
 #=#=#=
 # I use composite mangager compton.
-# 
+#
 # This script toggle enabling the composite manager.
 #=#=
 

@@ -1,64 +1,64 @@
 #!/bin/sh
 #=#=#=
+# ```
+# NAME
+#       mkdpreview - Simply render markdown by pandoc.
+#
+# SYNOPSYS
+#       mkdpreview [OPTION] markdownfile
+#
+# OPTIONS
+#       -s: Save html file in the source file dir.
+#       -u: Update (the same name's) html file in the source file dir.
+#       -o: Set the name of html file. \`mkdpreview -o bar.html foo.md\`
+#       -p: Preview HTML file in firefox.
+#       -h: Show this message.
+##
+# ```
+#
 # This script make it easy to use pandoc for converting markdown to html file.
 # It is assumed that this script is called from vim-quickrun
 # in order to edit markdown file with live-preview.
-# 
+#
 # You can change your style sheet file.
-# 
+#
 # ```sh
 # template="$HOME/Workspace/blog/styles/stylesheet.css"
 # ```
-# 
+#
 # Of cource you can load the CSS file from the web.
-# 
+#
 # ```sh
 # template='http://szk-engineering.com/markdown.css'
 # ```
-# 
+#
 # You may change these files in order to show a header bar or a footer bar.
-# 
+#
 # ```
 # header="$HOME/Workspace/blog/html/header.html"
 # footer="$HOME/Workspace/blog/html/footer.html"
 # ```
-# 
-# MINE:
-# 
-# header.html
-# 
+#
+# my header.html
+#
 # ```html
 # <div id="main_content_wrap" class="outer">
 # <section id="main_content" class="inner">
 # ```
-# 
-# footer.html
-# 
+#
+# my footer.html
+#
 # ```html
 # </section>
 # </div>
 # ```
-# 
+#
 # If the executed file is in "source" directory,
 # this script converts a html file to the upper directory.
 # (And if "html" directory exists, the html file will be converted to there.)
-# 
-# Usage:
-# 
-# ```
-# Simply render markdown by pandoc.
-# Usage: mkdpreview [OPTION] markdownfile
-# 
-# OPTION:
-#   -s: Save html file in the source file dir.
-#   -u: Update (the same name's) html file in the source file dir.
-#   -o: Set the name of html file. \`mkdpreview -o bar.html foo.md\`
-#   -p: Preview HTML file in firefox.
-#   -h: Show this message.
-# ```
-# 
-# See: [markdownの編集環境をいい感じに整えてみた[vim + quickrun + pandoc] - Qiita](http://qiita.com/ssh0/items/b68263a7866b4ce9eaf1)
-# 
+#
+# >[markdownの編集環境をいい感じに整えてみた[vim + quickrun + pandoc] - Qiita](http://qiita.com/ssh0/items/b68263a7866b4ce9eaf1)
+#
 #=#=
 
 # You cah change your style sheet file.
@@ -75,22 +75,7 @@ footer="$HOME/Workspace/blog/html/footer.html"
 sourcedir='source'
 
 usage() {
-  cat << EOF
-
-NAME
-      mkdpreview - Simply render markdown by pandoc.
-
-USAGE
-      mkdpreview [OPTION]
-
-OPTION
-      -s: Save html file in the source file dir.
-      -u: Update (the same name's) html file in the source file dir.
-      -o: Set the name of html file. \`mkdpreview -o bar.html foo.md\`
-      -p: Preview HTML file in firefox.
-      -h: Show this message.
-
-EOF
+  sed -n '/^# NAME$/,/^##$/p' "$f" | sed -e '$d' | cut -b3- >&2
   exit 1
 }
 
@@ -163,3 +148,4 @@ fi
 if $preview; then
   $previewprg "file://${output}"
 fi
+

@@ -1,17 +1,16 @@
 #!/bin/sh
 # written by Shotaro Fujimoto (https://github.com/ssh0)
-
 #=#=#=
 # ```
 # NAME
 #       mytask - start my current tasks easily.
-# 
+#
 # USAGE
 #       mytask [option] [start|add|remove|list] [cmdoption]
-# 
+#
 # OPTION
 #       -h:  Show this help message.
-# 
+#
 # COMMAND
 #       start    Execute the taskset.
 #       add      Add new taskset.

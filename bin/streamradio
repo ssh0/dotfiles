@@ -3,9 +3,13 @@
 #=#=#=
 # ```
 # streamradio - remote control script with streamradio
-# 
+#
 # SYNOPSYS
-#   streamradio [-h|--help] [start <URL>] [pause] [list [stations|current]] [quit]
+#       streamradio start <URL>
+#       streamradio pause
+#       streamradio list [stations|current]
+#       streamradio quit
+#       streamradio [-h|--help] 
 # ```
 #=#=
 

@@ -1,8 +1,7 @@
 #!/bin/bash
-
 #=#=#=
 # This script toggle enabling the composite manager xcompmgr.
-# 
+#
 # I don't use xcompmgr because it's slightly buggy.
 #=#=
 

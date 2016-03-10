@@ -1,21 +1,20 @@
 #!/bin/bash -e
 # written by Shotaro Fujimoto (https://github.com/ssh0)
-
 #=#=#=
 # ```
 # NAME
 #       texmath - compile latex to png with dvipng (and create texmath file)
-# 
+#
 # USAGE
 #       texmath [-e FILE | FILE] [-h]
-# 
+#
 # ARGUMENTS
 #       -e FILE: Open and edit FILE.
 #                Or create it when FILE doesn't exist, 
-# 
+#
 #       FILE:    If you provide only file name, this script compiles the file with
 #                latexmk and then creates png file by dvipng.
-# 
+#
 #       --help:  Display this help and exit
 # ```
 #=#=

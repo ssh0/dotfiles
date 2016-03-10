@@ -1,14 +1,14 @@
 #!/bin/sh
 #=#=#=
 # xrandr wrapper for switching display at presentaion.
-# 
+#
 # You may change these environment variables. (write and export in 'zshrc')
-# 
+#
 # ```
 # OUTPUT_DEV=eDP1
 # OUTPUT_RES=1920x1080
 # ```
-# 
+#
 # ```
 # projector="VGA1"
 # projector_mode="1024x768"
@@ -17,14 +17,14 @@
 # ```
 # NAME
 #       presenmode.sh - provide easy way to manage the monitors with xrandr.
-# 
+#
 # USAGE
 #       presenmode.sh COMMAND [-d output] [-m mode] [-h]
-# 
+#
 # COMMAND
 #       start: Start Presentation mode
 #       stop : Stop Presentaion mode
-# 
+#
 # OPTION
 #       -d: Output device connecting (default: $projector)
 #       -m: Manually select the display resolution (default: $projector_mode)
