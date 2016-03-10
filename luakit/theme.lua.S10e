@@ -22,7 +22,7 @@ theme.white  = "#b0bdbd"
 
 -- General colours
 theme.success_fg = theme.green
-theme.loaded_fg  = theme.black1
+theme.loaded_fg  = theme.green1
 theme.error_fg   = theme.bg
 theme.error_bg   = theme.red
 
