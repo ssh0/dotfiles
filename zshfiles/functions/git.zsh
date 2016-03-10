@@ -1,3 +1,22 @@
+#=#=#=
+# get git status information for creating prompts
+#
+# **Features**
+#
+# * outputs current branch info
+# * checks if working tree is dirty
+# * gets the difference between the local and remote branches
+# * outputs the name of the current branch
+# * gets the number of commits ahead from remote
+# * outputs if current branch is ahead of remote
+# * outputs if current branch is behind remote
+# * outputs if current branch exists on remote or not
+# * formats prompt string for current git commit short SHA
+# * formats prompt string for current git commit long SHA
+# * get the status of the working tree
+#
+#=#=
+
 # git theming default: Variables for theming the git info prompt
 ZSH_THEME_GIT_PROMPT_PREFIX="git:("  # Prefix at the very beginning of the prompt, before the branch name
 ZSH_THEME_GIT_PROMPT_SUFFIX=")"      # At the very end of the prompt

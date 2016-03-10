@@ -70,6 +70,21 @@ extract - extract archive files by detecting extension
 
 ## [git.zsh](./git.zsh)
 
+get git status information for creating prompts
+
+**Features**
+
+* outputs current branch info
+* checks if working tree is dirty
+* gets the difference between the local and remote branches
+* outputs the name of the current branch
+* gets the number of commits ahead from remote
+* outputs if current branch is ahead of remote
+* outputs if current branch is behind remote
+* outputs if current branch exists on remote or not
+* formats prompt string for current git commit short SHA
+* formats prompt string for current git commit long SHA
+* get the status of the working tree
 
 ## [history.zsh](./history.zsh)
 
@@ -101,6 +116,24 @@ Automatic notification via growlnotify / notify-send
 
 "==ZSH LONGRUN COMMAND TRACKER==" is printed after long run command execution  
 You can utilize it as a trigger.
+
+## [ls.zsh](./ls.zsh)
+
+Set `ls` options
+
+|Options                     |Description                                 |
+|---                         |---                                         |
+|`--human-readable`,`-h`     |append a size letter to each size           |
+|`--classify`,`-F`           |append a character indicating the file type |
+|`--sort=version`,`-v`       |sort by version name and number             |
+|`--time-style=long-iso`     |time stamp format "%Y-%m-%d %H:%M"          |
+|`--group-directories-first` |group all the directory before the files    |
+|`--color`                   |always use color                            |
+
+
+To see full documentaion for `ls`:
+
+    info coreutils 'ls invocation'
 
 ## [man.zsh](./man.zsh)
 
@@ -180,6 +213,16 @@ shtest [OPTION]
 
 Require: [zsh-takenote](https://github.com/ssh0/zsh-takenote)
 
+## [termsupport.zsh](./termsupport.zsh)
+
+Set terminal window and tab/icon title
+
+usage: title short_tab_title [long_window_title]
+
+See: http://www.faqs.org/docs/Linux-mini/Xterm-Title.html#ss3.1
+Fully supports screen, iterm, and probably most modern xterm and rxvt
+(In screen, only short_tab_title is used)
+
 ## [tmux.zsh](./tmux.zsh)
 
 set tmux aliases and start up behavior
@@ -194,10 +237,6 @@ zgen load settings
 
 * b4b4r07/enhancd zsh
 * chrissicool/zsh-256color
-* ~~robbyrussell/oh-my-zsh lib/git.zsh~~
-* ~~robbyrussell/oh-my-zsh lib/spectrum.zsh~~
-* robbyrussell/oh-my-zsh lib/termsupport.zsh
-* ~~robbyrussell/oh-my-zsh lib/theme-and-appearance.zsh~~
 * ssh0/dot
 * ssh0/zsh-takenote
 * fcambus/ansiweather
@@ -208,11 +247,6 @@ zgen load settings
 
 zplug load settings (not in use now)
 
-* from oh-my-zsh
-    * lib/git
-    * lib/spectrum
-    * lib/termsupport
-    * lib/theme-and-appearance
 * fcambus/ansiweather
 * b4b4r07/enhancd
 * b4b4r07/zplug
