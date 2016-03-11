@@ -349,7 +349,7 @@ wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws,t]
 
 myXPConfig = defaultXPConfig
                 { font              = "xft:Migu 1M:size=12:antialias=true"
-                , fgColor           = colorfg
+                , fgColor           = colorBlue
                 , bgColor           = colorNormalbg
                 , borderColor       = colorNormalbg
                 , height            = 20
