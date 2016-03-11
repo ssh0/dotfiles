@@ -22,7 +22,8 @@ fg_red=210
 # A few utility functions to make it easy and re-usable to draw segmented prompts
 
 CURRENT_BG='NONE'
-SEGMENT_SEPARATOR='▒'
+SEGMENT_SEPARATOR=''
+# SEGMENT_SEPARATOR='▒'
 # SEGMENT_SEPARATOR='▓▒░'
 
 # Begin a segment
@@ -61,7 +62,7 @@ prompt_end() {
 #------------------------------------------------------------------------------
 
 prompt_init() {
-  echo -n "%{%F{${bg_dir}}%K{$CURRENT_BG}%}"
+  echo -n "%{%F{${bg_dir}}%K{${bg_dir}}%}#"
 }
 
 #---------------------------------------------------------------------------}}}
@@ -196,10 +197,10 @@ build_prompt() {
 }
 
 PROMPT='%{%f%b%k%}$(build_prompt)%{$reset_color%}
-%{$fg_bold[green]%}: %{$reset_color%}'
+%{$fg_bold[black]%}$ %{$reset_color%}'
 RPROMPT=''
 
-PROMPT2='  %{%F{30}%}↪%{$reset_color%} '
+PROMPT2='%{%F{30}%}↪%{$reset_color%} '
 RPROMPT2='%{$fg_bold[green]%}%_%{$reset_color%}'
 
 #===========================================================================}}}
