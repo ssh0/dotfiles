@@ -80,5 +80,5 @@ function termsupport_preexec {
 }
 
 precmd_functions+=(termsupport_precmd)
-preexec_functions+=(ermsupport_preexec)
+preexec_functions+=(termsupport_preexec)
 
