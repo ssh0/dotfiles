@@ -1,0 +1,15 @@
+#compdef incfn
+
+_incfn() {
+
+  _arguments -s -S \
+    '-h[Show help message.]: :' \
+    '-b[Set the string before the number. \[default: ""\]]:filename_before:' \
+    '-a[Set the string after the number. \[default: ""\]]:filename_after:' \
+    '-e[Set the extension of the file. \[default: ""\]]:filename_extension:' \
+    '-d[Specify the directory. \[default: \$PWD\]]:root_dir:_path_files -/' \
+    '-n[Specify the number of digits. \[default: 3\]]:num_of_digits:(1 2 3 4)' \
+    && ret=0
+
+  return ret
+}

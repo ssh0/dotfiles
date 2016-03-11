@@ -188,6 +188,7 @@ zshfiles/zshrc,.zshrc
 
 # Completions
 zshfiles/completions/_cheat,.zsh/completions/_cheat
+zshfiles/completions/_incfn,.zsh/completions/_incfn
 zshfiles/completions/_jupyter,.zsh/completions/_jupyter
 zshfiles/completions/_mkdocs,.zsh/completions/_mkdocs
 zshfiles/completions/_myrsync,.zsh/completions/_myrsync
