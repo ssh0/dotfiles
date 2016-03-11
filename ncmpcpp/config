@@ -394,7 +394,7 @@ screen_switcher_mode = "sequence: 2 -> 9"
 #
 #locked_screen_width_part = "50"
 #
-#ask_for_locked_screen_width_part = "yes"
+ask_for_locked_screen_width_part = "no"
 #
 ##
 ## Note: You can define startup screen for ncmpcpp
