@@ -21,6 +21,9 @@ repo = 'Shougo/vimproc'
   unix    = 'gmake'
 
 [[plugins]]
+repo = 'lambdalisue/vim-gita'
+
+[[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
 
 [[plugins]]
