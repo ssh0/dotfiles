@@ -68,14 +68,14 @@ colorNormalbg  = "#1c1c1c"
 colorfg        = "#585858"
 
 -- Border width
-borderwidth = 1
+borderwidth = 5
 
 -- Border color
 mynormalBorderColor  = "#585858"
 myfocusedBorderColor = "#585858"
 
 -- gapwidth
-gapwidth  = 7
+gapwidth  = 3
 gwU = 2
 gwD = 1
 gwL = 38
@@ -91,10 +91,6 @@ main = do
     wsbar <- spawnPipe myWsBar
     xmonad $ ewmh defaultConfig
        { borderWidth        = borderwidth
-       -- urxvtc is client terminal application. you should launch the daemon 
-       -- before using urxvtc
-       --     $ urxvtd -q -f -o
-       -- , terminal           = "urxvtc"
        , terminal           = "urxvt"
        , focusFollowsMouse  = True
        , normalBorderColor  = mynormalBorderColor
@@ -110,7 +106,7 @@ main = do
         -- xmobar setting
        , logHook            = myLogHook wsbar
                                 >> updatePointer (Relative 0.99 0.99)
-       , handleEventHook    = fullscreenEventHook <+> removeBordersEventHook
+       , handleEventHook    = fullscreenEventHook
        , workspaces         = myWorkspaces
        , modMask            = modm
        , mouseBindings      = newMouse
@@ -144,6 +140,7 @@ main = do
        , ("M-c"    , kill1)
        -- Toggle layout (Fullscreen mode)
        , ("M-f"    , sendMessage ToggleLayout)
+       , ("M-S-f"  , withFocused (keysMoveWindow (-borderwidth,-borderwidth)))
        -- Move the focused window
        , ("M-C-<R>", withFocused (keysMoveWindow (2,0)))
        , ("M-C-<L>", withFocused (keysMoveWindow (-2,0)))
@@ -307,18 +304,6 @@ myManageHookFloat = composeAll
     , stringProperty "WM_NAME" =? "Google Keep" --> (doRectFloat $ W.RationalRect 0.3 0.1 0.4 0.82)
     , stringProperty "WM_NAME" =? "tmptex.pdf - 1/1 (96 dpi)" --> (doRectFloat $ W.RationalRect 0.29 0.25 0.42 0.5)
     ]
-
---------------------------------------------------------------------------- }}}
--- removeBordersEventHook:                                                  {{{
--------------------------------------------------------------------------------
-
-removeBordersEventHook :: Event -> X All
-removeBordersEventHook ev = do
-    whenX (className =? "mpv" `runQuery` w) $ withDisplay $ \d ->
-        io $ setWindowBorderWidth d w 0
-    return (All True)
-        where
-        w = ev_window ev
 
 --------------------------------------------------------------------------- }}}
 -- myLogHook:         loghock settings                                      {{{
