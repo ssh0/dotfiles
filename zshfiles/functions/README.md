@@ -139,8 +139,8 @@ To see full documentaion for `ls`:
 
 man (available for buitlin commands)
 
-> [Can I get individual man pages for the bash builtin commands? - Unix & Linux Stack Exchange](http://unix.stackexchange.com/questions/18087/can-i-get-individual-man-pages-for-the-bash-builtin-commands)
-> [manpage - How to make `man` work for shell builtin commands and keywords? - Ask Ubuntu](http://askubuntu.com/questions/439410/how-to-make-man-work-for-shell-builtin-commands-and-keywords)
+>* [Can I get individual man pages for the bash builtin commands? - Unix & Linux Stack Exchange](http://unix.stackexchange.com/questions/18087/can-i-get-individual-man-pages-for-the-bash-builtin-commands)
+>* [manpage - How to make `man` work for shell builtin commands and keywords? - Ask Ubuntu](http://askubuntu.com/questions/439410/how-to-make-man-work-for-shell-builtin-commands-and-keywords)
 
 But I want to know about zsh builtins, so I wrote this.
 
