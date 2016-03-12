@@ -12,7 +12,7 @@
 
 setopt prompt_subst
 
-bg_dir=23
+bg_dir=240
 bg_dark=237
 fg_red=210
 
