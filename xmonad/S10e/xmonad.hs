@@ -71,7 +71,7 @@ colorfg        = "#585858"
 borderwidth = 5
 
 -- Border color
-mynormalBorderColor  = "#424242"
+mynormalBorderColor  = "#333333"
 myfocusedBorderColor = "#585858"
 
 -- gapwidth
