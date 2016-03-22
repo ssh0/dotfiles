@@ -129,6 +129,28 @@ git clone --depth 1 --recursive  https://github.com/ssh0/dotfiles.git ~/.dotfile
 
 お好みの設定ファイルをコピーしたり，シンボリックリンクを張ったりして，設定を反映させてください。
 
+ローカル設定
+============
+
+別のPC用
+
+## ThinkPad T540p
+
+`~/.zsh/rc.mine`
+
+```sh
+export PC=T540p
+```
+
+## Lenovo IdeaPad S10e
+
+`~/.zsh/rc.mine`
+
+```sh
+export PC=S10e
+```
+
+
 ライセンス
 ==========
 

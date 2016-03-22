@@ -132,6 +132,28 @@ git clone --depth 1 --recursive https://github.com/ssh0/dotfiles.git ~/.dotfiles
 
 then, you can copy or make a symbolic from the directory to the right place(described in `dotlink`).
 
+Local settings
+==============
+
+For my other machines ...
+
+## ThinkPad T540p
+
+`~/.zsh/rc.mine`
+
+```sh
+export PC=T540p
+```
+
+## Lenovo IdeaPad S10e
+
+`~/.zsh/rc.mine`
+
+```sh
+export PC=S10e
+```
+
+
 License
 =======
 
