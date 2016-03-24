@@ -74,6 +74,10 @@ borderwidth = 5
 mynormalBorderColor  = "#333333"
 myfocusedBorderColor = "#585858"
 
+-- Float window control width
+moveWD = borderwidth
+resizeWD = 2*borderwidth
+
 -- gapwidth
 gapwidth  = 0
 gwU = 5
@@ -142,13 +146,13 @@ main = do
        , ("M-f"    , sendMessage ToggleLayout)
        , ("M-S-f"  , withFocused (keysMoveWindow (-borderwidth,-borderwidth)))
        -- Move the focused window
-       , ("M-C-<R>", withFocused (keysMoveWindow (2,0)))
-       , ("M-C-<L>", withFocused (keysMoveWindow (-2,0)))
-       , ("M-C-<U>", withFocused (keysMoveWindow (0,-2)))
-       , ("M-C-<D>", withFocused (keysMoveWindow (0,2)))
+       , ("M-C-<R>", withFocused (keysMoveWindow (moveWD, 0)))
+       , ("M-C-<L>", withFocused (keysMoveWindow (-moveWD, 0)))
+       , ("M-C-<U>", withFocused (keysMoveWindow (0, -moveWD)))
+       , ("M-C-<D>", withFocused (keysMoveWindow (0, moveWD)))
        -- Resize the focused window
-       , ("M-s"    , withFocused (keysResizeWindow (-6,-6) (0.5,0.5)))
-       , ("M-i"    , withFocused (keysResizeWindow (6,6) (0.5,0.5)))
+       , ("M-s"    , withFocused (keysResizeWindow (-resizeWD, resizeWD) (0.5, 0.5)))
+       , ("M-i"    , withFocused (keysResizeWindow (resizeWD, resizeWD) (0.5, 0.5)))
        -- Increase / Decrese the number of master pane
        , ("M-S-;"  , sendMessage $ IncMasterN 1)
        , ("M--"    , sendMessage $ IncMasterN (-1))
