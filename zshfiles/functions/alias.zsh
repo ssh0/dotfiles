@@ -59,41 +59,53 @@ alias spdmeter='_speedometer'
 # enable aliases in sudo
 alias sudo='sudo '
 
-# edit config file
-cf-alias() { $EDITOR ~/.zsh/functions/alias.zsh ;}
-cf-compton() { $EDITOR ~/.config/compton/compton.conf ;}
-cf-dotlink() { $EDITOR ~/.dotfiles/dotlink ;}
-cf-dotrc() { $EDITOR ~/.dotfiles/dotrc ;}
-cf-environmnet() { $EDITOR ~/.zsh/functions/environment.zsh ;}
-cf-functions() { $EDITOR ~/.zsh/functions ;}
-cf-history() { $EDITOR ${ZSH_ROOT}/history ;}
-cf-latexmkrc() { $EDITOR ~/.latexmkrc ;}
-cf-luakit() { $EDITOR ~/.config/luakit ;}
-cf-mplayer() { $EDITOR ~/.mplayer/config ;}
-cf-mpd() { $EDITOR ~/.config/mpd/mpd.conf ;}
-cf-mpv() { $EDITOR ~/.config/mpv/mpv.conf ;}
-cf-mutt() { $EDITOR ~/.mutt/muttrc ;}
-cf-nvim() { $EDITOR ~/.config/nvim/init.vim ;}
-cf-ncmpcpp() { $EDITOR ~/.ncmpcpp/config ;}
-cf-prompt() { $EDITOR ~/.zsh/functions/prompt.zsh ;}
-cf-ranger() { $EDITOR ~/.config/ranger/rc.conf ;}
-cf-ranger-rifle() { $EDITOR ~/.config/ranger/rifle.conf ;}
-cf-s() { $EDITOR ~/bin/s_provider ;}
-cf-tig() { $EDITOR ~/.tigrc ;}
-cf-tmux() { $EDITOR ~/.tmux.conf ;}
-cf-turses() { $EDITOR ~/.turses/config ;}
-cf-vim() { $EDITOR ~/.vimrc ;}
-cf-vimcolor() { $EDITOR ~/.vim/bundle/easy-reading.vim/colors/easy-reading.vim ;}
-cf-vimperatorrc() { $EDITOR ~/.vimperatorrc ;}
-cf-w3m() { $EDITOR ~/.w3m/config ;}
-cf-w3m-keymap() { $EDITOR ~/.w3m/keymap ;}
-cf-websearch() { $EDITOR ~/Workspace/python/web_search/websearch/config.py ;}
-cf-xdefaults() { $EDITOR ~/.Xdefaults ;}
-cf-xmodmap() { $EDITOR ~/.Xmodmap ;}
-cf-xmonad() { $EDITOR ~/.xmonad/xmonad.hs ;}
-cf-xresources() { $EDITOR ~/.Xresources ;}
-cf-zshrc() { $EDITOR ~/.zshrc ;}
-cf-zgen() { $EDITOR ~/.zsh/functions/zgen.zsh ;}
+# edit configuration file by $EDITOR (vim).
+function edit_config() {
+  if [[ -e "$2" ]]; then
+    alias "cf-$1"="$EDITOR '$2'"
+  else
+    alias "cf-$1::NEW"="echo \"File '$2' doesn't exist. \nCreate new one ...\"; \
+                     sleep 1; \
+                     $EDITOR '$2'"
+  fi
+}
+
+edit_config alias        ${ZSH_ROOT}/functions/alias.zsh
+edit_config compton      ~/.config/compton/compton.conf
+edit_config dotlink      ~/.dotfiles/dotlink
+edit_config dotrc        ~/.dotfiles/dotrc
+edit_config env          ${ZSH_ROOT}/functions/environment.zsh
+edit_config functions    ${ZSH_ROOT}/functions
+edit_config history      ${ZSH_ROOT}/history
+edit_config latexmk      ~/.latexmkrc
+edit_config luakit       ~/.config/luakit
+edit_config mplayer      ~/.mplayer/config
+edit_config mpd          ~/.config/mpd/mpd.conf
+edit_config mpv          ~/.config/mpv/mpv.conf
+edit_config mutt         ~/.mutt/muttrc
+edit_config nvim         ~/.config/nvim/init.vim
+edit_config ncmpcpp      ~/.ncmpcpp/config
+edit_config prompt       ${ZSH_ROOT}/functions/prompt.zsh
+edit_config ranger       ~/.config/ranger/rc.conf
+edit_config ranger_rifle ~/.config/ranger/rifle.conf
+edit_config s            ~/bin/s_provider
+edit_config tig          ~/.tigrc
+edit_config tmux         ~/.tmux.conf
+edit_config turses       ~/.turses/config
+edit_config vim          ~/.vimrc
+edit_config vimcolor     ~/.vim/bundle/easy-reading.vim/colors/easy-reading.vim
+edit_config vimperator   ~/.vimperatorrc
+edit_config w3m          ~/.w3m/config
+edit_config w3m-keymap   ~/.w3m/keymap
+edit_config websearch    ~/Workspace/python/web_search/websearch/config.py
+edit_config xdefaults    ~/.Xdefaults
+edit_config xmodmap      ~/.Xmodmap
+edit_config xmonad       ~/.xmonad/xmonad.hs
+edit_config xresources   ~/.Xresources
+edit_config zshrc        ~/.zshrc
+edit_config zgen         ${ZSH_ROOT}/functions/zgen.zsh
+
+unfunction edit_config
 
 # reload configurations
 rl-xdefaults() { xrdb ~/.Xdefaults ;}
