@@ -68,8 +68,8 @@ repo = 'tyru/markdown-codehl-onthefly.vim'
 [[plugins]]
 repo = 'lervag/vimtex'
 
-[[plugins]]
-repo = 'davidhalter/jedi-vim'
+#[[plugins]]
+#repo = 'davidhalter/jedi-vim'
 
 [[plugins]]
 repo = 'nvie/vim-flake8'

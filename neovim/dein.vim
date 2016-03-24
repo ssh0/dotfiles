@@ -234,8 +234,8 @@ let g:vimtex_fold_envs = 1
 let g:vimtex_view_general_viewer = 'mupdf'
 
 " jedi complete
-let g:jedi#popup_on_dot = 1
-let g:jedi#popup_select_first = 1
+" let g:jedi#popup_on_dot = 1
+" let g:jedi#popup_select_first = 1
 "
 let g:gista#github_user = 'ssh0'
 let g:gista#update_on_write = 1
