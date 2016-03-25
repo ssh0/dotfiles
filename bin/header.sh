@@ -20,5 +20,5 @@ if [ "$1" = "-h" ]; then
   exit 0
 fi
 
-sed -n '/^#=#=#=/,/^#=#=/p' $1 | sed -e '1d;$d' | cut -b3-
+sed -n '/^#=#=#=/,/^#=#=/p' "$1" | sed -e '1d;$d' | cut -b3-
 
