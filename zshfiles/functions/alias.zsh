@@ -35,6 +35,8 @@ fi
 
 alias v='vim'
 
+alias r='ranger'
+
 # I often type ":q" to exit terminal
 alias :q='exit'
 

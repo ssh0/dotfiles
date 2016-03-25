@@ -178,20 +178,19 @@ In order for this theme to render correctly, you will need a
 
 ## [ranger.zsh](./ranger.zsh)
 
-ranger-cd
 
 Compatible with ranger 1.4.2 through 1.7.*
 
-Automatically change the directory in bash after closing ranger
+## Features
+
+**Automatically change the directory in bash after closing ranger**
 
 This is a bash function for .bashrc to automatically change the directory to
 the last visited one after ranger quits.
 To undo the effect of this function, you can type "cd -" to return to the
 original directory.
 
-## [r.zsh](./r.zsh)
-
-Start new ranger instance only if it's not running in current shell
+**Start new ranger instance only if it's not running in current shell**
 
 > [ranger - ArchWiki](https://wiki.archlinux.org/index.php/Ranger#Start_new_ranger_instance_only_if_it.27s_not_running_in_current_shell)
 
