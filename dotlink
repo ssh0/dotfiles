@@ -222,7 +222,6 @@ zshfiles/functions/ls.zsh,.zsh/functions/ls.zsh
 zshfiles/functions/man.zsh,.zsh/functions/man.zsh
 zshfiles/functions/peco-history.zsh,.zsh/functions/peco-history.zsh
 zshfiles/functions/prompt.zsh,.zsh/functions/prompt.zsh
-zshfiles/functions/r.zsh,.zsh/functions/r.zsh
 zshfiles/functions/ranger.zsh,.zsh/functions/ranger.zsh
 zshfiles/functions/shtest.zsh,.zsh/functions/shtest.zsh
 zshfiles/functions/termsupport.zsh,.zsh/functions/termsupport.zsh
