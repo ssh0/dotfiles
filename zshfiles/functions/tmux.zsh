@@ -28,13 +28,13 @@ alias tkss='tmux kill-session -t'
 # Autostart if not already in tmux.
 if [[ ! -n $TMUX ]]; then
   # get the IDs
-  ID="`tmux list-sessions`"
-  if [[ -z "$ID" ]]; then
-    tmux new-session && exit
+  if ! ID="$(tmux list-sessions 2>/dev/null)"; then
+    # tmux returned error, so try cleaning up /tmp
+    /bin/rm -rf /tmp/tmux*
   fi
   create_new_session="Create New Session"
   ID="${create_new_session}:\n$ID"
-  ID="`echo $ID | $PERCOL | cut -d: -f1`"
+  ID="$(echo $ID | $PERCOL | cut -d: -f1)"
   if [[ "$ID" = "${create_new_session}" ]]; then
     tmux new-session && exit
   elif [[ -n "$ID" ]]; then
