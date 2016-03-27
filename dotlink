@@ -212,6 +212,7 @@ zshfiles/functions/bindkey.zsh,.zsh/functions/bindkey.zsh
 zshfiles/functions/colorize.zsh,.zsh/functions/colorize.zsh
 zshfiles/functions/command-not-found.zsh,.zsh/functions/command-not-found.zsh
 zshfiles/functions/completion.zsh,.zsh/functions/completion.zsh
+zshfiles/functions/confirm.zsh,.zsh/functions/confirm.zsh
 zshfiles/functions/environment.zsh,.zsh/functions/environment.zsh
 zshfiles/functions/extract.zsh,.zsh/functions/extract.zsh
 zshfiles/functions/git.zsh,.zsh/functions/git.zsh
