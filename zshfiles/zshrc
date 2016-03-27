@@ -53,6 +53,7 @@ alias
 history
 colorize
 command-not-found
+confirm
 extract
 git
 less
