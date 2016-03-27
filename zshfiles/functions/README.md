@@ -51,6 +51,53 @@ Set completion options
 * verobose output (with description)
 * ls colors with LS_COLORS
 
+## [confirm.zsh](./confirm.zsh)
+
+Function for asking user yes or no
+
+**Features**
+
+* can set default answer (default one is shown in caitals)
+* can set messages
+* loop if the answer is invalid
+* ignorecase
+
+```
+Name
+      confirm - confirm user yes or no
+
+Usage
+      confirm [ y | n ] [<message>]
+
+Examples
+      Use this function to ask user yes or no.
+
+      * Set default answer by setting first argument 'y':
+
+          $ confirm y "Choose y or n " && echo "Yes" || echo "No"
+          Choose y or n (Y/n)>
+          Yes
+
+          $ confirm y "Choose y or n " && echo "Yes" || echo "No"
+          Choose y or n (Y/n)> n
+          No
+
+      * If the first argument is not 'y' or 'n':
+
+          $ confirm "Choose y or n " && echo "Yes" || echo "No"
+          Choose y or n (y/n)>
+          Please answer with 'y' or 'n'.
+          Choose y or n (y/n)> y
+          Yes
+
+      * You can answer with upper characters:
+
+          $ confirm "Choose y or n " && echo "Yes" || echo "No"
+          Choose y or n (y/n)> YeS
+          Yes
+
+```
+
 ## [environment.zsh](./environment.zsh)
 
 Set environment variables
