@@ -68,7 +68,7 @@ colorNormalbg  = "#1c1c1c"
 colorfg        = "#585858"
 
 -- Border width
-borderwidth = 5
+borderwidth = 8
 
 -- Border color
 mynormalBorderColor  = "#333333"
@@ -79,7 +79,7 @@ moveWD = borderwidth
 resizeWD = 2*borderwidth
 
 -- gapwidth
-gapwidth  = 3
+gapwidth  = 0
 gwU = 2
 gwD = 1
 gwL = 38
@@ -298,7 +298,7 @@ myManageHookFloat = composeAll
     , className =? "Nautilus"         --> doCenterFloat
     , className =? "Plugin-container" --> doCenterFloat
     , className =? "Screenkey"        --> (doRectFloat $ W.RationalRect 0.7 0.9 0.3 0.1)
-    , className =? "Websearch"        --> (doRectFloat $ W.RationalRect 0.45 0.4 0.1 0.01)
+    , className =? "Websearch"        --> doCenterFloat
     , className =? "XClock"           --> doSideFloat NE
     , title     =? "Speedbar"         --> doCenterFloat
     , title     =? "urxvt_float"      --> doSideFloat SC
