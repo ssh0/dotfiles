@@ -73,6 +73,8 @@ function _ec() {
 
 _ec alias        ${ZSH_ROOT}/functions/alias.zsh
 _ec compton      ~/.config/compton/compton.conf
+_ec dein         ~/.config/nvim/dein.toml
+_ec dein_lazy    ~/.config/nvim/dein_lazy.toml
 _ec dotlink      ~/.dotfiles/dotlink
 _ec dotrc        ~/.dotfiles/dotrc
 _ec env          ${ZSH_ROOT}/functions/environment.zsh
