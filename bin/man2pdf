@@ -1,0 +1,9 @@
+#!/bin/bash
+# written by Shotaro Fujimoto (https://github.com/ssh0)
+# first edited: 2016-03-29
+
+manual="$1"
+output_dir="$HOME/Dropbox/document/pdf/man"
+
+man -t "$1" | ps2pdf14 - "${output_dir}/$1".pdf
+
