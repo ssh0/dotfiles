@@ -54,8 +54,8 @@ window.methods.update_progress = function (w)
         local pbar = { }
         local strlen = 33
         local pstrlen = math.floor((p*strlen))
-        for i=1,pstrlen do pbar[i] = "█" end
-        for i=pstrlen+1,strlen do pbar[i] = "." end
+        for i=1,pstrlen do pbar[i] = "▓" end
+        for i=pstrlen+1,strlen do pbar[i] = "░" end
         local text = string.format("%s %d%%", table.concat(pbar, ""), p * 100)
         if loaded.text ~= text then loaded.text = text end
     end
