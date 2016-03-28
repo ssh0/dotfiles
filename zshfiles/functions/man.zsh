@@ -30,6 +30,10 @@ function man() {
   local _LANG=${LANG:-"en_US.UTF-8"}
   # set language
   export LANG=${MANLANG:-${_LANG}}
+  if [ ! -n "$1" ]; then
+    echo "What manual page do you want?"
+    return 1
+  fi
 
   case "$(whence -wa -- $1 | uniq | fzf -1 | sed 's/: / /' | cut -d' ' -f2)" in
     builtin) # built-in
