@@ -46,22 +46,25 @@
 #=#=
 function confirm() {
   # confirm [ y | n ] [<message>]
-  local yn mes __confirm ret
+  local yn mes __confirm ret _b _r
+  _b="\e[1m"
+  _r="\e[m"
   if [ "$1" = "y" ]; then
-    yn="Y/n"
+    yn="${_b}Y${_r}/${_b}n${_r}"
     mes="$2"
     ret=0
   elif [ "$1" = "n" ]; then
-    yn="y/N"
+    yn="${_b}y${_r}/${_b}N${_r}"
     mes="$2"
     ret=1
   else
     yn="y/n"
+    yn="${_b}y${_r}/${_b}n${_r}"
     mes="$1"
     ret=-1
   fi
 
-  echo -n "$mes($yn)> "
+  echo -n "$mes ($yn) "
   read __confirm
   __confirm=$(echo ${__confirm} | tr '[:upper:]' '[:lower:]')
   case ${__confirm} in
