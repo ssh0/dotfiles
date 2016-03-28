@@ -67,7 +67,7 @@ function _ec() {
     alias "cf-$1"="$EDITOR '$2'"
   else
     alias "cf-$1::NEW"="echo \"File '$2' doesn't exist. \"; \
-                     confirm y \"Create new one? \" && $EDITOR '$2'"
+                     confirm y \"Create new one?\" && $EDITOR '$2'"
   fi
 }
 
