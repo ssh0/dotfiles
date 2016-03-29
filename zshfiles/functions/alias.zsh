@@ -63,8 +63,10 @@ alias sudo='sudo '
 
 # edit configuration file by $EDITOR (vim).
 function _ec() {
-  if [[ -e "$2" ]]; then
+  if [[ -f "$2" ]]; then
     alias "cf-$1"="$EDITOR '$2'"
+  elif [[ -d "$2" ]]; then
+    alias "cf-$1"="builtin cd '$2'"
   else
     alias "cf-$1::NEW"="echo \"File '$2' doesn't exist. \"; \
                      confirm y \"Create new one?\" && $EDITOR '$2'"
