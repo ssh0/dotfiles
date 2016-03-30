@@ -227,6 +227,10 @@ Make bin/README.md
 
 Required: [header.sh](./header.sh)
 
+## [man2pdf](./man2pdf)
+
+
+
 ## [mkdpreview](./mkdpreview)
 
 ```
@@ -433,6 +437,7 @@ USAGE
 
 OPTIONS
       -h    Show help message
+      -t    Set the browser to use (-g option is already enabled)
       -l    Show search providers list
       -g    Force search in GUI browser
 
