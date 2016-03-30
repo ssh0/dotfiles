@@ -1,11 +1,13 @@
 #compdef s
 
 _s() {
-  local providers
+  local providers browsers
   providers=(${(f)"$(s -l zsh)"})
+  browsers=(firefox private chromium chrome opera operaprivate luakit w3m)
 
   _arguments  \
     '-h[Show help message]: :' \
+    '-t[Set the browser to use (-g option is already enabled)]:BROWSER:($browsers)' \
     '-l[Show search providers list]: :' \
     '-g[Force search in GUI browser]' \
     '1: :->alis'
