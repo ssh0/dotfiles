@@ -135,26 +135,49 @@ add_binds("insert", {
     lousy.bind.key({"Control"},  "e",
         "Edit text fields in an external editor.",
         function (w)
-            local s = w.view:eval_js("document.activeElement.value")
+            local editor = "urxvt -g 90x20 -title \"urxvt_float\" -name \"urxvt_float\" -e nvim -c \"set completefunc=googlesuggest#Complete\""
 
-            local n = "/tmp/" .. os.time()
-            local f = io.open(n, "w")
-            f:write(s)
-            f:flush()
-            f:close()
+            local time = os.time()
+            local file = "/tmp/" .. time
+            local marker = "luakit_extedit_" .. time
+            local function editor_callback(exit_reason, exit_status)
+                f = io.open(file, "r")
+                s = f:read("*all")
+                f:close()
+                -- Strip the string
+                s = s:gsub("^%s*(.-)%s*$", "%1")
+                -- Escape it but remove the quotes
+                s = string.format("%q", s):sub(2, -2)
+                -- lua escaped newlines (slash+newline) into js newlines (slash+n)
+                s = s:gsub("\\\n", "\\n")
+                w.view:eval_js(string.format([=[
+                var e = document.getElementsByClassName('%s');
+                if(1 == e.length && e[0].disabled){
+                    e[0].focus();
+                    e[0].value = "%s";
+                    e[0].disabled = false;
+                    e[0].className = e[0].className.replace(/\b %s\b/,'');
+                }
+                ]=], marker, s, marker))
+            end
 
-            luakit.spawn_sync("urxvt -g 90x20 -title \"urxvt_float\" -name \"urxvt_float\" -e nvim \"" .. n .. "\" -c \"set completefunc=googlesuggest#Complete\"")
-
-            f = io.open(n, "r")
-            s = f:read("*all")
-            f:close()
-            -- Strip the string
-            s = s:gsub("^%s*(.-)%s*$", "%1")
-            -- Escape it but remove the quotes
-            s = string.format("%q", s):sub(2, -2)
-            -- lua escaped newlines (slash+newline) into js newlines (slash+n)
-            s = s:gsub("\\\n", "\\n")
-            w.view:eval_js("document.activeElement.value = '" .. s .. "'")
+            local s = w.view:eval_js(string.format([=[
+            var e = document.activeElement;
+            if(e && (e.tagName && 'TEXTAREA' == e.tagName || e.type && 'text' == e.type)){
+                var s = e.value;
+                e.className += " %s";
+                e.disabled = true;
+                e.value = '%s';
+                s;
+            }else 'false';
+            ]=], marker, file))
+            if "false" ~= s then
+                local f = io.open(file, "w")
+                f:write(s)
+                f:flush()
+                f:close()
+                luakit.spawn(string.format("%s %q", editor, file), editor_callback)
+            end
         end),
 
     lousy.bind.key({"Mod1"}, "Left", "Go to previous tab.",
