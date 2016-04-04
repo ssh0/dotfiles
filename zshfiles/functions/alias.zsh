@@ -66,7 +66,7 @@ function _ec() {
   if [[ -f "$2" ]]; then
     alias "cf-$1"="$EDITOR '$2'"
   elif [[ -d "$2" ]]; then
-    alias "cf-$1"="builtin cd '$2'"
+    alias "cf-$1"="builtin cd '$2'; ls"
   else
     alias "cf-$1::NEW"="echo \"File '$2' doesn't exist. \"; \
                      confirm y \"Create new one?\" && $EDITOR '$2'"
