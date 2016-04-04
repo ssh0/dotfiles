@@ -358,6 +358,7 @@ system/notify-osd,.notify-osd
 #==============================================================================
 
 vimperator/vimperatorrc,.vimperatorrc
+vimperator/${PC}/vimperatorrc.local,.vimperatorrc.local
 vimperator/colors/darkness.vimp,.vimperator/colors/darkness.vimp
 
 #===========================================================================}}}
