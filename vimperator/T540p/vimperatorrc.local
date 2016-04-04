@@ -1,0 +1,17 @@
+"3.8.2 (created: 2015/05/11)
+
+" Set animations (more cpu power needed)
+set animations=true
+
+" Setting for status line font-size
+hi CmdLine -append font-size:14px
+hi CmdOutput -append font-size:14px
+hi CompDesc -append font-size:14px
+hi CompTitle -append font-size:14px
+hi CompResult -append font-size:14px
+hi CompMsg -append font-size:14px
+hi StatusLine -append font-size:14px
+hi ModeMsg -append font-size:14px
+hi Help -append font-size: 16px
+hi Title -append font-size:14px
+hi WarningMsg -append font-size:14px

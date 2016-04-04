@@ -38,26 +38,32 @@ let g:auto_append_anchor = "true"
 " completion for history only
 set complete=l
 
-" clean titlestring
+" clean titlestring (Don't show 'Vimperator - ')
 set titlestring=
 
 " Don't focus input box when opening new tab
 set focuscontent
 
 " set default editor for vim
-set editor='urxvt -g 90x15 -title "urxvt_float" -name "urxvt_float" -e vim'
+set editor='urxvt -g 90x15 -title "urxvt_float" -name "urxvt_float" -e nvim'
 
 " activate
 set activate=addons,downloads,extoptions,help,homepage,quickmark,paste
 
 " No GUI
-set gui=nonavigation,notabs
+set gui=nonavigation
+
+" no close buttons on tabs
+set! browser.tabs.closeButtons=2
 
 " no scrollbar
 set noscrollbars
 
 " Set hintcharacter for easily reachable keys
 set hintchars=ifjkasdhguonmerwc
+
+" to prevent d on the last tab from closing the window:
+set! browser.tabs.closeWindowWithLastTab=false
 
 "---------------------------------------------------------------------------}}}
 " Appearance                                                                {{{
@@ -79,8 +85,8 @@ hi HintActive background-color:#cedef8; color:;
 
 " completion for history only
 " set v and v key for showing tab
-noremap v :set<Space>gui=nonavigation,tabs<CR>
-noremap V :set<space>gui=navigation,tabs<CR>
+noremap v :set<Space>gui=tabs<CR>
+noremap V :set<space>gui=navigation<CR>
 
 noremap <F11> :set<Space>gui=nonavigation,notabs<CR>
 
@@ -92,11 +98,11 @@ noremap <F11> :set<Space>gui=nonavigation,notabs<CR>
 nnoremap Y :js util.copyToClipboard(buffer.title, true)<CR>
 
 " move between tabs
-noremap <C-Left> <C-p>
-noremap <C-Right> <C-n>
+noremap <A-h> <C-p>
+noremap <A-l> <C-n>
 " move the tab
-noremap <S-Left> :tabmove! -1<CR>
-noremap <S-Right> :tabmove! +1<CR>
+noremap <A-S-h> :tabmove! -1<CR>
+noremap <A-S-l> :tabmove! +1<CR>
 
 " open undo prompt
 nnoremap U :undo<Space>
@@ -111,6 +117,9 @@ cnoremap <C-l> <Right>
 " cursor move
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
+
+" Clear search hilights
+noremap <ESC> :nohlsearch<CR><ESC>
 
 " :source ~/.vimperatorrc
 nnoremap <C-r> :source<Space>~/.vimperatorrc<CR>
