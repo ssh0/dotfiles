@@ -94,8 +94,8 @@ notification_body="${start_time} : start\n${end_time} : end"
 xclock -update 1 &
 clockpid=$!
 
-# trap Ctrl-C and kill child process
-trap 'kill -s SIGTERM $clockpid; exit 1' 1 2 3 ERR
+# trap Ctrl-C and then kill child process
+trap 'kill -s SIGTERM $clockpid 2> /dev/null; exit 1' 1 2 3 ERR
 
 # sleep ...
 sleep $@
@@ -107,8 +107,6 @@ notify-send "${ntf_title:-${notification_title}}" \
   -i "${notification_icon}"
 paplay "${notification_sound}" &
 
-kill -s SIGTERM $clockpid
 echo "[alarm] Done!"
-
-exit 0
+kill -s SIGTERM $clockpid 2> /dev/null || exit 0
 
