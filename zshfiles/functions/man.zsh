@@ -2,6 +2,16 @@
 #=#=#=
 # man (available for buitlin commands)
 #
+# **Features:**
+#
+# * for zsh builtin commands
+# * for reserved word
+# * for alias
+# * for zsh function
+# * for (natural) command
+# * if the same name exists, choose one by fzf
+# * with color
+#
 # >* [Can I get individual man pages for the bash builtin commands? - Unix & Linux Stack Exchange](http://unix.stackexchange.com/questions/18087/can-i-get-individual-man-pages-for-the-bash-builtin-commands)
 # >* [manpage - How to make `man` work for shell builtin commands and keywords? - Ask Ubuntu](http://askubuntu.com/questions/439410/how-to-make-man-work-for-shell-builtin-commands-and-keywords)
 #
@@ -19,24 +29,42 @@
 # **Require:**
 #
 # * fzf
-#
-# **Optional:**
-#
 # * "pygmentize" or "highlight" for highlighting scripts
 # * LESS="R" option for ansi color in "less" command
 #=#=
 
 function man() {
-  local _LANG=${LANG:-"en_US.UTF-8"}
-  # set language
+  # Stock current LANG
+  _LANG=${LANG}
+
+  # set language (but if MANLANG is already set, use that)
   export LANG=${MANLANG:-${_LANG}}
+
+  function restore_lang() {
+    # restore LANG and clean up name space
+    export LANG=${_LANG}
+    unset _LANG
+    unset -f $0
+  }
+
+  trap restore_lang 1 2 3 EXIT
+
   if [ ! -n "$1" ]; then
     echo "What manual page do you want?"
     return 1
   fi
 
-  case "$(whence -wa -- $1 | uniq | fzf -1 | sed 's/: / /' | cut -d' ' -f2)" in
-    builtin) # built-in
+  # get man type (using fzf but you can replace it with peco or percol or zaw)
+  word="$(whence -wa -- $1 | uniq | fzf -1 | sed 's/: / /' | cut -d' ' -f2)"
+
+  # if escaped, do nothing
+  if [ ! -n "${word}" ]; then
+    return 0
+  fi
+
+  # switch operation by word
+  case ${word} in
+    builtin) # built-in command
       local man_indent _space
       # TODO: get how many spaces before the commands
       man_indent=7
@@ -62,9 +90,9 @@ function man() {
         whence -f "$1" | ${MANPAGER:-${PAGER:-less}}
       fi
       ;;
-    *) /usr/bin/man "$@"
+    *) # try using man
+      /usr/bin/man "$@"
       ;;
   esac
-  export LANG=${_LANG}
 }
 
