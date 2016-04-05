@@ -197,7 +197,7 @@ build_prompt() {
 }
 
 PROMPT='%{%f%b%k%}$(build_prompt)%{$reset_color%}
-%{%F{240}%}$%{$reset_color%} '
+%{%F{240}%}\$ %{$reset_color%}'
 RPROMPT=''
 
 PROMPT2='%{%F{30}%}↪%{$reset_color%} '
