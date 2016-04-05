@@ -5,5 +5,9 @@
 manual="$1"
 output_dir="$HOME/Dropbox/document/pdf/man"
 
-man -t "$1" | ps2pdf14 - "${output_dir}/$1".pdf
+if ret="$(command -p man -t "$1")"; then
+  echo "${ret}" | ps2pdf -sPAPERSIZE=a4 -sOutputFile="${output_dir}/$1".pdf - &&
+    (echo "[man2pdf] Succefully done" >&2 ;
+     echo "[man2pdf] outfile file is '${output_dir}/$1.pdf'" >&2)
+fi
 
