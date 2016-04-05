@@ -186,6 +186,16 @@ To see full documentaion for `ls`:
 
 man (available for buitlin commands)
 
+**Features:**
+
+* for zsh builtin commands
+* for reserved word
+* for alias
+* for zsh function
+* for (natural) command
+* if the same name exists, choose one by fzf
+* with color
+
 >* [Can I get individual man pages for the bash builtin commands? - Unix & Linux Stack Exchange](http://unix.stackexchange.com/questions/18087/can-i-get-individual-man-pages-for-the-bash-builtin-commands)
 >* [manpage - How to make `man` work for shell builtin commands and keywords? - Ask Ubuntu](http://askubuntu.com/questions/439410/how-to-make-man-work-for-shell-builtin-commands-and-keywords)
 
@@ -203,9 +213,6 @@ $ sudo cp zsh-5.0.2/Doc/*.1 /usr/local/share/man/man1
 **Require:**
 
 * fzf
-
-**Optional:**
-
 * "pygmentize" or "highlight" for highlighting scripts
 * LESS="R" option for ansi color in "less" command
 
