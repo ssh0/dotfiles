@@ -229,7 +229,16 @@ Required: [header.sh](./header.sh)
 
 ## [man2pdf](./man2pdf)
 
+Convert man page to pdf file using ps2pdf
 
+You can change `${output_dir}`
+(Dropbox is useful when you read the pdf document from any device)
+
+Example:
+
+```
+man2pdf awk
+```
 
 ## [mkdpreview](./mkdpreview)
 

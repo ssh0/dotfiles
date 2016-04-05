@@ -1,6 +1,18 @@
 #!/bin/bash
 # written by Shotaro Fujimoto (https://github.com/ssh0)
 # first edited: 2016-03-29
+#=#=#=
+# Convert man page to pdf file using ps2pdf
+#
+# You can change `${output_dir}`
+# (Dropbox is useful when you read the pdf document from any device)
+#
+# Example:
+#
+# ```
+# man2pdf awk
+# ```
+#=#=
 
 manual="$1"
 output_dir="$HOME/Dropbox/document/pdf/man"
