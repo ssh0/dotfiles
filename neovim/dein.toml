@@ -72,6 +72,9 @@ repo = 'lervag/vimtex'
 repo = 'davidhalter/jedi-vim'
 
 [[plugins]]
+repos = 'tmhedberg/SimpylFold'
+
+[[plugins]]
 repo = 'nvie/vim-flake8'
 
 [[plugins]]
