@@ -53,8 +53,8 @@ set activate=addons,downloads,extoptions,help,homepage,quickmark,paste
 " No GUI
 set gui=nonavigation
 
-" no close buttons on tabs
-set! browser.tabs.closeButtons=2
+" no close buttons on tabs (abandoned option from Firefox version 31)
+" set! browser.tabs.closeButtons=2
 
 " no scrollbar
 set noscrollbars
@@ -100,9 +100,13 @@ nnoremap Y :js util.copyToClipboard(buffer.title, true)<CR>
 " move between tabs
 noremap <A-h> <C-p>
 noremap <A-l> <C-n>
+noremap <A-Left> <C-p>
+noremap <A-Right> <C-n>
 " move the tab
 noremap <A-S-h> :tabmove! -1<CR>
 noremap <A-S-l> :tabmove! +1<CR>
+noremap <A-S-Left> :tabmove! -1<CR>
+noremap <A-S-Right> :tabmove! +1<CR>
 
 " open undo prompt
 nnoremap U :undo<Space>
