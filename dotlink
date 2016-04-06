@@ -443,9 +443,9 @@ xmonad/${PC}/xmobarrc,.xmonad/xmobarrc
 
 luakit/globals.lua,.config/luakit/globals.lua
 luakit/rc.lua,.config/luakit/rc.lua
-luakit/theme.lua.${PC},.config/luakit/theme.lua
+luakit/theme.${PC}.lua,.config/luakit/theme.lua
 luakit/window.lua,.config/luakit/window.lua
-luakit/user_local.lua.${PC},.config/luakit/user_local.lua
+luakit/user_local.${PC}.lua,.config/luakit/user_local.lua
 luakit/plugins/adblock/adblock.lua,.config/luakit/plugins/adblock.lua
 luakit/plugins/adblock/adblock_chrome.lua,.config/luakit/plugins/adblock_chrome.lua
 luakit/plugins/private_browsing_tabs.lua,.config/luakit/plugins/private_browsing_tabs.lua
