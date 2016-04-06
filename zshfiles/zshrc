@@ -41,8 +41,6 @@ fpath=($ZSH_ROOT/completions $fpath)
 source "$ZSH_ROOT/functions/completion.zsh"
 
 autoload -U compinit
-#        .------ don't use compdump (a bit faster in my environment)
-#        |
 compinit -D
 
 # Load custom plugins
