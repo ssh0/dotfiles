@@ -232,7 +232,7 @@ Required: [header.sh](./header.sh)
 Convert man page to pdf file using ps2pdf
 
 You can change `${output_dir}`
-(Dropbox is useful when you read the pdf document from any device)
+(Dropbox is useful; you can read the pdf documents from anywhere)
 
 Example:
 
