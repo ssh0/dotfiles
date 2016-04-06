@@ -80,12 +80,10 @@ function man() {
     function) # function
       if hash pygmentize 2>/dev/null; then
         whence -f "$1" \
-          | pygmentize -l sh \
-          | ${MANPAGER:-${PAGER:-less}}
+          | pygmentize -l sh
       elif hash highlight 2>/dev/null; then
         whence -f "$1" \
-          | highlight --out-format=ansi --src-lang=Bash \
-          | ${MANPAGER:-${PAGER:-less}}
+          | highlight --out-format=ansi --src-lang=Bash
       else
         whence -f "$1" | ${MANPAGER:-${PAGER:-less}}
       fi
