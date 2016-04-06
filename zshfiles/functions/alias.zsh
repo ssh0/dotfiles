@@ -74,6 +74,7 @@ function _ec() {
 }
 
 _ec alias        ${ZSH_ROOT}/functions/alias.zsh
+_ec completion   ${ZSH_ROOT}/completions
 _ec compton      ~/.config/compton/compton.conf
 _ec dein         ~/.config/nvim/dein.toml
 _ec dein_lazy    ~/.config/nvim/dein_lazy.toml

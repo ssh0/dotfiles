@@ -33,9 +33,7 @@ set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 " Load plugins:                                                             {{{
 "------------------------------------------------------------------------------
 
-source ~/.config/nvim/neobundle.vim
-
-" source ~/.config/nvim/dein.vim
+source ~/.config/nvim/plug.vim
 
 "---------------------------------------------------------------------------}}}
 " Autocmd:                                                                  {{{

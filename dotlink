@@ -98,8 +98,8 @@ gitconfig,.gitconfig
 # Vim is an advanced text editor that seeks to provide the power of the
 # de-facto Unix editor 'Vi', with a more complete feature set.
 
-vimfiles/bundle/neobundle.vim,.vim/bundle/neobundle.vim
 vimfiles/vimrc,.vimrc
+vimfiles/plug.vim,.vim/plug.vim
 
 vimfiles/ftplugin/bib_quickrun.vim,.vim/ftplugin/bib_quickrun.vim
 vimfiles/ftplugin/gitcommit.vim,.vim/ftplugin/gitcommit.vim
@@ -128,14 +128,8 @@ $HOME/Dropbox/conf/hateblo.vim,.hateblo.vim
 #==============================================================================
 # Neovim is a project that seeks to aggressively refactor Vim
 
-
-vimfiles/bundle/neobundle.vim,.config/nvim/bundle/neobundle.vim
-
 neovim/init.vim,.config/nvim/init.vim
-neovim/neobundle.vim,.config/nvim/neobundle.vim
-neovim/dein.vim,.config/nvim/dein.vim
-neovim/dein.toml,.config/nvim/dein.toml
-neovim/dein_lazy.toml,.config/nvim/dein_lazy.toml
+neovim/plug.vim,.config/nvim/plug.vim
 
 vimfiles/ftplugin/bib_quickrun.vim,.config/nvim/ftplugin/bib_quickrun.vim
 vimfiles/ftplugin/gitcommit.vim,.config/nvim/ftplugin/gitcommit.vim

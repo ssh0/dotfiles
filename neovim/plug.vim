@@ -1,45 +1,27 @@
-" dein.vim:                                                                 {{{
-"------------------------------------------------------------------------------
+let s:plug_dir = expand('~/.config/nvim/plugged')
+let s:plug_source = expand('~/.config/nvim/autoload/plug.vim')
 
-let s:dein_dir = expand('~/.cache/dein')
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-
-if !isdirectory(s:dein_repo_dir)
-  execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+if !filereadable(s:plug_source)
+  execute '! curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 endif
 
-execute 'set runtimepath^=' . s:dein_repo_dir
+call plug#begin(s:plug_dir)
 
-" Required:
-call dein#begin(s:dein_dir)
-
-let s:toml = '~/.config/nvim/dein.toml'
-let s:lazy_toml = '~/.config/nvim/dein_lazy.toml'
-
-if dein#load_cache([expand('<sfile>', s:toml, s:lazy_toml)])
-  call dein#load_toml(s:toml, {'lazy': 0})
-  call dein#load_toml(s:lazy_toml, {'lazy': 1})
-  call dein#save_cache()
-endif
-
-call dein#end()
-
-if dein#check_install(['vimproc'])
-  call dein#install(['vimproc'])
-endif
-
-if dein#check_install()
-  call dein#install()
-endif
-
+Plug 'surround.vim'
+Plug 'tpope/vim-commentary'
+Plug 'Shougo/unite.vim'
 nnoremap <silent> <Leader>uy :<C-u>Unite history/yank<CR>
 nnoremap <silent> <Leader>ub :<C-u>Unite buffer<CR>
 nnoremap <silent> <Leader>uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> <Leader>ur :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> <Leader>uu :<C-u>Unite file_mru buffer<CR>
 
+Plug 'Shougo/vimfiler.vim'
 nnoremap <silent> <Leader>e :VimFilerBufferDir -buffer-name=explorer -split
-"
+
+Plug 'Shougo/vimproc', {'do': 'make'}
+Plug 'lambdalisue/vim-gita'
+Plug 'ctrlpvim/ctrlp.vim'
 if executable('ag')
   let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
 endif
@@ -47,6 +29,9 @@ nnoremap <Leader>oo :CtrlP<CR>
 nnoremap <Leader>om :CtrlPMixed<CR>
 nnoremap <Leader>or :CtrlPMRUFiles<CR>
 
+Plug 'ervandew/supertab'
+Plug 'tacroe/unite-mark'
+Plug 'kshenoy/vim-signature'
 let g:unite_source_mark_marks =
       \   "abcdefghijklmnopqrstuvwxyz"
       \ . "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -58,8 +43,13 @@ nnoremap <silent> '' :Unite mark<CR>
 let g:SignatureMartTextHLDynamic = 1
 let g:SignatureMarkTextHL = "'SignColumn'"
 
+Plug 'LeafCage/foldCC'
 set foldtext=FoldCCtext()
 
+Plug 'lilydjwg/colorizer'
+Plug 'tyru/open-browser.vim'
+" {{{
+Plug 'itchyny/lightline.vim'
 let g:lightline = {
       \ 'colorscheme': 'easyreading',
       \ 'mode_map': { 'c': 'NORMAL' },
@@ -202,8 +192,10 @@ endfunction
 let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
+"}}}
 
-
+Plug 'ssh0/easyreading.vim'
+Plug 'thinca/vim-quickrun'
 let g:quickrun_config = {}
 let g:quickrun_no_default_key_mapping = 0
 
@@ -213,6 +205,7 @@ else
   let g:quickrun_user_tex_autorun = 1
 endif
 
+Plug 'thinca/vim-template'
 augroup template
   autocmd!
   " inside <%= %> is estimated by vim and expanded automatically
@@ -228,17 +221,35 @@ augroup template
         \  | endif
 augroup END
 
+Plug 'thinca/vim-splash'
 let g:splash#path = expand('~/.splash-vim.txt')
 
+Plug 'tpope/vim-markdown', {'for': 'markdown'}
+Plug 'tyru/markdown-codehl-onthefly.vim', {'for': 'markdown'}
+Plug 'lervag/vimtex', {'for': 'tex'}
 let g:vimtex_fold_envs = 1
 let g:vimtex_view_general_viewer = 'mupdf'
 
-" jedi complete
-" let g:jedi#popup_on_dot = 1
-" let g:jedi#popup_select_first = 1
-"
+Plug 'davidhalter/jedi-vim', {'for': 'python'}
+let g:jedi#popup_on_dot = 1
+let g:jedi#popup_select_first = 1
+
+Plug 'tmhedberg/SimpylFold', {'for': 'python'}
+Plug 'nvie/vim-flake8', {'for': 'python'}
+Plug 'hynek/vim-python-pep8-indent', {'for': 'python'}
+Plug 'lambdalisue/vim-gista'
 let g:gista#github_user = 'ssh0'
 let g:gista#update_on_write = 1
+
+Plug 'mattn/webapi-vim'
+Plug 'moznion/hateblo.vim'
+Plug 'mattn/googlesuggest-complete-vim'
+Plug 'Lokaltog/powerline-fontpatcher'
+Plug 'ssh0/easy-reading.vim'
+Plug 'rking/ag.vim'
+
+call plug#end()
+
 
 " Required:
 filetype plugin indent on
