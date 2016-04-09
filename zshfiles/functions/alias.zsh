@@ -63,21 +63,34 @@ alias sudo='sudo '
 
 # edit configuration file by $EDITOR (vim).
 function _ec() {
-  if [[ -f "$2" ]]; then
-    alias "cf-$1"="$EDITOR '$2'"
-  elif [[ -d "$2" ]]; then
-    alias "cf-$1"="builtin cd '$2'; ls"
-  else
+  local cmd alis
+  if [[ ! -e "$2" ]]; then
     alias "cf-$1::NEW"="echo \"File '$2' doesn't exist. \"; \
                      confirm y \"Create new one?\" && $EDITOR '$2'"
+    return -1
   fi
+
+  alis="$1"
+  if [[ -n "$3" ]]; then
+    local file
+    target="$2"
+    cmd="$3"
+    shift 3
+    cmd="$cmd '$target' "$@""
+  elif [[ -f "$2" ]]; then
+    cmd="$EDITOR '$2'"
+  elif [[ -d "$2" ]]; then
+    cmd="ranger --cmd='cd '$2''"
+    # cmd="builtin cd '$2'; ls"
+  fi
+  alias "cf-${alis}"="$cmd"
+  return 0
 }
+
 
 _ec alias        ${ZSH_ROOT}/functions/alias.zsh
 _ec completion   ${ZSH_ROOT}/completions
 _ec compton      ~/.config/compton/compton.conf
-_ec dein         ~/.config/nvim/dein.toml
-_ec dein_lazy    ~/.config/nvim/dein_lazy.toml
 _ec dotlink      ~/.dotfiles/dotlink
 _ec dotrc        ~/.dotfiles/dotrc
 _ec env          ${ZSH_ROOT}/functions/environment.zsh
@@ -99,7 +112,7 @@ _ec tig          ~/.tigrc
 _ec tmux         ~/.tmux.conf
 _ec turses       ~/.turses/config
 _ec vim          ~/.vimrc
-_ec vimcolor     ~/.vim/bundle/easy-reading.vim/colors/easy-reading.vim
+_ec vimcolor     ~/gitrepo/easy-reading.vim/colors/easy-reading.vim
 _ec vimperator   ~/.vimperatorrc
 _ec w3m          ~/.w3m/config
 _ec w3m-keymap   ~/.w3m/keymap
