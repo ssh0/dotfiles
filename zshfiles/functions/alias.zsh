@@ -76,8 +76,6 @@ function _ec() {
 _ec alias        ${ZSH_ROOT}/functions/alias.zsh
 _ec completion   ${ZSH_ROOT}/completions
 _ec compton      ~/.config/compton/compton.conf
-_ec dein         ~/.config/nvim/dein.toml
-_ec dein_lazy    ~/.config/nvim/dein_lazy.toml
 _ec dotlink      ~/.dotfiles/dotlink
 _ec dotrc        ~/.dotfiles/dotrc
 _ec env          ${ZSH_ROOT}/functions/environment.zsh
@@ -91,6 +89,7 @@ _ec mpv          ~/.config/mpv/mpv.conf
 _ec mutt         ~/.mutt/muttrc
 _ec nvim         ~/.config/nvim/init.vim
 _ec ncmpcpp      ~/.ncmpcpp/config
+_ec plug         ~/.vim/plug.vim
 _ec prompt       ${ZSH_ROOT}/functions/prompt.zsh
 _ec ranger       ~/.config/ranger/rc.conf
 _ec ranger_rifle ~/.config/ranger/rifle.conf
