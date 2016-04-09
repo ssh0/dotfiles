@@ -13,7 +13,18 @@
 export ZSH_ROOT=$HOME/.zsh
 
 # Using fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [ ! -f ~/.fzf.zsh ]; then
+  # install fzf
+  function _install_fzf() {
+    confirm y "fzf is not installed. Start installation ? "
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
+  }
+  install_fzf=true
+else
+  source ~/.fzf.zsh
+  install_fzf=false
+fi
 export FZF_COMPLETION_TRIGGER=''
 
 # Set some environmet variables
@@ -70,6 +81,13 @@ unset -v myfunction
 
 # perform implicit tees or cats when multiple redirections are attempted
 setopt multios
+
+# installation and setups (if needed)
+if ${install_fzf}; then
+  _install_fzf
+  unfunction _install_fzf
+fi
+unset install_fzf
 
 # User specific configuration
 [ -f "$ZSH_ROOT/rc.mine" ] && source "$ZSH_ROOT/rc.mine"
