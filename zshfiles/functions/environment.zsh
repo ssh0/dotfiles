@@ -36,7 +36,7 @@ find_alt() {
 # set the default program
 # the first program in the array will be chosen as the default
 export OPENER=$(find_alt xdg-open exo-open gnome-open )
-export BROWSER=$(find_alt luakit firefox google-chrome chromium chromium-browser $OPENER )
+export BROWSER=$(find_alt firefox luakit google-chrome chromium chromium-browser $OPENER )
 export BROWSERCLI=$(find_alt w3m links2 links lynx elinks $OPENER )
 export EDITOR=$(find_alt nvim vim emacs nano leafpad gedit pluma $OPENER )
 export FILEMANAGER=$(find_alt thunar nautilus dolphin pcmanfm tspacefm enlightenment_filemanager $OPENER )
