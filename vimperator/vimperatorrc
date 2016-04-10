@@ -123,10 +123,45 @@ inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
 " Clear search hilights
-noremap <ESC> :nohlsearch<CR><ESC>
+nnoremap <ESC> :nohlsearch<CR><ESC>
 
 " :source ~/.vimperatorrc
 nnoremap <C-r> :source<Space>~/.vimperatorrc<CR>
+
+" Toggle hide statusbar
+" >* [firefox - Hide status line / bottom bar in vimperator? - Super User](http://superuser.com/questions/704015/hide-status-line-bottom-bar-in-vimperator)
+
+noremap <silent> <F8> :js toggle_bottombar()<CR>
+noremap : :js toggle_bottombar('on')<CR>:
+noremap o :js toggle_bottombar('on')<CR>o
+noremap O :js toggle_bottombar('on')<CR>O
+noremap t :js toggle_bottombar('on')<CR>t
+noremap T :js toggle_bottombar('on')<CR>T
+noremap / :js toggle_bottombar('on')<CR>/
+cnoremap <CR> <CR>:js toggle_bottombar('off')<CR>
+cnoremap <C-c> <C-c>:js toggle_bottombar('off')<CR>
+cnoremap <Esc> <Esc>:js toggle_bottombar('off')<CR>
+
+:js << EOF
+function toggle_bottombar(p) {
+    var bb = document.getElementById('liberator-bottombar');
+    if (!bb)
+        return;
+    if (p == 'on'){
+        bb.style.height = '';
+        bb.style.overflow = '';
+        return;
+    }
+    if (p == 'off'){
+        bb.style.height = '0px';
+        bb.style.overflow = 'hidden';
+        return;
+    }
+    bb.style.height = (bb.style.height == '') ? '0px' : '';
+    bb.style.overflow = (bb.style.height == '') ? '' : 'hidden';
+}
+toggle_bottombar('off');
+EOF
 
 "---------------------------------------------------------------------------}}}
 " Ignorekeys                                                                {{{
