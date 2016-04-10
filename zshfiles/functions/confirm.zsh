@@ -21,25 +21,25 @@
 #       * Set default answer by setting first argument 'y':
 #
 #           $ confirm y "Choose y or n " && echo "Yes" || echo "No"
-#           Choose y or n (Y/n)>
+#           Choose y or n (Y/n)
 #           Yes
 #
 #           $ confirm y "Choose y or n " && echo "Yes" || echo "No"
-#           Choose y or n (Y/n)> n
+#           Choose y or n (Y/n) n
 #           No
 #
 #       * If the first argument is not 'y' or 'n':
 #
 #           $ confirm "Choose y or n " && echo "Yes" || echo "No"
-#           Choose y or n (y/n)>
+#           Choose y or n (y/n)
 #           Please answer with 'y' or 'n'.
-#           Choose y or n (y/n)> y
+#           Choose y or n (y/n) y
 #           Yes
 #
 #       * You can answer with upper characters:
 #
 #           $ confirm "Choose y or n " && echo "Yes" || echo "No"
-#           Choose y or n (y/n)> YeS
+#           Choose y or n (y/n) YeS
 #           Yes
 #
 # ```
