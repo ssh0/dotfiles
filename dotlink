@@ -232,6 +232,7 @@ zshfiles/functions/zplug.zsh,.zsh/functions/zplug.zsh
 bin/agvim,bin/agvim
 bin/alarm,bin/alarm
 bin/allmp4tomp3.sh,bin/allmp4tomp3.sh
+bin/autopep8_diff.sh,bin/autopep8_diff.sh
 bin/bib2html_wrapper.sh,bin/bib2html_wrapper.sh
 bin/cachecleener,bin/cachecleener
 bin/cecho,bin/cecho

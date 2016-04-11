@@ -47,6 +47,26 @@ allmp4tomp3.sh - Convert all mp4 file in the current dir to mp3 files.
 
 Required: ffmpeg
 
+## [autopep8\_diff.sh](./autopep8_diff.sh)
+
+```
+Name
+      autopep8_diff.sh - Show the difference between the original python file
+                         and the file created with autopep8 command.
+
+Usage
+      # Show diff
+      autopep8_diff.sh sample.py
+
+      # To see this help
+      autopep8_diff.sh -h
+
+Require
+      * autopep8 (can be installed with pip)
+      * (optionally) vimdiff
+      * (optionally) colordiff
+```
+
 ## [bib2html\_wrapper.sh](./bib2html_wrapper.sh)
 
 bibtex2html wrapper script to convert bibtex file to
