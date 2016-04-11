@@ -104,7 +104,7 @@ _ec mpv        ~/.config/mpv/mpv.conf
 _ec mutt       ~/.mutt/muttrc
 _ec nvim       ~/.config/nvim/init.vim
 _ec ncmpcpp    ~/.ncmpcpp/config
-_ec plug       ~/.vim/plug.vim
+_ec plug       ~/.config/nvim/plug.vim
 _ec prompt     ${ZSH_ROOT}/functions/prompt.zsh
 _ec ranger     ~/.config/ranger/rc.conf
 _ec ranger.d   ~/.config/ranger
