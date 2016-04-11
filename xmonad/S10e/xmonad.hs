@@ -68,7 +68,7 @@ colorNormalbg  = "#1c1c1c"
 colorfg        = "#585858"
 
 -- Border width
-borderwidth = 2
+borderwidth = 0
 
 -- Border color
 mynormalBorderColor  = "#333333"
@@ -79,7 +79,7 @@ moveWD = borderwidth
 resizeWD = 2*borderwidth
 
 -- gapwidth
-gapwidth  = 3
+gapwidth  = 5
 gwU = 5
 gwD = 4
 gwL = 35
@@ -109,7 +109,7 @@ main = do
                                             )
         -- xmobar setting
        , logHook            = myLogHook wsbar
-                                >> updatePointer (Relative 0.99 0.99)
+                                >> updatePointer (Relative 0.5 0.5)
        , handleEventHook    = fullscreenEventHook
        , workspaces         = myWorkspaces
        , modMask            = modm
