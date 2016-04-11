@@ -11,11 +11,12 @@
 bindkey -e
 
 # edit command line in vim:
-# by pressing: ^xe
+# by pressing: ^xe or ^i
 # Edit the current command line in $EDITOR
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^xe' edit-command-line
+bindkey '^i' edit-command-line
 
 # reverse-menu-complete by `Shift+Tab`
 bindkey '^[[Z' reverse-menu-complete
@@ -26,7 +27,6 @@ bindkey "^N" history-beginning-search-forward-end
 
 if hash fzf 2>/dev/null; then
   bindkey '^T' fzf-completion
-  bindkey '^I' $fzf_default_completion
 fi
 
 bindkey '^r' peco-select-history
