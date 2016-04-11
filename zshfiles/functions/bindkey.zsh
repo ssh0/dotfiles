@@ -16,7 +16,6 @@ bindkey -e
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^xe' edit-command-line
-bindkey '^i' edit-command-line
 
 # reverse-menu-complete by `Shift+Tab`
 bindkey '^[[Z' reverse-menu-complete
