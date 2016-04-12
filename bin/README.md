@@ -449,6 +449,24 @@ If you are in proxy network, you should manage your proxy setting.
 
 This script enables you to toggle proxy setting by one command.
 
+## [pydocpdf](./pydocpdf)
+
+```
+NAME
+      pydocpdf - Create python module documentation with pdf format
+
+SYNOPSYS
+      pydocpdf ./proto.py
+
+OPTION
+      -h: Show this help.
+
+DEPENDENCY
+      * pydoc
+      * wkhtmltopdf (installable by apt)
+
+```
+
 ## [radiko\_rec.sh](./radiko_rec.sh)
 
 Record the radiko progrom.
