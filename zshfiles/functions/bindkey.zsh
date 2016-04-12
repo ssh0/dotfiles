@@ -26,6 +26,7 @@ bindkey "^N" history-beginning-search-forward-end
 
 if hash fzf 2>/dev/null; then
   bindkey '^T' fzf-completion
+  bindkey '^I' $fzf_default_completion
 fi
 
 bindkey '^r' peco-select-history
