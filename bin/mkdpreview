@@ -84,7 +84,7 @@ save=false
 update=false
 output=""
 preview=false
-previewprg="luakit"
+previewprg="firefox -new-tab"
 
 # option handling
 while getopts suo:ph OPT
