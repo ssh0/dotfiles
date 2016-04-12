@@ -259,6 +259,7 @@ bin/presenmode.sh,bin/presenmode.sh
 bin/presentation.sh,bin/presentation.sh
 bin/progressbar,bin/progressbar
 bin/proxy_toggle.sh,bin/proxy_toggle.sh
+bin/pydocpdf,bin/pydocpdf
 bin/radiko_rec.sh,bin/radiko_rec.sh
 bin/screenshot_select.sh,bin/screenshot_select.sh
 bin/screenshot.sh,bin/screenshot.sh
@@ -501,4 +502,3 @@ rcfiles/matplotlibrc,.config/matplotlib/matplotlibrc
 youtube-dl/config,.config/youtube-dl/config
 
 #===========================================================================}}}
-bin/pydocpdf,bin/pydocpdf
