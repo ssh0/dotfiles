@@ -14,7 +14,7 @@
 # ```
 #=#=
 
-output_dir="$HOME/Dropbox/document/pdf/man"
+output_dir="$HOME/Dropbox/document/man"
 
 if ret="$(command -p man -t "$1")"; then
   echo "${ret}" | ps2pdf -sPAPERSIZE=a4 -sOutputFile="${output_dir}/$1".pdf - &&
