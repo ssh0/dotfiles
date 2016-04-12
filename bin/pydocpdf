@@ -1,0 +1,27 @@
+#!/bin/bash
+# written by Shotaro Fujimoto (https://github.com/ssh0)
+#
+#=#=#=
+# ```
+# NAME
+#       pydocpdf - Create python module documentation with pdf format
+#
+# SYNOPSYS
+#       pydocpdf ./proto.py
+#
+# OPTION
+#       -h: Show this help.
+#
+# DEPENDENCY
+#       * pydoc
+#       * wkhtmltopdf (installable by apt)
+#
+# ```
+#=#=
+
+if [ ! -f "$1" ]; then
+  echo "Argument must be file." >&2
+fi
+
+pydoc -w "$1" && wkhtmltopdf -B 0 -L 0 -R 0 -T 0 "${1%\.py}".html "${1%\.py}".pdf && rm "${1%\.py}".html
+
