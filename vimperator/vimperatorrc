@@ -174,6 +174,52 @@ ignorekeys add twitter\\.com -except F,v,V,d,;,:
 ignorekeys add feedly\\.com -except f,F,;,:
 
 "---------------------------------------------------------------------------}}}
+" Bookmarks (for search)                                                    {{{
+"------------------------------------------------------------------------------
+
+bmark -title="Google - I'm feeling lucky!" -tags=keyword -keyword=l https://www.google.co.jp/search?q=%s&btnI=I
+bmark -title="Wikipedia" -tags=keyword -keyword=w https://ja.wikipedia.org/wiki/%s
+bmark -title="niconico" -tags=keyword -keyword=n http://www.nicovideo.jp/search/%s
+bmark -title="niconico dictionary" -tags=keyword -keyword=nd http://dic.nicovideo.jp/s/al/a/%s
+bmark -title="Google image" -tags=keyword -keyword=p http://www.google.com/search?site=imghp&tbm=isch&q=%s
+bmark -title="Google Map" -tags=keyword -keyword=m https://www.google.com/maps/place/%s
+bmark -title="Google Map Navigation from Home to ***" -tags=keyword -keyword=mfh https://www.google.com/maps/dir/自宅/%s
+bmark -title="Google Map Navigation from Work to ***" -tags=keyword -keyword=mfw https://www.google.com/maps/dir/職場/%s
+bmark -title="Google Map Navigation from *** to Home" -tags=keyword -keyword=mth https://www.google.com/maps/dir/%s/自宅
+bmark -title="Google Map Navigation from *** to Work" -tags=keyword -keyword=mtw https://www.google.com/maps/dir/%s/職場
+bmark -title="IP address" -tags=keyword -keyword=ip http://www.ip-adress.com/whois/%s
+bmark -title="flickr" -tags=keyword -keyword=f https://www.flickr.com/search/?text=%s&safe_search=3
+bmark -title="Youtube" -tags=keyword -keyword=y http://www.youtube.com/results?search_query=%s&sm=3
+bmark -title="Yahoo real time search" -tags=keyword -keyword=rt http://realtime.search.yahoo.co.jp/search?p=%s&ei=UTF-8
+bmark -title="twitter" -tags=keyword -keyword=tw https://mobile.twitter.com/search?src=typd&q=%s
+bmark -title="Google Scholar" -tags=keyword -keyword=sc http://scholar.google.co.jp/scholar?as_vis=1&q=%s&hl=ja&as_sdt=1
+bmark -title="Qiita" -tags=keyword -keyword=q http://qiita.com/search?q=%s
+bmark -title="Github - repo" -tags=keyword -keyword=g https://github.com/search?q=%s
+bmark -title="Github - user" -tags=keyword -keyword=gu https://github.com/search?q=%s&type=Users
+bmark -title="Github - code" -tags=keyword -keyword=gc https://github.com/search?q=%s&type=Code
+bmark -title="Gist" -tags=keyword -keyword=gs https://gist.github.com/search?utf8=✓&q=%s
+bmark -title="translate ja <-> en" -tags=keyword -keyword=t http://ejje.weblio.jp/content/%s
+bmark -title="wordnik" -tags=keyword -keyword=wd https://www.wordnik.com/words/%s
+bmark -title="matplotlib documentation" -tags=keyword -keyword=mpl http://matplotlib.org/search.html?q=%s
+bmark -title="Python 2.7 documentation" -tags=keyword -keyword=py2 https://docs.python.org/2.7/search.html?q=%s
+bmark -title="Python 3.4 documentation" -tags=keyword -keyword=py3 https://docs.python.org/3.4/search.html?q=%s
+bmark -title="8tracks" -tags=keyword -keyword=8tr https://8tracks.com/explore/%s"
+bmark -title="arxiv" -tags=keyword -keyword=arx http://arxiv.org/find/all/1/all:+%s/0/1/0/all/0/1
+bmark -title="Digg" -tags=keyword -keyword=dig https://digg.com/search?q=%s
+bmark -title="duckduckgo" -tags=keyword -keyword=dg https://duckduckgo.com/?q=%s
+bmark -title="Gmail" -tags=keyword -keyword=gm https://mail.google.com/mail/u/0/#search/%s
+bmark -title="Google Plus" -tags=keyword -keyword=g+ https://plus.google.com/s/%s/top
+bmark -title="Hacker News" -tags=keyword -keyword=hn https://hn.algolia.com/?q=%s
+bmark -title="Pinterest" -tags=keyword -keyword=pin https://www.pinterest.com/search/pins/?q=%s
+bmark -title="Reddit" -tags=keyword -keyword=red https://www.reddit.com/search?q=%s
+bmark -title="SoundCloud" -tags=keyword -keyword=sdc https://soundcloud.com/search?q=%s
+bmark -title="Stackoverflow" -tags=keyword -keyword=so https://stackoverflow.com/search?q=%s
+bmark -title="Torentz" -tags=keyword -keyword=tor https://www.torrentz.eu/search?q=%s
+bmark -title="Anitube.se" -tags=keyword -keyword=an http://www.anitube.se/search/?search_id=%s
+bmark -title="Facebook" -tags=keyword -keyword=fb https://www.facebook.com/search/top/?q=%s
+
+
+"---------------------------------------------------------------------------}}}
 " set local settings                                                        {{{
 "------------------------------------------------------------------------------
 
