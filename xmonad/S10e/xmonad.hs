@@ -184,7 +184,7 @@ main = do
        -- Search a window and bring to the current workspace
        , ("M-b"    , windowPromptBring myXPConfig)
        -- Move the focus to next screen (multi screen)
-       , ("M-w"    , nextScreen)
+       , ("M-<Tab>", nextScreen)
        ]
 
        -------------------------------------------------------------------- }}}
@@ -322,7 +322,7 @@ myWsBar = "xmobar $HOME/.xmonad/xmobarrc"
 wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws,t]
                 , ppCurrent         = xmobarColor colorGreen colorNormalbg . \s -> "●"
                 , ppUrgent          = xmobarColor colorfg    colorNormalbg . \s -> "●"
-                , ppVisible         = xmobarColor colorfg    colorNormalbg . \s -> "●"
+                , ppVisible         = xmobarColor colorGreen colorNormalbg . \s -> "⦿"
                 , ppHidden          = xmobarColor colorfg    colorNormalbg . \s -> "●"
                 , ppHiddenNoWindows = xmobarColor colorfg    colorNormalbg . \s -> "○"
                 , ppTitle           = xmobarColor colorGreen colorNormalbg
