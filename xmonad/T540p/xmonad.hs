@@ -105,6 +105,10 @@ main = do
                               manageDocks
        , layoutHook         = avoidStruts $ ( toggleLayouts (noBorders Full)
                                             $ onWorkspace "3" simplestFloat
+                                            $ onWorkspace "5" (
+                                                spacing gapwidth
+                                                $ gaps [(U, 35),(D, gwD),(L, gwL),(R, gwR)]
+                                                $ (ResizableTall 0 (1/55) (1/2) []))
                                             $ myLayout
                                             )
         -- xmobar setting
