@@ -21,7 +21,10 @@
 
 if [ ! -f "$1" ]; then
   echo "Argument must be file." >&2
+  exit 1
 fi
 
-pydoc -w "$1" && wkhtmltopdf -B 0 -L 0 -R 0 -T 0 "${1%\.py}".html "${1%\.py}".pdf && rm "${1%\.py}".html
+pydoc -w "$1" &&
+  wkhtmltopdf -B 0 -L 0 -R 0 -T 0 "${1%\.py}".html "${1%\.py}".pdf &&
+  rm "${1%\.py}".html
 
