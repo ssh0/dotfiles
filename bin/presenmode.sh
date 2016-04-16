@@ -44,12 +44,13 @@ usage() {
 }
 
 # Manage options
-while getopts d:m:h OPT
+while getopts d:m:hH OPT
 do
   case $OPT in
     "d" ) projector="$OPTARG" ;;
     "m" ) projector_mode="$OPTARG" ;;
     "h" ) usage ;;
+    "H" ) usage_all "$f"; exit 0 ;;
       * ) usage ;;
   esac
 done

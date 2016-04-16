@@ -45,13 +45,14 @@ usage() {
 # and extract all sound files to the same directory named like "01_TERM.mp3"
 #
 
-while getopts l:d:p:h OPT
+while getopts l:d:p:hH OPT
 do
   case $OPT in
     "l" ) LNG="$OPTARG" ;;
     "d" ) root_dir="$OPTARG" ;;
     "p" ) playcmd="$OPTARG" ;;
     "h" ) usage ;;
+    "H" ) usage_all "$f"; exit 0 ;;
     * ) usage ;;
   esac
 done

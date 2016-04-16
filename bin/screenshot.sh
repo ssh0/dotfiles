@@ -16,13 +16,15 @@ get_dir=false
 get_name=false
 rootdir=$HOME/Workspace/blog
 
-while getopts d:o: OPT
+while getopts d:o:h OPT
 do
   case $OPT in
     "d" ) get_dir=true
           dir="$OPTARG" ;;
     "o" ) get_name=true
           name="$OPTARG" ;;
+    "h" ) usage_all "$0"
+          exit 0 ;;
       * ) exit 1 ;;
   esac
 done

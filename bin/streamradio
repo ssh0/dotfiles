@@ -54,6 +54,9 @@ elif [ "$1" = "list" ]; then
   fi
 elif [ "$1" = "-h" -o "$1" = "--help" ]; then
   usage
+elif [ "$1" = "-H" ]; then
+  usage_all "$0"
+  exit 0
 else
   echo "Unknown command: $1"
   usage

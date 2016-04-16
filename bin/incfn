@@ -80,7 +80,7 @@ usage() {
 }
 
 checkint=0
-while getopts d:n:b:a:e:h OPT; do
+while getopts d:n:b:a:e:hH OPT; do
   case ${OPT} in
     "d")
       root_dir="${OPTARG%/}"
@@ -102,6 +102,10 @@ while getopts d:n:b:a:e:h OPT; do
       ;;
     "h")
       usage
+      exit 0
+      ;;
+    "H")
+      usage_all "$f"
       exit 0
       ;;
   esac

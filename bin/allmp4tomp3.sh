@@ -6,4 +6,8 @@
 # Required: ffmpeg
 #=#=
 
+if [ "$1" = '-h' ]; then
+  usage_all "$0"; exit 0
+fi
+
 find . -type f -name "*.mp4" -print0 | perl -pe s/.mp4//g | xargs -0 -I% ffmpeg -i %.mp4 -acodec libmp3lame -ab 256k %.mp3

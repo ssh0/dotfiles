@@ -74,6 +74,7 @@ footer="$HOME/Workspace/blog/html/footer.html"
 # this script converts a html file to the upper directory.
 sourcedir='source'
 
+f="$0"
 usage() {
   sed -n '/^# NAME$/,/^##$/p' "$f" | sed -e '$d' | cut -b3- >&2
   exit 1
@@ -87,7 +88,7 @@ preview=false
 previewprg="firefox -new-tab"
 
 # option handling
-while getopts suo:ph OPT
+while getopts suo:phH OPT
 do
   case $OPT in
     "s" ) save=true ;;
@@ -95,6 +96,7 @@ do
     "o" ) save=true; output="${OPTARG}" ;;
     "p" ) preview=true ;;
     "h" ) usage ;;
+    "H" ) usage_all "$f"; exit 0 ;;
   esac
 done
 

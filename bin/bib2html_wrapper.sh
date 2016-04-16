@@ -17,6 +17,11 @@
 #
 #=#=
 
+if [ "$1" = '-H' ]; then
+  usage_all "$0"
+  exit 0
+fi
+
 # set bibliography style
 style='junsrt'
 

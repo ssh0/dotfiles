@@ -7,6 +7,11 @@
 # >[https://bugs.launchpad.net/ubuntu/+source/zenity/+bug/1355423](https://bugs.launchpad.net/ubuntu/+source/zenity/+bug/1355423)
 #=#=
 
+if [ "$1" = '-h' ]; then
+  usage_all "$0"
+  exit 0
+fi
+
 color="$(zenity --color-selection --show-palette 2>/dev/null)"
 
 case $? in

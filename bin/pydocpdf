@@ -19,6 +19,11 @@
 # ```
 #=#=
 
+if [ "$1" = '-h' ]; then
+  usage_all "$0"
+  exit 0
+fi
+
 if [ ! -f "$1" ]; then
   echo "Argument must be file." >&2
   exit 1

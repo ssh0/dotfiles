@@ -40,10 +40,12 @@ usage() {
 }
 
 # Option hundling
-while getopts ht:b: OPT; do
+while getopts hHt:b: OPT; do
   case $OPT in
     "h")
       usage; exit 0 ;;
+    "H")
+      usage_all "$f"; exit 0 ;;
     "t")
       ntf_title="${OPTARG}" ;;
     "b")

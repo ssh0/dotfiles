@@ -110,10 +110,11 @@ listmytask() {
 }
 
 # option handling
-while getopts h OPT
+while getopts hH OPT
 do
   case $OPT in
     "h" ) usage ;;
+    "H" ) usage_all "$f"; exit 0 ;;
   esac
 done
 

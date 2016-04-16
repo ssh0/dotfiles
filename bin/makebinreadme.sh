@@ -6,6 +6,11 @@
 # Required: [header.sh](./header.sh)
 #=#=
 
+if [ "$1" = '-h' ]; then
+  usage_all "$0"
+  exit 0
+fi
+
 readme="README.md"
 title="$(basename "${PWD}")"
 

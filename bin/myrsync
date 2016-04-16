@@ -46,10 +46,12 @@ sync() {
 
 confirm=true
 
-while getopts y OPT
+while getopts yh OPT
 do
   case $OPT in
     "y") confirm=false
+      ;;
+    "h") usage_all "$0"; exit 0
       ;;
     *)
       echo "myrsync: Unknown option."

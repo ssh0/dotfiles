@@ -9,6 +9,11 @@
 # * ffmpeg
 #=#=
 
+if [ "$1" = '-h' ]; then
+  usage_all "$0"
+  exit 0
+fi
+
 (
 IFS=$'\n';
 for file in $(ls *.mp4); do

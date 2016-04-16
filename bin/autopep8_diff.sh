@@ -26,6 +26,11 @@ if [ $1 = '-h' ]; then
   exit 0
 fi
 
+if [ "$1" = '-H' ]; then
+  usage_all "$0"; exit 0
+fi
+
+
 if [ ! -f "$1" ]; then
   echo "[autopep8_diff.sh] '$1' is not a file or doesn't exist." >&2
   exit 1

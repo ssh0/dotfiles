@@ -20,5 +20,10 @@ if [ "$1" = "-h" ]; then
   exit 0
 fi
 
+if [ "$1" = '-H' ]; then
+  usage_all "$0"
+  exit 0
+fi
+
 sed -n '/^#=#=#=/,/^#=#=/p' "$1" | sed -e '1d;$d' | cut -b3-
 

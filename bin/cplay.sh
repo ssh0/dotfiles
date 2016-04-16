@@ -8,6 +8,12 @@
 # It's useful if you set the shortcut-key with multimedia key.
 #=#=
 
+
+if [ "$1" = '-h' ]; then
+  usage_all "$0"
+  exit 0
+fi
+
 # teminal emulator to launch cmus
 terminal=/usr/bin/urxvt
 
