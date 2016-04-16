@@ -641,6 +641,20 @@ urxvt with `urxvt_float` name.
 
 For xmonad float window handling.
 
+## [usage\_all](./usage_all)
+
+```
+NAME
+      usage_all - Show all usage written in 'header' part of a script
+
+SYNOPSYS
+      usage_all <script_file_path>
+
+DEPENDENCE
+      * pandoc
+      * w3m
+```
+
 ## [wmatomp3\_converter.sh](./wmatomp3_converter.sh)
 
 Converts wma to mp3 recursively. does not delete any static files, so 
