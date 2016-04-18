@@ -22,7 +22,7 @@ usage (){
 if [ "$1" = "-h" ]; then
   usage
   exit 0
-if [ "$1" = "-H" ]; then
+elif [ "$1" = "-H" ]; then
   usage_all "$f"
   exit 0
 fi
