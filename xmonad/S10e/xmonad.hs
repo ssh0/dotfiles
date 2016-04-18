@@ -335,14 +335,14 @@ wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws,t]
 -- myXPConfig:        XPConfig                                            {{{
 
 myXPConfig = defaultXPConfig
-                { font              = "xft:Migu 1M:size=12:antialias=true"
-                , fgColor           = colorBlue
+                { font              = "xft:Migu 1M:size=20:antialias=true"
+                , fgColor           = colorGray
                 , bgColor           = colorNormalbg
                 , borderColor       = colorNormalbg
-                , height            = 20
-                , promptBorderWidth = 1
+                , height            = 35
+                , promptBorderWidth = 0
                 , autoComplete      = Just 100000
-                , bgHLight          = colorWhite
+                , bgHLight          = colorBlue
                 , fgHLight          = colorNormalbg
                 , position          = Bottom
                 }
