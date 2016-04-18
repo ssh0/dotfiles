@@ -18,6 +18,6 @@ if [ "$1" = '-h' ]; then
   exit 0
 fi
 
-agfilepath="$(echo $(ag $@ | $PERCOL | awk -F : '{print "+" $2 " \047" $1 "\047"}'))"
+agfilepath="$(ag $@ | $PERCOL | awk -F : '{print "+" $2 " \047" $1 "\047"}')"
 test -n "$agfilepath" && eval "$EDITOR $agfilepath"
 
