@@ -81,6 +81,12 @@ augroup texmath
   autocmd FileType texmath setlocal syntax=tex
 augroup END
 
+" Update shada file manually
+augroup write_shada
+  autocmd!
+  autocmd VimLeavePre * wshada!
+augroup END
+
 "---------------------------------------------------------------------------}}}
 " Set Options:                                                              {{{
 "------------------------------------------------------------------------------
