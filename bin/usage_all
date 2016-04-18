@@ -16,7 +16,8 @@
 # __browser="w3m"
 # __browser="lynx"
 # __browser="firefox -new-tab"
-__browser="xdg-open"
+# __browser="${BROWSER:-x-www-browser}"
+__browser="${BROWSERCLI:-www-browser}"
 
 if [ $# != 1 ]; then
   echo "[usage_all] One argument (file path) is needed (given $#)." >&2
