@@ -25,6 +25,5 @@ elif [ "$1" = "-H" ]; then
   usage_all "$f"
   exit 0
 fi
-fi
 
 pandoc -t beamer --template=mytemplate "$@"
