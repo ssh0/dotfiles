@@ -191,7 +191,7 @@ bmark -title="IP address" -tags=keyword -keyword=ip http://www.ip-adress.com/who
 bmark -title="flickr" -tags=keyword -keyword=f https://www.flickr.com/search/?text=%s&safe_search=3
 bmark -title="Youtube" -tags=keyword -keyword=y http://www.youtube.com/results?search_query=%s&sm=3
 bmark -title="Yahoo real time search" -tags=keyword -keyword=rt http://realtime.search.yahoo.co.jp/search?p=%s&ei=UTF-8
-bmark -title="twitter" -tags=keyword -keyword=tw https://mobile.twitter.com/search?src=typd&q=%s
+bmark -title="twitter" -tags=keyword -keyword=tw https://twitter.com/search?src=typd&q=%s
 bmark -title="Google Scholar" -tags=keyword -keyword=sc http://scholar.google.co.jp/scholar?as_vis=1&q=%s&hl=ja&as_sdt=1
 bmark -title="Qiita" -tags=keyword -keyword=q http://qiita.com/search?q=%s
 bmark -title="Github - repo" -tags=keyword -keyword=g https://github.com/search?q=%s
