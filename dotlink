@@ -393,6 +393,7 @@ mpd/mpd.conf,.config/mpd/mpd.conf
 # ncmpcpp – featureful ncurses based MPD client inspired by ncmpc
 
 ncmpcpp/config,.ncmpcpp/config
+ncmpcpp/keys,.ncmpcpp/keys
 ncmpcpp/scripts/ncmpcpp_notification.sh,.ncmpcpp/scripts/ncmpcpp_notification.sh
 
 #===========================================================================}}}
