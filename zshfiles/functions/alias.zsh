@@ -72,7 +72,7 @@ function _ec() {
 
   alis="$1"
   if [[ -n "$3" ]]; then
-    local file
+    local target
     target="$2"
     cmd="$3"
     shift 3
