@@ -7,13 +7,14 @@ Set aliases (if available)
 
 **Ex)**
 
-* apt for apt-faset
+* apt for apt-fast
 * vim for nvim
 * g for git
+* f for thefuck
 * :q for exit
 * f for thefuck
-* cf-* (functions for editing some applications)
-* rl-* (functions for reload some applications)
+* cf-* (edit the configuration file of an application)
+* rl-* (reload the configuration file on an application)
 
 ## [bindkey.zsh](./bindkey.zsh)
 
