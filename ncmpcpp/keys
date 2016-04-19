@@ -46,9 +46,9 @@ key_volume_up = '+' '='
 #
 key_volume_down = '-'
 #
-key_prev_column = 260 'h'
+key_prev_column = 260
 #
-key_next_column = 261 'l'
+key_next_column = 261
 #
 #key_toggle_space_mode = 't'
 #
