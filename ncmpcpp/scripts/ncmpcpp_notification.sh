@@ -4,8 +4,7 @@
 
 icon='/usr/share/icons/gnome/scalable/actions/media-playback-start-symbolic.svg'
 
-ncmpcpp --now-playing '{%a - %t}|{%f}' | \
-  while read line; do
-    notify-send -a ncmpcpp -t 5000 -i "${icon}" 'Now playing' "${line}"
-  done
+line="$(ncmpcpp --now-playing '{%a - %t}|{%f}')"
+
+notify-send -a ncmpcpp -t 5000 -i "${icon}" 'Now playing' "${line}"
 
