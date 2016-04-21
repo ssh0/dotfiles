@@ -224,8 +224,17 @@ augroup END
 Plug 'thinca/vim-splash'
 let g:splash#path = expand('~/.splash-vim.txt')
 
-Plug 'tpope/vim-markdown', {'for': 'markdown'}
-Plug 'tyru/markdown-codehl-onthefly.vim', {'for': 'markdown'}
+Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
+let g:vim_markdown_no_default_key_mappings = 1
+let g:vim_markdown_math = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_folding_style_pythonic = 1
+
+" Plug 'tpope/vim-markdown', {'for': 'markdown'}
+" Plug 'tyru/markdown-codehl-onthefly.vim', {'for': 'markdown'}
+" Plug 'drmingdrmer/vim-syntax-markdown', {'for': 'markdown'}
+
 Plug 'lervag/vimtex', {'for': 'tex'}
 let g:vimtex_fold_envs = 1
 let g:vimtex_view_general_viewer = 'mupdf'
