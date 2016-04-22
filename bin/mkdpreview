@@ -74,6 +74,10 @@ footer="$HOME/Workspace/blog/html/footer.html"
 # this script converts a html file to the upper directory.
 sourcedir='source'
 
+# If the directory named below exists,
+# save the output file to that directory.
+savedir='doc'
+
 f="$0"
 usage() {
   sed -n '/^# NAME$/,/^##$/p' "$f" | sed -e '$d' | cut -b3- >&2
@@ -114,15 +118,15 @@ if [ -f "$1" ]; then
   namewithext=$(basename "$1")
   name=${namewithext%.*}
 # save the file in /tmp dir.
-else 
+else
   dir=""
   name="/tmp/$(tr -cd 'a-f0-9' < /dev/urandom | head -c 32)"
 fi
 
 # set the saving direction
 if [ "${output}" = "" ]; then
-  if [ -d "${dir}/html" ]; then
-    output="${dir}/html/${name}.html"
+  if [ -d "${dir}/${savedir}" ]; then
+    output="${dir}/${savedir}/${name}.html"
   else
     output="${dir}/${name}.html"
   fi

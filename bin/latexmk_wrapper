@@ -27,28 +27,32 @@ rootfile='main.tex'
 # level upper directory.
 sourcedir='source'
 
+# If the directory named below exists,
+# save the output file to that directory.
+savedir='doc'
+
 message() {
-  echo "There is$1 '$rootfile' in the directory '$2',"
-  echo "so this script compiles this file."
-  echo ""
+  echo "There is$1 '$rootfile' in the directory '$2'," >&2
+  echo "so this script compiles this file." >&2
+  echo "" >&2
 }
 
 search_rootfile() {
-if [ -f "$1"/"$rootfile" ]; then
-  texfile="$1"/"$rootfile"
-  message "" "$1"
-  return 0
-else
-  texfile="$1"/"$name"
-  return 1
-fi
+  if [ -f "$1"/"$rootfile" ]; then
+    texfile="$1"/"$rootfile"
+    message "" "$1"
+    return 0
+  else
+    texfile="$1"/"$name"
+    return 1
+  fi
 }
 
 dir="$(cd "$(dirname $1)"; pwd)"
 name="$(basename $1)"
 
 if [ ! -f "$dir/$name" ]; then
-  echo "$dir/$name doesn't exist."
+  echo "$dir/$name doesn't exist." >&2
   exit 1
 fi
 
@@ -56,12 +60,16 @@ currentdir="$(basename $dir)"
 dir_up="$(dirname $dir)"
 
 if [ ${currentdir} = $sourcedir ]; then
-  echo "This file is in '$sourcedir', so search '$rootfile' recursively."
+  echo "This file is in '$sourcedir', so search '$rootfile' recursively." >&2
   outdir="${dir_up}"
   search_rootfile ${dir_up} || search_rootfile $dir || message " not" "$dir"
 else
   outdir="$dir"
   search_rootfile $dir || message " not" "$dir"
+fi
+
+if [ -d "${outdir}/${savedir}" ]; then
+  outdir="${outdir}/${savedir}"
 fi
 
 echo "Run latexmk..."
