@@ -173,6 +173,8 @@ ignorekeys add mail\\.google\\.com -except f,F,o,t,;,:
 ignorekeys add www\\.google\\.com/calendar -except f,F,o,t,;,:
 ignorekeys add twitter\\.com -except F,v,V,d,;,:
 ignorekeys add feedly\\.com -except f,F,;,:
+" for jupyter notebook
+ignorekeys add localhost:8888 -except :
 
 "---------------------------------------------------------------------------}}}
 " Bookmarks (for search)                                                    {{{
