@@ -34,7 +34,7 @@ zplug "b4b4r07/zplug"
 zplug "Tarrasch/zsh-bd"
 zplug "chrissicool/zsh-256color"
 zplug "ssh0/zsh-takenote"
-zplug "ssh0/dot"
+zplug "ssh0/dot", of:"*.sh"
 zplug "zsh-users/zsh-syntax-highlighting", nice:10
 
 # Install plugins if there are plugins that have not been installed
