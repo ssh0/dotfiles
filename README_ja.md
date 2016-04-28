@@ -139,7 +139,7 @@ git clone --depth 1 --recursive  https://github.com/ssh0/dotfiles.git ~/.dotfile
 `~/.zsh/rc.mine`
 
 ```sh
-export PC=T540p
+export PC=T540p/
 ```
 
 ## Lenovo IdeaPad S10e
@@ -147,7 +147,7 @@ export PC=T540p
 `~/.zsh/rc.mine`
 
 ```sh
-export PC=S10e
+export PC=S10e/
 ```
 
 

@@ -75,4 +75,3 @@ export SHTEST_FILENAME_EXTENSION="sh"
 # sudo pip install cheat
 export CHEATCOLORS=true
 
-export PC=default
