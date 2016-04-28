@@ -47,7 +47,7 @@ Installation
 
 ## <a name="install_with_dot"> Install with dot</a>
 
-* [dot](https://github.com/ssh0/dot)
+>[ssh0/dot: dotfiles management framework with shell](https://github.com/ssh0/dot)
 
 ### <a name="install_sh">install.sh</a>
 

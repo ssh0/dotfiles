@@ -42,7 +42,7 @@ dotfiles
 
 ## <a name="install_with_dot">dotを用いた方法</a>
 
-* [dot](https://github.com/ssh0/dot)
+>[ssh0/dot: dotfiles management framework with shell](https://github.com/ssh0/dot)
 
 ### <a name="install_sh">スクリプトを用いた方法</a>
 
