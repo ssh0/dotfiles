@@ -208,17 +208,17 @@ bmark -title="Python 2.7 documentation" -tags=keyword -keyword=py2 https://docs.
 bmark -title="Python 3.4 documentation" -tags=keyword -keyword=py3 https://docs.python.org/3.4/search.html?q=%s
 bmark -title="8tracks" -tags=keyword -keyword=8tr https://8tracks.com/explore/%s"
 bmark -title="arxiv" -tags=keyword -keyword=arx http://arxiv.org/find/all/1/all:+%s/0/1/0/all/0/1
-bmark -title="Digg" -tags=keyword -keyword=dig https://digg.com/search?q=%s
+bmark -title="Digg" -tags=keyword -keyword="dig" https://digg.com/search?q=%s
 bmark -title="duckduckgo" -tags=keyword -keyword=dg https://duckduckgo.com/?q=%s
 bmark -title="Gmail" -tags=keyword -keyword=gm https://mail.google.com/mail/u/0/#search/%s
-bmark -title="Google Plus" -tags=keyword -keyword=g+ https://plus.google.com/s/%s/top
+bmark -title="Google Plus" -tags=keyword -keyword=gg https://plus.google.com/s/%s/top
 bmark -title="Hacker News" -tags=keyword -keyword=hn https://hn.algolia.com/?q=%s
 bmark -title="Pinterest" -tags=keyword -keyword=pin https://www.pinterest.com/search/pins/?q=%s
-bmark -title="Reddit" -tags=keyword -keyword=red https://www.reddit.com/search?q=%s
+bmark -title="Reddit" -tags=keyword -keyword=reddit https://www.reddit.com/search?q=%s
 bmark -title="SoundCloud" -tags=keyword -keyword=sdc https://soundcloud.com/search?q=%s
-bmark -title="Stackoverflow" -tags=keyword -keyword=so https://stackoverflow.com/search?q=%s
+bmark -title="Stackoverflow" -tags=keyword -keyword=stack https://stackoverflow.com/search?q=%s
 bmark -title="Torentz" -tags=keyword -keyword=tor https://www.torrentz.eu/search?q=%s
-bmark -title="Anitube.se" -tags=keyword -keyword=an http://www.anitube.se/search/?search_id=%s
+bmark -title="Anitube.se" -tags=keyword -keyword=ani http://www.anitube.se/search/?search_id=%s
 bmark -title="Facebook" -tags=keyword -keyword=fb https://www.facebook.com/search/top/?q=%s
 
 
