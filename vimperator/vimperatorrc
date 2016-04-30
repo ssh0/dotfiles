@@ -180,6 +180,9 @@ ignorekeys add localhost:8888 -except :
 " Bookmarks (for search)                                                    {{{
 "------------------------------------------------------------------------------
 
+" Clean up
+delbmarks!
+
 bmark -title="Google - I'm feeling lucky!" -tags=keyword -keyword=l https://www.google.co.jp/search?q=%s&btnI=I
 bmark -title="Wikipedia" -tags=keyword -keyword=w https://ja.wikipedia.org/wiki/%s
 bmark -title="niconico" -tags=keyword -keyword=n http://www.nicovideo.jp/search/%s
