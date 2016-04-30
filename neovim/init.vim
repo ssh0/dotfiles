@@ -260,6 +260,9 @@ inoremap <silent> kk <ESC>
 " Toggle relative number by <Space> + l
 nnoremap <silent> <Leader>l :setlocal relativenumber! number!<CR>
 
+" execute shell command written in a line
+nnoremap Q !!$SHELL<CR>
+
 " move in wrapped line by arrow key
 nnoremap <Down> gj
 nnoremap <Up> gk
