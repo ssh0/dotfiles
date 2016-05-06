@@ -31,6 +31,8 @@ sourcedir='source'
 # save the output file to that directory.
 savedir='doc'
 
+notification=true
+
 message() {
   echo "There is$1 '$rootfile' in the directory '$2'," >&2
   echo "so this script compiles this file." >&2
@@ -77,4 +79,5 @@ echo "=============="
 echo ""
 shift 1
 latexmk -pdfdvi -output-directory=$outdir "$@" $texfile \
-&& latexmk -output-directory=$outdir -c $texfile
+&& latexmk -output-directory=$outdir -c $texfile \
+&& $notification && notify-send "LaTeX build done!" "$outdir <- $texfile"

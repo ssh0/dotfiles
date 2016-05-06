@@ -78,6 +78,8 @@ sourcedir='source'
 # save the output file to that directory.
 savedir='doc'
 
+notification=true
+
 f="$0"
 usage() {
   sed -n '/^# NAME$/,/^##$/p' "$f" | sed -e '$d' | cut -b3- >&2
@@ -135,10 +137,12 @@ fi
 # save to the file direction.
 if $save; then
   # update option
+  notificationcmd="notify-send '[mkdpreview] Build done!' '$output'"
   if $update; then
     if [ -f "${output}" ];then
       pandoc -f markdown -S -t html5 -c "${template}" -B "${header}" -A \
-        "${footer}" -s --mathjax -o "${output}" "$@"
+        "${footer}" -s --mathjax -o "${output}" "$@" && \
+      $notification && $notificationcmd
     # if file doesn't exist, do nothing.
     else
       exit 0
@@ -146,7 +150,8 @@ if $save; then
   # save as new file
   else
     pandoc -f markdown -S -t html5 -c "${template}" -B "${header}" -A \
-      "${footer}" -s --mathjax -o "${output}" "$@"
+      "${footer}" -s --mathjax -o "${output}" "$@" && \
+    $notification && $notificationcmd
   fi
 fi
 
