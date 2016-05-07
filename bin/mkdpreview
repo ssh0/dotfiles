@@ -62,13 +62,13 @@
 #=#=
 
 # You cah change your style sheet file.
-template="$HOME/Workspace/blog/styles/stylesheet.css"
+template="$HOME/.config/mkdpreview/styles/github-markdown-css/github-markdown.css"
 # Of cource you cah load from the web.
 # template='http://szk-engineering.com/markdown.css'
 
 # You may change these files in order to show a header bar or a footer bar.
-header="$HOME/Workspace/blog/html/header.html"
-footer="$HOME/Workspace/blog/html/footer.html"
+header="$HOME/.config/mkdpreview/header.html"
+footer="$HOME/.config/mkdpreview/footer.html"
 
 # If the file is in this directory,
 # this script converts a html file to the upper directory.
