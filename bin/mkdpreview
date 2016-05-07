@@ -79,6 +79,7 @@ sourcedir='source'
 savedir='doc'
 
 notification=true
+notification_icon='/usr/share/icons/gnome/scalable/actions/document-send-symbolic.svg'
 
 f="$0"
 usage() {
@@ -137,22 +138,21 @@ fi
 # save to the file direction.
 if $save; then
   # update option
-  notificationcmd="notify-send '[mkdpreview] Build done!' '$output'"
-  if $update; then
-    if [ -f "${output}" ];then
-      pandoc -f markdown -S -t html5 -c "${template}" -B "${header}" -A \
-        "${footer}" -s --mathjax -o "${output}" "$@" && \
-      $notification && $notificationcmd
+  notificationcmd="notify-send '[mkdpreview] Build done!' '$output'
+                   -i ${notification_icon}"
+  # if $update; then
+  #   # if file doesn't exist, do nothing.
+  #   if [ ! -f "${output}" ]; then
+  #     exit 0
+  #   fi
+  # fi
+  if $update && test ! -f "${output}"; then
     # if file doesn't exist, do nothing.
-    else
-      exit 0
-    fi
-  # save as new file
-  else
-    pandoc -f markdown -S -t html5 -c "${template}" -B "${header}" -A \
-      "${footer}" -s --mathjax -o "${output}" "$@" && \
-    $notification && $notificationcmd
+    exit 0
   fi
+  pandoc -f markdown -S -t html5 -c "${template}" -B "${header}" -A \
+    "${footer}" -s --mathjax -o "${output}" "$@" && \
+  $notification && eval $notificationcmd
 fi
 
 # preview in web browser.
