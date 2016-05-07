@@ -32,6 +32,7 @@ sourcedir='source'
 savedir='doc'
 
 notification=true
+notification_icon='/usr/share/icons/gnome/scalable/actions/document-send-symbolic.svg'
 
 message() {
   echo "There is$1 '$rootfile' in the directory '$2'," >&2
@@ -74,10 +75,15 @@ if [ -d "${outdir}/${savedir}" ]; then
   outdir="${outdir}/${savedir}"
 fi
 
+notificationcmd="notify-send 'LaTeX build done!' '$outdir\n <- $texfile'
+                 -i ${notification_icon}"
+
 echo "Run latexmk..."
 echo "=============="
 echo ""
 shift 1
+
 latexmk -pdfdvi -output-directory=$outdir "$@" $texfile \
 && latexmk -output-directory=$outdir -c $texfile \
-&& $notification && notify-send "LaTeX build done!" "$outdir <- $texfile"
+&& $notification \
+&& eval $notificationcmd
