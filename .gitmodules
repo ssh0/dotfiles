@@ -1,0 +1,3 @@
+[submodule "mkdpreview/styles/github-markdown-css"]
+	path = mkdpreview/styles/github-markdown-css
+	url = https://github.com/sindresorhus/github-markdown-css.git
