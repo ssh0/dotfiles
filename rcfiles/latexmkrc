@@ -3,7 +3,8 @@ $latex = 'platex -interaction=nonstopmode -kanji=utf-8 %O %S';
 $dvipdf = 'dvipdfmx %O -o %D %S';
 $bibtex = 'pbibtex %O %B';
 $pdf_mode = 3; # use dvipdf
+$max_repeat = 5;
 $pdf_update_method = 2;
-$pdf_previewer = "mupdf";
+$pdf_previewer = "zathura";
 # Prevent latexmk from removing PDF after typeset.
 # $pvc_view_file_via_temporary = 0;
