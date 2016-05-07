@@ -63,7 +63,7 @@
 
 # You cah change your style sheet file.
 template="$HOME/.config/mkdpreview/styles/github-markdown-css/github-markdown.css"
-# Of cource you cah load from the web.
+# Of cource you can load from the web.
 # template='http://szk-engineering.com/markdown.css'
 
 # You may change these files in order to show a header bar or a footer bar.
@@ -140,16 +140,9 @@ if $save; then
   # update option
   notificationcmd="notify-send '[mkdpreview] Build done!' '$output'
                    -i ${notification_icon}"
-  # if $update; then
-  #   # if file doesn't exist, do nothing.
-  #   if [ ! -f "${output}" ]; then
-  #     exit 0
-  #   fi
-  # fi
-  if $update && test ! -f "${output}"; then
-    # if file doesn't exist, do nothing.
-    exit 0
-  fi
+
+  $update && test ! -f "${output}" && exit 0
+
   pandoc -f markdown -S -t html5 -c "${template}" -B "${header}" -A \
     "${footer}" -s --mathjax -o "${output}" "$@" && \
   $notification && eval $notificationcmd
