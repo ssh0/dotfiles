@@ -504,3 +504,11 @@ rcfiles/matplotlibrc,.config/matplotlib/matplotlibrc
 youtube-dl/config,.config/youtube-dl/config
 
 #===========================================================================}}}
+# mkdpreview                                                                {{{
+#==============================================================================
+
+mkdpreview/footer.html,.config/mkdpreview/footer.html
+mkdpreview/header.html,.config/mkdpreview/header.html
+mkdpreview/styles/github-markdown-css/github-markdown.css,.config/mkdpreview/styles/github-markdown-css/github-markdown.css
+
+#===========================================================================}}}
