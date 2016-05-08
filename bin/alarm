@@ -92,8 +92,8 @@ notification_title="[alarm] ${dateafter}"
 notification_body="${start_time} : start\n${end_time} : end"
 
 ## visual timer (choose tty-clock or xclock)
-# tty-clock -sc &
-xclock -update 1 &
+tty-clock -sc &
+# xclock -update 1 &
 clockpid=$!
 
 # trap Ctrl-C and then kill child process
