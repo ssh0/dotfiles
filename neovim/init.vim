@@ -211,6 +211,8 @@ set modeline
 " disable the conceal function
 let g:tex_conceal=''
 
+set conceallevel=2
+
 "                                                                           }}}
 "---------------------------------------------------------------------------}}}
 " Indent:                                                                   {{{
