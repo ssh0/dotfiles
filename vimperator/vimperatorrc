@@ -203,6 +203,7 @@ bmark -title="Qiita" -tags=keyword -keyword=q http://qiita.com/search?q=%s
 bmark -title="Github - repo" -tags=keyword -keyword=g https://github.com/search?q=%s
 bmark -title="Github - user" -tags=keyword -keyword=gu https://github.com/search?q=%s&type=Users
 bmark -title="Github - code" -tags=keyword -keyword=gc https://github.com/search?q=%s&type=Code
+bmark -title="Github - code filename" -tags=keyword -keyword=gf https://github.com/search?q=filename:%s&type=Code
 bmark -title="Gist" -tags=keyword -keyword=gs https://gist.github.com/search?utf8=✓&q=%s
 bmark -title="translate ja <-> en" -tags=keyword -keyword=t http://ejje.weblio.jp/content/%s
 bmark -title="wordnik" -tags=keyword -keyword=wd https://www.wordnik.com/words/%s
