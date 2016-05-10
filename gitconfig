@@ -1,11 +1,7 @@
-[user]
-    email = fuji101ijuf@gmail.com
-    name = Shotaro Fujimoto
+[include]
+    path = ~/Dropbox/conf/gitconfig.local # for my user name and email address
 [push]
     default = simple
-[alias]
-[github]
-    user = ssh0
 [color]
     status = auto
     diff = auto
