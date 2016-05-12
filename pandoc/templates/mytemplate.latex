@@ -1,4 +1,4 @@
-%
+% {{{
 \documentclass{jsarticle}
 
 % For code
@@ -40,20 +40,27 @@
 % "\vector{a}" でベクトル
 \def\vector#1{\mbox{\boldmath \(#1\)}}
 
-\hypersetup{breaklinks=true,
-            bookmarks=true,
-            pdfauthor={$author-meta$},
-            pdftitle={$title-meta$},
-            colorlinks=true,
-            citecolor=$if(citecolor)$$citecolor$$else$black$endif$,
-            urlcolor=$if(urlcolor)$$urlcolor$$else$black$endif$,
-            linkcolor=$if(linkcolor)$$linkcolor$$else$black$endif$,
-            pdfborder={0 0 0}}
+\hypersetup{
+  bookmarksnumbered=true,
+  bookmarksopen=true,
+  breaklinks=true,
+  pdfauthor={$author-meta$},
+  pdftitle={$title-meta$},
+  pdfkeywords={},
+  colorlinks=true,
+  anchorcolor=black,
+  citecolor=$if(citecolor)$$citecolor$$else$black$endif$,
+  urlcolor=$if(urlcolor)$$urlcolor$$else$cyan$endif$,
+  linkcolor=$if(linkcolor)$$linkcolor$$else$black$endif$,
+  pdfborder={0 0 0}
+}
 \urlstyle{same}  % don't use monospace font for urls
-$if(links-as-notes)$
-% Make links footnotes instead of hotlinks:
-\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
-$endif$
+
+% \setcounter{section}{1}
+% \setcounter{subsection}{0}
+% \renewcommand{\thefigure}{\thesection.\arabic{figure}}
+
+% }}}
 
 $if(title)$
 \title{$title$}
@@ -75,12 +82,17 @@ $include-before$
 $endfor$
 $if(toc)$
 {
-\hypersetup{linkcolor=black}
 \setcounter{tocdepth}{$toc-depth$}
 \tableofcontents
 }
 $endif$
 $body$
+
+% \begin{figure}[H]
+%   \centering
+%     \includegraphics[width=\textwidth]{../img/1_1-crop.pdf}
+%     \caption{}\label{fig1_1}
+% \end{figure}
 
 $for(include-after)$
 $include-after$
