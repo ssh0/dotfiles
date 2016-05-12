@@ -57,6 +57,9 @@ export RANGER_LOAD_DEFAULT_RC=false
 # enhancd by "cd"
 export ENHANCD_COMMAND='cd'
 
+# dot
+export DOT_COMMAND='d'
+
 # takenote
 export TAKENOTE_ROOTDIR="$HOME/Workspace/blog"
 export TAKENOTE_FILERCMD=ranger
