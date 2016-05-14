@@ -79,11 +79,11 @@ moveWD = borderwidth
 resizeWD = 2*borderwidth
 
 -- gapwidth
-gapwidth  = 8
-gwU = 2
-gwD = 1
-gwL = 38
-gwR = 39
+gapwidth  = 9
+gwU = 1
+gwD = 0
+gwL = 37
+gwR = 38
 
 --------------------------------------------------------------------------- }}}
 -- main                                                                     {{{
@@ -256,8 +256,8 @@ main = do
 -------------------------------------------------------------------------------
 
 myLayout = spacing gapwidth $ gaps [(U, gwU),(D, gwD),(L, gwL),(R, gwR)]
-           $ (ResizableTall 1 (1/55) (1/2) [])
-             ||| (TwoPane (1/55) (1/2))
+           $ (ResizableTall 1 (1/205) (102/205) [])
+             ||| (TwoPane (1/205) (102/205))
              ||| Simplest
 
 --------------------------------------------------------------------------- }}}
