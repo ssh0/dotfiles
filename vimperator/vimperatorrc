@@ -108,6 +108,34 @@ noremap <A-S-l> :tabmove! +1<CR>
 noremap <A-S-Left> :tabmove! -1<CR>
 noremap <A-S-Right> :tabmove! +1<CR>
 
+" for with 'Tile Tabs' plugins
+" New\Close Layout
+nnoremap <A-return> <A-S-F12>
+" Untile Tab
+nnoremap <A-S-1> <A-S-F4>
+" Expand tile
+nnoremap <A-f> <A-S-F2>
+" Show Properties
+" <A-S-F12>
+" Sync Scroll
+" <A-S-F8>
+"
+" Tile New Tab
+nnoremap <C-A-l> <C-A-Right>
+nnoremap <C-A-h> <C-A-Left>
+nnoremap <C-A-j> <C-A-Down>
+nnoremap <C-A-k> <C-A-Up>
+" Tile Duplicate Tab
+nnoremap <C-A-S-l> <C-A-S-Right>
+nnoremap <C-A-S-h> <C-A-S-Left>
+nnoremap <C-A-S-j> <C-A-S-Down>
+nnoremap <C-A-S-k> <C-A-S-Up>
+" Activate Tile
+nnoremap <C-l> <C-Right>
+nnoremap <C-h> <C-Left>
+nnoremap <C-j> <C-Down>
+nnoremap <C-k> <C-Up>
+
 " open undo prompt
 nnoremap U :undo<Space>
 
@@ -179,9 +207,6 @@ ignorekeys add localhost:8888 -except :
 "---------------------------------------------------------------------------}}}
 " Bookmarks (for search)                                                    {{{
 "------------------------------------------------------------------------------
-
-" Clean up
-delbmarks!
 
 bmark -title="Google - I'm feeling lucky!" -tags=keyword -keyword=l https://www.google.co.jp/search?q=%s&btnI=I
 bmark -title="Wikipedia" -tags=keyword -keyword=w https://ja.wikipedia.org/wiki/%s
