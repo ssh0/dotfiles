@@ -65,6 +65,9 @@ set hintchars=ifjkasdhguonmerwc
 " to prevent d on the last tab from closing the window:
 set! browser.tabs.closeWindowWithLastTab=false
 
+" Add new tab to the last
+set! browser.tabs.insertRelatedAfterCurrent=false
+
 "---------------------------------------------------------------------------}}}
 " Appearance                                                                {{{
 "------------------------------------------------------------------------------
