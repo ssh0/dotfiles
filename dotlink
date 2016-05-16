@@ -255,6 +255,7 @@ bin/myrsync,bin/myrsync
 bin/mytask,bin/mytask
 bin/pandoc_beamerwrapper.sh,bin/pandoc_beamerwrapper.sh
 bin/pandoc_latexwrapper.sh,bin/pandoc_latexwrapper.sh
+bin/pdfocr,bin/pdfocr
 bin/presenmode.sh,bin/presenmode.sh
 bin/presentation.sh,bin/presentation.sh
 bin/progressbar,bin/progressbar
