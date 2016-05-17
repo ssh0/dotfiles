@@ -92,6 +92,8 @@ search_engines = {
     -- if you set the searching language 'English',
     -- then replace "職場" to "Work"
     mtw = "https://www.google.com/maps/dir/%s/職場",
+    -- "tr": Google Trends
+    tr = "https://www.google.co.jp/trends/explore#q=%s"
     -- "ip": IP address search
     ip = "http://www.ip-adress.com/whois/%s",
     -- 'f': flickr

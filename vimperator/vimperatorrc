@@ -221,6 +221,7 @@ bmark -title="Google Map Navigation from Home to ***" -tags=keyword -keyword=mfh
 bmark -title="Google Map Navigation from Work to ***" -tags=keyword -keyword=mfw https://www.google.com/maps/dir/職場/%s
 bmark -title="Google Map Navigation from *** to Home" -tags=keyword -keyword=mth https://www.google.com/maps/dir/%s/自宅
 bmark -title="Google Map Navigation from *** to Work" -tags=keyword -keyword=mtw https://www.google.com/maps/dir/%s/職場
+bmark -title="Google Trends" -tags=keyword -keyword=tr https://www.google.co.jp/trends/explore#q=%s
 bmark -title="IP address" -tags=keyword -keyword=ip http://www.ip-adress.com/whois/%s
 bmark -title="flickr" -tags=keyword -keyword=f https://www.flickr.com/search/?text=%s&safe_search=3
 bmark -title="Youtube" -tags=keyword -keyword=y http://www.youtube.com/results?search_query=%s&sm=3
