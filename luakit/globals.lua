@@ -29,7 +29,7 @@ local lkv = string.match(luakit.version, "^(%d+%.%d+%.%d+)")
 --     luakit.webkit_version, (lkv and ("/" .. lkv)) or "")
 
 -- Windows 10, Google Chrome
-globals.useragent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36"
+globals.useragent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
 
 -- Ubuntu Linux, Firefox
 -- globals.useragent = "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0"
@@ -93,7 +93,7 @@ search_engines = {
     -- then replace "職場" to "Work"
     mtw = "https://www.google.com/maps/dir/%s/職場",
     -- "tr": Google Trends
-    tr = "https://www.google.co.jp/trends/explore#q=%s"
+    tr = "https://www.google.co.jp/trends/explore#q=%s",
     -- "ip": IP address search
     ip = "http://www.ip-adress.com/whois/%s",
     -- 'f': flickr
