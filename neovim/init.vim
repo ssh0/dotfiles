@@ -130,6 +130,11 @@ set whichwrap=b,s,[,],<,>
 " help language
 set helplang=ja,en
 
+" TOhtml
+let g:html_ignore_conceal=1
+let g:html_ignore_folding=1
+" let g:html_dynamic_folds=1
+
 " try to open under the cursor with `gx`
 let g:netrw_browsex_viewer="xdg-open"
 
