@@ -70,7 +70,8 @@ visualizer_sync_interval = "30"
 # you need to compile ncmpcpp with fftw3 support.
 
 visualizer_type = "spectrum"
-visualizer_look = "♦▉"
+# visualizer_look = "♦▉"
+visualizer_look = "╸▊"
 
 ##==========================================================================}}}
 # system encoding                                                           {{{
