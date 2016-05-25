@@ -7,21 +7,21 @@
 hi clear
 
 "StatusLine settings
-hi StatusLine           color: #606060; background: #222222; font-family: Inconsolata, "Droid Sans Mono"; font-size: 14px; margin-top: 1px;
+hi StatusLine           color: #606060; background: #222222; font-family: "Migu 1M", "Droid Sans Mono"; font-size: 14px; margin-top: 1px;
 " hi StatusLineBroken     color: #222222; background: #afafff; "font-size: 8pt;
 " hi StatusLineSecure     color: #222222; background: #afffaf; "font-size: 8pt;
 
 "CmdLine settings excluding Gradient
 hi Normal               color: #afafaf; background: #222222;
 " hi CmdLine              background: #222222; color: #afafaf; font-size: 9pt;
-hi CmdLine              color: #aaa; background: #1c1c1c; font-family: Inconsolata, "Droid Sans Mono"; font-size: 14px; padding: 0px; vertical-align: middle; border: none;
+hi CmdLine              color: #aaa; background: #1c1c1c; font-family: "Migu 1M", "Droid Sans Mono"; font-size: 14px; padding: 0px; vertical-align: middle; border: none;
 hi CompDesc             color: #c6c6c6; width: 50%; font-size: 9pt;
 hi CompIcon             width: 16px; min-width: 16px; display: inline-block; margin-right: .5ex;
 hi CompItem[selected]   background: #666666; color: #afafaf; 
 " hi CompLess             text-align: center; height: 0; line-height: .5ex; padding-top: 1ex;
 " hi CompMore             text-align: center; height: .5ex; line-height: .5ex; margin-bottom: -.5ex;
 hi CompMsg              font-style: italic; margin-left: 16px;
-hi CompResult           width: 45%; overflow: hidden;font-size: 10pt; font-family: Inconsolata, "Droid Sans Mono"; font-weight: normal;
+hi CompResult           width: 45%; overflow: hidden;font-size: 10pt; font-family: "Migu 1M", "Droid Sans Mono"; font-weight: normal;
 hi CompTitle            color: #afafaf; background: #222222; font-weight: bold;
 hi CompTitle>*          padding: 0 .5ex;
 hi Filter               font-weight: bold;color: #afafaf;
