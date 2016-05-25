@@ -36,9 +36,9 @@ if [[ ! -n $TMUX ]]; then
   ID="${create_new_session}:\n$ID"
   ID="$(echo $ID | $PERCOL | cut -d: -f1)"
   if [[ "$ID" = "${create_new_session}" ]]; then
-    tmux new-session && exit
+    tmux new-session
   elif [[ -n "$ID" ]]; then
-    tmux attach-session -t "$ID" && exit
+    tmux attach-session -t "$ID"
   else
     :  # Start terminal normally
   fi
