@@ -38,10 +38,10 @@ eval $(dircolors "$ZSH_ROOT/dircolors/dircolors-zenburn")
 hash tmux 2>/dev/null && source "$ZSH_ROOT/functions/tmux.zsh"
 
 # Use zgen to load some zsh plugins
-source "$ZSH_ROOT/functions/zgen.zsh"
+#source "$ZSH_ROOT/functions/zgen.zsh"
 
 # zplug
-#source "$ZSH_ROOT/functions/zplug.zsh"
+source "$ZSH_ROOT/functions/zplug.zsh"
 
 export ZSH=$HOME/.zsh
 
