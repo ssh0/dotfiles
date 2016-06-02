@@ -41,6 +41,17 @@ alias r='ranger'
 # I often type ":q" to exit terminal
 alias :q='exit'
 
+function python() {
+  if [ $# = 0 ]; then
+    jupyter console
+  else
+    python "$@"
+  fi
+}
+
+# typo
+alias pytohn='python'
+
 # s command
 alias o='s'
 
