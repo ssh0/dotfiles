@@ -45,7 +45,7 @@ function python() {
   if [ $# = 0 ]; then
     jupyter console
   else
-    python "$@"
+    /usr/bin/python "$@"
   fi
 }
 
