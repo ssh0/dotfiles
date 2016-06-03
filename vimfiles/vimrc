@@ -33,7 +33,7 @@ set fileencoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 
 "---------------------------------------------------------------------------}}}
-" Load Plugins:                                                             {{{
+" Load plugins:                                                             {{{
 "------------------------------------------------------------------------------
 
 source ~/.vim/plug.vim
@@ -48,7 +48,7 @@ source ~/.vim/plug.vim
 if $TMUX != ""
   augroup titlesettings
     autocmd!
-    autocmd BufEnter,InsertEnter * call system("tmux rename-window " . "'(vim)" . expand("%:t") . "'")
+    autocmd BufEnter,InsertEnter * call system("tmux rename-window '(vim)" . expand("%:t") . "'")
     autocmd VimLeave * call system("tmux rename-window zsh")
     autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
   augroup END
@@ -97,7 +97,7 @@ set nowritebackup nobackup noswapfile
 set history=1000
 
 " save information to ~/.viminfo
-set viminfo='1000,<3000,f50,c,h
+set shada='1000,<3000,f50,c,h,s100
 
 " use unnamed register (for outer programs)
 set clipboard=unnamedplus,autoselect
@@ -126,6 +126,11 @@ set whichwrap=b,s,[,],<,>
 
 " help language
 set helplang=ja,en
+
+" TOhtml
+let g:html_ignore_conceal=1
+let g:html_ignore_folding=1
+" let g:html_dynamic_folds=1
 
 " try to open under the cursor with `gx`
 let g:netrw_browsex_viewer="xdg-open"
@@ -207,6 +212,8 @@ set modeline
 " disable the conceal function
 let g:tex_conceal=''
 
+set conceallevel=2
+
 "                                                                           }}}
 "---------------------------------------------------------------------------}}}
 " Indent:                                                                   {{{
@@ -255,6 +262,9 @@ inoremap <silent> kk <ESC>
 
 " Toggle relative number by <Space> + l
 nnoremap <silent> <Leader>l :setlocal relativenumber! number!<CR>
+
+" execute shell command written in a line
+nnoremap Q !!$SHELL<CR>
 
 " move in wrapped line by arrow key
 nnoremap <Down> gj
@@ -315,7 +325,9 @@ inoremap {} {}<Left>
 inoremap [] []<Left>
 inoremap () ()<Left>
 inoremap "" ""<Left>
+inoremap ”” ””<Left>
 inoremap '' ''<Left>
+inoremap ’’ ’’<Left>
 inoremap <> <><Left>
 inoremap $$ $$<Left>
 
