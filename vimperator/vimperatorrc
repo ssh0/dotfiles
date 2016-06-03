@@ -236,6 +236,7 @@ bmark -title="Github - code filename" -tags=keyword -keyword=gf https://github.c
 bmark -title="Gist" -tags=keyword -keyword=gs https://gist.github.com/search?utf8=✓&q=%s
 bmark -title="translate ja <-> en" -tags=keyword -keyword=t http://ejje.weblio.jp/content/%s
 bmark -title="wordnik" -tags=keyword -keyword=wd https://www.wordnik.com/words/%s
+bmark -title="Pandas documentation" -tags=keyword -keyword=pd http://pandas.pydata.org/pandas-docs/stable/search.html?q=%s
 bmark -title="matplotlib documentation" -tags=keyword -keyword=mpl http://matplotlib.org/search.html?q=%s
 bmark -title="Python 2.7 documentation" -tags=keyword -keyword=py2 https://docs.python.org/2.7/search.html?q=%s
 bmark -title="Python 3.4 documentation" -tags=keyword -keyword=py3 https://docs.python.org/3.4/search.html?q=%s

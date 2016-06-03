@@ -112,6 +112,9 @@ t,http://ejje.weblio.jp/content/%s,false
 # "wd": wordnik
 wd,https://www.wordnik.com/words/%s,false
 
+# "pd": Pandas documentation
+pd,http://pandas.pydata.org/pandas-docs/stable/search.html?q=%s,true
+
 # "mpl": matplotlib documentation
 mpl,http://matplotlib.org/search.html?q=%s,true
 
