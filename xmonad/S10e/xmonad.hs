@@ -268,7 +268,7 @@ myStartupHook = do
         spawnOnce "xscreensaver -no-splash"
         spawnOnce "$HOME/.dropbox-dist/dropboxd"
         spawnOnce "bash $HOME/.fehbg"
-        spawnOnce "compton -b --config $HOME/.config/compton/compton.conf"
+        -- spawnOnce "compton -b --config $HOME/.config/compton/compton.conf"
 
 --------------------------------------------------------------------------- }}}
 -- myManageHookShift: some window must created there                        {{{
