@@ -7,7 +7,6 @@
 # * apt for apt-fast
 # * vim for nvim
 # * g for git
-# * f for thefuck
 # * :q for exit
 # * f for thefuck
 # * cf-* (edit the configuration file of an application)
