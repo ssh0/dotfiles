@@ -17,7 +17,7 @@
     ci = commit -a
     cam = commit -a --amend
     co = checkout
-    puhs = push
+    psuh = push
     # branch
     br = branch
     ba = branch -a           # Show all the branches including origin
