@@ -40,7 +40,7 @@ let g:unite_source_mark_marks =
 nnoremap <silent> `` :Unite mark<CR>
 nnoremap <silent> '' :Unite mark<CR>
 
-let g:SignatureMartTextHLDynamic = 1
+let g:SignatureMarkTextHLDynamic = 1
 let g:SignatureMarkTextHL = "SignColumn"
 
 Plug 'LeafCage/foldCC'
