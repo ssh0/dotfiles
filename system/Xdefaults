@@ -16,10 +16,10 @@ Xft.hintstyle: hintslight
 ! For showing img in ranger with w3mimgdisplay, disable this
 ! URxvt*.depth:          32
 URxvt.geometry:        90x35
-URxvt*.transparent:    false
+! URxvt*.transparent:    false
 URxvt*.shading:        110
 URxvt.tintColor:       #303030
-! URxvt*.transparent:    true
+URxvt*.transparent:    true
 ! URxvt*.shading:        110
 ! URxvt.tintColor:       #303030
 URxvt*fading:          0
