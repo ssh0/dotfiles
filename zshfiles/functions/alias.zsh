@@ -33,6 +33,7 @@ if hash nvim 2>/dev/null; then
   alias vimdiff='nvim -d'
 fi
 
+alias vi='vim'
 alias v='vim'
 
 alias r='ranger'
