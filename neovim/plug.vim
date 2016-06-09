@@ -252,7 +252,7 @@ let g:gista#update_on_write = 1
 Plug 'mattn/webapi-vim'
 Plug 'moznion/hateblo.vim'
 Plug 'mattn/googlesuggest-complete-vim'
-Plug 'Lokaltog/powerline-fontpatcher'
+" Plug 'Lokaltog/powerline-fontpatcher'
 Plug 'ssh0/easy-reading.vim'
 Plug 'rking/ag.vim'
 
