@@ -45,7 +45,7 @@ source ~/.config/nvim/plug.vim
 if $TMUX != ""
   augroup titlesettings
     autocmd!
-    autocmd BufEnter,InsertEnter * call system("tmux rename-window '(vim)" . expand("%:t") . "'")
+    autocmd BufEnter,InsertEnter * call system("tmux rename-window '(vim) " . expand("%:t") . "'")
     autocmd VimLeave * call system("tmux rename-window zsh")
     autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
   augroup END
