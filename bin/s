@@ -3,21 +3,25 @@
 #
 #=#=#=
 # ```
-# NAME
+# Name:
 #       s - Search from terminal
 #
-# USAGE
-#       s [-h|-l] <search_provider> <search queries>
+# Usage:
+#       s <search_provider> <search_queries>...
+#       s [(-g | --gui)] <search_provider> <search_queries>...
+#       s [(-t | --target) <browser>] <search_provider> <search_queries>...
+#       s (-l | --list)
+#       s (-h | --help)
 #
-# OPTIONS
-#       -h    Show help message
-#       -t    Set the browser to use (-g option is already enabled)
-#       -l    Show search providers list
-#       -g    Force search in GUI browser
+# Options:
+#       -h --help    Show help message
+#       -t --target  Set the browser to use (-g option is already enabled)
+#       -l --list    Show search providers list
+#       -g --gui     Force search in GUI browser
 #
-# ENVIRONMENT VARIABLE:
-#       $BROWSERCLI     browser used in terminal
-#       $BROWSER        GUI browser
+# Environment Variables:
+#       $BROWSERCLI   browser used in terminal
+#       $BROWSER      GUI browser
 # ```
 #=#=
 
@@ -44,6 +48,17 @@ list_providers() {
     echo "${lists}" | awk -F ": " '{ printf("%5s :%s\n",$1,$2) ;}'
   fi
 }
+
+for arg in "$@"; do
+  shift
+  case "$arg" in
+    "--help") set -- "$@" "-h" ;;
+    "--target") set -- "$@" "-t" ;;
+    "--list") set -- "$@" "-l" ;;
+    "--gui") set -- "$@" "-g" ;;
+    *)        set -- "$@" "$arg" ;;
+  esac
+done
 
 while getopts gt:l:h OPT; do
   case $OPT in

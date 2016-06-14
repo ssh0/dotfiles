@@ -503,21 +503,25 @@ forked from [here](https://github.com/haru8/radiko_rec).
 ## [s](./s)
 
 ```
-NAME
+Name:
       s - Search from terminal
 
-USAGE
-      s [-h|-l] <search_provider> <search queries>
+Usage:
+      s <search_provider> <search_queries>...
+      s [(-g | --gui)] <search_provider> <search_queries>...
+      s [(-t | --target) <browser>] <search_provider> <search_queries>...
+      s (-l | --list)
+      s (-h | --help)
 
-OPTIONS
-      -h    Show help message
-      -t    Set the browser to use (-g option is already enabled)
-      -l    Show search providers list
-      -g    Force search in GUI browser
+Options:
+      -h --help    Show help message
+      -t --target  Set the browser to use (-g option is already enabled)
+      -l --list    Show search providers list
+      -g --gui     Force search in GUI browser
 
-ENVIRONMENT VARIABLE:
-      $BROWSERCLI     browser used in terminal
-      $BROWSER        GUI browser
+Environment Variables:
+      $BROWSERCLI   browser used in terminal
+      $BROWSER      GUI browser
 ```
 
 ## [screenshot\_select.sh](./screenshot_select.sh)
