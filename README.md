@@ -14,42 +14,40 @@ I use dotfiles manager [dot](https://github.com/ssh0/dot) in order to:
 Contents
 ========
 
-* XMonad([http://xmonad.org/](http://xmonad.org/))
+* [xmonad](http://xmonad.org/)
     * [xmonad.hs](./xmonad/ssh0-home/xmonad.hs)
-* tmux([https://tmux.github.io/](https://tmux.github.io/))
-    * [tmux.conf](./rcfiles/tmux.conf)
-* zsh([http://www.zsh.org/](http://www.zsh.org/))
-    * zgen([tarjoilija/zgen](https://github.com/tarjoilija/zgen))
+* [tmux](https://tmux.github.io/)
+    * [tmux.conf](./tmux/tmux.conf)
+* [zsh](http://www.zsh.org/)
+    * [zgen](https://github.com/tarjoilija/zgen)
     * [zshfiles](./zshfiles/)
-* vim([http://www.vim.org/](http://www.vim.org/))
+* [vim](http://www.vim.org/)
     * [vimrc](./vimfiles/vimrc)
-* ranger([http://ranger.nongnu.org/](http://ranger.nongnu.org/))
+* [ranger](http://ranger.nongnu.org/)
     * [config files](./ranger/)
-* luakit([https://mason-larobina.github.io/luakit/](https://mason-larobina.github.io/luakit/))
-    * [config files](./luakit/)
-* [some useful scripts](./bin/)
+* [Some useful scripts](./bin/)
 
 Screenshot
 ==========
 
 ![screenshot.png](./screenshots/screenshot.png)
 
-Installation
-============
+How to Install
+==============
 
-* [Install with dot](#install_with_dot)
-    * [install.sh](#install_sh)
+* [Install by `dot`](#install_with_dot)
+    * [Execute install.sh](#install_sh)
     * [Install manually](#manually)
-        1. [Install dot](#install_dot)
-        2. [Clone repository and create symbolic links using dot](#clone_and_deploy_using_dot)
-* [Install without dot (simple)](#install_without_dot)
+        1. [Install `dot`](#install_dot)
+        2. [Clone repository and make symbolic links](#clone_and_deploy_using_dot)
+* [Install without `dot`](#install_without_dot)
 
 
-## <a name="install_with_dot"> Install with dot</a>
+## <a name="install_with_dot">Install by `dot`</a>
 
 >[ssh0/dot: dotfiles management framework with shell](https://github.com/ssh0/dot)
 
-### <a name="install_sh">install.sh</a>
+### <a name="install_sh">Execute install.sh</a>
 
 Clone this repository by
 
@@ -57,26 +55,26 @@ Clone this repository by
 git clone https://github.com/ssh0/dotfiles.git ~/.ssh0-dotfiles
 ```
 
-Then, execute
+Then, execute:
 
 ```
 cd ~/.ssh0-dotifles
 ./install.sh
 ```
 
-[install.sh](./install.sh) will install `dot` and set the symolic links written in `dotlink`.
+[install.sh](./install.sh) will install `dot` and make the symolic links written in `dotlink`.
 
-### <a name="manually">Install dot manually</a>
+### <a name="manually">Install manually</a>
 
-#### <a name="install_dot"> 1. Install dot</a>
+#### <a name="install_dot"> 1. Install `dot`</a>
 
-* Clone repository
+* Clone the repository
 
 ```
 git clone https://github.com/ssh0/dot $HOME/.zsh/dot
 ```
 
-* Write below lines in your {bash|zsh}rc
+* Write in your {bash|zsh}rc like below:
 
 ```
 export DOT_REPO="https://github.com/your_username/dotfiles.git"
@@ -87,47 +85,51 @@ source $HOME/.zsh/dot/dot.sh
 
 See details at [dot's README](https://github.com/ssh0/dot).
 
-#### <a name="clone_and_deploy_using_dot"> 2. Clone repository and create symbolic links using dot</a>
+#### <a name="clone_and_deploy_using_dot"> 2. Clone repository and make symbolic links</a>
 
-* Create dot's config file for this repository
+* Create the dot's config file for this repository(of cource you can make that for your own dotfiles)
 
 ```
 mkdir -p $HOME/.config/dot
-echo 'clone_repository="https://github.com/ssh0/dotfiles.git"' > $HOME/.config/dot/dotrc-ssh0
-echo 'dotdir="$HOME/.dotfiles-ssh0"' >> $HOME/.config/dot/dotrc-ssh0
-echo 'dotlink="$HOME/.dotfiles-ssh0/dotlink"' >> $HOME/.config/dot/dotrc-ssh0
-echo 'linkfiles=("$HOME/.dotfiles-ssh0/dotlink")' >> $HOME/.config/dot/dotrc-ssh0
+cat > $HOME/.config/dot/dotrc-ssh0 << EOF
+clone_repository="https://github.com/ssh0/dotfiles.git"
+dotdir="$HOME/.dotfiles-ssh0"
+dotlink="$HOME/.dotfiles-ssh0/dotlink"
+linkfiles=("$HOME/.dotfiles-ssh0/dotlink")
+EOF
 ```
 
-* Write below lines in your {bash|zsh}rc and re-load shellrc
+* Write like below in your {bash|zsh}rc and reload shellrc:
 
 ```
 alias dot-ssh0="dot -c $HOME/.config/dot/dotrc-ssh0"
 ```
 
-* Run the command below
+* Execute the `dot` command:
 
 ```
-dot-ssh0 clone && dot-ssh0 set -v
+dot-ssh0 clone -f && dot-ssh0 set
 ```
 
 Then, this repository is cloned on your computer and the symbolic links will be created.
 
-If files or links have already existed, this command will ask you to choose the operation for it, so don't worry about it. Or you can skip these files by using `dot-ssh0 update --ignore -v`.
+If files or links have already existed, this command will ask you to choose the operation.
+So, don't worry about breaking your existing system.
+You can skip these conflict files by using `dot-ssh0 set -i`.
 
-This repository is work-in-progress and some files will be changed future.
-If you want to update settings:
+This repository is **work-in-progress** and some files will be changed in the future.
+If you want to follow up-to-date settings:
 
 ```
-dot-ssh0 update -v -i
+dot-ssh0 update
 ```
 
-## <a name="install_without_dot">Install without dot (simple) </a>
+## <a name="install_without_dot">Install without `dot`</a>
 
 Clone (or folk) this repository on your computer:
 
 ```
-git clone --depth 1 --recursive https://github.com/ssh0/dotfiles.git ~/.dotfiles-ssh0
+git clone --recursive https://github.com/ssh0/dotfiles.git ~/.dotfiles-ssh0
 ```
 
 then, you can copy or make a symbolic from the directory to the right place(described in `dotlink`).

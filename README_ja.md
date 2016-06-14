@@ -5,24 +5,22 @@ dotfiles
 
 このリポジトリには，設定ファイル群であるdotfilesが含まれています。
 
-シンボリックリンクを張ったり，新しいファイルをリポジトリ内に取り込んだり，マシン固有の設定を管理するために，[dot](https://github.com/ssh0/dot)を使っています。
+シンボリックリンクを張ったり，新しいファイルをリポジトリ内に取り込んだり，マシンごとの設定を管理するために，シェルスクリプト製のdotfileマネージャ[dot](https://github.com/ssh0/dot)を使っています。
 
 内容
 ====
 
-* XMonad([http://xmonad.org/](http://xmonad.org/))
+* [xmonad](http://xmonad.org/)
     * [xmonad.hs](./xmonad/ssh0-home/xmonad.hs)
-* tmux([https://tmux.github.io/](https://tmux.github.io/))
-    * [tmux.conf](./rcfiles/tmux.conf)
-* zsh([http://www.zsh.org/](http://www.zsh.org/))
-    * zgen([tarjoilija/zgen](https://github.com/tarjoilija/zgen))
+* [tmux](https://tmux.github.io/)
+    * [tmux.conf](./tmux/tmux.conf)
+* [zsh](http://www.zsh.org/)
+    * [zgen](https://github.com/tarjoilija/zgen)
     * [zshfiles](./zshfiles/)
-* vim([http://www.vim.org/](http://www.vim.org/))
+* [vim](http://www.vim.org/)
     * [vimrc](./vimfiles/vimrc)
-* ranger([http://ranger.nongnu.org/](http://ranger.nongnu.org/))
+* [ranger](http://ranger.nongnu.org/)
     * [config files](./ranger/)
-* luakit([https://mason-larobina.github.io/luakit/](https://mason-larobina.github.io/luakit/))
-    * [config files](./luakit/)
 * [便利なシェルスクリプト群](./bin/)
 
 スクリーンショット
@@ -30,21 +28,21 @@ dotfiles
 
 ![screenshot.png](./screenshots/screenshot.png)
 
-インストール
-============
+インストール方法
+================
 
-* [dotを用いた方法](#install_with_dot)
-    * [スクリプトを用いた方法](#install_sh)
+* [`dot`を用いる方法](#install_with_dot)
+    * [install.shを用いる方法](#install_sh)
     * [手動でインストール](#manually)
-        1. [dotのインストール](#install_dot)
-        2. [dotを用いてリポジトリをクローン、シンボリックリンクを作成](#clone_and_deploy_using_dot)
-* [dotを用いない方法](#install_without_dot)
+        1. [`dot`のインストール](#install_dot)
+        2. [`dot`を用いてリポジトリをクローン、シンボリックリンクを作成](#clone_and_deploy_using_dot)
+* [`dot`を用いない方法](#install_without_dot)
 
-## <a name="install_with_dot">dotを用いた方法</a>
+## <a name="install_with_dot">`dot`を用いる方法</a>
 
 >[ssh0/dot: dotfiles management framework with shell](https://github.com/ssh0/dot)
 
-### <a name="install_sh">スクリプトを用いた方法</a>
+### <a name="install_sh">install.shを用いる方法</a>
 
 ```
 git clone https://github.com/ssh0/dotfiles.git ~/.ssh0-dotfiles
@@ -59,11 +57,11 @@ cd ~/.ssh0-dotifles
 
 と実行してください。
 
-[このスクリプト](./install.sh)は一時的に`dot`コマンドを使用できるようにし，`dotlink`に書かれたファイルの対応関係に基づいてシンボリックリンクを張ります。
+[install.sh](./install.sh)は一時的に`dot`コマンドを使用できるようにし，`[dotlink](./dotlink)`に書かれたファイルの対応関係に基づいてシンボリックリンクを張ります。
 
 ### <a name="manually">手動でインストール</a>
 
-#### <a name="install_dot">1. dotのインストール</a>
+#### <a name="install_dot">1. `dot``のインストール</a>
 
 * リポジトリのクローン
 
@@ -88,10 +86,12 @@ source $HOME/.zsh/dot/dot.sh
 
 ```
 mkdir -p $HOME/.config/dot
-echo 'clone_repository="https://github.com/ssh0/dotfiles.git"' > $HOME/.config/dot/dotrc-ssh0
-echo 'dotdir="$HOME/.dotfiles-ssh0"' >> $HOME/.config/dot/dotrc-ssh0
-echo 'dotlink="$HOME/.dotfiles-ssh0/dotlink"' >> $HOME/.config/dot/dotrc-ssh0
-echo 'linkfiles=("$HOME/.dotfiles-ssh0/dotlink")' >> $HOME/.config/dot/dotrc-ssh0
+cat > $HOME/.config/dot/dotrc-ssh0 << EOF
+clone_repository="https://github.com/ssh0/dotfiles.git"
+dotdir="$HOME/.dotfiles-ssh0"
+dotlink="$HOME/.dotfiles-ssh0/dotlink"
+linkfiles=("$HOME/.dotfiles-ssh0/dotlink")
+EOF
 ```
 
 * 自分の{bash|zsh}rcファイルに以下を追記(その後shellrcファイルを再読み込み)
@@ -103,28 +103,28 @@ alias dot-ssh0="dot -c $HOME/.config/dot/dotrc-ssh0"
 * 以下のコマンドを実行
 
 ```
-dot-ssh0 clone && dot-ssh0 set -v
+dot-ssh0 clone && dot-ssh0 set
 ```
 
 これにより、このリポジトリ内のファイルがローカルにクローンされ、シンボリックリンクが生成されていきます。もし既にファイルが存在している場合には、操作を選択できるので、そこで操作を指定してください。
 
-もしくは、`dot set --ignore -v`とオプションをつければ、重複するファイルなどはすべて無視されます。
+もしくは、`dot set -i`とオプションをつければ、重複するファイルなどはすべて無視されます。
 
 このリポジトリは進行中のプロジェクトであるため、いくつかのファイルは将来変更、追加される可能性があります。
 これらのファイルを最新に保つには、
 
 ```
-dot-ssh0 update -v -i
+dot-ssh0 update
 ```
 
-と実行してください。
+としてください。
 
-## <a name="install_without_dot">dotを用いないシンプルな方法</a>
+## <a name="install_without_dot">dotを用いない方法</a>
 
 このリポジトリをクローンするかフォークしてください:
 
 ```
-git clone --depth 1 --recursive  https://github.com/ssh0/dotfiles.git ~/.dotfiles-ssh0
+git clone --recursive  https://github.com/ssh0/dotfiles.git ~/.dotfiles-ssh0
 ```
 
 お好みの設定ファイルをコピーしたり，シンボリックリンクを張ったりして，設定を反映させてください。
