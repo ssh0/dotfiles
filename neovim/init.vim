@@ -329,6 +329,7 @@ inoremap {} {}<Left>
 inoremap [] []<Left>
 inoremap () ()<Left>
 inoremap "" ""<Left>
+inoremap """ """<CR>"""<Up>
 inoremap ”” ””<Left>
 inoremap '' ''<Left>
 inoremap ’’ ’’<Left>
