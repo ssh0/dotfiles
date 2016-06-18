@@ -37,7 +37,8 @@ if [ ! -f "$1" ]; then
 fi
 
 # You can choose prefer diff command
-diffcmd=vimdiff
+diffcmd="nvim -d"
+# diffcmd="vimdiff"
 # diffcmd="colordiff -u"
 # diffcmd="diff -u"
 
