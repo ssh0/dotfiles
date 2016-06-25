@@ -298,11 +298,16 @@ zgen load settings
 
 ## [zplug.zsh](./zplug.zsh)
 
-zplug load settings (not in use now)
+zplug load settings
+
+**Features:**
+
+* Install zplug if not installed
+
+**Plugins**
 
 * fcambus/ansiweather
 * b4b4r07/enhancd
-* b4b4r07/zplug
 * Tarrasch/zsh-bd
 * chrissicool/zsh-256color
 * ssh0/zsh-takenote
