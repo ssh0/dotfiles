@@ -126,6 +126,7 @@ _ec xdefaults  ~/.Xdefaults
 _ec xmodmap    ~/.Xmodmap
 _ec xmonad     ~/.xmonad/xmonad.hs
 _ec xresources ~/.Xresources
+_ec zplug      ${ZSH_ROOT}/functions/zplug.zsh
 _ec zshrc      ~/.zshrc
 _ec zgen       ${ZSH_ROOT}/functions/zgen.zsh
 
