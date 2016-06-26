@@ -31,7 +31,7 @@ source ${zplug_source}
 unset -v zplug_source
 
 zplug "fcambus/ansiweather", as:command
-zplug "b4b4r07/enhancd"
+zplug "b4b4r07/enhancd", use:init.sh
 zplug "Tarrasch/zsh-bd"
 zplug "chrissicool/zsh-256color"
 zplug "ssh0/zsh-takenote"
