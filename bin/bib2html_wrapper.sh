@@ -35,6 +35,9 @@ css="$HOME/Workspace/blog/styles/bootstrap-md.css"
 # level upper directory.
 sourcedir='source'
 
+notification=true
+notification_icon='/usr/share/icons/gnome/scalable/actions/document-send-symbolic.svg'
+
 [[ -f "$1" ]] || (echo "There is no file '$1'.";  exit 1)
 
 dir="$(cd "$(dirname "$1")"; pwd)"
@@ -54,5 +57,8 @@ else
   output="${dir}/${name}"
 fi
 
-bibtex2html -s "${style}" -c "${bibtex_command}" -css "${css}" -o "${output}" -noheader -nofooter -linebreak "$1"
+notificationcmd="notify-send '[bibtex2html] Build done!' '$output'
+                  -i ${notification_icon}"
 
+bibtex2html -s "${style}" -c "${bibtex_command}" -css "${css}" -o "${output}" -noheader -nofooter -linebreak "$1" && \
+  $notification && eval $notificationcmd
