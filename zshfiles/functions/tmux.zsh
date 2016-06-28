@@ -26,7 +26,7 @@ alias tksv='tmux kill-server'
 alias tkss='tmux kill-session -t'
 
 # Autostart if not already in tmux.
-if [[ ! -n $TMUX ]]; then
+if [[ ! -n $TMUX && $- == *l* ]]; then
   # get the IDs
   if ! ID="$(tmux list-sessions 2>/dev/null)"; then
     # tmux returned error, so try cleaning up /tmp
