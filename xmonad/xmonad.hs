@@ -33,6 +33,7 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Layout
 import XMonad.Layout.DragPane          -- see only two window
 import XMonad.Layout.Gaps
+import XMonad.Layout.LayoutScreens
 import XMonad.Layout.NoBorders         -- In Full mode, border is no use
 import XMonad.Layout.PerWorkspace      -- Configure layouts on a per-workspace
 import XMonad.Layout.ResizableTile     -- Resizable Horizontal border
@@ -185,6 +186,9 @@ main = do
        , ("M-b"    , windowPromptBring myXPConfig)
        -- Move the focus to next screen (multi screen)
        , ("M-<Tab>", nextScreen)
+       -- Now we have more than one screen by dividing a single screen
+       , ("M-C-<Space>", layoutScreens 2 (TwoPane 0.5 0.5))
+       , ("M-C-S-<Space>", rescreen)
        ]
 
        -------------------------------------------------------------------- }}}
