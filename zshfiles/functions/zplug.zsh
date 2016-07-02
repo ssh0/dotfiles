@@ -25,6 +25,7 @@ if [[ ! -f "${zplug_source}" ]]; then
   echo ""
   curl -sL get.zplug.sh | zsh
   source "$HOME/.zplug/init.zsh"
+  zplug update --self
 fi
 
 source ${zplug_source}
