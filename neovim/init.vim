@@ -59,6 +59,9 @@ augroup filetype
   autocmd FileType markdown set commentstring=<\!--\ %s\ -->
   " tex file (I always use latex)
   autocmd BufRead,BufNewFile *.tex set filetype=tex
+  let md_to_latex  = "pandoc --from=markdown --to=latex "
+  let md_to_latex .= "--template=$HOME/.pandoc/template/md2latex.latex"
+  autocmd Filetype tex let &formatprg=md_to_latex
   " bib file
   autocmd BufRead,BufNewFile *.bib set filetype=bib
   autocmd Filetype bib let &formatprg="bibclean"

@@ -338,6 +338,7 @@ rcfiles/latexmkrc_dvipng,.latexmkrc_dvipng
 # If you need to convert files from one markup format into another, pandoc is
 # your swiss-army knife.
 
+pandoc/templates/md2latex.latex,.pandoc/templates/md2latex.latex
 pandoc/templates/mytemplate.beamer,.pandoc/templates/mytemplate.beamer
 pandoc/templates/mytemplate.latex,.pandoc/templates/mytemplate.latex
 
