@@ -239,6 +239,7 @@ let g:vimtex_fold_envs = 1
 let g:vimtex_view_general_viewer = 'mupdf'
 
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
+let g:jedi#use_splits_not_buffers = "top"
 let g:jedi#popup_on_dot = 1
 let g:jedi#popup_select_first = 1
 
