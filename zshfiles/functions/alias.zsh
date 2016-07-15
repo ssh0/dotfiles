@@ -136,5 +136,7 @@ unfunction _ec
 rl-xdefaults() { xrdb ~/.Xdefaults ;}
 rl-xmodmap() { xmodmap ~/.Xmodmap ;}
 rl-xresources() { xrdb -load ~/.Xresources ;}
+rl-zgen() { source $HOME/.zgen/tarjoilija/zgen-master/zgen.zsh ;}
+rl-zplug() { source $HOME/.zplug/init.zsh ;}
 rl-zshrc() { exec zsh -l ;}
 
