@@ -51,24 +51,24 @@ search_rootfile() {
   fi
 }
 
-dir="$(cd "$(dirname $1)"; pwd)"
-name="$(basename $1)"
+dir="$(cd "$(dirname "$1")"; pwd)"
+name="$(basename "$1")"
 
 if [ ! -f "$dir/$name" ]; then
   echo "$dir/$name doesn't exist." >&2
   exit 1
 fi
 
-currentdir="$(basename $dir)"
-dir_up="$(dirname $dir)"
+currentdir="$(basename "$dir")"
+dir_up="$(dirname "$dir")"
 
-if [ ${currentdir} = $sourcedir ]; then
+if [ "${currentdir}" = $sourcedir ]; then
   echo "This file is in '$sourcedir', so search '$rootfile' recursively." >&2
   outdir="${dir_up}"
-  search_rootfile ${dir_up} || search_rootfile $dir || message " not" "$dir"
+  search_rootfile "${dir_up}" || search_rootfile "$dir" || message " not" "$dir"
 else
   outdir="$dir"
-  search_rootfile $dir || message " not" "$dir"
+  search_rootfile "$dir" || message " not" "$dir"
 fi
 
 if [ -d "${outdir}/${savedir}" ]; then
@@ -83,7 +83,7 @@ echo "=============="
 echo ""
 shift 1
 
-latexmk -pdfdvi -output-directory=$outdir "$@" $texfile \
-&& latexmk -output-directory=$outdir -c $texfile \
+latexmk -pdfdvi -output-directory="$outdir" "$@" "$texfile" \
+&& latexmk -output-directory="$outdir" -c "$texfile" \
 && $notification \
 && eval $notificationcmd
