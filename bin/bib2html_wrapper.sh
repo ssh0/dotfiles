@@ -47,12 +47,12 @@ name="${namewithext%.*}.html"
 currentdir="$(basename "$dir")"
 dir_up="$(dirname "$dir")"
 
-if [ "${currentdir}" = "${sourcedir}" ]; then
+if [ "${currentdir}" = ${sourcedir} ]; then
   dir="${dir_up}"
 fi
 
-if [ -d "${dir}/html" ]; then
-  output="${dir}/html/${name}"
+if [ -d "${dir}/doc" ]; then
+  output="${dir}/doc/${name}"
 else
   output="${dir}/${name}"
 fi
