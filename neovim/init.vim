@@ -286,10 +286,10 @@ nnoremap l <Right>zv
 nnoremap Y y$
 
 " cursor moved in insert mode
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
+" inoremap <C-j> <Down>
+" inoremap <C-k> <Up>
+" inoremap <C-h> <Left>
+" inoremap <C-l> <Right>
 
 " move between windows by easy key mapping
 nnoremap <silent> <C-h> :wincmd h<CR>
