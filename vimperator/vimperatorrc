@@ -201,6 +201,8 @@ EOF
 
 ignorekeys add plus\\.google\\.com -except f,F,o,t,;,:
 ignorekeys add mail\\.google\\.com -except f,F,o,t,;,:
+ignorekeys add inbox\\.google\\.com -except F,v,V,:,;
+
 ignorekeys add www\\.google\\.com/calendar -except f,F,o,t,;,:
 ignorekeys add twitter\\.com -except F,v,V,d,;,:
 ignorekeys add feedly\\.com -except f,F,;,:
