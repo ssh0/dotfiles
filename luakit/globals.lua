@@ -29,7 +29,7 @@ local lkv = string.match(luakit.version, "^(%d+%.%d+%.%d+)")
 --     luakit.webkit_version, (lkv and ("/" .. lkv)) or "")
 
 -- Windows 10, Google Chrome
-globals.useragent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36"
+globals.useragent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.82 Safari/537.36"
 
 -- Ubuntu Linux, Firefox
 -- globals.useragent = "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0"
