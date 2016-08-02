@@ -242,7 +242,7 @@ bmark -title="Pandas documentation" -tags=keyword -keyword=pd http://pandas.pyda
 bmark -title="matplotlib documentation" -tags=keyword -keyword=mpl http://matplotlib.org/search.html?q=%s
 bmark -title="Python 2.7 documentation" -tags=keyword -keyword=py2 https://docs.python.org/2.7/search.html?q=%s
 bmark -title="Python 3.4 documentation" -tags=keyword -keyword=py3 https://docs.python.org/3.4/search.html?q=%s
-bmark -title="8tracks" -tags=keyword -keyword=8tr https://8tracks.com/explore/%s"
+bmark -title="8tracks" -tags=keyword -keyword=8tr https://8tracks.com/explore/%s
 bmark -title="arxiv" -tags=keyword -keyword=arx http://arxiv.org/find/all/1/all:+%s/0/1/0/all/0/1
 bmark -title="Digg" -tags=keyword -keyword="dig" https://digg.com/search?q=%s
 bmark -title="duckduckgo" -tags=keyword -keyword=dg https://duckduckgo.com/?q=%s
@@ -256,6 +256,7 @@ bmark -title="Stackoverflow" -tags=keyword -keyword=stack https://stackoverflow.
 bmark -title="Torentz" -tags=keyword -keyword=tor https://www.torrentz.eu/search?q=%s
 bmark -title="Anitube.se" -tags=keyword -keyword=ani http://www.anitube.se/search/?search_id=%s
 bmark -title="Facebook" -tags=keyword -keyword=fb https://www.facebook.com/search/top/?q=%s
+bmark -title="Instagram" -tags=keyword -keyword=in https://www.instagram.com/explore/tags/%s
 
 
 "---------------------------------------------------------------------------}}}
