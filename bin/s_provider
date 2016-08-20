@@ -166,3 +166,6 @@ an,http://www.anitube.se/search/?search_id=%s,true
 # "fb": Facebook
 fb,https://www.facebook.com/search/top/?q=%s,true
 
+# "in": Instagram
+in,https://www.instagram.com/explore/tags/%s,true
+
