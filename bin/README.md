@@ -1,6 +1,21 @@
 bin
 ===
 
+## [a2testdeploy](./a2testdeploy)
+
+a2testdeploy - Copy current project files to /var/www/html/
+
+**Usage:**
+
+```
+cd ~/project_tree
+a2testdeploy
+```
+
+**TODO:**
+
+* Some option to specify a project directory.
+
 ## [agvim](./agvim)
 
 agvim - Search files with ag, select with `$PERCOL`, and edit in vim.

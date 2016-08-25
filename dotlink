@@ -229,6 +229,7 @@ zshfiles/functions/zplug.zsh,.zsh/functions/zplug.zsh
 #==============================================================================
 # Some useful scripts (See bin/README.md)
 
+bin/a2testdeploy,bin/a2testdeploy
 bin/agvim,bin/agvim
 bin/alarm,bin/alarm
 bin/allmp4tomp3.sh,bin/allmp4tomp3.sh
