@@ -63,7 +63,7 @@ function _speedometer() {
 alias spdmeter='_speedometer'
 
 # enable aliases in sudo
-alias sudo='sudo '
+alias sudo='sudo -E '
 
 # edit configuration file by $EDITOR (vim).
 function _ec() {
