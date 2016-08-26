@@ -243,6 +243,8 @@ let g:jedi#use_splits_not_buffers = "top"
 let g:jedi#popup_on_dot = 1
 let g:jedi#popup_select_first = 1
 
+Plug 'bpearson/vim-phpcs', {'for': ['php', 'javascript', 'css']}
+
 Plug 'tmhedberg/SimpylFold', {'for': 'python'}
 Plug 'nvie/vim-flake8', {'for': 'python'}
 Plug 'hynek/vim-python-pep8-indent', {'for': 'python'}
