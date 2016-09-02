@@ -168,6 +168,8 @@ noremap o :js toggle_bottombar('on')<CR>o
 noremap O :js toggle_bottombar('on')<CR>O
 noremap t :js toggle_bottombar('on')<CR>t
 noremap T :js toggle_bottombar('on')<CR>T
+noremap w :js toggle_bottombar('on')<CR>w
+noremap W :js toggle_bottombar('on')<CR>W
 noremap / :js toggle_bottombar('on')<CR>/
 cnoremap <CR> <CR>:js toggle_bottombar('off')<CR>
 cnoremap <C-c> <C-c>:js toggle_bottombar('off')<CR>
