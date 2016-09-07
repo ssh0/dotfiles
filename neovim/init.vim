@@ -227,7 +227,7 @@ set conceallevel=2
 
 autocmd FileType sh         setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd FileType apache     setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
-autocmd FileType css        setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
+autocmd FileType css        setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 autocmd FileType diff       setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
 autocmd FileType html       setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
 autocmd FileType java       setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
