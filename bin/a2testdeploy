@@ -15,7 +15,7 @@
 #=#=
 
 APACHE_DOCUMENT_ROOT='/var/www/html/'
-localpath="/home/shotaro/Workspace/online-skillup/bluebird/"
+localpath="$HOME/Workspace/online-skillup/bluebird/"
 rsynccmd='rsync -av --progress --delete'
 
 columns=$(tput cols)
