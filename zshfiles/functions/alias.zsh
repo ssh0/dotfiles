@@ -42,6 +42,7 @@ alias r='ranger'
 alias :q='exit'
 
 # typo
+alias py='python'
 alias pytohn='python'
 
 # s command
