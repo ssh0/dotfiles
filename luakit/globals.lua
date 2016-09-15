@@ -29,7 +29,7 @@ local lkv = string.match(luakit.version, "^(%d+%.%d+%.%d+)")
 --     luakit.webkit_version, (lkv and ("/" .. lkv)) or "")
 
 -- Windows 10, Google Chrome
-globals.useragent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+globals.useragent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36"
 
 -- Ubuntu Linux, Firefox
 -- globals.useragent = "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0"
@@ -122,6 +122,44 @@ search_engines = {
     t = "http://ejje.weblio.jp/content/%s",
     -- "wordnik": seach at wordnik
     wordnik = "https://www.wordnik.com/words/%s",
+    -- "pd": Pandas documentation
+    pd = "http://pandas.pydata.org/pandas-docs/stable/search.html?q=%s",
+    -- "mpl": matplotlib documentation
+    mpl = "http://matplotlib.org/search.html?q=%s",
+    -- Python 2.7 documentation
+    py2 = "https://docs.python.org/2.7/search.html?q=%s",
+    -- Python 3.4 documentation
+    py3 = "https://docs.python.org/3.4/search.html?q=%s",
+    -- 8tracks
+    etr = "https://8tracks.com/explore/%s",
+    -- arxiv
+    arx = "http://arxiv.org/find/all/1/all:+%s/0/1/0/all/0/1",
+    -- Digg
+    dig = "https://digg.com/search?q=%s",
+    -- duckduckgo
+    dg = "https://duckduckgo.com/?q=%s",
+    -- Gmail
+    gm = "https://mail.google.com/mail/u/0/#search/%s",
+    -- Google Plus
+    gg = "https://plus.google.com/s/%s/top",
+    -- Hacker News
+    hn = "https://hn.algolia.com/?q=%s",
+    -- Pinterest
+    pin = "https://www.pinterest.com/search/pins/?q=%s",
+    -- Reddit
+    reddit = "https://www.reddit.com/search?q=%s",
+    -- SoundCloud
+    sdc = "https://soundcloud.com/search?q=%s",
+    -- Stackoverflow
+    stack = "https://stackoverflow.com/search?q=%s",
+    -- Torentz
+    tor = "https://www.torrentz.eu/search?q=%s",
+    -- Anitube.se
+    ani = "http://www.anitube.se/search/?search_id=%s",
+    -- Facebook
+    fb = "https://www.facebook.com/search/top/?q=%s",
+    -- Instagram
+    ins = "https://www.instagram.com/explore/tags/%s",
 }
 
 -- Set google as fallback search engine
