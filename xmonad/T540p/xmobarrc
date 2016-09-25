@@ -1,41 +1,41 @@
 -- vim: ft=haskell
 Config { font = "xft:Migu 1M:size=13"
        , bgColor = "#1c1c1c"
-       , fgColor = "#585858"
+       , fgColor = "#404040"
        , position = TopSize C 100 35
        -- , position = Static { xpos = 37 , ypos = 0, width = 1845, height = 18 }
        , lowerOnStart = False
        , overrideRedirect = False
        , border = BottomBM 0
-       , borderColor = "#585858"
-       , commands = [ Run Network "eth0"  [ "-t"       , "<icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/net_down_03.xbm/><rx>  <icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/net_up_03.xbm/><tx>   "
+       , borderColor = "#4e4e4e"
+       , commands = [ Run Network "wlan0" [ "-t"       , "⇩<rx>  ⇧<tx>  "
                                           , "-L"       , "40"
                                           , "-H"       , "200"
                                           , "-m"       , "3"
-                                          , "--normal" , "#bdbdbd"
-                                          , "--high"   , "#95b595"
+                                          , "--normal" , "#b0bdbd"
+                                          , "--high"   , "#86ae86"
                                           ] 10
-                    , Run MultiCpu        [ "-t"       , "<icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/cpu.xbm/> <total0>.<total1>.<total2>.<total3>.<total4>.<total5>.<total6>.<total7>  "
+                    , Run MultiCpu        [ "-t"       , "■ <total0>.<total1>.<total2>.<total3>.<total4>.<total5>.<total6>.<total7>  "
                                           , "-L"       , "40"
                                           , "-H"       , "85"
                                           , "-m"       , "2"
-                                          , "--normal" , "#bdbdbd"
-                                          , "--high"   , "#ba8686"
+                                          , "--normal" , "#b0bdbd"
+                                          , "--high"   , "#ae8686"
                                           ] 10
 
-                    , Run Memory          [ "-t"       , "<icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/mem.xbm/> <usedratio>%   "
+                    , Run Memory          [ "-t"       , "□ <usedratio>%  "
                                           , "-L"       , "40"
                                           , "-H"       , "90"
                                           , "-m"       , "2"
-                                          , "--normal" , "#bdbdbd"
-                                          , "--high"   , "#ba8686"
+                                          , "--normal" , "#b0bdbd"
+                                          , "--high"   , "#ae8686"
                                           ] 10
                     , Run BatteryP        ["CMB1"]
-                                          [ "-t"       , "<icon=/home/shotaro/.icons/sm4tik-icon-pack/xbm/bat_full_02.xbm/> <acstatus>  "
+                                          [ "-t"       , "⌇ <acstatus>  "
                                           , "-L"       , "20"
                                           , "-H"       , "80"
-                                          , "--low"    , "#ba8686"
-                                          , "--normal" , "#bdbdbd"
+                                          , "--low"    , "#ae8686"
+                                          , "--normal" , "#b0bdbd"
                                           , "--"
                                                 , "-o" , "<left>% (<timeleft>)"
                                                 , "-O" , "Charging <left>%"
@@ -46,6 +46,6 @@ Config { font = "xft:Migu 1M:size=13"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% }{ %multicpu%%memory%%eth0%%battery%<fc=#aea386>%date%</fc> "
+       , template = " %StdinReader% }{ %multicpu%%memory%%eth0%%battery%<fc=#aeae86>%date%</fc> "
        }
 

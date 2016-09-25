@@ -60,12 +60,12 @@ modm = mod4Mask
 
 -- Color Setting
 colorBlue      = "#868bae"
-colorGreen     = "#86ae87"
+colorGreen     = "#00d700"
 colorRed       = "#ae8686"
-colorGray      = "#90a2a0"
+colorGray      = "#666666"
 colorWhite     = "#bdbdbd"
 colorNormalbg  = "#1c1c1c"
-colorfg        = "#585858"
+colorfg        = "#a8b6b8"
 
 -- Border width
 borderwidth = 0
@@ -321,10 +321,10 @@ myWsBar = "xmobar $HOME/.xmonad/xmobarrc"
 
 wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws,t]
                 , ppCurrent         = xmobarColor colorGreen colorNormalbg . \s -> "●"
-                , ppUrgent          = xmobarColor colorfg    colorNormalbg . \s -> "●"
+                , ppUrgent          = xmobarColor colorGray    colorNormalbg . \s -> "●"
                 , ppVisible         = xmobarColor colorGreen colorNormalbg . \s -> "⦿"
-                , ppHidden          = xmobarColor colorfg    colorNormalbg . \s -> "●"
-                , ppHiddenNoWindows = xmobarColor colorfg    colorNormalbg . \s -> "○"
+                , ppHidden          = xmobarColor colorGray    colorNormalbg . \s -> "●"
+                , ppHiddenNoWindows = xmobarColor colorGray    colorNormalbg . \s -> "○"
                 , ppTitle           = xmobarColor colorGreen colorNormalbg
                 , ppOutput          = putStrLn
                 , ppWsSep           = " "
@@ -336,14 +336,14 @@ wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws,t]
 
 myXPConfig = defaultXPConfig
                 { font              = "xft:Migu 1M:size=20:antialias=true"
-                , fgColor           = colorGray
+                , fgColor           = colorfg
                 , bgColor           = colorNormalbg
                 , borderColor       = colorNormalbg
                 , height            = 35
                 , promptBorderWidth = 0
                 , autoComplete      = Just 100000
-                , bgHLight          = colorBlue
-                , fgHLight          = colorNormalbg
+                , bgHLight          = colorNormalbg
+                , fgHLight          = colorGreen
                 , position          = Bottom
                 }
 
