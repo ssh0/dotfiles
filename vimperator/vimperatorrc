@@ -36,7 +36,7 @@ let g:auto_append_anchor = "true"
 "------------------------------------------------------------------------------
 
 " completion for history only
-set complete=l
+set complete=bh
 
 " clean titlestring (Don't show 'Vimperator - ')
 set titlestring=
