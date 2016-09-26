@@ -8,7 +8,7 @@ Config { font = "xft:Migu 1M:size=13"
        , overrideRedirect = False
        , border = BottomBM 0
        , borderColor = "#4e4e4e"
-       , commands = [ Run Network "wlan0" [ "-t"       , "⇩<rx>  ⇧<tx>  "
+       , commands = [ Run Network "eth0" [ "-t"       , "⇩<rx>  ⇧<tx>  "
                                           , "-L"       , "40"
                                           , "-H"       , "200"
                                           , "-m"       , "3"
