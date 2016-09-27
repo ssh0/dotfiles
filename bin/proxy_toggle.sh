@@ -11,6 +11,13 @@ FTP_PROXY_HOST="ftp://proxy.waseda.jp:21"
 # shellrc=$HOME/.zshrc  # .bashrc
 shellrc=${ZSH}/rc.mine  # .bashrc
 
+cancel() {
+  echo "[proxy-toggle] Aborted." >&2
+  exit
+}
+
+trap cancel SIGINT
+
 if [ $# = 0 ]; then
   echo "Error: no args"
   exit 1
@@ -52,6 +59,9 @@ export HTTPS_PROXY=$HTTPS_PROXY_HOST
 export ftp_proxy=$FTP_PROXY_HOST
 export FTP_PROXY=$FTP_PROXY_HOST
 EOF
+    sudo npm -g config set proxy "$HTTP_PROXY_HOST"
+    sudo npm -g config set https-proxy "$HTTPS_PROXY_HOST"
+    sudo npm -g config set registry "http://registry.npmjs.org/"
   else
     if [ $1 = "off" ]; then
       sudo sed -i.bak "/http::proxy/Id" /etc/apt/apt.conf
@@ -77,6 +87,9 @@ export HTTPS_PROXY=
 export ftp_proxy=
 export FTP_PROXY=
 EOF
+      sudo npm -g config delete proxy
+      sudo npm -g config delete https-proxy
+      sudo npm -g config set registry "https://registry.npmjs.org/"
     else
       echo "arg: 'on' or 'off'"
       exit 1
