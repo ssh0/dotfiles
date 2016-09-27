@@ -68,7 +68,7 @@ dotdir="$HOME/.dotfiles"
 #dotpull_update_submodule=true
 
 # You can choose diff command as you want.
-#diffcmd="colordiff -u"
+diffcmd="diff-so-fancy.sh"
 
 # Command to edit two files with diff highlights.
 #edit2filecmd='vimdiff'

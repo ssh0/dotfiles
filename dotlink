@@ -239,6 +239,7 @@ bin/cachecleener,                   bin/cachecleener
 bin/cecho,                          bin/cecho
 bin/color-pallete.sh,               bin/color-pallete.sh
 bin/cplay.sh,                       bin/cplay.sh
+bin/diff-so-fancy.sh,               bin/diff-so-fancy.sh
 bin/dripaudio,                      bin/dripaudio
 bin/facebook,                       bin/facebook
 bin/google-keep,                    bin/google-keep
