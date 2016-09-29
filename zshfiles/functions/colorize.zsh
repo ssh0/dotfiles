@@ -21,7 +21,11 @@ alias twitter='twitter -f ansi'
 
 # colordiff
 if hash colordiff 2>/dev/null; then
-  alias diff='colordiff -u'
+  if hash diff-so-fancy.sh 2>/dev/null; then
+    alias diff='diff-so-fancy.sh'
+  else
+    alias diff='colordiff -u'
+  fi
 else
   alias diff='diff -u'
 fi
