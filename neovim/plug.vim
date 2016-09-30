@@ -245,6 +245,9 @@ let g:jedi#popup_select_first = 1
 
 Plug 'bpearson/vim-phpcs', {'for': ['php', 'javascript', 'css']}
 
+Plug 'mattn/emmet-vim', {'for': ['html', 'css']}
+let g:user_emmet_mode='inv'
+
 Plug 'tmhedberg/SimpylFold', {'for': 'python'}
 Plug 'nvie/vim-flake8', {'for': 'python'}
 Plug 'hynek/vim-python-pep8-indent', {'for': 'python'}
