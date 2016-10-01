@@ -45,6 +45,11 @@ alias :q='exit'
 alias py='python'
 alias pytohn='python'
 
+# pip install
+alias pipins='sudo -H pip install'
+# pip update
+alias pipupd='sudo -H pip install -U'
+
 # s command
 alias o='s'
 
