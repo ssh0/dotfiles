@@ -20,6 +20,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 export LANG=en_US.UTF-8
 export MANLANG=ja_JP.UTF-8
 export LC_TIME=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
 
 # python startup
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
