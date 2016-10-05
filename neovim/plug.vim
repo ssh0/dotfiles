@@ -101,7 +101,7 @@ endfunction
 
 function! MyFilename()
   let fname = expand('%:t')
-  return winwidth(0) > 40 ? (
+  return winwidth(0) > 80 ? (
         \ fname == 'ControlP' ? g:lightline.ctrlp_item :
         \ fname == '__Tagbar__' ? g:lightline.fname :
         \ fname =~ '__Gundo\|NERD_tree' ? '' :
@@ -109,7 +109,7 @@ function! MyFilename()
         \ &ft == 'unite' ? unite#get_status_string() :
         \ &ft == 'vimshell' ? vimshell#get_status_string() :
         \ ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
-        \ ('' != fname ? (strlen(fname) < 20 ? fname : '') : '[No Name]') .
+        \ ('' != fname ? (strlen(fname) < 40 ? fname : '') : '[No Name]') .
         \ ('' != MyModified() ? ' ' . MyModified() : '')
         \ ) : ''
 endfunction
