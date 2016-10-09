@@ -130,6 +130,14 @@ if there is no process of cmus, start cmus on urxvt terminal.
 else play / pause remote command will be sent to cmus program.  
 It's useful if you set the shortcut-key with multimedia key.
 
+## [diff-so-fancy.sh](./diff-so-fancy.sh)
+
+diff-so-fancy.sh - wrapper script for [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy).
+
+You can always use this script as default diff command:
+
+    alias diff=diff-so-fancy.sh
+
 ## [dripaudio](./dripaudio)
 
 dripaudio - extract aac codec audio files from mp4 files in `$PWD`
