@@ -100,7 +100,7 @@ URxvt*iso14755:        false
 ! ver 2.0 {{{
 *.foreground:  #a8b6b8
 *.background:  #1c1c1c
-*.cursorColor: #00d700
+*.cursorColor: #ff005f
 
 ! black
 *.color0:      #353535

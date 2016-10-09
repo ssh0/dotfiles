@@ -61,7 +61,7 @@ modm = mod4Mask
 -- Color Setting
 colorBlue      = "#868bae"
 colorGreen     = "#00d700"
-colorRed       = "#ae8686"
+colorRed       = "#ff005f"
 colorGray      = "#666666"
 colorWhite     = "#bdbdbd"
 colorNormalbg  = "#1c1c1c"
@@ -328,12 +328,12 @@ myLogHook h = dynamicLogWithPP $ wsPP { ppOutput = hPutStrLn h }
 myWsBar = "xmobar $HOME/.xmonad/xmobarrc"
 
 wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws,t]
-                , ppCurrent         = xmobarColor colorGreen colorNormalbg . \s -> "●"
+                , ppCurrent         = xmobarColor colorRed     colorNormalbg . \s -> "●"
                 , ppUrgent          = xmobarColor colorGray    colorNormalbg . \s -> "●"
-                , ppVisible         = xmobarColor colorGreen colorNormalbg . \s -> "⦿"
+                , ppVisible         = xmobarColor colorRed     colorNormalbg . \s -> "⦿"
                 , ppHidden          = xmobarColor colorGray    colorNormalbg . \s -> "●"
                 , ppHiddenNoWindows = xmobarColor colorGray    colorNormalbg . \s -> "○"
-                , ppTitle           = xmobarColor colorGreen colorNormalbg
+                , ppTitle           = xmobarColor colorRed     colorNormalbg
                 , ppOutput          = putStrLn
                 , ppWsSep           = " "
                 , ppSep             = "  "
@@ -351,7 +351,7 @@ myXPConfig = defaultXPConfig
                 , promptBorderWidth = 0
                 , autoComplete      = Just 100000
                 , bgHLight          = colorNormalbg
-                , fgHLight          = colorGreen
+                , fgHLight          = colorRed
                 , position          = Bottom
                 }
 
