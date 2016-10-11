@@ -17,7 +17,7 @@ nnoremap <silent> <Leader>ur :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> <Leader>uu :<C-u>Unite file_mru buffer<CR>
 
 Plug 'Shougo/vimfiler.vim'
-nnoremap <silent> <Leader>e :VimFilerBufferDir -buffer-name=explorer -split
+nnoremap <silent> <Leader>e :VimFilerBufferDir -buffer-name=explorer -split<CR>
 
 Plug 'Shougo/vimproc', {'do': 'make'}
 Plug 'lambdalisue/vim-gita'
