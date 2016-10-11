@@ -197,6 +197,8 @@ set cmdheight=1
 " show wildmenu
 set wildmenu
 
+set ambiwidth=double
+
 " show Tab and Space at end of the line
 set list listchars=tab:▸\ ,trail:~
 
