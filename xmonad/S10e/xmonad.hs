@@ -61,7 +61,7 @@ modm = mod4Mask
 -- Color Setting
 colorBlue      = "#868bae"
 colorGreen     = "#00d700"
-colorRed       = "#ae8686"
+colorRed       = "#ff005f"
 colorGray      = "#666666"
 colorWhite     = "#bdbdbd"
 colorNormalbg  = "#1c1c1c"
@@ -301,7 +301,7 @@ myManageHookFloat = composeAll
     , title     =? "Speedbar"         --> doCenterFloat
     , title     =? "urxvt_float"      --> doSideFloat SC
     , isFullscreen                    --> doFullFloat
-    , isDialog                        --> doSideFloat SC
+    , isDialog                        --> doCenterFloat
     , stringProperty "WM_NAME" =? "LINE" --> (doRectFloat $ W.RationalRect 0.60 0.1 0.39 0.82)
     , stringProperty "WM_NAME" =? "Google Keep" --> (doRectFloat $ W.RationalRect 0.3 0.1 0.4 0.82)
     , stringProperty "WM_NAME" =? "tmptex.pdf - 1/1 (96 dpi)" --> doCenterFloat
@@ -320,12 +320,12 @@ myLogHook h = dynamicLogWithPP $ wsPP { ppOutput = hPutStrLn h }
 myWsBar = "xmobar $HOME/.xmonad/xmobarrc"
 
 wsPP = xmobarPP { ppOrder           = \(ws:l:t:_)  -> [ws,t]
-                , ppCurrent         = xmobarColor colorGreen colorNormalbg . \s -> "●"
+                , ppCurrent         = xmobarColor colorRed     colorNormalbg . \s -> "●"
                 , ppUrgent          = xmobarColor colorGray    colorNormalbg . \s -> "●"
-                , ppVisible         = xmobarColor colorGreen colorNormalbg . \s -> "⦿"
+                , ppVisible         = xmobarColor colorRed     colorNormalbg . \s -> "⦿"
                 , ppHidden          = xmobarColor colorGray    colorNormalbg . \s -> "●"
                 , ppHiddenNoWindows = xmobarColor colorGray    colorNormalbg . \s -> "○"
-                , ppTitle           = xmobarColor colorGreen colorNormalbg
+                , ppTitle           = xmobarColor colorRed     colorNormalbg
                 , ppOutput          = putStrLn
                 , ppWsSep           = " "
                 , ppSep             = "  "
@@ -343,7 +343,7 @@ myXPConfig = defaultXPConfig
                 , promptBorderWidth = 0
                 , autoComplete      = Just 100000
                 , bgHLight          = colorNormalbg
-                , fgHLight          = colorGreen
+                , fgHLight          = colorRed
                 , position          = Bottom
                 }
 
