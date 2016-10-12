@@ -297,6 +297,9 @@ nnoremap <silent> <C-j> :wincmd j<CR>
 nnoremap <silent> <C-k> :wincmd k<CR>
 nnoremap <silent> <C-l> :wincmd l<CR>
 
+" create new tab
+nnoremap <C-n> :tabnew<Space>
+
 " clear highlight by pressing Esc twice
 nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
 
