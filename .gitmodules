@@ -1,6 +1,3 @@
 [submodule "mkdpreview/styles/github-markdown-css"]
 	path = mkdpreview/styles/github-markdown-css
 	url = https://github.com/sindresorhus/github-markdown-css.git
-[submodule "urxvt_ext/autocomplete-ALL-the-things"]
-	path = urxvt_ext/autocomplete-ALL-the-things
-	url = https://github.com/Vifon/autocomplete-ALL-the-things.git
