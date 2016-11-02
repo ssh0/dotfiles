@@ -229,7 +229,7 @@ autocmd FileType sh         setlocal shiftwidth=2 softtabstop=2 tabstop=2 expand
 autocmd FileType apache     setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 autocmd FileType css        setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 autocmd FileType diff       setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
-autocmd FileType html       setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
+autocmd FileType html       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd FileType java       setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd FileType ruby       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
@@ -296,6 +296,9 @@ nnoremap <silent> <C-h> :wincmd h<CR>
 nnoremap <silent> <C-j> :wincmd j<CR>
 nnoremap <silent> <C-k> :wincmd k<CR>
 nnoremap <silent> <C-l> :wincmd l<CR>
+
+" create new tab
+nnoremap <C-n> :tabnew<Space>
 
 " clear highlight by pressing Esc twice
 nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
