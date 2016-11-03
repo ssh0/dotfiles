@@ -48,6 +48,7 @@ if ! zgen saved; then
   echo "Creating a zgen save"
 
   zgen loadall <<EOPLG
+    b4b4r07/enhancd
     chrissicool/zsh-256color
     ssh0/dot
     ssh0/zsh-takenote
