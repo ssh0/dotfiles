@@ -1,0 +1,6 @@
+run_im ibus
+export SSH_AUTH_SOCK
+export GPG_AGENT_INFO
+urxvtd -q -o -f &
+bash ~/.screenlayout/lab.sh
+xmodmap $HOME/.Xmodmap &
