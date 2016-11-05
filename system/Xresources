@@ -33,4 +33,54 @@ xscreensaver.passwd.thermometer.width:       10
 !datestamp format--see the strftime(3) manual page for details
 xscreensaver.dateFormat:   %a %b %d, %Y
 
+!XTerm settings
+XTerm*utf8: true
+XTerm*locate: true
+XTerm*selectToClipboard: true
+XTerm*faceName: "Inconsolata for Powerline"
+XTerm*faceNameDoublesize: "Migu 1M"
+XTerm*faceSize: 13
+XTerm*cjkWidth: true
+XTerm*saveLines: 2000
+
+! ver 2.0 {{{
+XTerm*foreground:  #a8b6b8
+XTerm*background:  #1c1c1c
+XTerm*cursorColor: #ff005f
+
+! black
+XTerm*color0:      #353535
+XTerm*color8:      #404040
+
+! red
+XTerm*color1:      #ae8686
+XTerm*color9:      #ba8f8f
+
+! green
+XTerm*color2:      #86ae86
+XTerm*color10:     #8fba8f
+
+! yellow
+XTerm*color3:      #aeae86
+XTerm*color11:     #baba8f
+
+! blue
+XTerm*color4:      #8690ae
+XTerm*color12:     #919cbd
+
+! magenta
+XTerm*color5:      #ae86ae
+XTerm*color13:     #ba8fba
+
+! cyan
+XTerm*color6:      #86aeae
+XTerm*color14:     #8fbaba
+
+! white
+XTerm*color7:      #90a2a0
+XTerm*color15:     #b0bdbd
+!}}}
+
+
+
 XTerm.VT100.faseSize: 8
