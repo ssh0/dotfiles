@@ -107,8 +107,8 @@ main = do
                                             $ onWorkspace "3" simplestFloat
                                             $ onWorkspace "5" (
                                                 spacing 19
-                                                $ gaps [(U, 42),(D, 19),(L, 1),(R, 1)]
-                                                $ ResizableTall 0 (1/81) (1/2) [])
+                                                $ gaps [(U, 2),(D, 2),(L, 1),(R, 1)]
+                                                $ ResizableTall 0 (1/84) (1/2) [])
                                             $ myLayout
                                             )
         -- xmobar setting
