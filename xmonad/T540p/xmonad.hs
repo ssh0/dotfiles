@@ -107,13 +107,13 @@ main = do
                                             $ onWorkspace "3" simplestFloat
                                             $ onWorkspace "5" (
                                                 spacing 19
-                                                $ gaps [(U, 61),(D, 0),(L, 0),(R, 1)]
+                                                $ gaps [(U, 42),(D, 19),(L, 1),(R, 1)]
                                                 $ ResizableTall 0 (1/81) (1/2) [])
                                             $ myLayout
                                             )
         -- xmobar setting
        , logHook            = myLogHook wsbar
-                                >> updatePointer (Relative 0.5 0.5)
+                                >> updatePointer (0.5, 0.5) (1, 1)
        , handleEventHook    = fullscreenEventHook
        , workspaces         = myWorkspaces
        , modMask            = modm
