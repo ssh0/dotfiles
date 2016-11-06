@@ -113,7 +113,7 @@ main = do
                                             )
         -- xmobar setting
        , logHook            = myLogHook wsbar
-                                >> updatePointer (0.5, 0.5) (1, 1)
+                                >> updatePointer (0.5, 0.5) (0, 0)
        , handleEventHook    = fullscreenEventHook
        , workspaces         = myWorkspaces
        , modMask            = modm
