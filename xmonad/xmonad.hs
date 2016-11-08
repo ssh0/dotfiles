@@ -231,9 +231,9 @@ main = do
        -- Lauch websearch application (See https://github.com/ssh0/web_search)
        , ("M1-C-f", spawn "websearch")
        -- Play / Pause media keys
-       , ("<XF86AudioPlay>"  , spawn "ncmpcpp toggle")
-       , ("<XF86HomePage>"   , spawn "ncmpcpp toggle")
-       , ("S-<F6>"           , spawn "ncmpcpp toggle")
+       , ("<XF86AudioPlay>"  , spawn "mpc toggle")
+       , ("<XF86HomePage>"   , spawn "mpc toggle")
+       , ("S-<F6>"           , spawn "mpc toggle")
        , ("S-<XF86AudioPlay>", spawn "streamradio pause")
        , ("S-<XF86HomePage>" , spawn "streamradio pause")
        -- Volume setting media keys
