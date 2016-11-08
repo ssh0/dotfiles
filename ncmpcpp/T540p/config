@@ -44,7 +44,7 @@ mpd_music_dir = ~/Music
 #
 
 # If you set format to 44100:16:2, make it 'yes'.
-visualizer_in_stereo = yes
+visualizer_in_stereo = no
 
 visualizer_fifo_path = /tmp/mpd.fifo
 
@@ -72,7 +72,7 @@ visualizer_sync_interval = 30
 # you need to compile ncmpcpp with fftw3 support.
 
 # Available values: spectrum, wave, wave_filled, ellipse.
-visualizer_type = spectrum
+visualizer_type = wave
 # visualizer_look = "♦▉"
 visualizer_look = "╸▊"
 
@@ -476,7 +476,7 @@ color2 = green
 
 main_window_highlight_color = green
 
-progressbar_color = white
+progressbar_color = black
 
 progressbar_elapsed_color = magenta
 
