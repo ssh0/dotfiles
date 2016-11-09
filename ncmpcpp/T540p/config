@@ -313,7 +313,7 @@ progressbar_look = ━◘─
 #default_place_to_search_in = database
 
 ## Available values: classic, alternative.
-user_interface = alternative
+user_interface = classic
 
 #data_fetching_delay = yes
 

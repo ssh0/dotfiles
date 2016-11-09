@@ -231,6 +231,9 @@ def_key "l"
 #def_key "delete"
 #  delete_playlist_items
 #
+def_key "d"
+  delete_playlist_items
+#
 #def_key "delete"
 #  delete_browser_items
 #
