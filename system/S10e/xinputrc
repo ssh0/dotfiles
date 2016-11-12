@@ -1,0 +1,5 @@
+run_im ibus
+export SSH_AUTH_SOCK
+export GPG_AGENT_INFO
+urxvtd -q -o -f &
+xmodmap $HOME/.Xmodmap &
