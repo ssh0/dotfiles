@@ -389,6 +389,14 @@ COMMAND
       list     List all existing taskset.
 ```
 
+## [npz\_viewer.py](./npz_viewer.py)
+
+npz_viewer.py - Simple extracter for compressed (format: `.npz`) file.
+
+Usage:
+
+    npz_viewer.py some_data.npz
+
 ## [pandoc\_beamerwrapper.sh](./pandoc_beamerwrapper.sh)
 
 ```

@@ -253,6 +253,7 @@ bin/man2pdf,                        bin/man2pdf
 bin/mkdpreview,                     bin/mkdpreview
 bin/mplayer_term_wrapper.sh,        bin/mplayer_term_wrapper.sh
 bin/mpv_term,                       bin/mpv_term
+bin/npz_viewer.py,                  bin/npz_viewer.py
 bin/myrsync,                        bin/myrsync
 bin/mytask,                         bin/mytask
 bin/pandoc_beamerwrapper.sh,        bin/pandoc_beamerwrapper.sh
