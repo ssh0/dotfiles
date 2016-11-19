@@ -87,8 +87,7 @@ $endif$
 $if(subtitle)$
 \subtitle{$subtitle$}
 $endif$
-\author[藤本將太郎]{}
-\institute{山崎研 M1 藤本將太郎}
+\author[$author$]{$author$}
 $if(date)$
 \date{$date$}
 $endif$
