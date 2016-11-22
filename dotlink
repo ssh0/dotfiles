@@ -517,3 +517,9 @@ mkdpreview/header.html, .config/mkdpreview/header.html
 mkdpreview/styles/github-markdown-css/github-markdown.css, .config/mkdpreview/styles/github-markdown-css/github-markdown.css
 
 #===========================================================================}}}
+# wget                                                                      {{{
+#==============================================================================
+
+rcfiles/wgetrc,  .wgetrc
+
+#===========================================================================}}}
