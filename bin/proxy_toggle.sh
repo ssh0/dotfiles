@@ -5,7 +5,7 @@
 # This script enables you to toggle proxy setting by one command.
 #=#=
 HTTP_PROXY_HOST="http://www-proxy.waseda.jp:8080"
-HTTPS_PROXY_HOST="https://www-proxy.waseda.jp:8080"
+HTTPS_PROXY_HOST="http://www-proxy.waseda.jp:8080"
 FTP_PROXY_HOST="ftp://proxy.waseda.jp:21"
 
 # shellrc=$HOME/.zshrc  # .bashrc
