@@ -1,3 +1,4 @@
+% {{{
 \documentclass[a4paper, dvipdfmx, mathserif]{beamer}
 % 印刷時には[]内に”handout”を追記する。
 \usepackage{moreverb}
@@ -47,12 +48,16 @@
 \ifnum 42146=\euc"A4A2 \AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}\else
 \AtBeginShipoutFirst{\special{pdf:tounicode 90ms-RKSJ-UCS2}}\fi
 
+%\AtBeginDvi{\special{pdf:mapfile texfonts.map}}
+
 \usepackage{hyperref}
 
 \renewcommand{\familydefault}{\sfdefault}
 \renewcommand{\kanjifamilydefault}{\gtdefault}
 \renewcommand{\figurename}{図}
 \renewcommand{\tablename}{表}
+\captionsetup[figure]{format=hang, labelsep=period, labelfont=scriptsize, textfont=scriptsize}
+\captionsetup[table]{format=hang, labelsep=period, labelfont=scriptsize, textfont=scriptsize}
 
 \newenvironment<>{varblock}[2][\textwidth]{%
 \setlength{\textwidth}{#1}
@@ -151,6 +156,8 @@ $endif$
 $if(date)$
 \date{$date$}
 $endif$
+
+% }}}
 
 \begin{document}
 
