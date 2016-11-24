@@ -58,7 +58,7 @@ done
 # Change X Window setting by xrandr
 if [ "$1" = "start" ]; then
   xrandr --output $default_output --mode $projector_mode
-  xrandr --output $projector --mode $projector_mode --same-as $default_output
+  xrandr --output $projector --mode $projector_mode --rotate normal --same-as $default_output
 elif [ "$1" = "stop" ]; then
   xrandr --output $projector --off
   xrandr --output $default_output --mode $default_mode
