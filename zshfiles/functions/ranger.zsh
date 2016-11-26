@@ -26,7 +26,7 @@ function ranger() {
     # /usr/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
     test -f "$tempfile" &&
     if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
-        builtin cd -- "$(cat "$tempfile")"
+        cd "$(cat "$tempfile")"
     fi
     rm -f -- "$tempfile"
   else
