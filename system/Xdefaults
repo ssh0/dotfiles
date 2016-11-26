@@ -35,7 +35,7 @@ URxvt.url-launcher:    /usr/bin/xdg-open
 URxvt.mathcer.button:  1
 
 ! Fonts
-URxvt.allow_bold:      true
+URxvt.allow_bold:      false
 URxvt*font:            xft:Inconsolata for Powerline:size=13,xft:Migu 1M:size=13
 ! Fix font space
 URxvt*letterSpace:     0
@@ -98,41 +98,41 @@ URxvt*iso14755:        false
 !}}}
 
 ! ver 2.0 {{{
-*.foreground:  #a8b6b8
-*.background:  #1c1c1c
-*.cursorColor: #ff005f
+*.foreground:  #A8B6B8
+*.background:  #1C1C1C
+*.cursorColor: #FF005F
 
 ! black
 *.color0:      #353535
-*.color8:      #404040
+*.color8:      #9E9E9E
 
 ! red
-*.color1:      #ae8686
-*.color9:      #ba8f8f
+*.color1:      #EF9A9A
+*.color9:      #F489AD
 
 ! green
-*.color2:      #86ae86
-*.color10:     #8fba8f
+*.color2:      #A5D6A7
+*.color10:     #B9E18B
 
 ! yellow
-*.color3:      #aeae86
-*.color11:     #baba8f
+*.color3:      #ECE391
+*.color11:     #E8CC76
 
 ! blue
-*.color4:      #8690ae
-*.color12:     #919cbd
+*.color4:      #9FC7E8
+*.color12:     #71BADC
 
 ! magenta
-*.color5:      #ae86ae
-*.color13:     #ba8fba
+*.color5:      #E0B1E8
+*.color13:     #AB90DB
 
 ! cyan
-*.color6:      #86aeae
-*.color14:     #8fbaba
+*.color6:      #A2E2EA
+*.color14:     #71D7CD
 
 ! white
-*.color7:      #90a2a0
-*.color15:     #b0bdbd
+*.color7:      #BDBDBD
+*.color15:     #AAAAAA
 !}}}
 
 !---------------------------------------------------------------------------}}}
