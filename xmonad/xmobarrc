@@ -13,14 +13,14 @@ Config { font = "xft:Migu 1M:size=13"
                                           , "-H"       , "200"
                                           , "-m"       , "3"
                                           , "--normal" , "#b0bdbd"
-                                          , "--high"   , "#86ae86"
+                                          , "--high"   , "#a5d6a7"
                                           ] 10
                     , Run MultiCpu        [ "-t"       , "■ <total0>.<total1>.<total2>.<total3>  "
                                           , "-L"       , "40"
                                           , "-H"       , "85"
                                           , "-m"       , "2"
                                           , "--normal" , "#b0bdbd"
-                                          , "--high"   , "#ae8686"
+                                          , "--high"   , "#ef9a9a"
                                           ] 10
 
                     , Run Memory          [ "-t"       , "□ <usedratio>%  "
@@ -28,13 +28,13 @@ Config { font = "xft:Migu 1M:size=13"
                                           , "-H"       , "90"
                                           , "-m"       , "2"
                                           , "--normal" , "#b0bdbd"
-                                          , "--high"   , "#ae8686"
+                                          , "--high"   , "#ef9a9a"
                                           ] 10
                     , Run BatteryP        ["CMB1"]
                                           [ "-t"       , "⌇ <acstatus>  "
                                           , "-L"       , "20"
                                           , "-H"       , "80"
-                                          , "--low"    , "#ae8686"
+                                          , "--low"    , "#ef9a9a"
                                           , "--normal" , "#b0bdbd"
                                           , "--"
                                                 , "-o" , "<left>% (<timeleft>)"
@@ -46,6 +46,6 @@ Config { font = "xft:Migu 1M:size=13"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% }{ %multicpu%%memory%%wlan0%%battery%<fc=#aeae86>%date%</fc> "
+       , template = " %StdinReader% }{ %multicpu%%memory%%wlan0%%battery%<fc=#ece391>%date%</fc> "
        }
 
