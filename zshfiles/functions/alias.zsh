@@ -45,6 +45,8 @@ alias :q='exit'
 alias py='python'
 alias pytohn='python'
 
+alias pyst='cd ~/Workspace/python/tuto && $EDITOR "$(incfn -b test -e py -n 2)"'
+
 # pip install
 alias pipins='sudo -H pip install'
 # pip update
