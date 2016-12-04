@@ -137,8 +137,16 @@ let g:html_ignore_conceal=1
 let g:html_ignore_folding=1
 " let g:html_dynamic_folds=1
 
+" suppress the banner
+let g:netrw_banner=0
+" =2: vertically splitting the window first
+let g:netrw_browse_split=2
 " try to open under the cursor with `gx`
 let g:netrw_browsex_viewer="xdg-open"
+" right splitting
+let g:netrw_altv=1
+" =3: tree style listing
+let g:netrw_liststyle=3
 
 "                                                                           }}}
 " Search                                                                    {{{
