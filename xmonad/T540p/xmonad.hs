@@ -68,10 +68,10 @@ colorNormalbg  = "#1c1c1c"
 colorfg        = "#a8b6b8"
 
 -- Border width
-borderwidth = 0
+borderwidth = 3
 
 -- Border color
-mynormalBorderColor  = "#333333"
+mynormalBorderColor  = "#262626"
 myfocusedBorderColor = "#585858"
 
 -- Float window control width
@@ -79,7 +79,7 @@ moveWD = borderwidth
 resizeWD = 2*borderwidth
 
 -- gapwidth
-gapwidth  = 10
+gapwidth  = 7
 gwU = 9
 gwD = 9
 gwL = 55

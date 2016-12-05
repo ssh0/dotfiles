@@ -71,7 +71,7 @@ colorfg        = "#a8b6b8"
 borderwidth = 3
 
 -- Border color
-mynormalBorderColor  = "#333333"
+mynormalBorderColor  = "#262626"
 myfocusedBorderColor = "#585858"
 
 -- Float window control width
