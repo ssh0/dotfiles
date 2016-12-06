@@ -104,7 +104,7 @@ URxvt*iso14755:        false
 
 ! black
 *.color0:      #353535
-*.color8:      #9E9E9E
+*.color8:      #585858
 
 ! red
 *.color1:      #EF9A9A
