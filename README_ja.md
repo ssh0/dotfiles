@@ -11,14 +11,14 @@ dotfiles
 ====
 
 * [xmonad](http://xmonad.org/)
-    * [xmonad.hs](./xmonad/ssh0-home/xmonad.hs)
+    * [xmonad.hs](./xmonad/xmonad.hs)
 * [tmux](https://tmux.github.io/)
     * [tmux.conf](./tmux/tmux.conf)
 * [zsh](http://www.zsh.org/)
-    * [zgen](https://github.com/tarjoilija/zgen)
+    * [zplug](https://github.com/zplug/zplug)
     * [zshfiles](./zshfiles/)
-* [vim](http://www.vim.org/)
-    * [vimrc](./vimfiles/vimrc)
+* [neovim](https://neovim.io/)
+    * [init.vim](./neovim/init.vim)
 * [ranger](http://ranger.nongnu.org/)
     * [config files](./ranger/)
 * [便利なシェルスクリプト群](./bin/)
