@@ -106,7 +106,7 @@ main = do
        , layoutHook         = avoidStruts $ ( toggleLayouts (noBorders Full)
                                             $ onWorkspace "3" simplestFloat
                                             $ onWorkspace "5" (
-                                                spacing 19
+                                                spacing 16
                                                 $ gaps [(U, 2),(D, 2),(L, 1),(R, 1)]
                                                 $ ResizableTall 0 (1/84) (1/2) [])
                                             $ myLayout
