@@ -33,6 +33,7 @@ unset -v zplug_source
 
 zplug "fcambus/ansiweather", as:command
 zplug "b4b4r07/enhancd", use:init.sh
+zplug "zplug/zplug"
 zplug "Tarrasch/zsh-bd"
 zplug "chrissicool/zsh-256color"
 zplug "ssh0/zsh-takenote"
