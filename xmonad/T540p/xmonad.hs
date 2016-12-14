@@ -68,7 +68,7 @@ colorNormalbg  = "#1c1c1c"
 colorfg        = "#a8b6b8"
 
 -- Border width
-borderwidth = 3
+borderwidth = 5
 
 -- Border color
 mynormalBorderColor  = "#262626"
@@ -79,7 +79,7 @@ moveWD = borderwidth
 resizeWD = 2*borderwidth
 
 -- gapwidth
-gapwidth  = 7
+gapwidth  = 5
 gwU = 9
 gwD = 9
 gwL = 55
@@ -106,7 +106,7 @@ main = do
        , layoutHook         = avoidStruts $ ( toggleLayouts (noBorders Full)
                                             $ onWorkspace "3" simplestFloat
                                             $ onWorkspace "5" (
-                                                spacing 16
+                                                spacing 14
                                                 $ gaps [(U, 2),(D, 2),(L, 1),(R, 1)]
                                                 $ ResizableTall 0 (1/84) (1/2) [])
                                             $ myLayout
