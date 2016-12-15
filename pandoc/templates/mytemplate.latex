@@ -131,6 +131,7 @@ $endif$
 % \setcounter{section}{1}
 % \setcounter{subsection}{0}
 % \renewcommand{\thefigure}{\thesection.\arabic{figure}}
+% \renewcommand{\theequation}{\thesection.\arabic{equation}}
 
 % }}}
 
