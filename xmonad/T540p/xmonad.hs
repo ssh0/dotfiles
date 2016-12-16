@@ -72,7 +72,7 @@ borderwidth = 5
 
 -- Border color
 mynormalBorderColor  = "#262626"
-myfocusedBorderColor = "#585858"
+myfocusedBorderColor = "#ededed"
 
 -- Float window control width
 moveWD = borderwidth
