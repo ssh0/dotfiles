@@ -250,6 +250,7 @@ bin/latexmk_wrapper,                bin/latexmk_wrapper
 bin/LINE,                           bin/LINE
 bin/makebinreadme.sh,               bin/makebinreadme.sh
 bin/man2pdf,                        bin/man2pdf
+bin/marbleScroll.sh,                bin/marbleScroll.sh
 bin/mkdpreview,                     bin/mkdpreview
 bin/mplayer_term_wrapper.sh,        bin/mplayer_term_wrapper.sh
 bin/mpv_term,                       bin/mpv_term
