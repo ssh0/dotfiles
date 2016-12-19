@@ -68,7 +68,7 @@ colorNormalbg  = "#1c1c1c"
 colorfg        = "#a8b6b8"
 
 -- Border width
-borderwidth = 5
+borderwidth = 3
 
 -- Border color
 mynormalBorderColor  = "#262626"
@@ -79,7 +79,7 @@ moveWD = borderwidth
 resizeWD = 2*borderwidth
 
 -- gapwidth
-gapwidth  = 5
+gapwidth  = 7
 gwU = 9
 gwD = 9
 gwL = 55
@@ -95,7 +95,7 @@ main = do
     wsbar <- spawnPipe myWsBar
     xmonad $ ewmh defaultConfig
        { borderWidth        = borderwidth
-       , terminal           = "urxvt"
+       , terminal           = "urxvtc"
        , focusFollowsMouse  = True
        , normalBorderColor  = mynormalBorderColor
        , focusedBorderColor = myfocusedBorderColor
@@ -106,7 +106,7 @@ main = do
        , layoutHook         = avoidStruts $ ( toggleLayouts (noBorders Full)
                                             $ onWorkspace "3" simplestFloat
                                             $ onWorkspace "5" (
-                                                spacing 14
+                                                spacing 16
                                                 $ gaps [(U, 2),(D, 2),(L, 1),(R, 1)]
                                                 $ ResizableTall 0 (1/84) (1/2) [])
                                             $ myLayout
@@ -217,7 +217,7 @@ main = do
        -- Toggle compton (compsite manager)
        , ("M1-C-t", spawn "bash toggle_compton.sh")
        -- Launch terminal
-       , ("M-<Return>", spawn "urxvt")
+       , ("M-<Return>", spawn "urxvtc")
        -- Launch terminal with a float window
        , ("M-S-<Return>", spawn "urxvt_float.sh")
        -- Insert a transparent panel
@@ -273,7 +273,7 @@ myStartupHook = do
         spawnOnce "nm-applet"
         spawnOnce "xscreensaver -no-splash"
         spawnOnce "$HOME/.dropbox-dist/dropboxd"
-        spawnOnce "bash $HOME/.fehbg"
+        -- spawnOnce "bash $HOME/.fehbg"
         -- spawnOnce "compton -b --config $HOME/.config/compton/compton.conf"
 
 --------------------------------------------------------------------------- }}}
