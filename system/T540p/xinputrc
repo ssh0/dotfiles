@@ -4,5 +4,5 @@ export GPG_AGENT_INFO
 urxvtd -q -o -f &
 xmodmap $HOME/.Xmodmap &
 nitrogen --restore &
-bash $HOME/.screenlayout/lab.sh &
-bash $HOME/bin/marbleScroll.sh &
+$HOME/.screenlayout/lab.sh
+$HOME/bin/marbleScroll.sh
