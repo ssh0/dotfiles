@@ -2,7 +2,7 @@
 Config { font = "xft:Migu 1M:size=10.5"
        , bgColor = "#1c1c1c"
        , fgColor = "#404040"
-       , position = TopSize C 100 25
+       , position = TopSize C 100 23
        -- , position = Static { xpos = 7 , ypos = 0, width = 1011, height = 25 }
        , lowerOnStart = False
        , overrideRedirect = False
