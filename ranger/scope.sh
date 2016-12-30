@@ -61,11 +61,11 @@ if [ "$preview_images" = "True" ]; then
         video/*)
             ffmpegthumbnailer -i "$path" -o "$cached" -s 0 -t 20 && exit 6 || exit 1;;
     esac
-    case "$extension" in
-        # pdf thumbnail (not recommended for old machine)
-        pdf)
-            convert -thumbnail x900 -background white -alpha remove "$path"\[0\] "$cached" && exit 6 || exit 1;;
-    esac
+    # case "$extension" in
+    #     # pdf thumbnail (not recommended for old machine)
+    #     pdf)
+    #         convert -thumbnail x900 -background white -alpha remove "$path"\[0\] "$cached" && exit 6 || exit 1;;
+    # esac
 fi
 
 case "$extension" in
@@ -81,9 +81,9 @@ case "$extension" in
     rar)
         try unrar -p- lt "$path" && { dump | trim; exit 0; } || exit 1;;
     # PDF documents:
-    # pdf)
-    #     try pdftotext -l 10 -nopgbrk -q "$path" - && \
-    #         { dump | trim | fmt -s -w $width; exit 0; } || exit 1;;
+    pdf)
+        try pdftotext -l 10 -nopgbrk -q "$path" - && \
+            { dump | trim | fmt -s -w $width; exit 0; } || exit 1;;
     # BitTorrent Files
     torrent)
         try transmission-show "$path" && { dump | trim; exit 5; } || exit 1;;
