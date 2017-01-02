@@ -69,7 +69,7 @@ colorNormalbg  = "#1c1c1c"
 colorfg        = "#a8b6b8"
 
 -- Border width
-borderwidth = 2
+borderwidth = 4
 
 -- Border color
 mynormalBorderColor  = "#262626"
@@ -80,7 +80,7 @@ moveWD = borderwidth
 resizeWD = 2*borderwidth
 
 -- gapwidth
-gapwidth  = 6
+gapwidth  = 4
 gwU = 2
 gwD = 1
 gwL = 38
