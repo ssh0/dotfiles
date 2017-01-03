@@ -33,7 +33,11 @@ if [[ ! -n $TMUX && $- == *l* ]]; then
     /bin/rm -rf /tmp/tmux*
   fi
   create_new_session="Create New Session"
-  ID="${create_new_session}:\n$ID"
+  if [[ -n "$ID" ]]; then
+    ID="${create_new_session}:\n$ID"
+  else
+    ID="${create_new_session}:"
+  fi
   ID="$(echo $ID | $PERCOL | cut -d: -f1)"
   if [[ "$ID" = "${create_new_session}" ]]; then
     tmux new-session
