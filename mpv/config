@@ -24,9 +24,9 @@ title="mpv - ${filename}"
 # Subtitles setup
 
 # disable retarded VSFilter compatibility
-ass-force-style=Kerning=yes
-sub-text-font="TakaoPGothic"
-sub-text-font-size=30
+sub-ass-force-style=Kerning=yes
+sub-font="TakaoPGothic"
+sub-font-size=30
 
 ################################################################################
 # On Screen Display
