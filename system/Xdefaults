@@ -125,7 +125,7 @@ URxvt*iso14755:        false
 
 ! magenta
 *.color5:      #E0B1E8
-*.color13:     #AB90DB
+*.color13:     #E59EF0
 
 ! cyan
 *.color6:      #A2E2EA
