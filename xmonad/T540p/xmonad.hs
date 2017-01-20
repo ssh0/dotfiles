@@ -106,9 +106,9 @@ main = do
        , layoutHook         = avoidStruts $ ( toggleLayouts (noBorders Full)
                                             $ onWorkspace "3" simplestFloat
                                             $ onWorkspace "5" (
-                                                spacing 19
-                                                $ gaps [(U, 7),(D, 6),(L, 31),(R, 31)]
-                                                $ ResizableTall 0 (1/83) (1/2) [34/35])
+                                                spacing 13
+                                                $ gaps [(U, 21),(D, 21),(L, 41),(R, 41)]
+                                                $ ResizableTall 0 (1/41) (1/2) [])
                                             $ myLayout
                                             )
         -- xmobar setting
