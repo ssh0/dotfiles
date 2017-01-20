@@ -363,7 +363,7 @@ grid.linewidth : 0.3     # in points
 #figure.titlesize   : medium  # size of the figure title
 #figure.titleweight : normal  # weight of the figure title
 
-figure.figsize   : 11, 8  # figure size in inches
+figure.figsize   : 10, 6  # figure size in inches
 figure.dpi       : 96     # figure dots per inch
 figure.facecolor : 0.85   # figure facecolor; 0.75 is scalar gray
 figure.edgecolor : 0.50   # figure edgecolor
@@ -461,7 +461,7 @@ savefig.transparent  : True  # setting that controls whether figures are saved
 # pdf backend params
 #pdf.compression : 6  # integer from 0 to 9
                       # 0 disables compression (good for debugging)
-#pdf.fonttype    : 3  # Output Type 3 (Type3) or Type 42 (TrueType)
+pdf.fonttype    : 42  # Output Type 3 (Type3) or Type 42 (TrueType)
 
 # svg backend params
 #svg.image_inline  : True    # write raster image data directly into the svg file
