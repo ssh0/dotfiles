@@ -79,9 +79,9 @@ moveWD = borderwidth
 resizeWD = 2*borderwidth
 
 -- gapwidth
-gapwidth  = 4
-gwU = 11
-gwD = 11
+gapwidth  = 5
+gwU = 10
+gwD = 10
 gwL = 55
 gwR = 55
 
@@ -106,7 +106,7 @@ main = do
        , layoutHook         = avoidStruts $ ( toggleLayouts (noBorders Full)
                                             $ onWorkspace "3" simplestFloat
                                             $ onWorkspace "5" (
-                                                spacing 13
+                                                spacing 14
                                                 $ gaps [(U, 21),(D, 21),(L, 41),(R, 41)]
                                                 $ ResizableTall 0 (1/41) (1/2) [])
                                             $ myLayout
