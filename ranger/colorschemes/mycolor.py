@@ -1,14 +1,21 @@
-# Copyright (C) 2009-2013  Roman Zimbelmann <hut@lavabit.com>
-# This software is distributed under the terms of the GNU GPL version 3.
+# This file is part of ranger, the console file manager.
+# License: GNU GPL version 3, see the file "AUTHORS" for details.
+
+from __future__ import (absolute_import, division, print_function)
 
 from ranger.gui.colorscheme import ColorScheme
-from ranger.gui.color import *
+from ranger.gui.color import (
+    black, blue, cyan, green, magenta, red, white, yellow, default,
+    normal, bold, reverse,
+    default_colors,
+)
+
 
 class Default(ColorScheme):
     # progress_bar_color = blue
     progress_bar_color = 239
 
-    def use(self, context):
+    def use(self, context):  # pylint: disable=too-many-branches,too-many-statements
         fg, bg, attr = default_colors
 
         if context.reset:
@@ -37,7 +44,7 @@ class Default(ColorScheme):
                 fg = blue
             elif context.executable and not \
                     any((context.media, context.container,
-                        context.fifo, context.socket)):
+                         context.fifo, context.socket)):
                 # attr |= bold
                 fg = green
             if context.socket:
@@ -48,7 +55,7 @@ class Default(ColorScheme):
                 if context.device:
                     attr |= bold
             if context.link:
-                fg = context.good and cyan or magenta
+                fg = cyan if context.good else magenta
             if context.tag_marker and not context.selected:
                 attr |= bold
                 if fg in (red, magenta):
@@ -70,10 +77,13 @@ class Default(ColorScheme):
                 else:
                     fg = magenta
 
+            if context.inactive_pane:
+                fg = cyan
+
         elif context.in_titlebar:
             attr |= bold
             if context.hostname:
-                fg = context.bad and red or green
+                fg = red if context.bad else green
             elif context.directory:
                 fg = blue
             elif context.tab:
@@ -104,7 +114,9 @@ class Default(ColorScheme):
             if context.vcscommit:
                 fg = yellow
                 attr &= ~bold
-
+            if context.vcsdate:
+                fg = cyan
+                attr &= ~bold
 
         if context.text:
             if context.highlight:
@@ -123,7 +135,6 @@ class Default(ColorScheme):
                 else:
                     bg = self.progress_bar_color
 
-
         if context.vcsfile and not context.selected:
             attr &= ~bold
             if context.vcsconflict:
@@ -141,7 +152,7 @@ class Default(ColorScheme):
 
         elif context.vcsremote and not context.selected:
             attr &= ~bold
-            if context.vcssync:
+            if context.vcssync or context.vcsnone:
                 fg = green
             elif context.vcsbehind:
                 fg = red
