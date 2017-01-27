@@ -31,7 +31,7 @@ class Default(ColorScheme):
             if context.empty:
                 fg = black
             if context.border:
-                fg = 245
+                fg = 236
             if context.media:
                 if context.image:
                     fg = yellow
