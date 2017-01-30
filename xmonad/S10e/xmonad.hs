@@ -68,7 +68,7 @@ colorNormalbg  = "#1c1c1c"
 colorfg        = "#a8b6b8"
 
 -- Border width
-borderwidth = 1
+borderwidth = 0
 
 -- Border color
 mynormalBorderColor  = "#262626"
@@ -79,11 +79,11 @@ moveWD = borderwidth
 resizeWD = 2*borderwidth
 
 -- gapwidth
-gapwidth  = 4
-gwU = 5
-gwD = 4
-gwL = 36
-gwR = 36
+gapwidth  = 0
+gwU = 0
+gwD = 0
+gwL = 35
+gwR = 35
 
 --------------------------------------------------------------------------- }}}
 -- main                                                                     {{{
@@ -95,7 +95,7 @@ main = do
     wsbar <- spawnPipe myWsBar
     xmonad $ ewmh defaultConfig
        { borderWidth        = borderwidth
-       , terminal           = "urxvt"
+       , terminal           = "urxvtc"
        , focusFollowsMouse  = True
        , normalBorderColor  = mynormalBorderColor
        , focusedBorderColor = myfocusedBorderColor
@@ -213,7 +213,7 @@ main = do
        -- Toggle compton (compsite manager)
        , ("M1-C-t", spawn "bash toggle_compton.sh")
        -- Launch terminal
-       , ("M-<Return>", spawn "urxvt")
+       , ("M-<Return>", spawn "urxvtc")
        -- Launch terminal with a float window
        , ("M-S-<Return>", spawn "urxvt_float.sh")
        -- Insert a transparent panel

@@ -1,12 +1,11 @@
 -- vim: ft=haskell
-Config { font = "xft:Migu 1M:size=10.5"
+Config { font = "xft:Migu 1M:size=12.5"
        , bgColor = "#1c1c1c"
        , fgColor = "#404040"
-       , position = TopSize C 100 23
+       , position = TopSize C 100 40
        -- , position = Static { xpos = 7 , ypos = 0, width = 1011, height = 25 }
        , lowerOnStart = False
        , overrideRedirect = False
-       , border = BottomBM 0
        , borderColor = "#4e4e4e"
        , commands = [ Run Network "wlan0" [ "-t"       , "⇩<rx>  ⇧<tx>  "
                                           , "-L"       , "40"
