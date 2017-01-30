@@ -48,8 +48,7 @@ system/Xmodmap, .Xmodmap
 # ~/.Xdefaults                                                              {{{
 #==============================================================================
 
-system/Xdefaults, .Xdefaults
-# system/Xdefaults.T540p, .Xdefaults
+system/${PC}Xdefaults, .Xdefaults
 
 #===========================================================================}}}
 # ~/.Xresources:                                                            {{{
