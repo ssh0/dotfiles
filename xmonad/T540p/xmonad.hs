@@ -79,10 +79,10 @@ moveWD = borderwidth
 resizeWD = 2*borderwidth
 
 -- gapwidth
-gapwidth  = 5
-gwU = 10
-gwD = 10
-gwL = 55
+gapwidth  = 4
+gwU = 11
+gwD = 11
+gwL = 56
 gwR = 55
 
 --------------------------------------------------------------------------- }}}
@@ -260,9 +260,15 @@ main = do
 -------------------------------------------------------------------------------
 
 myLayout = spacing gapwidth $ gaps [(U, gwU),(D, gwD),(L, gwL),(R, gwR)]
-           $ (ResizableTall 1 (1/181) (96/181) [])
-             ||| (TwoPane (1/181) (96/181))
+           $ (ResizableTall 1 (1/201) (116/201) [])
+             ||| (TwoPane (1/201) (116/201))
              ||| Simplest
+
+-- -- For 10x20 character size
+-- myLayout = spacing gapwidth $ gaps [(U, gwU),(D, gwD),(L, gwL),(R, gwR)]
+--            $ (ResizableTall 1 (1/181) (96/181) [])
+--              ||| (TwoPane (1/181) (96/181))
+--              ||| Simplest
 
 --------------------------------------------------------------------------- }}}
 -- myStartupHook:     Start up applications                                 {{{
