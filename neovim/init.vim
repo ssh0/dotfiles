@@ -61,6 +61,7 @@ augroup filetype
   autocmd BufRead,BufNewFile *.tex set filetype=tex
   let md_to_latex  = "pandoc --from=markdown --to=latex "
   autocmd Filetype tex let &formatprg=md_to_latex
+  autocmd Filetype tex set colorcolumn=
   " bib file
   autocmd BufRead,BufNewFile *.bib set filetype=bib
   autocmd Filetype bib let &formatprg="bibclean"
