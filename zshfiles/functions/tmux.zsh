@@ -8,9 +8,9 @@
 
 tmux-new-session() {
   if [[ -n $TMUX ]]; then
-    tmux switch-client -t "$(TMUX= tmux -S "${TMUX%,*,*}" new-session -dP "$@")"
+    tmux switch-client -t "$(TMUX= tmux -S "${TMUX%,*,*}" new-session -dP -s "$@")"
   else
-    tmux new-session "$@"
+    tmux new-session -s "$@"
   fi
 }
 
@@ -20,7 +20,7 @@ if [[ -n $TMUX ]]; then
 else
   alias ta='tmux attach-session -t'
 fi
-alias ts='tmux-new-session -s'
+alias ts='tmux-new-session'
 alias tl='tmux list-sessions'
 alias tksv='tmux kill-server'
 alias tkss='tmux kill-session -t'
