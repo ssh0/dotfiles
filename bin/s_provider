@@ -86,7 +86,7 @@ rt,http://realtime.search.yahoo.co.jp/search?p=%s&ei=UTF-8,true
 tw,https://mobile.twitter.com/search?src=typd&q=%s,false
 
 # "sc": Google Scholar
-sc,http://scholar.google.co.jp/scholar?as_vis=1&q=%s&hl=ja&as_sdt=1,5,false
+sc,http://scholar.google.co.jp/scholar?as_vis=1&q=%s&hl=ja&as_sdt=1,false
 
 # "q": Qiita
 q,http://qiita.com/search?q=%s,false
