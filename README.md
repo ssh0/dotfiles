@@ -102,7 +102,7 @@ EOF
 * Write like below in your {bash|zsh}rc and reload shellrc:
 
 ```
-alias dot-ssh0="dot -c $HOME/.config/dot/dotrc-ssh0"
+alias dot-ssh0="dot_main -c $HOME/.config/dot/dotrc-ssh0"
 ```
 
 * Execute the `dot` command:

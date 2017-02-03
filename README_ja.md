@@ -97,7 +97,7 @@ EOF
 * 自分の{bash|zsh}rcファイルに以下を追記(その後shellrcファイルを再読み込み)
 
 ```
-alias dot-ssh0="dot -c $HOME/.config/dot/dotrc-ssh0"
+alias dot-ssh0="dot_main -c $HOME/.config/dot/dotrc-ssh0"
 ```
 
 * 以下のコマンドを実行
