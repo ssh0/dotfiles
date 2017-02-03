@@ -256,6 +256,8 @@ Plug 'lambdalisue/vim-gista'
 let g:gista#github_user = 'ssh0'
 let g:gista#update_on_write = 1
 
+Plug 'vimperator/vimperator.vim'
+
 Plug 'mattn/webapi-vim'
 Plug 'moznion/hateblo.vim'
 Plug 'mattn/googlesuggest-complete-vim'
