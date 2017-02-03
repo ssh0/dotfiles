@@ -133,8 +133,8 @@ patch.antialiased : True    # render patches in antialiased (no jaggies)
 # The font.size property is the default font size for text, given in pts.
 # 12pt is the standard value.
 
-#font.size    : 12.0
-#font.family  : sans-serif
+font.size    : 13.0
+font.family  : sans-serif
 #font.style   : normal
 #font.variant : normal
 #font.weight  : medium
@@ -334,13 +334,13 @@ grid.linewidth : 0.3     # in points
 # LEGEND                                                                    {{{
 #==============================================================================
 
-#legend.fancybox      : False  # if True, use a rounded box for the
+legend.fancybox      : True  # if True, use a rounded box for the
                                # legend, else a rectangle
 #legend.isaxes        : True
-#legend.numpoints     : 2      # the number of points in the legend line
-#legend.fontsize      : large
-#legend.borderpad     : 0.5    # border whitespace in fontsize units
-#legend.markerscale   : 1.0    # the relative size of legend markers vs. original
+legend.numpoints     : 1      # the number of points in the legend line
+legend.fontsize      : large
+legend.borderpad     : 0.5    # border whitespace in fontsize units
+legend.markerscale   : 1.5    # the relative size of legend markers vs. original
 
 # the following dimensions are in axes coords
 #legend.labelspacing  : 0.5  # the vertical space between the legend entries in fraction of fontsize
@@ -350,7 +350,7 @@ grid.linewidth : 0.3     # in points
 #legend.borderaxespad : 0.5  # the border between the axes and legend edge in fraction of fontsize
 #legend.columnspacing : 2.   # the border between the axes and legend edge in fraction of fontsize
 
-#legend.shadow        : False
+legend.shadow        : False
 #legend.frameon       : True  # whether or not to draw a frame around legend
 #legend.framealpha    : None  # opacity of of legend frame
 #legend.scatterpoints : 3     # number of scatter points
