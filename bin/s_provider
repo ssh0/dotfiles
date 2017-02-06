@@ -103,6 +103,9 @@ gc,https://github.com/search?q=%s&type=Code,false
 # "gf": Github - code filename
 gf,https://github.com/search?q=filename:%s&type=Code,false
 
+# "gt": Github - topic
+gt,https://github.com/search?q=topic:%s&type=Repositories,false
+
 # "gs": Gist
 gs,https://gist.github.com/search?utf8=✓&q=%s,false
 
