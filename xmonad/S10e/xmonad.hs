@@ -188,18 +188,16 @@ main = do
        ]
 
        -------------------------------------------------------------------- }}}
-       -- Keymap: moving workspace by number                                {{{
+       -- Keymap: Manage workspace                                          {{{
        ------------------------------------------------------------------------
+       -- mod-[1..9]          Switch to workspace N
+       -- mod-shift-[1..9]    Move window to workspace N
+       -- mod-control-[1..9]  Copy window to workspace N
 
        `additionalKeys`
-       [ ((modm .|. m, k), windows $ f i)
-         | (i, k) <- zip myWorkspaces
-                     [ xK_exclam, xK_at, xK_numbersign
-                     , xK_dollar, xK_percent, xK_asciicircum
-                     , xK_ampersand, xK_asterisk, xK_parenleft
-                     , xK_parenright
-                     ]
-         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]
+       [ ((m .|. modm, k), windows $ f i)
+         | (i, k) <- zip myWorkspaces [xK_1 ..]
+         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask), (copy, controlMask)]
        ]
 
        -------------------------------------------------------------------- }}}
