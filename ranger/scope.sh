@@ -63,9 +63,9 @@ handle_extension() {
         # PDF
         pdf)
             # Preview as text conversion
+            convert -thumbnail x900 -background white -alpha remove "${FILE_PATH}"\[0\] "${IMAGE_CACHE_PATH}" && exit 6
             pdftotext -l 10 -nopgbrk -q -- "${FILE_PATH}" - && exit 5
             exiftool "${FILE_PATH}" && exit 5
-            convert -thumbnail x900 -background white -alpha remove "$path"\[0\] "$cached" && exit 6
             exit 1;;
 
         # BitTorrent
