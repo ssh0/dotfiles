@@ -1,0 +1,206 @@
+#!/bin/bash
+###############################################################################
+#       _               _         _   _        __ _                           #
+#      | |__   ___ _ __| |__  ___| |_| |_   _ / _| |_ _      _ _ __ ___       #
+#      | '_ \ / _ \ '__| '_ \/ __| __| | | | | |_| __| \ /\ / | '_ ` _ \      #
+#      | | | |  __/ |  | |_) \__ \ |_| | |_| |  _| |_ \ V  V /| | | | | |     #
+#      |_| |_|\___|_|  |_.__/|___/\__|_|\__,_|_|  \__| \_/\_/ |_| |_| |_|     #
+#                                                                             #
+###############################################################################
+# Initialise                                                                {{{
+#------------------------------------------------------------------------------
+
+hc() {
+    herbstclient "$@"
+}
+
+hc emit_hook reload
+
+gnome-settings-daemon &
+xscreensaver -no-splash &
+
+if [ -f $HOME/.fehbg ]; then
+  . $HOME/.fehbg
+fi
+
+pad_up=28
+pad_right=38
+pad_down=0
+pad_left=38
+
+split_rate_h=0.4347
+split_rate_v=0.5
+
+# 1 / 200
+# resizestep_h=0.005
+# 1 / 204
+resizestep_h=0.004902
+
+# (19 / (54 * 18 + 16))
+resizestep_v=0.01823
+
+hs set tree_style '╾│ ├└╼─┐'
+
+# do multi monitor setup here, e.g.:
+# hc set_monitors 1280x1024+0+0 1280x1024+1280+0
+# or simply:
+hc detect_monitors
+
+#---------------------------------------------------------------------------}}}
+# Keybindings                                                               {{{
+#------------------------------------------------------------------------------
+
+# remove all existing keybindings
+hc keyunbind --all
+
+# keybindings
+# if you have a super key you will be much happier with Mod set to Mod4
+#Mod=Mod1    # Use alt as the main modifier
+Mod=Mod4   # Use the super key as the main modifier
+
+hc keybind $Mod-Shift-q quit
+hc keybind $Mod-Shift-r reload
+hc keybind $Mod-c close
+hc keybind $Mod-Return spawn urxvt
+
+# basic movement
+# focusing clients
+hc keybind $Mod-j     focus down
+hc keybind $Mod-k     focus up
+hc keybind $Mod-h     focus left
+hc keybind $Mod-l     focus right
+
+# moving clients
+hc keybind $Mod-Shift-Down  shift down
+hc keybind $Mod-Shift-Up    shift up
+hc keybind $Mod-Shift-Left  shift left
+hc keybind $Mod-Shift-Right shift right
+hc keybind $Mod-Shift-j     shift down
+hc keybind $Mod-Shift-k     shift up
+hc keybind $Mod-Shift-h     shift left
+hc keybind $Mod-Shift-l     shift right
+
+# splitting frames
+# create an empty frame at the specified direction
+hc keybind $Mod-s           split   bottom  $split_rate_h
+hc keybind $Mod-v           split   right   $split_rate_v
+# let the current frame explode into subframes
+hc keybind $Mod-Control-space split explode
+
+# resizing frames
+hc keybind $Mod-comma  resize left  +$resizestep_h
+hc keybind $Mod-period resize right +$resizestep_h
+hc keybind $Mod-z      resize down  +$resizestep_v
+hc keybind $Mod-a      resize up    +$resizestep_v
+
+# tags
+tag_names=( {1..5} )
+tag_keys=( {1..5} 0 )
+
+hc rename default "${tag_names[0]}" || true
+for i in ${!tag_names[@]} ; do
+    hc add "${tag_names[$i]}"
+    key="${tag_keys[$i]}"
+    if ! [ -z "$key" ] ; then
+        hc keybind "$Mod-$key" use_index "$i"
+        hc keybind "$Mod-Shift-$key" move_index "$i"
+    fi
+done
+
+# cycle through tags
+hc keybind $Mod-Right use_index +1 --skip-visible
+hc keybind $Mod-Left  use_index -1 --skip-visible
+
+# layouting
+hc keybind $Mod-Shift-c remove
+hc keybind $Mod-space cycle_layout 1
+hc keybind $Mod-t floating toggle
+hc keybind $Mod-f cycle_layout 1 vertical max
+hc keybind $Mod-Shift-f fullscreen toggle
+hc keybind $Mod-o pseudotile toggle
+
+# mouse
+hc mouseunbind --all
+hc mousebind $Mod-Button1 move
+hc mousebind $Mod-Button2 zoom
+hc mousebind $Mod-Button3 resize
+
+# focus
+hc keybind $Mod-Down  cycle_all +1
+hc keybind $Mod-Up    cycle_all -1
+
+hc keybind $Mod-Tab         cycle_monitor +1
+hc keybind $Mod-Shift-Tab   cycle_monitor -1
+hc keybind $Mod-i jumpto urgent
+
+# dmenu_run
+hc keybind $Mod-p spawn dmenu_run -l 10 -fn "Migu 1M:size=20"
+
+# toggle compton
+hc keybind Alt-Control-t spawn bash toggle_compton.sh
+
+hc keybind Alt-Control-l spawn xscreensaver-command -lock
+
+#---------------------------------------------------------------------------}}}
+# Appearance                                                                {{{
+#------------------------------------------------------------------------------
+
+#  pad MONITOR [PADUP [PADRIGHT [PADDOWN [PADLEFT]]]]
+hc pad 0 $pad_up $pad_right $pad_down $pad_left
+
+hc set frame_gap 8
+hc set frame_padding -12
+hc set frame_border_width 1
+hc set frame_transparent_width 0
+hc set window_gap 14
+hc set window_border_width 1
+hc set window_border_inner_width 0
+
+# frame options
+hc set always_show_frame 0
+hc set frame_bg_transparent 1
+hc set smart_window_surroundings 0
+hc set smart_frame_surroundings 0
+hc set mouse_recenter_gap 0
+
+# colors
+hc set frame_border_active_color  '#ff005f'
+hc set frame_border_normal_color  '#262626'
+hc set frame_bg_active_color      '#ededed'
+hc set frame_bg_normal_color      '#ededed'
+hc set window_border_active_color '#ff005f'
+hc set window_border_normal_color '#262626'
+
+# opacities (%)
+hc set frame_active_opacity 100
+hc set frame_normal_opacity 100
+
+hc set pseudotile_center_threshold 4
+hc set focus_follows_mouse 1
+
+#---------------------------------------------------------------------------}}}
+# Rules                                                                     {{{
+#------------------------------------------------------------------------------
+
+hc unrule -F
+#hc rule class=XTerm tag=3 # move all xterms to tag 3
+hc rule focus=on
+# give focus to most common terminals
+hc rule class~'(.*[Rr]xvt.*|.*[Tt]erm|Konsole)' focus=on
+hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
+hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
+hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK)' manage=off
+
+#---------------------------------------------------------------------------}}}
+# Panel                                                                     {{{
+#------------------------------------------------------------------------------
+
+# find the panel
+panel=~/.config/herbstluftwm/panel.sh
+[ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
+for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
+    # start it on each monitor
+    "$panel" $monitor &
+done
+
+#---------------------------------------------------------------------------}}}

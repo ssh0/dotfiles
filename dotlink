@@ -440,6 +440,14 @@ xmonad/${PC}xmonad.hs, .xmonad/xmonad.hs
 xmonad/${PC}xmobarrc,  .xmonad/xmobarrc
 
 #===========================================================================}}}
+# [herbstluftwm](https://www.herbstluftwm.org/):                            {{{
+#==============================================================================
+# herbstluftwm is a manual tiling window manager for X11 using Xlib and Glib.
+
+herbstluftwm/autostart, .config/herbstluftwm/autostart
+herbstluftwm/panel.sh,  .config/herbstluftwm/panel.sh
+
+#===========================================================================}}}
 # [luakit](http://mason-larobina.github.io/luakit):                         {{{
 #==============================================================================
 
