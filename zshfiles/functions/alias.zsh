@@ -73,6 +73,8 @@ alias spdmeter='_speedometer'
 # enable aliases in sudo
 alias sudo='sudo -E '
 
+alias hc='herbstclient'
+
 # edit configuration file by $EDITOR (vim).
 function _ec() {
   local cmd alis
@@ -107,6 +109,7 @@ _ec dotlink    ~/.dotfiles/dotlink
 _ec dotrc      ~/.dotfiles/dotrc
 _ec env        ${ZSH_ROOT}/functions/environment.zsh
 _ec functions  ${ZSH_ROOT}/functions
+_ec herbstluftwm ~/.config/herbstluftwm/autostart
 _ec history    ${ZSH_ROOT}/history
 _ec latexmk    ~/.latexmkrc
 _ec luakit     ~/.config/luakit
