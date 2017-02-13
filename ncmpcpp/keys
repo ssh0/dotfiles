@@ -153,8 +153,10 @@ key_next_column = 261
 #key_crop = 'C'
 #
 #key_move_song_up = 'm'
+key_move_song_up = 'K'
 #
 #key_move_song_down = 'n'
+key_move_song_down = 'J'
 #
 #key_move_to = 'M'
 #
