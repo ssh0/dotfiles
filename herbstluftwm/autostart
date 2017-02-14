@@ -135,11 +135,33 @@ hc keybind $Mod-i jumpto urgent
 
 # dmenu_run
 hc keybind $Mod-p spawn dmenu_run -l 10 -fn "Migu 1M:size=20"
-
 # toggle compton
 hc keybind Alt-Control-t spawn bash toggle_compton.sh
-
+# lock screen
 hc keybind Alt-Control-l spawn xscreensaver-command -lock
+# Launch file manager
+hc keybind $mod-e thunar
+# Play / Pause media key
+hc keybind XF86AudioPlay spawn mpc toggle
+hc keybind XF86HomePage spawn mpc toggle
+hc keybind Shift-F6 spawn mpc toggle
+hc keybind Shift-XF86AudioPlay spawn streamradio pause
+hc keybind Shift-XF86HomePage spawn streamradio pause
+# Volume setting media key
+hc keybind XF86AudioRaiseVolume spawn sound_volume_change_wrapper.sh +
+hc keybind XF86AudioLowerVolume spawn sound_volume_change_wrapper.sh -
+hc keybind XF86AudioMute spawn sound_volume_change_wrapper.sh m
+# Brightness
+hc keybind XF86MonBrightnessUp spawn xbacklight + 5 -time 100 -steps 1
+hc keybind XF86MonBrightnessDown spawn xbacklight - 5 -time 100 -steps 1
+# Take a screenshot (whole window)
+hc keybind Print spawn screenshot.sh
+# Take a screenshot (selected area)
+hc keybind Shift-Print spawn screenshot_select.sh
+# Toggle touchpad
+hc keybind Control-Escape spawn touchpad_toggle.sh
+# Toggle trackpoint (Lenovo PC)
+hc Alt-Escape spawn trackpoint_toggle.sh
 
 #---------------------------------------------------------------------------}}}
 # Appearance                                                                {{{
