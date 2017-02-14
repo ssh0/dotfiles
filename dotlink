@@ -446,6 +446,9 @@ xmonad/${PC}xmobarrc,  .xmonad/xmobarrc
 
 herbstluftwm/autostart, .config/herbstluftwm/autostart
 herbstluftwm/panel.sh,  .config/herbstluftwm/panel.sh
+herbstluftwm/bring_client_by_name.sh,              .config/herbstluftwm/bring_client_by_name.sh
+herbstluftwm/focus_client_by_name.sh,              .config/herbstluftwm/focus_client_by_name.sh
+herbstluftwm/pick_clients_hexid_by_window_name.sh, .config/herbstluftwm/pick_clients_hexid_by_window_name.sh
 
 #===========================================================================}}}
 # [luakit](http://mason-larobina.github.io/luakit):                         {{{

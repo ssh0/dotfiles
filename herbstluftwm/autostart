@@ -161,7 +161,12 @@ hc keybind Shift-Print spawn screenshot_select.sh
 # Toggle touchpad
 hc keybind Control-Escape spawn touchpad_toggle.sh
 # Toggle trackpoint (Lenovo PC)
-hc Alt-Escape spawn trackpoint_toggle.sh
+hc keybind Alt-Escape spawn trackpoint_toggle.sh
+
+# Focus specified client by name (using dmenu)
+hc keybind $Mod-g spawn ~/.config/herbstluftwm/focus_client_by_name.sh
+# Bring specified client by name (using dmenu)
+hc keybind $Mod-b spawn ~/.config/herbstluftwm/bring_client_by_name.sh
 
 #---------------------------------------------------------------------------}}}
 # Appearance                                                                {{{
