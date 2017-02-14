@@ -115,7 +115,7 @@ hc keybind $Mod-Left  use_index -1 --skip-visible
 hc keybind $Mod-Shift-c remove
 hc keybind $Mod-space cycle_layout 1
 hc keybind $Mod-t floating toggle
-hc keybind $Mod-f cycle_layout 1 vertical max
+hc keybind $Mod-f cycle_layout 1 max vertical
 hc keybind $Mod-Shift-f fullscreen toggle
 hc keybind $Mod-o pseudotile toggle
 
