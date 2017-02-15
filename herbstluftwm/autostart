@@ -38,7 +38,6 @@ resizestep_h=0.004904632152588556
 
 hc set tree_style '╾│ ├└╼─┐'
 
-hc unlock
 # do multi monitor setup here, e.g.:
 # hc set_monitors 1280x1024+0+0 1280x1024+1280+0
 # or simply:
@@ -79,18 +78,18 @@ hc keybind $Mod-Shift-k shift up
 hc keybind $Mod-Shift-h shift left
 hc keybind $Mod-Shift-l shift right
 
+# resizing frames
+hc keybind $Mod-Control-j resize down  +$resizestep_v
+hc keybind $Mod-Control-k resize up    +$resizestep_v
+hc keybind $Mod-Control-h resize left  +$resizestep_h
+hc keybind $Mod-Control-l resize right +$resizestep_h
+
 # splitting frames
 # create an empty frame at the specified direction
 hc keybind $Mod-s split bottom $split_rate_h
 hc keybind $Mod-v split right  $split_rate_v
 # let the current frame explode into subframes
 hc keybind $Mod-Control-space split explode
-
-# resizing frames
-hc keybind $Mod-comma  resize left  +$resizestep_h
-hc keybind $Mod-period resize right +$resizestep_h
-hc keybind $Mod-z      resize down  +$resizestep_v
-hc keybind $Mod-a      resize up    +$resizestep_v
 
 # tags
 tag_names=( {1..5} )
@@ -224,6 +223,7 @@ hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK)' manage=off
 # Panel                                                                     {{{
 #------------------------------------------------------------------------------
 
-~/.config/herbstluftwm/reload_panel.sh
+hc spawn ~/.config/herbstluftwm/reload_panel.sh
 
 #---------------------------------------------------------------------------}}}
+hc unlock
