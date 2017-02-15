@@ -59,9 +59,9 @@ Mod=Mod4   # Use the super key as the main modifier
 
 hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-r reload
-hc keybind $Mod-c close_or_remove
+hc keybind $Mod-c       close_or_remove
 hc keybind $Mod-Shift-c remove
-hc keybind $Mod-Return spawn urxvt
+hc keybind $Mod-Return  spawn urxvt
 
 # basic movement
 # focusing clients
@@ -69,6 +69,9 @@ hc keybind $Mod-j focus down
 hc keybind $Mod-k focus up
 hc keybind $Mod-h focus left
 hc keybind $Mod-l focus right
+# cycle
+hc keybind $Mod-Down cycle_all +1
+hc keybind $Mod-Up   cycle_all -1
 
 # moving clients
 hc keybind $Mod-Shift-j shift down
@@ -111,11 +114,14 @@ hc keybind $Mod-Shift-Right move_index +1 --skip-visible
 hc keybind $Mod-Shift-Left  move_index -1 --skip-visible
 
 # layouting
-hc keybind $Mod-space cycle_layout 1
-hc keybind $Mod-t floating toggle
-hc keybind $Mod-f cycle_layout 1 max vertical
+# in tag
+hc keybind $Mod-t       floating toggle
 hc keybind $Mod-Shift-f fullscreen toggle
-hc keybind $Mod-o pseudotile toggle
+# in flame
+hc keybind $Mod-space   cycle_layout 1
+hc keybind $Mod-f       cycle_layout 1 max vertical
+# for window
+hc keybind $Mod-o       pseudotile toggle
 
 # mouse
 hc mouseunbind --all
@@ -123,13 +129,9 @@ hc mousebind $Mod-Button1 move
 hc mousebind $Mod-Button2 zoom
 hc mousebind $Mod-Button3 resize
 
-# focus
-hc keybind $Mod-Down  cycle_all +1
-hc keybind $Mod-Up    cycle_all -1
-
+# switch focus to different monitor
 hc keybind $Mod-Tab         cycle_monitor +1
 hc keybind $Mod-Shift-Tab   cycle_monitor -1
-hc keybind $Mod-i jumpto urgent
 
 # reload dzen2
 hc keybind $Mod-F11 spawn ~/.config/herbstluftwm/reload_panel.sh
