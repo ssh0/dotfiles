@@ -14,7 +14,7 @@ panel_width=${geometry[2]}
 panel_height=28
 font="-*-Migu 1M-medium-*-*-*-16-*-*-*-*-*-*-*"
 bgcolor=$(hc get frame_border_normal_color)
-selbg=$(hc get frame_border_active_color)
+selbg='#ff005f'
 selfg='#101010'
 
 ####

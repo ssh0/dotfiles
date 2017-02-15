@@ -14,13 +14,13 @@ hc() {
     herbstclient "$@"
 }
 
-gnome-settings-daemon &
-xscreensaver -no-splash &
-
 hc emit_hook reload
 
-if [ -f $HOME/.fehbg ]; then
-  . $HOME/.fehbg
+if hc silent new_attr bool my_not_first_autostart ; then
+    gnome-settings-daemon &
+    xscreensaver -no-splash &
+    compton -b --config $HOME/.config/compton/compton.conf
+    [ -f $HOME/.fehbg ] && $HOME/.fehbg
 fi
 
 pad_up=28
@@ -131,6 +131,8 @@ hc keybind $Mod-Tab         cycle_monitor +1
 hc keybind $Mod-Shift-Tab   cycle_monitor -1
 hc keybind $Mod-i jumpto urgent
 
+# reload dzen2
+hc keybind $Mod-F11 spawn ~/.config/herbstluftwm/reload_panel.sh
 # dmenu_run
 hc keybind $Mod-p spawn dmenu_run -l 10 -fn "Migu 1M:size=20"
 # toggle compton
@@ -183,22 +185,22 @@ hc set window_border_inner_width 0
 
 # frame options
 hc set always_show_frame 0
-hc set frame_bg_transparent 1
+hc set frame_bg_transparent 0
 hc set smart_window_surroundings 0
 hc set smart_frame_surroundings 0
 hc set mouse_recenter_gap 0
 
 # colors
-hc set frame_border_active_color  '#ff005f'
+hc set frame_border_active_color  '#8a2c4f'
 hc set frame_border_normal_color  '#262626'
-hc set frame_bg_active_color      '#ededed'
-hc set frame_bg_normal_color      '#ededed'
+hc set frame_bg_active_color      '#8a2c4f'
+hc set frame_bg_normal_color      '#262626'
 hc set window_border_active_color '#ff005f'
 hc set window_border_normal_color '#262626'
 
 # opacities (%)
-hc set frame_active_opacity 100
-hc set frame_normal_opacity 100
+hc set frame_active_opacity 30
+hc set frame_normal_opacity 10
 
 hc set pseudotile_center_threshold 4
 hc set focus_follows_mouse 1
@@ -220,12 +222,6 @@ hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK)' manage=off
 # Panel                                                                     {{{
 #------------------------------------------------------------------------------
 
-# find the panel
-panel=~/.config/herbstluftwm/panel.sh
-[ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
-for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
-    # start it on each monitor
-    "$panel" $monitor &
-done
+~/.config/herbstluftwm/reload_panel.sh
 
 #---------------------------------------------------------------------------}}}
