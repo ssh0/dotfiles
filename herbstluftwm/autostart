@@ -14,6 +14,9 @@ hc() {
     herbstclient "$@"
 }
 
+# use example script from:
+src='/usr/share/doc/herbstluftwm/examples/'
+
 hc emit_hook reload
 
 if hc silent new_attr bool my_not_first_autostart ; then
@@ -114,8 +117,9 @@ hc keybind $Mod-Shift-Left  move_index -1 --skip-visible
 
 # layouting
 # in tag
-hc keybind $Mod-t       floating toggle
-hc keybind $Mod-Shift-f fullscreen toggle
+hc keybind $Mod-t         floating toggle
+hc keybind $Mod-Control-f spawn ${src}maximize.sh
+hc keybind $Mod-Shift-f   fullscreen toggle
 # in flame
 hc keybind $Mod-space   cycle_layout 1
 hc keybind $Mod-f       cycle_layout 1 max vertical
@@ -164,10 +168,14 @@ hc keybind Control-Escape spawn touchpad_toggle.sh
 # Toggle trackpoint (Lenovo PC)
 hc keybind Alt-Escape spawn trackpoint_toggle.sh
 
+# herbstcommander
+hc keybind $Mod-colon spawn ${src}herbstcommander.sh
 # Focus specified client by name (using dmenu)
-hc keybind $Mod-g spawn ~/.config/herbstluftwm/focus_client_by_name.sh
+hc keybind $Mod-g spawn ${src}herbstcommander.sh jumpto
 # Bring specified client by name (using dmenu)
-hc keybind $Mod-b spawn ~/.config/herbstluftwm/bring_client_by_name.sh
+hc keybind $Mod-b spawn ${src}herbstcommander.sh bring
+# Open q3-like terminal for arbitrary application
+hc keybind $Mod-bracketright spawn ${src}q3terminal.sh
 
 #---------------------------------------------------------------------------}}}
 # Appearance                                                                {{{
