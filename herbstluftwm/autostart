@@ -24,20 +24,18 @@ if [ -f $HOME/.fehbg ]; then
 fi
 
 pad_up=28
-pad_right=38
+pad_right=34
 pad_down=0
-pad_left=38
+pad_left=33
 
-split_rate_h=0.4347
+# 1 - ((29*19 + 16) / (54*19 + 16))
+split_rate_h=0.45585412667946257
+# 19 / (54 * 19 + 16)
+resizestep_v=0.018234165067178502
+
 split_rate_v=0.5
-
-# 1 / 200
-# resizestep_h=0.005
-# 1 / 204
-resizestep_h=0.004902
-
-# (19 / (54 * 18 + 16))
-resizestep_v=0.01823
+# 1./ ((1829 - 10) / 9.)
+resizestep_h=0.004947773501924134
 
 hs set tree_style '╾│ ├└╼─┐'
 
