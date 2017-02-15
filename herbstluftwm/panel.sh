@@ -11,7 +11,7 @@ fi
 x=${geometry[0]}
 y=${geometry[1]}
 panel_width=${geometry[2]}
-panel_height=30
+panel_height=28
 font="-*-Migu 1M-medium-*-*-*-16-*-*-*-*-*-*-*"
 bgcolor=$(hc get frame_border_normal_color)
 selbg=$(hc get frame_border_active_color)
@@ -65,7 +65,7 @@ fi
     while true ; do
         # "date" output is checked once a second, but an event is only
         # generated if the output changed compared to the previous run.
-        date +$'date\t^fg(#ece391)%Y-%m-%d %H:%M'
+        date +$'date\t^fg(#ece391)%a %m/%d %H:%M'
         sleep 1 || break
     done > >(uniq_linebuffered) &
     childpid=$!
@@ -84,6 +84,7 @@ fi
 
         bordercolor="#26221C"
         separator="^bg()^fg(#666666) :"
+        titlecolor="#666666"
         # draw tags
         for i in "${tags[@]}" ; do
             tag_char=""
@@ -91,10 +92,11 @@ fi
                 '#')  # the tag is viewed on the specified monitor and it is focused
                     echo -n "^bg()^fg($selbg)"
                     tag_char="●"
+                    titlecolor="${selbg}"
                     ;;
                 '+')  # the tag is viewed on the specified monitor but the monitor is not focused
-                    echo -n "^bg(#9CA668)^fg(#141414)"
-                    tag_char="⦿"
+                    echo -n "^bg()^fg(#A8B6B8)"
+                    tag_char="●"
                     ;;
                 ':')  # the tag is not empty
                     echo -n "^bg()^fg(#666666)"
@@ -104,8 +106,12 @@ fi
                     echo -n "^bg(#FF0675)^fg(#141414)"
                     tag_char="*"
                     ;;
-                '%')  # the tag is viewed on a different monitor and it is focused
-                    echo -n "^bg()^fg(#666666)"
+                '%')  # the tag is viewed on a different monitor and this monitor is not focused
+                    echo -n "^bg()^fg($selbg)"
+                    tag_char="⦿"
+                    ;;
+                '-')  # the tag is viewed on a different monitor and this monitor is not focused
+                    echo -n "^bg()^fg(#A8B6B8)"
                     tag_char="⦿"
                     ;;
                 *)
@@ -126,7 +132,7 @@ fi
             fi
         done
         echo -n "$separator"
-        echo -n "^bg()^fg($selbg) ${windowtitle//^/^^}"
+        echo -n "^bg()^fg(${titlecolor}) ${windowtitle//^/^^}"
         # small adjustments
         right="^bg() $date $separator"
         right_text_only=$(echo -n "$right" | sed 's.\^[^(]*([^)]*)..g')

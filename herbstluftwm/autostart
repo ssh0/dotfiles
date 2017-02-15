@@ -14,10 +14,10 @@ hc() {
     herbstclient "$@"
 }
 
-hc emit_hook reload
-
 gnome-settings-daemon &
 xscreensaver -no-splash &
+
+hc emit_hook reload
 
 if [ -f $HOME/.fehbg ]; then
   . $HOME/.fehbg
@@ -36,12 +36,14 @@ resizestep_v=0.018234165067178502
 split_rate_v=0.5467289719626168
 resizestep_h=0.004904632152588556
 
-hs set tree_style '╾│ ├└╼─┐'
+hc set tree_style '╾│ ├└╼─┐'
 
+hc unlock
 # do multi monitor setup here, e.g.:
 # hc set_monitors 1280x1024+0+0 1280x1024+1280+0
 # or simply:
 hc detect_monitors
+hc set auto_detect_monitors 1
 
 #---------------------------------------------------------------------------}}}
 # Keybindings                                                               {{{
@@ -57,30 +59,27 @@ Mod=Mod4   # Use the super key as the main modifier
 
 hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-r reload
-hc keybind $Mod-c close
+hc keybind $Mod-c close_or_remove
+hc keybind $Mod-Shift-c remove
 hc keybind $Mod-Return spawn urxvt
 
 # basic movement
 # focusing clients
-hc keybind $Mod-j     focus down
-hc keybind $Mod-k     focus up
-hc keybind $Mod-h     focus left
-hc keybind $Mod-l     focus right
+hc keybind $Mod-j focus down
+hc keybind $Mod-k focus up
+hc keybind $Mod-h focus left
+hc keybind $Mod-l focus right
 
 # moving clients
-hc keybind $Mod-Shift-Down  shift down
-hc keybind $Mod-Shift-Up    shift up
-hc keybind $Mod-Shift-Left  shift left
-hc keybind $Mod-Shift-Right shift right
-hc keybind $Mod-Shift-j     shift down
-hc keybind $Mod-Shift-k     shift up
-hc keybind $Mod-Shift-h     shift left
-hc keybind $Mod-Shift-l     shift right
+hc keybind $Mod-Shift-j shift down
+hc keybind $Mod-Shift-k shift up
+hc keybind $Mod-Shift-h shift left
+hc keybind $Mod-Shift-l shift right
 
 # splitting frames
 # create an empty frame at the specified direction
-hc keybind $Mod-s           split   bottom  $split_rate_h
-hc keybind $Mod-v           split   right   $split_rate_v
+hc keybind $Mod-s split bottom $split_rate_h
+hc keybind $Mod-v split right  $split_rate_v
 # let the current frame explode into subframes
 hc keybind $Mod-Control-space split explode
 
@@ -107,9 +106,11 @@ done
 # cycle through tags
 hc keybind $Mod-Right use_index +1 --skip-visible
 hc keybind $Mod-Left  use_index -1 --skip-visible
+# shift client to neighbor tag
+hc keybind $Mod-Shift-Right move_index +1 --skip-visible
+hc keybind $Mod-Shift-Left  move_index -1 --skip-visible
 
 # layouting
-hc keybind $Mod-Shift-c remove
 hc keybind $Mod-space cycle_layout 1
 hc keybind $Mod-t floating toggle
 hc keybind $Mod-f cycle_layout 1 max vertical
@@ -137,19 +138,19 @@ hc keybind Alt-Control-t spawn bash toggle_compton.sh
 # lock screen
 hc keybind Alt-Control-l spawn xscreensaver-command -lock
 # Launch file manager
-hc keybind $mod-e thunar
+hc keybind $Mod-e spawn thunar
 # Play / Pause media key
 hc keybind XF86AudioPlay spawn mpc toggle
-hc keybind XF86HomePage spawn mpc toggle
-hc keybind Shift-F6 spawn mpc toggle
+hc keybind XF86HomePage  spawn mpc toggle
+hc keybind Shift-F6      spawn mpc toggle
 hc keybind Shift-XF86AudioPlay spawn streamradio pause
-hc keybind Shift-XF86HomePage spawn streamradio pause
+hc keybind Shift-XF86HomePage  spawn streamradio pause
 # Volume setting media key
 hc keybind XF86AudioRaiseVolume spawn sound_volume_change_wrapper.sh +
 hc keybind XF86AudioLowerVolume spawn sound_volume_change_wrapper.sh -
-hc keybind XF86AudioMute spawn sound_volume_change_wrapper.sh m
+hc keybind XF86AudioMute        spawn sound_volume_change_wrapper.sh m
 # Brightness
-hc keybind XF86MonBrightnessUp spawn xbacklight + 5 -time 100 -steps 1
+hc keybind XF86MonBrightnessUp   spawn xbacklight + 5 -time 100 -steps 1
 hc keybind XF86MonBrightnessDown spawn xbacklight - 5 -time 100 -steps 1
 # Take a screenshot (whole window)
 hc keybind Print spawn screenshot.sh

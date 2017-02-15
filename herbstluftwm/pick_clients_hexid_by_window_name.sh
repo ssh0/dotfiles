@@ -3,7 +3,7 @@
 # first edited: 2017-02-15
 
 herbstclient object_tree clients \
-  | grep -v 'focus' | sed -e '1d' | cut -b7- |
+  | grep -v 'focus' | sed -e '1d' | cut -b13- |
   while read line; do
     tag="[$(herbstclient get_attr .clients.${line}.tag)]"
     title="$(herbstclient get_attr .clients.${line}.title)"
