@@ -449,6 +449,7 @@ herbstluftwm/panel.sh,  .config/herbstluftwm/panel.sh
 herbstluftwm/bring_client_by_name.sh,              .config/herbstluftwm/bring_client_by_name.sh
 herbstluftwm/focus_client_by_name.sh,              .config/herbstluftwm/focus_client_by_name.sh
 herbstluftwm/pick_clients_hexid_by_window_name.sh, .config/herbstluftwm/pick_clients_hexid_by_window_name.sh
+herbstluftwm/reload_panel.sh,                      .config/herbstluftwm/reload_panel.sh
 
 #===========================================================================}}}
 # [luakit](http://mason-larobina.github.io/luakit):                         {{{
