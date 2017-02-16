@@ -8,25 +8,14 @@
 
 tmux-new-session() {
   if [[ -n $TMUX ]]; then
-    tmux switch-client -t "$(TMUX= tmux -S "${TMUX%,*,*}" new-session -dP -s "$@")"
+    tmux switch-client -t "$(TMUX= tmux -S "${TMUX%,*,*}" new-session -dP "$@")"
   else
-    tmux new-session -s "$@"
+    tmux new-session "$@"
   fi
 }
 
-# Aliases
-if [[ -n $TMUX ]]; then
-  alias ta='tmux switch-client -t'
-else
-  alias ta='tmux attach-session -t'
-fi
-alias ts='tmux-new-session'
-alias tl='tmux list-sessions'
-alias tksv='tmux kill-server'
-alias tkss='tmux kill-session -t'
-
-# Autostart if not already in tmux.
-if [[ ! -n $TMUX && $- == *l* ]]; then
+tmux_sessions() {
+  # Select existing session or create session with fuzzy search tool
   # get the IDs
   if ! ID="$(tmux list-sessions 2>/dev/null)"; then
     # tmux returned error, so try cleaning up /tmp
@@ -40,11 +29,29 @@ if [[ ! -n $TMUX && $- == *l* ]]; then
   fi
   ID="$(echo $ID | $PERCOL | cut -d: -f1)"
   if [[ "$ID" = "${create_new_session}" ]]; then
-    tmux new-session
+    tmux-new-session
   elif [[ -n "$ID" ]]; then
-    tmux attach-session -t "$ID"
+    if [[ -n $TMUX ]]; then
+      tmux switch-client -t "$ID"
+    else
+      tmux attach-session -t "$ID"
+    fi
   else
     :  # Start terminal normally
   fi
-fi
+}
 
+# Aliases
+if [[ -n $TMUX ]]; then
+  alias ta='tmux switch-client -t'
+else
+  alias ta='tmux attach-session -t'
+fi
+alias tl='tmux_sessions'
+alias ts='tmux-new-session -s'
+alias tksv='tmux kill-server'
+alias tkss='tmux kill-session -t'
+
+if ${TMUX_AUTO_START:-false} && [[ ! -n $TMUX && $- == *l* ]]; then
+  tmux_sessions
+fi

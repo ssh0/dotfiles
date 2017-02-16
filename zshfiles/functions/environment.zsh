@@ -55,6 +55,9 @@ export RANGER_LOAD_DEFAULT_RC=false
 # override the safe location for pick
 # export PICK_SAFE="$HOME/Dropbox/conf/pick.safe"
 
+# tmux auto start
+export TMUX_AUTO_START=false
+
 # enhancd by "cd"
 export ENHANCD_COMMAND='cd'
 
