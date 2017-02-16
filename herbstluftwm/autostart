@@ -89,8 +89,8 @@ hc keybind $Mod-Control-l resize right +$resizestep_h
 
 # splitting frames
 # create an empty frame at the specified direction
-hc keybind $Mod-s split bottom $split_rate_h
-hc keybind $Mod-v split right  $split_rate_v
+hc keybind $Mod-s chain , split bottom $split_rate_h , focus down
+hc keybind $Mod-v chain , split right  $split_rate_v , focus right
 # let the current frame explode into subframes
 hc keybind $Mod-Control-space split explode
 
@@ -210,10 +210,15 @@ hc set window_border_normal_color '#262626'
 
 # opacities (%)
 hc set frame_active_opacity 30
-hc set frame_normal_opacity 10
+hc set frame_normal_opacity 1
 
-hc set pseudotile_center_threshold 4
+hc set pseudotile_center_threshold 14
 hc set focus_follows_mouse 1
+
+hc set snap_distance 14
+hc set snap_gap 9
+
+hc set default_frame_layout 3
 
 #---------------------------------------------------------------------------}}}
 # Rules                                                                     {{{
