@@ -83,10 +83,10 @@ hc keybind $Mod-Shift-h shift left
 hc keybind $Mod-Shift-l shift right
 
 # resizing frames
-hc keybind $Mod-Control-j resize down  +$resizestep_v
-hc keybind $Mod-Control-k resize up    +$resizestep_v
-hc keybind $Mod-Control-h resize left  +$resizestep_h
-hc keybind $Mod-Control-l resize right +$resizestep_h
+hc keybind $Mod-z      resize down  +$resizestep_v
+hc keybind $Mod-a      resize up    +$resizestep_v
+hc keybind $Mod-comma  resize left  +$resizestep_h
+hc keybind $Mod-period resize right +$resizestep_h
 
 # splitting frames
 # create an empty frame at the specified direction
@@ -183,9 +183,6 @@ hc keybind $Mod-bracketright spawn ${src}q3terminal.sh
 # Appearance                                                                {{{
 #------------------------------------------------------------------------------
 
-#  pad MONITOR [PADUP [PADRIGHT [PADDOWN [PADLEFT]]]]
-hc pad 0 $pad_up $pad_right $pad_down $pad_left
-
 hc set frame_gap 8
 hc set frame_padding -12
 hc set frame_border_width 1
@@ -196,22 +193,22 @@ hc set window_border_inner_width 0
 
 # frame options
 hc set always_show_frame 0
-hc set frame_bg_transparent 0
+hc set frame_bg_transparent 1
 hc set smart_window_surroundings 0
 hc set smart_frame_surroundings 0
 hc set mouse_recenter_gap 0
 
 # colors
-hc set frame_border_active_color  '#8a2c4f'
+hc set frame_border_active_color  '#ff005f'
 hc set frame_border_normal_color  '#262626'
-hc set frame_bg_active_color      '#8a2c4f'
+hc set frame_bg_active_color      '#ff005f'
 hc set frame_bg_normal_color      '#262626'
 hc set window_border_active_color '#ff005f'
 hc set window_border_normal_color '#262626'
 
 # opacities (%)
-hc set frame_active_opacity 30
-hc set frame_normal_opacity 1
+hc set frame_active_opacity 40
+hc set frame_normal_opacity 40
 
 hc set pseudotile_center_threshold 14
 hc set focus_follows_mouse 1
