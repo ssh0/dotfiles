@@ -11,7 +11,9 @@ fi
 x=${geometry[0]}
 y=${geometry[1]}
 panel_width=${geometry[2]}
-panel_height=28
+fn="$HOME/.config/herbstluftwm/monitor.d/${panel_width}x${geometry[3]}.sh"
+[ -f "${fn}" ] && source "${fn}"
+panel_height=$((${pad_up} + $(hc get frame_gap) - 4))
 font="-*-Migu 1M-medium-*-*-*-16-*-*-*-*-*-*-*"
 bgcolor=$(hc get frame_border_normal_color)
 selbg='#ff005f'
@@ -134,7 +136,7 @@ fi
         echo -n "$separator"
         echo -n "^bg()^fg(${titlecolor}) ${windowtitle//^/^^}"
         # small adjustments
-        right="^bg() $date $separator"
+        right="^bg() $date"
         right_text_only=$(echo -n "$right" | sed 's.\^[^(]*([^)]*)..g')
         # get width of right aligned text.. and add some space..
         # width=$($textwidth "$font" "$right_text_only    ")
@@ -179,7 +181,7 @@ fi
                     hc pad $monitor $(($(hc list_padding $monitor | cut -d' ' -f1) - 19))
                 else
                     visible=true
-                    hc pad $monitor 28
+                    hc pad $monitor $pad_up
                 fi
                 ;;
             reload)

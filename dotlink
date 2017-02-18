@@ -452,6 +452,7 @@ herbstluftwm/herbstcommander, .config/herbstluftwm/herbstcommander
 
 herbstluftwm/monitor.d/1920x1080.sh, .config/herbstluftwm/monitor.d/1920x1080.sh
 herbstluftwm/monitor.d/1280x720.sh,  .config/herbstluftwm/monitor.d/1280x720.sh
+herbstluftwm/monitor.d/1024x576.sh,  .config/herbstluftwm/monitor.d/1024x576.sh
 
 #===========================================================================}}}
 # [luakit](http://mason-larobina.github.io/luakit):                         {{{
