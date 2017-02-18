@@ -13,7 +13,7 @@ y=${geometry[1]}
 panel_width=${geometry[2]}
 fn="$HOME/.config/herbstluftwm/monitor.d/${panel_width}x${geometry[3]}.sh"
 [ -f "${fn}" ] && source "${fn}"
-panel_height=$((${pad_up} + $(hc get frame_gap) - 4))
+panel_height=${pad_up}
 font="-*-Migu 1M-medium-*-*-*-16-*-*-*-*-*-*-*"
 bgcolor=$(hc get frame_border_normal_color)
 selbg='#ff005f'
