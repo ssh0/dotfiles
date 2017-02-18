@@ -176,10 +176,10 @@ fi
                 echo "^togglehide()"
                 if $visible ; then
                     visible=false
-                    hc pad $monitor 0
+                    hc pad $monitor $(($(hc list_padding $monitor | cut -d' ' -f1) - 19))
                 else
                     visible=true
-                    hc pad $monitor $panel_height
+                    hc pad $monitor 28
                 fi
                 ;;
             reload)

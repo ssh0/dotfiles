@@ -4,6 +4,7 @@
 
 # first, clear panel
 herbstclient emit_hook quit_panel
+pkill herbstclient
 
 # find the panel
 panel=~/.config/herbstluftwm/panel.sh
