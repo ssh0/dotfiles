@@ -25,20 +25,6 @@ if hc new_attr bool my_not_first_autostart 2> /dev/null; then
     compton -b --config $HOME/.config/compton/compton.conf
 fi
 
-pad_up=28
-pad_right=34
-pad_down=0
-pad_left=33
-
-# 1 - ((31*19 + 16) / (54*19 + 16))
-split_rate_h=0.41938579654510555
-# 19 / (54 * 19 + 16)
-resizestep_v=0.018234165067178502
-
-split_rate_v=0.5467289719626168
-resizestep_h=0.004904632152588556
-
-hc set tree_style '╾│ ├└╼─┐'
 [ -f $HOME/.fehbg ] && hc spawn $HOME/.fehbg
 # nitrogen --restore
 
@@ -47,6 +33,14 @@ hc set tree_style '╾│ ├└╼─┐'
 # or simply:
 hc detect_monitors
 hc set auto_detect_monitors 1
+
+source ~/.config/herbstluftwm/pad.sh
+split_rate_h=${split_rate_h:-0.5}
+resizestep_h=${resizestep_h:-0.005}
+split_rate_v=${split_rate_v:-0.5}
+resizestep_v=${resizestep_v:-0.02}
+
+hc set tree_style '╾│ ├└╼─┐'
 
 #---------------------------------------------------------------------------}}}
 # Keybindings                                                               {{{
