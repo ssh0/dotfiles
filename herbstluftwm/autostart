@@ -113,8 +113,7 @@ hc keybind $Mod-Shift-Left  move_index -1 --skip-visible
 # layouting
 # in tag
 hc keybind $Mod-t         floating toggle
-# hc keybind $Mod-Control-f spawn ${src}maximize.sh  # error on ver 0.5.3
-                                                     # (built on Dec 25 2013)
+hc keybind $Mod-Control-f spawn ~/.config/herbstluftwm/maximize.sh
 hc keybind $Mod-Shift-f   fullscreen toggle
 # in flame
 hc keybind $Mod-space   cycle_layout 1
