@@ -89,6 +89,10 @@ hc keybind $Mod-period resize right +$resizestep_h
 # create an empty frame at the specified direction
 hc keybind $Mod-s chain , split bottom $split_rate_h , focus down
 hc keybind $Mod-v chain , split right  $split_rate_v , focus right
+hc keybind $Mod-Control-j chain , split bottom 0.5 , focus down
+hc keybind $Mod-Control-k chain , split top    0.5 , focus up
+hc keybind $Mod-Control-h chain , split left   0.5 , focus left
+hc keybind $Mod-Control-l chain , split right  0.5 , focus right
 # let the current frame explode into subframes
 hc keybind $Mod-Control-space split explode
 
@@ -116,6 +120,7 @@ hc keybind $Mod-Shift-Left  move_index -1 --skip-visible
 # layouting
 # in tag
 hc keybind $Mod-t         floating toggle
+hc keybind $Mod-Shift-t   spawn ~/.config/herbstluftwm/toggle_single_float.sh
 hc keybind $Mod-Control-f spawn ~/.config/herbstluftwm/maximize.sh
 hc keybind $Mod-Shift-f   fullscreen toggle
 # in flame
@@ -173,7 +178,7 @@ hc keybind $Mod-g spawn ${src}herbstcommander.sh jumpto
 # Bring specified client by name (using dmenu)
 hc keybind $Mod-b spawn ${src}herbstcommander.sh bring
 # Open q3-like terminal for arbitrary application
-hc keybind $Mod-bracketright spawn ${src}q3terminal.sh
+hc keybind $Mod-bracketright chain . spawn ${src}q3terminal.sh . emit_hook focus_changed
 
 #---------------------------------------------------------------------------}}}
 # Appearance                                                                {{{

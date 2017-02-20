@@ -444,12 +444,13 @@ xmonad/${PC}xmobarrc,  .xmonad/xmobarrc
 #==============================================================================
 # herbstluftwm is a manual tiling window manager for X11 using Xlib and Glib.
 
-herbstluftwm/autostart,       .config/herbstluftwm/autostart
-herbstluftwm/herbstcommander, .config/herbstluftwm/herbstcommander
-herbstluftwm/maximize.sh,     .config/herbstluftwm/maximize.sh
-herbstluftwm/pad.sh,          .config/herbstluftwm/pad.sh
-herbstluftwm/panel.sh,        .config/herbstluftwm/panel.sh
-herbstluftwm/reload_panel.sh, .config/herbstluftwm/reload_panel.sh
+herbstluftwm/autostart,              .config/herbstluftwm/autostart
+herbstluftwm/herbstcommander,        .config/herbstluftwm/herbstcommander
+herbstluftwm/maximize.sh,            .config/herbstluftwm/maximize.sh
+herbstluftwm/pad.sh,                 .config/herbstluftwm/pad.sh
+herbstluftwm/panel.sh,               .config/herbstluftwm/panel.sh
+herbstluftwm/reload_panel.sh,        .config/herbstluftwm/reload_panel.sh
+herbstluftwm/toggle_single_float.sh, .config/herbstluftwm/toggle_single_float.sh
 
 herbstluftwm/monitor.d/1920x1080.sh, .config/herbstluftwm/monitor.d/1920x1080.sh
 herbstluftwm/monitor.d/1280x720.sh,  .config/herbstluftwm/monitor.d/1280x720.sh
