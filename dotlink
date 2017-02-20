@@ -454,6 +454,7 @@ herbstluftwm/reload_panel.sh, .config/herbstluftwm/reload_panel.sh
 herbstluftwm/monitor.d/1920x1080.sh, .config/herbstluftwm/monitor.d/1920x1080.sh
 herbstluftwm/monitor.d/1280x720.sh,  .config/herbstluftwm/monitor.d/1280x720.sh
 herbstluftwm/monitor.d/1024x576.sh,  .config/herbstluftwm/monitor.d/1024x576.sh
+herbstluftwm/monitor.d/1200x1600.sh, .config/herbstluftwm/monitor.d/1200x1600.sh
 
 #===========================================================================}}}
 # [luakit](http://mason-larobina.github.io/luakit):                         {{{

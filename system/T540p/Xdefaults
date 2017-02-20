@@ -28,7 +28,7 @@ URxvt*visualBell:      false
 URxvt*loginShell:      true
 URxvt.saveLines:       2000
 URxvt.internalBorder:  1
-URxvt.borderColor:     #262626
+! hURxvt.borderColor:     #262626
 URxvt.lineSpace:       0
 URxvt.intensityStyles: true
 URxvt.perl-ext-common: default,selection
