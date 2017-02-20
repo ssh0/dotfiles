@@ -25,8 +25,11 @@ if hc new_attr bool my_not_first_autostart 2> /dev/null; then
     compton -b --config $HOME/.config/compton/compton.conf
 fi
 
-[ -f $HOME/.fehbg ] && hc spawn $HOME/.fehbg
-# nitrogen --restore
+if hash nitrogen; then
+  nitrogen --restore
+elif [ -f $HOME/.fehbg ]; then
+  hc spawn $HOME/.fehbg
+fi
 
 # do multi monitor setup here, e.g.:
 # hc set_monitors 1280x1024+0+0 1280x1024+1280+0
