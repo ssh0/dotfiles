@@ -14,8 +14,9 @@ I use dotfiles manager [dot](https://github.com/ssh0/dot) in order to:
 Contents
 ========
 
-* [xmonad](http://xmonad.org/)
-    * [xmonad.hs](./xmonad/xmonad.hs)
+* [herbstluftwm](https://www.herbstluftwm.org/)
+    * [autostart](./herbstluftwm/autostart)
+    * and some script
 * [tmux](https://tmux.github.io/)
     * [tmux.conf](./tmux/tmux.conf)
 * [zsh](http://www.zsh.org/)
@@ -25,6 +26,8 @@ Contents
     * [init.vim](./neovim/init.vim)
 * [ranger](http://ranger.nongnu.org/)
     * [config files](./ranger/)
+* [xmonad](http://xmonad.org/)
+    * [xmonad.hs](./xmonad/xmonad.hs)
 * [Some useful scripts](./bin/)
 
 Screenshot

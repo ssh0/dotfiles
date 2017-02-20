@@ -10,8 +10,9 @@ dotfiles
 内容
 ====
 
-* [xmonad](http://xmonad.org/)
-    * [xmonad.hs](./xmonad/xmonad.hs)
+* [herbstluftwm](https://www.herbstluftwm.org/)
+    * [autostart](./herbstluftwm/autostart)
+    * その他スクリプト
 * [tmux](https://tmux.github.io/)
     * [tmux.conf](./tmux/tmux.conf)
 * [zsh](http://www.zsh.org/)
@@ -21,6 +22,8 @@ dotfiles
     * [init.vim](./neovim/init.vim)
 * [ranger](http://ranger.nongnu.org/)
     * [config files](./ranger/)
+* [xmonad](http://xmonad.org/)
+    * [xmonad.hs](./xmonad/xmonad.hs)
 * [便利なシェルスクリプト群](./bin/)
 
 スクリーンショット
