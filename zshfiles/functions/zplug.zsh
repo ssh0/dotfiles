@@ -38,6 +38,7 @@ zplug "chrissicool/zsh-256color"
 zplug "ssh0/zsh-takenote"
 zplug "ssh0/dot", use:dot.sh
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zplug/zplug", hook-build:'zplug --self-manage'
 
 # Install plugins if there are plugins that have not been installed
 # if ! zplug check; then
