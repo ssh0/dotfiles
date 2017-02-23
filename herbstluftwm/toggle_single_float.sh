@@ -35,12 +35,10 @@ float_on() {
 float_off() {
     # if q3terminal still is focused, then focus the previously focused monitor
     # (that mon which was focused when starting q3terminal)
-    hc lock
     hc remove_monitor "$monitor"
     hc raise_monitor "${1}"
     hc focus_monitor "${1}"
     hc merge_tag "$tag"
-    hc unlock
 }
 
 if orig="$(hc get_attr monitors.by-name."$monitor".my_prev_focus 2> /dev/null)"; then
