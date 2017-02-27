@@ -151,3 +151,21 @@ rl-zgen() { source $HOME/.zgen/tarjoilija/zgen-master/zgen.zsh ;}
 rl-zplug() { source $HOME/.zplug/init.zsh ;}
 rl-zshrc() { exec zsh -l ;}
 
+# Get recent config file and edit the file with vimdiff
+function _uc() {
+  local alis org target
+  alis=$1
+  org=$2
+  target=$3
+  shift 3
+
+  alias "uc-${alis}"="eval $@ && vimdiff ${org} ${target}"
+  return 0
+}
+
+# _uc alias original target_config update_cmd
+
+_uc ranger ~/gitrepo/ranger/ranger/config/rc.conf ~/.config/ranger/rc.conf 'builtin cd ~/gitrepo/ranger && git pull && sudo make install && builtin cd -'
+_uc rifle ~/gitrepo/ranger/ranger/config/rifle.conf ~/.config/ranger/rifle.conf 'builtin cd ~/gitrepo/ranger && git pull && sudo make install && builtin cd -'
+
+unfunction _uc
