@@ -43,6 +43,8 @@ dotfiles
 
 ## <a name="install_with_dot">`dot`を用いる方法</a>
 
+dotfile管理のためのスクリプト`dot`を使ってシンボリックリンクを張る方法です。
+
 >[ssh0/dot: dotfiles management framework with shell](https://github.com/ssh0/dot)
 
 ### <a name="install_sh">install.shを用いる方法</a>
@@ -60,11 +62,15 @@ cd ~/.ssh0-dotifles
 
 と実行してください。
 
-[install.sh](./install.sh)は一時的に`dot`コマンドを使用できるようにし，`[dotlink](./dotlink)`に書かれたファイルの対応関係に基づいてシンボリックリンクを張ります。
+[install.sh](./install.sh)は一時的に`dot`コマンドを使用できるようにし，[`dotlink`](./dotlink)に書かれたファイルの対応関係に基づいてシンボリックリンクを張ります。
 
 ### <a name="manually">手動でインストール</a>
 
-#### <a name="install_dot">1. `dot``のインストール</a>
+`install.sh`内部で行っている操作を手動で行います。
+この方法の良い所は`dot`コマンドを実際にインストールしてこのリポジトリ用の設定ファイルを明示的に用意するため,自分のdotfilesとこのリポジトリとを区別して同時に管理できる点です。
+今後もこのリポジトリの設定のいくつかにに追従していくつもりの人は,こちらの設定方法をおすすめします。
+
+#### <a name="install_dot">1. `dot`のインストール</a>
 
 * リポジトリのクローン
 
@@ -85,7 +91,7 @@ source $HOME/.zsh/dot/dot.sh
 
 #### <a name="clone_and_deploy_using_dot">2. dotを用いてリポジトリをクローン、シンボリックリンクを作成</a>
 
-* dotコマンド用の設定ファイルを準備する
+* dotコマンド用の設定ファイルを準備:
 
 ```
 mkdir -p $HOME/.config/dot
