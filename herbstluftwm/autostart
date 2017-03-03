@@ -22,10 +22,11 @@ hc emit_hook reload
 if hc new_attr bool my_not_first_autostart 2> /dev/null; then
     gnome-settings-daemon &
     xscreensaver -no-splash &
+    dropbox start
     compton -b --config $HOME/.config/compton/compton.conf
 fi
 
-if hash nitrogen; then
+if hash nitrogen 2>&1 1>/dev/null; then
   nitrogen --restore
 elif [ -f $HOME/.fehbg ]; then
   hc spawn $HOME/.fehbg
@@ -186,10 +187,10 @@ hc keybind $Mod-bracketright chain . spawn ${src}q3terminal.sh . emit_hook focus
 
 hc set frame_gap 8
 hc set frame_padding -12
-hc set frame_border_width 1
+hc set frame_border_width 2
 hc set frame_transparent_width 0
-hc set window_gap 14
-hc set window_border_width 1
+hc set window_gap 12
+hc set window_border_width 2
 hc set window_border_inner_width 0
 
 # frame options
@@ -231,6 +232,9 @@ hc rule class~'(.*[Rr]xvt.*|.*[Tt]erm|Konsole)' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK)' manage=off
+hc rule class='XClock' pseudotile=on
+hc rule class='Conky' manage=off
+hc rule class='Screenkey' manage=off
 
 #---------------------------------------------------------------------------}}}
 # Panel                                                                     {{{
