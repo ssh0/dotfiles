@@ -235,6 +235,7 @@ hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK)' manage=off
 hc rule class='XClock' pseudotile=on
 hc rule class='Conky' manage=off
 hc rule class='Screenkey' manage=off
+hc rule title='Figure 1' monitor=1
 
 #---------------------------------------------------------------------------}}}
 # Panel                                                                     {{{
