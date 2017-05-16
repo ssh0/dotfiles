@@ -32,6 +32,8 @@ nnoremap <Leader>oo :CtrlP<CR>
 nnoremap <Leader>om :CtrlPMixed<CR>
 nnoremap <Leader>or :CtrlPMRUFiles<CR>
 
+Plug 'vim-syntastic/syntastic'
+
 Plug 'ervandew/supertab'
 Plug 'tacroe/unite-mark'
 Plug 'kshenoy/vim-signature'
@@ -227,6 +229,10 @@ augroup END
 Plug 'thinca/vim-splash'
 let g:splash#path = expand('~/.splash-vim.txt')
 
+Plug 'mxw/vim-jsx'
+
+Plug 'millermedeiros/vim-esformatter'
+
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1
@@ -247,7 +253,7 @@ let g:jedi#use_splits_not_buffers = "top"
 let g:jedi#popup_on_dot = 1
 let g:jedi#popup_select_first = 1
 
-Plug 'bpearson/vim-phpcs', {'for': ['php', 'javascript', 'css']}
+" Plug 'bpearson/vim-phpcs', {'for': ['php', 'javascript', 'css']}
 
 Plug 'mattn/emmet-vim', {'for': ['html', 'css']}
 let g:user_emmet_mode='inv'
