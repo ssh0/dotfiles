@@ -72,6 +72,8 @@ augroup filetype
   let html_to_html  = "pandoc --from=html --to=markdown"
   let html_to_html .= " | pandoc --from=markdown --to=html"
   autocmd Filetype html let &formatprg=html_to_html
+  " sql
+  autocmd FileType sql set commentstring=--\ %s
 augroup END
 
 augroup set_K_help
@@ -250,6 +252,7 @@ autocmd FileType xml        setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpa
 autocmd FileType yaml       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd FileType zsh        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd FileType coffee     setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType sql        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
 "---------------------------------------------------------------------------}}}
 " My function:                                                              {{{
