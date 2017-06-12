@@ -1,0 +1,459 @@
+# vim: ft=conf
+###############################################################################
+#                         _       _    __ _ _                                 #
+#                      __| | ___ | |_ / _(_) | ___  ___                       #
+#                     / _` |/ _ \| __| |_| | |/ _ \/ __|                      #
+#                    | (_| | (_) | |_|  _| | |  __/\__ \                      #
+#                     \__,_|\___/ \__|_| |_|_|\___||___/                      #
+#                                                                             #
+###############################################################################
+# This file contains dotfiles linksets.                                     {{{
+# You can comment out by adding "#" at the beginning of the line.
+# And an empty line is ignored by dot.
+#
+# Format:
+# <dotfile>,<linkto>
+#
+# the script automatically add directory information to the file path.
+# So, you should write like below:
+#     .vimrc,.vimrc
+#
+# You can load from outside of the dotfiles directory:
+#     ~/Dropbox/.netrc,.netrc
+#
+# You can easily copy the existing file to the dotfiles repository
+# and add new link list by
+#     dot add [-m "some comment"] original_file dotfiles_path
+# or, just
+#     dot add original_file
+# In the second example, the script automatically completes the second
+# arguments and confirm whether or not to execute that command.
+#
+#===========================================================================}}}
+# dotrc:                                                                    {{{
+#==============================================================================
+# Configuration file of dot command.
+
+dotrc, .config/dot/dotrc
+
+#===========================================================================}}}
+# ~/.Xmodmap:                                                               {{{
+#==============================================================================
+# xmodmap is a utility for modifying keymaps and pointing button
+# mappings in Xorg.
+
+system/Xmodmap, .Xmodmap
+
+#===========================================================================}}}
+# ~/.Xdefaults                                                              {{{
+#==============================================================================
+
+system/${PC}Xdefaults, .Xdefaults
+
+#===========================================================================}}}
+# ~/.Xresources:                                                            {{{
+#==============================================================================
+# Xresources is a user-level configuration dotfile
+# https://wiki.archlinux.org/index.php/X_resources#XScreenSaver_resources
+
+system/Xresources, .Xresources
+
+#===========================================================================}}}
+# ~/.profile:                                                               {{{
+#==============================================================================
+# executed by the command interpreter for login shells.
+
+system/profile, .profile
+
+#===========================================================================}}}
+# ~/.xinputrc                                                               {{{
+#==============================================================================
+
+system/${PC}xinputrc, .xinputrc
+
+#===========================================================================}}}
+# netrc                                                                     {{{
+#==============================================================================
+# (contain private information)
+
+$HOME/Dropbox/conf/netrc, .netrc
+
+#===========================================================================}}}
+# gitconfig                                                                 {{{
+#==============================================================================
+
+.gitconfig, .gitconfig
+
+#===========================================================================}}}
+# [vim](http://www.vim.org/):                                               {{{
+#==============================================================================
+# Vim is an advanced text editor that seeks to provide the power of the
+# de-facto Unix editor 'Vi', with a more complete feature set.
+
+vimfiles/vimrc,    .vimrc
+vimfiles/plug.vim, .vim/plug.vim
+
+vimfiles/ftplugin/bib_quickrun.vim,      .vim/ftplugin/bib_quickrun.vim
+vimfiles/ftplugin/gitcommit.vim,         .vim/ftplugin/gitcommit.vim
+vimfiles/ftplugin/tex_quickrun.vim,      .vim/ftplugin/tex_quickrun.vim
+vimfiles/ftplugin/texmath_quickrun.vim,  .vim/ftplugin/texmath_quickrun.vim
+vimfiles/ftplugin/markdown_quickrun.vim, .vim/ftplugin/markdown_quickrun.vim
+
+# markdown template
+vimfiles/template/template.md,  .vim/template/template.md
+vimfiles/template/template.mkd, .vim/template/template.mkd
+
+# Tex template
+vimfiles/template/template.tex, .vim/template/template.tex
+
+# Python template
+vimfiles/template/template.py,  .vim/template/template.py
+
+# Shell script template
+vimfiles/template/template.sh,  .vim/template/template.sh
+
+vimfiles/.splash-vim.txt,       .splash-vim.txt
+$HOME/Dropbox/conf/hateblo.vim, .hateblo.vim
+
+#===========================================================================}}}
+# [neovim](https://neovim.io/):                                             {{{
+#==============================================================================
+# Neovim is a project that seeks to aggressively refactor Vim
+
+neovim/init.vim, .config/nvim/init.vim
+neovim/plug.vim, .config/nvim/plug.vim
+
+vimfiles/ftplugin/bib_quickrun.vim,      .config/nvim/ftplugin/bib_quickrun.vim
+vimfiles/ftplugin/gitcommit.vim,         .config/nvim/ftplugin/gitcommit.vim
+vimfiles/ftplugin/tex_quickrun.vim,      .config/nvim/ftplugin/tex_quickrun.vim
+vimfiles/ftplugin/texmath_quickrun.vim,  .config/nvim/ftplugin/texmath_quickrun.vim
+vimfiles/ftplugin/markdown_quickrun.vim, .config/nvim/ftplugin/markdown_quickrun.vim
+
+# markdown template
+vimfiles/template/template.md,  .config/nvim/template/template.md
+vimfiles/template/template.mkd, .config/nvim/template/template.mkd
+
+# Tex template
+vimfiles/template/template.tex, .config/nvim/template/template.tex
+
+# Python template
+vimfiles/template/template.py,  .config/nvim/template/template.py
+
+# Shell script template
+vimfiles/template/template.sh,  .config/nvim/template/template.sh
+
+#===========================================================================}}}
+# [tmux](http://tmux.sourceforge.net/)                                      {{{
+#==============================================================================
+
+tmux/mac/tmux.conf,                     .tmux.conf
+tmux/mac/status.conf,                   .config/tmux/status.conf
+tmux/tmux.conf.d/status_powerline.conf, .config/tmux/status_powerline.conf
+
+#===========================================================================}}}
+# [tmuxinator](https://github.com/tmuxinator/tmuxinator)                    {{{
+#==============================================================================
+
+tmuxinator/clean.yml,  .tmuxinator/clean.yml
+tmuxinator/dev.yml,    .tmuxinator/dev.yml
+tmuxinator/stream.yml, .tmuxinator/stream.yml
+
+#===========================================================================}}}
+# bashrc                                                                   {{{
+#==============================================================================
+
+rcfiles/bashrc, .bashrc
+
+#===========================================================================}}}
+# [zsh](http://zsh.sourceforge.net/):                                       {{{
+#==============================================================================
+# Zsh is a shell designed for interactive use, although it is also a
+# powerful scripting language.
+
+zshfiles/zshrc, .zshrc
+
+# Completions
+zshfiles/completions/_cheat,              .zsh/completions/_cheat
+zshfiles/completions/_incfn,              .zsh/completions/_incfn
+zshfiles/completions/_jupyter,            .zsh/completions/_jupyter
+zshfiles/completions/_mkdocs,             .zsh/completions/_mkdocs
+zshfiles/completions/_myrsync,            .zsh/completions/_myrsync
+zshfiles/completions/_mytask,             .zsh/completions/_mytask
+zshfiles/completions/_pandoc,             .zsh/completions/_pandoc
+zshfiles/completions/_ranger,             .zsh/completions/_ranger
+zshfiles/completions/_recordmydesktop,    .zsh/completions/_recordmydesktop
+zshfiles/completions/_s,                  .zsh/completions/_s
+zshfiles/completions/_streamradio,        .zsh/completions/_streamradio
+zshfiles/completions/_tig,                .zsh/completions/_tig
+zshfiles/completions/_tmuxinator,         .zsh/completions/_tmuxinator
+zshfiles/completions/_youtube-dl,         .zsh/completions/_youtube-dl
+zshfiles/completions/tig-completion.bash, .zsh/completions/tig-completion.bash
+
+# dircolors & prompt theme
+zshfiles/dircolors/dircolors-zenburn, .zsh/dircolors/dircolors-zenburn
+
+# Some functions and aliases
+zshfiles/functions/alias.mac.zsh,         .zsh/functions/alias.zsh
+zshfiles/functions/bindkey.zsh,           .zsh/functions/bindkey.zsh
+zshfiles/functions/colorize.zsh,          .zsh/functions/colorize.zsh
+zshfiles/functions/command-not-found.zsh, .zsh/functions/command-not-found.zsh
+zshfiles/functions/completion.zsh,        .zsh/functions/completion.zsh
+zshfiles/functions/confirm.zsh,           .zsh/functions/confirm.zsh
+zshfiles/functions/environment.zsh,       .zsh/functions/environment.zsh
+zshfiles/functions/extract.zsh,           .zsh/functions/extract.zsh
+zshfiles/functions/git.zsh,               .zsh/functions/git.zsh
+zshfiles/functions/history.zsh,           .zsh/functions/history.zsh
+zshfiles/functions/less.zsh,              .zsh/functions/less.zsh
+zshfiles/functions/ls.zsh,                .zsh/functions/ls.zsh
+# zshfiles/functions/longrun-command-tracker.zsh,.zsh/functions/longrun-command-tracker.zsh
+zshfiles/functions/man.zsh,          .zsh/functions/man.zsh
+zshfiles/functions/peco-history.zsh, .zsh/functions/peco-history.zsh
+zshfiles/functions/prompt.zsh,       .zsh/functions/prompt.zsh
+zshfiles/functions/ranger.zsh,       .zsh/functions/ranger.zsh
+zshfiles/functions/shtest.zsh,       .zsh/functions/shtest.zsh
+zshfiles/functions/termsupport.zsh,  .zsh/functions/termsupport.zsh
+zshfiles/functions/tmux.zsh,         .zsh/functions/tmux.zsh
+zshfiles/functions/zgen.zsh,         .zsh/functions/zgen.zsh
+zshfiles/functions/zplug.zsh,        .zsh/functions/zplug.zsh
+
+#===========================================================================}}}
+# bin                                                                       {{{
+#==============================================================================
+# Some useful scripts (See bin/README.md)
+
+bin/a2testdeploy,                   bin/a2testdeploy
+bin/agvim,                          bin/agvim
+bin/alarm,                          bin/alarm
+bin/allmp4tomp3.sh,                 bin/allmp4tomp3.sh
+bin/autopep8_diff.sh,               bin/autopep8_diff.sh
+bin/bib2html_wrapper.sh,            bin/bib2html_wrapper.sh
+bin/cachecleener,                   bin/cachecleener
+bin/cecho,                          bin/cecho
+bin/color-pallete.sh,               bin/color-pallete.sh
+bin/cplay.sh,                       bin/cplay.sh
+bin/diff-so-fancy.sh,               bin/diff-so-fancy.sh
+bin/dripaudio,                      bin/dripaudio
+bin/facebook,                       bin/facebook
+bin/google-keep,                    bin/google-keep
+bin/googleTTS.sh,                   bin/googleTTS.sh
+bin/header.sh,                      bin/header.sh
+bin/incfn,                          bin/incfn
+bin/latexmk_wrapper,                bin/latexmk_wrapper
+bin/LINE,                           bin/LINE
+bin/makebinreadme.sh,               bin/makebinreadme.sh
+bin/man2pdf,                        bin/man2pdf
+bin/marbleScroll.sh,                bin/marbleScroll.sh
+bin/mkdpreview,                     bin/mkdpreview
+bin/mplayer_term_wrapper.sh,        bin/mplayer_term_wrapper.sh
+bin/mpv_term,                       bin/mpv_term
+bin/npz_viewer.py,                  bin/npz_viewer.py
+bin/myrsync,                        bin/myrsync
+bin/mytask,                         bin/mytask
+bin/pandoc_beamerwrapper.sh,        bin/pandoc_beamerwrapper.sh
+bin/pandoc_latexwrapper.sh,         bin/pandoc_latexwrapper.sh
+bin/pdfocr,                         bin/pdfocr
+bin/presenmode.sh,                  bin/presenmode.sh
+bin/presentation.sh,                bin/presentation.sh
+bin/progressbar,                    bin/progressbar
+bin/proxy_toggle.sh,                bin/proxy_toggle.sh
+bin/pydocpdf,                       bin/pydocpdf
+bin/radiko_rec.sh,                  bin/radiko_rec.sh
+bin/screenshot_select.sh,           bin/screenshot_select.sh
+bin/screenshot.sh,                  bin/screenshot.sh
+bin/s,                              bin/s
+bin/s_provider,                     bin/s_provider
+bin/sound_volume_change_wrapper.sh, bin/sound_volume_change_wrapper.sh
+bin/start_urxvtd.sh,                bin/start_urxvtd.sh
+bin/streamradio,                    bin/streamradio
+bin/streamradio-daemon,             bin/streamradio-daemon
+bin/terminal-colors,                bin/terminal-colors
+bin/texmath,                        bin/texmath
+bin/toggle_compton.sh,              bin/toggle_compton.sh
+bin/toggle_xcompmgr.sh,             bin/toggle_xcompmgr.sh
+bin/touchpad_toggle.sh,             bin/touchpad_toggle.sh
+bin/trackpoint_toggle.sh,           bin/trackpoint_toggle.sh
+bin/trello,                         bin/trello
+bin/urxvt_float.sh,                 bin/urxvt_float.sh
+bin/usage_all,                      bin/usage_all
+bin/wmatomp3_converter.sh,          bin/wmatomp3_converter.sh
+bin/ytdl,                           bin/ytdl
+
+#===========================================================================}}}
+# [ranger](http://ranger.nongnu.org/):                                      {{{
+#==============================================================================
+# ranger is a file manager with VI key bindings.
+
+ranger/colorschemes/mycolor.py, .config/ranger/colorschemes/mycolor.py
+ranger/mac/rc.conf,                 .config/ranger/rc.conf
+ranger/mac/rifle.conf,              .config/ranger/rifle.conf
+ranger/mac/scope.sh,                .config/ranger/scope.sh
+
+#===========================================================================}}}
+# [ipython](http://ipython.org/):                                           {{{
+#==============================================================================
+# IPython provides a rich architecture for interactive computing with:
+#     - Powerful interactive shells (terminal and Qt-based).
+#     - A browser-based notebook with support for code, rich text, mathematical
+#       expressions, inline plots and other rich media.
+#     - Support for interactive data visualization and use of GUI toolkits.
+#     - Flexible, embeddable interpreters to load into your own projects.
+#     - Easy to use, high performance tools for parallel computing.
+
+ipython/nbextensions/livereveal/main.css,         .ipython/nbextensions/livereveal/main.css
+ipython/profile_default/static/custom/custom.css, .ipython/profile_default/static/custom/custom.css
+ipython/profile_slide/static/custom/custom.css,   .ipython/profile_slide/static/custom/custom.css
+
+#===========================================================================}}}
+# [latexmk](http://www.ctan.org/pkg/latexmk/):                              {{{
+#==============================================================================
+# Latexmk completely automates the process of generating a LaTeX document.
+
+rcfiles/latexmkrc,        .latexmkrc
+rcfiles/latexmkrc_dvipng, .latexmkrc_dvipng
+
+#===========================================================================}}}
+# [pandoc](http://pandoc.org/):                                             {{{ 
+#==============================================================================
+# If you need to convert files from one markup format into another, pandoc is
+# your swiss-army knife.
+
+pandoc/templates/mytemplate.beamer, .pandoc/templates/mytemplate.beamer
+pandoc/templates/mytemplate.latex,  .pandoc/templates/mytemplate.latex
+
+#===========================================================================}}}
+# [vimperator](https://addons.mozilla.org/ja/firefox/addon/vimperator/):    {{{
+# Make Firefox look and behave like Vim
+#==============================================================================
+
+vimperator/vimperatorrc,            .vimperatorrc
+vimperator/${PC}vimperatorrc.local, .vimperatorrc.local
+vimperator/colors/darkness.vimp,    .vimperator/colors/darkness.vimp
+
+#===========================================================================}}}
+# [mpv](http://mpv.io/):                                                    {{{
+#==============================================================================
+# mpv is a fork of mplayer2 and MPlayer. It shares some features with
+# the former projects while introducing many more.
+
+mpv/config,                .config/mpv/mpv.conf
+mpv/lua/notify.lua,        .config/mpv/scripts/notify.lua
+mpv/lua-settings/osc.conf, .config/mpv/lua-settings/osc.conf
+
+#===========================================================================}}}
+# [cmus](https://cmus.github.io/):                                          {{{
+#==============================================================================
+# cmus is a small, fast and powerful console music player for Unix-like
+# operating systems.
+
+cmus/rc,                        .cmus/rc
+cmus/mycolor.theme,             .cmus/mycolor.theme
+cmus/status_display_program.sh, .cmus/status_display_program.sh
+cmus/cmus_desktop_notify.py,    .cmus/cmus_desktop_notify.py
+
+#===========================================================================}}}
+# [mpd](http://www.musicpd.org/):                                           {{{
+#==============================================================================
+# Music Player Daemon (MPD) is a flexible, powerful, server-side application
+# for playing music.
+
+mpd/mpd.conf, .config/mpd/mpd.conf
+
+#===========================================================================}}}
+# [ncmpcpp](http://rybczak.net/ncmpcpp/):                                   {{{
+#==============================================================================
+# ncmpcpp – featureful ncurses based MPD client inspired by ncmpc
+
+ncmpcpp/${PC}config,                     .ncmpcpp/config
+ncmpcpp/keys,                            .ncmpcpp/keys
+ncmpcpp/scripts/ncmpcpp_notification.sh, .ncmpcpp/scripts/ncmpcpp_notification.sh
+
+#===========================================================================}}}
+# [mutt](http://www.mutt.org/):                                             {{{
+#==============================================================================
+# E-Mail Client
+
+mutt/muttrc,                   .mutt/muttrc
+$HOME/Dropbox/conf/mutt/alias, .mutt/alias
+
+#===========================================================================}}}
+# [turses](https://github.com/dialelo/turses):                              {{{
+#==============================================================================
+# A Twitter client for the console.
+
+turses/config,   .turses/config
+turses/sessions, .turses/sessions
+
+#===========================================================================}}}
+# [pyradio](https://github.com/coderholic/pyradio)                          {{{
+#==============================================================================
+
+pyradio/stations.csv, .pyradio/stations.csv
+
+#===========================================================================}}}
+# [peco](https://github.com/peco/peco)                                      {{{
+#==============================================================================
+
+peco/config.json, .peco/config.json
+
+#===========================================================================}}}
+# [tig](https://github.com/jonas/tig)                                       {{{
+#==============================================================================
+
+rcfiles/tigrc.mac, .tigrc
+
+#===========================================================================}}}
+# [ansiweather](https://github.com/fcambus/ansiweather)                     {{{
+#==============================================================================
+
+rcfiles/ansiweatherrc, .ansiweatherrc
+
+#===========================================================================}}}
+# [Feednix](https://github.com/Jarkore/Feednix)                             {{{
+#==============================================================================
+# An ncurses based client for Feedly.
+
+$HOME/Dropbox/conf/feednix/config.json, .config/feednix/config.json
+
+#===========================================================================}}}
+# [w3m](http://w3m.sourceforge.net/index.ja.html)                           {{{
+#==============================================================================
+# w3m is a text-based web browser as well as a pager like `more' or `less'.
+
+w3m/config, .w3m/config
+w3m/keymap, .w3m/keymap
+
+#===========================================================================}}}
+# python                                                                    {{{
+#==============================================================================
+
+rcfiles/pythonrc.py,  .pythonrc.py
+rcfiles/matplotlibrc, .config/matplotlib/matplotlibrc
+
+#===========================================================================}}}
+# [youtube-dl](https://github.com/rg3/youtube-dl)                           {{{
+#==============================================================================
+
+youtube-dl/config, .config/youtube-dl/config
+
+#===========================================================================}}}
+# mkdpreview                                                                {{{
+#==============================================================================
+
+mkdpreview/footer.html, .config/mkdpreview/footer.html
+mkdpreview/header.html, .config/mkdpreview/header.html
+
+mkdpreview/styles/github-markdown-css/github-markdown.css, .config/mkdpreview/styles/github-markdown-css/github-markdown.css
+
+#===========================================================================}}}
+# wget                                                                      {{{
+#==============================================================================
+
+rcfiles/wgetrc,  .wgetrc
+
+#===========================================================================}}}
+# gtk-3.0                                                                   {{{
+#==============================================================================
+
+gtk/gtk-3.0/gtk.css,    .config/gtk-3.0/gtk.css
+
+#===========================================================================}}}

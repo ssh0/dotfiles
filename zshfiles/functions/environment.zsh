@@ -10,6 +10,8 @@
 
 export ZSH_CACHE_DIR=$ZSH/cache
 
+export PATH=$HOME/bin:$PATH
+
 # PATH to /usr/local/lib
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
@@ -17,6 +19,7 @@ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 export XDG_CONFIG_HOME=$HOME/.config
 
 # set language environment
+export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export MANLANG=ja_JP.UTF-8
 export LC_TIME=en_US.UTF-8
@@ -36,15 +39,15 @@ find_alt() {
 
 # set the default program
 # the first program in the array will be chosen as the default
-export OPENER=$(find_alt xdg-open exo-open gnome-open )
-export BROWSER=$(find_alt firefox luakit google-chrome chromium chromium-browser $OPENER )
+export OPENER=$(find_alt open xdg-open exo-open gnome-open )
+export BROWSER=$(find_alt open firefox luakit google-chrome chromium chromium-browser $OPENER )
 export BROWSERCLI=$(find_alt w3m links2 links lynx elinks $OPENER )
 export EDITOR=$(find_alt nvim vim emacs nano leafpad gedit pluma $OPENER )
-export FILEMANAGER=$(find_alt thunar nautilus dolphin pcmanfm tspacefm enlightenment_filemanager $OPENER )
+export FILEMANAGER=$(find_alt open thunar nautilus dolphin pcmanfm tspacefm enlightenment_filemanager $OPENER )
 export PAGER=$(find_alt less more most)
 export PERCOL=$(find_alt fzf peco percol)
-export PLAYER=$(find_alt mpv mplayer cvlc $OPENER )
-export READER=$(find_alt mupdf zathura evince $OPENER )
+export PLAYER=$(find_alt open mpv mplayer cvlc $OPENER )
+export READER=$(find_alt open mupdf zathura evince $OPENER )
 export TERMCMD=$(find_alt urxvt xterm gnome-terminal)
 
 unfunction find_alt
