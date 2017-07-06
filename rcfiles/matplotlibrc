@@ -134,7 +134,7 @@ patch.antialiased : True    # render patches in antialiased (no jaggies)
 # 12pt is the standard value.
 
 font.size    : 13.0
-font.family  : sans-serif
+font.family  : Migu 1M
 #font.style   : normal
 #font.variant : normal
 #font.weight  : medium
