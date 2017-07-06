@@ -57,6 +57,8 @@ alias o='s'
 
 alias info='info --vi-keys'
 
+alias updatedb='sudo /usr/libexec/locate.updatedb'
+
 # thefuck (https://github.com/nvbn/thefuck)
 alias f='eval "$(thefuck $(fc -ln -1 | tail -n 1)); fc -R"'
 
