@@ -266,6 +266,8 @@ Plug 'lambdalisue/vim-gista'
 let g:gista#github_user = 'ssh0'
 let g:gista#update_on_write = 1
 
+Plug 'vim-scripts/SQLComplete.vim', {'for': 'sql'}
+
 Plug 'vimperator/vimperator.vim'
 
 Plug 'mattn/webapi-vim'
