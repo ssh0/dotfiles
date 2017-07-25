@@ -40,15 +40,6 @@ function man() {
   # set language (but if MANLANG is already set, use that)
   export LANG=${MANLANG:-${_LANG}}
 
-  function restore_lang() {
-    # restore LANG and clean up name space
-    export LANG=${_LANG}
-    unset _LANG
-    unset -f $0
-  }
-
-  trap restore_lang 1 2 3 EXIT
-
   if [ ! -n "$1" ]; then
     echo "What manual page do you want?"
     return 1
@@ -92,5 +83,8 @@ function man() {
       /usr/bin/man "$@"
       ;;
   esac
+  # restore LANG and clean up name space
+  export LANG=${_LANG}
+  unset _LANG
 }
 
