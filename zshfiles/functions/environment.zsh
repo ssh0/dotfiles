@@ -11,6 +11,7 @@
 export ZSH_CACHE_DIR=$ZSH/cache
 
 export PATH=$HOME/bin:$PATH
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # PATH to /usr/local/lib
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH

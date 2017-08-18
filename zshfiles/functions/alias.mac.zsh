@@ -46,15 +46,18 @@ alias r='ranger'
 alias :q='exit'
 
 # typo
-alias py='python'
-alias pytohn='python'
+# alias py='python'
+# alias pytohn='python'
+alias py='python3'
+alias python='python3'
+alias pytohn='python3'
 
 alias pyst='cd ~/Workspace/python/tuto && $EDITOR "$(incfn -b test -e py -n 2)"'
 
 # pip install
-alias pipins='sudo -H pip install'
+alias pipins='sudo -H pip3 install'
 # pip update
-alias pipupd='sudo -H pip install -U'
+alias pipupd='sudo -H pip3 install -U'
 
 alias o='open'
 
@@ -72,6 +75,8 @@ function _speedometer() {
   speedometer -b -rx "$1" -tx "$1"
 }
 alias spdmeter='_speedometer'
+
+alias updatedb='sudo /usr/libexec/locate.updatedb'
 
 # enable aliases in sudo
 alias sudo='sudo -E '
