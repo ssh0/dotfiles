@@ -28,10 +28,10 @@ fi
 # git alias to "g"
 alias g='git'
 
-if hash nvim 2>/dev/null; then
-  alias vim='nvim'
-  alias vimdiff='nvim -d'
-fi
+# if hash nvim 2>/dev/null; then
+#   alias vim='nvim'
+#   alias vimdiff='nvim -d'
+# fi
 
 if hash terminal-notifier 2>/dev/null; then
   alias noti='terminal-notifier -message'
