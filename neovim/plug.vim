@@ -51,6 +51,10 @@ let g:SignatureMarkTextHL = "SignColumn"
 Plug 'LeafCage/foldCC'
 set foldtext=FoldCCtext()
 
+Plug 'junegunn/vim-easy-align'
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
 Plug 'lilydjwg/colorizer'
 Plug 'tyru/open-browser.vim'
 " {{{
