@@ -107,6 +107,9 @@ set viminfo='1000,<3000,f50,c,h,s100
 " use unnamed register (for outer programs)
 set clipboard=unnamedplus,autoselect
 
+" enable delete key
+set backspace=indent,eol,start
+
 " less timeoutlen
 set timeout timeoutlen=400 ttimeoutlen=75
 
