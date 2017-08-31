@@ -1,6 +1,6 @@
 ---
 title: <+CURSOR+>
-author: ssh0
+author: 藤本將太郎
 date: <%= strftime('%Y-%m-%d') %>
 ---
 

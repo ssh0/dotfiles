@@ -1,5 +1,5 @@
 #!/bin/bash
-# written by Shotaro Fujimoto (https://github.com/ssh0)
+# written by Shotaro Fujimoto
 # first edited: <%= strftime('%Y-%m-%d') %>
 
 <+CURSOR+>
