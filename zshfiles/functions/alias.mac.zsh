@@ -37,8 +37,8 @@ if hash terminal-notifier 2>/dev/null; then
   alias noti='terminal-notifier -message'
 fi
 
-alias vi='vim'
-alias v='vim'
+alias vi='nvim'
+alias v='nvim'
 
 alias r='ranger'
 
