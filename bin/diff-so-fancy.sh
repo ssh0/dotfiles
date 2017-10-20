@@ -10,4 +10,4 @@
 #
 #=#=
 
-/usr/bin/colordiff -u "$@" | /usr/local/bin/diff-so-fancy
+colordiff -u "$@" | /usr/local/bin/diff-so-fancy
