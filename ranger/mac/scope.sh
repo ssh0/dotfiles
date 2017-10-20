@@ -58,7 +58,7 @@ handle_extension() {
             exit 1;;
 
         npz)
-           try npz_viewer.py "${FILE_PATH}" && exit 5
+           npz_viewer.py "${FILE_PATH}" && exit 5
            exit 1;;
 
         # PDF
