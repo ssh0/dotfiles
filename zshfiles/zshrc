@@ -64,6 +64,7 @@ colorize
 command-not-found
 confirm
 extract
+fkill
 git
 less
 ls

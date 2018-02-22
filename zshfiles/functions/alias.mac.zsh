@@ -131,6 +131,7 @@ _ec plug       ~/.config/nvim/plug.vim
 _ec prompt     ${ZSH_ROOT}/functions/prompt.zsh
 _ec ranger     ~/.config/ranger/rc.conf
 _ec ranger.d   ~/.config/ranger
+_ec ssh        ~/.ssh/config
 _ec s          ~/bin/s_provider
 _ec tig        ~/.tigrc
 _ec tmux       ~/.tmux.conf

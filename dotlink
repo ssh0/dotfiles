@@ -208,6 +208,7 @@ zshfiles/functions/completion.zsh,        .zsh/functions/completion.zsh
 zshfiles/functions/confirm.zsh,           .zsh/functions/confirm.zsh
 zshfiles/functions/environment.zsh,       .zsh/functions/environment.zsh
 zshfiles/functions/extract.zsh,           .zsh/functions/extract.zsh
+zshfiles/functions/fkill.zsh,             .zsh/functions/fkill.zsh
 zshfiles/functions/git.zsh,               .zsh/functions/git.zsh
 zshfiles/functions/history.zsh,           .zsh/functions/history.zsh
 zshfiles/functions/less.zsh,              .zsh/functions/less.zsh
