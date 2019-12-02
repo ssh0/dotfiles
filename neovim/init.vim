@@ -74,6 +74,7 @@ augroup filetype
   autocmd Filetype html let &formatprg=html_to_html
   " sql
   autocmd FileType sql set commentstring=--\ %s
+  autocmd Filetype sql let &formatprg="sqlformat -r -k lower --comma_first TRUE --indent_width 4 -"
 augroup END
 
 augroup set_K_help
@@ -253,6 +254,7 @@ autocmd FileType yaml       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expand
 autocmd FileType zsh        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd FileType coffee     setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd FileType sql        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType velocity   setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
 "---------------------------------------------------------------------------}}}
 " My function:                                                              {{{
@@ -287,6 +289,8 @@ nnoremap Q !!$SHELL<CR>
 " move in wrapped line by arrow key
 nnoremap <Down> gj
 nnoremap <Up> gk
+vnoremap <Down> gj
+vnoremap <Up> gk
 
 " move from line head to line end
 nnoremap h <Left>zv
