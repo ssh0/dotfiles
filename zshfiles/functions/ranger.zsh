@@ -21,8 +21,10 @@ function ranger() {
   if [ -z "$RANGER_LEVEL" ]; then
     local tempfile="$(mktemp -t tmp.XXXXXXX)"
     # for manual install
-    /usr/local/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+    /usr/local/bin/ranger \
+    --choosedir="$tempfile" "${@:-$(pwd)}"
     # for package install
+    # /Library/Frameworks/Python.framework/Versions/3.6/bin/ranger \
     # /usr/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
     test -f "$tempfile" &&
     if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then

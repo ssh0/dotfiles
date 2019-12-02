@@ -12,6 +12,9 @@ export ZSH_CACHE_DIR=$ZSH/cache
 
 export PATH=$HOME/bin:$PATH
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+#export PATH="$PATH:/usr/local/Cellar/python/3.6.4_4/Frameworks/Python.framework/Versions/3.6/bin"
+
+export PYTHONPATH=$PYTHONPATH:/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages
 
 # PATH to /usr/local/lib
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH

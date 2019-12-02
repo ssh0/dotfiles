@@ -49,7 +49,7 @@ alias :q='exit'
 # alias py='python'
 # alias pytohn='python'
 alias py='python3'
-alias python='python3'
+# alias python='python3'
 alias pytohn='python3'
 
 alias pyst='cd ~/Workspace/python/tuto && $EDITOR "$(incfn -b test -e py -n 2)"'
@@ -110,6 +110,7 @@ function _ec() {
 }
 
 
+_ec alacritty  ~/.config/alacritty/alacritty.yml
 _ec alias      ${ZSH_ROOT}/functions/alias.zsh
 _ec completion ${ZSH_ROOT}/completions
 _ec compton    ~/.config/compton/compton.conf
@@ -128,7 +129,9 @@ _ec mutt       ~/.mutt/muttrc
 _ec nvim       ~/.config/nvim/init.vim
 _ec ncmpcpp    ~/.ncmpcpp/config
 _ec plug       ~/.config/nvim/plug.vim
+_ec pgcli      ~/.config/pgcli/config
 _ec prompt     ${ZSH_ROOT}/functions/prompt.zsh
+_ec psql       ~/.psqlrc
 _ec ranger     ~/.config/ranger/rc.conf
 _ec ranger.d   ~/.config/ranger
 _ec ssh        ~/.ssh/config
