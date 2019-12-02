@@ -46,7 +46,7 @@ osd-border-color='#99000000'
 # Video Output
 
 # vo=opengl-hq:smoothmotion:fancy-downscaling=no:icc-profile-auto:approx-gamma:icc-cache=~/.mpv/icc-cache
-vo=xv
+# vo=xv
 
 ################################################################################
 # Audio

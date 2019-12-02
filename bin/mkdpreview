@@ -78,7 +78,7 @@ sourcedir='source'
 # save the output file to that directory.
 savedir='doc'
 
-notification=true
+notification=false
 notification_icon='/usr/share/icons/gnome/scalable/actions/document-send-symbolic.svg'
 
 f="$0"
@@ -92,7 +92,7 @@ save=false
 update=false
 output=""
 preview=false
-previewprg="firefox -new-tab"
+previewprg="open"
 
 # option handling
 while getopts suo:phH OPT
@@ -143,7 +143,7 @@ if $save; then
 
   $update && test ! -f "${output}" && exit 0
 
-  pandoc -f markdown -S -t html5 -c "${template}" -B "${header}" -A \
+  pandoc -f markdown -smart -t html5 -c "${template}" -B "${header}" -A \
     "${footer}" -s --mathjax -o "${output}" "$@" && \
   $notification && eval $notificationcmd
 fi
