@@ -10,7 +10,7 @@ call plug#begin(s:plug_dir)
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 let g:deoplete#enable_at_startup = 1
 
-Plug 'surround.vim'
+" Plug 'surround.vim'
 Plug 'tpope/vim-commentary'
 Plug 'Shougo/unite.vim'
 nnoremap <silent> <Leader>uy :<C-u>Unite history/yank<CR>
