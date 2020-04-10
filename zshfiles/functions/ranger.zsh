@@ -21,7 +21,7 @@ function ranger() {
   if [ -z "$RANGER_LEVEL" ]; then
     local tempfile="$(mktemp -t tmp.XXXXXXX)"
     # for manual install
-    /usr/local/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+    /usr/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
     # for package install
     # /usr/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
     test -f "$tempfile" &&
