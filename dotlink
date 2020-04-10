@@ -201,6 +201,7 @@ zshfiles/dircolors/dircolors-zenburn, .zsh/dircolors/dircolors-zenburn
 
 # Some functions and aliases
 zshfiles/functions/alias.zsh,             .zsh/functions/alias.zsh
+zshfiles/functions/awscli.zsh,            .zsh/functions/awscli.zsh
 zshfiles/functions/bindkey.zsh,           .zsh/functions/bindkey.zsh
 zshfiles/functions/colorize.zsh,          .zsh/functions/colorize.zsh
 zshfiles/functions/command-not-found.zsh, .zsh/functions/command-not-found.zsh
@@ -210,19 +211,21 @@ zshfiles/functions/environment.zsh,       .zsh/functions/environment.zsh
 zshfiles/functions/extract.zsh,           .zsh/functions/extract.zsh
 zshfiles/functions/fkill.zsh,             .zsh/functions/fkill.zsh
 zshfiles/functions/git.zsh,               .zsh/functions/git.zsh
+zshfiles/functions/google-cloud-sdk.zsh,  .zsh/functions/google-cloud-sdk.zsh
 zshfiles/functions/history.zsh,           .zsh/functions/history.zsh
 zshfiles/functions/less.zsh,              .zsh/functions/less.zsh
 zshfiles/functions/ls.zsh,                .zsh/functions/ls.zsh
 # zshfiles/functions/longrun-command-tracker.zsh,.zsh/functions/longrun-command-tracker.zsh
-zshfiles/functions/man.zsh,          .zsh/functions/man.zsh
-zshfiles/functions/peco-history.zsh, .zsh/functions/peco-history.zsh
-zshfiles/functions/prompt.zsh,       .zsh/functions/prompt.zsh
-zshfiles/functions/ranger.zsh,       .zsh/functions/ranger.zsh
-zshfiles/functions/shtest.zsh,       .zsh/functions/shtest.zsh
-zshfiles/functions/termsupport.zsh,  .zsh/functions/termsupport.zsh
-zshfiles/functions/tmux.zsh,         .zsh/functions/tmux.zsh
-zshfiles/functions/zgen.zsh,         .zsh/functions/zgen.zsh
-zshfiles/functions/zplug.zsh,        .zsh/functions/zplug.zsh
+zshfiles/functions/man.zsh,               .zsh/functions/man.zsh
+zshfiles/functions/peco-history.zsh,      .zsh/functions/peco-history.zsh
+zshfiles/functions/prompt.zsh,            .zsh/functions/prompt.zsh
+zshfiles/functions/pyenv.zsh,             .zsh/functions/pyenv.zsh
+zshfiles/functions/ranger.zsh,            .zsh/functions/ranger.zsh
+zshfiles/functions/shtest.zsh,            .zsh/functions/shtest.zsh
+zshfiles/functions/termsupport.zsh,       .zsh/functions/termsupport.zsh
+zshfiles/functions/tmux.zsh,              .zsh/functions/tmux.zsh
+zshfiles/functions/zgen.zsh,              .zsh/functions/zgen.zsh
+zshfiles/functions/zplug.zsh,             .zsh/functions/zplug.zsh
 
 #===========================================================================}}}
 # bin                                                                       {{{

@@ -22,7 +22,9 @@ fg_red=210
 # A few utility functions to make it easy and re-usable to draw segmented prompts
 
 CURRENT_BG='NONE'
-SEGMENT_SEPARATOR=''
+# SEGMENT_SEPARATOR=''
+SEGMENT_SEPARATOR=''
+# SEGMENT_SEPARATOR=''
 # SEGMENT_SEPARATOR='▒'
 # SEGMENT_SEPARATOR='▓▒░'
 

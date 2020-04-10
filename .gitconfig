@@ -42,6 +42,31 @@
     gn = grep -n
 [core]
     pager = diff-so-fancy | less --tabs=4 -RFX
+	excludesfile = /Users/fujimotoshotaro/.gitignore_global
+[difftool "sourcetree"]
+	cmd = "diff-so-fancy "
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
 [user]
-	email = fuji101ijuf@gmail.com
-	name = Shotaro Fujimoto
+	name = 藤本 將太郎
+	email = fujimotoshotaro@team-lab.com
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[diff "jupyternotebook"]
+	command = git-nbdiffdriver diff
+[merge "jupyternotebook"]
+	driver = git-nbmergedriver merge %O %A %B %L %P
+	name = jupyter notebook merge driver
+[difftool "nbdime"]
+	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
+[difftool]
+	prompt = false
+[mergetool "nbdime"]
+	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+[mergetool]
+	prompt = false

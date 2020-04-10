@@ -94,10 +94,10 @@ let g:lightline = {
       \ 'component_type': {
       \   'syntastic': 'error',
       \ },
-      \ 'separator': { 'left': '▒', 'right': '▒' },
-      \ 'subseparator': { 'left': '│', 'right': '│' },
-      \ 'tabline_separator': { 'left': '', 'right': '▒' },
-      \ 'tabline_subseparator': { 'left': '│', 'right': '│' },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' },
+      \ 'tabline_separator': { 'left': '', 'right': '' },
+      \ 'tabline_subseparator': { 'left': '', 'right': '' },
       \ }
 
 function! MyModified()
@@ -271,6 +271,9 @@ let g:gista#github_user = 'ssh0'
 let g:gista#update_on_write = 1
 
 Plug 'vim-scripts/SQLComplete.vim', {'for': 'sql'}
+Plug 'lepture/vim-velocity', {'for': 'velocity'}
+
+Plug 'timcharper/textile.vim', {'for': 'textile'}
 
 Plug 'vimperator/vimperator.vim'
 

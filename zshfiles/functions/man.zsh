@@ -60,10 +60,10 @@ function man() {
       # TODO: get how many spaces before the commands
       man_indent=7
       _space="$(printf '%*s' "$man_indent" '')"
-      /usr/bin/man --pager="less -p'^${_space}\\$1 '" zshbuiltins
+      /usr/bin/man -P "less -p'^${_space}\\$1 '" zshbuiltins
       ;;
     reserved) # reserved words
-      /usr/bin/man --pager="less -p'^COMPLEX COMMANDS$'" zshall
+      /usr/bin/man -P "less -p'^COMPLEX COMMANDS$'" zshall
       ;;
     alias) # alias
       whence -c $1

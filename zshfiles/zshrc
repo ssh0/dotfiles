@@ -75,6 +75,9 @@ peco-history
 bindkey
 termsupport
 prompt
+pyenv
+google-cloud-sdk
+awscli
 EOF
 )
 

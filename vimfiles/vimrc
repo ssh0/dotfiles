@@ -252,6 +252,7 @@ autocmd FileType yaml       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expand
 autocmd FileType zsh        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd FileType coffee     setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd FileType sql        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType velocity   setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
 "---------------------------------------------------------------------------}}}
 " My function:                                                              {{{
