@@ -10,7 +10,7 @@ use-filedir-conf=yes
 # default value of 320kB is quite low, especially on slow media
 cache=auto
 cache-default=75000
-cache-initial=1024
+#cache-initial=1024
 
 # message level (less verbosity)
 msg-level=demux=no:ad=no:ffmpeg=no:ao=no:cplayer=fatal
