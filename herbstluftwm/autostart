@@ -22,9 +22,13 @@ hc emit_hook reload
 if hc new_attr bool my_not_first_autostart 2> /dev/null; then
     gnome-settings-daemon &
     xscreensaver -no-splash &
-    dropbox start
+    libinput-gestures-setup start
+    xset r rate 200 50
+    ~/bin/brightness_change_wrapper.sh eDP-1 =
     compton -b --config $HOME/.config/compton/compton.conf
+    nmcli device connect wlp1s0h
 fi
+    # dropbox start
 
 if hash nitrogen 2>&1 1>/dev/null; then
   nitrogen --restore
@@ -70,9 +74,6 @@ hc keybind $Mod-j focus down
 hc keybind $Mod-k focus up
 hc keybind $Mod-h focus left
 hc keybind $Mod-l focus right
-# cycle
-hc keybind $Mod-Down cycle_all +1
-hc keybind $Mod-Up   cycle_all -1
 
 # moving clients
 hc keybind $Mod-Shift-j shift down
@@ -140,14 +141,19 @@ hc mousebind $Mod-Button3 resize
 hc keybind $Mod-Tab         cycle_monitor +1
 hc keybind $Mod-Shift-Tab   cycle_monitor -1
 
+# rotate default screen(eDP-1)
+hc keybind $Mod-Up   spawn ~/bin/flip_screen_orientation.sh eDP-1
+hc keybind $Mod-Down spawn ~/bin/flip_screen_orientation.sh eDP-1
+
 # reload dzen2
 hc keybind $Mod-F11 spawn ~/.config/herbstluftwm/reload_panel.sh
 # dmenu_run
-hc keybind $Mod-p spawn dmenu_run -l 10 -fn "Migu 1M:size=20"
+hc keybind $Mod-p spawn dmenu_run -l 12 -fn "Migu 1M:size=24"
 # toggle compton
 hc keybind Alt-Control-t spawn bash toggle_compton.sh
 # lock screen
 hc keybind Alt-Control-l spawn xscreensaver-command -lock
+# hc keybind Alt-Control-l spawn gnome-screensaver-command -l
 # Launch file manager
 hc keybind $Mod-e spawn thunar
 # Play / Pause media key
@@ -161,8 +167,8 @@ hc keybind XF86AudioRaiseVolume spawn sound_volume_change_wrapper.sh +
 hc keybind XF86AudioLowerVolume spawn sound_volume_change_wrapper.sh -
 hc keybind XF86AudioMute        spawn sound_volume_change_wrapper.sh m
 # Brightness
-hc keybind XF86MonBrightnessUp   spawn xbacklight + 5 -time 100 -steps 1
-hc keybind XF86MonBrightnessDown spawn xbacklight - 5 -time 100 -steps 1
+hc keybind XF86MonBrightnessUp   spawn ~/bin/brightness_change_wrapper.sh eDP-1 +
+hc keybind XF86MonBrightnessDown spawn ~/bin/brightness_change_wrapper.sh eDP-1 -
 # Take a screenshot (whole window)
 hc keybind Print spawn screenshot.sh
 # Take a screenshot (selected area)

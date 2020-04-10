@@ -8,16 +8,20 @@ if [ -z "$geometry" ] ;then
     exit 1
 fi
 # geometry has the format W H X Y
-x=${geometry[0]}
-y=${geometry[1]}
-panel_width=${geometry[2]}
-fn="$HOME/.config/herbstluftwm/monitor.d/${panel_width}x${geometry[3]}.sh"
+x_offset=42
+y_offset=4
+x=$(echo "${geometry[0]} + $x_offset" | bc)
+y=$(echo "${geometry[1]} + $y_offset" | bc)
+panel_width=$(echo "${geometry[2]} - (2 * $x_offset + 1)" | bc)
+monitor_width=${geometry[2]}
+fn="$HOME/.config/herbstluftwm/monitor.d/${monitor_width}x${geometry[3]}.sh"
 [ -f "${fn}" ] && source "${fn}"
 panel_height=${pad_up}
 font="-*-Migu 1M-medium-*-*-*-16-*-*-*-*-*-*-*"
-bgcolor=$(hc get frame_border_normal_color)
+# bgcolor=$(hc get frame_border_normal_color)
+bgcolor='#000000'
 selbg='#ff005f'
-selfg='#101010'
+selfg='#000000'
 
 ####
 # Try to find textwidth binary.
@@ -67,7 +71,8 @@ fi
     while true ; do
         # "date" output is checked once a second, but an event is only
         # generated if the output changed compared to the previous run.
-        date +$'date\t^fg(#ece391)%a %m/%d %H:%M'
+        # date +$'date\t^fg(#ece391)%a %m/%d %H:%M'
+        date +$'date\t^fg(#909090)%a %m/%d %H:%M'
         sleep 1 || break
     done > >(uniq_linebuffered) &
     childpid=$!
@@ -84,7 +89,8 @@ fi
         # This part prints dzen data based on the _previous_ data handling run,
         # and then waits for the next event to happen.
 
-        bordercolor="#26221C"
+        # bordercolor="#26221C"
+        bordercolor="#000000"
         separator="^bg()^fg(#666666) :"
         titlecolor="#666666"
         # draw tags
@@ -140,7 +146,7 @@ fi
         right_text_only=$(echo -n "$right" | sed 's.\^[^(]*([^)]*)..g')
         # get width of right aligned text.. and add some space..
         # width=$($textwidth "$font" "$right_text_only    ")
-        width=135
+        width=150
         echo -n "^pa($(($panel_width - $width)))$right"
         echo
 
