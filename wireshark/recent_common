@@ -1,0 +1,76 @@
+# Recent settings file for Wireshark 2.6.1.
+#
+# This file is regenerated each time Wireshark is quit.
+# So be careful, if you want to make manual changes here.
+
+######## Recent capture files (latest last), cannot be altered through command line ########
+
+recent.capture_file: /Users/ezure/git/pgv/pgv-sdk-android/btsnoop_hci.log
+recent.capture_file: /Users/ezure/git/pgv/pgv-sdk-android/btsnoop_hci_10min.log
+recent.capture_file: /Users/ezure/git/pgv/pgv-sdk-android/btsnoop_hci_error.log
+recent.capture_file: /Users/ezure/git/pgv/pgv-sdk-android/btsnoop_hci_35min.log
+recent.capture_file: /Users/ezure/Dropbox/EZURE/高木⇔江連ドキュメント共有/20190213_計測停止できない問題調査/btsnoop_hci_30min_DeadObjectException.log
+
+######## Recent capture filters (latest last), cannot be altered through command line ########
+
+
+######## Recent display filters (latest last), cannot be altered through command line ########
+
+recent.display_filter: write
+
+# Main window geometry.
+# Decimal numbers.
+gui.geometry_main_x: 1920
+gui.geometry_main_y: -570
+gui.gtk.geometry_main_x: 20
+gui.gtk.geometry_main_y: 20
+gui.geometry_main_width: 960
+gui.geometry_main_height: 768
+
+# Main window maximized.
+# TRUE or FALSE (case-insensitive).
+gui.geometry_main_maximized: FALSE
+
+# Statusbar left pane size.
+# Decimal number.
+gui.geometry_status_pane: 250
+
+# Statusbar middle pane size.
+# Decimal number.
+gui.geometry_status_pane_right: 250
+
+# Last used Configuration Profile.
+gui.last_used_profile: Default
+
+# WLAN statistics upper pane size.
+# Decimal number.
+gui.geometry_status_wlan_stats_pane: 200
+
+# Warn if running with elevated permissions (e.g. as root).
+# TRUE or FALSE (case-insensitive).
+privs.warn_if_elevated: TRUE
+
+# Warn if npf.sys isn't loaded on Windows >= 6.0.
+# TRUE or FALSE (case-insensitive).
+privs.warn_if_no_npf: TRUE
+
+# Geometry and maximized state of PacketDialog window.
+# Decimal integers.
+gui.geom.PacketDialog.x: -3657
+gui.geom.PacketDialog.y: -325
+gui.geom.PacketDialog.width: 1536
+gui.geom.PacketDialog.height: 828
+# TRUE or FALSE (case-insensitive).
+gui.geom.PacketDialog.maximized: FALSE
+
+# Custom colors.
+# List of custom colors selected in Qt color picker.
+gui.custom_colors: 
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff"

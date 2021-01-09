@@ -5,7 +5,7 @@
 #=#=
 
 DOT_DIR="$(builtin cd "$(dirname "${BASH_SOURCE:-${(%):-%N}}")" && pwd)"
-DOT_REPO="https://github.com/ssh0/dotfiles.git"
+DOT_REPO="https://github.com/kezure/dotfiles.git"
 DOT_SCR="$HOME/.dot"
 
 echo "-------------------------"

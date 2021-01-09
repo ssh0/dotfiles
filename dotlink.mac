@@ -37,6 +37,13 @@
 dotrc, .config/dot/dotrc
 
 #===========================================================================}}}
+# brewfile:                                                                 {{{
+#==============================================================================
+# For macosx backup from homebrew
+
+brewfile/Brewfile, .config/brewfile/Brewfile
+
+#===========================================================================}}}
 # ~/.Xmodmap:                                                               {{{
 #==============================================================================
 # xmodmap is a utility for modifying keymaps and pointing button
@@ -159,10 +166,12 @@ tmuxinator/dev.yml,    .tmuxinator/dev.yml
 tmuxinator/stream.yml, .tmuxinator/stream.yml
 
 #===========================================================================}}}
-# bashrc                                                                   {{{
+# bash files                                                                {{{
 #==============================================================================
 
-rcfiles/bashrc, .bashrc
+bashfiles/bashrc,       .bashrc
+bashfiles/bash_profile, .bash_profile
+bashfiles/bash_alias,   .bash_alias
 
 #===========================================================================}}}
 # [zsh](http://zsh.sourceforge.net/):                                       {{{
@@ -194,6 +203,7 @@ zshfiles/dircolors/dircolors-zenburn, .zsh/dircolors/dircolors-zenburn
 
 # Some functions and aliases
 zshfiles/functions/alias.mac.zsh,         .zsh/functions/alias.zsh
+zshfiles/functions/anyenv.zsh,            .zsh/functions/anyenv.zsh
 zshfiles/functions/bindkey.zsh,           .zsh/functions/bindkey.zsh
 zshfiles/functions/colorize.zsh,          .zsh/functions/colorize.zsh
 zshfiles/functions/command-not-found.zsh, .zsh/functions/command-not-found.zsh
@@ -206,15 +216,15 @@ zshfiles/functions/history.zsh,           .zsh/functions/history.zsh
 zshfiles/functions/less.zsh,              .zsh/functions/less.zsh
 zshfiles/functions/ls.zsh,                .zsh/functions/ls.zsh
 # zshfiles/functions/longrun-command-tracker.zsh,.zsh/functions/longrun-command-tracker.zsh
-zshfiles/functions/man.zsh,          .zsh/functions/man.zsh
-zshfiles/functions/peco-history.zsh, .zsh/functions/peco-history.zsh
-zshfiles/functions/prompt.zsh,       .zsh/functions/prompt.zsh
-zshfiles/functions/ranger.zsh,       .zsh/functions/ranger.zsh
-zshfiles/functions/shtest.zsh,       .zsh/functions/shtest.zsh
-zshfiles/functions/termsupport.zsh,  .zsh/functions/termsupport.zsh
-zshfiles/functions/tmux.zsh,         .zsh/functions/tmux.zsh
-zshfiles/functions/zgen.zsh,         .zsh/functions/zgen.zsh
-zshfiles/functions/zplug.zsh,        .zsh/functions/zplug.zsh
+zshfiles/functions/man.zsh,               .zsh/functions/man.zsh
+zshfiles/functions/peco-history.zsh,      .zsh/functions/peco-history.zsh
+zshfiles/functions/prompt.zsh,            .zsh/functions/prompt.zsh
+zshfiles/functions/ranger.zsh,            .zsh/functions/ranger.zsh
+zshfiles/functions/shtest.zsh,            .zsh/functions/shtest.zsh
+zshfiles/functions/termsupport.zsh,       .zsh/functions/termsupport.zsh
+zshfiles/functions/tmux.zsh,              .zsh/functions/tmux.zsh
+zshfiles/functions/zgen.zsh,              .zsh/functions/zgen.zsh
+zshfiles/functions/zplug.zsh,             .zsh/functions/zplug.zsh
 
 #===========================================================================}}}
 # bin                                                                       {{{
@@ -277,6 +287,9 @@ bin/urxvt_float.sh,                 bin/urxvt_float.sh
 bin/usage_all,                      bin/usage_all
 bin/wmatomp3_converter.sh,          bin/wmatomp3_converter.sh
 bin/ytdl,                           bin/ytdl
+bin/wifi,                           bin/wifi
+bin/battery,                        bin/battery
+bin/fzf,                            bin/fzf
 
 #===========================================================================}}}
 # [ranger](http://ranger.nongnu.org/):                                      {{{
@@ -455,5 +468,18 @@ rcfiles/wgetrc,  .wgetrc
 #==============================================================================
 
 gtk/gtk-3.0/gtk.css,    .config/gtk-3.0/gtk.css
+
+#===========================================================================}}}
+# lazydocker                                                                {{{
+#==============================================================================
+
+lazydocker/config, .config/lazydocker/config
+
+#===========================================================================}}}
+# karabiner(HHKB setting)                                                   {{{
+#==============================================================================
+
+karabiner/assets/complex_modifications, .config/karabiner/assets/complex_modifications
+karabiner/karabiner.json,               .config/karabiner/karabiner.json
 
 #===========================================================================}}}

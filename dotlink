@@ -37,6 +37,21 @@
 dotrc, .config/dot/dotrc
 
 #===========================================================================}}}
+# Machine:                                                           {{{
+#==============================================================================
+# TODO: 
+
+# TODO: brewfile/Brewfile, .config/brewfile/Brewfile
+
+
+#===========================================================================}}}
+# TODO: brewfile:                                                           {{{
+#==============================================================================
+# TODO: For linux backup from linuxbrew
+
+# TODO: brewfile/Brewfile, .config/brewfile/Brewfile
+
+#===========================================================================}}}
 # ~/.Xmodmap:                                                               {{{
 #==============================================================================
 # xmodmap is a utility for modifying keymaps and pointing button
@@ -79,11 +94,11 @@ system/profile, .profile
 system/${PC}xinputrc, .xinputrc
 
 #===========================================================================}}}
-# netrc                                                                     {{{
+# netrc(For http access to git)                                                                     {{{
 #==============================================================================
 # (contain private information)
 
-$HOME/Dropbox/conf/netrc, .netrc
+#$HOME/Dropbox/conf/netrc, .netrc
 
 #===========================================================================}}}
 # gitconfig                                                                 {{{
@@ -120,7 +135,6 @@ vimfiles/template/template.py,  .vim/template/template.py
 vimfiles/template/template.sh,  .vim/template/template.sh
 
 vimfiles/.splash-vim.txt,       .splash-vim.txt
-$HOME/Dropbox/conf/hateblo.vim, .hateblo.vim
 
 #===========================================================================}}}
 # [neovim](https://neovim.io/):                                             {{{
@@ -166,10 +180,12 @@ tmuxinator/dev.yml,    .tmuxinator/dev.yml
 tmuxinator/stream.yml, .tmuxinator/stream.yml
 
 #===========================================================================}}}
-# bashrc                                                                   {{{
+# bash files                                                                {{{
 #==============================================================================
 
-rcfiles/bashrc, .bashrc
+bashfiles/bashrc,       .bashrc
+bashfiles/bash_profile, .bash_profile
+bashfiles/bash_aliases, .bash_aliases
 
 #===========================================================================}}}
 # [zsh](http://zsh.sourceforge.net/):                                       {{{
@@ -201,6 +217,7 @@ zshfiles/dircolors/dircolors-zenburn, .zsh/dircolors/dircolors-zenburn
 
 # Some functions and aliases
 zshfiles/functions/alias.zsh,             .zsh/functions/alias.zsh
+zshfiles/functions/anyenv.zsh,            .zsh/functions/anyenv.zsh
 zshfiles/functions/awscli.zsh,            .zsh/functions/awscli.zsh
 zshfiles/functions/bindkey.zsh,           .zsh/functions/bindkey.zsh
 zshfiles/functions/colorize.zsh,          .zsh/functions/colorize.zsh
@@ -226,6 +243,12 @@ zshfiles/functions/termsupport.zsh,       .zsh/functions/termsupport.zsh
 zshfiles/functions/tmux.zsh,              .zsh/functions/tmux.zsh
 zshfiles/functions/zgen.zsh,              .zsh/functions/zgen.zsh
 zshfiles/functions/zplug.zsh,             .zsh/functions/zplug.zsh
+zshfiles/functions/github.zsh,            .zsh/functions/github.zsh
+zshfiles/functions/go.zsh,                .zsh/functions/go.zsh
+zshfiles/functions/sls.zsh,               .zsh/functions/sls.zsh
+zshfiles/functions/pipenv.zsh,            .zsh/functions/pipenv.zsh
+zshfiles/functions/rbenv.zsh,             .zsh/functions/rbenv.zsh
+
 
 #===========================================================================}}}
 # bin                                                                       {{{
@@ -288,6 +311,10 @@ bin/urxvt_float.sh,                 bin/urxvt_float.sh
 bin/usage_all,                      bin/usage_all
 bin/wmatomp3_converter.sh,          bin/wmatomp3_converter.sh
 bin/ytdl,                           bin/ytdl
+bin/wifi,                           bin/wifi
+bin/battery,                        bin/battery
+bin/fzf,                            bin/fzf
+
 
 #===========================================================================}}}
 # [ranger](http://ranger.nongnu.org/):                                      {{{
@@ -409,8 +436,8 @@ ncmpcpp/scripts/ncmpcpp_notification.sh, .ncmpcpp/scripts/ncmpcpp_notification.s
 #==============================================================================
 # E-Mail Client
 
-mutt/muttrc,                   .mutt/muttrc
-$HOME/Dropbox/conf/mutt/alias, .mutt/alias
+#mutt/muttrc,                   .mutt/muttrc
+#$HOME/Dropbox/conf/mutt/alias, .mutt/alias
 
 #===========================================================================}}}
 # [turses](https://github.com/dialelo/turses):                              {{{
@@ -477,8 +504,8 @@ luakit/plugins/adblock/adp_jp_element_hiding.txt, .local/share/luakit/adblock/ad
 luakit/plugins/adblock/Adblock_Plus_list.txt,     .local/share/luakit/adblock/Adblock_Plus_list.txt
 luakit/plugins/adblock/exceptionrules.txt,        .local/share/luakit/adblock/exceptionrules.txt
 luakit/luakit.desktop,                            .local/share/applications/luakit.desktop
-$HOME/Dropbox/conf/luakit/bookmarks.db,           .local/share/luakit/bookmarks.db
-$HOME/Dropbox/conf/luakit/quickmarks,             .local/share/luakit/quickmarks
+#$HOME/Dropbox/conf/luakit/bookmarks.db,           .local/share/luakit/bookmarks.db
+#$HOME/Dropbox/conf/luakit/quickmarks,             .local/share/luakit/quickmarks
 
 #===========================================================================}}}
 # [tig](https://github.com/jonas/tig)                                       {{{
@@ -502,11 +529,11 @@ rcfiles/ansiweatherrc, .ansiweatherrc
 rcfiles/zathurarc, .config/zathura/zathurarc
 
 #===========================================================================}}}
-# [Feednix](https://github.com/Jarkore/Feednix)                             {{{
+# [Feednix](https://github.com/frenchbeard/feednix)                             {{{
 #==============================================================================
-# An ncurses based client for Feedly.
+# An ncurses based client for Feedly on Arch Linux distribution.
 
-$HOME/Dropbox/conf/feednix/config.json, .config/feednix/config.json
+#$HOME/Dropbox/conf/feednix/config.json, .config/feednix/config.json
 
 #===========================================================================}}}
 # [w3m](http://w3m.sourceforge.net/index.ja.html)                           {{{
@@ -542,12 +569,25 @@ mkdpreview/styles/github-markdown-css/github-markdown.css, .config/mkdpreview/st
 # wget                                                                      {{{
 #==============================================================================
 
-rcfiles/wgetrc,  .wgetrc
+rcfiles/wgetrc, .wgetrc
 
 #===========================================================================}}}
 # gtk-3.0                                                                   {{{
 #==============================================================================
 
-gtk/gtk-3.0/gtk.css,    .config/gtk-3.0/gtk.css
+gtk/gtk-3.0/gtk.css, .config/gtk-3.0/gtk.css
+
+#===========================================================================}}}
+# lazydocker                                                                {{{
+#==============================================================================
+
+lazydocker/config, .config/lazydocker/config
+
+#===========================================================================}}}
+# karabiner(HHKB setting)                                                   {{{
+#==============================================================================
+
+karabiner/assets/complex_modifications, .config/karabiner/assets/complex_modifications
+karabiner/karabiner.json,               .config/karabiner/karabiner.json
 
 #===========================================================================}}}

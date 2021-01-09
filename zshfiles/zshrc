@@ -12,6 +12,13 @@
 # Set the zsh root directoy
 export ZSH_ROOT=$HOME/.zsh
 
+export DOT_REPO="https://github.com/kezure/dotfiles.git"
+export DOT_DIR="$HOME/.dotfiles"
+fpath=($HOME/src/github.com/ssh0/dot $fpath)  # <- for completion
+source $HOME/src/github.com/ssh0/dot/dot.sh
+
+alias dot="dot_main -c $HOME/.config/dot/dotrc"
+
 # Using fzf
 if [ ! -f ~/.fzf.zsh ]; then
   # install fzf
@@ -31,7 +38,10 @@ export FZF_COMPLETION_TRIGGER=''
 source "$ZSH_ROOT/functions/environment.zsh"
 
 # dircolors
-eval $(dircolors "$ZSH_ROOT/dircolors/dircolors-zenburn")
+# eval $(dircolors "$ZSH_ROOT/dircolors/dircolors-zenburn")
+if [[ -f "$ZSH_ROOT/dircolors" && -x `which dircolors` ]]; then
+  eval `dircolors "$ZSH_ROOT/dircolors/dircolors-zenburn"`
+fi
 
 # tmux plugin should be loaded as much as first of zshrc.
 # Only run if tmux is actually installed.
@@ -57,7 +67,7 @@ source "$ZSH_ROOT/functions/completion.zsh"
 # Load custom plugins
 while read myfunction; do
   source "$ZSH_ROOT/functions/${myfunction}.zsh"
-done < <(cat << EOF
+done <<(cat << EOF
 alias
 history
 colorize
@@ -66,16 +76,22 @@ confirm
 extract
 fkill
 git
+github
+go
 less
 ls
 man
 ranger
 shtest
+sls
 peco-history
 bindkey
 termsupport
 prompt
+anyenv
+pipenv
 pyenv
+rbenv
 google-cloud-sdk
 awscli
 EOF

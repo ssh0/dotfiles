@@ -1,0 +1,82 @@
+# =========================================================================== #
+# Load ~/.bashrc
+# =========================================================================== #
+
+if [ -f ~/.bashrc ]; then
+	source ~/.bashrc
+fi
+
+export PATH=/usr/local/bin:$PATH
+
+
+# =========================================================================== #
+# anyenv (https://github.com/anyenv/anyenv)
+# =========================================================================== #
+if type 'anyenv' > /dev/null 2>&1; then
+	eval "$(anyenv init -)"
+	export ANYENV_ENVS=$(anyenv root)/envs 
+
+	# pyenv(https://github.com/pyenv/pyenv)
+	if type 'pyenv' > /dev/null 2>&1; then
+		export PYENV_ROOT=$ANYENV_ENVS/pyenv
+		export PATH=$PYENV_ROOT/bin:$PATH
+		eval "$(pyenv init -)"
+	fi
+
+	# rbenv(https://github.com/rbenv/rbenv)
+	if type 'rbenv' > /dev/null 2>&1; then
+		export PATH=$ANYENV_ENVS/rbenv/shims:$PATH
+		eval "$(rbenv init -)"
+	fi
+
+	# nodenv(https://github.com/nodenv/nodenv)
+	if type 'nodenv' > /dev/null 2>&1; then
+		export PATH=$ANYENV_ENVS/bin:$PATH
+		eval "$(nodenv init -)"
+	fi
+
+	# ========================================
+	# goenv(https://github.com/goenv/goenv)
+	#
+	# local policy one go enviroment
+	# ========================================
+	if type 'goenv' > /dev/null 2>&1; then
+		export GOENV_ROOT=$ANYENV_ENVS/goenv
+		export PATH=$GOENV_ROOT/bin:$PATH
+		export PATH=$GOENV_ROOT/shims:$PATH
+
+		export GOPATH=$HOME/go
+		export PATH=$PATH:$GOPATH/bin
+		#eval "(goenv init -)"
+    export GO111MODULE=on
+	fi
+
+fi # anyenv end
+
+# pipenv(https://pipenv-ja.readthedocs.io/ja/translate-ja)
+if type 'pipenv' > /dev/null 2>&1; then
+	export PIPENV_VENV_IN_PROJECT=1
+fi
+
+# pip install --user
+export PATH=$HOME/.local/bin:$PATH
+
+# =========================================================================== #
+# Yarn
+# =========================================================================== #
+
+# yarn
+if type 'yarn' > /dev/null 2>&1; then
+	export PATH=$HOME/.yarn/bin:$PATH
+fi
+
+# =========================================================================== #
+# AWS CLI
+# =========================================================================== #
+
+# aws credentials and config
+if type 'aws' > /dev/null 2>&1; then
+	export AWS_SHARED_CREDENTIALS_FILE=$HOME/.aws/credentials
+	export AWS_CONFIG_FILE=$HOME/.aws/config
+fi
+

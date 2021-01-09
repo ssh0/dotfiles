@@ -1,0 +1,209 @@
+#       ___           ___           ___           ___           ___           ___      
+#      /\  \         /\  \         /\  \         /\__\         /\  \         /\  \     
+#     /::\  \       /::\  \       /::\  \       /:/  /        /::\  \       /::\  \    
+#    /:/\:\  \     /:/\:\  \     /:/\ \  \     /:/__/        /:/\:\  \     /:/\:\  \   
+#   /::\~\:\__\   /::\~\:\  \   _\:\~\ \  \   /::\  \ ___   /::\~\:\  \   /:/  \:\  \  
+#  /:/\:\ \:|__| /:/\:\ \:\__\ /\ \:\ \ \__\ /:/\:\  /\__\ /:/\:\ \:\__\ /:/__/ \:\__\ 
+#  \:\~\:\/:/  / \/__\:\/:/  / \:\ \:\ \/__/ \/__\:\/:/  / \/_|::\/:/  / \:\  \  \/__/ 
+#   \:\ \::/  /       \::/  /   \:\ \:\__\        \::/  /     |:|::/  /   \:\  \       
+#    \:\/:/  /        /:/  /     \:\/:/  /        /:/  /      |:|\/__/     \:\  \      
+#     \::/__/        /:/  /       \::/  /        /:/  /       |:|  |        \:\__\     
+#      ~~            \/__/         \/__/         \/__/         \|__|         \/__/     
+#                                                                                      
+#
+# PERSONAL $HOME/.bashrc FILE for bash-3.0 (or later)
+# Last modified: Tue Nov 20 22:04:47 CET 2012
+#
+#  This file is normally read by interactive shells only.
+#+ Here is the place to define your aliases, functions and
+#+ other interactive features like your prompt.
+#
+#  The choice of colors was done for a shell with a dark background
+#+ (white on black), and this is usually also suited for pure text-mode
+#+ consoles (no X server available). If you use a white background,
+#+ you'll have to do some other choices for readability.
+#
+#  This bashrc file is a bit overcrowded.
+#  Remember, it is just just an example.
+#  Tailor it to your needs.
+# =============================================================== #
+
+export DOT_REPO="https://github.com/kezure/dotfiles.git"
+export DOT_DIR="$HOME/.dotfiles"
+fpath=($HOME/src/github.com/ssh0/dot $fpath)  # <- for completion
+source $HOME/src/github.com/ssh0/dot/dot.sh
+
+alias dot="dot_main -c $HOME/.config/dot/dotrc"
+
+
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# Check existing.
+function is_exist()
+{
+	type $1 >/dev/null 2>&1; return $?;
+}
+
+# OS judgement. boolean.
+is_mac=$( uname | grep -qi 'darwin' && true || false )
+is_linux=$( uname | grep -qi 'linux' && true || false )
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoredups:erasedups
+HISTDIR=$HOME/gd/
+if [ ! -e $HISTDIR ]; then
+    $HISTDIR=$HOME
+fi
+export HISTFILE=$HISTDIR/bash_history
+shopt -s histappend
+PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+export HISTSIZE=5000
+export HISTFILESIZE=5000
+export HISTIGNORE=exit
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color) color_prompt=yes;;
+esac
+
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+force_color_prompt=yes
+
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+        color_prompt=yes
+    else
+        color_prompt=
+    fi
+fi
+
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]'
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w'
+fi
+unset color_prompt force_color_prompt
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+export PS1="$PS1\n\$ "
+export PS2='  │ '
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    eval $(dircolors "$HOME/.zsh/dircolors/dircolors-zenburn")
+    
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+
+# [ -f ~/.zgen/ssh0/dot-master/dot.sh ] && source ~/.zgen/ssh0/dot-master/dot.sh 
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+
+# =========================================================================== #
+# User settings
+# =========================================================================== #
+
+# =========================================================================== #
+# Github cli
+# =========================================================================== #
+
+eval "$(hub alias -s)"
+
+# =========================================================================== #
+# Serverless Framework
+# =========================================================================== #
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f $HOME/.nodebrew/node/v12.3.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash ] && . $HOME/.nodebrew/node/v12.3.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash
+
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f $HOME/.nodebrew/node/v12.3.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . $HOME/.nodebrew/node/v12.3.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash
+
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[ -f $HOME/.nodebrew/node/v12.3.1/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.bash ] && . $HOME/.nodebrew/node/v12.3.1/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.bash
+
+# =========================================================================== #
+# AWS CLI
+# =========================================================================== #
+
+# aws complete -C '/usr/local/bin/aws_completer' aws
+complete -C 'aws_completer' aws

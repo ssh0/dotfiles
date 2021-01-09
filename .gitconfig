@@ -1,5 +1,5 @@
 [include]
-    path = ~/Dropbox/conf/gitconfig.local # for my user name and email address
+    path = ~/gd/conf/gitconfig.local # for my user name and email address
 [push]
     default = simple
 [color]
@@ -42,18 +42,18 @@
     gn = grep -n
 [core]
     pager = diff-so-fancy | less --tabs=4 -RFX
-	excludesfile = /Users/fujimotoshotaro/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [difftool "sourcetree"]
-	cmd = "diff-so-fancy "
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [user]
-	name = 藤本 將太郎
-	email = fujimotoshotaro@team-lab.com
+	name = Kotaro EZURE
+	email = 
 [commit]
-	template = /Users/fujimotoshotaro/.stCommitMsg
+	template = $HOME/.stCommitMsg
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true

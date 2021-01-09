@@ -7,7 +7,7 @@ endif
 
 call plug#begin(s:plug_dir)
 
-Plug 'surround.vim'
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'Shougo/unite.vim'
 nnoremap <silent> <Leader>uy :<C-u>Unite history/yank<CR>
@@ -256,6 +256,6 @@ call plug#end()
 " Required:
 filetype plugin indent on
 syntax on
-colorscheme easy-reading
+" colorscheme easy-reading
 
 "---------------------------------------------------------------------------}}}

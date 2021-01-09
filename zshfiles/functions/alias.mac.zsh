@@ -83,6 +83,9 @@ alias sudo='sudo -E '
 
 alias hc='herbstclient'
 
+# restart shell
+alias relogin='exec $SHELL -l'
+
 # edit configuration file by $EDITOR (vim).
 function _ec() {
   local cmd alis
@@ -181,3 +184,15 @@ _uc ranger ~/gitrepo/ranger/ranger/config/rc.conf ~/.config/ranger/rc.conf 'buil
 _uc rifle ~/gitrepo/ranger/ranger/config/rifle.conf ~/.config/ranger/rifle.conf 'builtin cd ~/gitrepo/ranger && git pull && sudo make install && builtin cd -'
 
 unfunction _uc
+
+#============================================================
+# User sttings
+#============================================================
+alias tf="terraform"
+alias lzd="docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/.config/lazydocker/config:/.config/jesseduffield/lazydocker lazyteam/lazydocker"
+alias sls="serverless"
+alias dsstore="find . -name '.DS_Store' -print -exec rm -r {} ';'; find . -name ._* -exec rm -r {} ';'"
+
+function undot(){
+    /usr/bin/zip --delete $@ "*__MACOSX*" "*.DS_Store"
+}

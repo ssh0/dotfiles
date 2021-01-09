@@ -1,0 +1,180 @@
+
+# tap repositories and their packages
+
+tap homebrew/core
+brew aom
+brew arpack
+brew autoconf
+brew bazel
+brew c-ares
+brew cairo
+brew ceres-solver
+brew cmake
+brew curl
+brew eigen
+brew epstool
+brew ffmpeg
+brew fftw
+brew fig2dev
+brew flac
+brew fltk
+brew fontconfig
+brew fping
+brew freetype
+brew frei0r
+brew fribidi
+brew gcc
+brew gd
+brew gdbm
+brew gettext
+brew gflags
+brew ghostscript
+brew giflib
+brew git-lfs
+brew gl2ps
+brew glib
+brew glog
+brew glpk
+brew gmp
+brew gnuplot
+brew gnutls
+brew go
+brew graphicsmagick
+brew graphite2
+brew harfbuzz
+brew hdf5
+brew hub
+brew hwloc
+brew icu4c
+brew ilmbase
+brew imagemagick
+brew isl
+brew jasper
+brew jemalloc
+brew jmeter
+brew jpeg
+brew jq
+brew lame
+brew lazydocker
+brew leptonica
+brew libass
+brew libbluray
+brew libcerf
+brew libde265
+brew libevent
+brew libffi
+brew libgcrypt
+brew libgpg-error
+brew libheif
+brew libidn2
+brew libmaxminddb
+brew libmpc
+brew libogg
+brew libomp
+brew libpng
+brew libsamplerate
+brew libsndfile
+brew libsoxr
+brew libtasn1
+brew libtermkey
+brew libtiff
+brew libtool
+brew libunistring
+brew libuv
+brew libvidstab
+brew libvorbis
+brew libvpx
+brew libvterm
+brew libxml2
+brew libyaml
+brew little-cms2
+brew lua
+brew lua@5.1
+brew luajit
+brew lzo
+brew mas
+brew metis
+brew mpfr
+brew msgpack
+brew ncurses
+brew neovim
+brew netpbm
+brew nettle
+brew node
+brew nodebrew
+brew numpy
+brew oniguruma
+brew open-mpi
+brew openblas
+brew opencore-amr
+brew opencv
+brew openexr
+brew openjpeg
+brew openssl@1.1
+brew opus
+brew p11-kit
+brew pango
+brew pcre
+brew pixman
+brew pkg-config
+brew plotutils
+brew portaudio
+brew pstoedit
+brew pyenv
+brew python
+brew qhull
+brew qrupdate
+brew qt
+brew readline
+brew rtmpdump
+brew rubberband
+brew sdl2
+brew shared-mime-info
+brew sl
+brew snappy
+brew speex
+brew sqlite
+brew suite-sparse
+brew sundials
+brew szip
+brew tbb
+brew tesseract
+brew texinfo
+brew tfenv
+brew theora
+brew tmux
+brew tnftp
+brew tree
+brew unbound
+brew unibilium
+brew webp
+brew wireshark --with-qt
+brew x264
+brew x265
+brew xvid
+brew xz
+brew yarn
+brew zsh
+
+tap homebrew/cask
+cask android-platform-tools
+
+tap argon/mas
+
+tap jesseduffield/lazydocker
+
+tap rcmdnk/file
+brew brew-file
+
+# Other Homebrew packages
+brew python@2
+brew sshpass
+
+# App Store applications
+appstore 478570084 CompareMerge (2.11)
+appstore 668208984 GIPHY CAPTURE (4.1)
+appstore 405399194 Kindle (1.27.0)
+appstore 715768417 Microsoft Remote Desktop (8.0.30030)
+appstore 425955336 Skitch (2.8.4)
+appstore 425424353 The Unarchiver (4.1.0)
+appstore 497799835 Xcode (11.3.1)

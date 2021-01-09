@@ -23,8 +23,9 @@ if [[ ! -f "${zplug_source}" ]]; then
   echo "zplug is not installed in this machine."
   echo "Installing zplug..."
   echo ""
-  curl -sL zplug.sh/installer | zsh
-  source "$HOME/.zplug/init.zsh"
+  # curl -sL zplug.sh/installer | zsh
+  curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+  # source "$HOME/.zplug/init.zsh"
   zplug update --self
 fi
 

@@ -6,7 +6,7 @@
 #==============================================================================
 
 # You can change the dotfiles to clone
-clone_repository='https://github.com/ssh0/dotfiles.git'
+clone_repository='https://github.com/kezure/dotfiles.git'
 
 # Set the directory that the script regard as dotfiles directory.
 dotdir="$HOME/.dotfiles"
