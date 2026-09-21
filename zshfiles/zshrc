@@ -30,6 +30,13 @@ export FZF_COMPLETION_TRIGGER=''
 # Set some environmet variables
 source "$ZSH_ROOT/functions/environment.zsh"
 
+# Load machine-local settings from outside this repository.
+local_zsh_config="$HOME/.config/zsh/local.zsh"
+if [[ -r "$local_zsh_config" ]]; then
+  source "$local_zsh_config"
+fi
+unset local_zsh_config
+
 # dircolors
 eval $(dircolors "$ZSH_ROOT/dircolors/dircolors-zenburn")
 
