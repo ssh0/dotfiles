@@ -12,9 +12,38 @@
 
 setopt prompt_subst
 
-bg_dir=240
-bg_dark=237
-fg_red=210
+# Flexoki Light palette
+# Source: /Users/fujimotoshotaro/src/flexoki/css/flexoki.css
+flexoki_black='#100F0F'
+flexoki_paper='#FFFCF0'
+flexoki_100='#E6E4D9'
+flexoki_200='#CECDC3'
+flexoki_red='#D14D41'
+flexoki_yellow='#D0A215'
+flexoki_green='#879A39'
+flexoki_cyan='#3AA99F'
+flexoki_blue='#4385BE'
+
+
+flexoki_base_950='#1c1b1a'
+flexoki_base_900='#282726'
+flexoki_base_850='#343331'
+flexoki_base_800='#403e3c'
+flexoki_base_700='#575653'
+flexoki_base_600='#6f6e69'
+flexoki_base_500='#878580'
+flexoki_base_300='#b7b5ac'
+flexoki_base_200='#cecdc3'
+flexoki_base_150='#dad8ce'
+flexoki_base_100='#e6e4d9'
+flexoki_base_50='#f2f0e5'
+flexoki_paper='#fffcf0'
+
+
+bg_dir=${flexoki_base_150}
+bg_dark=${flexoki_base_50}
+fg_red=${flexoki_red}
+fg_main=${flexoki_black}
 
 #===========================================================================}}}
 # Segment drawing                                                           {{{
@@ -64,7 +93,7 @@ prompt_end() {
 #------------------------------------------------------------------------------
 
 prompt_init() {
-  echo -n "%{%F{240}%K{240}%}#"
+  echo -n "%{%F{${bg_dir}}%K{${bg_dir}}%}#"
 }
 
 #---------------------------------------------------------------------------}}}
@@ -79,9 +108,9 @@ prompt_status() {
   local symbols
   symbols=()
   [[ $RETVAL -ne 0 ]] && symbols+="%{%F{${fg_red}}%}✞"
-  [[ $UID -eq 0 ]] && symbols+="%{%F{223}%}⚡"
-  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
-  [[ -n ${RANGER_LEVEL} ]] && symbols+="%{%F{153}%}®"
+  [[ $UID -eq 0 ]] && symbols+="%{%F{${flexoki_yellow}}%}⚡"
+  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{${flexoki_cyan}}%}⚙"
+  [[ -n ${RANGER_LEVEL} ]] && symbols+="%{%F{${flexoki_blue}}%}®"
 
   [[ -n "$symbols" ]] && prompt_segment ${bg_dark} NONE "$symbols"
 }
@@ -93,7 +122,7 @@ prompt_status() {
 prompt_virtualenv() {
   local virtualenv_path="$VIRTUAL_ENV"
   if [[ -n $virtualenv_path && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
-    prompt_segment green black "(`basename $virtualenv_path`)"
+    prompt_segment ${flexoki_green} ${flexoki_black} "(`basename $virtualenv_path`)"
   fi
 }
 
@@ -102,7 +131,7 @@ prompt_virtualenv() {
 #------------------------------------------------------------------------------
 
 prompt_dir() {
-  prompt_segment ${bg_dir} 231 '%~'
+  prompt_segment ${bg_dir} ${fg_main} '%~'
 }
 
 #---------------------------------------------------------------------------}}}
@@ -119,7 +148,7 @@ prompt_git() {
     # if [[ -n $dirty ]]; then
       # prompt_segment ${bg_dark} 223
     # else
-      prompt_segment ${bg_dark} 153
+      prompt_segment ${bg_dark} ${flexoki_cyan}
     # fi
 
     if [[ -e "${repo_path}/BISECT_LOG" ]]; then
@@ -158,11 +187,11 @@ prompt_hg() {
         st='±'
       elif [[ -n $(hg prompt "{status|modified}") ]]; then
         # if any modification
-        prompt_segment 223 ${bg_dark}
+        prompt_segment ${flexoki_yellow} ${bg_dark}
         st='±'
       else
         # if working copy is clean
-        prompt_segment 153 ${bg_dark}
+        prompt_segment ${flexoki_cyan} ${bg_dark}
       fi
       echo -n $(hg prompt "☿ {rev}@{branch}") $st
     else
@@ -173,10 +202,10 @@ prompt_hg() {
         prompt_segment ${fg_red} ${bg_dark}
         st='±'
       elif `hg st | grep -q "^(M|A)"`; then
-        prompt_segment 223 ${bg_dark}
+        prompt_segment ${flexoki_yellow} ${bg_dark}
         st='±'
       else
-        prompt_segment 153 ${bg_dark}
+        prompt_segment ${flexoki_cyan} ${bg_dark}
       fi
       echo -n "☿ $rev@$branch" $st
     fi
@@ -199,10 +228,10 @@ build_prompt() {
 }
 
 PROMPT='%{%f%b%k%}$(build_prompt)%{$reset_color%}
-%{%F{240}%}\$ %{$reset_color%}'
+%{%F{${bg_dir}}%}\$ %{$reset_color%}'
 RPROMPT=''
 
-PROMPT2='%{%F{30}%}↪%{$reset_color%} '
-RPROMPT2='%{$fg_bold[green]%}%_%{$reset_color%}'
+PROMPT2='%{%F{${flexoki_cyan}}%}↪%{$reset_color%} '
+RPROMPT2='%{%F{${flexoki_green}}%}%_%{$reset_color%}'
 
 #===========================================================================}}}
