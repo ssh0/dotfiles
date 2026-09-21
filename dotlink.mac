@@ -92,6 +92,8 @@ $HOME/Dropbox/conf/netrc, .netrc
 
 vimfiles/vimrc,    .vimrc
 vimfiles/plug.vim, .vim/plug.vim
+vimfiles/colors/flexoki_light.vim, .vim/colors/flexoki_light.vim
+vimfiles/colors/flexoki_dark.vim,  .vim/colors/flexoki_dark.vim
 
 vimfiles/ftplugin/bib_quickrun.vim,      .vim/ftplugin/bib_quickrun.vim
 vimfiles/ftplugin/gitcommit.vim,         .vim/ftplugin/gitcommit.vim
