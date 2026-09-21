@@ -553,3 +553,5 @@ gtk/gtk-3.0/gtk.css,    .config/gtk-3.0/gtk.css
 #===========================================================================}}}
 .config/herdr/config.toml,.config/herdr/config.toml
 .config/wezterm/wezterm.lua,.config/wezterm/wezterm.lua
+.config/wezterm/colors/Flexoki Light.toml,.config/wezterm/colors/Flexoki Light.toml
+.config/wezterm/colors/Flexoki Dark.toml,.config/wezterm/colors/Flexoki Dark.toml
