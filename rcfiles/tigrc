@@ -54,9 +54,9 @@
 # the column. Use zero (the default value) to auto-size the column based
 # on the content.
 #
-set blame-view	= date:short author:no file-name:auto id:yes,color line-number:no,interval=5 text
+set blame-view	= id:yes,color file-name:auto author:no date:default,format="%Y-%m-%d" line-number:no text
 # set grep-view	= file-name:no line-number:yes,interval=1 text
-set main-view	= line-number:no,interval=5 id:no date:short author:full commit-title:yes,graph,refs,overflow=no
+set main-view	= line-number:no,interval=5 id:no date:default,format="%Y-%m-%d" author:full commit-title:yes,graph,refs,overflow=no
 # set refs-view	= line-number:no id:no date:default author:full ref commit-title
 # set stash-view	= line-number:no,interval=5 id:no date:default author:full commit-title
 # set status-view	= line-number:no,interval=5 status:short file-name
@@ -395,7 +395,7 @@ bind generic <C-b> scroll-page-up
 # color "    Tested-by"		yellow	default
 # color "    Reviewed-by"		yellow	default
 # color default			default	default	normal
-color cursor			default	236	bold
+# color cursor			default	236	bold
 # color status			green	default
 # color delimiter			magenta	default
 # color date			blue	default
@@ -409,8 +409,8 @@ color cursor			default	236	bold
 # color grep.file			blue	default
 # color file-size			default	default
 # color line-number		cyan	default
-color title-blur		black	236	bold
-color title-focus		236	white	bold
+# color title-blur		black	236	bold
+# color title-focus		236	white	bold
 # color main-commit		default	default
 # color main-tag			magenta	default	bold
 # color main-local-tag		magenta	default

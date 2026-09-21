@@ -69,12 +69,24 @@ augroup filetype
   autocmd Filetype python let &formatprg="autopep8 -"
   autocmd FileType python setlocal completeopt-=preview
   " html
-  let html_to_html  = "pandoc --from=html --to=markdown"
-  let html_to_html .= " | pandoc --from=markdown --to=html"
-  autocmd Filetype html let &formatprg=html_to_html
+  " let html_to_html  = "pandoc --from=html --to=markdown"
+  " let html_to_html .= " | pandoc --from=markdown --to=html"
+  " autocmd Filetype html let &formatprg=html_to_html
+  " velocity template file
+  autocmd BufRead,BufNewFile *.vtl set filetype=velocity
   " sql
   autocmd FileType sql set commentstring=--\ %s
   autocmd Filetype sql let &formatprg="sqlformat -r -k lower --comma_first TRUE --indent_width 4 -"
+
+  " let g:quickrun_config['plantuml'] = {
+  " \ 'runner' : 'vimproc',
+  " \ 'command' : 'make',
+  " \ 'outputter' : 'error',
+  " \ 'outputter/error/success' : 'null',
+  " \ 'outputter/error/error' : 'quickfix',
+  " \ 'exec': '%c'
+  " \}
+  " autocmd BufWritePost,FileWritePost *.{pu,iuml} :QuickRun -type plantuml
 augroup END
 
 augroup set_K_help
@@ -152,18 +164,28 @@ let g:netrw_altv=1
 " =3: tree style listing
 let g:netrw_liststyle=3
 
+let g:ale_fixers = {
+\   'python': ['black'],
+\}
+
 "                                                                           }}}
 " Search                                                                    {{{
 " ------
 
-" case sensitive for search
-set noignorecase nosmartcase
+" " case sensitive for search
+" set noignorecase nosmartcase
+
+" case insensitive for search
+set ignorecase smartcase
+
 " Show matches while typing
 ">>> set incsearch
 " highlighted search index
 ">>> set hlsearch
 " wrapscan
 set wrapscan
+" set path
+set path+=**
 
 "                                                                           }}}
 " Apearance                                                                 {{{
@@ -176,7 +198,7 @@ set wrapscan
 set lazyredraw
 
 " no number line
-set nonumber norelativenumber numberwidth=3
+set number relativenumber numberwidth=5
 
 " autoindent
 ">>> set autoindent
@@ -255,6 +277,7 @@ autocmd FileType zsh        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expand
 autocmd FileType coffee     setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd FileType sql        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd FileType velocity   setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType vue        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
 "---------------------------------------------------------------------------}}}
 " My function:                                                              {{{
@@ -271,6 +294,36 @@ endfunction
 function! Markdown_h3()
   normal! I### 
 endfunction
+
+" ddu
+" You must set the default ui.
+" Note: ff ui
+" https://github.com/Shougo/ddu-ui-ff
+" call ddu#custom#patch_global({
+"     \ 'ui': 'ff',
+"     \ })
+
+" You must set the default action.
+" Note: file kind
+" https://github.com/Shougo/ddu-kind-file
+" call ddu#custom#patch_global({
+"     \   'kindOptions': {
+"     \     'file': {
+"     \       'defaultAction': 'open',
+"     \     },
+"     \   }
+"     \ })
+
+" " Specify matcher.
+" " Note: matcher_substring filter
+" " https://github.com/Shougo/ddu-filter-matcher_substring
+" call ddu#custom#patch_global({
+"     \   'sourceOptions': {
+"     \     '_': {
+"     \       'matchers': ['matcher_substring'],
+"     \     },
+"     \   }
+"     \ })
 
 "---------------------------------------------------------------------------}}}
 " Key Bindings:                                                             {{{

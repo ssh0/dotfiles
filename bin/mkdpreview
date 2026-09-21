@@ -143,8 +143,9 @@ if $save; then
 
   $update && test ! -f "${output}" && exit 0
 
-  pandoc -f markdown -smart -t html5 -c "${template}" -B "${header}" -A \
-    "${footer}" -s --mathjax -o "${output}" "$@" && \
+  pandoc -f markdown  -t html5 -F mermaid-filter \
+  -c "${template}" -B "${header}"  -A  "${footer}" \
+  -s --mathjax -o "${output}" "$@" && \
   $notification && eval $notificationcmd
 fi
 

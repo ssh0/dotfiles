@@ -19,7 +19,7 @@ if [ "$1" = '-h' ]; then
   exit 0
 fi
 
-output_dir="$HOME/Dropbox/document/man"
+output_dir="$HOME/Documents/man"
 
 if ret="$(command -p man -t "$1")"; then
   echo "${ret}" | ps2pdf -sPAPERSIZE=a4 -sOutputFile="${output_dir}/$1".pdf - &&

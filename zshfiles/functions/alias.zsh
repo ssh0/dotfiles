@@ -36,7 +36,9 @@ fi
 alias vi='vim'
 alias v='vim'
 
-alias r='ranger'
+alias aws='/usr/local/bin/aws'
+
+# alias r='ranger'
 
 # I often type ":q" to exit terminal
 alias :q='exit'
@@ -46,6 +48,7 @@ alias py='python'
 alias pytohn='python'
 
 alias pyst='cd ~/Workspace/python/tuto && $EDITOR "$(incfn -b test -e py -n 2)"'
+alias pcat='python -m pickle'
 
 # pip install
 alias pipins='sudo -H pip install'
@@ -94,7 +97,7 @@ function _ec() {
   elif [[ -f "$2" ]]; then
     cmd="$EDITOR '$2'"
   elif [[ -d "$2" ]]; then
-    cmd="ranger --cmd='cd '$2''"
+    cmd="yazi '$2'"
     # cmd="builtin cd '$2'; ls"
   fi
   alias "cf-${alis}"="$cmd"
@@ -110,6 +113,7 @@ _ec dotrc      ~/.dotfiles/dotrc
 _ec env        ${ZSH_ROOT}/functions/environment.zsh
 _ec functions  ${ZSH_ROOT}/functions
 _ec herbstluftwm ~/.config/herbstluftwm/autostart
+_ec herdr      ~/.config/herdr/config.toml
 _ec history    ${ZSH_ROOT}/history
 _ec latexmk    ~/.latexmkrc
 _ec luakit     ~/.config/luakit
@@ -119,11 +123,15 @@ _ec mpv        ~/.config/mpv/mpv.conf
 _ec mutt       ~/.mutt/muttrc
 _ec nvim       ~/.config/nvim/init.vim
 _ec ncmpcpp    ~/.ncmpcpp/config
+_ec opencode   ~/.config/opencode
+_ec pi         ~/.pi/agent
+_ec pi-system  ~/.pi/agent/SYSTEM.md
 _ec plug       ~/.config/nvim/plug.vim
 _ec prompt     ${ZSH_ROOT}/functions/prompt.zsh
 _ec ranger     ~/.config/ranger/rc.conf
 _ec ranger.d   ~/.config/ranger
 _ec s          ~/bin/s_provider
+_ec task       ~/.taskrc
 _ec tig        ~/.tigrc
 _ec tmux       ~/.tmux.conf
 _ec turses     ~/.turses/config
@@ -133,6 +141,7 @@ _ec vimperator ~/.vimperatorrc
 _ec w3m        ~/.w3m/config
 _ec w3m-keymap ~/.w3m/keymap
 _ec websearch  ~/Workspace/python/web_search/websearch/config.py
+_ec wezterm    ~/.config/wezterm/wezterm.lua
 _ec xdefaults  ~/.Xdefaults
 _ec xmodmap    ~/.Xmodmap
 _ec xmonad     ~/.xmonad/xmonad.hs
@@ -169,3 +178,30 @@ _uc ranger ~/gitrepo/ranger/ranger/config/rc.conf ~/.config/ranger/rc.conf 'buil
 _uc rifle ~/gitrepo/ranger/ranger/config/rifle.conf ~/.config/ranger/rifle.conf 'builtin cd ~/gitrepo/ranger && git pull && sudo make install && builtin cd -'
 
 unfunction _uc
+
+# taskwarrior-tui
+alias tt='taskwarrior-tui'
+
+# yazi
+function y() {
+  tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+  /opt/homebrew/bin/yazi --cwd-file="$tmp"
+  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
+
+# quick stdout html-strings preview in Safari
+function tosafari() {
+  # 一時ファイルを作成（拡張子を.htmlにするのがポイント）
+  tmp="$(mktemp "/tmp/preview-html.XXXX")"
+  # 標準入力を一時ファイルに書き込む
+  cat > "$tmp"
+  mv "$tmp" "$tmp.html"
+  # ブラウザで開く
+  open -a Safari "$tmp.html"
+}
+
+alias ぴ='pi'
+alias p='pi'

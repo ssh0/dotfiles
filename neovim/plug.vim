@@ -7,32 +7,26 @@ endif
 
 call plug#begin(s:plug_dir)
 
-Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
-let g:deoplete#enable_at_startup = 1
+" Plug 'vim-denops/denops.vim'
+" Plug 'Shougo/ddu.vim'
 
-Plug 'surround.vim'
+" Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+" let g:deoplete#enable_at_startup = 1
+
 Plug 'tpope/vim-commentary'
-Plug 'Shougo/unite.vim'
-nnoremap <silent> <Leader>uy :<C-u>Unite history/yank<CR>
-nnoremap <silent> <Leader>ub :<C-u>Unite buffer<CR>
-nnoremap <silent> <Leader>uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-nnoremap <silent> <Leader>ur :<C-u>Unite -buffer-name=register register<CR>
-nnoremap <silent> <Leader>uu :<C-u>Unite file_mru buffer<CR>
+" Plug 'Shougo/unite.vim'
+" nnoremap <silent> <Leader>uy :<C-u>Unite history/yank<CR>
+" nnoremap <silent> <Leader>ub :<C-u>Unite buffer<CR>
+" nnoremap <silent> <Leader>uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+" nnoremap <silent> <Leader>ur :<C-u>Unite -buffer-name=register register<CR>
+" nnoremap <silent> <Leader>uu :<C-u>Unite file_mru buffer<CR>
 
-Plug 'Shougo/vimfiler.vim'
-nnoremap <silent> <Leader>e :VimFilerBufferDir -buffer-name=explorer -split<CR>
+" Plug 'Shougo/vimfiler.vim'
+" nnoremap <silent> <Leader>e :VimFilerBufferDir -buffer-name=explorer -split<CR>
 
-Plug 'Shougo/vimproc', {'do': 'make'}
-Plug 'lambdalisue/vim-gita'
-Plug 'ctrlpvim/ctrlp.vim'
-if executable('ag')
-  let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
-endif
-nnoremap <Leader>oo :CtrlP<CR>
-nnoremap <Leader>om :CtrlPMixed<CR>
-nnoremap <Leader>or :CtrlPMRUFiles<CR>
-
-Plug 'vim-syntastic/syntastic'
+" Plug 'Shougo/vimproc', {'do': 'make'}
+" Plug 'vim-syntastic/syntastic'
+Plug 'dense-analysis/ale'
 
 Plug 'ervandew/supertab'
 Plug 'tacroe/unite-mark'
@@ -49,7 +43,7 @@ let g:SignatureMarkTextHLDynamic = 1
 let g:SignatureMarkTextHL = "SignColumn"
 
 Plug 'LeafCage/foldCC'
-set foldtext=FoldCCtext()
+" set foldtext=FoldCCtext()
 
 Plug 'junegunn/vim-easy-align'
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -60,7 +54,8 @@ Plug 'tyru/open-browser.vim'
 " {{{
 Plug 'itchyny/lightline.vim'
 let g:lightline = {
-      \ 'colorscheme': 'easyreading',
+      \ 'colorscheme': 'solarized',
+      \ 'background': 'light',
       \ 'mode_map': { 'c': 'NORMAL' },
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'filename' ], ['ctrlpmark'] ],
@@ -94,10 +89,10 @@ let g:lightline = {
       \ 'component_type': {
       \   'syntastic': 'error',
       \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' },
-      \ 'tabline_separator': { 'left': '', 'right': '' },
-      \ 'tabline_subseparator': { 'left': '', 'right': '' },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '‹', 'right': '›' },
+      \ 'tabline_separator': { 'left': '', 'right': '' },
+      \ 'tabline_subseparator': { 'left': '‹', 'right': '›' },
       \ }
 
 function! MyModified()
@@ -123,19 +118,19 @@ function! MyFilename()
         \ ) : ''
 endfunction
 
-" gita (steal from vimgita README)
-let g:lightline.my = {}
-function! g:lightline.my.git_branch() " 
-  return winwidth(0) > 70 ? gita#statusline#preset('branch') : ''
-endfunction
+" " gita (steal from vimgita README)
+" let g:lightline.my = {}
+" function! g:lightline.my.git_branch() " 
+"   return winwidth(0) > 70 ? gita#statusline#preset('branch') : ''
+" endfunction
 
-function! g:lightline.my.git_traffic() " 
-  return winwidth(0) > 70 ? gita#statusline#preset('traffic') : ''
-endfunction
+" function! g:lightline.my.git_traffic() " 
+"   return winwidth(0) > 70 ? gita#statusline#preset('traffic') : ''
+" endfunction
 
-function! g:lightline.my.git_status() " 
-  return winwidth(0) > 70 ? gita#statusline#preset('status') : ''
-endfunction
+" function! g:lightline.my.git_status() " 
+"   return winwidth(0) > 70 ? gita#statusline#preset('status') : ''
+" endfunction
 
 function! MyFileformat()
   return winwidth(0) > 70 ? &fileformat : ''
@@ -203,7 +198,7 @@ let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
 "}}}
 
-Plug 'ssh0/easyreading.vim'
+" Plug 'ssh0/easyreading.vim'
 Plug 'thinca/vim-quickrun'
 let g:quickrun_config = {}
 let g:quickrun_no_default_key_mapping = 0
@@ -232,17 +227,19 @@ augroup END
 
 Plug 'thinca/vim-splash'
 let g:splash#path = expand('~/.splash-vim.txt')
-
-Plug 'mxw/vim-jsx'
-
-Plug 'millermedeiros/vim-esformatter'
+"
+" Plug 'millermedeiros/vim-esformatter'
 
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_toc_autofit = 1
-let g:vim_markdown_folding_level = 2
+let g:vim_markdown_folding_disabled = 1
+" let g:vim_markdown_folding_level = 2
 " let g:vim_markdown_folding_style_pythonic = 1
+
+Plug 'previm/previm', {'for': 'markdown'}
+let g:previm_open_cmd = 'open -a Safari'
 
 " Plug 'tpope/vim-markdown', {'for': 'markdown'}
 " Plug 'tyru/markdown-codehl-onthefly.vim', {'for': 'markdown'}
@@ -256,7 +253,7 @@ let g:vimtex_view_general_viewer = 'mupdf'
 " let g:jedi#use_splits_not_buffers = "top"
 " let g:jedi#popup_on_dot = 1
 " let g:jedi#popup_select_first = 1
-Plug 'zchee/deoplete-jedi', {'for': 'python'}
+" Plug 'zchee/deoplete-jedi', {'for': 'python'}
 
 " Plug 'bpearson/vim-phpcs', {'for': ['php', 'javascript', 'css']}
 
@@ -264,7 +261,7 @@ Plug 'mattn/emmet-vim', {'for': ['html', 'css']}
 let g:user_emmet_mode='inv'
 
 Plug 'tmhedberg/SimpylFold', {'for': 'python'}
-Plug 'nvie/vim-flake8', {'for': 'python'}
+" Plug 'nvie/vim-flake8', {'for': 'python'}
 Plug 'hynek/vim-python-pep8-indent', {'for': 'python'}
 Plug 'lambdalisue/vim-gista'
 let g:gista#github_user = 'ssh0'
@@ -275,14 +272,20 @@ Plug 'lepture/vim-velocity', {'for': 'velocity'}
 
 Plug 'timcharper/textile.vim', {'for': 'textile'}
 
-Plug 'vimperator/vimperator.vim'
+Plug 'dNitro/vim-pug-complete', { 'for': ['jade', 'pug'] }
 
-Plug 'mattn/webapi-vim'
-Plug 'moznion/hateblo.vim'
-Plug 'mattn/googlesuggest-complete-vim'
-" Plug 'Lokaltog/powerline-fontpatcher'
-Plug 'ssh0/easy-reading.vim'
+Plug 'aklt/plantuml-syntax', { 'for': ['pu', 'iuml'] }
+let g:plantuml_set_makeprg = 0
+
+" Plug 'ssh0/easy-reading.vim'
 Plug 'rking/ag.vim'
+
+" Github Copilot
+" Plug 'github/copilot.vim'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'chriskempson/base16-vim'
+Plug 'kepano/flexoki-neovim'
 
 call plug#end()
 
@@ -290,6 +293,9 @@ call plug#end()
 " Required:
 filetype plugin indent on
 syntax on
-colorscheme easy-reading
+" colorscheme base16-github
+colorscheme flexoki-light
+set termguicolors
+
 
 "---------------------------------------------------------------------------}}}

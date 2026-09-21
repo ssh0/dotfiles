@@ -77,6 +77,8 @@ augroup filetype
   autocmd Filetype html let &formatprg=html_to_html
   " sql
   autocmd FileType sql set commentstring=--\ %s
+  " velocity template file
+  autocmd BufRead,BufNewFile *.vtl set filetype=velocity
 augroup END
 
 augroup set_K_help
@@ -105,7 +107,7 @@ set history=1000
 set viminfo='1000,<3000,f50,c,h,s100
 
 " use unnamed register (for outer programs)
-set clipboard=unnamedplus,autoselect
+set clipboard=unnamed,autoselect,autoselectplus
 
 " enable delete key
 set backspace=indent,eol,start
@@ -163,6 +165,8 @@ set incsearch
 set hlsearch
 " wrapscan
 set wrapscan
+" path
+set path+=**
 
 "                                                                           }}}
 " Apearance                                                                 {{{

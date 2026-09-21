@@ -17,7 +17,8 @@
 #
 #=#=
 
-LS_OPTIONS="-hFv --time-style=long-iso --group-directories-first"
+# LS_OPTIONS="-hFv --time-style=long-iso --group-directories-first"
+LS_OPTIONS="-hFvG"
 
 if command -p ls --color -d . &>/dev/null 2>&1; then
   LS_OPTIONS="${LS_OPTIONS} --color"

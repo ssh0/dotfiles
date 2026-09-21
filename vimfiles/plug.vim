@@ -7,7 +7,7 @@ endif
 
 call plug#begin(s:plug_dir)
 
-Plug 'surround.vim'
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'Shougo/unite.vim'
 nnoremap <silent> <Leader>uy :<C-u>Unite history/yank<CR>
@@ -54,7 +54,8 @@ Plug 'lilydjwg/colorizer'
 Plug 'tyru/open-browser.vim'
 Plug 'itchyny/lightline.vim'"{{{
 let g:lightline = {
-      \ 'colorscheme': 'easyreading',
+      \ 'colorscheme': 'one',
+      \ 'background': 'light',
       \ 'mode_map': { 'c': 'NORMAL' },
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'filename' ], ['ctrlpmark'] ],
@@ -197,7 +198,6 @@ let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
 "}}}
 
-Plug 'ssh0/easyreading.vim'
 Plug 'thinca/vim-quickrun'
 let g:quickrun_config = {}
 let g:quickrun_no_default_key_mapping = 0
@@ -247,8 +247,9 @@ let g:gista#update_on_write = 1
 Plug 'mattn/webapi-vim'
 Plug 'moznion/hateblo.vim'
 Plug 'mattn/googlesuggest-complete-vim'
-Plug 'ssh0/easy-reading.vim'
 Plug 'rking/ag.vim'
+
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
@@ -256,6 +257,5 @@ call plug#end()
 " Required:
 filetype plugin indent on
 syntax on
-colorscheme easy-reading
 
 "---------------------------------------------------------------------------}}}
